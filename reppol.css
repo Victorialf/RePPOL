@@ -1,0 +1,725 @@
+/*Adrien MÉVEL, EdNitl, projet RePPOL*/
+	/*Depuis css de interfaxim (https://github.com/TimotheAlbouy/Interfaxim) contenue dans le .xsl*/
+* {
+	box-sizing: border-box;
+}
+body {
+	/*background-color: #fcead4 /*#2E2E2E;*/
+	color: #0a1515/*#F2F2F2*/;
+	font-family: helvetica, sans-serif;
+	font-size: 14pt;
+	margin: 0;
+}
+header {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	width: 100%;
+	border-bottom: 2px solid #0a1515;
+	border-radius: 15%;
+	height: 300px;
+	/*display: flex;
+	align-items: center;
+	flex-wrap: wrap;*/
+}
+div.logo {
+	height: 300px;
+	position: absolute;
+	top: 3px;
+	left: 30%;
+}
+img.logo {
+	height: 100%;
+}
+img.top {
+	width: 50px;
+}
+/*TRAVAILLE
+header, footer, article, section, div {
+	border: 2px solid #000!important;
+}*/
+.nav_top {
+	margin: auto;
+	/*display: flex;*/
+	margin-bottom: 100px;
+	margin-top: 40px;
+	font-size: 16pt;
+	z-index: 999;
+	position: relative;
+	top: 200px;/*se superpose à l'image pour éviter de cliquer sur le lien de manière involontaire*/
+	padding-bottom: 20px;/*se superpose à l'image pour éviter de cliquer sur le lien de manière involontaire*/
+}
+.nav_top ul {
+	list-style: none;
+	margin: auto;
+}
+.nav_top ul li {
+	display: inline-block;
+	padding: 10px;
+	/*border-radius: 15px;*/
+	transition: 0.3s;
+	/*position: relative;*/
+}
+.nav_top ul li:hover {
+	color: #932311; /*#666*/
+	cursor: pointer;
+}
+.nav_top ul li a{
+	text-decoration: none;
+	color: inherit;
+}
+ul.nav_index {
+	display: none;
+	position: absolute;
+	/*background-color: #efac18;*/
+	z-index: 999;
+	padding: 0;
+	font-size: 14pt;
+	transition: 0.3ms;
+}
+ul.nav_index li{
+	display: block!important;
+	padding: 0;
+	transition: 0.3ms;
+}
+ul.nav_index li a{
+	color: #0a1515;
+}
+ul.nav_index li a:hover{
+	color: #932311;
+}
+.nav_top ul li:hover ul.nav_index {
+	display: block;
+}
+a {
+	text-decoration: none;
+	color: #932311/*#52b7c1*/;
+	transition: 0.3s;
+}
+a:hover {
+	text-decoration: underline;
+}
+/*
+a:hover {
+	color: #456;
+	text-decoration: underline;
+}
+*/
+h1 {
+	text-align: center;
+	margin-bottom: 40px;
+	position: relative;
+}
+article {
+	margin-left: 10%;
+	margin-right: 10%;
+	position: relative;
+	font-family: 'Times New Roman', serif;
+}
+section {
+	margin-bottom: 60px;
+	border-bottom: solid 2px #0a1515;
+	padding-bottom: 40px;
+}
+p {
+	text-align: justify;
+	word-break: normal;
+	word-spacing: normal;
+	word-wrap: break-word;
+}
+footer{
+	border-top: 2px solid #0a1515;
+	display: flex;
+	padding: 30px;
+	margin: 0px 60px 0px 60px;
+	min-width: 70%;
+}
+footer p {
+	text-indent: 0;
+}
+footer div {
+	padding-left: 60px;
+	border-right: 1px solid #0a1515;
+	padding-right: 60px;
+}
+footer div:last-child {
+	border-right: none;
+}
+footer div li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+
+/*PAGE HOME*/
+article#home, article#about p {
+	text-indent: 60px;
+}
+section.home_buttons {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: center;
+}
+section.home_buttons button {
+	margin: auto;
+	padding: 20px;
+/*	background: none;
+	border-radius: 15px;
+	border: 2px solid #efac18;
+	box-shadow: 1px 1px 3px #000;*/
+}
+section.home_buttons a.button:hover button{
+	color: #0A1515;
+}
+section.home_buttons a.button:hover button{
+	text-decoration: none;
+}
+a.button {
+	margin: auto;
+}
+/*PAGE ABOUT*/
+article.about {
+	margin: 60px;
+}
+section.project_left {
+	float: left;
+	width: 65%;
+	margin: 5px 60px 0px 0px ;
+}
+section.project_right {
+	float: left;
+	width: 30%;
+	margin: 5px;
+}
+
+
+
+/*PAGE INDEX*/
+section.index{
+	margin-left: 30px;
+	height: fit-content;
+	border: none;
+}
+div.index_container {
+	width: 100%;
+	height: fit-content;
+	display: inline-flex;
+}
+div.index {
+	/*width: 30%;*/
+	font-size: 14pt;
+	position: relative;
+	border-right: 2px solid #0a1515;
+	border-bottom: 2px solid #0a1515;
+	border-radius: 15px;
+	transition: 0.2s;
+	/*margin_left: 10px;
+	max-height: 400px;
+	overflow: auto;*/
+}
+div.index:hover {
+	border-color:#efac18;
+}
+div.index_unit {
+	border: 2px solid #efac18;
+	border-radius: 15px;
+	border-top: none;
+	border-left: none;
+	height: fit-content;
+	position: relative;
+}
+div.index_unit h6 {
+	font-size: 22pt;
+}
+div.index_unit ul {
+	margin-left: 60px;
+}
+div.index h3 {
+	font-size: 16pt;
+	padding-left: 10px;
+	transition: 0.2s;
+}
+div.index:hover h3 {
+	color: #efac18;
+
+}
+div.index_unit .expan {
+	color: #0a1515!important;
+}
+ul.index {
+
+}
+ul.index a{
+	transition: 0.2s;
+}
+/*
+ul.index a:hover {
+	color: #932311;
+}*/
+img.index_map {
+	width: 100%;
+}
+section.calendar{
+	width: 50%;
+}
+div.c_tabs {/*contener des tabs des dates*/
+	max-width: 100%;
+	border: 1px solid #0a1515;
+	display: grid;
+	grid-template-rows: min-content 1fr;
+
+}
+div.tabs_nav{/*contener des boutons de nav tabs des dates*/
+	display: flex;
+	border: 1px solid #0a1515;
+
+}
+.c_tabs_b {/*les boutons de chaque tab d'année*/
+	border: none;
+	background-color: transparent;
+	flex-basis: 100%;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 0;
+	cursor: pointer;
+	border-radius: 0px!important;
+}
+.c_tabs_b:not(:last-child, .c_tabs .active_tab){
+	border-right: 1px solid #0a1515;
+}
+.active_tab {/*le bouton de la tab active*/
+	background: linear-gradient(45deg, #f2F2F2, #ddd);
+}
+div.tabs_content{/*tabs de ceontenu 1 par an*/
+	grid-area: 2 / 1 / 3 / 2;
+	display: none;
+}
+div.active_tabs_content{/*le tab de date actif*/
+
+
+}
+
+
+/*PAGE TRANSCRIPTION INTERACTIVE : */	
+article.transcription_pedago{
+}			
+.tabs {
+	/*overflow: auto;
+	border: 1px solid darkgrey;
+	background-color: gainsboro;*/
+	margin: auto;
+	/*position: fixed;
+	left: 0;*/
+	/*position: fixed;
+	left: 0px;
+	max-width: 30%;*/
+}
+.tabs button {
+	background-color: inherit;
+	padding: 0.5em;
+	/*float: left;*/
+	border: none;
+	border-radius: 15px;
+	outline: none;
+	cursor: pointer;
+	transition: 0.3s;
+	font-size: 1em;
+	display: inline-block;
+	color: inherit;
+	width: 10%;
+}
+.tabs button:hover {
+	color: #932311;/*#666*/
+}
+.tabs button.active {
+	color: #efac18;/*444*/
+}
+.section-wrapper {
+	position: relative;
+}
+div.zone {
+	position: absolute;
+}
+div.zone:hover{
+	border: 4px solid #fcead4/*#806926*/;
+	border-radius: 15px;
+}
+div.zone span { /*la version d'origine écrivait "div.zone &gt; span" &gt; étant >, inutile et causant des erreurs si la feuille css n'est pas écrite via xsl */
+	position: relative;
+	overflow-y: auto;
+	visibility: hidden;
+	/*background-color: white;
+	font-family: Georgia, serif;*/
+	color: #0a1515;
+	background-color: #fcead4/*#ddcea0*/;
+	border-radius: 15px;
+	font-size: 36pt;
+}
+.zone:hover span {
+	visibility: visible;
+}
+/*Ajout AM pour version travail, permet de voir les zones découpées.
+	.zone:hover {
+	background-color:#000;
+	}*/	
+
+/* Original version (ov)
+.ov {
+	color: crimson;
+}
+
+/* Regularized version (rv) 
+.rv {
+	color: mediumseagreen;
+}
+
+/* Not shown (ns) 
+.ns {
+	display: none;
+}*/
+/*STYLE POUR DETAILS ET SUMMARY*/
+summary {
+	transition: all .4s ease;
+}
+summary:hover{
+	border-left: 60px solid #33333300; /*Gris translucide*/
+	text-decoration: underline;
+	transition: all .4s ease;
+}
+details {
+	cursor: pointer;
+	/*border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-radius: 15px;
+	box-shadow: 10px 10px 10px black;*/
+	margin-left: 60px;
+}
+/*
+div.comment {
+	margin-top: 60px;
+	margin-bottom: 60px;
+	background-color: #efac18/*ALT#639e94/*OLD#28162a;
+	border-radius: 15px;
+}*/
+/*Version alternative*/
+div.comment {
+	margin-top: 60px;
+	margin-bottom: 60px;
+	border-radius: 15px;
+	border: 2px solid #efac18/*ALT#639e94*//*OLD#28162a*/;
+	border-top: none;
+	border-left: none;
+}
+	/*class créées depuis attributs*/
+.pape_strikethrough {
+	text-decoration: line-through;
+}
+.pape_overstrike {
+	text-decoration: line-through;
+}
+.pape_above {
+	position: relative;
+	bottom: 15px;
+}
+.pape_below {
+	position: relative;
+	top: 15px;
+}
+.pape_underline {
+	text-decoration: underline;
+}
+	/*class créées depuis éléments*/
+.pape_metamark {
+	font-size: 45pt;
+}
+.pape_expan {
+	font-style: italic;
+	color: /*#771919*/#932311 !important;
+}
+.pape_note {
+	font-size: 24pt !important;
+}
+.pape_note .pape_expan {
+	font-size: 24pt !important;
+}
+
+/*POUR LA TRANSCRIPTION "normale"*/
+/*Pour la selection des transcriptions*/
+article.fac_selector {
+	display: flex;
+	flex-wrap: wrap;
+}
+div.fac_selector {
+	margin: 30px 0px 0px 0px;
+	width: 300px;
+	height: 200px;
+	display: flex;
+}/*
+div.fac_selector:hover {
+	background-color: #efac18;
+}*/
+div.fac_selector h6{
+	margin: 10px;
+}
+div.fac_selector img {
+	height: 150px;
+	box-shadow: 2px 2px 2px #0a1515;
+	transition: 0.2s ease-out;
+}
+div.fac_selector img:hover {
+	height: 200px;
+}
+/*PAGES TRNASCRIPTIONS INDDIVIDUELLES*/
+div.t_nav button{
+	float: right;
+/*	background-color: #fcead4;*/
+	background: none;
+	border-radius: 10px;
+	border-right: 2px solid #0a1515;
+	border-bottom: 2px solid #0a1515;
+	border-top: none;
+	border-left: none;
+	font-family: inherit;
+	font-size: inherit;
+	transition: 0.3s;
+}
+div.t_nav button:hover{
+	cursor: pointer;
+	border-color: #efac18;
+	color: #efac18;
+}
+div.t_nav button a {
+	color: inherit;
+}
+div.t_nav button a:hover{
+	text-decoration: none;
+}
+article.transcription {
+	margin-left: 3%;
+	margin-right: 3%;
+}
+div.facs {
+	width: 46%;
+	/*border: 2px solid black;*/
+}
+img.facspage{
+	width: 100%;
+	vertical-align: bottom;
+	/*width: 45%;*/
+}
+div.transcript{
+	width: 100%;
+	height: fit-content;
+	overflow: hidden;
+	border: 2px solid #0a1515;
+	border-radius: 15px;
+	display: flex;
+	background-color: #fcead4;
+}
+div#facspage {
+	width: 49%;
+}
+/*Don't use this :
+img {
+	width: 100%;
+}*/
+div#text{
+	width: 49%;
+	/*float: left;
+	/*padding-top: 30px ;*/
+	/*border: 2px solid black;*/
+	overflow: auto;
+	/*padding: 30px 20px 0px 10px;*/
+	min-height: 100px;
+	max-height: 950px;
+}
+#calendar {
+	display: none;
+}
+/*collection section sous-section*/
+div.collection {
+	/*border: 2px solid red;*/
+}
+div.answer_set {
+	/*border: 2px solid green;*/
+}
+div {
+	/*border: 2px solid orange;*/
+}
+/*div pour notes et p*/
+div.display_unit {
+	width: 80%;/*unsure about 80 or 90 %*/
+	display: table-row;/*empêche le bon affichage de "whole_width" et n'est apparemment pas nécessaire pour le reste des affichages */
+/*	border-collapse: collapse;
+	border: 2px solid black;*/
+}
+div.whole_width{
+	/*width: 100%;*/
+	margin: 0 0 0 20px;
+}
+div.margin_left{
+	width: 15%;
+	vertical-align: top;
+	display: table-cell;
+	/*padding-left: 20px;*/
+	text-align: center;
+	padding: 10px 0 0 20px;/*pour un meilleur rendu plus proche du texte*/
+}
+div.main {
+	width: 30%;
+	vertical-align: top;
+	display: table-cell;
+	text-align: justify;
+	padding: 0px 20px 0 10px;/*pour un meilleur rendu plus proche du texte*/
+}
+div.main_left{
+	width: 40%;
+	vertical-align: top;
+	display: table-cell;
+	text-align: justify;
+	padding: 0 0 0 10px;/*pour un meilleur rendu plus proche du texte*/
+
+}
+div.main_right{
+	width: 40%;
+	vertical-align: top;
+	display: table-cell;
+	text-align: justify;
+	padding: 0 10px 0 0;/*pour un meilleur rendu plus proche du texte*/
+}
+div.vertical {
+	float: left;
+	padding:0 ;
+}
+div#text p{
+	text-indent: 0px !important;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+/*Les titres*/
+p.head {
+	text-align: center;
+	font-size: 14pt;
+	margin-bottom: 5px!important;
+	margin-top: 5px!important;
+}
+p.margin_left {
+	text-align: left!important;
+	/*margin-left: 20px;*/ /*retiré : 13/06*/
+}
+/*liste*/
+p.head_list {
+	text-align: center;
+	font-size: 14pt!important;
+}
+ul {
+	margin: 0;
+	list-style: none;
+	text-align: justify;
+	width: fit-content;/*sert à l'affichage des accolades en backgrounds correctement*/
+	padding-right: 15px;/*sert à l'affichage des accolades en backgrounds correctement*/
+	padding-left: 20px;
+}
+li {
+	margin: 0;
+}
+/*Les différentes paginations*/
+.red {
+	color: #932311;
+	margin: 0!important;
+	float: left;/*au sein d'un élément qui float right (donc allant vers la droite), ira vers la gauche*/
+}
+.black {
+	color: #0a1515;
+	margin: 0!important;
+	float: left;/*au sein d'un élément qui float right (donc allant vers la droite), ira vers la gauche*/
+					/*permet d'aligner les numéros de page*/
+}
+.gray {
+	color: #666;
+	margin: 0!important;
+	float: left;/*au sein d'un élément qui float right (donc allant vers la droite), ira vers la gauche*/
+					/*permet d'aligner les numéros de page*/
+}
+/*les éléments de niveau sub-paragraph*/
+.strikethrough {
+	text-decoration: line-through;
+}
+.overstrike{
+	position: relative;/*nécessaire pour bon affichage de la croix*/
+	display: block;/*nécessaire pour bon affichage de la croix*/
+}
+.overstrike:before, .overstrike:after{/*la croix est en fait constituée de deux blocks before et after créé par pure css, qui sont rotate pour imiter une croix*/
+	position: absolute;
+    content: '';
+    background: #0a1515c9;/*couleur de la police + alpha*/
+    display: block;
+    width: 60%;
+    height: 1.5px;
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0px;
+    margin: auto;
+}
+.overstrike:after {
+	-webkit-transform: rotate(20deg);  
+	transform: rotate(20deg);
+}
+.above {
+	position: relative;
+	bottom: 6px;
+}
+.below {
+	position: relative;
+	top: 6px;
+}
+.underline {
+	text-decoration: underline;
+}
+	/*class créées depuis éléments*/
+.metamark {
+	font-size: 14pt;
+}
+.expan {
+	font-style: italic;
+	color: #771919 !important;
+}
+.note {
+	margin-top: 10px;
+	/*margin-left: 30px;*/ /*retiré : 13/06*/
+	text-align: center;
+}
+.vertical_bottom-top {
+	transform: rotate(180deg);
+	writing-mode: tb-rl;
+}
+.vertical_top-bottom {
+	writing-mode: tb-rl;
+}
+.persName {
+	/*color: #456456;*/
+}
+.placeName {
+	/*color: #4ff;*/
+}
+.roleName {
+	/*color: #f44;*/
+}
+/*affichagede bracket où il faut de la taille qu'il faut*/
+.bracket {
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/5b/Accolade_fermante.png") ;
+	background-position: 100% 0%;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+.metafloat_list {
+	display: table-row;
+}
+.metafloat {
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: 10px;
+}
