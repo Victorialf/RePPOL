@@ -27,7 +27,7 @@
 			<meta name="author" content="Aude DE MÉZERAC-ZANETI; Olivier SPINA; Victoria LE FOURNER; Felipe GOES SILVA; Adrien MÉVEL;"/>
 			<meta name="description" content="transcriptions échantillons de Cambridge, Corpus Christi College, MS 128: Documents Relating to Archbishop Cranmer, manuscrit conservé à la Parker Library"/>
 			<meta name="keywords" content="XSLT,XML,TEI"/>
-			<link rel="icon" type="image/jpg" href=""/><!--LINK ICI-->
+			<link rel="icon" type="image/jpg" href="logo_reppol-noir-rouge.png"/><!--LINK ICI-->
 			<link rel="stylesheet" href="reppol.css" type="text/css"/><!--LINK ICI-->
 			<title>RePPOL - <xsl:value-of select="$title"/></title>
 		</head>
@@ -65,7 +65,28 @@
 				</ul>
 			</nav>
 		</header>
+	</xsl:template>
+	<!--template pour SCRIPT-->
+	<xsl:template name="script">
 		<script>
+			function changeSection(e, sec) {
+			var sections = document.getElementsByClassName("section-wrapper");
+			for (var i = 0; i &lt; sections.length; i++) {
+			var el = sections[i];
+			if (el.dataset.section == sec)
+			el.style.display = "inline-block";
+			else el.style.display = "none";
+			}
+			var btnSections = document.querySelectorAll("#tabs-sections button");
+			for (var i = 0; i &lt; btnSections.length; i++) {
+			var el = btnSections[i];
+			el.className = el.className.replace(" active", "");
+			}
+			e.currentTarget.className += " active";
+			}
+			
+			<!--	document.getElementById("rvBtn").click();-->
+			document.querySelector("#tabs-sections button:first-child").click();
 			
 			function reppol_t(){
 			document.getElementById("calendar").style.display="none";
@@ -79,11 +100,24 @@
 			document.body.scrollTop = 0; // For Safari
 			document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 			}
-			
-			<!--var facsHeight = $('#facspage').css('height');
+			function tabsAnimation(evt, date) {
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("tabs_content");
+			for (i = 0; i &lt; tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("c_tabs_b");
+			for (i = 0; i &lt; tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active_tab", "");
+			}
+			document.getElementById(date).style.display = "block";
+			evt.currentTarget.className += " active_tab";
+			}
+			<!--var Height = $('#facspage').css('height');
 			//manipulate the height as you want if it is different than the maindiv's height
-			$('#text').css('max-height', 'facsHeight');-->
+			$('#text').css('max-height', 'Height');-->
 		</script>
+		<a href="#top"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png" class="top" style="position:fixed; bottom:20px; right:30px; z-index:99; padding:5px; font-size:14pt;"/></a>
 	</xsl:template>
 	<!--	template pour FOOTER-->
 	<xsl:template name="footer">
@@ -154,6 +188,7 @@
 							</ul>
 						</section>-->
 					</article>
+					<xsl:call-template name="script"/>
 <!--					<xsl:call-template name="footer"/>-->
 				</body>
 			</html>
@@ -220,6 +255,7 @@
 							<p>The ten pages long demonstration offered as <a href="{$pedago}" target="blanck">interactive transcriptions</a> wouldn't have been possible without the <a href="https://github.com/TimotheAlbouy/Interfaxim" target="blanck">Interfaxim</a> XSL-stylesheet developped by <a href="https://github.com/TimotheAlbouy" target="blanck">Mr Thimothe Albouy</a>.</p>
 						</section>
 					</article>
+					<xsl:call-template name="script"/>
 <!--					<xsl:call-template name="footer"/>-->
 				</body>
 			</html>
@@ -274,57 +310,8 @@
 									peut être en ajoutant des correps aussi au truc dans le xml pour faire comme dans le script plus haut-->
 								</div>
 							</xsl:for-each>
-							<script>
-								<!--function changeVersion(e, ver) {
-								var ovnodes = document.getElementsByClassName("ov");
-								var rvnodes = document.getElementsByClassName("rv");
-								if (ver === "ov") {
-								for (var i = 0; i &lt; ovnodes.length; i++) {
-								var el = ovnodes[i];
-								el.style.display = "inline";
-								}
-								for (var i = 0; i &lt; rvnodes.length; i++) {
-								var el = rvnodes[i];
-								el.style.display = "none";
-								}
-								} else if (ver === "rv") {
-								for (var i = 0; i &lt; ovnodes.length; i++) {
-								var el = ovnodes[i];
-								el.style.display = "none";
-								}
-								for (var i = 0; i &lt; rvnodes.length; i++) {
-								var el = rvnodes[i];
-								el.style.display = "inline";
-								}
-								}
-								var btnVersions = document.querySelectorAll("#tabs-versions button");
-								for (var i = 0; i &lt; btnVersions.length; i++) {
-								var el = btnVersions[i];
-								el.className = el.className.replace(" active", "");
-								}
-								e.currentTarget.className += " active";
-								}-->
-								
-								function changeSection(e, sec) {
-								var sections = document.getElementsByClassName("section-wrapper");
-								for (var i = 0; i &lt; sections.length; i++) {
-								var el = sections[i];
-								if (el.dataset.section == sec)
-								el.style.display = "inline-block";
-								else el.style.display = "none";
-								}
-								var btnSections = document.querySelectorAll("#tabs-sections button");
-								for (var i = 0; i &lt; btnSections.length; i++) {
-								var el = btnSections[i];
-								el.className = el.className.replace(" active", "");
-								}
-								e.currentTarget.className += " active";
-								}
-								
-							<!--	document.getElementById("rvBtn").click();-->
-								document.querySelector("#tabs-sections button:first-child").click();
-							</script>
 						</article>
+						<xsl:call-template name="script"/>
 <!--						<xsl:call-template name="footer"/>-->
 					</body>
 				</html>

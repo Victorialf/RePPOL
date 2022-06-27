@@ -28,7 +28,6 @@
 				<link rel="icon" type="image/jpg" href="logo_reppol-noir-rouge.png"/><!--LINK ICI-->
 				<link rel="stylesheet" href="reppol.css" type="text/css"/><!--LINK ICI-->
 				<title>RePPOL - <xsl:value-of select="$title"/></title>
-				<!--<script src="script.js"/>-->
 			</head>
 	</xsl:template>
 <!--	template pour HEADER-->
@@ -64,6 +63,9 @@
 				</ul>
 			</nav>
 		</header>
+	</xsl:template>
+<!--template pour SCRIPT-->
+	<xsl:template name="script">
 		<script>
 			
 			function reppol_t(){
@@ -95,40 +97,11 @@
 			//manipulate the height as you want if it is different than the maindiv's height
 			$('#text').css('max-height', 'Height');-->
 		</script>
+		<a href="#top"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png" class="top" style="position:fixed; bottom:20px; right:30px; z-index:99; padding:5px; font-size:14pt;"/></a>
 	</xsl:template>
 <!--	template pour FOOTER-->
 	<xsl:template name="footer">
 <!--		<a href="#top"><button class="top" style="position:fixed; bottom:20px; right:30px; z-index:99; padding:5px; font-size:14pt;">Back to the top</button></a>-->
-		<script>
-			function reppol_t(){
-			document.getElementById("calendar").style.display="none";
-			document.getElementById("transcription_reppol").style.display="block";
-			}
-			function calendar_t(){
-			document.getElementById("transcription_reppol").style.display="none";
-			document.getElementById("calendar").style.display="block";
-			}
-			function topFunction() {
-			document.body.scrollTop = 0; // For Safari
-			document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-			}
-			function tabsAnimation(evt, date) {
-			var i, tabcontent, tablinks;
-			tabcontent = document.getElementsByClassName("tabs_content");
-			for (i = 0; i &lt; tabcontent.length; i++) {
-			tabcontent[i].style.display = "none";
-			}
-			tablinks = document.getElementsByClassName("c_tabs_b");
-			for (i = 0; i &lt; tablinks.length; i++) {
-			tablinks[i].className = tablinks[i].className.replace(" active_tab", "");
-			}
-			document.getElementById(date).style.display = "block";
-			evt.currentTarget.className += " active_tab";
-			}
-			<!--var Height = $('#facspage').css('height');
-			//manipulate the height as you want if it is different than the maindiv's height
-			$('#text').css('max-height', 'Height');-->
-		</script>
 		<footer>
 			<div>
 				<p>More documentation on <a href="" target="blanck">GitLab</a></p>
@@ -171,8 +144,8 @@
 								</xsl:apply-templates>
 						</section>
 					</article>
+					<xsl:call-template name="script"/>
 <!--					<xsl:call-template name="footer"/>-->
-					<a href="#top"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png" class="top" style="position:fixed; bottom:20px; right:30px; z-index:99; padding:5px; font-size:14pt;"/></a>
 				</body>
 			</html>
 		</xsl:result-document>
@@ -208,6 +181,7 @@
 							</ul>
 						</section>
 					</article>
+					<xsl:call-template name="script"/>
 <!--					<xsl:call-template name="footer"/>-->
 				</body>
 			</html>
@@ -231,6 +205,7 @@
 							</xsl:apply-templates>
 						</section>
 					</article>
+					<xsl:call-template name="script"/>
 <!--					<xsl:call-template name="footer"/>-->
 				</body>
 			</html>
@@ -255,6 +230,7 @@
 						</xsl:for-each>
 					</article>
 				</body>
+				<xsl:call-template name="script"/>
 <!--				<xsl:call-template name="footer"/>-->
 			</html>
 		</xsl:result-document>
@@ -331,6 +307,7 @@
 									<div style="width:100%; clear:both; height:60px;"></div><!--cheatcode pour démo-->
 							</section>
 						</article>
+						<xsl:call-template name="script"/>
 <!--						<xsl:call-template name="footer"/>-->
 					</body>
 				</html>
@@ -1228,7 +1205,18 @@
 			<div id="1543" class="tabs_content">
 				<h3>1543</h3>
 				<div style="display:flex; flex-wrap:wrap;">
+					<table><tr><td colspan="5"><a href="#1543-01">January</a></td><td colspan="2"><a href="#1543">1543</a></td></tr><tr><td>S</td><td>M</td><td>T</td><td>W</td><td>T</td><td>F</td><td>S</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td><a href="#1543-01-01">1</a></td><td><a href="#1543-01-02">2</a></td></tr><tr><td><a href="#1543-01-03">3</a></td><td><a href="#1543-01-04">4</a></td><td><a href="#1543-01-05">5</a></td><td><a href="#1543-01-06">6</a></td><td><a href="#1543-01-07">7</a></td><td><a href="#1543-01-08">8</a></td><td><a href="#1543-01-09">9</a></td></tr><tr><td><a href="#1543-01-10">10</a></td><td><a href="#1543-01-11">11</a></td><td><a href="#1543-01-12">12</a></td><td><a href="#1543-01-13">13</a></td><td><a href="#1543-01-14">14</a></td><td><a href="#1543-01-15">15</a></td><td><a href="#1543-01-16">16</a></td></tr><tr><td><a href="#1543-01-17">17</a></td><td><a href="#1543-01-18">18</a></td><td><a href="#1543-01-19">19</a></td><td><a href="#1543-01-20">20</a></td><td><a href="#1543-01-21">21</a></td><td><a href="#1543-01-22">22</a></td><td><a href="#1543-01-23">23</a></td></tr><tr><td><a href="#1543-01-24">24</a></td><td><a href="#1543-01-25">25</a></td><td><a href="#1543-01-26">26</a></td><td><a href="#1543-01-27">27</a></td><td><a href="#1543-01-28">28</a></td><td><a href="#1543-01-29">29</a></td><td><a href="#1543-01-30">30</a></td></tr><tr><td><a href="#1543-01-31">31</a></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+					<table><tr><td colspan="5"><a href="#1543-02">February</a></td><td colspan="2"><a href="#1543">1543</a></td></tr><tr><td>S</td><td>M</td><td>T</td><td>W</td><td>T</td><td>F</td><td>S</td></tr><tr><td></td><td><a href="#1543-02-01">1</a></td><td><a href="#1543-02-02">2</a></td><td><a href="#1543-02-03">3</a></td><td><a href="#1543-02-04">4</a></td><td><a href="#1543-02-05">5</a></td><td><a href="#1543-02-06">6</a></td></tr><tr><td><a href="#1543-02-07">7</a></td><td><a href="#1543-02-08">8</a></td><td><a href="#1543-02-09">9</a></td><td><a href="#1543-02-10">10</a></td><td><a href="#1543-02-11">11</a></td><td><a href="#1543-02-12">12</a></td><td><a href="#1543-02-13">13</a></td></tr><tr><td><a href="#1543-02-14">14</a></td><td><a href="#1543-02-15">15</a></td><td><a href="#1543-02-16">16</a></td><td><a href="#1543-02-17">17</a></td><td><a href="#1543-02-18">18</a></td><td><a href="#1543-02-19">19</a></td><td><a href="#1543-02-20">20</a></td></tr><tr><td><a href="#1543-02-21">21</a></td><td><a href="#1543-02-22">22</a></td><td><a href="#1543-02-23">23</a></td><td><a href="#1543-02-24">24</a></td><td><a href="#1543-02-25">25</a></td><td><a href="#1543-02-26">26</a></td><td><a href="#1543-02-27">27</a></td></tr><tr><td><a href="#1543-02-28">28</a></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+					<table><tr><td colspan="5"><a href="#1543-03">March</a></td><td colspan="2"><a href="#1543">1543</a></td></tr><tr><td>S</td><td>M</td><td>T</td><td>W</td><td>T</td><td>F</td><td>S</td></tr><tr><td></td><td><a href="#1543-03-01">1</a></td><td><a href="#1543-03-02">2</a></td><td><a href="#1543-03-03">3</a></td><td><a href="#1543-03-04">4</a></td><td><a href="#1543-03-05">5</a></td><td><a href="#1543-03-06">6</a></td></tr><tr><td><a href="#1543-03-07">7</a></td><td><a href="#1543-03-08">8</a></td><td><a href="#1543-03-09">9</a></td><td><a href="#1543-03-10">10</a></td><td><a href="#1543-03-11">11</a></td><td><a href="#1543-03-12">12</a></td><td><a href="#1543-03-13">13</a></td></tr><tr><td><a href="#1543-03-14">14</a></td><td><a href="#1543-03-15">15</a></td><td><a href="#1543-03-16">16</a></td><td><a href="#1543-03-17">17</a></td><td><a href="#1543-03-18">18</a></td><td><a href="#1543-03-19">19</a></td><td><a href="#1543-03-20">20</a></td></tr><tr><td><a href="#1543-03-21">21</a></td><td><a href="#1543-03-22">22</a></td><td><a href="#1543-03-23">23</a></td><td><a href="#1543-03-24">24</a></td><td><a href="#1543-03-25">25</a></td><td><a href="#1543-03-26">26</a></td><td><a href="#1543-03-27">27</a></td></tr><tr><td><a href="#1543-03-28">28</a></td><td><a href="#1543-03-29">29</a></td><td><a href="#1543-03-30">30</a></td><td><a href="#1543-03-31">31</a></td><td></td><td></td><td></td></tr></table>
+					<table><tr><td colspan="5"><a href="#1543-04">April</a></td><td colspan="2"><a href="#1543">1543</a></td></tr><tr><td>S</td><td>M</td><td>T</td><td>W</td><td>T</td><td>F</td><td>S</td></tr><tr><td></td><td></td><td></td><td></td><td><a href="#1543-04-01">1</a></td><td><a href="#1543-04-02">2</a></td><td><a href="#1543-04-03">3</a></td></tr><tr><td><a href="#1543-04-04">4</a></td><td><a href="#1543-04-05">5</a></td><td><a href="#1543-04-06">6</a></td><td><a href="#1543-04-07">7</a></td><td><a href="#1543-04-08">8</a></td><td><a href="#1543-04-09">9</a></td><td><a href="#1543-04-10">10</a></td></tr><tr><td><a href="#1543-04-11">11</a></td><td><a href="#1543-04-12">12</a></td><td><a href="#1543-04-13">13</a></td><td><a href="#1543-04-14">14</a></td><td><a href="#1543-04-15">15</a></td><td><a href="#1543-04-16">16</a></td><td><a href="#1543-04-17">17</a></td></tr><tr><td><a href="#1543-04-18">18</a></td><td><a href="#1543-04-19">19</a></td><td><a href="#1543-04-20">20</a></td><td><a href="#1543-04-21">21</a></td><td><a href="#1543-04-22">22</a></td><td><a href="#1543-04-23">23</a></td><td><a href="#1543-04-24">24</a></td></tr><tr><td><a href="#1543-04-25">25</a></td><td><a href="#1543-04-26">26</a></td><td><a href="#1543-04-27">27</a></td><td><a href="#1543-04-28">28</a></td><td><a href="#1543-04-29">29</a></td><td><a href="#1543-04-30">30</a></td><td></td></tr></table>
+					<table><tr><td colspan="5"><a href="#1543-05">May</a></td><td colspan="2"><a href="#1543">1543</a></td></tr><tr><td>S</td><td>M</td><td>T</td><td>W</td><td>T</td><td>F</td><td>S</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td><a href="#1543-05-01">1</a></td></tr><tr><td><a href="#1543-05-02">2</a></td><td><a href="#1543-05-03">3</a></td><td><a href="#1543-05-04">4</a></td><td><a href="#1543-05-05">5</a></td><td><a href="#1543-05-06">6</a></td><td><a href="#1543-05-07">7</a></td><td><a href="#1543-05-08">8</a></td></tr><tr><td><a href="#1543-05-09">9</a></td><td><a href="#1543-05-10">10</a></td><td><a href="#1543-05-11">11</a></td><td><a href="#1543-05-12">12</a></td><td><a href="#1543-05-13">13</a></td><td><a href="#1543-05-14">14</a></td><td><a href="#1543-05-15">15</a></td></tr><tr><td><a href="#1543-05-16">16</a></td><td><a href="#1543-05-17">17</a></td><td><a href="#1543-05-18">18</a></td><td><a href="#1543-05-19">19</a></td><td><a href="#1543-05-20">20</a></td><td><a href="#1543-05-21">21</a></td><td><a href="#1543-05-22">22</a></td></tr><tr><td><a href="#1543-05-23">23</a></td><td><a href="#1543-05-24">24</a></td><td><a href="#1543-05-25">25</a></td><td><a href="#1543-05-26">26</a></td><td><a href="#1543-05-27">27</a></td><td><a href="#1543-05-28">28</a></td><td><a href="#1543-05-29">29</a></td></tr><tr><td><a href="#1543-05-30">30</a></td><td><a href="#1543-05-31">31</a></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+					<table><tr><td colspan="5"><a href="#1543-06">June</a></td><td colspan="2"><a href="#1543">1543</a></td></tr><tr><td>S</td><td>M</td><td>T</td><td>W</td><td>T</td><td>F</td><td>S</td></tr><tr><td></td><td></td><td><a href="#1543-06-01">1</a></td><td><a href="#1543-06-02">2</a></td><td><a href="#1543-06-03">3</a></td><td><a href="#1543-06-04">4</a></td><td><a href="#1543-06-05">5</a></td></tr><tr><td><a href="#1543-06-06">6</a></td><td><a href="#1543-06-07">7</a></td><td><a href="#1543-06-08">8</a></td><td><a href="#1543-06-09">9</a></td><td><a href="#1543-06-10">10</a></td><td><a href="#1543-06-11">11</a></td><td><a href="#1543-06-12">12</a></td></tr><tr><td><a href="#1543-06-13">13</a></td><td><a href="#1543-06-14">14</a></td><td><a href="#1543-06-15">15</a></td><td><a href="#1543-06-16">16</a></td><td><a href="#1543-06-17">17</a></td><td><a href="#1543-06-18">18</a></td><td><a href="#1543-06-19">19</a></td></tr><tr><td><a href="#1543-06-20">20</a></td><td><a href="#1543-06-21">21</a></td><td><a href="#1543-06-22">22</a></td><td><a href="#1543-06-23">23</a></td><td><a href="#1543-06-24">24</a></td><td><a href="#1543-06-25">25</a></td><td><a href="#1543-06-26">26</a></td></tr><tr><td><a href="#1543-06-27">27</a></td><td><a href="#1543-06-28">28</a></td><td><a href="#1543-06-29">29</a></td><td><a href="#1543-06-30">30</a></td><td></td><td></td><td></td></tr></table>
+					<table><tr><td colspan="5"><a href="#1543-07">July</a></td><td colspan="2"><a href="#1543">1543</a></td></tr><tr><td>S</td><td>M</td><td>T</td><td>W</td><td>T</td><td>F</td><td>S</td></tr><tr><td></td><td></td><td></td><td></td><td><a href="#1543-07-01">1</a></td><td><a href="#1543-07-02">2</a></td><td><a href="#1543-07-03">3</a></td></tr><tr><td><a href="#1543-07-04">4</a></td><td><a href="#1543-07-05">5</a></td><td><a href="#1543-07-06">6</a></td><td><a href="#1543-07-07">7</a></td><td><a href="#1543-07-08">8</a></td><td><a href="#1543-07-09">9</a></td><td><a href="#1543-07-10">10</a></td></tr><tr><td><a href="#1543-07-11">11</a></td><td><a href="#1543-07-12">12</a></td><td><a href="#1543-07-13">13</a></td><td><a href="#1543-07-14">14</a></td><td><a href="#1543-07-15">15</a></td><td><a href="#1543-07-16">16</a></td><td><a href="#1543-07-17">17</a></td></tr><tr><td><a href="#1543-07-18">18</a></td><td><a href="#1543-07-19">19</a></td><td><a href="#1543-07-20">20</a></td><td><a href="#1543-07-21">21</a></td><td><a href="#1543-07-22">22</a></td><td><a href="#1543-07-23">23</a></td><td><a href="#1543-07-24">24</a></td></tr><tr><td><a href="#1543-07-25">25</a></td><td><a href="#1543-07-26">26</a></td><td><a href="#1543-07-27">27</a></td><td><a href="#1543-07-28">28</a></td><td><a href="#1543-07-29">29</a></td><td><a href="#1543-07-30">30</a></td><td><a href="#1543-07-31">31</a></td></tr></table>
+					<table><tr><td colspan="5"><a href="#1543-08">August</a></td><td colspan="2"><a href="#1543">1543</a></td></tr><tr><td>S</td><td>M</td><td>T</td><td>W</td><td>T</td><td>F</td><td>S</td></tr><tr><td><a href="#1543-08-01">1</a></td><td><a href="#1543-08-02">2</a></td><td><a href="#1543-08-03">3</a></td><td><a href="#1543-08-04">4</a></td><td><a href="#1543-08-05">5</a></td><td><a href="#1543-08-06">6</a></td><td><a href="#1543-08-07">7</a></td></tr><tr><td><a href="#1543-08-08">8</a></td><td><a href="#1543-08-09">9</a></td><td><a href="#1543-08-10">10</a></td><td><a href="#1543-08-11">11</a></td><td><a href="#1543-08-12">12</a></td><td><a href="#1543-08-13">13</a></td><td><a href="#1543-08-14">14</a></td></tr><tr><td><a href="#1543-08-15">15</a></td><td><a href="#1543-08-16">16</a></td><td><a href="#1543-08-17">17</a></td><td><a href="#1543-08-18">18</a></td><td><a href="#1543-08-19">19</a></td><td><a href="#1543-08-20">20</a></td><td><a href="#1543-08-21">21</a></td></tr><tr><td><a href="#1543-08-22">22</a></td><td><a href="#1543-08-23">23</a></td><td><a href="#1543-08-24">24</a></td><td><a href="#1543-08-25">25</a></td><td><a href="#1543-08-26">26</a></td><td><a href="#1543-08-27">27</a></td><td><a href="#1543-08-28">28</a></td></tr><tr><td><a href="#1543-08-29">29</a></td><td><a href="#1543-08-30">30</a></td><td><a href="#1543-08-31">31</a></td><td></td><td></td><td></td><td></td></tr></table>
 					<table><tr><td colspan="5"><a href="#1543-09">September</a></td><td colspan="2"><a href="#1543">1543</a></td></tr><tr><td>S</td><td>M</td><td>T</td><td>W</td><td>T</td><td>F</td><td>S</td></tr><tr><td></td><td></td><td></td><td><a href="#1543-09-01">1</a></td><td><a href="#1543-09-02">2</a></td><td><a href="#1543-09-03">3</a></td><td><a href="#1543-09-04">4</a></td></tr><tr><td><a href="#1543-09-05">5</a></td><td><a href="#1543-09-06">6</a></td><td><a href="#1543-09-07">7</a></td><td><a href="#1543-09-08">8</a></td><td><a href="#1543-09-09">9</a></td><td><a href="#1543-09-10">10</a></td><td><a href="#1543-09-11">11</a></td></tr><tr><td><a href="#1543-09-12">12</a></td><td><a href="#1543-09-13">13</a></td><td><a href="#1543-09-14">14</a></td><td><a href="#1543-09-15">15</a></td><td><a href="#1543-09-16">16</a></td><td><a href="#1543-09-17">17</a></td><td><a href="#1543-09-18">18</a></td></tr><tr><td><a href="#1543-09-19">19</a></td><td><a href="#1543-09-20">20</a></td><td><a href="#1543-09-21">21</a></td><td><a href="#1543-09-22">22</a></td><td><a href="#1543-09-23">23</a></td><td><a href="#1543-09-24">24</a></td><td><a href="#1543-09-25">25</a></td></tr><tr><td><a href="#1543-09-26">26</a></td><td><a href="#1543-09-27">27</a></td><td><a href="#1543-09-28">28</a></td><td><a href="#1543-09-29">29</a></td><td><a href="#1543-09-30">30</a></td><td></td><td></td></tr></table>
+					<table><tr><td colspan="5"><a href="#1543-10">October</a></td><td colspan="2"><a href="#1543">1543</a></td></tr><tr><td>S</td><td>M</td><td>T</td><td>W</td><td>T</td><td>F</td><td>S</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td><a href="#1543-10-01">1</a></td><td><a href="#1543-10-02">2</a></td></tr><tr><td><a href="#1543-10-03">3</a></td><td><a href="#1543-10-04">4</a></td><td><a href="#1543-10-05">5</a></td><td><a href="#1543-10-06">6</a></td><td><a href="#1543-10-07">7</a></td><td><a href="#1543-10-08">8</a></td><td><a href="#1543-10-09">9</a></td></tr><tr><td><a href="#1543-10-10">10</a></td><td><a href="#1543-10-11">11</a></td><td><a href="#1543-10-12">12</a></td><td><a href="#1543-10-13">13</a></td><td><a href="#1543-10-14">14</a></td><td><a href="#1543-10-15">15</a></td><td><a href="#1543-10-16">16</a></td></tr><tr><td><a href="#1543-10-17">17</a></td><td><a href="#1543-10-18">18</a></td><td><a href="#1543-10-19">19</a></td><td><a href="#1543-10-20">20</a></td><td><a href="#1543-10-21">21</a></td><td><a href="#1543-10-22">22</a></td><td><a href="#1543-10-23">23</a></td></tr><tr><td><a href="#1543-10-24">24</a></td><td><a href="#1543-10-25">25</a></td><td><a href="#1543-10-26">26</a></td><td><a href="#1543-10-27">27</a></td><td><a href="#1543-10-28">28</a></td><td><a href="#1543-10-29">29</a></td><td><a href="#1543-10-30">30</a></td></tr><tr><td><a href="#1543-10-31">31</a></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+					<table><tr><td colspan="5"><a href="#1543-11">November</a></td><td colspan="2"><a href="#1543">1543</a></td></tr><tr><td>S</td><td>M</td><td>T</td><td>W</td><td>T</td><td>F</td><td>S</td></tr><tr><td></td><td><a href="#1543-11-01">1</a></td><td><a href="#1543-11-02">2</a></td><td><a href="#1543-11-03">3</a></td><td><a href="#1543-11-04">4</a></td><td><a href="#1543-11-05">5</a></td><td><a href="#1543-11-06">6</a></td></tr><tr><td><a href="#1543-11-07">7</a></td><td><a href="#1543-11-08">8</a></td><td><a href="#1543-11-09">9</a></td><td><a href="#1543-11-10">10</a></td><td><a href="#1543-11-11">11</a></td><td><a href="#1543-11-12">12</a></td><td><a href="#1543-11-13">13</a></td></tr><tr><td><a href="#1543-11-14">14</a></td><td><a href="#1543-11-15">15</a></td><td><a href="#1543-11-16">16</a></td><td><a href="#1543-11-17">17</a></td><td><a href="#1543-11-18">18</a></td><td><a href="#1543-11-19">19</a></td><td><a href="#1543-11-20">20</a></td></tr><tr><td><a href="#1543-11-21">21</a></td><td><a href="#1543-11-22">22</a></td><td><a href="#1543-11-23">23</a></td><td><a href="#1543-11-24">24</a></td><td><a href="#1543-11-25">25</a></td><td><a href="#1543-11-26">26</a></td><td><a href="#1543-11-27">27</a></td></tr><tr><td><a href="#1543-11-28">28</a></td><td><a href="#1543-11-29">29</a></td><td><a href="#1543-11-30">30</a></td><td></td><td></td><td></td><td></td></tr></table>
+					<table><tr><td colspan="5"><a href="#1543-12">December</a></td><td colspan="2"><a href="#1543">1543</a></td></tr><tr><td>S</td><td>M</td><td>T</td><td>W</td><td>T</td><td>F</td><td>S</td></tr><tr><td></td><td></td><td></td><td><a href="#1543-12-01">1</a></td><td><a href="#1543-12-02">2</a></td><td><a href="#1543-12-03">3</a></td><td><a href="#1543-12-04">4</a></td></tr><tr><td><a href="#1543-12-05">5</a></td><td><a href="#1543-12-06">6</a></td><td><a href="#1543-12-07">7</a></td><td><a href="#1543-12-08">8</a></td><td><a href="#1543-12-09">9</a></td><td><a href="#1543-12-10">10</a></td><td><a href="#1543-12-11">11</a></td></tr><tr><td><a href="#1543-12-12">12</a></td><td><a href="#1543-12-13">13</a></td><td><a href="#1543-12-14">14</a></td><td><a href="#1543-12-15">15</a></td><td><a href="#1543-12-16">16</a></td><td><a href="#1543-12-17">17</a></td><td><a href="#1543-12-18">18</a></td></tr><tr><td><a href="#1543-12-19">19</a></td><td><a href="#1543-12-20">20</a></td><td><a href="#1543-12-21">21</a></td><td><a href="#1543-12-22">22</a></td><td><a href="#1543-12-23">23</a></td><td><a href="#1543-12-24">24</a></td><td><a href="#1543-12-25">25</a></td></tr><tr><td><a href="#1543-12-26">26</a></td><td><a href="#1543-12-27">27</a></td><td><a href="#1543-12-28">28</a></td><td><a href="#1543-12-29">29</a></td><td><a href="#1543-12-30">30</a></td><td><a href="#1543-12-31">31</a></td><td></td></tr></table>
 				</div>
 			</div>
 		</div>
