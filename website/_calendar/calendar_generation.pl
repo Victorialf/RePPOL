@@ -1,8 +1,7 @@
 
-#ai forcé la constitution des tableaux en mettant 0 comme valeur à l'appel de la sub "historic"
-#les dates sont donc calendrier grégorien, ce qui nous arrange puisque nous les utilisons pour les attributs
-use HTML::CalendarMonth;
-use DATE::Calc;
+
+use HTML::CalendarMonth; #https://metacpan.org/pod/HTML::CalendarMonth
+use DATE::Calc; #https://metacpan.org/dist/Date-Calc/view/lib/Date/Calc.pod
 open (HTML, ">calendar_generated.html");
 binmode (HTML, ":utf8");
 

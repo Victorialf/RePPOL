@@ -50,10 +50,10 @@ while (my $line=<HTMLIN>){
 		#anchoring the day
 		if ($line=~/<td>\d\d?/) {
 			if($line=~/<td>\d<\/td>/){#if day < 10
-				$line=~s/<td>(\d)<\/td>/<td><a href=\"#$y-$m-0$1\">$1<\/a>/g;
+				$line=~s/<td>(\d)<\/td>/<td><a href=\"#$y-$m-0$1\">$1<\/a><\/td>/g;
 			}
 			if($line=~/<td>\d\d/){#if day > 10
-				$line=~s/<td>(\d\d?)<\/td>/<td><a href=\"#$y-$m-$1\">$1<\/a>/g;	
+				$line=~s/<td>(\d\d?)<\/td>/<td><a href=\"#$y-$m-$1\">$1<\/a><\/td>/g;	
 			}
 		}
 $html = "$html"."\n"."$line";
