@@ -1,0 +1,92 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html xmlns:tei="http://www.tei-c.org/ns/1.0">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta charset="UTF-8">
+      <meta name="author" content="Aude DE MÉZERAC-ZANETI; Olivier SPINA; Victoria LE FOURNER; Felipe GOES SILVA; Adrien MÉVEL;">
+      <meta name="description" content="transcriptions échantillons de Cambridge, Corpus Christi College, MS 128: Documents Relating to Archbishop Cranmer, manuscrit conservé à la Parker Library">
+      <meta name="keywords" content="XSLT,XML,TEI">
+      <link rel="icon" type="image/jpg" href="logo_reppol-noir-rouge.png">
+      <link rel="stylesheet" href="reppol.css" type="text/css">
+      <title>RePPOL - place index</title>
+   </head>
+   <body>
+      <header id="top">
+         <div class="logo"><a href="reppol_home.html"><img src="logo_reppol-noir-rouge.png" class="logo"></a></div>
+         <nav class="nav_top">
+            <ul>
+               <li><a href="reppol_about.html">The project</a></li>
+               <li><a href="reppol_transcription.html">Transcriptions</a></li>
+               <li><a href="reppol_trancriptioninteractive.html">Interactive transcriptions</a></li>
+               <li>Index
+                  						
+                  <ul class="nav_index">
+                     <li><a href="reppol_indexcharacters.html">Persons</a></li>
+                     <li><a href="reppol_indexplaces.html">Places</a></li>
+                     <li><a href="reppol_indexdates.html">Dates</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </nav>
+      </header>
+      <article style="display:flex;">
+         <section style="width:50%;"><img class="index_map" src=""></section>
+         <section class="index">
+            <h3>Counties</h3>
+            <ul class="index">
+               <li><a href="https://www.openstreetmap.org/search?query=51.27871951768521, 0.5217173677032847" target="blanck">Kent</a></li>
+            </ul>
+            <h3>Cities</h3>
+            <ul class="index">
+               <li><a href="https://www.openstreetmap.org/search?query=51.279882209155474, 1.0827774233594474" target="blanck">Canterbury</a></li>
+               <li><a href="https://www.openstreetmap.org/search?query=51.3177,0.8928" target="blanck">Ffaversham</a></li>
+               <li><a href="https://www.openstreetmap.org/search?query=51.517877524802, -0.12701088757433363" target="blanck">London</a></li>
+               <li><a href="https://www.openstreetmap.org/search?query=51.27474187652137, 1.3372393788616426" target="blanck">Sandwiche</a></li>
+               <li><a href="https://www.openstreetmap.org/search?query=51.0598156726526, -1.3101575625256476" target="blanck">Wynchester</a></li>
+            </ul>
+            <h3>Parishes</h3>
+            <ul class="index">
+               <li><a href="https://www.openstreetmap.org/search?query=51.21110214266159, 0.7945988602356857" target="blanck">Charing</a></li>
+               <li><a href="https://www.openstreetmap.org/search?query=51.19302334549703, 0.7184985606654988          " target="blanck">Edgerton</a></li>
+               <li><a href="https://www.openstreetmap.org/search?query=51.21450426826586, 1.3592873680943796" target="blanck">Muche Mongeham</a></li>
+               <li><a href="https://www.openstreetmap.org/search?query=51.276275986548235, 1.07757578974423" target="blanck">Northgate</a></li>
+               <li><a href="https://www.openstreetmap.org/search?query=51.14576352159874, 0.8740108702332904" target="blanck">Parrishe
+                     							churche Of Ashford</a></li>
+               <li><a href="https://www.openstreetmap.org/search?query=51.0703845886681, 0.6850335175063367" target="blanck">Tenterden</a></li>
+            </ul>
+            <h3>Villages</h3>
+            <ul class="index">
+               <li><a href="https://www.openstreetmap.org/search?query=51.017178783483104, 0.7639023527907189" target="blanck">Oxxon</a></li>
+            </ul>
+         </section>
+      </article><script>
+			
+			function reppol_t(){
+			document.getElementById("calendar").style.display="none";
+			document.getElementById("transcription_reppol").style.display="block";
+			}
+			function calendar_t(){
+			document.getElementById("transcription_reppol").style.display="none";
+			document.getElementById("calendar").style.display="block";
+			}
+			function topFunction() {
+			document.body.scrollTop = 0; // For Safari
+			document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+			}
+			function tabsAnimation(evt, date) {
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("tabs_content");
+			for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("c_tabs_b");
+			for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active_tab", "");
+			}
+			document.getElementById(date).style.display = "block";
+			evt.currentTarget.className += " active_tab";
+			}
+			
+		</script><a href="#top"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png" class="top" style="position:fixed; bottom:20px; right:30px; z-index:99; padding:5px; font-size:14pt;"></a></body>
+</html>

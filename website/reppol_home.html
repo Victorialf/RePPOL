@@ -1,0 +1,99 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html xmlns:tei="http://www.tei-c.org/ns/1.0">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta charset="UTF-8">
+      <meta name="author" content="Aude DE MÉZERAC-ZANETI; Olivier SPINA; Victoria LE FOURNER; Felipe GOES SILVA; Adrien MÉVEL;">
+      <meta name="description" content="transcriptions échantillons de Cambridge, Corpus Christi College, MS 128: Documents Relating to Archbishop Cranmer, manuscrit conservé à la Parker Library">
+      <meta name="keywords" content="XSLT,XML,TEI">
+      <link rel="icon" type="image/jpg" href="">
+      <link rel="stylesheet" href="reppol.css" type="text/css">
+      <title>RePPOL - home</title>
+   </head>
+   <body>
+      <header id="top">
+         <div class="logo"><a href="reppol_home.html"><img src="logo_reppol-noir-rouge.png" class="logo"></a></div>
+         <nav class="nav_top">
+            <ul>
+               <li><a href="reppol_about.html">The project</a></li>
+               <li><a href="reppol_transcription.html">Transcriptions</a></li>
+               <li><a href="reppol_trancriptioninteractive.html">Interactive transcriptions</a></li>
+               <li>Index
+                  						
+                  <ul class="nav_index">
+                     <li><a href="reppol_indexcharacters.html">Persons</a></li>
+                     <li><a href="reppol_indexplaces.html">Places</a></li>
+                     <li><a href="reppol_indexdates.html">Dates</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </nav>
+      </header>
+      <article id="home">
+         <section>
+            <p>The Rethinking Prebendaries Plot Online (RePPOL) project is a pedagogic, scientific
+               and collaborative project dedicated to the transcription, critical edition and analysis
+               of the <a href="https://parker.stanford.edu/parker/catalog/ps908cx9813" target="blanck">MS 128 manuscript kept in the Parker Library</a>.</p>
+         </section>
+         <section class="home_buttons"><a class="button" href="reppol_transcription.html"><button>
+                  								Transcriptions
+                  							</button></a><a class="button" href="reppol_trancriptioninteractive.html"><button>
+                  								Interactive transcriptions
+                  							</button></a><a class="button" href="reppol_about.html"><button>
+                  								About the project
+                  							</button></a><a class="button" href="reppol_indexcharacters.html"><button>
+                  								Persons index
+                  							</button></a><a class="button" href="reppol_indexplaces.html"><button>
+                  								Places index
+                  							</button></a><a class="button" href="reppol_indexdates.html"><button>
+                  								Dates index
+                  							</button></a></section>
+      </article><script>
+			function changeSection(e, sec) {
+			var sections = document.getElementsByClassName("section-wrapper");
+			for (var i = 0; i < sections.length; i++) {
+			var el = sections[i];
+			if (el.dataset.section == sec)
+			el.style.display = "inline-block";
+			else el.style.display = "none";
+			}
+			var btnSections = document.querySelectorAll("#tabs-sections button");
+			for (var i = 0; i < btnSections.length; i++) {
+			var el = btnSections[i];
+			el.className = el.className.replace(" active", "");
+			}
+			e.currentTarget.className += " active";
+			}
+			
+			
+			document.querySelector("#tabs-sections button:first-child").click();
+			
+			function reppol_t(){
+			document.getElementById("calendar").style.display="none";
+			document.getElementById("transcription_reppol").style.display="block";
+			}
+			function calendar_t(){
+			document.getElementById("transcription_reppol").style.display="none";
+			document.getElementById("calendar").style.display="block";
+			}
+			function topFunction() {
+			document.body.scrollTop = 0; // For Safari
+			document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+			}
+			function tabsAnimation(evt, date) {
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("tabs_content");
+			for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("c_tabs_b");
+			for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active_tab", "");
+			}
+			document.getElementById(date).style.display = "block";
+			evt.currentTarget.className += " active_tab";
+			}
+			
+		</script><a href="#top"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png" class="top" style="position:fixed; bottom:20px; right:30px; z-index:99; padding:5px; font-size:14pt;"></a></body>
+</html>
