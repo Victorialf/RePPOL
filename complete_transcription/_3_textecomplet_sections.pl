@@ -16,7 +16,7 @@ my $txt = ''; #sert à stocker le texte complet
 		#et leurs attributs (valeur de @n laissée vide, car un autre script s'occupe de compter)
 			#(version du 24/06)
 
-open (TEXTE, "_textecomplet_collections.xml"); #nom à changer sans doute lorsque le script 2 sera fait
+open (TEXTE, "_textecomplet_collections.xml"); 
 binmode(TEXTE, ":utf8");
 open (TEXTEOUT, ">_textecomplet_collections_sections.xml");
 binmode(TEXTEOUT, ":utf8");
@@ -24,7 +24,7 @@ binmode(TEXTEOUT, ":utf8");
 
 
 #creation de variables pour une écriture synthétique
-my $end="\n</div>\n"; #chaîne de caractère fermant les balises
+my $end="\n<\/div>\n"; #chaîne de caractère fermant les balises
 my $i="\n<div type=\"index\" n=\"\">\n";
 my $m="\n<div type=\"memorandum\" n=\"\">\n";
 my $qs="\n<div type=\"question_set\" n=\"\">\n";
@@ -33,6 +33,14 @@ my $l="\n<div type=\"letter\" n=\"\">\n";
 my $d="\n<div type=\"deposition\" n=\"\">\n";
 my $t="\n<div type=\"testimony\" n=\"\">\n";
 my $ar="\n<div type=\"article\" n=\"\">\n";
+
+	my $h="\t<head>";
+	my $eh="<\/head>\n";
+	my $hs="\t<head rend=\"margin_left\">";
+	my $se="\n<div>\n";
+	my $da="<date type=\"procedure\" when=\"\">";
+	my $de="<\/date>";
+	my $page="";
 
 
 
@@ -44,8 +52,16 @@ while (my $ligne = <TEXTE>) {
 
 
 
+#gestion des articles
+		#creation variable qui récupère le numéros de la page en cours
+	if ($ligne=~/DÉBUT (\d+\w?)/){
+		$page=$1;
+		print "$page\n";
+#	$ligne=~s/DÉBUT (\d+\w?)/DÉBUT $page/g #debug
+	}
+#en testant la page où l'on est et la chaîne de caractère correspondant au titre/à la fin de la div type "article" on génère les balise ouvrante ($ar) et fermante ($end)
 
-#CRÉATION DES "BOÎTES ROUGES", élément <div> type=collection n =
+#CRÉATION DES sections, élément <div> type=$__ n =
 	$ligne =~s/<!--DÉBUT 002-->/$i<!--DÉBUT 002-->/;
 	$ligne =~s/<!--FIN 002-->/<!--FIN 002-->$end/;
 
@@ -55,8 +71,73 @@ while (my $ligne = <TEXTE>) {
 	$ligne=~s/<!--DÉBUT 007-->/$qs<!--DÉBUT 007-->/;
 	$ligne =~s/<!--FIN 008-->/<!--FIN 008-->$end/;
 
-	#$ligne=~s/<!--DÉBUT 009-->/<!--DÉBUT 009-->/;
-	#$ligne =~s/<!--FIN 016-->/<!--FIN 016-->$end/;
+#pages 9-->16
+	if ($page eq "009"){
+		$ligne=~s/(Serles)/$ar$h$1$eh/;
+		$ligne=~s/(At layname)/$se$h$1$eh/;
+		$ligne=~s/(Sandwich al<expan>ias<\/expan> Gardin<expan>er <\/expan>)/$end$end$ar$h$1$eh/;
+		$ligne=~s/(in <expan>ser<\/expan>mon in)/$se$h$1/;
+		$ligne=~s/(Christes church )(<expan>the<\/expan> iiide sonday aft<expan>er<\/expan> xii day)(\.)/$1$da$2$de$3$eh/;
+	}
+
+	if($page eq "010"){
+		$ligne=~s/(The next sonday aft<expan>er<\/expan>\.)/$end$se$h$da$1$de$eh/;
+		$ligne=~s/(Shether\.)/$end$end$ar$h$1$eh/;
+		$ligne=~s/(23 Apriles)( in <expan>the<\/expan> chapt<expan>er<\/expan> howse\.)/$se$h$da$1$de$2$eh/;
+		$ligne=~s/(15 Maii)( at saynt Stevyns\.)/$end$se$h$da$1$de$2$eh/;
+	}
+	if($page eq "011"){
+		$ligne=~s/(16 Septembris)( in <expan>the<\/expan> chapt<expan>er<\/expan> howse\.)/$end$se$h$da$1$de$2$eh/;
+		$ligne=~s/(Sandwich al<expan>ias<\/expan> Gardin<expan>er<\/expan>)/$end$end$ar$h$1$eh/;
+		$ligne=~s/( at wye )(in lent)( was)/$se$h$1$da$2$de$3/;
+ 		$ligne=~s/(xii month)( in <expan>the<\/expan> faire\.)/$da$1$de$2$eh/;
+ 		$ligne=~s/(In festo pasche)/$end$se$h$1$eh/;
+ 		$ligne=~s/(2do septembris)/$end$se$h$da$1$de$eh/;
+ 		$ligne=~s/(<!--FIN 011-->)/$end$end$1/;
+	}
+	if($page eq "012"){
+		$ligne=~s/(The vicar of ffeversam\.)/$ar$h$1$eh/;
+		$ligne=~s/(The <expan>par<\/expan>son of westbere)/$end$ar$h$1$eh/;
+		$ligne=~s/(Sir humfray Cotton chantry preist at Te<expan>n<\/expan>terde)/$end$ar$h$1$eh/;
+		$ligne=~s/(<!--FIN 012-->)/$end$1/;
+	}
+	if($page eq "013"){
+		$ligne=~s/(M<expan>emorandum<\/expan>)/$m$1/;
+		$ligne=~s/(Sandwich) (bifore ca<expan>n<\/expan>delmas)( was )(xii month\.)/$end$ar$h$1$eh$se$h$da$2$de$3$da$4$de$eh/;
+		if($ligne=~/Milles/){
+			if ($ligne=~/Milles./){}
+			else{$ligne=~s/(Milles)/$end$end$ar$h$1$eh/;}
+		}
+		$ligne=~s/(The Co<expan>m<\/expan>missary)/$end$ar$h$1$eh/;
+		$ligne=~s/(Sandwich, Milles, Shether &amp; Serles)/$end$ar$h$1$eh/;
+		$ligne=~s/(<!--FIN 013-->)/$end$1/;
+	}
+	if($page eq "014"){
+		$ligne=~s/(Mr<expan> Par<\/expan>kehurst p<expan>re<\/expan>bendary\.)/$ar$h$1$eh/;
+		$ligne=~s/(Henry laurence of Rayname)/$end$ar$h$1$eh/;
+		$ligne=~s/(Bartilmewe the surgeon)/$end$ar$h$1$eh/;
+		$ligne=~s/(Blande)( <expan>the<\/expan> iiii of ffebruary last)( at Boughton)/$end$ar$h$1$eh$se$h$da$2$de$3$eh/;
+		$ligne=~s/(Thomas Gymlot al<expan>ias<\/expan> Barbo<expan>ur<\/expan>)/$end$end$ar$h$1$eh/;
+		$ligne=~s/(<!--FIN 014-->)/$end$1/;
+	}
+	if($page eq "015"){
+		$ligne=~s/(The vicar of Chillam\.)/$ar$h$1$eh/;
+		$ligne=~s/(Mr <expan>Par<\/expan>kehurst <expan>pre<\/expan>bendary\.)/$end$ar$h$1$eh/;
+		$ligne=~s/(Sir laurence curat of)/$end$ar$h$1/;
+		$ligne=~s/( Chalocke)/$1$eh/;
+		$ligne=~s/(The vicar of Tenterden)/$end$ar$h$1$eh/;
+		$ligne=~s/(The <expan>par<\/expan>son of Riple)/$end$ar$h$1$eh/;
+		$ligne=~s/<!--FIN 015-->/$end$1/;
+	}
+	if($page eq "016"){
+		$ligne=~s/(The viker of Betrisden)/$ar$h$1$eh/;
+		$ligne=~s/(John Thatcher the younger\.)/$end$ar$h$1$eh/;
+		$ligne=~s/(The vicar of saynt paules in Canturbery)/$end$ar$h$1$eh/;
+		$ligne=~s/(Estwell)/$end$ar$h$1$eh/;
+		$ligne=~s/(William Quylter of Staple gentilman)/$end$ar$h$1$eh/;
+		$ligne=~s/(The parsonne of Milton besides Caunterbury)/$end$ar$h$1$eh/;
+		$ligne=~s/(<!--FIN 016-->)/$end$1/;
+	}
 
 	$ligne=~s/<!--DÉBUT 017-->/$t<!--DÉBUT 017-->/;
 	$ligne =~s/<!--FIN 017-->/<!--FIN 017-->$end/;
@@ -70,14 +151,360 @@ while (my $ligne = <TEXTE>) {
 	$ligne=~s/<!--DÉBUT 025-->/$qs<!--DÉBUT 025-->/;
 	$ligne =~s/<!--FIN 026-->/<!--FIN 026-->$end/;
 
-#	$ligne=~s/<!--DÉBUT 029-->/<!--DÉBUT 029-->/;
-#	$ligne =~s/<!--FIN 038-->/<!--FIN 038-->$end/;
-#
-#	$ligne=~s/<!--DÉBUT 039-->/<!--DÉBUT 039-->/;
-#	$ligne =~s/<!--FIN 085-->/<!--FIN 085-->$end/;
+#pages 29-->38
+	if($page eq "029"){
+		$ligne=~s/(The <expan>par<\/expan>son of pluckley)/$ar$h$1$eh/;
+		$ligne=~s/(<expan>Sir<\/expan> hu<expan>m<\/expan>fray Chirden <expan>par<\/expan>son of S<expan>aint<\/expan> Elphyns\.)/$end$ar$h$1/;
+		$ligne=~s/(<expan>the<\/expan> first sonday in lent last past)/$da$1$de$eh/;
+		$ligne=~s/(Vincent Ingeam\.)/$end$ar$h$1$eh/;
+		$ligne=~s/(Thomas Sawier\.)/$end$ar$h$1$eh/;
+		$ligne=~s/(Thomas Bleane of north Mongeam\.)/$end$ar$h$1$eh/;
+		$ligne=~s/(<!--FIN 029-->)/$end$1/;
+	}
+	if($page eq "030"){
+		$ligne=~s/(Edwarde Dyngleden of Rolvynden\.)/$ar$h$1$eh/;
+		$ligne=~s/(Sir Edwarde Spon<expan>er<\/expan> vicar of Boughton\.)/$end$ar$h$1$eh/;
+		$ligne=~s/(Archdiacon<expan>us<\/expan> Cantuarien<expan>sis<\/expan>)/$end$ar$h$1$eh/;
+		$ligne=~s/(<expan>Sir<\/expan> Willi<expan>a<\/expan>m kempe Vicar of Northgate)/$end$ar$h$1$eh/;
+	}
+	if($page eq "031"){
+		$ligne=~s/(Bartilmewe Joye)/$end$ar$h$1$eh/;
+		$ligne=~s/(John Toftes\. Christofor levenysh,)/$end$ar$h$1/;
+		$ligne=~s/(Bartylmewe Ioy )(17 Nouenbrer Anno 30)/$1$eh$se$h$da$2$de$eh/;
+		$ligne=~s/(Johanna Meryweder of saynt Mildredes parish\.)/$end$end$ar$h$1$eh/;
+		$ligne=~s/(Raufe the bel rynger of christes church)/$end$ar$h$1$eh/;
+	#	$ligne=~s/()//;
+	#	$ligne=~s/()//;
+	#	$ligne=~s/()//;
+		$ligne=~s/(<!--FIN 031-->)/$end$1/;
+	}
+	if($page eq "032"){
+		$ligne=~s/(Mr Shether)/$ar$h$1$eh/;
+		$ligne=~s/(Coxson peticanon of christes church)/$end$ar$h$1$eh/;
+		$ligne=~s/(The <expan>par<\/expan>son of Alyngton)/$end$ar$h$1$eh/;
+		$ligne=~s/(<!--FIN 032-->)/$end$1/;
+		#$ligne=~s/()//;
 
-#	$ligne=~s/<!--DÉBUT 087-->/<!--DÉBUT 087-->/;
-#	$ligne =~s/<!--FIN 094-->/<!--FIN 094-->$end/;
+	}
+	if($page eq "033"){
+		$ligne=~s/(Orphewe curate of lyd\.)/$ar$h$1$eh/;
+		$ligne=~s/(The curate of Stodm<expan>er<\/expan>sh\.)/$end$ar$h$1$eh/;
+		$ligne=~s/(Turno<expan>ur<\/expan>)/$end$ar$h$1$eh/;
+	}
+	if($page eq "034"){
+		$ligne=~s/(<expan>Sir<\/expan> James Newname, &amp; one laurence)/$end$ar$h$1/;
+		$ligne=~s/(brother to Mrs\. Mores)/$1$eh/;
+		$ligne=~s/(The curate of Chartam <expan>that<\/expan> now is\.)/$end$ar$h$1$eh/;
+		$ligne=~s/(Scory\.)/$end$ar$h$1$eh/;
+		$ligne=~s/(Serles\. )(d<expan>o<\/expan>m<expan>ini<\/expan>ca 8 post trinit<expan>er<\/expan>\.)/$end$ar$h$1$eh$se$h$da$2$de$eh/;
+		$ligne=~s/(<!--FIN 034-->)/$end$1/;	
+	}
+	if($page eq "035"){
+		$ligne=~s/(Sandewiche\. )(Dominica in )(70 Anno Domini 1542)(o)/$end$ar$h$1$eh$se$h$2$da$3$de$4$eh/;
+		$ligne=~s/(Dominica\. )(4ta post pascha\. Anno Domini 1543)(o)/$end$se$h$1$da$2$de$4$eh/;
+		$ligne=~s/(Dominica )(3a\. Anno Domini 1533\.)/$end$se$h$1$da$2$de$eh/;
+		$ligne=~s/(<!--FIN 035-->)/$end$end$1/;
+		#$ligne=~s/()//;
+	}
+	if($page eq "036"){
+		$ligne=~s/(Shether)/$ar$h$1$eh/;
+		$ligne=~s/(Browne of Charteham)/$end$ar$h$1$eh/;
+		$ligne=~s/(<!--FIN 036-->)/$end$1/;
+	}
+	if($page eq "037"){
+		$ligne=~s/(The Vicar of Chilham named)/$ar$h$1/;
+		$ligne=~s/( Doctour willoughbye)/$1$eh/;
+		$ligne=~s/(<!--FIN 037-->)/$end$1/;
+
+	}
+	if($page eq "038"){
+		$ligne=~s/(Burgrave a bryckeleyer)/$m$1/;
+		$ligne=~s/(M<expan>emorandum<\/expan>)/$end$m$1/;
+		$ligne=~s/(<!--FIN 038-->)/$end$1/;
+	}
+
+#pages 39-->85
+	if($page eq "039"){
+		$ligne=~s/\$(Serles)\$/$ar$hs$1$eh/;
+	}
+	if($page eq "041"){
+		$ligne=~s/(<!--FIN 041-->)/$end$1/;
+	}
+	if($page eq "042"){
+		$ligne=~s/\$(Scorye)\$ (20 Septembre: 1543,)/$ar$h$da$2$de$eh$se$hs$1$eh/;
+	}
+	if($page eq "044"){
+		$ligne=~s/(20 Septembre Anno 1543)(\.)/$end$ar$h$da$1$de$2$eh/;
+		$ligne=~s/\$(Shether)\$/$se$hs$1$eh/;
+	}
+	if($page eq "045"){
+		$ligne=~s/(22 Septembris 1543)(\.)/$end$end$ar$h$da$1$de$2$eh/;
+		$ligne=~s/\$(Broke)\$/$se$hs$1$eh/;
+		$ligne=~s/(<!--FIN 045-->)/$end$end$1/;
+	}
+	if($page eq "046"){
+		$ligne=~s/(24 Septembre Anno 1543)(\.)/$ar$h$da$1$de$2$eh/;
+		$ligne=~s/\$(Thomas Carden)\$/$se$hs$1$eh/;
+		$ligne=~s/(<!--FIN 046-->)/$end$end$1/;
+	}
+	if($page eq "047"){
+		$ligne=~s/\$(Mr\. Ridley prebendary)\$ (22 Septembris 1543)/$ar$h$da$2$de$eh$se$h$2$eh/;
+		$ligne=~s/(24 Septembre 1543)/$end$end$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Joan frenche)\$/$se$h$1$eh/;
+		$ligne=~s/\$(Henry Tillet)\$/$end$se$h$1$eh/;
+		$ligne=~s/(<!--FIN 047-->)/$end$1/;
+	}
+	if($page eq "048"){
+		$ligne=~s/\$(Nicolas huget)\$/$se$h$1$eh/;
+		$ligne=~s/(26 Septembris Anno 1543)/$end$end$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Drumme)\$/$se$h$1$eh/;
+	}
+	if($page eq "050"){
+		$ligne=~s/(26 Septembre 1543)(,)/$end$end$ar$h$da$1$de$2$eh/;
+		$ligne=~s/\$(Lancaster)\$/$se$h$1$eh/;
+		$ligne=~s/(<!--FIN 050-->)/$end$end$1/;
+	}
+	if($page eq "051"){
+		$ligne=~s/(The curate of muche mongeham)/$ar$h$1$eh/;
+		$ligne=~s/(24 Septembris Anno 1543)/$se$h$da$1$de$eh/;
+		$ligne=~s/(Robert Newington )(24 Septembris)/$end$end$ar$h$1$eh$se$h$da$2/;
+		$ligne=~s/( 1543)(\.)/$1$de$eh/;
+		$ligne=~s/(Thomas makeblythe of Canterbury barber)/$end$end$ar$h$1$eh/;
+		$ligne=~s/(26 Septembris Anno 1543)/$se$h$da$1$de$eh/;
+		$ligne=~s/(<!--FIN 051-->)/$end$end$1/;
+	}
+	if($page eq "052"){
+		$ligne=~s/(21 Septembris 1543)(\.)/$ar$h$da$1$de$2$eh/;
+		$ligne=~s/\$(Marget Toftes the yongar)\$/$se$hs$1$eh/;
+		$ligne=~s/\$(Margaret Toftes seniour)\$/$end$se$hs$1$eh/;
+		$ligne=~s/(<!--FIN 052-->)/$end$1/;
+	}
+	if($page eq "053"){
+		$ligne=~s/\$(Mres\. Starkey)\$/$se$hs$1$eh/;
+		$ligne=~s/\$(Marget Toftes thelder)\$/$end$se$hs$1$eh/;
+		$ligne=~s/\$(To Hasylden Tlunescede)\$/$end$se$hs$1$eh/;
+		$ligne=~s/\$(Bett)\$/$end$se$hs$1$eh/;
+	}
+	if($page eq "054"){
+		$ligne=~s/(22 Septembris 1543)/$end$end$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Humfray Cotton preiste;)/$se$hs$1$eh\$/;
+		$ligne=~s/(26 Septembris 1543)/$end$end$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(The parson of witchelyng)\$/$se$hs$1$eh/;
+		$ligne=~s/(23 Septembris 1543)(\.)/$end$end$ar$h$da$1$de$2$eh/;
+		$ligne=~s/\$(John Riche;)/$se$hs$1$eh\$/;
+		$ligne=~s/(<!--FIN 054-->)/$end$1/;
+	}
+	if($page eq "055"){
+		$ligne=~s/\$(John Castelen)\$/$se$hs$1$eh/;
+		$ligne=~s/\$(Wybourne)\$/$end$se$hs$1$eh/;
+		$ligne=~s/\$(Chapman of Appuldore)\$/$end$se$hs$1$eh/;
+		$ligne=~s/(22 Septembris 1543)/$end$end$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Swan vicar of Sheldewyche)\$/$se$hs$1$eh/;
+		$ligne=~s/\$(John Thatcher yonger)\$/$end$se$hs$1$eh/;
+		$ligne=~s/(22 Septembris 1543)/$end$end$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Norton vicarof ffeversham)\$/$se$hs$1$eh/;
+	}
+	if($page eq "056"){
+		$ligne=~s/(22 Septembris)/$end$end$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Mr\. Drumme)\$/$se$hs$1$eh/;
+		$ligne=~s/\$(Mr\. Scorye)\$/$end$se$hs$1$eh/;
+	}
+	if($page eq "057"){
+		$ligne=~s/(21 Septembris 1543)/$end$end$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Strawghwyn)\$/$se$hs$1$eh/;
+		$ligne=~s/(The )(vii daye of novembre Anno 1541)/$end$end$ar$h$1$da$2$de$eh/;
+		$ligne=~s/\$(George of Canter)\$/$se$hs$1$eh/;
+	}
+	if($page eq "058"){
+		$ligne=~s/(26 Septembris 1543)/$end$end$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Jo Starkey)\$/$se$hs$1$eh/;
+		$ligne=~s/(<!--FIN 058-->)/$end$1/;
+	}
+	if($page eq "059"){
+		$ligne=~s/\$(Thomas Dalle)\$/$se$hs$1$eh/;
+		$ligne=~s/\$(Walmair)\$/$end$se$hs$1$eh/;
+		$ligne=~s/(26 Septembr 1543)/$end$end$ar$h$da$1$de$eh/;
+	}
+	if($page eq "060"){
+		$ligne=~s/\$(Vicar of Sttallefeld)\$/$se$hs$1$eh/;
+		$ligne=~s/(23 Septembris)/$end$end$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Jo Parkehurste)\$/$se$hs$1$eh/;
+		$ligne=~s/\$(Batterste; Salter; Chyrden, hardes; Nevenson; wryte)\$/$end$se$hs$1$eh/;
+	}
+	if($page eq "061"){
+		$ligne=~s/\$(Mr\. Commisser)\$/$end$se$hs$1$eh/;
+		$ligne=~s/\$(George hardes)\$/$end$se$hs$1$eh/;
+		$ligne=~s/(<!--FIN 061-->)/$end$1/;
+	}
+	if($page eq "062"){
+		$ligne=~s/\$(Raynold Buckemer)\$/$se$hs$1$eh/;
+		$ligne=~s/(21 Septembris)/$end$end$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Johne Benson)\$/$se$hs$1$eh/;
+		$ligne=~s/\$(Joys Benson)\$/$end$se$hs$1$eh/;
+		$ligne=~s/(21 Septembris 1543)(\.)/$end$end$ar$h$da$1$de$2$eh/;
+		$ligne=~s/\$(Ric Turner)\$/$se$hs$1$eh/;
+		$ligne=~s/(<!--FIN 062-->)/$end$end$1/;
+	}
+	if($page eq "063"){
+		$ligne=~s/(21 Septembris)/$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Hugh cooperof Tenterden)\$/$se$hs$1$eh/;
+		$ligne=~s/\$(Archebolde of faversham)\$ (21 Septembris 1543)(\.)/$end$end$ar$h$da$2$de$3$eh$se$hs$1$eh/;
+	}
+	if($page eq "064"){
+		$ligne=~s/(23 Septembr)/$end$end$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Hedcrone, Thomas Baker; john Tonge; Nicolas tery)\$/$se$hs$1$eh/;
+		$ligne=~s/\$(john ffishcocke)\$/$end$se$hs$1$eh/;
+		$ligne=~s/(<!--FIN 064-->)/$end$end$1/;
+	}
+	if($page eq "065"){
+		$ligne=~s/(24 Septembr 1543)/$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Antony ager;Simon Castlyn)\$/$se$hs$1$eh/;
+		$ligne=~s/(26 Septembris 1543)/$end$end$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(The vicar of Newington)\$/$se$hs$1$eh/;
+		$ligne=~s/(26 Septembr 1543)(\.)/$end$end$ar$h$da$1$de$2$eh/;
+		$ligne=~s/\$(the vicar of s\. mary)\$/$se$hs$1$eh/;
+		$ligne=~s/(<!--FIN 065-->)/$end$end$1/;
+	}
+	if($page eq "066"){
+		$ligne=~s/(<!--DÉBUT 066-->)/$1$ar/;
+		$ligne=~s/(<!--FIN 066-->)/$end$1/;
+	}
+	if($page eq "067"){
+		$ligne=~s/(24 Septembris)/$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Holy)\$/$se$hs$1$eh/;
+		$ligne=~s/\$(Bland)\$ (21 Septembris 1543)/$end$end$ar$h$da$2$de$eh$se$hs$1$eh/;
+	}
+	if($page eq "071"){
+		$ligne=~s/(26 Septembris 1543)(\.)/$end$end$ar$h$da$1$de$2$eh/;
+		$ligne=~s/\$(Boucher)\$/$se$hs$1$eh/;
+		$ligne=~s/(21 Septembris 1543)/$end$end$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Jo\. Toftes)\$/$se$hs$1$eh/;
+	}
+	if($page eq "073"){
+		$ligne=~s/(<!--FIN 073-->)/$end$end$1/;
+	}
+	if($page eq "074"){
+		$ligne=~s/(24 Septembr 1543)/$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Christofor levenysh)\$/$se$hs$1$eh/;
+		$ligne=~s/(26 Sept 1543)/$end$end$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Nicolas ffitzwilliams)\$/$se$hs$1$eh/;
+		$ligne=~s/(<!--FIN 074-->)/$end$end$1/;
+	}
+	if($page eq "075"){
+		$ligne=~s/(Turnour)/$ar$h$1$eh/;
+		$ligne=~s/(21 Septembr 1543)/$end$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Nevenson)\$/$se$hs$1$eh/;
+	}
+	if($page eq "078"){
+		$ligne=~s/(\$Concernyng )/$end$end$ar$1/;
+	}
+	if($page eq "081"){
+		$ligne=~s/(<!--FIN 081-->)/$end$1/;
+	}
+	if($page eq "082"){
+		$ligne=~s/(Thomas Dawby nowe parson of wycheling)/$ar$h$1/;
+		$ligne=~s/(sumtyme Curate of Leneham)/$1$eh/;
+	}
+	if($page eq "084"){
+		$ligne=~s/(Sir Rauf\.)/$end$ar$h$1$eh/;
+		$ligne=~s/(Sir Robert a Stotte curate)/$end$ar$h$1/;
+		$ligne=~s/(of Davyngton)/$1$eh/;
+	}
+	if($page eq "085"){
+		$ligne=~s/(<!--FIN 085-->)/$end$1/;
+	}
+	#pages 87-->94
+	if($page eq "087"){
+		$ligne=~s/\$(Raynold Buckmer)\$/$ar$h$1$eh/;
+		$ligne=~s/(<!--FIN 087-->)/$end$1/;
+	}
+	if($page eq "088"){
+		$ligne=~s/\$(Visitacion Nevenson)\$/$ar$hs$1$eh/;
+		$ligne=~s/(To the Right honorable and our especially)/$ar$1/;
+	}
+	if($page eq "089"){
+		$ligne=~s/(<!--FIN 089-->)/$end$1/;
+	}
+	if($page eq "090"){
+		$ligne=~s/(25 Septembr 1543)/$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Serles)\$/$se$hs$1$eh/;
+		$ligne=~s/\$(Scory)\$ (Die Ascentionis Domini 1541)/$end$end$ar$hs$1$eh$se$h$da$2$de$eh/;
+		$ligne=~s/(In )(Lent 1541)/$se$h$1$da$2$de$eh/;
+		$ligne=~s/\$(Drumme)\$(In )(die penthecostes ultimo)(\.)/$end$end$ar$hs$1$eh$se$h$2$da$3$de$4$eh/;
+		$ligne=~s/(<!--FIN 090-->)/$end$end$1/;
+	}
+	if($page eq "091"){
+		$ligne=~s/(29 July Anno domini Regis)/$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Shether)\$/$se$hs$1$eh/;
+		$ligne=~s/(Hugh Cooper\.)/$end$end$ar$h$1$eh/;
+		$ligne=~s/(George Hardes,)/$end$ar$h$1$eh/;
+		$ligne=~s/(<!--FIN 091-->)/$end$1/;
+	}
+	if($page eq "092"){
+		$ligne=~s/\$(Strawyn)\$/$ar$hs$1$eh/;
+		$ligne=~s/\$(Swan vicar of Sheldewiche)\$/$end$ar$hs$1$eh/;
+		$ligne=~s/\$(John Benson)\$/$end$ar$hs$1$eh/;
+		$ligne=~s/\$(Joyce Benson)\$/$end$ar$hs$1$eh/;
+		$ligne=~s/(<!--FIN 092-->)/$end$1/;
+	}
+	if($page eq "093"){
+		$ligne=~s/\$(Turnour)\$/$ar$hs$1$eh/;
+		$ligne=~s/\$(Humphrey cotton preest)\$/$end$ar$hs$1$eh/;
+		$ligne=~s/\$(Nicolas ffitzwilliam)\$/$end$ar$hs$1$eh/;
+		$ligne=~s/(<!--FIN 093-->)/$end$1/;
+	}
+	if($page eq "094"){
+		$ligne=~s/\$(Hasilden)\$/$ar$hs$1$eh/;
+		$ligne=~s/\$(John Thatcher Junior)\$/$end$ar$hs$1$eh/;
+		$ligne=~s/(<!--FIN 094-->)/$end$1/;
+	}
+
+
+	#pages 87-->94
+	if($page eq "087"){
+		$ligne=~s/\$(Raynold Buckmer)\$/$ar$h$1$eh/;
+		$ligne=~s/(<!--FIN 087-->)/$end$1/;
+	}
+	if($page eq "088"){
+		$ligne=~s/\$(Visitacion Nevenson)\$/$ar$hs$1$eh/;
+		$ligne=~s/(To the Right honorable and our especially)/$ar$1/;
+	}
+	if($page eq "089"){
+		$ligne=~s/(<!--FIN 089-->)/$end$1/;
+	}
+	if($page eq "090"){
+		$ligne=~s/(25 Septembr 1543)/$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Serles)\$/$se$hs$1$eh/;
+		$ligne=~s/\$(Scory)\$ (Die Ascentionis Domini 1541)/$end$end$ar$hs$1$eh$se$h$da$2$de$eh/;
+		$ligne=~s/(In )(Lent 1541)/$se$h$1$da$2$de$eh/;
+		$ligne=~s/\$(Drumme)\$(In )(die penthecostes ultimo)(\.)/$end$end$ar$hs$1$eh$se$h$2$da$3$de$4$eh/;
+		$ligne=~s/(<!--FIN 090-->)/$end$end$1/;
+	}
+	if($page eq "091"){
+		$ligne=~s/(29 July Anno domini Regis)/$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Shether)\$/$se$hs$1$eh/;
+		$ligne=~s/(Hugh Cooper\.)/$end$end$ar$h$1$eh/;
+		$ligne=~s/(George Hardes,)/$end$ar$h$1$eh/;
+		$ligne=~s/(<!--FIN 091-->)/$end$1/;
+	}
+	if($page eq "092"){
+		$ligne=~s/\$(Strawyn)\$/$ar$hs$1$eh/;
+		$ligne=~s/\$(Swan vicar of Sheldewiche)\$/$end$ar$hs$1$eh/;
+		$ligne=~s/\$(John Benson)\$/$end$ar$hs$1$eh/;
+		$ligne=~s/\$(Joyce Benson)\$/$end$ar$hs$1$eh/;
+		$ligne=~s/(<!--FIN 092-->)/$end$1/;
+	}
+	if($page eq "093"){
+		$ligne=~s/\$(Turnour)\$/$ar$hs$1$eh/;
+		$ligne=~s/\$(Humphrey cotton preest)\$/$end$ar$hs$1$eh/;
+		$ligne=~s/\$(Nicolas ffitzwilliam)\$/$end$ar$hs$1$eh/;
+		$ligne=~s/(<!--FIN 093-->)/$end$1/;
+	}
+	if($page eq "094"){
+		$ligne=~s/\$(Hasilden)\$/$ar$hs$1$eh/;
+		$ligne=~s/\$(John Thatcher Junior)\$/$end$ar$hs$1$eh/;
+		$ligne=~s/(<!--FIN 094-->)/$end$1/;
+	}
 
 	$ligne=~s/<!--DÉBUT 095-->/$l<!--DÉBUT 095-->/;
 	$ligne =~s/<!--FIN 095-->/<!--FIN 095-->$end/;
@@ -310,24 +737,7 @@ while (my $ligne = <TEXTE>) {
 	$ligne=~s/<!--DÉBUT 359-->/$d<!--DÉBUT 359-->/;
 	$ligne =~s/<!--FIN 359-->/<!--FIN 359-->$end/;
 
-
-	#gestion des articles
-		#creation variable qui récupère le numéros de la page en cours
-	my $page='';
-	if ($ligne=~/<!--DÉBUT (\d+\w?)/){$page=$1;} 
-	print $page;#verif
-		#en testant la page où l'on est et la chaîne de caractère correspondant au titre/à la fin de la div type "article" on génère les balise ouvrante ($ar) et fermante ($end)
-
-	if ($ligne=~/Serles/ && $page='009'){
-		$ligne=~s/Serles/$ar<head>Serles<\/head>/;
-	}
-	if($ligne=~/Sandwich al<expan>ias<\/expan> Gardin<expan>er <\/expan>in <expan>ser<\/expan>mon in/ && $page='009'){
-		$ligne=~s/Sandwich al<expan>ias<\/expan> Gardin<expan>er <\/expan>in <expan>ser<\/expan>mon in/$end<head>Sandwich al<expan>ias<\/expan> Gardin<expan>er <\/expan>in <expan>ser<\/expan>mon in<\/head>/;
-	}
-
-
-
-
+	
 	$txt = $txt."\n".$ligne;#récupération texte complet, stockage dans une variable
 }
 
@@ -335,3 +745,13 @@ while (my $ligne = <TEXTE>) {
 print TEXTEOUT "$txt".'>';
 close (TEXTE);
 close (TEXTEOUT);
+
+#pense-bête, gestion des articles pages à pages
+#	if($page eq "014"){
+#		$ligne=~s/()//;
+#		$ligne=~s/()//;
+#		$ligne=~s/()//;
+#		$ligne=~s/\$()\$//;
+#		$ligne=~s/\$()\$//;
+#		$ligne=~s/()//;
+#	}

@@ -27,6 +27,9 @@ while (my $ligne = <TEXTE>) {
 	chop $ligne;#découpage par ligne
 #AJOUTS des <spaces> avec @unit et @quantity si il est écrit "blank page"
 	$ligne=~s/Blank page/<space unit="pages" quantity="1"><\/space>/;
+	$ligne=~s/blank page/<space unit="pages" quantity="1"><\/space>/;
+	$ligne=~s/blanke page/<space unit="pages" quantity="1"><\/space>/;
+	$ligne=~s/page is blank/<space unit="pages" quantity="1"><\/space>/;
 
 
 #CRÉATION DES "BOÎTES ROUGES", élément <div> type=collection n =
