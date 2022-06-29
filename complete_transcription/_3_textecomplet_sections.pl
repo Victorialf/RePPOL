@@ -56,7 +56,7 @@ while (my $ligne = <TEXTE>) {
 		#creation variable qui récupère le numéros de la page en cours
 	if ($ligne=~/DÉBUT (\d+\w?)/){
 		$page=$1;
-		print "$page\n";
+		#print "$page\n";
 #	$ligne=~s/DÉBUT (\d+\w?)/DÉBUT $page/g #debug
 	}
 #en testant la page où l'on est et la chaîne de caractère correspondant au titre/à la fin de la div type "article" on génère les balise ouvrante ($ar) et fermante ($end)
@@ -127,7 +127,7 @@ while (my $ligne = <TEXTE>) {
 		$ligne=~s/( Chalocke)/$1$eh/;
 		$ligne=~s/(The vicar of Tenterden)/$end$ar$h$1$eh/;
 		$ligne=~s/(The <expan>par<\/expan>son of Riple)/$end$ar$h$1$eh/;
-		$ligne=~s/<!--FIN 015-->/$end$1/;
+		$ligne=~s/(<!--FIN 015-->)/$end$1/;
 	}
 	if($page eq "016"){
 		$ligne=~s/(The viker of Betrisden)/$ar$h$1$eh/;
@@ -201,7 +201,7 @@ while (my $ligne = <TEXTE>) {
 	}
 	if($page eq "035"){
 		$ligne=~s/(Sandewiche\. )(Dominica in )(70 Anno Domini 1542)(o)/$end$ar$h$1$eh$se$h$2$da$3$de$4$eh/;
-		$ligne=~s/(Dominica\. )(4ta post pascha\. Anno Domini 1543)(o)/$end$se$h$1$da$2$de$4$eh/;
+		$ligne=~s/(Dominica\. )(4ta post pascha\. Anno Domini 1543)(o)/$end$se$h$1$da$2$de$3$eh/;
 		$ligne=~s/(Dominica )(3a\. Anno Domini 1533\.)/$end$se$h$1$da$2$de$eh/;
 		$ligne=~s/(<!--FIN 035-->)/$end$end$1/;
 		#$ligne=~s/()//;
@@ -301,7 +301,7 @@ while (my $ligne = <TEXTE>) {
 		$ligne=~s/(22 Septembris 1543)/$end$end$ar$h$da$1$de$eh/;
 		$ligne=~s/\$(Swan vicar of Sheldewyche)\$/$se$hs$1$eh/;
 		$ligne=~s/\$(John Thatcher yonger)\$/$end$se$hs$1$eh/;
-		$ligne=~s/(22 Septembris 1543)/$end$end$ar$h$da$1$de$eh/;
+		#$ligne=~s/(22 Septembris 1543)/$end$end$ar$h$da$1$de$eh/;
 		$ligne=~s/\$(Norton vicarof ffeversham)\$/$se$hs$1$eh/;
 	}
 	if($page eq "056"){
@@ -346,8 +346,8 @@ while (my $ligne = <TEXTE>) {
 		$ligne=~s/(<!--FIN 062-->)/$end$end$1/;
 	}
 	if($page eq "063"){
-		$ligne=~s/(21 Septembris)/$ar$h$da$1$de$eh/;
-		$ligne=~s/\$(Hugh cooperof Tenterden)\$/$se$hs$1$eh/;
+		$ligne=~s/(21 Septembr<expan>is<\/expan>)/$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Hugh Coop<expan>er<\/expan> of Tenterden)\$/$se$hs$1$eh/;
 		$ligne=~s/\$(Archebolde of faversham)\$ (21 Septembris 1543)(\.)/$end$end$ar$h$da$2$de$3$eh$se$hs$1$eh/;
 	}
 	if($page eq "064"){
@@ -402,7 +402,7 @@ while (my $ligne = <TEXTE>) {
 		$ligne=~s/(<!--FIN 081-->)/$end$1/;
 	}
 	if($page eq "082"){
-		$ligne=~s/(Thomas Dawby nowe parson of wycheling)/$ar$h$1/;
+		$ligne=~s/(Thomas Dawby nowe <expan>par<\/expan>son of wycheling)/$ar$h$1/;
 		$ligne=~s/(sumtyme Curate of Leneham)/$1$eh/;
 	}
 	if($page eq "084"){
@@ -415,12 +415,12 @@ while (my $ligne = <TEXTE>) {
 	}
 	#pages 87-->94
 	if($page eq "087"){
-		$ligne=~s/\$(Raynold Buckmer)\$/$ar$h$1$eh/;
+		$ligne=~s/\$(Raynold buckmer)\$/$ar$hs$1$eh/;
 		$ligne=~s/(<!--FIN 087-->)/$end$1/;
 	}
 	if($page eq "088"){
-		$ligne=~s/\$(Visitacion Nevenson)\$/$ar$hs$1$eh/;
-		$ligne=~s/(To the Right honorable and our especially)/$ar$1/;
+		$ligne=~s/\$(Visitac<expan>i<\/expan>on Nevenson)\$/$ar$hs$1$eh/;
+		$ligne=~s/(To the Right honorable and o<expan>ur<\/expan> especially)/$end$ar$1/;
 	}
 	if($page eq "089"){
 		$ligne=~s/(<!--FIN 089-->)/$end$1/;
@@ -448,54 +448,7 @@ while (my $ligne = <TEXTE>) {
 		$ligne=~s/(<!--FIN 092-->)/$end$1/;
 	}
 	if($page eq "093"){
-		$ligne=~s/\$(Turnour)\$/$ar$hs$1$eh/;
-		$ligne=~s/\$(Humphrey cotton preest)\$/$end$ar$hs$1$eh/;
-		$ligne=~s/\$(Nicolas ffitzwilliam)\$/$end$ar$hs$1$eh/;
-		$ligne=~s/(<!--FIN 093-->)/$end$1/;
-	}
-	if($page eq "094"){
-		$ligne=~s/\$(Hasilden)\$/$ar$hs$1$eh/;
-		$ligne=~s/\$(John Thatcher Junior)\$/$end$ar$hs$1$eh/;
-		$ligne=~s/(<!--FIN 094-->)/$end$1/;
-	}
-
-
-	#pages 87-->94
-	if($page eq "087"){
-		$ligne=~s/\$(Raynold Buckmer)\$/$ar$h$1$eh/;
-		$ligne=~s/(<!--FIN 087-->)/$end$1/;
-	}
-	if($page eq "088"){
-		$ligne=~s/\$(Visitacion Nevenson)\$/$ar$hs$1$eh/;
-		$ligne=~s/(To the Right honorable and our especially)/$ar$1/;
-	}
-	if($page eq "089"){
-		$ligne=~s/(<!--FIN 089-->)/$end$1/;
-	}
-	if($page eq "090"){
-		$ligne=~s/(25 Septembr 1543)/$ar$h$da$1$de$eh/;
-		$ligne=~s/\$(Serles)\$/$se$hs$1$eh/;
-		$ligne=~s/\$(Scory)\$ (Die Ascentionis Domini 1541)/$end$end$ar$hs$1$eh$se$h$da$2$de$eh/;
-		$ligne=~s/(In )(Lent 1541)/$se$h$1$da$2$de$eh/;
-		$ligne=~s/\$(Drumme)\$(In )(die penthecostes ultimo)(\.)/$end$end$ar$hs$1$eh$se$h$2$da$3$de$4$eh/;
-		$ligne=~s/(<!--FIN 090-->)/$end$end$1/;
-	}
-	if($page eq "091"){
-		$ligne=~s/(29 July Anno domini Regis)/$ar$h$da$1$de$eh/;
-		$ligne=~s/\$(Shether)\$/$se$hs$1$eh/;
-		$ligne=~s/(Hugh Cooper\.)/$end$end$ar$h$1$eh/;
-		$ligne=~s/(George Hardes,)/$end$ar$h$1$eh/;
-		$ligne=~s/(<!--FIN 091-->)/$end$1/;
-	}
-	if($page eq "092"){
-		$ligne=~s/\$(Strawyn)\$/$ar$hs$1$eh/;
-		$ligne=~s/\$(Swan vicar of Sheldewiche)\$/$end$ar$hs$1$eh/;
-		$ligne=~s/\$(John Benson)\$/$end$ar$hs$1$eh/;
-		$ligne=~s/\$(Joyce Benson)\$/$end$ar$hs$1$eh/;
-		$ligne=~s/(<!--FIN 092-->)/$end$1/;
-	}
-	if($page eq "093"){
-		$ligne=~s/\$(Turnour)\$/$ar$hs$1$eh/;
+		$ligne=~s/\$(Turno<expan>ur<\/expan>)\$/$ar$hs$1$eh/;
 		$ligne=~s/\$(Humphrey cotton preest)\$/$end$ar$hs$1$eh/;
 		$ligne=~s/\$(Nicolas ffitzwilliam)\$/$end$ar$hs$1$eh/;
 		$ligne=~s/(<!--FIN 093-->)/$end$1/;
@@ -507,61 +460,61 @@ while (my $ligne = <TEXTE>) {
 	}
 
 	$ligne=~s/<!--DÉBUT 095-->/$l<!--DÉBUT 095-->/;
-	$ligne =~s/<!--FIN 095-->/<!--FIN 095-->$end/;
+	$ligne=~s/<!--FIN 095-->/<!--FIN 095-->$end/;
 
 	$ligne=~s/<!--DÉBUT 097-->/$qs<!--DÉBUT 097-->/;
-	$ligne =~s/<!--FIN 097-->/<!--FIN 097-->$end/;
+	$ligne=~s/<!--FIN 097-->/<!--FIN 097-->$end/;
 
 	$ligne=~s/<!--DÉBUT 099-->/$l<!--DÉBUT 099-->/;
-	$ligne =~s/<!--FIN 099-->/<!--FIN 099-->$end/;
+	$ligne=~s/<!--FIN 099-->/<!--FIN 099-->$end/;
 
 	$ligne=~s/<!--DÉBUT 101-->/$as<!--DÉBUT 101-->/;
-	$ligne =~s/<!--FIN 102-->/<!--FIN 102-->$end/;
+	$ligne=~s/<!--FIN 102-->/<!--FIN 102-->$end/;
 
 	$ligne=~s/<!--DÉBUT 103-->/$qs<!--DÉBUT 103-->/;
-	$ligne =~s/<!--FIN 110-->/<!--FIN 110-->$end/;
+	$ligne=~s/<!--FIN 110-->/<!--FIN 110-->$end/;
 
 	$ligne=~s/<!--DÉBUT 119-->/$l<!--DÉBUT 119-->/;
-	$ligne =~s/<!--FIN 119-->/<!--FIN 119-->$end/;
+	$ligne=~s/<!--FIN 119-->/<!--FIN 119-->$end/;
 
 	$ligne=~s/<!--DÉBUT 121-->/$as<!--DÉBUT 121-->/;
-	$ligne =~s/<!--FIN 121-->/<!--FIN 121-->$end/;
+	$ligne=~s/<!--FIN 121-->/<!--FIN 121-->$end/;
 
 	$ligne=~s/<!--DÉBUT 123-->/$qs<!--DÉBUT 123-->/;
-	$ligne =~s/<!--FIN 123-->/<!--FIN 123-->$end/;
+	$ligne=~s/<!--FIN 123-->/<!--FIN 123-->$end/;
 
 	$ligne=~s/<!--DÉBUT 125-->/$d<!--DÉBUT 125-->/;
-	$ligne =~s/<!--FIN 127-->/<!--FIN 127-->$end/;
+	$ligne=~s/<!--FIN 127-->/<!--FIN 127-->$end/;
 
 	$ligne=~s/<!--DÉBUT 133-->/$d<!--DÉBUT 133-->/;
-	$ligne =~s/<!--FIN 133-->/<!--FIN 133-->$end/;
+	$ligne=~s/<!--FIN 133-->/<!--FIN 133-->$end/;
 
 	$ligne=~s/<!--DÉBUT 135-->/$as<!--DÉBUT 135-->/;
-	$ligne =~s/<!--FIN 137-->/<!--FIN 137-->$end/;
+	$ligne=~s/<!--FIN 137-->/<!--FIN 137-->$end/;
 
 	$ligne=~s/<!--DÉBUT 141-->/$d<!--DÉBUT 141-->/;
-	$ligne =~s/<!--FIN 144-->/<!--FIN 144-->$end/;
+	$ligne=~s/<!--FIN 144-->/<!--FIN 144-->$end/;
 
 	$ligne=~s/<!--DÉBUT 145-->/$d<!--DÉBUT 145-->/;
-	$ligne =~s/<!--FIN 151-->/<!--FIN 151-->$end/;
+	$ligne=~s/<!--FIN 151-->/<!--FIN 151-->$end/;
 
 	$ligne=~s/<!--DÉBUT 153-->/$d<!--DÉBUT 153-->/;
-	$ligne =~s/<!--FIN 153-->/<!--FIN 153-->$end/;
+	$ligne=~s/<!--FIN 153-->/<!--FIN 153-->$end/;
 
 	$ligne=~s/<!--DÉBUT 155-->/$d<!--DÉBUT 155-->/;
-	$ligne =~s/<!--FIN 155-->/<!--FIN 155-->$end/;
+	$ligne=~s/<!--FIN 155-->/<!--FIN 155-->$end/;
 
 	$ligne=~s/<!--DÉBUT 157-->/$qs<!--DÉBUT 157-->/;
-	$ligne =~s/<!--FIN 157-->/<!--FIN 157-->$end/;
+	$ligne=~s/<!--FIN 157-->/<!--FIN 157-->$end/;
 
 	$ligne=~s/<!--DÉBUT 160-->/$as<!--DÉBUT 160-->/;
-	$ligne =~s/<!--FIN 161-->/<!--FIN 161-->$end/;
+	$ligne=~s/<!--FIN 161-->/<!--FIN 161-->$end/;
 
 	$ligne=~s/<!--DÉBUT 165-->/$as<!--DÉBUT 165-->/;
-	$ligne =~s/<!--FIN 166d-->/<!--FIN 166d-->$end/;
+	$ligne=~s/<!--FIN 166d-->/<!--FIN 166d-->$end/;
 
 	$ligne=~s/<!--DÉBUT 167-->/$qs<!--DÉBUT 167-->/;
-	$ligne =~s/<!--FIN 169-->/<!--FIN 169-->$end/;
+	$ligne=~s/<!--FIN 169-->/<!--FIN 169-->$end/;
 
 	$ligne=~s/<!--DÉBUT 171-->/$as<!--DÉBUT 171-->/;
 	$ligne =~s/<!--FIN 172-->/<!--FIN 172-->$end/;

@@ -54,20 +54,28 @@ my $txt = '';
 		#correction des numéros de page avec une lettre soit 
 			#166 a vers 166a 
 		$ligne=~s/<!--DÉBUT 166 a-->/<!--DÉBUT 166a-->/;
+		$ligne=~s/<!--FIN 166 a-->/<!--FIN 166a-->/;
 			#166 b vers 166b
 		$ligne=~s/<!--DÉBUT 166 b-->/<!--DÉBUT 166b-->/;
+		$ligne=~s/<!--FIN 166 b-->/<!--FIN 166b-->/;
 			#166 c vers 166c
 		$ligne=~s/<!--DÉBUT 166 c-->/<!--DÉBUT 166c-->/;
+		$ligne=~s/<!--FIN 166 c-->/<!--FIN 166c-->/;
 			#166 d vers 166d
 		$ligne=~s/<!--DÉBUT 166 d-->/<!--DÉBUT 166d-->/;
+		$ligne=~s/<!--FIN 166 d-->/<!--FIN 166d-->/;
 			#264 a vers 264a
 		$ligne=~s/<!--DÉBUT 264 a-->/<!--DÉBUT 264a-->/;
+		$ligne=~s/<!--FIN 264 a-->/<!--FIN 264a-->/;
 			#265 a vers 265a
 		$ligne=~s/<!--DÉBUT 265 a-->/<!--DÉBUT 265a-->/;
+		$ligne=~s/<!--FIN 265 a-->/<!--FIN 265a-->/;
 			#324 a vers 324a
 		$ligne=~s/<!--DÉBUT 324 a-->/<!--DÉBUT 324a-->/;
+		$ligne=~s/<!--FIN 324 a-->/<!--FIN 324a-->/;
 			#325 a vers 325a
 		$ligne=~s/<!--DÉBUT 325 a-->/<!--DÉBUT 325a-->/;
+		$ligne=~s/<!--FIN 325 a-->/<!--FIN 325a-->/;
 
 
 
