@@ -6,8 +6,8 @@
 	<teiHeader>
 		<fileDesc>
 			<titleStmt>
-				<title>Cambridge, Corpus Christi College, MS 128: Documents Relating to Archbishop
-					Cranmer</title>
+<!--				<title>Cambridge, Corpus Christi College, MS 128: Documents Relating to Archbishop Cranmer</title>-->
+				<title>Documentation projet RePPOL</title>
 				<funder ref="http://www.isite-ulne.fr/index.php/fr/page-daccueil/">I-site Université
 					Lille-Nord-Europe</funder>
 				<funder ref="https://comod.universite-lyon.fr/">LabEx COMOD, université de
@@ -353,6 +353,94 @@
 						par des index.</p>
 				</div2>
 				<div2>
+					<head>Structure générale de l'encodage</head>
+					<div3>
+						<head>Un facsimilé et deux transcriptions</head>
+						<p>Dans le cadre du projet RePPOL, l'équipe scientifique a souhaité intégrer en plus de la transcription élaborée dans le cadre du projet, le manuscrit sous forme de fichiers images au format <ref target="https://iiif.io/">IIIF</ref> et la transcription du Calendar conçue au début du XXe siècle.</p>
+						<p>Pour ce faire nous utilisons l'élément <gi>facsimile</gi> représentant les fichiers images du facsimilé et deux éléments <gi>text</gi> représentant l'un la transcription du projet RePPOL et l'autre la transcription du Calendar. Afin de différencier chacun des éléments <gi>text</gi> nous utilisons l'attribut <att>xml:id</att> avec les valeurs <val>"reppol_trans"</val> et <val>"calendar_trans"</val> respectivement.</p>
+						<egXML xmlns="http://www.tei-c.org/ns/Examples">
+							<facsimile>
+								<!--les éléments du facsimile ici-->
+							</facsimile>
+							<text xml:id="reppol_trans">
+								<body>
+									<!--les éléments constituant la transcription du projet RePPOL-->
+								</body>
+							</text>
+							<text xml:id="calendar_trans">
+								<body>
+									<!--les éléments constituant la transcription du projet Calendar-->
+								</body>
+							</text>
+						</egXML>
+						<!--<p>L'encodage de la transcription effectuée dans le cadre du projet RePPOL est l'objet principal de cette documentation</p>-->
+						<div4>
+							<head>Les éléments du facsimile</head>
+							<p>Pour chacune des pages du texte nous disposons d'un fichier image que nous intégrons à l'encodage en employant un élément <gi>surface</gi> muni d'un attribut <att>xml:id</att> permettant de l'identifier. La valeur de l'attribut <att>xml:id</att> est conçu selon le modèle : <val>"fs_040"</val> où les derniers caractères correspond au numéros de la page, toujours constitués d'au moins trois chiffres éventuellement suivi d'une lettre comme par exemple pour les pages 166a à 166d. Au sein de l'élément <gi>surface</gi> nous insérons un élément <gi>graphic</gi> avec un attribut <att>url</att> dont la valeur est l'url de l'image correspondant à la page encodée.</p>
+							<egXML xmlns="http://www.tei-c.org/ns/Examples">
+								<facsimile>
+									<surface xml:id="fs_043">
+										<graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_043_TC_46/full/full/0/default.jpg"/>
+									</surface>
+									<surface xml:id="fs_044">
+										<graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_044_TC_46/full/full/0/default.jpg"/>
+									</surface>
+									<surface xml:id="fs_045">
+										<graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_045_TC_46/full/full/0/default.jpg"/>
+									</surface>
+									<!-- les autres pages -->
+									<surface xml:id="fs_166a">
+										<graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_166a_TC_46/full/full/0/default.jpg"/>
+									</surface>
+									<surface xml:id="fs_166b">
+										<graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_166b_TC_46/full/full/0/default.jpg"/>
+									</surface>
+									<!-- les autres pages -->
+								</facsimile>
+							</egXML>
+							<p>Chacun des éléments <gi>surface</gi> sera l'objet d'un renvoi ciblant la valeur de son attribut <att>xml:id</att> dans un élément <gi>pb</gi> <gloss>page begining</gloss> qui fait l'objet d'une explication détaillées.
+							</p>
+							<listRef>
+								<desc>Plus d'information concernant l'emploi de l'élément <gi>pb</gi> <gloss>page begining</gloss> :</desc>
+								<ptr target="#pb"/>
+							</listRef>
+						</div4>
+						<div4>
+							<head>La transcription du Calendar</head>
+							<p>La transcription du Calendar bien qu'intégrée au projet ne constitue pas son objet principal et est au demeurant moins détaillée que la transcription du projet RePPOL car elle omet de transcrire de nombreux éléments textuels auxquels le projet RePPOL a prété une attention toute particulière. Aussi, nous contentons-nous de baliser chacune des pages du Calendar dans un élément <gi>div</gi> de <att>type</att> <val>page_calendar</val> suivi d'un élément <gi>pb</gi> traité de manière identique au <gi>pb</gi> de la transcription RePPOL.</p>
+							<listRef>
+								<desc>Plus d'information concernant l'emploi de l'élément <gi>pb</gi> <gloss>page begining</gloss> :</desc>
+								<ptr target="#pb"/>
+							</listRef>
+							<p>Après quoi nous ajoutons des éléments <gi>div</gi> <gloss>division</gloss>contenant des éléments <gi>head</gi> <gloss>titre</gloss> et <gi>p</gi> <gloss>paragraphe</gloss> en identifiant les segments textuels retranscrits dans le Calendar.</p>
+							<egXML xmlns="http://www.tei-c.org/ns/Examples">
+								<div type="page_calendar">
+									<pb corresp="facs_063" n="063"/>
+									<div>
+										<head>21 Sept.</head>
+										<p>Hugh Cooper of Tenterden said, 18 Feb. last, that God was neither pleased
+											with fasting nor discontent with eating. On the 4 March last he preached
+											that neither alms deeds, fasting, nor prayer did help the soul, but faith
+											only; also that whoever trusted to have help by the prayers of any person
+											that ever God made committed idolatry. He inverted the order of the
+											Confiteor, omitting the name of Mary and All Saints. He preached 28 April
+											that God did not regard the prayers but the persons. Added by Cr. :On the 6
+											May he said "On Saturday you shall have Whitsun Even. You need not to fast
+											except you will."</p>
+									</div>
+									<div>
+										<head>21 Sept. 1543.</head>
+										<p>Archebolde of Faversham. "I will, quod he, come to my ghostly father and show
+											to him I have sinned in the 7 deadly sins and have broken the 10
+											commandments, and misspent my 5 wits and will desire him of his ghostly
+											counsel." </p>
+									</div>
+								</div>
+							</egXML>
+						</div4>
+					</div3>
+				</div2>
+				<div2>
 					<head>Découper le texte</head>
 					<div3>
 						<head>Grands ensembles, collections</head>
@@ -577,29 +665,20 @@
 									</egXML></p>
 							</div5>
 							<div5>
-								<head>Les <gi>div</gi> typées <val>"article_collection"</val> et les
-										<gi>div</gi> typées <val>"article"</val></head>
+								<head>Les <gi>div</gi> typées <val>"article"</val></head>
 								<p>Jusqu'à présent nous nous sommes concentrés sur les <gi>div</gi>
 									qui correspondaient à des sections du manuscrit. Il existe
 									cependant un type particulier de <gi>div</gi> typée
-										<val>"article"</val> réunie ensemble dans ce que l'on serait
-									tenté d'appeler une sur-section soit une <gi>div</gi> typée
-										<val>"article_collection"</val>. Ces sections sont des notes
+										<val>"article"</val>. Ces sections sont des notes
 									dénonçant des manquements ou des pratiques jugées scandaleuses
 									par les enquêteurs. Elles récapitulent des chefs d'accusation
 									contre des membres identifiées du clergé. Généralement titrées
 									de manière à identifier l'individu faisant l'objet de cette note
 									et parfois subdivisées en sous-sections également titrées,
 									généralement par un élément de contexte (un lieu, une date),
-									nous réunissons ces sections lorsqu'elles paraissent à l'équipe
-									scientifique former un seul et même flux de texte correspondant
-									à un moment de l'enquête. Nous appelons cette sur-section
-									réunissant les articles <val>"article_collection"</val> numéroté
-									grâce à l'attribut <att>n</att> au sein duquel chaque élément
-										<gi>div</gi> fils sera typé <val>"article"</val> et numéroté
-									à l'aide de l'attribut <att>n</att>. Ce qui donne : <egXML
+									Ce qui donne : <egXML
 										xmlns="http://www.tei-c.org/ns/Examples">
-										<div type="article_collection" n="1">
+										<div type="collection" n="1">
 											<!-- des sections <div> typée article ici-->
 											<div type="article" n="1">
 												<!-- le contenu de l'article ici -->
@@ -618,7 +697,7 @@
 									sous-section balisée(s) à l'aide d'un élément <gi>div</gi> non
 									typé. Ce qui donne pour les pages 9 à 11 : <egXML
 										xmlns="http://www.tei-c.org/ns/Examples">
-										<div type="article_collection" n="1">
+										<div type="collection" n="1">
 											<!-- des sections <div> typée article ici-->
 											<div type="article" n="1">
 												<!-- le contenu de l'article ici -->
@@ -668,7 +747,7 @@
 									fils de la section correspondante. Ce qui donne pour les pages 9
 									à 11. <!--EXPLICATION DES TITRES-->
 									<egXML xmlns="http://www.tei-c.org/ns/Examples">
-										<div type="article_collection" n="1">
+										<div type="collection" n="1">
 											<!-- des sections <div> typée article ici-->
 											<div type="article" n="1">
 												<head>Serles</head>
@@ -728,7 +807,7 @@
 									immédiatement insérer une sous-section et son titre. Ce qui
 									donne donc pour les pages 9 à 11 : <egXML
 										xmlns="http://www.tei-c.org/ns/Examples">
-										<div type="article_collection" n="1">
+										<div type="collection" n="1">
 											<!-- des sections <div> typée article ici-->
 											<div type="article" n="1">
 												<head>Serles</head>
@@ -860,7 +939,7 @@
 							</figure>
 							<p>Ce qui donne pour les pages 9 à 11 : <egXML
 									xmlns="http://www.tei-c.org/ns/Examples">
-									<div type="article_collection" n="1">
+									<div type="collection" n="1">
 										<!-- des sections <div> typée article ici-->
 										<div type="article" n="1">
 											<head>Serles</head>
@@ -2124,7 +2203,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 				</div2>
 				<div2>
 					<head>Décrire le texte</head>
-					<div3>
+					<div3 xml:id="pb">
 						<head>Identifier et lier le fac-similé à l'encodage</head>
 						<!--pb, @facs @n-->
 						<!--num, renvoi vers une sous-section de <div> plus haut-->
@@ -2140,7 +2219,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 							n'importe où. Observez la façon dont s'insère <gi>pb</gi> dans
 							l'encodage des pages 9 à 11 : <!--EXEMPLE p. 9 à 11-->
 							<egXML xmlns="http://www.tei-c.org/ns/Examples">
-								<div type="article_collection" n="1">
+								<div type="collection" n="1">
 									<!-- des sections <div> typée article ici-->
 									<pb n="9" facs="009.jpg"/><!--CHANGER-->
 									<div type="article" n="1">
