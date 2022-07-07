@@ -233,9 +233,9 @@ for (my $fichier=326 ; $fichier<=360 ; $fichier=$fichier+1) {
 	}
 }
 #creation de l'élément <facsimile> et ses sous-éléments
-print TEXTE "<TEI>\n";
-print TEXTE "\t<teiHeader>\n";
-print TEXTE "\t</teiHeader>\n";
+#print TEXTE "<TEI>\n";
+#print TEXTE "\t<teiHeader>\n";
+#print TEXTE "\t</teiHeader>\n";
 print TEXTE "\t<facsimile>\n";
 
 my $url1 ="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_";

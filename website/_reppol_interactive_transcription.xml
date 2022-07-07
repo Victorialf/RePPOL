@@ -40,8 +40,7 @@
 				</respStmt>
 			</titleStmt>
 			<extent>
-				<measure unit="KiB" quantity="47">Moins de 50 Ko</measure>
-				<!--				MESURE DE LA VERSION PALÉO À CHANGER POUR LE TEXTE COMPLET-->
+				<measure unit="KiB" quantity="82">Moins de 90 Ko</measure>
 			</extent>
 			<publicationStmt>
 				<publisher ref="https://www.meshs.fr/page/accueil">MESHS de Lille</publisher>
@@ -55,7 +54,7 @@
 				<authority>Projet RePPOL</authority>
 				<date>2022</date>
 				<availability>
-					<licence>NEED TO BE DEFINED</licence>
+					<licence target="https://creativecommons.org/licenses/by/2.0/fr/legalcode">CC BY FR 2.0</licence>
 				</availability>
 			</publicationStmt>
 			<sourceDesc>

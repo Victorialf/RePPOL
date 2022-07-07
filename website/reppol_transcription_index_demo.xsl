@@ -101,15 +101,37 @@
 	</xsl:template>
 <!--	template pour FOOTER-->
 	<xsl:template name="footer">
-<!--		<a href="#top"><button class="top" style="position:fixed; bottom:20px; right:30px; z-index:99; padding:5px; font-size:14pt;">Back to the top</button></a>-->
 		<footer>
-			<div>
-				<p>More documentation on <a href="" target="blanck">GitLab</a></p>
+			<div class="footer_icons">
+				<div class="footer_logo">
+					<a href="http://www.isite-ulne.fr/index.php/fr/page-daccueil/" target="blanck"><img src="http://www.isite-ulne.fr/wp-content/uploads/2018/07/I-SITE-ULNE_Logo-COUL_RVB.png"/></a>
+				</div>
+				<div class="footer_logo">
+					<a href="https://comod.universite-lyon.fr/site-francais/" target="blanck"><img src="https://comod.universite-lyon.fr/medias/photo/labex-comod-noir-png-300dpi-sans-fond-blanc_1551950983580-png?ID_FICHE=41153"/><!--<img src="https://comod.universite-lyon.fr/medias/photo/labex-comod-png-300dpi-sans-fond-blanc_1551950869031-png?ID_FICHE=41153"/>--></a>
+				</div>
+				<div class="footer_logo">
+					<a href="https://www.univ-lille.fr/" target="blanck"><!--<img src="ULille.sans.baseline-Horizontal-CMJN-Noir.png"/>-->
+						<img src="https://www.univ-lille.fr/typo3conf/ext/ul2fpfb/Resources/Public/assets/img/logos/ULille-nb.svg"/></a>
+				</div>
+				<div class="footer_logo">
+					<a href="https://www.meshs.fr/page/accueil" target="blanck"><img src="http://medias.meshs.fr/medias/images/logos/meshs/MESHS_Logo_NoirRouge_Sans.png"></img><!--<img src="http://medias.meshs.fr/medias/images/logos/meshs/MESHS_Logo_NoirGris_Sans.png"/>--></a>
+				</div>
 			</div>
-			<div>
-				<p>Mention légales :</p>
+			<div class="footer_legal">
+				Ce site et les transcriptions réalisées dans le cadre du projet RePPOL sont mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by/2.0/fr/">Licence Creative Commons Attribution 2.0 France</a>
+				<a rel="license" href="http://creativecommons.org/licenses/by/2.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/2.0/fr/88x31.png" /></a>
+				<p>More documentation on <a href="https://github.com/Victorialf/RePPOL" target="blanck">Github</a></p>
 			</div>
-			<div>
+			
+			
+			<!--<div>
+				<p>More documentation on <a href="https://github.com/Victorialf/RePPOL" target="blanck">Github</a></p>
+			</div>-->
+			<!--<div>
+				<p><a href="https://creativecommons.org/licenses/by/2.0/fr/legalcode" target="blanck">Mention légales</a> : CC BY FR 2.0</p>
+				<a rel="license" href="http://creativecommons.org/licenses/by/2.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/2.0/fr/88x31.png" /></a><br />Ce(tte) œuvre est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by/2.0/fr/">Licence Creative Commons Attribution 2.0 France</a>
+			</div>-->
+			<!--<div>
 				<p>Events about RePPOL</p>
 				<ul>
 					<li><a href="" target="blanck">exemple</a></li>
@@ -118,7 +140,7 @@
 					<li><a href="" target="blanck">placeholder</a></li>
 					<li><a href="" target="blanck">placeholder</a></li>
 				</ul>
-			</div>
+			</div>-->
 		</footer>
 	</xsl:template>
 	
@@ -145,7 +167,7 @@
 						</section>
 					</article>
 					<xsl:call-template name="script"/>
-<!--					<xsl:call-template name="footer"/>-->
+					<xsl:call-template name="footer"/>
 				</body>
 			</html>
 		</xsl:result-document>
@@ -182,7 +204,7 @@
 						</section>
 					</article>
 					<xsl:call-template name="script"/>
-<!--					<xsl:call-template name="footer"/>-->
+					<xsl:call-template name="footer"/>
 				</body>
 			</html>
 		</xsl:result-document>
@@ -206,7 +228,7 @@
 						</section>
 					</article>
 					<xsl:call-template name="script"/>
-<!--					<xsl:call-template name="footer"/>-->
+					<xsl:call-template name="footer"/>
 				</body>
 			</html>
 		</xsl:result-document>
@@ -231,7 +253,7 @@
 					</article>
 				</body>
 				<xsl:call-template name="script"/>
-<!--				<xsl:call-template name="footer"/>-->
+				<xsl:call-template name="footer"/>
 			</html>
 		</xsl:result-document>
 		<xsl:for-each select="//tei:text[@xml:id='reppol_trans']//tei:pb">
@@ -308,7 +330,7 @@
 							</section>
 						</article>
 						<xsl:call-template name="script"/>
-<!--						<xsl:call-template name="footer"/>-->
+						<xsl:call-template name="footer"/>
 					</body>
 				</html>
 			</xsl:result-document>
@@ -1058,7 +1080,8 @@
 					</xsl:choose>
 				</p>
 				<!--dans l'idéal tester la nature du @ref, le début du @ref pour cced la suite pour DNB-->
-				<a href=""></a>
+<!--				<a href=""></a>-->
+				<a href="#top"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png" class="top" style="position:absolute; bottom:0; right:0; z-index:99; padding:5px; width:30px;"/></a>
 			</div>
 		</xsl:if>
 	</xsl:template>
