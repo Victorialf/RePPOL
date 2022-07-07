@@ -55,7 +55,7 @@
 				<authority>Projet RePPOL</authority>
 				<date>2022</date>
 				<availability>
-					<licence>NEED TO BE DEFINED</licence>
+					<licence ref="https://creativecommons.org/licenses/by/2.0/fr/legalcode">CC BY 2.0 FR</licence>
 				</availability>
 			</publicationStmt>
 			<sourceDesc>
@@ -84,14 +84,14 @@
 									437a +437-442 + ff. iii-iv</foliation>
 							</supportDesc>
 						</objectDesc>
-						<!--LES MAINS ICI-->
+						<!--<!-\-LES MAINS ICI-\->
 						<handDesc>
 							<handNote> </handNote>
-						</handDesc>
+						</handDesc>-->
 					</physDesc>
-					<history>
+					<!--<history>
 						<p/>
-					</history>
+					</history>-->
 				</msDesc>
 			</sourceDesc>
 		</fileDesc>
