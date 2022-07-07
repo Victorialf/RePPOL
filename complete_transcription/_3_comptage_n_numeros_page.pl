@@ -14,6 +14,13 @@ binmode(TEXTE, ":utf8");
 open (TEXTEOUT, ">_textecomplet_collections_sections_n.xml");
 binmode(TEXTEOUT, ":utf8");
 
+my $teiheader='<?xml version="1.0" encoding="utf-8"?>';
+open(TEIHEADER, "_reppol_teiheader.xml");
+binmode(TEIHEADER, ":utf8");
+while (my $line=<TEIHEADER>){
+	chop $line;
+	$teiheader="$teiheader\n"."$line";
+}
 
 #script pour ajouter valeur de l'attribut "n"
 		#aux div type collection (version du 16/05)
@@ -91,8 +98,9 @@ while (my $ligne = <TEXTE>) {
 
 	$txt2 = $txt2."\n".$ligne;#récupération texte complet, stockage dans une variable
 	}
-	print TEXTEOUT "$txt2".'>';#écriture fichier avec une balise fermante car pour x raison le dernier caractère saute à l'écriture
+	print TEXTEOUT "$teiheader".'>'."$txt2".'>';#écriture fichier avec une balise fermante car pour x raison le dernier caractère saute à l'écriture
 
 #fermeture des canaux
+close (TEIHEADER);
 close (TEXTE);
 close (TEXTEOUT);
