@@ -110,7 +110,8 @@
 					<a href="https://comod.universite-lyon.fr/site-francais/" target="blanck"><img src="https://comod.universite-lyon.fr/medias/photo/labex-comod-noir-png-300dpi-sans-fond-blanc_1551950983580-png?ID_FICHE=41153"/><!--<img src="https://comod.universite-lyon.fr/medias/photo/labex-comod-png-300dpi-sans-fond-blanc_1551950869031-png?ID_FICHE=41153"/>--></a>
 				</div>
 				<div class="footer_logo">
-					<a href="https://www.univ-lille.fr/" target="blanck"><img src="ULille.sans.baseline-Horizontal-CMJN-Noir.png"/></a>
+					<a href="https://www.univ-lille.fr/" target="blanck"><!--<img src="ULille.sans.baseline-Horizontal-CMJN-Noir.png"/>-->
+						<img src="https://www.univ-lille.fr/typo3conf/ext/ul2fpfb/Resources/Public/assets/img/logos/ULille-nb.svg"/></a>
 				</div>
 				<div class="footer_logo">
 					<a href="https://www.meshs.fr/page/accueil" target="blanck"><img src="http://medias.meshs.fr/medias/images/logos/meshs/MESHS_Logo_NoirRouge_Sans.png"></img><!--<img src="http://medias.meshs.fr/medias/images/logos/meshs/MESHS_Logo_NoirGris_Sans.png"/>--></a>

@@ -6,7 +6,7 @@
 	<teiHeader>
 		<fileDesc>
 			<titleStmt>
-<!--				<title>Cambridge, Corpus Christi College, MS 128: Documents Relating to Archbishop Cranmer</title>-->
+				<!--				<title>Cambridge, Corpus Christi College, MS 128: Documents Relating to Archbishop Cranmer</title>-->
 				<title>Documentation projet RePPOL</title>
 				<funder ref="http://www.isite-ulne.fr/index.php/fr/page-daccueil/">I-site Université
 					Lille-Nord-Europe</funder>
@@ -106,7 +106,7 @@
 				<p>Articles against several of the clergy, interrogatories for, and depositions of
 					Dr. John Willoughby, Robert Serles, William Gardiner, Edmund Shethur, Richard
 					Parkhurst, Arthur St. Leger, John Mills, William Hunt, William Cocks, John
-					Thatcher, &amp;c.</p>
+					Thatcher, etc.</p>
 			</abstract>
 			<creation>
 				<date>[ca. 1500-1599]</date>
@@ -147,7 +147,7 @@
 					Lyon) et soutenu par la <ref target="https://www.meshs.fr/page/accueil">Maison
 						Européenne des Sciences de l'Homme et de la Société Lille Nord de France
 						(MESHS)</ref>.</p>
-				<!--récupéré sur https://ahmuf.hypotheses.org/9528 et tact   + ajouts et modifications A. Mével-->
+				<!--récupéré sur https://ahmuf.hypotheses.org/9528 et tact  + ajouts et modifications A. Mével-->
 				<p>Notre projet est consacré à la transcription, l’édition critique et l’analyse
 					d’un document exceptionnel : le manuscrit MS 128 conservé à la bibliothèque de
 					Corpus Christi College, Cambridge (à voir sur la <ref
@@ -220,6 +220,74 @@
 					incarnations, est la constitution d'une édition numérique en ligne permettant
 					via balisage en xml-tei l'interrogation du contenu du document par des
 					index.</p>
+				<!--Translated with www.DeepL.com/Translator (free version)-->
+				<p xml:lang="en">Our project is devoted to the transcription, critical edition, and
+					analysis of an exceptional document: the manuscript MS 128 held in the library
+					of Corpus Christi College, Cambridge (can be viewed on the <ref
+						target="https://tact.demarre-shs.fr/project/31">TACT platform</ref>). It is
+					a composite manuscript of about 220 folios that contains the documentation
+					gathered in 1543 under the supervision of the Archbishop of Canterbury, Thomas
+					Cranmer. The latter, won over to the Reformed ideas, was the target of a plot
+					hatched by canons of his own cathedral (hence the nickname of the Prebendaries
+					Plot) in connection with priests and "conservative" laymen of the diocese of
+					Kent. The latter initiated a work of collecting denunciations attesting to the
+					religious radicalism of Cranmer and some of his reformed clients in order to
+					discredit the archbishop of Canterbury in the eyes of the king and precipitate
+					his fall. However, the king maintained his favor to Cranmer but charged him with
+					investigating all non-conformist beliefs or practices in his diocese. The
+					purpose of this vast investigation is yet to be clarified. The archbishop seemed
+					to take the opportunity to incriminate conservative clerics and laymen who had
+					participated in the Prebendaries Plot: his agents collected denunciations and
+					testimonies of "superstitious" or "papist" beliefs or practices; but the
+					manuscript also contained denunciations of sacramentarians, iconoclasts and
+					radical evangelicals, which might have been more likely to elicit Cranmer's
+					leniency.</p>
+				<p xml:lang="en">The manuscript MS 128, fruit of these antinomic collections, is a
+					double mosaic. A mosaic of documents, since it contains letters of denunciation,
+					interrogations and memoranda whose meaning partly escapes us; but it is also a
+					mosaic of traces of religious beliefs and practices in an English county in the
+					1540's. Indeed, it contains more than a hundred testimonies or denunciations
+					emanating from clerics and laymen of both sexes and of all ranks. This
+					fragmented documentation reveals the eclecticism of beliefs and practices in an
+					England that broke with Rome nearly ten years ago and in which Henry VIII
+					struggled to impose any kind of uniformity despite the establishment of the
+					Royal Supremacy. Could this manuscript be the archival trace of the royal
+					attempts (and their limits) to impose a "religious uniformity" desired by Henry
+					VIII since the early 1530s ?</p>
+				<p xml:lang="en">Several historians have partially mobilized this source in the
+					context of broader studies (Ethan Shagan in order to explore the progress of the
+					Reformation in England, Diarmaid MacCulloch in order to draw up portraits of
+					Thomas Cranmer's detractors in his biography of him... ), but no study of the
+					manuscript per se has been carried out and it has never been put in dialogue
+					with related documents (interrogations, denunciations...) in order to bring out
+					the political, religious or social insights that it can bring to the period.</p>
+				<p xml:lang="en">The RePPOL project intends to show that this exceptional source not
+					only sheds light on the often unexpected, sometimes comical, popular beliefs and
+					liturgical practices in a Kent undergoing a "confessional transition", but also
+					to grasp the English Reformation as a phenomenon of anthropological
+					transformation of the relationship to religion, a process that extends over
+					several decades of the sixteenth century. Finally, RePPOL is part of the recent
+					historiographic renewal on the role of the people in the production of politics
+					in the modern era, as these testimonies allow us to understand the active role
+					that subjects, including the most minute laymen, were able to play in the
+					processes of political and religious mutations that Henrician England
+					experienced.</p>
+				<p xml:lang="en">Adopting a collaborative and training-through-research approach,
+					this project is articulated in three stages. The first stage (end of June
+					2021-beginning of 2022) aims to transcribe the entire manuscript, through a
+					collaborative approach mobilizing teacher-researchers and students in the
+					context of the modern paleography course. The semi-diplomatic transcription is
+					carried out via the <ref target="https://tact.demarre-shs.fr/">Transcription and
+						Annotation Platform for Textual Corpus (TACT)</ref> developed by the
+					University of Grenoble. The images of the folios were digitized by the <ref
+						target="https://parker.stanford.edu/parker/catalog/ps908cx9813">Parker
+						Library</ref> and were accessible there according to the <ref
+						target="https://iiif.io/">International Image Interoperability Framework
+						(3IF)</ref>. The second stage of the work (2022) is devoted to fine-grained
+					analysis of this source in light of archival records of a similar nature. The
+					third step, of which the present document is one of the incarnations, is the
+					constitution of an online digital edition allowing via xml-tei tagging the
+					interrogation of the document content by indexes.</p>
 			</projectDesc>
 			<editorialDecl>
 				<p>Encodage de la structure sémantique du texte en essayant également de rendre
@@ -244,2662 +312,342 @@
 	</teiHeader>
 	<text>
 		<body>
-			<schemaSpec ident="reppol_sem_26042022" start="TEI">
-				<moduleRef key="header"/>
-				<moduleRef key="core"/>
-				<moduleRef key="tei"/>
-				<moduleRef key="textstructure"/>
-			</schemaSpec>
-			<div1>
-				<head>Documentation</head>
-				<div2>
-					<head>À propos du projet RePPOL</head>
-					<p>RePPOL est un projet scientifique et pédagogique collaboratif mené par <ref
-							target="https://pro.univ-lille.fr/aude-de-mezerac/">Aude de
-							Mézerac-Zanetti</ref>, spécialiste d'histoire religieuse de l'Angleterre
-						d'Henri VIII (Mcf, aude.de-mezerac@univ-lille.fr, Université de Lille, <ref
-							target="https://cecille.univ-lille.fr/">CECILLE</ref>), <ref
-							target="http://larhra.ish-lyon.cnrs.fr/membre/334">Olivier Spina</ref>,
-						spécialiste d'histoire politique de l'Angleterre Tudor (Mcf,
-						olivier.spina@univ-lyon2.fr, Université de Lyon 2, <ref
-							target="http://larhra.ish-lyon.cnrs.fr/">LARHRA</ref>) et Victoria Le
-						Fourner (ingénieure d’études, spécialiste des humanités numériques à la <ref
-							target="https://www.meshs.fr/page/accueil">MESHS</ref> de Lille) avec
-						l’aide de Felipe Goes-Silva (étudiant en M1 Recherche en Études Anglophones
-						à l’Université de Lille) et de Adrien Mével (étudiant en M1 Éditions
-						numériques et imprimées de texte littéraires à l'Université de Lille. Ce
-						projet est financé majoritairement par l'<ref
-							target="http://www.isite-ulne.fr/index.php/fr/page-daccueil/">I-site
-							Université Lille-Nord-Europe</ref> et par le <ref
-							target="https://comod.universite-lyon.fr/">LABEX COMOD</ref> (Université
-						de Lyon) et soutenu par la <ref target="https://www.meshs.fr/page/accueil"
-							>Maison Européenne des Sciences de l'Homme et de la Société Lille Nord
-							de France (MESHS)</ref>.</p>
-					<!--récupéré sur https://ahmuf.hypotheses.org/9528 et tact   + ajouts et modifications A. Mével-->
-					<p>Notre projet est consacré à la transcription, l’édition critique et l’analyse
-						d’un document exceptionnel : le manuscrit MS 128 conservé à la bibliothèque
-						de Corpus Christi College, Cambridge (à voir sur la <ref
-							target="https://tact.demarre-shs.fr/project/31">plateforme TACT</ref>).
-						Il s’agit d’un manuscrit composite d’environ 220 folios qui contient la
-						documentation rassemblée en 1543 sous l’égide de l’Archevêque de Cantorbéry,
-						Thomas Cranmer. Celui-ci, gagné aux idées réformées, est visé par un complot
-						ourdi par des chanoines de sa propre cathédrale (d’où le surnom de
-						Prebendaries Plot) en lien avec des prêtres et des laïcs « conservateurs »
-						du diocèse du Kent. Ces derniers initient un travail de collecte de
-						dénonciations attestant de la radicalité religieuse de Cranmer et de
-						certains de ses clients réformés afin de discréditer l’archevêque de
-						Cantorbéry aux yeux du roi et précipiter sa chute. Cependant, le roi
-						maintient sa faveur à Cranmer mais le charge d’enquêter sur toutes les
-						croyances ou pratiques non conformistes dans son diocèse. L’objectif de
-						cette vaste enquête est encore à élucider. L’archevêque semble saisir cette
-						occasion pour incriminer les clercs et les laïcs conservateurs qui ont
-						participé au Prebendaries Plot : ses agents collectent dénonciations et
-						témoignages de croyances ou pratiques « superstitieuses » ou « papistes » ;
-						mais, le manuscrit renferme également des dénonciations de sacramentaires,
-						d’iconoclastes et d’évangéliques radicaux, qui auraient davantage pu
-						susciter l’indulgence de Cranmer. </p>
-					<p>Dès lors, le manuscrit MS 128, fruits de ces collectes antinomiques, est une
-						mosaïque double. Mosaïque de documents d’abord, puisqu’il comporte des
-						lettres de dénonciations, des interrogatoires ou encore des mémorandums dont
-						le sens nous échappe en partie ; mais il est aussi une mosaïque de traces
-						des croyances et des pratiques religieuses dans un comté anglais des années
-						1540. En effet, il renferme plus d’une centaine de témoignages ou
-						dénonciations émanant de clercs et de laïcs des deux sexes et de tout rang.
-						Cette documentation fragmentée révèle l’éclectisme des croyances et des
-						pratiques dans cette Angleterre qui a rompu avec Rome depuis près de dix ans
-						et dans laquelle Henri VIII peine à imposer une quelconque uniformité malgré
-						l’instauration de la Suprématie royale. Ce manuscrit serait-il la trace
-						archivistique des tentatives royales (et de leurs limites) d’imposer une «
-						uniformité religieuse » désirée par Henri VIII depuis le début des années
-						1530 ? </p>
-					<p>Jusqu’à présent, plusieurs historiens ont mobilisé partiellement cette source
-						dans le contexte d’études plus larges (Ethan Shagan afin d’explorer
-						l’avancée de la Réforme en Angleterre, Diarmaid MacCulloch pour dresser les
-						portraits des détracteurs de Thomas Cranmer dans la biographie qu’il lui
-						consacre…), mais aucune étude du manuscrit per se n’a été menée et on ne l’a
-						jamais fait dialoguer avec des documents proches (interrogatoires,
-						dénonciations…) pour en dégager les éclairages politiques, religieux ou
-						sociaux qu’il peut apporter sur la période. </p>
-					<p>Or, le projet RePPOL entend montrer que cette source exceptionnelle permet
-						non seulement d’éclairer les croyances et les pratiques liturgiques
-						populaires souvent inattendues, parfois cocasses, dans un Kent en «
-						transition confessionnelle », mais aussi de saisir la Réforme anglaise comme
-						un phénomène de transformation anthropologique du rapport au religieux,
-						processus qui s’étend sur des plusieurs décennies du XVIe siècle. RePPOL
-						s’inscrit enfin dans le cadre des renouvellements historiographiques récents
-						sur le rôle du peuple dans la production du politique à l’époque moderne,
-						ces témoignages permettant de comprendre le rôle actif que les sujets, y
-						compris les laïcs les plus infimes, ont pu jouer dans les processus de
-						mutations politico-religieuses que connaît l’Angleterre henricienne.</p>
-					<!--Récupéré sur  https://ahmuf.hypotheses.org/9528-->
-					<!--ci-dessous : écrit d'après les infos collectées-->
-					<p>Adoptant une démarche de recherche collaborative et de formation par la
-						recherche, ce projet s'articule en trois temps. La première étape (fin juin
-						2021-début 2022) vise à transcrire l'intégralité du manuscrit, par une
-						démarche collaborative mobilisant enseignants-chercheurs et étudiants dans
-						le cadre du cours de paléographie moderne. La transcription
-						semi-diplomatique est réalisé via la <ref
-							target="https://tact.demarre-shs.fr/">plateforme de Transcription et
-							d'Annotations de Corpus Textuel (TACT)</ref> développée par l'Université
-						de Grenoble. Les images des folios ont été numérisées par la <ref
-							target="https://parker.stanford.edu/parker/catalog/ps908cx9813">Parker
-							Library</ref> et y étaient accessibles selon le cadre interopérable <ref
-							target="https://iiif.io/">International Image Interoperability Framework
-							(3IF)</ref>. La seconde étape du travail (2022) est consacrée à
-						l'analyse fine de cette source à la lumière de documents archivistiques de
-						nature similaire. La troisième étape, dont le présent document est l'une des
-						incarnations, est la constitution d'une édition numérique en ligne
-						permettant via balisage en xml-tei l'interrogation du contenu du document
-						par des index.</p>
-				</div2>
-				<div2>
-					<head>Structure générale de l'encodage</head>
-					<div3>
-						<head>Un facsimilé et deux transcriptions</head>
-						<p>Dans le cadre du projet RePPOL, l'équipe scientifique a souhaité intégrer en plus de la transcription élaborée dans le cadre du projet, le manuscrit sous forme de fichiers images au format <ref target="https://iiif.io/">IIIF</ref> et la transcription du Calendar conçue au début du XXe siècle.</p>
-						<p>Pour ce faire nous utilisons l'élément <gi>facsimile</gi> représentant les fichiers images du facsimilé et deux éléments <gi>text</gi> représentant l'un la transcription du projet RePPOL et l'autre la transcription du Calendar. Afin de différencier chacun des éléments <gi>text</gi> nous utilisons l'attribut <att>xml:id</att> avec les valeurs <val>"reppol_trans"</val> et <val>"calendar_trans"</val> respectivement.</p>
-						<egXML xmlns="http://www.tei-c.org/ns/Examples">
-							<facsimile>
-								<!--les éléments du facsimile ici-->
-							</facsimile>
-							<text xml:id="reppol_trans">
-								<body>
-									<!--les éléments constituant la transcription du projet RePPOL-->
-								</body>
-							</text>
-							<text xml:id="calendar_trans">
-								<body>
-									<!--les éléments constituant la transcription du projet Calendar-->
-								</body>
-							</text>
-						</egXML>
-						<!--<p>L'encodage de la transcription effectuée dans le cadre du projet RePPOL est l'objet principal de cette documentation</p>-->
-						<div4>
-							<head>Les éléments du facsimile</head>
-							<p>Pour chacune des pages du texte nous disposons d'un fichier image que nous intégrons à l'encodage en employant un élément <gi>surface</gi> muni d'un attribut <att>xml:id</att> permettant de l'identifier. La valeur de l'attribut <att>xml:id</att> est conçu selon le modèle : <val>"fs_040"</val> où les derniers caractères correspond au numéros de la page, toujours constitués d'au moins trois chiffres éventuellement suivi d'une lettre comme par exemple pour les pages 166a à 166d. Au sein de l'élément <gi>surface</gi> nous insérons un élément <gi>graphic</gi> avec un attribut <att>url</att> dont la valeur est l'url de l'image correspondant à la page encodée.</p>
-							<egXML xmlns="http://www.tei-c.org/ns/Examples">
-								<facsimile>
-									<surface xml:id="fs_043">
-										<graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_043_TC_46/full/full/0/default.jpg"/>
-									</surface>
-									<surface xml:id="fs_044">
-										<graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_044_TC_46/full/full/0/default.jpg"/>
-									</surface>
-									<surface xml:id="fs_045">
-										<graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_045_TC_46/full/full/0/default.jpg"/>
-									</surface>
-									<!-- les autres pages -->
-									<surface xml:id="fs_166a">
-										<graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_166a_TC_46/full/full/0/default.jpg"/>
-									</surface>
-									<surface xml:id="fs_166b">
-										<graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_166b_TC_46/full/full/0/default.jpg"/>
-									</surface>
-									<!-- les autres pages -->
-								</facsimile>
-							</egXML>
-							<p>Chacun des éléments <gi>surface</gi> sera l'objet d'un renvoi ciblant la valeur de son attribut <att>xml:id</att> dans un élément <gi>pb</gi> <gloss>page begining</gloss> qui fait l'objet d'une explication détaillées.
-							</p>
-							<listRef>
-								<desc>Plus d'information concernant l'emploi de l'élément <gi>pb</gi> <gloss>page begining</gloss> :</desc>
-								<ptr target="#pb"/>
-							</listRef>
-						</div4>
-						<div4>
-							<head>La transcription du Calendar</head>
-							<p>La transcription du Calendar bien qu'intégrée au projet ne constitue pas son objet principal et est au demeurant moins détaillée que la transcription du projet RePPOL car elle omet de transcrire de nombreux éléments textuels auxquels le projet RePPOL a prété une attention toute particulière. Aussi, nous contentons-nous de baliser chacune des pages du Calendar dans un élément <gi>div</gi> de <att>type</att> <val>page_calendar</val> suivi d'un élément <gi>pb</gi> traité de manière identique au <gi>pb</gi> de la transcription RePPOL.</p>
-							<listRef>
-								<desc>Plus d'information concernant l'emploi de l'élément <gi>pb</gi> <gloss>page begining</gloss> :</desc>
-								<ptr target="#pb"/>
-							</listRef>
-							<p>Après quoi nous ajoutons des éléments <gi>div</gi> <gloss>division</gloss>contenant des éléments <gi>head</gi> <gloss>titre</gloss> et <gi>p</gi> <gloss>paragraphe</gloss> en identifiant les segments textuels retranscrits dans le Calendar.</p>
-							<egXML xmlns="http://www.tei-c.org/ns/Examples">
-								<div type="page_calendar">
-									<pb corresp="facs_063" n="063"/>
-									<div>
-										<head>21 Sept.</head>
-										<p>Hugh Cooper of Tenterden said, 18 Feb. last, that God was neither pleased
-											with fasting nor discontent with eating. On the 4 March last he preached
-											that neither alms deeds, fasting, nor prayer did help the soul, but faith
-											only; also that whoever trusted to have help by the prayers of any person
-											that ever God made committed idolatry. He inverted the order of the
-											Confiteor, omitting the name of Mary and All Saints. He preached 28 April
-											that God did not regard the prayers but the persons. Added by Cr. :On the 6
-											May he said "On Saturday you shall have Whitsun Even. You need not to fast
-											except you will."</p>
-									</div>
-									<div>
-										<head>21 Sept. 1543.</head>
-										<p>Archebolde of Faversham. "I will, quod he, come to my ghostly father and show
-											to him I have sinned in the 7 deadly sins and have broken the 10
-											commandments, and misspent my 5 wits and will desire him of his ghostly
-											counsel." </p>
-									</div>
-								</div>
-							</egXML>
-						</div4>
-					</div3>
-				</div2>
-				<div2>
-					<head>Découper le texte</head>
-					<div3>
-						<head>Grands ensembles, collections</head>
-						<!--où il est question de div typée space text et body et tei(header)(?)-->
-						<p>Notre projet s'intéressant à la génétique du texte et à son aspect
-							matériel, nous entendons produire une structure sémantique qui permette
-							de rendre compte de la nature composite du manuscrit, qui est à
-							concevoir comme une collection de notes.</p>
-						<p>Le texte réuni en un tout hétérogène a posteriori a été divisé en
-							sous-ensembles de longueurs variables aux contenus parfois hétérogène :
-							certaines pages sont réunis et séparées des autres folio par des pages
-							blanches qui semblent faire office d'intercalaire. Si les raisons
-							exactes de ces regroupements nous échappent parfois il avait du sens
-							pour ceux qui ont constitué l'ensemble aussi convient-il d'encoder ce
-							phénomène.</p>
-						<p>Pour ce faire nous regroupons ces groupes de pages au sein d'une balise
-								<gi>div</gi> munie d'un attribut <att>type</att> dont la valeur est
-								<val>"collection"</val> auquel nous ajoutons un attribut
-								<att>n</att> dont la valeur est un nombre numérotant la collection.
-								<egXML xmlns="http://www.tei-c.org/ns/Examples">
-								<div type="collection" n="1">
-									<!-- contenu textuel de la première collection -->
-								</div>
-								<div type="collection" n="2">
-									<!-- contenu textuel de la deuxième collection -->
-								</div>
-							</egXML></p>
-						<p>Nous comptons à ce jour 89 collections au seins desquelles nous pouvons
-							reconnaître des sections et sous sections. Ainsi les éléments <gi>div</gi> de <att>type</att> <val>"collection"</val> ont toujours d'autres <gi>div</gi> comme éléments fils.</p>
-						<p>La figure ci-dessous illustre un élément <gi>div</gi> de <att>type</att>
-							<val>"collection"</val> (en rouge) entourant des sections (en vert) et
-							des sous-sections (en orange).</p>
-						<!--<p>Ainsi, il nous faut identifier des ensembles structurels qui ne seraient pas des sections de longueurs équivalentes mais des sections constituées autour d'un ensemble formel signifiant. Dès lors nous proposons un découpage du texte par l'entremise d'une table des matières constituée par M. Felipe Goes-Silva sous la supervision de Mme Aude de Mézerac-Zanetti pour repérer des types de textes que nous envisageons de regrouper, ou non, si tel regroupement était signifiant.</p>
-      			<p>Le manuscrit se divise en plusieurs sections et sous-sections. La liste entière des sections et la structure sémantique du manuscrit dans son ensemble sont établies par M. Felipe Goes-Silva sous la direction de Mme Aude de Mézerac-Zanetti et M. Olivier Spina. Ces listes permettent d'établir les types de contenus textuels contenu dans ce manuscrit composite, ce qui relève de choix scientifiques éclairés par la connaissance du texte et de son contexte. Une fois ces listes établies nous nous évertuons à rassembler les sections et sous-sections dans des <gi>div</gi> correspondantes pour représenter la structure sémantique du texte.
-      				<!-\-expliciter les @types et donner la table des matières (?)-\->
-      			</p>-->
-						<figure>
-							<head>Représentation des pages 9 et 11 divisées en sections sémantiques
-								balisées <gi>div</gi>de différents niveaux</head>
-							<graphic url="visu_structure_9-11.png" width="500px"/>
-						</figure>
-						<div4>
-							<head>Les <gi>spaces</gi>, marqueurs du blanc</head>
-							<p>Les pages blanches et les zones du manuscrit vide de texte sont
-								encodés en <gi>space</gi>. S'ils ne sont ni typés ni numérotés, nous
-								adjoignons à ces éléments <gi>space</gi> un attribut <att>unit</att>
-								définissant l'unité de mesure et un attribut <att>quantity</att> qui
-								sert à exprimer le nombre de pages (si la valeur de <att>unit</att>
-								est <val>"page"</val>) ou de tout autre unité utilisée en valeur de
-								l'attribut <att>unit</att>.</p>
-							<p>Ainsi les pages 6 et 18 seront toutes deux balisées : <egXML
-									xmlns="http://www.tei-c.org/ns/Examples">
-									<space unit="1" quantity="page"/>
-								</egXML>
-							</p>
-							<p>Ces éléments <gi>space</gi> sont frères des éléments <gi>div</gi> qui
-								servent à baliser les ensembles textuels.</p>
-							<egXML xmlns="http://www.tei-c.org/ns/Examples">
-								<div type="collection" n="1">
-									<!-- contenu textuel de la première collection -->
-								</div>
-								<div type="collection" n="2">
-									<!-- contenu textuel de la deuxième collection -->
-								</div>
-								<space unit="1" quantity="page"/> <!--La page 6, vide-->
-								<div type="collection" n="3">
-									<!-- contenu textuel de la troisième collection -->
-								</div>
-							</egXML>
-							<!--CAS PARTICULIER DES PAGES VIDES MAIS AVEC PAGINATION ex : p. 19-->
-							<p>Certaines de ces pages vides contiennent des numéros de page que nous souhaitons baliser<!-- cf plus bas -->. Ainsi nous balisons la page 19 comme ceci :</p>
-							<egXML xmlns="http://www.tei-c.org/ns/Examples">
-								<space uit="1" quantity="page">
-									<div>
-										<ab>
-											<num type="pagination" subtype="red">19</num>
-										</ab>
-									</div>
-								</space>
-							</egXML>
-						</div4>
-						<div4>
-							<head>Les types de <gi>div</gi>
-								<gloss>section</gloss></head>
-							<p>Les collections contiennent des contenus textuel de nature hétérogène que nous balisons <gi>div</gi>.</p>
-							<p>Pour inscrire dans l'encodage les différents types de section nous employons
-								l'attribut <att>type</att>, les valeurs ayant pour fonction de
-								définir le contenu de l'élément <gi>div</gi> typé. De manière
-								générale ces éléments <gi>div</gi> sont affublés d'un attribut
-									<att>n</att>
-								<gloss>number</gloss> servant à compter les <gi>div</gi> selon leur
-									<att>type</att>. Ainsi le septième élément <gi>div</gi> de
-								premier niveau (couvrant les pages 21 à 24) est numéroté <egXML
-									xmlns="http://www.tei-c.org/ns/Examples"><div
-										type="question_set" n="3"/></egXML> et non pas <egXML
-									xmlns="http://www.tei-c.org/ns/Examples"><div
-										type="question_set" n="7"/></egXML> car il s'agit du
-								troisième élément de <att>type</att>
-								<val>"question_set"</val> et que cette information nous est plus
-								précieuse que le fait de savoir qu'il s'agit du septième élément
-									<gi>div</gi> de deuxième niveau. </p>
-							<div5>
-								<head>La <gi>div</gi> typée <val>"index"</val></head>
-								<p>La première des valeurs de <att>type</att> retenue est la valeur
-										<val>"index"</val> et ne s'applique qu'à la première section
-									du manuscrit qui couvre la page 4. Cet index constitue une sorte
-									de table des matières recensant les personnes sur lesquelles le
-									ou les enquêteurs ont enquêté.</p>
-								<!--check explication de l'index-->
-								<p>Nous l'encodons ainsi : <egXML
-										xmlns="http://www.tei-c.org/ns/Examples">
-										<div type="index">
-											<!--le contenu de l'index-->
-										</div>
-									</egXML> À noter cette div typée est la seule à ne pas avoir
-									d'attribut <att>n</att> numérotant ce type car il n'y a qu'un
-									seul index pour l'ensemble du manuscrit. Par ailleurs comme pour tous les éléments <gi>div</gi> marquant une section, il est compris au sein d'un élément <gi>div</gi> de <att>type</att> <val>"collection"</val>.</p>
-							</div5>
-							<div5>
-								<head>Les <gi>div</gi> typées <val>"question_set"</val></head>
-								<p>Le second type identifié est le <att>type</att>
-									<val>"question_set"</val>. Dans le manuscrit nous trouvons des
-									textes, couvrant parfois plusieurs pages constituées de
-									questions généralement numérotées. Il s'agit de notes préparant
-									des interrogatoires dont on trouve généralement, mais pas de
-									manière systématique, les restitutions où seules les réponses
-									sont restituées accompagnées de la numérotation correspondante.
-									Pour éviter toutes confusions liée à la polysémie de termes
-									comme "interrogatoire", "examination" ou "interview" nous optons
-									pour la dénomination <val>"question_set"</val>.</p>
-								<p>Pour permettre l'identification des différents sets de questions
-									et donc des renvoies nous ajoutons un attribut <att>n</att> aux
-										<gi>div</gi> typée <val>"question_set"</val>. Ce qui donne :
-										<egXML xmlns="http://www.tei-c.org/ns/Examples">
-										<div type="question_set" n="1">
-											<!--le contenu de ce set de question-->
-										</div>
-									</egXML></p>
-								<p>Le balisage du contenu de ces sections de <att>type</att> <val>"question_set"</val> mérite une attention particulière. Nous abordons ce point dans la section 1.2.2.1.3.</p>
-							</div5>
-							<div5>
-								<head>Les <gi>div</gi> typées <val>"answer_set"</val></head>
-								<p>Outre les notes préparant des interrogatoires nous trouvons
-									également dans le manuscrit des compte-rendus des
-									interrogatoires effectués, constitués exclusivement des réponses
-									aux questions posées. Encore une fois, pour éviter toute
-									polysémie nous optons pour le terme <val>"answer_set"</val>.
-									Parfois numérotées, les différentes réponses d'un set
-									correspondent aux différentes question d'un set de questions
-									parfois identifié. Les correspondances sont identifiées par le
-									conseil scientifique à l'origine du projet et inscrites dans
-									l'encodage par un système de <att>xml:id</att> et renvoi que
-									nous détaillerons plus bas.. Nous les balisons ainsi : <egXML
-										xmlns="http://www.tei-c.org/ns/Examples">
-										<div type="answer_set" n="1">
-											<!-- le contenu des réponses ici -->
-										</div>
-									</egXML></p>
-								<p>Le balisage du contenu de ces sections de <att>type</att> <val>"answer_set"</val> mérite une attention particulière. Nous abordons ce point dans la section 1.2.2.1.3.</p>
-							</div5>
-							<div5>
-								<head>Les <gi>div</gi> typées <val>"letter"</val></head>
-								<p>Les éléments <gi>div</gi> identifiés comme étant de
-										<att>type</att>
-									<val>"letter"</val> sont des lettres adressées à Cranmer et
-									jointes au dossier qui constitue notre manuscrit, rédigées à la
-									première personne. <!--      						main de rédaction ?-->
-									<egXML xmlns="http://www.tei-c.org/ns/Examples">
-										<div type="letter" n="1">
-											<!-- le contenu de la lettre ici -->
-										</div>
-									</egXML>
-								</p>
-							</div5>
-							<div5>
-								<head>Les <gi>div</gi> typées <val>"deposition"</val></head>
-								<p>Sont considérés comme devant être typés <val>"deposition"</val>
-									les éléments <gi>div</gi> constitués d'un texte rédigé à la
-									première personne qui constitue des dépositions de paroissiens
-									participant à l'enquête. Si leur contenu est proche des
-									témoignages typés <val>"testimony"</val>, l'équipe scientifique
-									du projet a jugé qu'il était nécessaire d'opérer une distinction
-									entre ces deux types de textes car les <val>"deposition"</val>
-									sont écrites à la première personne et les
-										<val>"testimony"</val> à la troisième. <!--      						main ?-->
-									<egXML xmlns="http://www.tei-c.org/ns/Examples">
-										<div type="deposition" n="1">
-											<!-- le contenu de la deposition ici -->
-										</div>
-									</egXML></p>
-							</div5>
-							<div5>
-								<head>Les <gi>div</gi> typées <val>"testimony"</val></head>
-								<p>Sont considérés comme devant être typés <val>"testimony"</val>
-									les éléments <gi>div</gi> constitués d'un texte rédigé à la
-									troisième personne qui constitue des témoignages de paroissiens
-									participant à l'enquête. Si leur contenu est proche des
-									dépositions typées <val>"deposition"</val>, l'équipe
-									scientifique du projet a jugé qu'il était nécessaire d'opérer
-									une distinction entre ces deux types de textes car les
-										<val>"deposition"</val> sont écrites à la première personne
-									et les <val>"testimony"</val> à la troisième. <egXML
-										xmlns="http://www.tei-c.org/ns/Examples">
-										<div type="testimony" n="1">
-											<!-- le contenu du témoignage ici -->
-										</div>
-									</egXML></p>
-							</div5>
-							<div5>
-								<head>Les <gi>div</gi> typées <val>"memorandum"</val></head>
-								<p> Les <val>"memorandum"</val> sont des notes prises par le ou les
-									enquêteur(s) sur l'enquête en cours. Leur contenu peut aller
-									d'une liste de personnes à interroger, de vérifications à
-									effectuer, de questions à poser à telle ou telle personnes. Les
-									éléments de type <val>"memorandum"</val> sont facilement
-									identifiable au fait qu'ils commencent généralement par la
-									mention "memorandum" en tête du texte. <!--      						CAS PARTICULIER DU MEMO P;13-->
-									<egXML xmlns="http://www.tei-c.org/ns/Examples">
-										<div type="memorandum" n="1">
-											<!-- le contenu du memorandum ici -->
-										</div>
-									</egXML></p>
-							</div5>
-							<div5>
-								<head>Les <gi>div</gi> typées <val>"article"</val></head>
-								<p>Jusqu'à présent nous nous sommes concentrés sur les <gi>div</gi>
-									qui correspondaient à des sections du manuscrit. Il existe
-									cependant un type particulier de <gi>div</gi> typée
-										<val>"article"</val>. Ces sections sont des notes
-									dénonçant des manquements ou des pratiques jugées scandaleuses
-									par les enquêteurs. Elles récapitulent des chefs d'accusation
-									contre des membres identifiées du clergé. Généralement titrées
-									de manière à identifier l'individu faisant l'objet de cette note
-									et parfois subdivisées en sous-sections également titrées,
-									généralement par un élément de contexte (un lieu, une date),
-									Ce qui donne : <egXML
-										xmlns="http://www.tei-c.org/ns/Examples">
-										<div type="collection" n="1">
-											<!-- des sections <div> typée article ici-->
-											<div type="article" n="1">
-												<!-- le contenu de l'article ici -->
-											</div>
-											<div type="article" n="2">
-												<!-- le contenu de l'article ici -->
-											</div>
-											<div type="article" n="3">
-												<!-- le contenu de l'article ici -->
-											</div>
-										</div>
-									</egXML>
-								</p>
-								<p>Les <gi>div</gi> de <att>type</att>
-									<val>"article"</val> ont généralement une ou plusieurs
-									sous-section balisée(s) à l'aide d'un élément <gi>div</gi> non
-									typé. Ce qui donne pour les pages 9 à 11 : <egXML
-										xmlns="http://www.tei-c.org/ns/Examples">
-										<div type="collection" n="1">
-											<!-- des sections <div> typée article ici-->
-											<div type="article" n="1">
-												<!-- le contenu de l'article ici -->
-												<div>
-												<!--sous-section de n=1-->
-												</div>
-											</div>
-											<div type="article" n="2">
-												<!-- le contenu de l'article ici -->
-												<div>
-												<!--sous-section de n=2-->
-												</div>
-											</div>
-											<div type="article" n="3">
-												<!-- le contenu de l'article ici -->
-												<div>
-												<!--première sous-section de n=3-->
-												</div>
-												<div>
-												<!-- deuxième sous-section de n=3-->
-												</div>
-												<div>
-												<!--troisième sous-section de n=3-->
-												</div>
-											</div>
-											<div type="article" n="4">
-												<!-- le contenu de l'article ici -->
-												<div>
-												<!--première sous-section de n=3-->
-												</div>
-												<div>
-												<!-- deuxième sous-section de n=3-->
-												</div>
-												<div>
-												<!--troisième sous-section de n=3-->
-												</div>
-											</div>
-										</div>
-									</egXML>
-								</p>
-								<p>Les différents articles commencent généralement par un titre le
-									plus souvent constitué du nom de la personne contre laquelle
-									portent les accusations, c'est grâce à ce titre que nous
-									identifions chacunes des sections. Ce titre est balisé
-										<gi>head</gi>
-									<gloss>heading</gloss>. Ce titre doit être le premier élément
-									fils de la section correspondante. Ce qui donne pour les pages 9
-									à 11. <!--EXPLICATION DES TITRES-->
-									<egXML xmlns="http://www.tei-c.org/ns/Examples">
-										<div type="collection" n="1">
-											<!-- des sections <div> typée article ici-->
-											<div type="article" n="1">
-												<head>Serles</head>
-												<!-- le contenu de l'article ici -->
-												<div>
-												<!--sous-section de n=1-->
-												</div>
-											</div>
-											<div type="article" n="2">
-												<head>Sandwich alias Gardiner in sermon in Christes
-												church the iiide sonday after xii day.</head>
-												<!-- le contenu de l'article ici -->
-												<div>
-												<!--sous-section de n=2-->
-												</div>
-											</div>
-											<div type="article" n="3">
-												<head>Shether. 23 Apriles in the chapter
-												howse.</head>
-												<!-- le contenu de l'article ici -->
-												<div>
-												<!--première sous-section de n=3-->
-												</div>
-												<div>
-												<!-- deuxième sous-section de n=3-->
-												</div>
-												<div>
-												<!--troisième sous-section de n=3-->
-												</div>
-											</div>
-											<div type="article" n="4">
-												<head>Sandwich alias Gardiner at wye in lent was xii
-												month in the faire.</head>
-												<!-- le contenu de l'article ici -->
-												<div>
-												<!--première sous-section de n=4-->
-												</div>
-												<div>
-												<!-- deuxième sous-section de n=4-->
-												</div>
-											</div>
-										</div>
-									</egXML>
-								</p>
-								<p>Attention ! Les sous-sections ont elles aussi des titres
-									également balisés <gi>head</gi>, ces sous-sections balisées
-										<gi>div</gi> à l'intérieur de l'élément <gi>div</gi> typé
-									sont identifiés par ces titres qui contiennent généralement un
-									élément de contextualisation tel un lieux ou une date.
-									<!--      						EXPLICATION DE L'ENCHAÎNEMENT DES SOUS-SECTIONS ET DES TITRES LORSQUE LE TITRE ET SOUS TITRE + MÊME LIGNE (voir note visio du 03/05)-->
-								</p>
-								<p>Ceci nous amène à un point crucial du balisage qui requiert une
-									attention toute particulière : il arrive que le titre de ce que
-									nous identifions comme une sous-section se confonde avec le
-									titre de la section correspondante. Dans ces cas il faut
-									restituer le titre de la section, le nom de la personne puis
-									immédiatement insérer une sous-section et son titre. Ce qui
-									donne donc pour les pages 9 à 11 : <egXML
-										xmlns="http://www.tei-c.org/ns/Examples">
-										<div type="collection" n="1">
-											<!-- des sections <div> typée article ici-->
-											<div type="article" n="1">
-												<head>Serles</head>
-												<!-- le contenu de l'article ici -->
-												<div>
-												<head>At layname</head>
-												<!--sous-section de n=1-->
-												</div>
-											</div>
-											<div type="article" n="2">
-												<head>Sandwich alias Gardiner</head>
-												<!-- le contenu de l'article ici -->
-												<div>
-												<head> in sermon in Christes church the iiide
-												sonday after xii day.</head>
-												<!--première sous-section de n=2-->
-												</div>
-												<div>
-												<head>The next sonday after.</head>
-												<!--deuxième sous-section de n=2-->
-												</div>
-											</div>
-											<div type="article" n="3">
-												<head>Shether.</head>
-												<!-- le contenu de l'article ici -->
-												<div>
-												<head>23 Apriles in the chapter howse.</head>
-												<!--première sous-section de n=3-->
-												</div>
-												<div>
-												<head>15 Maii at saynt Stevyns.</head>
-												<!-- deuxième sous-section de n=3-->
-												</div>
-												<div>
-												<head>16 Septembris in the chapter howse.</head>
-												<!--troisième sous-section de n=3-->
-												</div>
-											</div>
-											<div type="article" n="4">
-												<head>Sandwich alias Gardiner</head>
-												<!-- le contenu de l'article ici -->
-												<div>
-												<head>at wye in lent was xii month in the
-												faire.</head>
-												<!-- première sous-section de n=4-->
-												</div>
-												<div>
-												<head>In festo pasche</head>
-												<!-- deuxième sous-section de n=4-->
-												</div>
-												<div>
-												<head>2do septembris</head>
-												<!--troisième sous-section de n=4-->
-												</div>
-											</div>
-										</div>
-									</egXML>
-								</p>
-								<p>La caractéristique principale et nécessaire pour qu'un segment
-									textuel soit considéré comme titre de section ou de sous-section
-									est la disposition du segment. Le segment identifié comme titre
-									est toujours centré, aussi un segment dont le contenu serait un
-									élément de contextualisation au sein d'un paragraphe ne peut
-									être considéré comme le titre d'une sous-section.</p>
-								<p>Ceci étant dit, un changement structurel semble s'opérer aux
-									alentours de la page 40. L'auteur du manuscrit a préféré insérer
-									le nom des personnes dont traite un morceau de texte dans la
-									marge. On reconnaît aisément ce phénomène : l'écriture s'allonge
-									et délimite clairement une sous-section du texte. Nous employons
-									le terme "section" car ce changement loin d'être uniquement
-									calligraphique marque un changement structurel dans
-									l'organisation des articles. Les informations circonstancielles
-									qui constituaient le titre d'une sous-section sont maintenant le
-									titre d'une section et les noms de personne des titres de
-									sous-section. Ainsi au milieu de la page 44 observons-nous la
-									fin de la section précédente (en vert), le début d'une nouvelle
-									section identifiable à son titre (hachuré en vert),
-									immédiatement suivi d'une sous-section (en orange) amorcée par
-									son titre dans la marge (hachuré en orange) :</p>
-								<figure>
-									<head>Changement dans le découpage des sections et sous-sections
-										des articles, exemple du haut de la page 44</head>
-									<graphic url="visu_structure_fine_p44_middletop.png"
-										width="500px"/>
-								</figure>
-								<p>Pour ces cas de figure nous adjoignons à l'élément <gi>head</gi>
-									l'attribut <att>rend</att> avec comme valeur
-										<val>"margin_left"</val> pour rendre compte de
-									l'organisation de la page.</p>
-								<egXML xmlns="http://www.tei-c.org/ns/Examples">
-									<div type="article" n="?">
-										<!--Cette section débute page 42-->
-										<!--contenu de la section-->
-									</div>
-									<div type="article" n="?">
-										<!--Dans ce balisage effectué à la main les numéros des <div> ne sont pas reportés-->
-										<head>20 Septembre Anno 1543.</head>
-										<div>
-											<head rend="margin_left">Shether</head>
-											<!--contenu de la sous-section-->
-										</div>
-										<!--Cette section se poursuit jusqu'à la page 45-->
-									</div>
-								</egXML>
-								<p>En aucun cas ne faut-il baliser ces titres en <gi>note</gi>, cela
-									risquerait de nuire à la représentation de la structure
-									sémantique du texte.</p>
-							</div5>
-						</div4>
-					</div3>
-					<div3>
-						<head>Découper finement le texte</head>
-						<p>Le découpage par section et sous-section se fait principalement grâce à
-							l'élément <gi>div</gi>, de manière générale après une succession de
-								<gi>div</gi> enchâssées, la plus petite contient un (ou des)
-							élément(s) <gi>p</gi> accompagné(s) (ou non) d'un (ou de plusieurs)
-							élément(s) <gi>note</gi>.</p>
-						<div4>
-							<head>Les <gi>div</gi><gloss>ision</gloss> du texte</head>
-							<!--      				Les div qui contiennent <p> et <note>-->
-							<p>À ces sections et sous-sections s'ajoute un découpage tentant de
-								rendre compte de l'organisation du texte sur la page. Le but
-								principal de ces divisions est de rendre compte de la correspondance
-								entre les éléments <gi>p</gi> et les éléments <gi>note</gi>, elles
-								acquièrent par là une fonction de structure sémantique.</p>
-							<figure>
-								<head>Représentation de la page 11 divisée en <gi>div</gi></head>
-								<graphic url="visu_structure_fine_11.png" width="500px"/>
-							</figure>
-							<p>Ce qui donne pour les pages 9 à 11 : <egXML
-									xmlns="http://www.tei-c.org/ns/Examples">
-									<div type="collection" n="1">
-										<!-- des sections <div> typée article ici-->
-										<div type="article" n="1">
-											<head>Serles</head>
-											<!-- le contenu de l'article ici -->
-											<div><!--cet élément<div> regroupe une note et son paragraphe correspondant-->
-												<note>
-												<metamark/>
-												</note>
-												<p>The 26 of August last past in the chapter howse
-												Ther be summe synnes that can not be forgyven but
-												by fastynge &amp; prayer.</p>
-											</div>
-											<div><!--cet élément <div> regroupe une note et son paragraphe correspondant-->
-												<note>
-												<metamark/>
-												</note>
-												<p>Good peple you have been deceyved with prechers,
-												but if you have receyved any poyson &amp; lerned
-												any false doctrine &amp; byleved by ignorance, you
-												be not to blame, neither god is discontent with
-												you. </p>
-											</div>
-											<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note><metamark/></note>
-												<note>At Ashforth 12 Augusti: Anno 1543</note>
-												<p>In hel is burnynge of brymston, wilde fier,
-												gunpowder, soden hete, soden colde. And we may be
-												sure therof bicause that David Moses &amp; the
-												prophetes, which taught us those thynges, were in
-												the paynes of hel, or in a kynde of hel which
-												islimbo.</p>
-											</div>
-											<div>
-												<head>At layname</head>
-												<!--sous-section de n=1-->
-												<div><!--cet élément <div> regroupe notes et paragraphe correspondant, en l'occurence il n'y a pas de note-->
-												<p>In the howse of Mary and or Martha he fownde a
-												certen man veray sicke and sore diseased, whose
-												name was Lazarus brother to thies ii virgyns.
-												Magdalen was a faire fyngered gentle woman.</p>
-												</div>
-												<div>
-												<note>or religion</note>
-												<p>Christ said to Martha. Thy busynes shal have an
-												ende, but thy sisteres busynes shal last &amp;
-												never have ende. </p>
-												</div>
-											</div>
-										</div>
-										<div type="article" n="2">
-											<head>Sandwich alias Gardiner</head>
-											<!-- le contenu de l'article ici -->
-											<div>
-												<head> in sermon in Christes church the iiide sonday
-												after xii day.</head>
-												<!--première sous-section de n=2-->
-												<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>seditious</note>
-												<note><metamark/></note>
-												<p>The peple have not had hitherto the good wyne
-												of goddes worde, but a day wolde com that they
-												sholde have good wyne agayne, B But good peple be
-												content, for nondum venit hora. the tyme is not
-												yet come that you sholde have good wyne.</p>
-												</div>
-												<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>sclaunderous</note>
-												<p>Of late dayes you have had here so many
-												waterlaggeres, which have turned your good wyne
-												into water, that you cowde have no good doctrine
-												taught ne preched, unto you, but the phantasies of
-												their own braynes.</p>
-												</div>
-												<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>Images</note>
-												<p> Peple may knele bifore images with their
-												bookes &amp; beads kysse their feete, sence theym,
-												&amp; offre to theym, so that they directe al this
-												honour to the sayntes in heavyn. </p>
-												</div>
-												<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>seditious</note>
-												<p> As Christ was accused by ii or iii false
-												knaves, so a man may be accused by ii or iii false
-												knaves, &amp; the juge as false a knave as the
-												best, &amp; so be condemned </p>
-												</div>
-											</div>
-											<div>
-												<head>The next sonday after.</head>
-												<!--deuxième sous-section de n=2-->
-												<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>Images</note>
-												<p> I dyd prove by Ezechiel, hieremy, saynt Paule
-												&amp; Origene, that an image was none idole. I
-												called theym water laggers</p>
-												</div>
-												<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>seditious</note>
-												<p> You ar greved with me bicause I called theym
-												waterlaggers which have chaunged our good wyne
-												into water. Truly I cowde invent no fytter name
-												for theym, but evyn as I said than, so I say
-												agayne. I bishrewe their hartes for me. Thay ar
-												come hither &amp; have corrupte our good wyne. I
-												wolde thay wolde get theym home agayne thither
-												from whens they cam But they must be smoked &amp;
-												purged rownde about with fire, or elles we shal
-												never be rid of theym.</p>
-												</div>
-												<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>seditious</note>
-												<p> Som of you thought that som sholde have been
-												hanged, but if you had deserved no more to be
-												burned than thay have to be hanged, you sholde
-												both do wel enough. plura quere fo. sequente.</p>
-												</div>
-											</div>
-										</div>
-										<div type="article" n="3">
-											<head>Shether.</head>
-											<!-- le contenu de l'article ici -->
-											<div>
-												<head>23 Apriles in the chapter howse.</head>
-												<!--première sous-section de n=3-->
-												<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>sclanderous</note>
-												<p>Now a dayes good christians thay tech no thynge
-												but carnal libertie. No man doth teach you the
-												commaund- mentes of god, no man doth prech unto
-												you goddes lawes yea no man dare do it, or rather
-												wil do it not.</p>
-												</div>
-											</div>
-											<div>
-												<head>15 Maii at saynt Stevyns.</head>
-												<!-- deuxième sous-section de n=3-->
-												<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>sclanderous</note>
-												<p>He made the people bileve with a grete
-												multitude words that they had prechers here which
-												had preched agaynst a vocal prayer, &amp; had
-												called vocal prayer no thynge but babelynge &amp;
-												lippe labour.</p>
-												</div>
-												<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>
-												<metamark/>
-												</note>
-												<p>Upon this text, you must pray without
-												intermission, he said Som felowes say that this is
-												impossible, but I shal tel you good christianes
-												how to performe this. It is a common sayinge in
-												the lawe. That that a man doth by his proctor, he
-												doth it by hymselfe. Wherfore whan thou art in the
-												felde at thy labour or otherwise occupied, hire
-												the church to pray for the (the church he called
-												the preistes) &amp; so shalt thou continually
-												pray. </p>
-												</div>
-												<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>
-												<metamark/>
-												</note>
-												<p>He counceled laborynge men to divide their
-												labour into iii partes. To gyve one peny to the
-												poore, an other to the preistes to pray for theym,
-												&amp; the iiide to kepe for theymselfes &amp;
-												their howseholdes. </p>
-												</div>
-												<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>
-												<metamark/>
-												</note>
-												<p>He did discorage men from prayinge in the
-												mother tonge, sayinge. Som of you say that men can
-												not pray in an unknown tonge, bicause thay
-												understonde not what thay say. But I say that no
-												man understondeth what he prayeth, as saynt Paule
-												saith. Nescit homo quomodo orandum sit, sed
-												spiritus hominis docet quomodo orandum sit. And
-												therfore though you do not understande what you
-												pray, yet pray so stil. </p>
-												</div>
-											</div>
-											<div>
-												<head>16 Septembris in the chapter howse.</head>
-												<!--troisième sous-section de n=3-->
-												<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>decrees</note>
-												<p>Al the constitutions decrees &amp; ordinances
-												of our holy mother the church ar most godly, most
-												holy, &amp; therfore ar to observed of al her
-												children christen peple without disputynge or
-												reasonynge of any of theym. </p>
-												</div>
-												<div>
-												<note>
-												<metamark/>
-												</note>
-												<p> God dyd ingrave the hole power &amp; wisedome
-												of the trinitie in lucifer.</p>
-												</div>
-											</div>
-										</div>
-										<div type="article" n="4">
-											<head>Sandwich alias Gardiner</head>
-											<!-- le contenu de l'article ici -->
-											<div>
-												<head>at wye in lent was xii month in the
-												faire.</head>
-												<!-- première sous-section de n=4-->
-												<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>
-												<metamark/>
-												<metamark>+</metamark>
-												</note>
-												<p>He playnly affirmed the state &amp; condition
-												of the sowles departed. </p>
-												</div>
-												<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>ceremonies <metamark/>
-												</note>
-												<p> Upon palme sonday last past he dyd execute in
-												the cathedral church of Canturbery &amp; halowed
-												the palme &amp; songe hye masse without decla-
-												ringe the ceremony</p>
-												</div>
-											</div>
-											<div>
-												<head>In festo pasche</head>
-												<!-- deuxième sous-section de n=4-->
-												<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note><metamark/></note>
-												<p> He said ther be som that be no preistes, that
-												do take opon theym to minister the sacramentes.
-												</p>
-												</div>
-											</div>
-											<div>
-												<head>2do septembris</head>
-												<!--troisième sous-section de n=4-->
-												<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>
-												<metamark/>
-												</note>
-												<p> Only love grafted Paule &amp; Mary Magdanele
-												in Christ. He moved the peple to take away ageyne
-												their beades matens, evynsonge &amp; vii psalmes>,
-												which of late they had cast away by theym that
-												preched agaynst al vocal prayer </p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</egXML></p>
-							<p>À noter ces <gi>div</gi> sont frères des <gi>head</gi> de la section
-								ou sous-section qui les encadre. Ainsi pour les pages 9 à 10, ne
-								faut-il PAS baliser ainsi :</p>
-							<egXML xmlns="http://www.tei-c.org/ns/Examples">
-								<div><!--cet élément <div> représente la section concernant Serles-->
-									<!--Emplacement correct de l'élément <head>-->
-									<div><!--cet élément<div> regroupe une note et son paragraphe correspondant-->
-										<head>Serles</head>
-										<!--ce <head> est fautif-->
-										<note>
-											<metamark/>
-										</note>
-										<p>The 26 of August last past in the chapter howse Ther be
-											summe synnes that can not be forgyven but by fastynge
-											&amp; prayer.</p>
-									</div>
-									<div><!--cet élément <div> regroupe une note et son paragraphe correspondant-->
-										<note>
-											<metamark/>
-										</note>
-										<p>Good peple you have been deceyved with prechers, but if
-											you have receyved any poyson &amp; lerned any false
-											doctrine &amp; byleved by ignorance, you be not to
-											blame, neither god is discontent with you. </p>
-									</div>
-									<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-										<note><metamark/></note>
-										<note>At Ashforth 12 Augusti: Anno 1543</note>
-										<p>In hel is burnynge of brymston, wilde fier, gunpowder,
-											soden hete, soden colde. And we may be sure therof
-											bicause that David Moses &amp; the prophetes, which
-											taught us those thynges, were in the paynes of hel, or
-											in a kynde of hel which islimbo.</p>
-									</div>
-									<div><!--cet élément <div> représente une sous-section concernant Serles At layname-->
-										<!--Emplacement correct de l'élément <head>-->
-										<div><!--cet élément <div> regroupe notes et paragraphe correspondant, en l'occurence il n'y a pas de note-->
-											<head>At Layname</head>
-											<!--ce <head> est fautif-->
-											<p>In the howse of Mary and or Martha he fownde a certen
-												man veray sicke and sore diseased, whose name was
-												Lazarus brother to thies ii virgyns. Magdalen was a
-												faire fyngered gentle woman.</p>
-										</div>
-										<div>
-											<note>or religion</note>
-											<p>Christ said to Martha. Thy busynes shal have an ende,
-												but thy sisteres busynes shal last &amp; never have
-												ende. </p>
-										</div>
-									</div>
-								</div>
-							</egXML>
-							<div5>
-								<head>Contiennent des des <gi>list</gi>, des <gi>p</gi> et des
-										<gi>note</gi></head>
-								<p>Pour rendre compte du contenu textuel des pages nous employons
-									des <gi>div</gi> signifiant le lien entre une note de marge et
-									le contenu du corps du texte. Les notes contiennent généralement
-									des commentaires ou des gloses du texte associé. Si, une fois la
-									division des segments effectués par les <gi>div</gi> la
-									distinction entre ses fils <gi>note</gi> et <gi>p</gi> est
-									relativement aisée. La situation se complique lorsque plusieurs
-									notes se succèdent parfois sur la même ligne. Le choix qui a été
-									opéré est de réunir dans un même élément <gi>note</gi> son
-									contenu textuel et les éventuels éléments <gi>metamark</gi>
-									correspondant au même paragraphe. C'est pourquoi nous balisons
-									ainsi à la page 11 : <figure>
-										<head/>
-										<graphic url="visu_structure_fine_11_2.png" width="500px"/>
-									</figure>
-									<egXML xmlns="http://www.tei-c.org/ns/Examples">
-										<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-											<note>decrees <metamark/>
-											</note>
-											<p>Al the constitutions decrees &amp; ordinances of our
-												holy mother the church ar most godly, most holy,
-												&amp; therfore ar to observed of al her children
-												christen peple without disputynge or reasonynge of
-												any of theym. </p>
-										</div>
-									</egXML>
-								</p>
-								<p>De même lorsque plusieurs <gi>metamark</gi> se succèdent <egXML
-										xmlns="http://www.tei-c.org/ns/Examples">
-										<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-											<note>
-												<metamark/>
-												<metamark>+</metamark>
-											</note>
-											<p>He playnly affirmed the state &amp; condition of the
-												sowles departed. </p>
-										</div>
-										<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-											<note>ceremonies <metamark/>
-											</note>
-											<p> Upon palme sonday last past he dyd execute in the
-												cathedral church of Canturbery &amp; halowed the
-												palme &amp; songe hye masse without decla- ringe the
-												ceremony</p>
-										</div>
-									</egXML>
-								</p>
-								<p>Plus rare mais suffisamment fréquent et signifiant pour justifier
-									l'emploi d'un nouvel élément, on trouve parfois des listes de
-									nom, généralement témoins de faits recensés dans le corps du
-									texte. Mises en valeurs par le scribe il convient de les encoder
-									en tant que <gi>list</gi>
-									<gloss>list</gloss> dont chaque entrée sera balisée
-										<gi>item</gi>
-									<gloss>item</gloss>. Ainsi la page 92 :</p>
-								<figure>
-									<head>Le milieu de la page 92</head>
-									<graphic url="92.jpg" width="500px"/>
-								</figure>
-								<p>Se balise ainsi : <egXML xmlns="http://www.tei-c.org/ns/Examples">
-										<div><!-- cet élément <div> regroupe notes et paragraphes, mais ici il ne contient qu'un élément <list> et <metamark> -->
-											<list>
-												<head>Testes.</head>
-												<!-- PAS ENCORE SÜR QUE TESTES SOIT À CONSIDÉRER COMME TITRE DE LA LISTE DE TÉMOINS -->
-												<item>Clement Norton</item>
-												<item>Joan Seth</item>
-												<item>Robert ffyntuves fynes</item>
-												<item>Richard Stickney</item>
-												<item>Richard Dryland</item>
-												<item>Lauraunce Manby</item>
-												<item>and other of ffaversham</item>
-											</list>
-											<metamark>}</metamark>
-										</div>
-									</egXML> À l'intérieur d'un élément <gi>div</gi> servant à
-									définir l'organisation du texte sur la page, nous insérons un
-									élément <gi>list</gi> et ses <gi>item</gi> ainsi que son titre
-									balisé <gi>head</gi> "testes" qui explicite la nature de la
-									liste : une liste de témoins. Notons que l'élément
-										<gi>metamark</gi> est à insérer comme frère de l'élément
-										<gi>list</gi> et donc fils de <gi>div</gi> plutôt que
-										<gi>note</gi>, puisqu'elle fait partie du corps du texte et
-									pas d'une note.</p>
-								<p>Afin de rendre compte de l'organisation des contenus textuels sur
-									la page nous associons aux éléments <gi>note</gi>
-									<gi>list</gi>
-									<gi>head</gi> et <gi>p</gi> un attribut <att>rend</att> avec
-									pour valeurs <val>"margin_left"</val> et <val>"main"</val>
-									respectivement. Si nous n'ajoutons l'attribut <att>rend</att> à
-										<gi>head</gi> que lorsqu'il est situé dans la marge,
-									l'attribut est systématiquement requis pour les autres éléments.
-									Ce qui donne pour ces deux <gi>div</gi> de la page 11 : <egXML
-										xmlns="http://www.tei-c.org/ns/Examples">
-										<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-											<note rend="margin_left">decrees <metamark/>
-											</note>
-											<p rend="main">Al the constitutions decrees &amp;
-												ordinances of our holy mother the church ar most
-												godly, most holy, &amp; therfore ar to observed of
-												al her children christen peple without disputynge or
-												reasonynge of any of theym. </p>
-										</div>
-									</egXML>
-									<egXML xmlns="http://www.tei-c.org/ns/Examples">
-										<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-											<note rend="margin_left">
-												<metamark/>
-												<metamark>+</metamark>
-											</note>
-											<p rend="main">He playnly affirmed the state &amp;
-												condition of the sowles departed. </p>
-										</div>
-										<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-											<note rend="margin_left">ceremonies <metamark/>
-											</note>
-											<p rend="main"> Upon palme sonday last past he dyd
-												execute in the cathedral church of Canturbery &amp;
-												halowed the palme &amp; songe hye masse without
-												decla- ringe the ceremony</p>
-										</div>
-									</egXML>
-								</p>
-								<p>Cependant il existe des cas où les éléments textuels du corps du
-									texte sont plus difficilement assimilables à un seul paragraphe
-									unifié. La page 90 est un bon exemple.</p>
-								<figure>
-									<head>La page 90</head>
-									<graphic url="90.jpg" width="500px"/>
-								</figure>
-								<p>Pour ces cas problématiques nous avons prévus des valeurs à
-									l'attribut <att>rend</att> permettant de rendre compte de
-									l'organisation du texte sur la page.</p>
-								<p>Ici une sous-section débute avec l'introduction de son titre dans
-									la marge "Serles", après deux lignes identifiables à un
-									paragraphe débute une liste composée d'une sous-liste toutes
-									deux liées à une paragraphe par un pour les autres éléments
-										<gi>metamark</gi>. Le sens des contenus textuels nous permet
-									d'identifier les listes comme étant les éléments principaux de
-									la démonstration, similaire à un paragraphe, référant au
-									paragraphe sur la droite. N'étant pas dans la marge on ne peut
-									baliser comme d'habitude avec la valeur <val>"margin_left"</val>
-									à l'attribut <att>rend</att>. Dès lors nous décidons d'utiliser
-									deux autres valeurs à l'attribut <att>rend</att> à savoir
-										<val>"main_left"</val> pour l'élément <gi>list</gi> et
-										<val>"main_right"</val> pour l'élément <gi>p</gi>. La
-									sous-liste est séparée de la liste par l'encodage pour permettre
-									de la lier à la note comprenant un élément <gi>metamark</gi> et
-									du contenu textuel. Nous nous assurons ainsi que la structure
-									sémantique des éléments est respectée et que leur disposition
-									sur la page est retranscrite. </p>
-								<egXML xmlns="http://www.tei-c.org/ns/Examples">
-									<div>
-										<head rend="margin_left">Serles</head>
-										<div>
-											<list rend="main_left">
-												<item>John Abby</item>
-												<item>Rauf post</item>
-											</list>
-											<note rend="main_left">
-												<metamark>}</metamark> preestes</note>
-											<list rend="main_left">
-												<item>John ffurner</item>
-												<item>Robert Burges</item>
-												<item>John Colyer</item>
-												<item>John Brewster</item>
-												<item>Richard Stokes</item>
-												<item>William Greneland</item>
-												<item>James Pyrryn</item>
-											</list>
-											<metamark>}</metamark>
-											<p rend="main_right">Thies personnes ar noted to be
-												witnes of the Sermon made at Lenham the day of the
-												Assumption of our Ladye</p>
-										</div>
-									</div>
-								</egXML>
-								<!--      					LISTE DES VALEURS, COMMENTAIRES, ET APPLICATIONS AUX PAGES PROBLÉMATIQUES-->
-								<p>Certains paragraphes tel l'avant-dernier paragraphe de la page
-									40, prennent toute la largeur de la feuille Nous employons la
-									valeur <val>"whole_width"</val> pour décrire l'élément
-										<gi>p</gi>.</p>
-								<figure>
-									<head>Une structure inhabituelle au bas de la page 40</head>
-									<graphic url="40_bottom.jpg" width="500px"/>
-								</figure>
-								<p> Il paraît alors difficile de savoir si le contenu textuel
-									concerné est un paragraphe ou une note. Un examen approfondi de
-									ces passages révèle qu'ils sont souvent insérés a posteriori et
-									sont donc à baliser avec l'élément <gi>p</gi> dans lequel nous
-									insérons un élément <gi>add</gi> (sur lequel nous reviendrons
-									plus tard). <egXML xmlns="http://www.tei-c.org/ns/Examples">
-										<div type="article" n="?">
-											<!--section contre Serles commençant à la page 39-->
-											<div>
-												<p rend="main">Item the xii daye of August. Anno
-												predictus in the parrishe churche of Ashford he
-												preached. That prayer was not acceptable to god.
-												but in the churche only and no where ellis.
-												Alledging this text</p>
-											</div>
-											<div>
-												<note rend="margin-left">proclamations</note>
-												<p rend="main">Domus mea domus orationis
-												vocabit<expan>ur</expan></p>
-											</div>
-											<div>
-												<p rend="whole_width"><add place="inline">Item he
-												pre preched there and than, sayinge, <add
-												place="above">in discoragynge of men from the
-												redynge bible</add> you ffelowes of the new
-												trickery that go up and downe with your
-												testamentes in your handes, I pray you what profet
-												take you by theym,</add></p>
-											</div>
-											<div>
-												<note rend="margin_left"><metamark/></note>
-												<p rend="main">Item than and there he preached thus.
-												As Adam was expulsed out of paradise for medlyng
-												w<expan>ith</expan> a tree of knouledge. even so
-												be wee: for medling w<expan>ith</expan> the
-												scripture of Christ.</p>
-											</div>
-										</div>
-									</egXML> Notons dans cet exemple le choix réalisé de ne pas
-									découper le paragraphe entre deux éléments <gi>div</gi>. En
-									effet si la <gi>metamark</gi> identifiée se situe face à la
-									deuxième ligne du paragraphe, il est probable qu'elle concerne
-									l'ensemble du paragraphe. Dès lors il convient de ne produire
-									qu'un seul élément <gi>div</gi> enserrant <gi>note</gi> et
-										<gi>p</gi> et non deux. Si de manière générale les
-										<gi>metamark</gi> sont inscrites en face du début d'un
-									paragraphe, il arrive que ce ne soit pas le cas. Il n'est
-									justifié de produire un nouvel élément <gi>div</gi> que pour
-									identifier des paragraphes distincts ou des <gi>metamark</gi>
-									nettement distinctes. <!--      					EXEMPLE À TROUVER-->
-								</p>
-								<p>Jusqu'ici nous avions l'habitude de baliser les éléments
-										<gi>note</gi> avant l'élément <gi>p</gi> correspondant. Or
-									la deuxième moitié de la page 44 semble nous poser problème.
-									Dans le premier élément <gi>div</gi> représenté en noir, nous
-									distinguons un premier paragraphe, une note dans la marge et un
-									second paragraphe prenant toute la largeur de la page. Il paraît
-									difficile de déterminer comment opérer le découpage en
-										<gi>div</gi>. N'aurait-il pas mieux fallu regrouper la
-										<gi>note</gi> avec le premier ou le second <gi>p</gi> ?</p>
-								<figure>
-									<head>La deuxième moitié de la page 44 </head>
-									<graphic url="visu_structure_fine_p44_2.png" width="500px"/>
-								</figure>
-								<p>Un examen approfondi du texte permet de déterminer que le contenu
-									de l'élément <gi>note</gi> réfère au second paragraphe. Ce qui
-									nous permet de produire un choix éclairé de balisage : l'élément
-										<gi>note</gi> doit être placé entre les deux <gi>p</gi>
-									respectant ainsi l'organisation du texte sur la page et son
-									ordre sémantique. Le choix que nous opérons quant au découpage
-									de l'élément <gi>div</gi> doit donc être le suivant :</p>
-								<figure>
-									<head>La deuxième moitié de la page 44 balisée selon
-										l'organisation sémantique du texte</head>
-									<graphic url="visu_structure_fine_p44_2_2.png" width="500px"/>
-								</figure>
-								<p>Ajoutant un élément <gi>div</gi> entourant l'élément
-										<gi>note</gi> et le <gi>p</gi> concerné, représenté en rouge
-									ici</p>
-								<egXML xmlns="http://www.tei-c.org/ns/Examples">
-									<div>
-										<p rend="main">He preached the same day and place That
-											Christ and baptisme did nothing elles but washe awaye
-												o<expan>ur</expan> originall synne
-												<metamark>/</metamark> and if that any man after
-											baptisme, did fall he must purchace remission of his
-											synnes by penaunce as mary magdalen did
-												<metamark>/</metamark>
-										</p>
-									</div>
-									<div>
-										<note rend="margin_left">pilgrimages</note>
-										<p rend="whole_width">
-											<add place="inline">It<expan>em</expan> he
-												p<expan>re</expan>ched there <expan>that</expan> a
-												certen kynge was sicke of a leprocie, &amp; had a
-												vision to go to Jordan to be baptized wasshed, &amp;
-												sholde be hole. And as he was in his good intent
-												goinge thider., he thought <expan>that</expan> he
-												had as good &amp; swete water in his own cuntray as
-												<expan>that</expan> was. And so returned backe
-												&amp; wasshed hy<expan>m</expan>selfe therin, but no
-												thynge at al he therby me<expan>n</expan>ded. And
-												than he went to Jordan, &amp; so was made hole.
-											</add>
-										</p>
-									</div>
-								</egXML>
-								<p>On observe également que dans le (désormais) troisième
-										élément<gi>div</gi> représentée en noir, l'élément
-										<gi>note</gi> n'est pas tout à fait aligné avec le début du
-									paragraphe. Il convient cependant de bien baliser l'élément
-										<gi>note</gi> avant l'élément <gi>p</gi> auquel il fait
-									référence. Ici encore nous tentons dans notre balisage de mettre
-									l'accent sur l'organisation sémantique de la page. Ce qui donne
-									: <egXML xmlns="http://www.tei-c.org/ns/Examples">
-										<div>
-											<note rend="margin_left">Erro<expan>ur</expan> &amp;
-												seditious</note>
-											<p rend="main">In a Sermon he compared mannes conscience
-												to a dogge <metamark>/</metamark> and said, <del
-												rend="strikethrough">that if a mans conscience
-												(which he called his dogge) did myslike the
-												<expan>ser</expan>mon,</del></p></div>
-										<div>
-											<p rend="main">Biware of thies false
-												p<expan>re</expan>cheres, which p<expan>re</expan>ch
-												to you new fangelles. wil you knowe how to discerne
-												a true p<expan>re</expan>cher fro<expan>m</expan> a
-												false. You have a dogge which is yo<expan>ur</expan>
-												co<expan>n</expan>science. Whan so
-												ev<expan>er</expan> you shal com to any
-												<expan>ser</expan>mon, aske yo<expan>ur</expan>
-												dogge what he saith unto it. If he say it be good,
-												than folowe it. But if yo<expan>ur</expan> dogge
-												barke agaynst it, &amp; say <expan>that</expan> it
-												is naught </p>
-										</div>
-									</egXML>
-								</p>
-							</div5>
-							<div5>
-								<head>Intégrer la pagination</head>
-								<p>Les pages impairs du manuscrit sont numérotées, la plupart du
-									temps, selon deux paginations différentes. Généralement situés
-									en haut à droite deux nombres indiquent le numéro du feuillet
-									(pour les nombres en noir) ou de la page (pour les nombres en
-									rouge). Ces paginations ne sont pas identiques et méritent
-									toutes deux de figurer dans l'encodage. Ainsi nous les encodons
-									en <gi>num</gi>
-									<gloss>number</gloss> avec un attribut <att>type</att> de valeur
-										<val>"pagination"</val> un attribut <att>subtype</att> de
-									valeur <val>"red"</val> ou <val>"black"</val>, puis les
-									réunissons dans un élément <gi>ab</gi>
-									<gloss>anonymous block</gloss> lui même compris dans un élément
-										<gi>div</gi> non typé. Ainsi la page 13 : <egXML
-										xmlns="http://www.tei-c.org/ns/Examples">
-										<div>
-											<ab><num type="pagination" subtype="red">13</num>
-												<num type="pagination" subtype="black">4</num></ab>
-										</div>
-									</egXML>
-								</p>
-								<!--      					Unlike some other markup schemes, the TEI scheme does not require that headings attached to textual subdivisions at different hierarchic levels have different identifiers. All kinds of heading are marked identically using the head tag; the type or level of heading intended is implied by the immediate parent of the head element, which may for example be a div1, div2, etc., an un-numbered div, or any member of the model.listLike class. However, as with div elements, the encoder may choose to extend the model.headLike class of which head is the sole member to include other such elements if required.-->
-								<p>De manière générale nous nous efforçons de ne pas intégrer
-									l'élément <gi>div</gi> contenant la pagination en sous-éléments
-									de <gi>div</gi> définissant une section ou une sous-section. Si
-									cela est souvent possible, il arrive qu'une section couvrant
-									plusieurs pages inclue la pagination. Ce balisage n'est pas très
-									heureux car il nous impose d'intégrer un élément <gi>div</gi>
-									servant à décrire le manuscrit au sein d'un élément <gi>div</gi>
-									sémantique. Cependant ce balisage est correct d'un point de vue
-									TEI et il nous paraît préférable, afin de rendre compte à la
-									fois de la structure sémantique et de la disposition des
-									contenus sur la page, de nous en accommoder. Ainsi la page 11 : </p>
-								<egXML xmlns="http://www.tei-c.org/ns/Examples">
-									<div type="article" n="3">
-										<!-- Cette section commence dans la deuxième moitié de la page 10 -->
-										<head>Shether.</head>
-										<!-- le contenu de l'article ici -->
-										<div>
-											<head>23 Apriles in the chapter howse.</head>
-											<!--première sous-section de n=3-->
-										</div>
-										<div>
-											<head>15 Maii at saynt Stevyns.</head>
-											<!-- deuxième sous-section de n=3-->
-											<!--Après quelques paragraphes commence la page 11-->
-											<!--L'indication de la pagination dans l'élément <div> associé se retrouve donc fils d'une sous-section-->
-											<div>
-												<ab>
-												<num type="pagination" subtype="red">11</num>
-												<num type="pagination" subtype="black">3</num>
-												</ab>
-											</div>
-										</div>
-										<div>
-											<head>16 Septembris in the chapter howse.</head>
-											<!--troisième sous-section de n=3-->
-										</div>
-									</div>
-									<div type="article" n="4">
-										<head>Sandwich alias Gardiner</head>
-										<!-- le contenu de l'article ici -->
-										<div>
-											<head>at wye in lent was xii month in the faire.</head>
-											<!-- première sous-section de n=4-->
-										</div>
-										<div>
-											<head>In festo pasche</head>
-											<!-- deuxième sous-section de n=4-->
-										</div>
-										<div>
-											<head>2do septembris</head>
-											<!--troisième sous-section de n=4-->
-										</div>
-									</div>
-								</egXML>
-								<p>Encore une fois le manuscrit que nous traitons ne nous offre pas
-									le luxe d'être parfaitement régulier. Si la pagination rouge
-									semble couvrir l'ensemble du manuscrit, elle s'interrompt au
-									moins aux pages marquées 166a, 166b, 166c, 166d, où une
-									pagination grise prend en charge la numérotation. Pour ce cas
-									nous proposons d'employer une valeur <val>"grey"</val> à
-									l'attribut <att>subtype</att> concerné. Ce qui donne : <egXML
-										xmlns="http://www.tei-c.org/ns/Examples">
-										<div>
-											<ab><num type="pagination" subtype="grey"
-												>166a</num></ab>
-										</div>
-									</egXML>
-								</p>
-							</div5>
-							<div5>
-								<head>Le cas des éléments <gi>div</gi> typés
-										<val>"question_set"</val> et <val>"answer_set"</val></head>
-								<p>Une attention particulière est portée aux éléments <gi>div</gi> constituant le corps des sections de <att>type</att> <val>"question_set"</val> et <val>"answer_set"</val>.</p>
-								<p>Dans le manuscrit MS128, les sections identifiées comme
-										<val>"answer_set"</val> entretiennent un lien étroit avec
-									les sections identifiées comme <val>"question_set"</val>. En
-									effet, l'équipe scientifique en charge du projet repère des
-									correspondances entre ces réponses et les jeux de questions
-									préparés parfois pour plusieurs personnes. Pour marquer ces
-									correspondances nous ajoutons un attribut <att>xml:id</att>
-									<gloss>identifiant</gloss> aux éléments <gi>div</gi> entourant
-									l'élément <gi>p</gi> d'une question et ses notes éventuelles
-									parmi lesquelles se trouve un numéros associé à la question à
-									baliser en <gi>metamark</gi>. Ce qui donne pour la page 157 :
-										<egXML xmlns="http://www.tei-c.org/ns/Examples">
-										<div>
-											<ab>
-												<num type="pagination" subtype="red">157</num>
-											</ab>
-										</div>
-										<div type="question_set" n="8" xml:id="set8">
-											<!-- huitième section de type "question_set" -->
-											<head>Interrogatories for Doctor willoughby</head>
-											<div xml:id="set8_question1">
-												<!--élément <div> contenant la première question, soit un élément <p> et une <note> contenant un élément <metamark>-->
-												<note rend="margin_left">
-												<metamark>1</metamark>
-												</note>
-												<p rend="main">What tyme he first knewe of thies
-												matteres &amp; by whom.</p>
-											</div>
-											<div xml:id="set8_question2">
-												<!--élément <div> contenant la deuxième question, soit un élément <p> et une <note> contenant un élément <metamark>-->
-												<note rend="margin_left">
-												<metamark>2</metamark>
-												</note>
-												<p rend="main">what communication he had with Serles
-												apon palm sonday</p>
-											</div>
-										</div>
-									</egXML> L'identifiant des éléments <gi>div</gi> est construit
-									selon ce modèle : "setn_questionx" où n est un entier
-									représentant le numéros de la section <val>"question_set"</val>
-									concernée (on se reporte à l'attribut <att>n</att> de la section
-									pour l'identifier) et x est un entier ordonnant les questions au
-									sein de chaque section (on compte les <gi>div</gi> contenant une
-									question pour l'attribuer).</p>
-								<p>Notons le cas des questions barrées comme la première question 3
-									qui a été raturée puis remplacée par la question 4 devenue de
-									fait la question 3 : </p>
-								<figure>
-									<head>Le haut de la page 157 où figure une question
-										barrée</head>
-									<graphic url="157_top.jpg" width="500px"/>
-								</figure>
-								<p>Dans ces cas il convient de ne pas donner d'attribut
-										<att>xml:id</att> à la question barrée et d'attribuer le
-									dernier numéros inscrit à la question qui la remplace. <egXML
-										xmlns="http://www.tei-c.org/ns/Examples">
-										<div>
-											<note rend="margin_left">
-												<metamark><del rend="strikethrough"
-												>3</del></metamark>
-											</note>
-											<p rend="main">
-												<del rend="strikethrough"> whether Doctor london dyd
-												penne the articles new that Serles brought to hym,
-												&amp; altered the articles. </del>
-											</p>
-										</div>
-										<div xml:id="set8_question3">
-											<note rend="margin_left">
-												<metamark><del rend="strikethrough"
-												>4</del></metamark>
-												<metamark>3</metamark>
-											</note>
-											<p rend="main">whether Serles said to his deponent,
-												beware what you do, for you shal never be able to
-												prove theym after this sorte that Doctor london <add
-												place="above">doth nowe</add>
-												<del rend="strikethrough">hath</del> penne<del
-												rend="strikethrough">d</del> theym.</p>
-										</div>
-									</egXML></p>
-								<p>Une fois la question identifiée il convient de lier la réponse.
-									Pour le set de question 8 partiellement représenté plus haut,
-									l'équipe scientifique a identifié le set de réponse à la page
-									160. Nous ajoutons une attribut <att>corresp</att> avec pour
-									valeur l'<att>xml:id</att> de la question correspondante. <egXML
-										xmlns="http://www.tei-c.org/ns/Examples">
-										<div type="answer_set" n="4" corresp="set8">
-											<!--On continue de numéroter les sections en fonction de leur type-->
-											<div corresp="set8_question1">
-												<!--élément <div> contenant la première réponse du quatrième set de réponses répondant à la première question du huitième set de questions, soit un élément <p> et une <note> contenant un élément <metamark>-->
-												<note rend="margin_left">
-												<metamark>i</metamark>
-												</note>
-												<p rend="main"> fyrst tyme that I was movyd to pu yp
-												on artekyll was abowte avent by serlys at home
-												with me </p>
-											</div>
-											<div corresp="set8_question2">
-												<!--élément <div> contenant la deuxième réponse du quatrième set de réponses répondant à la deuxième question du huitième set de questions, soit un élément <p> et une <note> contenant un élément <metamark>-->
-												<note rend="margin_left">
-												<metamark>2</metamark>
-												</note>
-												<p rend="main"> what communication that I had with
-												serlys of palme sonday hit dothe apere in my boke
-												of my fyrst answer to my lordes grace </p>
-											</div>
-										</div></egXML></p>
-								<p>Notons que dans les cas où un élément <gi>div</gi> correspondrait
-									à plusieurs éléments <gi>div</gi> de question, il convient de
-									référencer chacun des attributs <att>xml:id</att> dans
-									l'attribut <att>corresp</att>, séparés d'un espace.</p>
-								<p>Certaines correspondances fines ne pouvant être effectuées, nous
-									ajoutons également un <att>xml:id</att> à l'élément <gi>div</gi>
-									de <att>type</att>
-									<val>"question_set"</val> et un <att>corresp</att> à l'élément
-										<gi>div</gi> de <att>type</att>
-									<val>"answer_set"</val> constitué sur le modèle suivant : "setn"
-									où n est l'entier correspondant à l'attribut <att>n</att> de la
-									section concernée. Ceci nous permet de conserver le lien de
-									correspondance entre, par exemple le set de réponses 15 (à la
-									page 293) et le set de question 11 (à la page 259).</p>
-								<p>Dans certains cas les set de questions n'ont pas de réponses
-									correspondantes ou les réponses ne semblent pas correspondre à
-									un set de réponses donné, dans ces cas nous maintenons
-									l'utilisation des <att>xml:id</att> pour les questions, afin de
-									maintenir la cohérence de l'encodage et également afin de
-									permettre d'ajouter un <att>corresp</att> si des réponses sont
-									identifiées ultérieurement.</p>
-								<p>À noter : si la numérotation est une composante récurrente sur le manuscrit des <val>"question_set"</val> et <val>"answer_set"</val> elle n'est pas systématique. Au demeurant, il arrive que des <gi>div</gi> de <att>type</att> <val>"article"</val> aient également des puces numérotées. Aussi convient-il de se référer à la table des matières établie par l'équipe scientifique pour appliquer un balisage pertinent à ces éléments.</p>
-							</div5>
-						</div4>
-						<div4>
-							<head>Dans les <gi>note</gi>, les <gi>metamark</gi>,
-									<gloss>signalétique</gloss> des marges</head>
-							<p>Les éléments <gi>metamark</gi> servent à baliser les signes textuels
-								qui ne sont pas à lire pour leur signification propre mais en tant
-								qu'ils conditionnent la lecture des passages les entourant. Ce sont
-								des éléments de structure fondamentaux pour la signification de
-								notre manuscrit.</p>
-							<!--<p>Malgré leur nombre, il est possible d'identifier des types de
-									<gi>metamark</gi>privilégiés par l'auteur du manuscrit et d'en
-								faire une typologie incarnée dans le balisage par un <att>type</att>
-								et ses valeurs.
-								<!-\-      				VALEURS POSSIBLES ET PHOTOS DE CHAQUE ?-\->
-							</p>-->
-							<p>Si l'écrasante majorité des éléments <gi>metamark</gi> est contenue
-								dans un élément père <gi>note</gi> certains éléments
-									<gi>metamark</gi> sont contenus dans des éléments <gi>div</gi>.
-								Ces cas de figure sont exceptionnels et doivent être considérés
-								comme problématiques car c'est généralement toute la page qui est
-								organisée d'une manière singulière.
-								<!--      				PAGES PROBLÉMATIQUES ET RÉSOLUTIONS-->
-							</p>
-							<p>Certains cas de figure peuvent paraître faussement problématique.
-								Page 63 nous trouvons une grande accolade dans la marge.</p>
-							<figure>
-								<head>Le milieu de la page 63</head>
-								<graphic url="63_middle.jpg" width="500px"/>
-							</figure>
-							<p>Nous appliquons le principe général qui nous guide dans notre
-								balisage et intégrons l'élément <gi>metamark</gi> dans l'élément
-									<gi>note</gi> après le contenu textuel. <egXML
-									xmlns="http://www.tei-c.org/ns/Examples">
-									<div>
-										<note rend="margin_left">Sir humfray Cotton; Rich. Alcockes;
-											John parker; william hegges; Ro. ffoch; Jo. Bayly;
-											walter Coiff; George Sorel; peter
-												Short<metamark>}</metamark></note>
-										<p rend="main"> He inverted thordre of the confiteor
-											(omytting the name of mary and all sainctz. Saying
-											Confiteor deo et vobis &amp; precor vos. orare pro me
-											christi,</p>
-									</div>
-								</egXML> Cet exemple illustre à quel point lorsque la structure
-								d'une page nous échappe, les <gi>note</gi> et <gi>metamark</gi> nous
-								éclairent, du moins conditionnent la manière dont nous devons lire
-								la disposition des éléments sur la page et donc notre encodage. Il
-								convient donc de prendre grand soin de bien assigner les éléments
-									<gi>note</gi> à leurs éléments frères <gi>p</gi> au sein d'un
-								ancêtre commun<gi>div</gi> qui représente la structure sémantique de
-								la page.</p>
-						</div4>
-					</div3>
-				</div2>
-				<div2>
-					<head>Balisage sémantique</head>
-					<p>Nous désignons par le terme "balisage sémantique" tout ce qui nous paraît
-						correspondre à un encodage du contenu du texte. Par opposition au balisage
-						structurel, il ne s'attache pas tant à délimiter des parties signifiantes du
-						texte en vue de l'éditer mais plutôt à repérer des entités dans le texte
-						pour en permettre le traitement et la collection dans une base de
-						données.</p>
-					<div3>
-						<head>Les personnages</head>
-						<p> Les personnages sont repérés par <gi>persName</gi> la balise doit
-							comprendre la dénomination complète d'un personnage et est donc
-							éventuellement composée par des sous-éléments. Tel l'illustre cet
-							exemple tiré de la page 4 du manuscrit : </p>
-						<egXML xmlns="http://www.tei-c.org/ns/Examples"><persName><roleName
-									type="religious" subtype="vicar">Vicarius</roleName> of
-									<placeName>ffeversham</placeName></persName></egXML>
-						<p>
-							<!--Pb si on balise vicarius of ffeversham ainsi ne devrait-on pas baliser busshop of rome de même ?-->
-						</p>
-						<div4>
-							<head>L'identification des personnages, <att>key</att></head>
-							<p> Tous les personnages cités doivent être identifiés. Pour cela
-								l'attribut <att>key</att> est utilisé. </p>
-						</div4>
-					</div3>
-					<div3>
-						<head>Les rôles</head>
-						<p> Repérés par <gi>roleName</gi> le plus souvent au sein même du nom d'un
-							personnage. Les rôles attribués aux entités repérées sont à entendre au
-							sens de « statut » qu'il soit religieux ou laïc. En premier lieu nous
-							intéresse l'appartenance ou non de l'individu au clergé, son genre et sa
-							position sociale. Si l'attribut <att>subtype</att> permet un
-							référencement du statut social de l'individu ou de sa place dans la
-							hiérarchie ecclésiastique, il devenait difficile de maintenir une
-							division en fonction du genre en parallèle à une subdivision
-							laïc/religieux. La solution trouvée, proposée par M. Olivier Spina le
-							28-04-22 fut de proposer trois valeurs à l'attribut <att>type</att>,
-								<val>"religious"</val>, <val>"lay_man"</val>,
-							<val>"lay_woman"</val>. </p>
-						<div4>
-							<head>L'attribut <att>type</att> de <gi>roleName</gi></head>
-							<p> Cet attribut permet de discriminer à la fois les rôles laïques et
-								religieux et les hommes des femmes, puisque les religieux sont tous
-								des hommes, ainsi nous proposons les valeurs <val>"religious"</val>,
-									<val>"lay_man"</val> et <val>"lay_woman"</val>, créant un
-								système trichotomique approprié aux spécificités de notre texte.
-							</p>
-						</div4>
-						<div4>
-							<head>L'attribut <att>subtype</att> de <gi>roleName</gi></head>
-							<p> Grâce à <att>subtype</att> nous spécifions le statut associé au rôle
-								identifié. </p>
-							<div5>
-								<head>Les valeurs obligatoirement associées au <tag>roleName
-										type="religious"</tag></head>
-								<p>Les valeurs de l'attribut <att>subtype</att> sont conditionnées
-									par celle de l'attribut <att>type</att>. Aussi, si la valeur de
-										<att>type</att> est <val>"religious"</val>, seules certaines
-									valeurs sont autorisées.</p>
-								<p>La valeur <val>"archbishop"</val> désigne un archevêque. Il est à
-									noter qu'un seul archbishop est présent dans le texte et que ce
-									dernier nous intéresse tout particulièrement. Aussi optons-nous
-									pour assortir toute mention de l'archevêque, généralement
-									désigné "tharchbishop", par une contraction de l'article avec le
-									nom, ou "his grace", d'un attribut <att>key</att> avec la valeur
-										<val>"cranmer"</val>.</p>
-								<p>La valeur <val>"commissary"</val></p>
-								<p>La valeur <val>"archdeacon"</val></p>
-								<p>La valeur <val>"curate"</val></p>
-								<p>La valeur <val>"vicar"</val></p>
-								<p>La valeur
-									<val>"chantry_priest"</val><!--chantry-priest pour conserver une différence sémantique systémique entre - et _ l'un symbolisant un espace dans une même idée, l'autre l'adjonction d'une catégorie à une autre--></p>
-								<p>La valeur <val>"prebendary"</val></p>
-								<p>La valeur <val>"preacher"</val></p>
-								<p>La valeur <val>"other"</val> désignant des diacres (deacon) et
-									des frères (friar). La fonction principale de <val>"other"</val>
-									est de regrouper les membres du clergé hiérarchiquement en
-									dessous du prêtre, du moins qui ne sont pas rattachés à une
-									paroisse. Les diacres sont les assistants des prêtres. Les
-									frères sont des membres des ordres mendiants fondés aux XIIe et
-									XIIIe siècle.</p>
-							</div5>
-							<div5>
-								<head>Les valeurs d'<att>subtype</att> liées à <tag>roleName
-										type=lay_man</tag> ou <tag>roleName
-									type=lay_woman</tag></head>
-								<p>Les valeurs de <att>subtype</att> retenues pour <att>type</att> à
-									valeur <val>"lay_[...]"</val> correspondent au statut social du
-									personnage auquel est associé le rôle ou lorsqu'il est
-									identifiable à son métier.</p>
-								<p>La valeur <val>"sir"</val></p>
-								<p>La valeur <val>"gentleman"</val></p>
-								<p>La valeur <val>"artisan"</val></p>
-								<p>La valeur <val>"peasant"</val></p>
-								<p>La valeur <val/>
-									<!--      						surgeon, brickleyer, butler cf p.4-->
-								</p>
-							</div5>
-						</div4>
-					</div3>
-					<!--<div3>
-      			<head>Les organisations, entités collectives</head>
-      			<p>Nous repérons les entités collectives avec des <gi>orgName</gi>.</p>
-      			<div4>
-      				<head>Le <att>type</att> <val>"profane"</val></head>
-      			</div4>
-      			<div4>
-      				<head>Le <att>type</att> <val>"religious"</val></head>
-      			</div4>
-      			<div4>
-      				<head>Le <att>type</att> <val>"mythic"</val></head>
-      			</div4>
-      		</div3>-->
-					<div3>
-						<head>Les lieux</head>
-						<p>Nous souhaitons baliser les contenus textuels désignant des lieux.
-							L'ensemble du manuscrit traitant de faits qui se sont produit dans le
-							Kent, les lieux dépassent rarement l'ampleur d'une ville. On trouve
-							également des villages et des bâtiments spécifiques identifiés. Plus
-							encore, une attention toute particulière doit-être portée aux
-							paroisses.</p>
-						<p>Nous balisons les lieux avec la balise <gi>placeName</gi>
-							<gloss>place name</gloss> et ajoutons un attribut <att>type</att> pour
-							différencier paroisse, ville, village et bâtiment. Pour chacun de ces
-							termes est prévue une valeur de <att>type</att>. Nous avons considéré
-							d'employer des sous-éléments <gi>district</gi> et <gi>settlement</gi>
-							pour distinguer village et paroisse mais ces sous-éléments de
-								<gi>placeName</gi> encore trop généraux pour notre texte ne nous
-							épargnait pas l'emploi d'un attribut <att>type</att> dès lors ce
-							redoublement nous paraissait redondant, c'est pourquoi nous préférons
-							l'usage du seul attribut <att>type</att> de manière systématique.</p>
-						<egXML xmlns="http://www.tei-c.org/ns/Examples">
-							<!--@type = city à la page 22--> Mr Smyth of <placeName type="city"
-								>Canterburye</placeName> towching theis saied
-							<!--@type = parish à la page 30--> Sir william kempe Vicar of <placeName
-								type="parish">Northgate</placeName>
-							<!--@type = village à la page 13--> aultare was not renewed in the
-							church of Bucklande nere <placeName type="village"
-								>ffeversham</placeName>
-							<!--@type = building à la page 101--> this mater was of palmesonday in
-								<placeName type="building">docter londons howse</placeName> of </egXML>
-						<p><!--EXPLICATION DE DISTINCTION ENTRE PARISH ET VILLAGE--></p>
-						<p>Les noms de lieux balisé <gi>placeName</gi> peuvent faire l'objet d'un
-							nestage. Lorsqu'il y a lieu il est nécessaire de baliser les éventuels
-								<gi>persName</gi> et <gi>roleName</gi> qu'ils contiennent ou par
-							lesquels ils peuvent être contenus. <egXML
-								xmlns="http://www.tei-c.org/ns/Examples">
-								<!--@type = city à la page 22--> Mr Smyth of <placeName type="city"
-									>Canterburye</placeName> towching theis saied
-								<!--@type = parish à la page 30--> Sir william kempe
-										<persName><roleName>Vicar</roleName> of <placeName
-										type="parish">Northgate</placeName></persName>
-								<!--@type = village à la page 13--> aultare was not renewed in the
-									<placeName>church of
-									<placeName>Bucklande</placeName></placeName> nere <placeName
-									type="village">ffeversham</placeName>
-								<!--@type = building à la page 101--> this mater was of palmesonday
-								in <placeName type="building"><persName><roleName>docter</roleName>
-										londons</persName> howse</placeName> of </egXML>
-						</p>
-						<p>En aucuns cas les nom de lieux ne doivent faire l'objet d'un nestage. En
-							effet, même si nous souhaitons baliser les personnages bibliques ou les
-							noms de personnes, une église qui s’appellerait Saint Georges ne doit
-							pas faire l'objet d'un double balisage. Ainsi nous ne balisons pas la
-							page 16 ainsi : <egXML xmlns="http://www.tei-c.org/ns/Examples">
-								<!--Balisage fautif de la page 16--> The <rs>ymage of
-										<persName>saincte George</persName></rs> in <placeName
-									type="building"><persName>saincte Georges</persName>
-									church</placeName> in <placeName type="city"
-									>Caunterbury</placeName>
-							</egXML> Mais bien : <egXML xmlns="http://www.tei-c.org/ns/Examples">
-								<!--Balisage correct de la page 16--> The <rs>ymage of saincte
-									George</rs> in <placeName type="building">saincte Georges
-									church</placeName> in <placeName type="city"
-									>Caunterbury</placeName>
-							</egXML>
-						</p>
-						<div4>
-							<head>L'attribut <att>key</att> des <gi>placeName</gi></head>
-							<p/>
-							<egXML xmlns="http://www.tei-c.org/ns/Examples">
-								<!--      					EXEMPLE PRÉCÉDENT REPRIS AVEC KEY AJOUTÉ-->
-							</egXML>
-						</div4>
-					</div3>
-					<div3>
-						<head>Les dates</head>
-						<p>Dans le cadre du projet de recherche associé nous apportons un intérêt
-							particulier aux dates cités dans le manuscrit. Le texte que nous
-							traitons étant du registre de l'enquête contenant principalement des
-							discours rapportés, deux chronologies s’entremêlent : la chronologie
-							narrative constituée par les événements auxquels les personnes
-							interrogées font référence et la chronologie de la procédure constituée
-							par les moments de l'énonciation reportée généralement en titre de
-							sous-section, ou pour certaines pages les titres
-							de section comme ci-dessous à la page 44. Ainsi <!--XXXX--> interrogé le
-							<!-- XX --> balisé <tag>date type="procedure"</tag> parlera d'un
-							événement survenu <!-- XX -->, balisé <tag>date type="narrative"</tag>.
-							Nous employons l'élément <att>type</att> pour discriminer les dates
-							référant aux événements rapportés avec la valeur <val>"narrative"</val>
-							des dates référant à la situation d'énonciation, à la procédure avec la
-							valeur <val>"procedure"</val>. <egXML
-								xmlns="http://www.tei-c.org/ns/Examples">
-								<!--EXEMPLE À TROUVER-->
-								<!--p. 44, un titre de section qui est une date de type procedure-->
-								<div type="article" n="?">
-									<head><date type="procedure">20 Septembre Anno
-										1543</date>.</head>
-									<!-- contenu de cette section -->
-								</div>
-							</egXML></p>
-						<p>Une fois l'élément <gi>date</gi> typé il convient d'identifier la date.
-							Nous identifions les dates par l'adjonction d'un attribut
-								<att>when</att> dont la valeur doit être une date sous norme validée
-							par le World Wide Web Consortium (W3C). À savoir sous la forme
-							yyyy-mm-dd, yyyy lorsque seule l'année est connue, --mm lorsque seul le
-							mois est connu, ---dd lorsque seul le jour est connu, yyyy-mm lorsque le
-							jour est inconnu, ou --mm-dd lorsque seule l'année est inconnue. <egXML
-								xmlns="http://www.tei-c.org/ns/Examples">
-								<div>
-									<!--page 10-->
-									<head><persName>Shether</persName>. <date type="procedure"
-											when="--04-23">23 Apriles</date> in
-												<expan>the</expan><placeName>chapt<expan>er</expan>
-											howse</placeName>.</head>
-									<!--suite de la section ici-->
-								</div>
-								<!--p. 44, un titre de section qui est une date de type procedure, pleinement identifié-->
-								<div type="article" n="?">
-									<head><date type="procedure" when="1543-09-20">20 Septembre Anno
-											1543</date>.</head>
-									<!-- contenu de cette section -->
-								</div>
-							</egXML>
-						</p>
-						<p>Il arrive que les dates présentes dans le manuscrit soit exprimées non
-							pas selon le calendrier julien en vigueur à l'époque mais selon les
-							années de règne du roi. Nous avons choisi de ne pas avoir recourt aux
-							attributs supplémentaires <att>when-custom</att> ou <att>calendar</att>
-							mais bien d'identifier la date dans notre calendrier contemporain. Ainsi
-							page 29 ne balise-t-on pas : <egXML
-								xmlns="http://www.tei-c.org/ns/Examples">
-								<date type="narrative" when-custom="0033"
-									calendar="henri-viii_reign">the 33 yere of of the kynges
-									reigne</date>
-							</egXML> mais bien <egXML xmlns="http://www.tei-c.org/ns/Examples">
-								<date type="narrative" when="1542">the 33 yere of of the kynges
-									reigne</date>
-							</egXML>
-						</p>
-						<p>Une extrême vigilance est de mise lors de l'identification des dates ! Le
-							calendrier en vigueur à l'époque de rédaction du manuscrit n'est pas le
-							calendrier grégorien mais le calendrier julien dans le style de
-							l'Anonciation, aussi le changement d'année ne s'effectue pas au 1er
-							janvier mais au 25 mars, jour de l'Anonciation. Dès lors, toutes les
-							dates comprises entre le 1er janvier et le 25 mars doivent être encodées
-							avec une année de plus qu'exprimée. Ainsi nous encodons : <egXML
-								xmlns="http://www.tei-c.org/ns/Examples">
-								<!--EXEMPLE À TROUVER-->
-							</egXML>
-						</p>
-						<p>Lorsque nous ne pouvons identifier la date exacte d'un événement,
-							notamment lorsque cet événement est une fête religieuse dont la date est
-							fluctuante (par exemple "Palm sonday", le dimanche des ramaux qui a lieu
-							non à une date fixe mais le dernier dimanche avant Pâques), nous
-							proposons un balisage alternatif qui consiste à employer plutôt que le
-							seul attribut <att>when</att> les attributs <att>not-before</att> et
-								<att>not-after</att>. Ce qui donnerait ceci : <egXML
-								xmlns="http://www.tei-c.org/ns/Examples">
-								<!-- page 11 -->
-								<date type="narrative" notBefore="154203" notAfter="154304">Upon
-									palme sonday last past </date>
-								<!--Ici il nous est difficile de déterminer l'année car l'expression "last past" pourrait désigner aussi bien le dimanche des rameaux de 1542 ou celui de 1543,
-par ailleurs la date du dimanche des rameaux est fluctuante d'une année à l'autre.
-Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanche des rameaux a pu avoir lieu-->
-							</egXML>
-						</p>
-						<p>Il convient de n'utiliser cette alternative de balisage qu'en ultime
-							recours. Il existe des ressources en ligne permettant d'identifier les
-							dates des fêtes religieuses des années
-							passées.<!--NEED INFO FELIPE ?--></p>
-						<!--REPRENDRE EXEMPLE PRÉCÉDENT, PAGE 11 et démontrer de quel jour il s'agit (sans doute 1543 puisqu'il semble que c'est le moment de rédaction de la plupart du manuscrit à vérifier)-->
-					</div3>
-					<div3>
-						<head>Le cas des <gi>rs</gi></head>
-						<p>Pour la lecture et l'utilisation scientifique du manuscrit il nous a
-							semblé judicieux de baliser les référents religieux dans un élément
-								<gi>rs</gi>
-							<gloss>referencing string</gloss>.</p>
-						<!--      			<p>À mesure que le travail avance, nous décidons d'étendre le balisage des termes signifians à des éléments qui dépassent le domaine religieux. Nous employons l'attributs <att>type</att> pour ce faire. Cet attribut <att>type</att> peut prendre les valeurs <val>"religious"</val>, <val>"king_authority"</val> et <val>"cranmer_authority"</val>.</p>
-      			<div4>
-      				<head>Le <att>type</att> <val>"religious"</val></head>
-      				<div5>
-      					<head>Le <att>subtype</att> <val>"object"</val></head>
-      				</div5>
-      				<div5>
-      					<head>Le <att>subtype</att> <val>"practice"</val></head>
-      				</div5>
-      				<div5>
-      					<head>Le <att>subtype</att> <val>"character"</val></head>
-      				</div5>
-      				<div5>
-      					<head>Le <att>subtype</att> <val>"person"</val></head>
-      				</div5>
-      			</div4>
-      			<div4>
-      				<head>Le <att>type</att> <val>"king_authority"</val></head>
-      				<p>La valeur <val>"king_authority"</val> repère les termes désignants l'autorité du roi.</p>
-      			</div4>
-      			<div4>
-      				<head>Le <att>type</att> <val>"cranmer_authority"</val></head>
-      			</div4>-->
-						<p>Sont considérés comme religieux eu égards à la nature des rapports entre
-							politique et religieux à l'époque de notre manuscrit, les éléments qui
-							réfèrent à l'autorité du Roi, les éléments qui réfèrent à l'autorité de
-							Cranmer.</p>
-						<p>À cela s'ajoutent tous les termes désignant des objets, pratiques qui
-							obtiennent un statut sacré du moins liturgique. Ainsi des termes qui
-							peuvent paraître usuels comme « eau », « pain », « cloches » ou même «
-							image » sont à considérer comme religieux.</p>
-						<!--<p>Par ailleurs, dans le cadre du travail qu'Aude de Mézerac-Zanetti mène sur le manuscrit, nous choisissons de pousser l'usage des attributs pour permettre un balisage sémantique à la limite de l'analyse. Si c'est bien le terme qui est balisé, le projet s’intéresse aux usages de ceux-ci du moins aux rapports qu'entretiennent les individus cités dans le manuscrit à ces objets. Dès lors le balisage prend une tournure presque analytique et nécessite que l'on s’intéresse aux propos tenus sur ces référents.</p>
-      			<p>Si cela paraît inenvisageable à première vue, étant donné la nature même de ce qu'est le balisage sémantique permis par l'xml-tei, le fait que les rapports entretenus à ces objets soient limités et aisément identifiable nous permet de proposer un balisage. Ainsi, pour un attribut <att>type</att> permettant de distinguer la nature du référent, l'attribut <att>subtype</att> ou<att>ana</att> sert marquer le rapport entretenu à ce moment du texte avec l'objet.</p>-->
-						<div4>
-							<head>L'attribut <att>type</att></head>
-							<p>L'attribut <att>type</att> nous sert à distinguer la nature de
-								l'entité. S'agit-il de termes référents à l'autorité du Roi, à
-								l'autorité de Cranmer, de tel ou tel objet ?</p>
-							<p>La liste des objets et des expressions référant à l'autorité du roi
-								ou de Cranmer, est constituée par Mme Aude de Mézerac-Zanetti. Une
-								fois cette liste établie nous travaillons à l'automatisation du
-								balisage.</p>
-						</div4>
-						<!--<div4>
-      				<head>L'attribut <att>ana</att></head>
-      				<p>
-      					Pour exprimer le rapport de la personne décrite ou intérrogée avec l'objet balisé <gi>rs</gi>, nous avons recourt à l'attribut <att>ana</att> <gloss>analysis</gloss> indiquant un contenu analytique.
-      				</p>
-      				<p>La valeur de cet attribut ne peut être automatisée puisqu'elle dépend du contexte d'énonciation. Mme Aude de Mézerac-Zanetti se charge d'identifier les valeurs et leurs applications tout au long du texte.</p>
-      			</div4>-->
-					</div3>
-				</div2>
-				<div2>
-					<head>Décrire le texte</head>
-					<div3 xml:id="pb">
-						<head>Identifier et lier le fac-similé à l'encodage</head>
-						<!--pb, @facs @n-->
-						<!--num, renvoi vers une sous-section de <div> plus haut-->
-						<p>Nous marquons le début d'une nouvelle page par l'élément
-								<gi>pb</gi><gloss>début de page</gloss> auquel on adjoint les
-							attributs <att>n</att><gloss>compteur</gloss> et <att>facs</att> qui
-							pointe vers la page dont le début est signalé.</p>
-						<p>L'auteur de ce manuscrit, ou plutôt les auteurs, n'avaient que peu
-							d'égard pour les sauts de page, aussi, nous nous trouvons souvent
-							quelque peu chagrinés de ne pouvoir parfaitement rendre compte de la
-							structure sémantique et matérielle du texte sans aménagement. Fort
-							heureusement l'élément <gi>pb</gi> en xml-tei peut s'insérer presque
-							n'importe où. Observez la façon dont s'insère <gi>pb</gi> dans
-							l'encodage des pages 9 à 11 : <!--EXEMPLE p. 9 à 11-->
-							<egXML xmlns="http://www.tei-c.org/ns/Examples">
-								<div type="collection" n="1">
-									<!-- des sections <div> typée article ici-->
-									<pb n="9" facs="009.jpg"/><!--CHANGER-->
-									<div type="article" n="1">
-										<head>Serles</head>
-										<!-- le contenu de l'article ici -->
-										<div><!--cet élément<div> regroupe une note et son paragraphe correspondant-->
-											<note>
-												<metamark/>
-											</note>
-											<p>The 26 of August last past in the chapter howse Ther
-												be summe synnes that can not be forgyven but by
-												fastynge &amp; prayer.</p>
-										</div>
-										<div><!--cet élément <div> regroupe une note et son paragraphe correspondant-->
-											<note>
-												<metamark/>
-											</note>
-											<p>Good peple you have been deceyved with prechers, but
-												if you have receyved any poyson &amp; lerned any
-												false doctrine &amp; byleved by ignorance, you be
-												not to blame, neither god is discontent with you.
-											</p>
-										</div>
-										<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-											<note><metamark/></note>
-											<note>At Ashforth 12 Augusti: Anno 1543</note>
-											<p>In hel is burnynge of brymston, wilde fier,
-												gunpowder, soden hete, soden colde. And we may be
-												sure therof bicause that David Moses &amp; the
-												prophetes, which taught us those thynges, were in
-												the paynes of hel, or in a kynde of hel which
-												islimbo.</p>
-										</div>
-										<div>
-											<head>At layname</head>
-											<!--sous-section de n=1-->
-											<div><!--cet élément <div> regroupe notes et paragraphe correspondant, en l'occurence il n'y a pas de note-->
-												<p>In the howse of Mary and or Martha he fownde a
-												certen man veray sicke and sore diseased, whose
-												name was Lazarus brother to thies ii virgyns.
-												Magdalen was a faire fyngered gentle woman.</p>
-											</div>
-											<div>
-												<note>or religion</note>
-												<p>Christ said to Martha. Thy busynes shal have an
-												ende, but thy sisteres busynes shal last &amp;
-												never have ende. </p>
-											</div>
-										</div>
-									</div>
-									<div type="article" n="2">
-										<head>Sandwich alias Gardiner</head>
-										<!-- le contenu de l'article ici -->
-										<div>
-											<head> in sermon in Christes church the iiide sonday
-												after xii day.</head>
-											<!--première sous-section de n=2-->
-											<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>seditious</note>
-												<note><metamark/></note>
-												<p>The peple have not had hitherto the good wyne of
-												goddes worde, but a day wolde com that they sholde
-												have good wyne agayne, B But good peple be
-												content, for nondum venit hora. the tyme is not
-												yet come that you sholde have good wyne.</p>
-											</div>
-											<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>sclaunderous</note>
-												<p>Of late dayes you have had here so many
-												waterlaggeres, which have turned your good wyne
-												into water, that you cowde have no good doctrine
-												taught ne preched, unto you, but the phantasies of
-												their own braynes.</p>
-											</div>
-											<pb n="10" facs="010.jpg"/><!--CHANGER-->
-											<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>Images</note>
-												<p> Peple may knele bifore images with their bookes
-												&amp; beads kysse their feete, sence theym, &amp;
-												offre to theym, so that they directe al this
-												honour to the sayntes in heavyn. </p>
-											</div>
-											<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>seditious</note>
-												<p> As Christ was accused by ii or iii false knaves,
-												so a man may be accused by ii or iii false knaves,
-												&amp; the juge as false a knave as the best, &amp;
-												so be condemned </p>
-											</div>
-										</div>
-										<div>
-											<head>The next sonday after.</head>
-											<!--deuxième sous-section de n=2-->
-											<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>Images</note>
-												<p> I dyd prove by Ezechiel, hieremy, saynt Paule
-												&amp; Origene, that an image was none idole. I
-												called theym water laggers</p>
-											</div>
-											<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>seditious</note>
-												<p> You ar greved with me bicause I called theym
-												waterlaggers which have chaunged our good wyne
-												into water. Truly I cowde invent no fytter name
-												for theym, but evyn as I said than, so I say
-												agayne. I bishrewe their hartes for me. Thay ar
-												come hither &amp; have corrupte our good wyne. I
-												wolde thay wolde get theym home agayne thither
-												from whens they cam But they must be smoked &amp;
-												purged rownde about with fire, or elles we shal
-												never be rid of theym.</p>
-											</div>
-											<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>seditious</note>
-												<p> Som of you thought that som sholde have been
-												hanged, but if you had deserved no more to be
-												burned than thay have to be hanged, you sholde
-												both do wel enough. plura quere fo. sequente.</p>
-											</div>
-										</div>
-									</div>
-									<div type="article" n="3">
-										<head>Shether.</head>
-										<!-- le contenu de l'article ici -->
-										<div>
-											<head>23 Apriles in the chapter howse.</head>
-											<!--première sous-section de n=3-->
-											<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>sclanderous</note>
-												<p>Now a dayes good christians thay tech no thynge
-												but carnal libertie. No man doth teach you the
-												commaund- mentes of god, no man doth prech unto
-												you goddes lawes yea no man dare do it, or rather
-												wil do it not.</p>
-											</div>
-										</div>
-										<div>
-											<head>15 Maii at saynt Stevyns.</head>
-											<!-- deuxième sous-section de n=3-->
-											<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>sclanderous</note>
-												<p>He made the people bileve with a grete multitude
-												words that they had prechers here which had
-												preched agaynst a vocal prayer, &amp; had called
-												vocal prayer no thynge but babelynge &amp; lippe
-												labour.</p>
-											</div>
-											<pb n="11" facs="011.jpg"/><!--CHANGER-->
-											<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>
-												<metamark/>
-												</note>
-												<p>Upon this text, you must pray without
-												intermission, he said Som felowes say that this is
-												impossible, but I shal tel you good christianes
-												how to performe this. It is a common sayinge in
-												the lawe. That that a man doth by his proctor, he
-												doth it by hymselfe. Wherfore whan thou art in the
-												felde at thy labour or otherwise occupied, hire
-												the church to pray for the (the church he called
-												the preistes) &amp; so shalt thou continually
-												pray. </p>
-											</div>
-											<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>
-												<metamark/>
-												</note>
-												<p>He counceled laborynge men to divide their labour
-												into iii partes. To gyve one peny to the poore, an
-												other to the preistes to pray for theym, &amp; the
-												iiide to kepe for theymselfes &amp; their
-												howseholdes. </p>
-											</div>
-											<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>
-												<metamark/>
-												</note>
-												<p>He did discorage men from prayinge in the mother
-												tonge, sayinge. Som of you say that men can not
-												pray in an unknown tonge, bicause thay understonde
-												not what thay say. But I say that no man
-												understondeth what he prayeth, as saynt Paule
-												saith. Nescit homo quomodo orandum sit, sed
-												spiritus hominis docet quomodo orandum sit. And
-												therfore though you do not understande what you
-												pray, yet pray so stil. </p>
-											</div>
-										</div>
-										<div>
-											<head>16 Septembris in the chapter howse.</head>
-											<!--troisième sous-section de n=3-->
-											<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>decrees</note>
-												<p>Al the constitutions decrees &amp; ordinances of
-												our holy mother the church ar most godly, most
-												holy, &amp; therfore ar to observed of al her
-												children christen peple without disputynge or
-												reasonynge of any of theym. </p>
-											</div>
-											<div>
-												<note>
-												<metamark/>
-												</note>
-												<p> God dyd ingrave the hole power &amp; wisedome of
-												the trinitie in lucifer.</p>
-											</div>
-										</div>
-									</div>
-									<div type="article" n="4">
-										<head>Sandwich alias Gardiner</head>
-										<!-- le contenu de l'article ici -->
-										<div>
-											<head>at wye in lent was xii month in the faire.</head>
-											<!-- première sous-section de n=4-->
-											<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>
-												<metamark/>
-												<metamark>+</metamark>
-												</note>
-												<p>He playnly affirmed the state &amp; condition of
-												the sowles departed. </p>
-											</div>
-											<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>ceremonies <metamark/>
-												</note>
-												<p> Upon palme sonday last past he dyd execute in
-												the cathedral church of Canturbery &amp; halowed
-												the palme &amp; songe hye masse without decla-
-												ringe the ceremony</p>
-											</div>
-										</div>
-										<div>
-											<head>In festo pasche</head>
-											<!-- deuxième sous-section de n=4-->
-											<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note><metamark/></note>
-												<p> He said ther be som that be no preistes, that do
-												take opon theym to minister the sacramentes. </p>
-											</div>
-										</div>
-										<div>
-											<head>2do septembris</head>
-											<!--troisième sous-section de n=4-->
-											<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
-												<note>
-												<metamark/>
-												</note>
-												<p> Only love grafted Paule &amp; Mary Magdanele in
-												Christ. He moved the peple to take away ageyne
-												their beades matens, evynsonge &amp; vii psalmes>,
-												which of late they had cast away by theym that
-												preched agaynst al vocal prayer </p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</egXML>
-						</p>
-						<p> </p>
-					</div3>
-					<div3>
-						<head>Ajouts, suppression</head>
-						<p>Notre projet entend également rendre compte de la génétique du texte.
-							Pour ce faire, nous nous intéressons aux ajouts et aux suppressions. Les
-							ajouts sont balisés à l'aide des éléments <gi>add</gi>
-							<gloss>addition</gloss>. les suppressions sont balisées à l'aide des
-							éléments <gi>del</gi>
-							<gloss>deletion</gloss>.</p>
-						<p>Les éléments <gi>add</gi> sont à placer à l'endroit où s'est fait
-							l'ajout. Les ajouts sont parfois difficiles à identifier, un manuscrit
-							n'ayant pas la régularité d'un tapuscrit. Ainsi à la page 30 le terme
-							"witness" (écrit "wytnes") semble souscrit du fait du décalage par
-							rapport au début des lignes précédentes. Cependant le co-texte immédiat
-							de cette ligne semble nous indiquer qu'il s'agit bien de la fin de la
-							phrase précédente et pas d'un ajout.</p>
-						<p>Aux éléments <gi>add</gi> nous adjoignons l'attribut <att>place</att>
-							pour décrire l'endroit de l'ajout par rapport au contenu auquel l'ajout
-							a été fait. La plupart du temps les additions sont effectuées au-dessus
-							du passage concerné. Nous employons alors la valeur
-							<val>"above"</val></p>
-						<figure>
-							<head>Une addition, page 144</head>
-							<graphic url="144_middle-top.jpg" width="500px"/>
-						</figure>
-						<egXML xmlns="http://www.tei-c.org/ns/Examples">
-							<!--page 144-->
-							<div>
-								<note rend="margin_left">
-									<metamark/>
-									<metamark/>
-								</note>
-								<p rend="main">also I <del rend="strikethrough">haste</del>
-									<add place="above">Abbyd</add> schethers man wher he hadd bene
-									with my lorde of wenchester sence thecomeng downe ofmy lordes
-										<add place="above">grace</add> &amp; he sayde ye &amp; tolde
-									my lorde how all was handylt here among us &amp; my lorde of
-									venchester answerd &amp; sayde <del rend="strikethrough"
-										>ye</del>
-									<add place="above">my lordeofcanterbere</add> colde not kyll
-									them. ther for soffer, for all was agane hym selfe that he dyd
-									&amp; he scholde se whatwolde come of hit </p>
-							</div>
-						</egXML>
-						<p>Il arrive cependant que l'addition soit effectuée en-dessous du passage
-							concerné ainsi trouve-t-on page 259 l'addition de "mytted" pour palier
-							au manque de place sur la page, formant ainsi le mot complet
-							"admytted".</p>
-						<figure>
-							<head>Une addition, page 259</head>
-							<graphic url="259_middle.jpg" width="500px"/>
-						</figure>
-						<p>Nous balisons alors avec la valeur <val>"below"</val>. <egXML
-								xmlns="http://www.tei-c.org/ns/Examples">
-								<!--page 259-->
-								<div>
-									<note rend="margin_left">
-										<metamark>7</metamark>
-									</note>
-									<p>Item whether the honest of their audience offred them selfis
-										to testifie that they were falsely accused and that whiche
-										was laide against them was not true. And althoughe they were
-										a great nomber yet could <add place="above">thay</add> not
-										be admitted and who they were that so offred themselfes <add
-											place="above">And whether they offred theym selfes</add>
-										or serlis required them to be examynde &amp; cowde not have
-										them ad<add place="below">mytted</add>. </p>
-								</div>
-							</egXML> À noter ici le nestage du <tag>add place="below"</tag> au sein
-							du <tag>add place="above"</tag></p>
-						<p>Une autre valeur de l'attribut <att>place</att> est prévue pour les
-							ajouts de paragraphe postérieur. Facilement identifiable au fait que le
-							scribe a alors choisi de commencer le paragraphe à l'extrême limite de
-							la page pour employer tout l'espace demeuré libre entre deux
-							paragraphes. Nous avons déjà abordé la valeur <val>"whole_width"</val>
-							de l'attribut <att>rend</att> à associer au <gi>p</gi> concerné.</p>
-						<figure>
-							<head>Une addition à typer <val>"inline"</val> au bas de la page
-								40</head>
-							<graphic url="40_bottom.jpg" width="500px"/>
-						</figure>
-						<p> Lorsqu'il est manifeste que ce paragraphe est une addition, on opère un
-							double balisage en employant la valeur <val>"inline"</val> pour
-							l'attribut <att>place</att> de l'élément <gi>add</gi> ainsi créé. <egXML
-								xmlns="http://www.tei-c.org/ns/Examples">
-								<div>
-									<p rend="whole_width"><add place="inline">Item he pre preched
-											there and than, sayinge, <add place="above">in
-												discoragynge of men from the redynge bible</add> you
-											ffelowes of the new trickery that go up and downe with
-											your testamentes in your handes, I pray you what profet
-											take you by theym,</add></p>
-								</div>
-							</egXML></p>
-						<p>Fait plus rare, il arrive que le scribe se corrige, semble-t-il
-							immédiatement :</p>
-						<figure>
-							<head>Une correction à la page 44 que nous balisons <gi>add</gi></head>
-							<graphic url="44_middle.jpg" width="500px"/>
-						</figure>
-						<p>Nous avons envisagé l'emploi de l'élément <gi>retrace</gi> pour baliser
-							ces passages. Cependant leur nombre réduit nous a semblé une raison
-							suffisante pour ne pas complexifier le balisage. Nous avons préféré
-							ajouter une valeur <val>"overwritten"</val> au <att>place</att> de
-							l'élément <gi>add</gi>. <egXML xmlns="http://www.tei-c.org/ns/Examples">
-								<div>
-									<note rend="margin_left">Erro<expan>ur</expan></note>
-									<p rend="main">He preached at Sandwiche the 26<add
-											place="overwritten">9</add> of July Anno 34
-											d<expan>o</expan>m<expan>ino</expan>
-										n<expan>os</expan>tro R<expan>eg</expan>es. That every man
-										syns the passion of Christe: hathe asmuche liberty and free
-										will of as ev<expan>er</expan> Adam had in paradise before
-										his fall</p>
-								</div>
-							</egXML>
-						</p>
-						<figure>
-							<head>Une addition et une suppression au bas de la page 260</head>
-							<graphic url="260_bottom.jpg" width="500px"/>
-						</figure>
-						<egXML xmlns="http://www.tei-c.org/ns/Examples">
-							<!--page 260-->
-							<div>
-								<note rend="margin_left">25</note>
-								<p rend="main">Item whither they with Serlis and Shether have
-									communed, Petit being put, that markcham stuarde to
-									tharchebishop was abiured and what knouledge <del
-										rend="strikethrough">Serles hath</del>
-									<add place="above">they have</add> thereof</p>
-							</div>
-						</egXML>
-						<p>Les éléments <gi>del</gi> sont à placer autour du contenu supprimé à
-							l'intérieur d'éléments <gi>p</gi> ou <gi>note</gi>. Nous leur adjoignons
-							un attribut <att>rend</att>
-							<gloss>rendition</gloss> pour encoder la manière dont la suppression a
-							été effectuée sur le manuscrit. Nous distinguons deux manières de rendre
-							ces suppressions chacune ayant une valeur attribuée.</p>
-						<p>La valeur <val>"overstrike"</val> décrit une rature effectuée,
-							généralement sur tout un paragraphe, sous la forme d'une grande croix.
-							Ainsi en haut de la page 44</p>
-						<figure>
-							<head>Le haut de la page 44</head>
-							<graphic url="44_top.jpg" width="500px"/>
-						</figure>
-						<egXML xmlns="http://www.tei-c.org/ns/Examples">
-							<div>
-								<note rend="margin_left">seditious</note>
-								<p rend="main"><del rend="overstrike">thincking rather by
-										intercession of saintz. to obtayne the victory of their
-										ennemyes / But good people (quod he) forasmuche as saintes
-										be circumscript, it is not possible / for that saint that is
-										in the northe to heare the prayer that is made in the southe
-										nor that saint that is in the southe / to heare the praier
-										that is made in the northe</del></p>
-							</div>
-						</egXML>
-						<p>La valeur <val>"strikethrough"</val> décrit une rature effectuée,
-							généralement sur tout une partie réduite du texte ain sein d'un
-							paragraphe, sous la forme d'une ligne horizontale par-dessus (ou à
-							travers) le texte. Ainsi en bas de la page 44 :</p>
-						<figure>
-							<head>Le bas de la page 44</head>
-							<graphic url="44_bottom.jpg" width="500px"/>
-						</figure>
-						<!--      					ATTENTION EXEMPLE PROBLÉMATIQUE POUR METAMARK-->
-						<egXML xmlns="http://www.tei-c.org/ns/Examples">
-							<div>
-								<note rend="margin_left">Erro<expan>ur</expan> &amp;
-									seditious</note>
-								<p rend="main">In a Sermon he compared mannes conscience to a dogge
-										<metamark>/</metamark> and said, <del rend="strikethrough"
-										>that if a mans conscience (which he called his dogge) did
-										myslike the <expan>ser</expan>mon,</del></p>
-							</div>
-						</egXML>
-						<p>Il arrive qu'une addition et une suppression soient concomitantes. À
-							moins que la rature ne soit manifeste sur le contenu ajouté, les balises
-								<gi>add</gi> et <gi>del</gi> se succèdent dans l'ordre de la lecture
-							mais ne se superposent pas.</p>
-						<figure>
-							<head>Addition et suppression concomitantes à la page 325</head>
-							<graphic url="325_middle_bottom.jpg" width="500px"/>
-						</figure>
-						<egXML xmlns="http://www.tei-c.org/ns/Examples">
-							<p rend="main">
-								<!--      						contenu textuel précédent, dans la page 325--> for
-								the delyverance off serlys. as he sayd he wolde. At what tyme the
-									<del rend="strikethrough">parishe off esc</del><add
-									place="above">syr Ygham</add>
-							</p>
-						</egXML>
-						<p>Lorsqu'une addition a été rayée, nous nestons l'élément <gi>del</gi>
-							entourant la rature au sein d'un élément <gi>add</gi> puis une balise
-								<gi>del</gi>. Nous trouvons un exemple au milieu de la page 301.</p>
-						<figure>
-							<head>Une suppression dans une addition au milieu de la page 301</head>
-							<graphic url="301_middle.jpg" width="500px"/>
-						</figure>
-						<egXML xmlns="http://www.tei-c.org/ns/Examples">
-							<div>
-								<note rend="margin_left">
-									<metamark>7</metamark>
-								</note>
-								<p rend="main">It<expan>e</expan>m wither the honestie of thair
-									audience offered themselffes to testifie that thei were falsely
-									accused, and that whiche was laied againste theym was nott true,
-									and althoughe their were a great nomber, yet <add place="above"
-										>thei</add> could not be admitted, And who thei were that
-									offered themselffes, and whither thei offered themselves <add
-										place="inline"><del rend="strikethrough">and whither they
-											offered themselfes</del> or Serls required theym to be
-										examined.</add></p>
-							</div>
-						</egXML>
-					</div3>
-					<div3>
-						<head>Les abréviations</head>
-						<p>Dans le cadre de la transcription semi-diplomatique, les abréviations
-							sont systématiquement développées. Nous nous épargnons donc l'usage des
-							balises <gi>choice</gi> et <gi>abbr</gi> pour ne conserver que l'élément
-								<gi>expan</gi>
-							<gloss>expansion</gloss> qui peut être employée en xml-tei seule dans le
-							corps du texte.</p>
-						<p>Il importe énormément aux chercheurs que ces extensions d’abréviations
-							soient balisées pour pouvoir au moment de la mise en forme de l'édition
-							numérique être mises en italique afin de s'inscrire dans le standard
-							XXX.</p>
-						<p>Lors de la transcription sur TACT ces abréviations ont été
-							systématiquement développées et balisées dans une balise html
-								<gi>em</gi> ainsi suffit-il pour l'encodage du texte de remplacer
-							tous les éléments <ident>em</ident> par <gi>expan</gi>.</p>
-						<eg>
-							<code lang="html"> &lt;p&gt;As Christ was accused by ii or iii false
-								knaves, so a man may be accused by ii or iii false knaves, &amp;
-								&lt;em&gt;the&lt;/em&gt; juge as false a knave as
-								&lt;em&gt;the&lt;/em&gt; best, &amp; so be
-								co&lt;em&gt;n&lt;/em&gt;de&lt;em&gt;m&lt;/em&gt;ned&lt;/p&gt;
-							</code>
-						</eg>
-						<egXML xmlns="http://www.tei-c.org/ns/Examples">
-							<p>As Christ was accused by ii or iii false knaves, so a man may be
-								accused by ii or iii false knaves, &amp; <expan>the</expan> juge as
-								false a knave as <expan>the</expan> best, &amp; so be
-									co<expan>n</expan>de<expan>m</expan>ned</p>
-						</egXML>
-					</div3>
-					<div3>
-						<head>Les passages graphiquement distincts</head>
-						<p>Nous balisons <gi>hi</gi>
-							<gloss>highlighted</gloss> les passages sous-lignés ou dont l'alignement
-							diffère du reste du manuscrit. Si peu de passages sont concernés, il
-							nous importe tout de même de les signaler dans notre encodage.</p>
-						<figure>
-							<head>Le début de la page 313</head>
-							<graphic url="313_top.jpg" width="500px"/>
-						</figure>
-						<p>À la page 313 nous constatons des passages soulignés, pour les
-							retranscrire nous les insérerons dans un élément <gi>hi</gi> dont la
-							valeur de l'attribut <att>type</att> est <val>"underline"</val></p>
-						<egXML xmlns="http://www.tei-c.org/ns/Examples">
-							<div>
-								<ab>
-									<num type="pagination" subtype="red">313</num>
-								</ab>
-							</div>
-							<div>
-								<head>Thatcher.</head>
-								<div>
-									<note rend="margin_left">
-										<!--      								le contenu de la note est absente de la transcription le 10/05/22-->
-									</note>
-									<p rend="main">John thather thewger the VIth daie of
-											novemb<expan>er</expan> examined u<unclear resp="editor"
-											cert="high">pon</unclear> what busines <hi
-											rend="underline">he Rode</hi> to london the firste daie
-											<unclear resp="editor" cert="high">of</unclear> the said
-										monethe in so great hast <metamark>/</metamark> saithe that
-										<unclear/>; his uncle <hi rend="underline">Mr
-												Gardin<expan>er</expan></hi> did
-										co<expan>m</expan>manunde hym w<expan>ith</expan>in this two
-										monethes past that <hi rend="underline">incase my lorde of
-											Cantorbury did send for hym that then this deponent
-											shuld Ryde <del rend="strikethrough">in haste presently
-											</del>to shewe my lorde of wynchest<expan>er</expan> of
-											the same</hi>
-										<metamark>/</metamark> and for this cause the saide deponent
-										Roode <metamark>/</metamark> the daie above saide
-											<metamark>/</metamark> to the Courtewarde
-											<metamark>/</metamark> and In london the same daie met
-										with Shether <metamark>/</metamark> and shewed unto Mr
-										shether that my <add place="above">said </add>lorde of <del
-											rend="strikethrough">Cat</del>
-									</p>
-									<!--la suite de la page 313-->
-								</div>
-							</div>
-						</egXML>
-						<p>Sur certaines pages le scribe a écrit à la verticale. Tantôt de haut en
-							bas, tantôt de bas en haut. Nous employons respectivement les valeurs
-								<val>"vertical_top-bottom"</val> et
-							<val>"vertical_bottom-top"</val>.</p>
-						<figure>
-							<head>La page 276</head>
-							<graphic url="276.jpg" width="500px"/>
-						</figure>
-						<egXML xmlns="http://www.tei-c.org/ns/Examples">
-							<div>
-								<p rend="main">
-									<hi rend="vertical_top-bottom">Mr parkehurst C.</hi>
-								</p>
-							</div>
-						</egXML>
-						<figure>
-							<head>La page 268</head>
-							<graphic url="268.jpg" width="500px"/>
-						</figure>
-						<egXML xmlns="http://www.tei-c.org/ns/Examples">
-							<div>
-								<p rend="main">
-									<hi rend="vertical_bottom-top">to my lord of N </hi>
-								</p>
-							</div>
-						</egXML>
-						<p>Il convient de nester judicieusement l'élément <gi>hi</gi> ainsi les
-							passages sous-ligné dans l'ajout <gi>add</gi> de la page 251 : <figure>
-								<head>Au milieu de la page 251, un élément <gi>hi</gi> au sein d'un
-									élément <gi>add</gi></head>
-								<graphic url="251_middle.jpg" width="500px"/>
-							</figure>
-							<egXML xmlns="http://www.tei-c.org/ns/Examples">
-								<div>
-									<!--Ce qui précède l'extrait ciblé-->
-									<!--NB : à la date où nous intégrons cet exemple (le 10/05/22), sa transcription semble peu avancée les passages sur lesquels l'équipe scientifique en charge de la transcription n'a pas encore pris de décision sont balisés <unclear>-->
-									<p rend="main">I preached the day &amp; yere <del
-											rend="strikethrough"><unclear/></del>specified in the
-										said pretended (<del rend="strikethrough">allthough
-											untrewly</del>) article : at sandwich yet I preched not
-											<add place="above"><del rend="strikethrough">that
-												day</del> as <hi rend="underline">it is
-												<unclear/>ed</hi> in your article</add>
-										<del rend="strikethrough">that article</del>
-										<hi rend="underline">nor any other <del rend="strikethrough"
-												><unclear/></del>hereticall</hi>
-										<add place="above">but I preached as concernyng that article
-											the said xxiiii day</add>
-										<del rend="strikethrough">Notwithstanding that as towching
-											this said article I preached</del>
-										<hi rend="underline">woords <unclear/> pertaining to the
-											same</hi> under this forme following or woords of
-										<!--Le reste de la page 251-->
-									</p>
-								</div>
-							</egXML></p>
-					</div3>
-					<div3>
-						<head>Les zones d'incertitudes balisées <gi>unclear</gi></head>
-						<p>Lorsque le manuscrit est trop endommagé ou trop illisible pour pouvoir
-							être transcrit nous employons la balise <gi>unclear</gi>
-							<gloss>incertain</gloss> pour marquer ce trou dans la transcription.</p>
-						<figure>
-							<head>La marge de la page 281 coupée par la numérisation</head>
-							<graphic url="281.jpg" width="500px"/>
-						</figure>
-						<egXML xmlns="http://www.tei-c.org/ns/Examples">
-							<div>
-								<note rend="margin_left">
-									<hi rend="vertical_bottom-top">It<expan>e</expan>m whyther
-										tharchBysshop dyd of <unclear/> consystory
-											<expan>that</expan> the kynges plesure was to have III
-										prechers of the new lernyng &amp; III of tholde Thys <del
-											rend="strikethrough">Aw </del>ys Awnssweryd to yn the
-											Arti<expan>cle</expan> wher my lord dyd Rebuke mr Serlys
-										for p<expan>re</expan>chyng.</hi>
-								</note>
-								<!--         	le reste de la page 281-->
-							</div>
-						</egXML>
-						<p>S'il est employé vide et sans attribut lorsqu'aucune proposition n'est
-							faite pour suppléer cette incertitude, lorsqu'une proposition est faite
-							dans la transcription nous utilisons les attributs <att>resp</att> avec
-							la valeur <val>"editor"</val>. La page 313 offre de bons exemples :
-								<egXML xmlns="http://www.tei-c.org/ns/Examples">
-								<div>
-									<!--      						Le contenu de la page 313 précédent cet extrait-->
-									<p rend="main">John thather thewger the VIth daie of
-											novemb<expan>er</expan> examined u<unclear resp="editor"
-											cert="high">pon</unclear> what busines <hi
-											rend="underline">he Rode</hi> to london the firste daie
-											<unclear resp="editor" cert="high">of</unclear> the said
-										monethe in so great hast <metamark>/</metamark> saithe that
-										<unclear/>; his uncle <hi rend="underline">Mr
-												Gardin<expan>er</expan></hi> did
-										co<expan>m</expan>manunde hym w<expan>ith</expan>in this two
-										monethes past that <hi rend="underline">incase my lorde of
-											Cantorbury did send for hym that then this deponent
-											shuld Ryde <del rend="strikethrough">in haste presently
-											</del>to shewe my lorde of wynchest<expan>er</expan> of
-											the same</hi>
-										<metamark>/</metamark> and for this cause the saide deponent
-										Roode <metamark>/</metamark> the daie above saide
-											<metamark>/</metamark> to the Courtewarde
-											<metamark>/</metamark> and In london the same daie met
-										with Shether <metamark>/</metamark> and shewed unto Mr
-										shether that my <add place="above">said </add>lorde of <del
-											rend="strikethrough">Cat</del></p>
-									<!--la suite de la page 313-->
-								</div>
-							</egXML></p>
-					</div3>
-					<div3>
-						<head>Les mains</head>
-						<!--      				@hand-->
-					</div3>
-				</div2>
-			</div1>
-			<!--      	ICI DÉBUTE LA SECTION SCHÉMAS 
-      	À FAIRE PLUS TARD UNE FOIS QU'ON AURA AVANCÉ SUR LA VALIDATION
-      									ET VÉRIFIER LES PAGES PROBLÉMATIQUES-->
+			
 			<div1>
 				<head>Schémas</head>
+				<schemaSpec ident="schemaMs128" start="TEI">
+					<moduleRef key="tei"/>
+					<moduleRef key="header"
+						include="fileDesc titleStmt title funder sponsor respStmt name reso extent measure publicationStmt publisher pubPlace address addrLine authority date availability licence sourceDesc msDesc  msIdentifier repositoty country settlement msName altIdentifier idno physDesc objectDesc supportDesc measure material height width foliation abstract creation langUsage calendarDesc calendar encodingDesc projectDesc ref editorialDesc normalization appInfo application label"/>
+					<moduleRef key="core"
+						include="add del date expan graphic head hi item list note num p pb unclear"/>
+					<moduleRef key="textstructure" include="TEI body div text"/>
+					<moduleRef key="namesdates" include="persName placeName roleName"/>
+					<moduleRef key="transcr" include="facsimile metamark space surface"/>
+					<moduleRef key="linking" include="ab"/>
+					<classRef key="att."/>
+				</schemaSpec>
+				<elementSpec ident="TEI">
+					<gloss>document TEI</gloss>
+					<desc>contient un seul </desc>
+				</elementSpec>
+				<elementSpec ident="facsimile" mode="change">
+					<gloss>facsimile</gloss>
+					<desc> contient une représentation d'une source écrite quelconque sous la forme
+						d'un ensemble d'images plutôt que sous la forme d'un texte transcrit ou
+						encodé.</desc>
+					<attList>
+						<attDef ident="xml:id" mode="delete"/>
+						<attDef ident="n" mode="delete"/>
+						<attDef ident="xml:lang" mode="delete"/>
+						<!--<attDef ident="xml:base" mode="delete"/>
+						<attDef ident="xml:space" mode="delete"/>
+						-->
+						<attDef ident="rend" mode="delete"/>
+						<attDef ident="style" mode="delete"/>
+						<!--						<attDef ident="rendition" mode="delete"/>-->
+						<attDef ident="corresp" mode="delete"/>
+						<!--						<attDef ident="synch" mode="delete"/>-->
+						<!--						<attDef ident="sameAs" mode="delete"/>-->
+						<!--						<attDef ident="copyOf" mode="delete"/>-->
+						<!--						<attDef ident="next" mode="delete"/>-->
+						<!--						<attDef ident="prev" mode="delete"/>-->
+						<!--						<attDef ident="exclude" mode="delete"/>-->
+						<!--						<attDef ident="select" mode="delete"/>-->
+						<!--						<attDef ident="ana" mode="delete"/>-->
+						<attDef ident="facs" mode="delete"/>
+						<!--						<attDef ident="change" mode="delete"/>-->
+						<!--						<attDef ident="cert" mode="delete"/>-->
+						<!--						<attDef ident="resp" mode="delete"/>-->
+						<!--						<attDef ident="source" mode="delete"/>-->
+						<!--						<attDef ident="decls" mode="delete"/>-->
+					</attList>
+				</elementSpec>
+				<elementSpec ident="surface" mode="change">
+					<gloss>surface</gloss>
+					<desc> définit une surface écrite comme un rectangle décrit par ses coordonnées
+						spatiales, en regroupant éventuellement une ou plusieurs représentations
+						graphiques de cet espace et des zones rectangulaires intéressantes à
+						l'intérieur de celui-ci.</desc>
+					<attList>
+						<attDef ident="xml:id" mode="change" usage="req">
+							<gloss>L'identifiant unique de la page du manuscrit.</gloss>
+							
+							
+						</attDef>
+						<attDef ident="n" mode="delete"/>
+						<attDef ident="xml:lang" mode="delete"/>
+						<!--<attDef ident="xml:base" mode="delete"/>
+						<attDef ident="xml:space" mode="delete"/>-->
+						<attDef ident="rend" mode="delete"/>
+						<!--						<attDef ident="style" mode="delete"/>
+						<attDef ident="rendition" mode="delete"/>
+-->
+						<attDef ident="corresp" mode="delete"/>
+						<!--						<attDef ident="synch" mode="delete"/>
+						<attDef ident="sameAs" mode="delete"/>
+						<attDef ident="copyOf" mode="delete"/>
+						<attDef ident="next" mode="delete"/>
+						<attDef ident="prev" mode="delete"/>
+						<attDef ident="exclude" mode="delete"/>
+						<attDef ident="select" mode="delete"/>
+						<attDef ident="ana" mode="delete"/>
+-->
+						<attDef ident="facs" mode="delete"/>
+						<!--						<attDef ident="change" mode="delete"/>
+						<attDef ident="cert" mode="delete"/>
+						<attDef ident="resp" mode="delete"/>
+						<attDef ident="source" mode="delete"/>
+						<attDef ident="start" mode="delete"/>
+						<attDef ident="ulx" mode="delete"/>
+						<attDef ident="uly" mode="delete"/>
+						<attDef ident="lrx" mode="delete"/>
+						<attDef ident="lry" mode="delete"/>
+						<attDef ident="points" mode="delete"/>
+						<attDef ident="decls" mode="delete"/>
+-->
+						<attDef ident="type" mode="delete"/>
+						<attDef ident="subtype" mode="delete"/>
+						<!--						<attDef ident="attachment" mode="delete"/>
+						<attDef ident="flipping" mode="delete"/>
+-->
+					</attList>
+				</elementSpec>
+				<elementSpec ident="graphic">
+					<gloss/>
+					<desc/>
+					<attList>
+						<attDef ident="url" mode="change" usage="req"/>
+						<attDef ident="xml:id" mode="delete"/>
+						<attDef ident="n" mode="delete"/>
+						<attDef ident="xml:lang" mode="delete"/>
+						<!--<attDef ident="xml:base" mode="delete"/>
+						<attDef ident="xml:space" mode="delete"/>-->
+						<attDef ident="rend" mode="delete"/>
+						<!--<attDef ident="style" mode="delete"/>
+						<attDef ident="rendition" mode="delete"/>-->
+						<attDef ident="corresp" mode="delete"/>
+						<!--<attDef ident="synch" mode="delete"/>
+						<attDef ident="sameAs" mode="delete"/>
+						<attDef ident="copyOf" mode="delete"/>
+						<attDef ident="next" mode="delete"/>
+						<attDef ident="prev" mode="delete"/>
+						<attDef ident="exclude" mode="delete"/>
+						<attDef ident="select" mode="delete"/>
+						<attDef ident="ana" mode="delete"/>-->
+						<attDef ident="facs" mode="delete"/>
+						<!--						<attDef ident="change" mode="delete"/>-->
+						<!--						<attDef ident="cert" mode="delete"/>-->
+						<!--						<attDef ident="resp" mode="delete"/>-->
+						<attDef ident="n" mode="delete"/>
+					</attList>
+				</elementSpec>
+				<elementSpec ident="text" mode="change">
+					<gloss>Texte</gloss>
+					<desc> contient un seul texte quelconque, simple ou composite, par exemple un poème ou une pièce de théâtre, un recueil d’essais, un roman, un dictionnaire ou un échantillon de corpus.</desc>
+					<attList>
+						<attDef ident="xml:id" mode="change" usage="req">
+							<valList mode="add" type="closed">
+								<valItem ident="reppol_trans">
+									<gloss>Transcription RePPOL</gloss>
+									<desc>Identifie la transcription du projet RePPOL.</desc>
+								</valItem>
+								<valItem ident="calendar_trans">
+									<gloss>Transcription Calendar</gloss>
+									<desc>Identifie la transcription du Calendar.</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+				<elementSpec ident="div">
+					<gloss/>
+					<desc/>
+					<attList>
+						<attDef ident="type" mode="change" usage="opt">
+							<valList mode="add" type="closed">
+								<valItem ident="article">
+									<gloss>Article</gloss>
+									<desc> est un texte traitant généralement de chefs
+										d'accusation à l'égard de l'une des personnes dont traite
+										l'enquête dont la caractéristique nécessaire est d'avoir un
+										titre généralement le nom de l'individu mis en question, une
+										date et/ou un lieu.</desc>
+								</valItem>
+								<valItem ident="answer_set">
+									<gloss>Set de réponses</gloss>
+									<desc> les sets de réponses sont des textes dont les paragraphes
+										sont généralement numérotés identifié par l'équipe
+										scientifique du projet comme étant les réponses de personnes
+										intérrogées retranscrites par le ou les enquêteurs. Ces sets
+										correspondent généralement à des sets de questions.</desc>
+								</valItem>
+								<valItem ident="collection">
+									<gloss>Collection</gloss>
+									<desc> ensemble de feuillets réunis lors de l'élaboration du
+										MS128. L'équipe scientifique du projet a identifié les dites
+										collections.</desc>
+								</valItem>
+								<valItem ident="deposition">
+									<gloss>Déposition</gloss>
+									<desc> textes rédigés à la première personne qui constitue des
+										dépositions de paroissiens participant à l'enquête.</desc>
+								</valItem>
+								<valItem ident="index">
+									<gloss>Index</gloss>
+									<desc> l'index est la table des matières intégrant les noms des
+										participants à l'enquête et y adjoignant les numéros de
+										pages correspondant.</desc>
+								</valItem>
+								<valItem ident="letter">
+									<gloss>Lettres</gloss>
+									<desc> lettres de dénonciations (ou autre) rédigés par les
+										paroissiens interrogés ou accusés réunis dans le dossier de
+										l'enquête.</desc>
+								</valItem>
+								<valItem ident="memorandum">
+									<gloss>Memorandum</gloss>
+									<desc> notes prises par les enquêteurs, contenus divers,
+										généralement identifiable au fait qu'ils commencent par la
+										mention "memorandum".</desc>
+								</valItem>
+								<valItem ident="question_set">
+									<gloss>Set de questions</gloss>
+									<desc> jeu de questions à soumettre aux paroissiens interrogés,
+										ils correspondent généralement à un set de réponses.</desc>
+								</valItem>
+								<valItem ident="testimony">
+									<gloss>Témoignage</gloss>
+									<desc> rédigé à la troisième personne constitue des déclarations
+										o par les paroissiens interrogés lors de l'enquête.</desc>
+								</valItem>
+							</valList>
+						</attDef>
+						<attDef ident="n" mode="change" usage="opt"/>
+						<attDef ident="xml:id" mode="change" usage="opt"/>
+						<attDef ident="corresp" mode="change" usage="opt"/>
+						<attDef ident="subtype" mode="delete"/>
+						<attDef ident="rend" mode="delete"/>
+					</attList>
+				</elementSpec>
+				<elementSpec ident="space" mode="change">
+					<gloss>espace</gloss>
+					<desc> permet de situer un espace significatif dans le texte édité.</desc>
+					<attList>
+						<attDef ident="unit" mode="change" usage="req">
+							<valList mode="change" type="closed">
+								<valItem ident="pages">
+									<gloss>Saut de page</gloss>
+									<desc> les espaces prennent la page entière.</desc>
+								</valItem>
+							</valList>
+						</attDef>
+						<attDef ident="quanity" mode="change" usage="req">
+							<valList mode="change" type="closed">
+								<valItem ident="1">
+									<gloss>Un</gloss>
+									<desc> une seule page</desc>
+								</valItem>
+							</valList>
+						</attDef>
+						<attDef ident="type" mode="delete"/>
+						<attDef ident="subtype" mode="delete"/>
+						<attDef ident="n" mode="delete"/>
+						<attDef ident="xml:id" mode="delete"/>
+						<attDef ident="xml:lang" mode="delete"/>
+						<attDef ident="rend" mode="delete"/>
+						<attDef ident="corresp" mode="delete"/>
+						<attDef ident="facs" mode="delete"/>
+					</attList>
+				</elementSpec>
+				<elementSpec ident="pb" mode="change">
+					<gloss>Début de page</gloss>
+					<desc> marque un changement de page.</desc>
+					<attList>
+						<attDef ident="n" mode="change"/>
+						<attDef ident="facs" mode="change"/>
+						<attDef ident="xml:id" mode="delete"/>
+						<attDef ident="xml:lang" mode="delete"/>
+						<attDef ident="rend" mode="delete"/>
+						<attDef ident="corresp" mode="delete"/>
+						<attDef ident="type" mode="delete"/>
+						<attDef ident="subtype" mode="delete"/>
+					</attList>
+				</elementSpec>
+				<elementSpec ident="ab">
+					<gloss>Bloc anonyme</gloss>
+					<desc> contient un unité de texte quelconque, de niveau "composant", faisant office de contenant anonyme pour une expression ou des éléments de niveau intermédiaire, analogue à un paragraphe mais sans sa portée sémantique.</desc>
+					<attList>
+						<attDef ident="xml:id" mode="delete"/>
+						<attDef ident="n" mode="delete"/>
+						<attDef ident="xml:lang" mode="delete"/>
+						<attDef ident="rend" mode="delete"/>
+						<attDef ident="corresp" mode="delete"/>
+						<attDef ident="facs" mode="delete"/>
+						<attDef ident="type" mode="delete"/>
+						<attDef ident="subtype" mode="delete"/>
+					</attList>
+				</elementSpec>
+				<elementSpec ident="num">
+					<gloss>Numéros</gloss>
+					<desc> un nombre</desc>
+					<attList>
+						<attDef ident="type" mode="change" usage="req">
+							<valList mode="add" type="closed">
+								<valItem ident="pagination">
+									<gloss>Pagination</gloss>
+									<desc> le nombre balisé indique un numéros de page</desc>
+								</valItem>
+							</valList>
+						</attDef>
+						<attDef ident="subtype" mode="change" usage="req">
+							<valList mode="add" type="closed">
+								<valItem ident="red">
+									<gloss>Rouge</gloss>
+									<desc> le nombre concerné est rouge.</desc>
+								</valItem>
+								<valItem ident="black">
+									<gloss>Noir</gloss>
+									<desc> le nombre concerné est noir.</desc>
+								</valItem>
+								<valItem ident="gray">
+									<gloss>Gris</gloss>
+									<desc> le nombre concerné est gris.</desc>
+								</valItem>
+							</valList>
+						</attDef>
+						<attDef ident="xml:id" mode="delete"/>
+						<attDef ident="n" mode="delete"/>
+						<attDef ident="xml:lang" mode="delete"/>
+						<attDef ident="rend" mode="delete"/>
+						<attDef ident="corresp" mode="delete"/>
+						<attDef ident="facs" mode="delete"/>
+					</attList>
+				</elementSpec>
+				<elementSpec ident="head" mode="change">
+					<gloss>Titre</gloss>
+					<desc> le titre de la section</desc>
+					<attList>
+						<attDef ident="rend">
+							<gloss>Interprétation</gloss>
+							<desc> indique comment l'élément en question a été rendu ou présenté dans le texte source.</desc>
+							<valList mode="add" type="closed">
+								<valItem ident="margin_left">
+									<gloss>Marge gauche</gloss>
+									<desc> s'applique au titre inscrit dans la marge gauche de la page.</desc>
+								</valItem>
+							</valList>
+						</attDef>
+						<attDef ident="xml:id" mode="delete"/>
+						<attDef ident="n" mode="delete"/>
+						<attDef ident="xml:lang" mode="delete"/>
+						<attDef ident="corresp" mode="delete"/>
+						<attDef ident="type" mode="delete"/>
+						<attDef ident="subtype" mode="delete"/>
+						<attDef ident="place" mode="delete"/>
+					</attList>
+				</elementSpec>
+				
 				<div2>
 					<head>Éléments structurels</head>
 					<p/>

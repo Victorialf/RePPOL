@@ -52,7 +52,7 @@
 				<authority>Projet RePPOL</authority>
 				<date>2022</date>
 				<availability>
-					<licence ref="https://creativecommons.org/licenses/by/2.0/fr/legalcode">CC BY 2.0 FR</licence>
+					<licence target="https://creativecommons.org/licenses/by/2.0/fr/legalcode">CC BY 2.0 FR</licence>
 				</availability>
 			</publicationStmt>
 			<sourceDesc>

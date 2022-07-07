@@ -130,7 +130,8 @@
 					<a href="https://comod.universite-lyon.fr/site-francais/" target="blanck"><img src="https://comod.universite-lyon.fr/medias/photo/labex-comod-noir-png-300dpi-sans-fond-blanc_1551950983580-png?ID_FICHE=41153"/><!--<img src="https://comod.universite-lyon.fr/medias/photo/labex-comod-png-300dpi-sans-fond-blanc_1551950869031-png?ID_FICHE=41153"/>--></a>
 				</div>
 				<div class="footer_logo">
-					<a href="https://www.univ-lille.fr/" target="blanck"><img src="ULille.sans.baseline-Horizontal-CMJN-Noir.png"/></a>
+					<a href="https://www.univ-lille.fr/" target="blanck"><!--<img src="ULille.sans.baseline-Horizontal-CMJN-Noir.png"/>-->
+						<img src="https://www.univ-lille.fr/typo3conf/ext/ul2fpfb/Resources/Public/assets/img/logos/ULille-nb.svg"/></a>
 				</div>
 				<div class="footer_logo">
 					<a href="https://www.meshs.fr/page/accueil" target="blanck"><img src="http://medias.meshs.fr/medias/images/logos/meshs/MESHS_Logo_NoirRouge_Sans.png"></img><!--<img src="http://medias.meshs.fr/medias/images/logos/meshs/MESHS_Logo_NoirGris_Sans.png"/>--></a>
@@ -274,7 +275,7 @@
 						</section>
 						<section><!--class="project_right" /version colonne/-->
 							<!--<p>Les <a href="{$pedago}" target="blanck">transcriptions interactives</a> vous propose une démonstration sur dix pages de transcriptions interactives paléographiques et pédagogiques constituées à l'aide de la transformation <a href="https://github.com/TimotheAlbouy/Interfaxim" target="blanck">Interfaxim</a> développé par <a href="https://github.com/TimotheAlbouy" target="blanck">M. Thimothe Albouy</a>.</p>-->
-							<p>The ten pages long demonstration offered as <a href="{$pedago}" target="blanck">interactive transcriptions</a> wouldn't have been possible without the <a href="https://github.com/TimotheAlbouy/Interfaxim" target="blanck">Interfaxim</a> XSL-stylesheet developped by <a href="https://github.com/TimotheAlbouy" target="blanck">Mr Thimothe Albouy</a>.</p>
+							<p>The ten pages long demonstration offered as <a href="{$pedago}" target="blanck">interactive transcriptions</a> wouldn't have been possible without the <a href="https://github.com/TimotheAlbouy/Interfaxim" target="blanck">Interfaxim</a> XSL-stylesheet developped by <a href="https://github.com/TimotheAlbouy" target="blanck">Mr Thimothe Albouy</a> and is licensed under <a href="https://choosealicense.com/licenses/mit/" target="blanck">MIT License</a>.</p>
 						</section>
 					</article>
 					<xsl:call-template name="script"/>
