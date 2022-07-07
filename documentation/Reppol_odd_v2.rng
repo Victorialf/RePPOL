@@ -5,12 +5,12 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2022-07-06T14:34:18Z. .
+Schema generated from ODD source 2022-07-07T12:48:30Z. .
 TEI Edition: Version 4.4.0. Last updated on
         19th April 2022, revision ff9cc28b0
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.4.0/
   
---><!---->
+--><!--[https://creativecommons.org/licenses/by/2.0/fr/legalcode] CC BY 2.0 FR-->
    <define name="macro.paraContent">
       <zeroOrMore>
          <choice>
@@ -1955,18 +1955,16 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
       <element name="licence">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contient des informations légales applicables au texte, notamment le contrat de licence définissant les droits d'utilisation. [2.2.4. Publication, Distribution, Licensing, etc.]</a:documentation>
          <text/>
-         <optional>
-            <attribute name="ref">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(référence) fournit un moyen explicite de localiser une définition complète de l'entité nommée au moyen d'un ou plusieurs URIs.</a:documentation>
-               <list>
-                  <oneOrMore>
-                     <data type="anyURI">
-                        <param name="pattern">\S+</param>
-                     </data>
-                  </oneOrMore>
-               </list>
-            </attribute>
-         </optional>
+         <attribute name="target">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">précise la cible de la référence en donnant une ou plusieurs références URI</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
          <empty/>
       </element>
    </define>
@@ -2227,9 +2225,9 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
                   <value>index</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Index ) indique que cette section du manuscrit est un index.</a:documentation>
                   <value>testimony</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Témoignage) indique que cette section est un témoignage, un texte écrit à la première personne relatant des faits.</a:documentation>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Témoignage) indique que cette section est un témoignage, un texte écrit à la troisième personne relatant des faits.</a:documentation>
                   <value>deposition</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Déposition) indique que cette section est une déposition, un texte écrit à la troisième personne relatant des faits.</a:documentation>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Déposition) indique que cette section est une déposition, un texte écrit à la première personne relatant des faits.</a:documentation>
                   <value>article</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Article) indique que cette section est un article contenant des informations divers, généralement des chefs d'accusations contre une ou plusieurs personnes.</a:documentation>
                   <value>question_set</value>
@@ -2322,7 +2320,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
          </oneOrMore>
          <attribute name="type">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">caractérise l'élément en utilisant n'importe quel système ou typologie de classification approprié.
-Suggested values include: 1] archbishop (Archevêque); 2] bishop (Evêque); 3] vicar (Vicaire); 4] prebendary (Prébendier); 5] priest (Prêtre); 6] sir (Noble); 7] lord (Seigneur); 8] doctor (Docteur); 9] archdeacon (Archidiacre); 10] bellringer (Sonneur de cloche); 11] commissary (Commissaire); 12] pope (Pape)</a:documentation>
+Suggested values include: 1] archbishop (Archevêque); 2] bishop (Evêque); 3] vicar (Vicaire); 4] prebendary (Prébendier); 5] priest (Prêtre); 6] curate (Curé); 7] sir (Noble); 8] lord (Seigneur); 9] doctor (Docteur); 10] archdeacon (Archidiacre); 11] other (Autre); 12] commissary (Commissaire); 13] chantry_priest (Prêtre de chapelle); 14] preacher (prêcheur); 15] pope (Pape); 16] gentleman (Gentilhomme); 17] artisan (artisan); 18] peasant (Paysan)</a:documentation>
             <choice>
                <value>archbishop</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Archevêque) </a:documentation>
@@ -2334,6 +2332,8 @@ Suggested values include: 1] archbishop (Archevêque); 2] bishop (Evêque); 3] v
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Prébendier) </a:documentation>
                <value>priest</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Prêtre) </a:documentation>
+               <value>curate</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Curé) </a:documentation>
                <value>sir</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Noble) </a:documentation>
                <value>lord</value>
@@ -2342,12 +2342,22 @@ Suggested values include: 1] archbishop (Archevêque); 2] bishop (Evêque); 3] v
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Docteur) </a:documentation>
                <value>archdeacon</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Archidiacre) </a:documentation>
-               <value>bellringer</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Sonneur de cloche) </a:documentation>
+               <value>other</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Autre) La fonction principale de "other" est de regrouper les membres du clergé hiérarchiquement en dessous du prêtre, du moins qui ne sont pas rattachés à une paroisse. Les diacres sont les assistants des prêtres. Les frères sont des membres des ordres mendiants fondés aux XIIe et XIIIe siècle. Peut comprendre diacre (deacon), les frères (friar) sonneur de cloche (bell ringer)</a:documentation>
                <value>commissary</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Commissaire) </a:documentation>
+               <value>chantry_priest</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Prêtre de chapelle) </a:documentation>
+               <value>preacher</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(prêcheur) </a:documentation>
                <value>pope</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Pape) </a:documentation>
+               <value>gentleman</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Gentilhomme) </a:documentation>
+               <value>artisan</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(artisan) </a:documentation>
+               <value>peasant</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Paysan) </a:documentation>
                <data type="token">
                   <param name="pattern">[^\p{C}\p{Z}]+</param>
                </data>
