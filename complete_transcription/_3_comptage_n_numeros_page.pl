@@ -89,7 +89,7 @@ while (my $ligne = <TEXTE>) {
 		
 		#AJOUT VALEUR DE @N pour MEMORANDUM
 	if ($ligne=~/type=\"memorandum\"/) {$compteur_memorandum=$compteur_memorandum+1;}
-	$ligne=~s/type=\"memorandum\" n=\"\"/type=\"index\" n=\"$compteur_memorandum\"/;
+	$ligne=~s/type=\"memorandum\" n=\"\"/type=\"memorandum\" n=\"$compteur_memorandum\"/;
 	
 
 
