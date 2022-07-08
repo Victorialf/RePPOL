@@ -127,19 +127,30 @@
 					<a href="http://www.isite-ulne.fr/index.php/fr/page-daccueil/" target="blanck"><img src="http://www.isite-ulne.fr/wp-content/uploads/2018/07/I-SITE-ULNE_Logo-COUL_RVB.png"/></a>
 				</div>
 				<div class="footer_logo">
-					<a href="https://comod.universite-lyon.fr/site-francais/" target="blanck"><img src="https://comod.universite-lyon.fr/medias/photo/labex-comod-noir-png-300dpi-sans-fond-blanc_1551950983580-png?ID_FICHE=41153"/><!--<img src="https://comod.universite-lyon.fr/medias/photo/labex-comod-png-300dpi-sans-fond-blanc_1551950869031-png?ID_FICHE=41153"/>--></a>
+					<a href="https://comod.universite-lyon.fr/site-francais/" target="blanck"><!--<img src="https://comod.universite-lyon.fr/medias/photo/labex-comod-noir-png-300dpi-sans-fond-blanc_1551950983580-png?ID_FICHE=41153"/>--><img src="https://comod.universite-lyon.fr/medias/photo/labex-comod-png-300dpi-sans-fond-blanc_1551950869031-png?ID_FICHE=41153"/></a>
 				</div>
 				<div class="footer_logo">
 					<a href="https://www.univ-lille.fr/" target="blanck"><!--<img src="ULille.sans.baseline-Horizontal-CMJN-Noir.png"/>-->
 						<img src="https://www.univ-lille.fr/typo3conf/ext/ul2fpfb/Resources/Public/assets/img/logos/ULille-nb.svg"/></a>
 				</div>
 				<div class="footer_logo">
-					<a href="https://www.meshs.fr/page/accueil" target="blanck"><img src="http://medias.meshs.fr/medias/images/logos/meshs/MESHS_Logo_NoirRouge_Sans.png"></img><!--<img src="http://medias.meshs.fr/medias/images/logos/meshs/MESHS_Logo_NoirGris_Sans.png"/>--></a>
+					<a href="https://www.meshs.fr/page/accueil" target="blanck">
+						<img src="http://medias.meshs.fr/medias/images/logos/meshs/MESHS_Logo_NoirRouge_Sans.png"/>
+						<!--<img src="http://medias.meshs.fr/medias/images/logos/meshs/MESHS_Logo_NoirGris_Sans.png"/>-->
+					</a>
+				</div>
+				<div class="footer_logo">
+					<a href="https://cecille.univ-lille.fr/" target="blanck"><img src="http://gis-religions.fr/images/logos/labos/GIS-LOGO-CECILLE.jpg"/></a>
+				</div>
+				<div class="footer_logo">
+					<a href="http://larhra.ish-lyon.cnrs.fr/" target="blanck">
+						<img src="https://halshs.archives-ouvertes.fr/LARHRA/public/logo_larhra_fond_blanc.jpg"/>
+					</a>
 				</div>
 			</div>
 			<div class="footer_legal">
-				Ce site et les transcriptions réalisées dans le cadre du projet RePPOL sont mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by/2.0/fr/">Licence Creative Commons Attribution 2.0 France</a>
-				<a rel="license" href="http://creativecommons.org/licenses/by/2.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/2.0/fr/88x31.png" /></a>
+				Ce site et les transcriptions réalisées dans le cadre du projet RePPOL sont mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Licence Creative Commons Attribution 4.0 International</a>
+				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licence Creative Commons" style="border-width:0; margin:10px;" src="https://creativecommons.org/images/chooser/chooser_cc.png" height="50%"/><img alt="Licence Creative Commons" style="border-width:0; margin:10px;" src="https://creativecommons.org/images/chooser/chooser_by.png" height="50%"/></a>
 				<p>More documentation on <a href="https://github.com/Victorialf/RePPOL" target="blanck">Github</a></p>
 			</div>
 			
