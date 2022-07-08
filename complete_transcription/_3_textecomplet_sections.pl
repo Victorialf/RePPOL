@@ -248,48 +248,48 @@ while (my $ligne = <TEXTE>) {
 		$ligne=~s/(<!--FIN 046-->)/$end$end$1/;
 	}
 	if($page eq "047"){
-		$ligne=~s/\$(Mr\. Ridley prebendary)\$ (22 Septembris 1543)/$ar$h$da$2$de$eh$se$h$2$eh/;
+		$ligne=~s/\$(Mr\. Ridley prebendary)\$ (22 Septembris 1543)/$ar$h$da$2$de$eh$se$hs$1$eh/;
 		$ligne=~s/(24 Septembre 1543)/$end$end$ar$h$da$1$de$eh/;
-		$ligne=~s/\$(Joan frenche)\$/$se$h$1$eh/;
-		$ligne=~s/\$(Henry Tillet)\$/$end$se$h$1$eh/;
+		$ligne=~s/\$(Joan frenche)\$/$se$hs$1$eh/;
+		$ligne=~s/\$(Henry Tillet)\$/$end$se$hs$1$eh/;
 		$ligne=~s/(<!--FIN 047-->)/$end$1/;
 	}
 	if($page eq "048"){
-		$ligne=~s/\$(Nicolas huget)\$/$se$h$1$eh/;
+		$ligne=~s/\$(Nicolas huget)\$/$se$hs$1$eh/;
 		$ligne=~s/(26 Septembris Anno 1543)/$end$end$ar$h$da$1$de$eh/;
-		$ligne=~s/\$(Drumme)\$/$se$h$1$eh/;
+		$ligne=~s/\$(Drumme)\$/$se$hs$1$eh/;
 	}
 	if($page eq "050"){
 		$ligne=~s/(26 Septembre 1543)(,)/$end$end$ar$h$da$1$de$2$eh/;
-		$ligne=~s/\$(Lancaster)\$/$se$h$1$eh/;
+		$ligne=~s/\$(Lancaster)\$/$se$hs$1$eh/;
 		$ligne=~s/(<!--FIN 050-->)/$end$end$1/;
 	}
 	if($page eq "051"){
-		$ligne=~s/(The curate of muche mongeham)/$ar$h$1$eh/;
+		$ligne=~s/(The curate of muche Mongeham)/$ar$h$1$eh/;
 		$ligne=~s/(24 Septembris Anno 1543)/$se$h$da$1$de$eh/;
 		$ligne=~s/(Robert Newington )(24 Septembris)/$end$end$ar$h$1$eh$se$h$da$2/;
 		$ligne=~s/( 1543)(\.)/$1$de$eh/;
-		$ligne=~s/(Thomas makeblythe of Canterbury barber)/$end$end$ar$h$1$eh/;
+		$ligne=~s/(Thomas makeblythe of Cant<expan>erbury<\/expan> barbo<expan>ur<\/expan>)/$end$end$ar$h$1$eh/;
 		$ligne=~s/(26 Septembris Anno 1543)/$se$h$da$1$de$eh/;
 		$ligne=~s/(<!--FIN 051-->)/$end$end$1/;
 	}
 	if($page eq "052"){
 		$ligne=~s/(21 Septembris 1543)(\.)/$ar$h$da$1$de$2$eh/;
 		$ligne=~s/\$(Marget Toftes the yongar)\$/$se$hs$1$eh/;
-		$ligne=~s/\$(Margaret Toftes seniour)\$/$end$se$hs$1$eh/;
+		$ligne=~s/\$(Margaret Toftes senio<expan>ur<\/expan>)\$/$end$se$hs$1$eh/;
 		$ligne=~s/(<!--FIN 052-->)/$end$1/;
 	}
 	if($page eq "053"){
-		$ligne=~s/\$(Mres\. Starkey)\$/$se$hs$1$eh/;
+		$ligne=~s/\$(M<expan>ist<\/expan>res\. Starkey)\$/$se$hs$1$eh/;
 		$ligne=~s/\$(Marget Toftes thelder)\$/$end$se$hs$1$eh/;
-		$ligne=~s/\$(To Hasylden Tlunescede)\$/$end$se$hs$1$eh/;
+		$ligne=~s/\$(To Hasylden Tlunestede)\$/$end$se$hs$1$eh/;
 		$ligne=~s/\$(Bett)\$/$end$se$hs$1$eh/;
 	}
 	if($page eq "054"){
 		$ligne=~s/(22 Septembris 1543)/$end$end$ar$h$da$1$de$eh/;
 		$ligne=~s/\$(Humfray Cotton preiste;)/$se$hs$1$eh\$/;
 		$ligne=~s/(26 Septembris 1543)/$end$end$ar$h$da$1$de$eh/;
-		$ligne=~s/\$(The parson of witchelyng)\$/$se$hs$1$eh/;
+		$ligne=~s/\$(The <expan>par<\/expan>son of Witchelyng)\$/$se$hs$1$eh/;
 		$ligne=~s/(23 Septembris 1543)(\.)/$end$end$ar$h$da$1$de$2$eh/;
 		$ligne=~s/\$(John Riche;)/$se$hs$1$eh\$/;
 		$ligne=~s/(<!--FIN 054-->)/$end$1/;
@@ -305,15 +305,15 @@ while (my $ligne = <TEXTE>) {
 		$ligne=~s/\$(Norton vicarof ffeversham)\$/$se$hs$1$eh/;
 	}
 	if($page eq "056"){
-		$ligne=~s/(22 Septembris)/$end$end$ar$h$da$1$de$eh/;
-		$ligne=~s/\$(Mr\. Drumme)\$/$se$hs$1$eh/;
+		$ligne=~s/(22 Septemb<expan>ris<\/expan>)/$end$end$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Mr\. drumme)\$/$se$hs$1$eh/;
 		$ligne=~s/\$(Mr\. Scorye)\$/$end$se$hs$1$eh/;
 	}
 	if($page eq "057"){
-		$ligne=~s/(21 Septembris 1543)/$end$end$ar$h$da$1$de$eh/;
+		$ligne=~s/( 21 Septembr<expan>is<\/expan> 1543)/$end$end$ar$h$da$1$de$eh/;
 		$ligne=~s/\$(Strawghwyn)\$/$se$hs$1$eh/;
-		$ligne=~s/(The )(vii daye of novembre Anno 1541)/$end$end$ar$h$1$da$2$de$eh/;
-		$ligne=~s/\$(George of Canter)\$/$se$hs$1$eh/;
+		$ligne=~s/(The )(vii daye of novembre A<expan>nno<\/expan> 1541)/$end$end$ar$h$1$da$2$de$eh/;
+		$ligne=~s/\$(George of Cant<expan>erbury<\/expan>)\$/$se$hs$1$eh/;
 	}
 	if($page eq "058"){
 		$ligne=~s/(26 Septembris 1543)/$end$end$ar$h$da$1$de$eh/;
@@ -327,22 +327,22 @@ while (my $ligne = <TEXTE>) {
 	}
 	if($page eq "060"){
 		$ligne=~s/\$(Vicar of Sttallefeld)\$/$se$hs$1$eh/;
-		$ligne=~s/(23 Septembris)/$end$end$ar$h$da$1$de$eh/;
+		$ligne=~s/(23 Septembr<expan>is<\/expan>)/$end$end$ar$h$da$1$de$eh/;
 		$ligne=~s/\$(Jo Parkehurste)\$/$se$hs$1$eh/;
-		$ligne=~s/\$(Batterste; Salter; Chyrden, hardes; Nevenson; wryte)\$/$end$se$hs$1$eh/;
+		$ligne=~s/\$(Battersthe; Salter; Chyrden, Hardes; Nevenson; Wryte)\$/$end$se$hs$1$eh/;
 	}
 	if($page eq "061"){
-		$ligne=~s/\$(Mr\. Commisser)\$/$end$se$hs$1$eh/;
-		$ligne=~s/\$(George hardes)\$/$end$se$hs$1$eh/;
+		$ligne=~s/\$(Mr\. Commis<expan>ser<\/expan>)\$/$end$se$hs$1$eh/;
+		$ligne=~s/\$(George hard<expan>es<\/expan>)\$/$end$se$hs$1$eh/;
 		$ligne=~s/(<!--FIN 061-->)/$end$1/;
 	}
 	if($page eq "062"){
-		$ligne=~s/\$(Raynold Buckemer)\$/$se$hs$1$eh/;
+		$ligne=~s/\$(Raynold Buckem<expan>er<\/expan>)\$/$se$hs$1$eh/;
 		$ligne=~s/(21 Septembris)/$end$end$ar$h$da$1$de$eh/;
 		$ligne=~s/\$(Johne Benson)\$/$se$hs$1$eh/;
 		$ligne=~s/\$(Joys Benson)\$/$end$se$hs$1$eh/;
-		$ligne=~s/(21 Septembris 1543)(\.)/$end$end$ar$h$da$1$de$2$eh/;
-		$ligne=~s/\$(Ric Turner)\$/$se$hs$1$eh/;
+		$ligne=~s/(21 Septemb<expan>ris<\/expan> 1543)(\.)/$end$end$ar$h$da$1$de$2$eh/;
+		$ligne=~s/\$(Ric<expan>hard<\/expan>  Turner)\$/$se$hs$1$eh/;
 		$ligne=~s/(<!--FIN 062-->)/$end$end$1/;
 	}
 	if($page eq "063"){
@@ -352,16 +352,16 @@ while (my $ligne = <TEXTE>) {
 	}
 	if($page eq "064"){
 		$ligne=~s/(23 Septembr)/$end$end$ar$h$da$1$de$eh/;
-		$ligne=~s/\$(Hedcrone, Thomas Baker; john Tonge; Nicolas tery)\$/$se$hs$1$eh/;
+		$ligne=~s/\$(Hedcrone, Thomas Baker; john Tonge; Nicolas Tery)\$/$se$hs$1$eh/;
 		$ligne=~s/\$(john ffishcocke)\$/$end$se$hs$1$eh/;
 		$ligne=~s/(<!--FIN 064-->)/$end$end$1/;
 	}
 	if($page eq "065"){
 		$ligne=~s/(24 Septembr 1543)/$ar$h$da$1$de$eh/;
-		$ligne=~s/\$(Antony ager;Simon Castlyn)\$/$se$hs$1$eh/;
-		$ligne=~s/(26 Septembris 1543)/$end$end$ar$h$da$1$de$eh/;
-		$ligne=~s/\$(The vicar of Newington)\$/$se$hs$1$eh/;
-		$ligne=~s/(26 Septembr 1543)(\.)/$end$end$ar$h$da$1$de$2$eh/;
+		$ligne=~s/\$(Antony Ager; Simon Castlyn)\$/$se$hs$1$eh/;
+		$ligne=~s/(26 Septembr<expan>is<\/expan> 1543)/$end$end$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(<expan>The<\/expan> vicar of Newingto<expan>n<\/expan>)\$/$se$hs$1$eh/;
+		$ligne=~s/(26 Septembr<expan>is<\/expan> 1543)(\.)/$end$end$ar$h$da$1$de$2$eh/;
 		$ligne=~s/\$(the vicar of s\. mary)\$/$se$hs$1$eh/;
 		$ligne=~s/(<!--FIN 065-->)/$end$end$1/;
 	}
@@ -372,27 +372,27 @@ while (my $ligne = <TEXTE>) {
 	if($page eq "067"){
 		$ligne=~s/(24 Septembris)/$ar$h$da$1$de$eh/;
 		$ligne=~s/\$(Holy)\$/$se$hs$1$eh/;
-		$ligne=~s/\$(Bland)\$ (21 Septembris 1543)/$end$end$ar$h$da$2$de$eh$se$hs$1$eh/;
+		$ligne=~s/\$(Bland)\$ (21 Septembr<expan>is<\/expan> 1543)/$end$end$ar$h$da$2$de$eh$se$hs$1$eh/;
 	}
 	if($page eq "071"){
-		$ligne=~s/(26 Septembris 1543)(\.)/$end$end$ar$h$da$1$de$2$eh/;
+		$ligne=~s/(26 Septembr<expan>is<\/expan> 1543)(\.)/$end$end$ar$h$da$1$de$2$eh/;
 		$ligne=~s/\$(Boucher)\$/$se$hs$1$eh/;
-		$ligne=~s/(21 Septembris 1543)/$end$end$ar$h$da$1$de$eh/;
+		$ligne=~s/(21 Septembr<expan>is<\/expan> 1543)/$end$end$ar$h$da$1$de$eh/;
 		$ligne=~s/\$(Jo\. Toftes)\$/$se$hs$1$eh/;
 	}
 	if($page eq "073"){
 		$ligne=~s/(<!--FIN 073-->)/$end$end$1/;
 	}
 	if($page eq "074"){
-		$ligne=~s/(24 Septembr 1543)/$ar$h$da$1$de$eh/;
+		$ligne=~s/(24 Septembr<expan>is<\/expan> 1543)/$ar$h$da$1$de$eh/;
 		$ligne=~s/\$(Christofor levenysh)\$/$se$hs$1$eh/;
-		$ligne=~s/(26 Sept 1543)/$end$end$ar$h$da$1$de$eh/;
-		$ligne=~s/\$(Nicolas ffitzwilliams)\$/$se$hs$1$eh/;
+		$ligne=~s/(26 Sept<expan>embris<\/expan> 1543)/$end$end$ar$h$da$1$de$eh/;
+		$ligne=~s/\$(Nicolas ffitzwill<expan>ia<\/expan>ms)\$/$se$hs$1$eh/;
 		$ligne=~s/(<!--FIN 074-->)/$end$end$1/;
 	}
 	if($page eq "075"){
-		$ligne=~s/(Turnour)/$ar$h$1$eh/;
-		$ligne=~s/(21 Septembr 1543)/$end$ar$h$da$1$de$eh/;
+		$ligne=~s/(Turno<expan>ur<\/expan>)/$ar$h$1$eh/;
+		$ligne=~s/(21 Septembr<expan>is<\/expan> 1543)/$end$ar$h$da$1$de$eh/;
 		$ligne=~s/\$(Nevenson)\$/$se$hs$1$eh/;
 	}
 	if($page eq "078"){
@@ -426,18 +426,18 @@ while (my $ligne = <TEXTE>) {
 		$ligne=~s/(<!--FIN 089-->)/$end$1/;
 	}
 	if($page eq "090"){
-		$ligne=~s/(25 Septembr 1543)/$ar$h$da$1$de$eh/;
+		$ligne=~s/(25 Septemb<expan>ris<\/expan> 1543)/$ar$h$da$1$de$eh/;
 		$ligne=~s/\$(Serles)\$/$se$hs$1$eh/;
-		$ligne=~s/\$(Scory)\$ (Die Ascentionis Domini 1541)/$end$end$ar$hs$1$eh$se$h$da$2$de$eh/;
+		$ligne=~s/\$(Scory)\$ (Die Ascentionis D<expan>omi<\/expan>ni 1541)/$end$end$ar$hs$1$eh$se$h$da$2$de$eh/;
 		$ligne=~s/(In )(Lent 1541)/$se$h$1$da$2$de$eh/;
-		$ligne=~s/\$(Drumme)\$(In )(die penthecostes ultimo)(\.)/$end$end$ar$hs$1$eh$se$h$2$da$3$de$4$eh/;
+		$ligne=~s/\$(Drumme)\$ (In )(die penthecostes ultimo)(\.)/$end$end$ar$hs$1$eh$se$h$2$da$3$de$4$eh/;
 		$ligne=~s/(<!--FIN 090-->)/$end$end$1/;
 	}
 	if($page eq "091"){
-		$ligne=~s/(29 July Anno domini Regis)/$ar$h$da$1$de$eh/;
+		$ligne=~s/(29 July Anno d<expan>omini<\/expan> R<expan>egis<\/expan>)/$ar$h$da$1$de$eh/;
 		$ligne=~s/\$(Shether)\$/$se$hs$1$eh/;
-		$ligne=~s/(Hugh Cooper\.)/$end$end$ar$h$1$eh/;
-		$ligne=~s/(George Hardes,)/$end$ar$h$1$eh/;
+		$ligne=~s/(Hugh Coo<expan>per<\/expan>\.)/$end$end$ar$h$1$eh/;
+		$ligne=~s/(George Hardes\.)/$end$ar$h$1$eh/;
 		$ligne=~s/(<!--FIN 091-->)/$end$1/;
 	}
 	if($page eq "092"){
@@ -449,7 +449,7 @@ while (my $ligne = <TEXTE>) {
 	}
 	if($page eq "093"){
 		$ligne=~s/\$(Turno<expan>ur<\/expan>)\$/$ar$hs$1$eh/;
-		$ligne=~s/\$(Humphrey cotton preest)\$/$end$ar$hs$1$eh/;
+		$ligne=~s/\$(Humphrey Cotton preest)\$/$end$ar$hs$1$eh/;
 		$ligne=~s/\$(Nicolas ffitzwilliam)\$/$end$ar$hs$1$eh/;
 		$ligne=~s/(<!--FIN 093-->)/$end$1/;
 	}
