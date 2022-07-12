@@ -255,7 +255,7 @@
 						<xsl:for-each select="//tei:surface">
 							<xsl:variable name="facs" select="concat('#',@xml:id)"/>
 							<div class="fac_selector">
-								<h6>Page <xsl:value-of select="substring-after(@xml:id, 'fs_')"/></h6>
+								<h6>p. <xsl:value-of select="substring-after(@xml:id, 'fs_')"/></h6>
 								<a href="{concat($transcriptions, //tei:text[@xml:id='reppol_trans']//tei:pb[@facs=$facs]/@n, '.html')}" target="blanck">
 									<img src="{descendant::tei:graphic/@url}"/>
 								</a>

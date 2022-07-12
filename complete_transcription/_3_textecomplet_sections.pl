@@ -197,10 +197,10 @@ while (my $ligne = <TEXTE>) {
 		$ligne=~s/(The curate of Chartam <expan>that<\/expan> now is\.)/$end$ar$h$1$eh/;
 		$ligne=~s/(Scory\.)/$end$ar$h$1$eh/;
 		$ligne=~s/(Serles\. )(d<expan>o<\/expan>m<expan>ini<\/expan>ca 8 post trinit<expan>er<\/expan>\.)/$end$ar$h$1$eh$se$h$da$2$de$eh/;
-		$ligne=~s/(<!--FIN 034-->)/$end$1/;	
+		$ligne=~s/(<!--FIN 034-->)/$end$end$1/;	
 	}
 	if($page eq "035"){
-		$ligne=~s/(Sandewiche\. )(Dominica in )(70 Anno Domini 1542)(o)/$end$ar$h$1$eh$se$h$2$da$3$de$4$eh/;
+		$ligne=~s/(Sandewiche\. )(Dominica in )(70 Anno Domini 1542)(o)/$ar$h$1$eh$se$h$2$da$3$de$4$eh/;
 		$ligne=~s/(Dominica\. )(4ta post pascha\. Anno Domini 1543)(o)/$end$se$h$1$da$2$de$3$eh/;
 		$ligne=~s/(Dominica )(3a\. Anno Domini 1533\.)/$end$se$h$1$da$2$de$eh/;
 		$ligne=~s/(<!--FIN 035-->)/$end$end$1/;
@@ -234,7 +234,7 @@ while (my $ligne = <TEXTE>) {
 		$ligne=~s/\$(Scorye)\$ (20 Septembre: 1543,)/$ar$h$da$2$de$eh$se$hs$1$eh/;
 	}
 	if($page eq "044"){
-		$ligne=~s/(20 Septembre Anno 1543)(\.)/$end$ar$h$da$1$de$2$eh/;
+		$ligne=~s/(20 Septembre Anno 1543)(\.)/$end$end$ar$h$da$1$de$2$eh/;
 		$ligne=~s/\$(Shether)\$/$se$hs$1$eh/;
 	}
 	if($page eq "045"){
@@ -342,7 +342,7 @@ while (my $ligne = <TEXTE>) {
 		$ligne=~s/\$(Johne Benson)\$/$se$hs$1$eh/;
 		$ligne=~s/\$(Joys Benson)\$/$end$se$hs$1$eh/;
 		$ligne=~s/(21 Septemb<expan>ris<\/expan> 1543)(\.)/$end$end$ar$h$da$1$de$2$eh/;
-		$ligne=~s/\$(Ric<expan>hard<\/expan>  Turner)\$/$se$hs$1$eh/;
+		$ligne=~s/\$(Ric<expan>hard<\/expan> Turner)\$/$se$hs$1$eh/;
 		$ligne=~s/(<!--FIN 062-->)/$end$end$1/;
 	}
 	if($page eq "063"){
@@ -429,7 +429,7 @@ while (my $ligne = <TEXTE>) {
 		$ligne=~s/(25 Septemb<expan>ris<\/expan> 1543)/$ar$h$da$1$de$eh/;
 		$ligne=~s/\$(Serles)\$/$se$hs$1$eh/;
 		$ligne=~s/\$(Scory)\$ (Die Ascentionis D<expan>omi<\/expan>ni 1541)/$end$end$ar$hs$1$eh$se$h$da$2$de$eh/;
-		$ligne=~s/(In )(Lent 1541)/$se$h$1$da$2$de$eh/;
+		$ligne=~s/(In )(Lent 1541)/$end$se$h$1$da$2$de$eh/;
 		$ligne=~s/\$(Drumme)\$ (In )(die penthecostes ultimo)(\.)/$end$end$ar$hs$1$eh$se$h$2$da$3$de$4$eh/;
 		$ligne=~s/(<!--FIN 090-->)/$end$end$1/;
 	}
