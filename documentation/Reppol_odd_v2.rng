@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2022-07-07T12:48:30Z. .
+Schema generated from ODD source 2022-07-13T13:20:33Z. .
 TEI Edition: Version 4.4.0. Last updated on
         19th April 2022, revision ff9cc28b0
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.4.0/
@@ -2166,6 +2166,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
                <ref name="list"/>
                <ref name="pb"/>
                <ref name="ab"/>
+               <ref name="space"/>
             </choice>
          </oneOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
@@ -2194,7 +2195,8 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
          </pattern>
          <optional>
             <attribute name="xml:id">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Identifiant) indique pour les div de @type "question_set" de quelle question il s'agit dans quel set. La valeur de cette attribut est formé sur le modèle set8_q2 = signifie la question 2 du huitième set de questions</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Identifiant) indique pour les <code xmlns="http://www.w3.org/1999/xhtml">&lt;div &gt;</code>de @type "question_set" de quelle question il s'agit dans quel set. La valeur de cette attribut est formé sur le modèle set8_q2 = signifie la question 2 du huitième set de questions OU fournit un identifiant unique pour les <code xmlns="http://www.w3.org/1999/xhtml">&lt;div&gt;</code> qui sont des sous-sections de <code xmlns="http://www.w3.org/1999/xhtml">&lt;div&gt;</code>
+                  <code xmlns="http://www.w3.org/1999/xhtml">@type</code> article lorsqu'elle seront restructurées.</a:documentation>
                <data type="ID"/>
             </attribute>
          </optional>
@@ -2217,11 +2219,23 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
             </attribute>
          </optional>
          <optional>
+            <attribute name="sameAs">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Identique à) pointe vers un élément identique à l'élément en question.</a:documentation>
+               <data type="anyURI">
+                  <param name="pattern">\S+</param>
+               </data>
+            </attribute>
+         </optional>
+         <optional>
             <attribute name="type">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">caractérise l'élément en utilisant n'importe quel système ou typologie de classification approprié.</a:documentation>
                <choice>
                   <value>collection</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Collection) la div typée ainsi est un ensemble de textes potentiellement hétérogènes qui ont été identifiés par l'équipe scientifique du projet comme étant un ensemble qui ont été réuni par le ou les compilateurs.</a:documentation>
+                  <value>page</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Page) la div typée ainsi représente une page</a:documentation>
+                  <value>page_calendar</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Page calendar) la div typée ainsi représente une page de la transcription du calendar</a:documentation>
                   <value>index</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Index ) indique que cette section du manuscrit est un index.</a:documentation>
                   <value>testimony</value>

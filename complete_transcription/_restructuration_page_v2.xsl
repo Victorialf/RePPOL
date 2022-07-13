@@ -11,6 +11,7 @@
 			<xd:p><xd:b>Created on:</xd:b> Jul 11, 2022</xd:p>
 			<xd:p><xd:b>Author:</xd:b> Adrien Mével</xd:p>
 			<xd:p>Feuille xsl pour la transformation des transcriptions du projet RePPOL découpées en sections couvrant plusieurs pages en une version incluant des div représentant les pages.</xd:p>
+			<xd:p>S'applique à _textecomplet_collections_sections_n.xml et produit _textecomplet_collections_sections_n_pages.xml</xd:p>
 		</xd:desc>
 	</xd:doc>
 	<xsl:output method="xml" indent="yes" encoding="UTF-8"/>
@@ -20,6 +21,7 @@
 	<xsl:template match="/">
 		<xsl:apply-templates/>
 	</xsl:template>
+	<!--reproduction de tous les éléments avec leurs attributs, leurs valeurs leur contenus-->
 	<xsl:template match="*" >
 		<xsl:element name="{local-name()}">
 			<xsl:for-each select="attribute()">
@@ -30,7 +32,7 @@
 			<xsl:apply-templates/>
 		</xsl:element>
 	</xsl:template>
-<!--	repérage sous-section et repro-->
+<!--	repérage sous-section à cheval et repro-->
 	<xsl:template match="tei:div[not(@type)][descendant::tei:pb]">
 		<xsl:element name="{local-name()}">
 			<xsl:for-each select="attribute()">
@@ -46,6 +48,7 @@
 		</xsl:element>
 	</xsl:template>
 	
+<!--	génère les ouvertures et fermetures de div, les pages en s'appliquant aux commentaires préalablement placés par script perl liant les transcriptions-->
 	<xsl:template match="comment()">
 		<xsl:variable name="page" select="substring-after(. ,'DÉBUT')"/>
 		<xsl:variable name="page_end" select="substring-after(. ,'FIN ')"/>
@@ -64,8 +67,6 @@
 		
 		<xsl:analyze-string select="." regex="FIN \d\d\d\w?">
 			<xsl:matching-substring>
-<!--<xsl:variable name="page_end" select="substring-after(. ,'FIN ')"/>-->
-				
 <!--				
 <!-\-				TESTE, comportement égalité-\->
 				<xsl:if test="$page_end eq ('010')or('011')">
@@ -122,9 +123,9 @@
 		<xsl:for-each select="ancestor::tei:div[@type='article']">
 			<xsl:text disable-output-escaping="1">&lt;div type="article" n="</xsl:text><xsl:value-of select="@n"/><xsl:text disable-output-escaping="1">"&gt;</xsl:text>
 		</xsl:for-each>
-<!--		génère un @part renvoyant à l'id de la div précédente-->
+<!--		génère un @sameAs renvoyant à l'id de la div précédente-->
 		<xsl:for-each select="ancestor::tei:div[not(@type)]">
-			<xsl:text disable-output-escaping="1">&lt;div</xsl:text><xsl:text> part="</xsl:text><xsl:value-of select="generate-id()"/><xsl:text>"</xsl:text><xsl:text disable-output-escaping="1">&gt;</xsl:text>
+			<xsl:text disable-output-escaping="1">&lt;div</xsl:text><xsl:text> sameAs="</xsl:text><xsl:value-of select="generate-id()"/><xsl:text>"</xsl:text><xsl:text disable-output-escaping="1">&gt;</xsl:text>
 		</xsl:for-each>
 		<xsl:element name="pb">
 			<xsl:for-each select="attribute()">

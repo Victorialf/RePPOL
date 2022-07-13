@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TEI>
+<?xml-model href="../documentation/out/Reppol_odd_v2.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -119,7 +120,7 @@
 				<!--
 				<!-\-				En commentaire pour le site, évitant les redites : -\->
 				<p>RePPOL est un projet scientifique et pédagogique collaboratif mené par <ref target="https://pro.univ-lille.fr/aude-de-mezerac/">Aude de Mézerac-Zanetti</ref>, spécialiste d'histoire religieuse de l'Angleterre d'Henri VIII (Mcf, aude.de-mezerac@univ-lille.fr, Université de Lille, <ref target="https://cecille.univ-lille.fr/">CECILLE</ref>), <ref target="http://larhra.ish-lyon.cnrs.fr/membre/334">Olivier Spina</ref>, spécialiste d'histoire politique de l'Angleterre Tudor (Mcf, olivier.spina@univ-lyon2.fr, Université de Lyon 2, <ref target="http://larhra.ish-lyon.cnrs.fr/">LARHRA</ref>) et Victoria Le Fourner (ingénieure d’études, spécialiste des humanités numériques à la <ref target="https://www.meshs.fr/page/accueil">MESHS</ref> de Lille) avec l’aide de Felipe Goes-Silva (étudiant en M1 Recherche en Études Anglophones à l’Université de Lille) et de Adrien Mével (étudiant en M1 Éditions numériques et imprimées de texte littéraires à l'Université de Lille. Ce projet est financé majoritairement par l'<ref  target="http://www.isite-ulne.fr/index.php/fr/page-daccueil/">I-site Université Lille-Nord-Europe</ref> et par le <ref target="https://comod.universite-lyon.fr/">LABEX COMOD</ref> (Université de Lyon) et soutenu par la <ref target="https://www.meshs.fr/page/accueil">Maison Européenne des Sciences de l'Homme et de la Société Lille Nord de France (MESHS)</ref>.</p><!-\-récupéré sur https://ahmuf.hypotheses.org/9528 et tact   + ajouts et modifications A. Mével-\->-->
-            <p lang="fr">Notre projet est consacré à la transcription, l’édition critique et
+            <p xml:lang="fr">Notre projet est consacré à la transcription, l’édition critique et
 					l’analyse d’un document exceptionnel : le manuscrit MS 128 conservé à la
 					bibliothèque de Corpus Christi College, Cambridge (à voir sur la <ref target="https://tact.demarre-shs.fr/project/31">plateforme TACT</ref>). Il
 					s’agit d’un manuscrit composite d’environ 220 folios qui contient la
@@ -139,7 +140,7 @@
 					mais, le manuscrit renferme également des dénonciations de sacramentaires,
 					d’iconoclastes et d’évangéliques radicaux, qui auraient davantage pu susciter
 					l’indulgence de Cranmer.</p>
-            <p lang="fr">Dès lors, le manuscrit MS 128, fruits de ces collectes
+            <p xml:lang="fr">Dès lors, le manuscrit MS 128, fruits de ces collectes
 					antinomiques, est une mosaïque double. Mosaïque de documents d’abord, puisqu’il
 					comporte des lettres de dénonciations, des interrogatoires ou encore des
 					mémorandums dont le sens nous échappe en partie ; mais il est aussi une mosaïque
@@ -153,7 +154,7 @@
 					archivistique des tentatives royales (et de leurs limites) d’imposer une «
 					uniformité religieuse » désirée par Henri VIII depuis le début des années 1530
 					?</p>
-            <p lang="fr">Jusqu’à présent, plusieurs historiens ont mobilisé partiellement
+            <p xml:lang="fr">Jusqu’à présent, plusieurs historiens ont mobilisé partiellement
 					cette source dans le contexte d’études plus larges (Ethan Shagan afin d’explorer
 					l’avancée de la Réforme en Angleterre, Diarmaid MacCulloch pour dresser les
 					portraits des détracteurs de Thomas Cranmer dans la biographie qu’il lui
@@ -161,7 +162,7 @@
 					jamais fait dialoguer avec des documents proches (interrogatoires,
 					dénonciations…) pour en dégager les éclairages politiques, religieux ou sociaux
 					qu’il peut apporter sur la période.</p>
-            <p lang="fr">Or, le projet RePPOL entend montrer que cette source exceptionnelle
+            <p xml:lang="fr">Or, le projet RePPOL entend montrer que cette source exceptionnelle
 					permet non seulement d’éclairer les croyances et les pratiques liturgiques
 					populaires souvent inattendues, parfois cocasses, dans un Kent en « transition
 					confessionnelle », mais aussi de saisir la Réforme anglaise comme un phénomène
@@ -190,7 +191,7 @@
 					via balisage en xml-tei l'interrogation du contenu du document par des
 					index.</p>
             <!--Translated with www.DeepL.com/Translator (free version)-->
-            <p lang="en">Our project is devoted to the transcription, critical edition, and
+            <p xml:lang="en">Our project is devoted to the transcription, critical edition, and
 					analysis of an exceptional document: the manuscript MS 128 held in the library
 					of Corpus Christi College, Cambridge (can be viewed on the <ref target="https://tact.demarre-shs.fr/project/31">TACT platform</ref>). It is
 					a composite manuscript of about 220 folios that contains the documentation
@@ -210,7 +211,7 @@
 					manuscript also contained denunciations of sacramentarians, iconoclasts and
 					radical evangelicals, which might have been more likely to elicit Cranmer's
 					leniency.</p>
-            <p lang="en">The manuscript MS 128, fruit of these antinomic collections, is a
+            <p xml:lang="en">The manuscript MS 128, fruit of these antinomic collections, is a
 					double mosaic. A mosaic of documents, since it contains letters of denunciation,
 					interrogations and memoranda whose meaning partly escapes us; but it is also a
 					mosaic of traces of religious beliefs and practices in an English county in the
@@ -222,14 +223,14 @@
 					Royal Supremacy. Could this manuscript be the archival trace of the royal
 					attempts (and their limits) to impose a "religious uniformity" desired by Henry
 					VIII since the early 1530s ?</p>
-            <p lang="en">Several historians have partially mobilized this source in the
+            <p xml:lang="en">Several historians have partially mobilized this source in the
 					context of broader studies (Ethan Shagan in order to explore the progress of the
 					Reformation in England, Diarmaid MacCulloch in order to draw up portraits of
 					Thomas Cranmer's detractors in his biography of him... ), but no study of the
 					manuscript per se has been carried out and it has never been put in dialogue
 					with related documents (interrogations, denunciations...) in order to bring out
 					the political, religious or social insights that it can bring to the period.</p>
-            <p lang="en">The RePPOL project intends to show that this exceptional source not
+            <p xml:lang="en">The RePPOL project intends to show that this exceptional source not
 					only sheds light on the often unexpected, sometimes comical, popular beliefs and
 					liturgical practices in a Kent undergoing a "confessional transition", but also
 					to grasp the English Reformation as a phenomenon of anthropological
@@ -240,7 +241,7 @@
 					that subjects, including the most minute laymen, were able to play in the
 					processes of political and religious mutations that Henrician England
 					experienced.</p>
-            <p lang="en">Adopting a collaborative and training-through-research approach,
+            <p xml:lang="en">Adopting a collaborative and training-through-research approach,
 					this project is articulated in three stages. The first stage (end of June
 					2021-beginning of 2022) aims to transcribe the entire manuscript, through a
 					collaborative approach mobilizing teacher-researchers and students in the
@@ -277,1112 +278,1112 @@
       </encodingDesc>
    </teiHeader>
    <facsimile>
-      <surface id="fs_001">
+      <surface xml:id="fs_001">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_001_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_002">
+      <surface xml:id="fs_002">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_002_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_003">
+      <surface xml:id="fs_003">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_003_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_004">
+      <surface xml:id="fs_004">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_004_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_005">
+      <surface xml:id="fs_005">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_005_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_006">
+      <surface xml:id="fs_006">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_006_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_007">
+      <surface xml:id="fs_007">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_007_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_008">
+      <surface xml:id="fs_008">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_008_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_009">
+      <surface xml:id="fs_009">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_009_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_010">
+      <surface xml:id="fs_010">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_010_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_011">
+      <surface xml:id="fs_011">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_011_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_012">
+      <surface xml:id="fs_012">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_012_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_013">
+      <surface xml:id="fs_013">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_013_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_014">
+      <surface xml:id="fs_014">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_014_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_015">
+      <surface xml:id="fs_015">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_015_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_016">
+      <surface xml:id="fs_016">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_016_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_017">
+      <surface xml:id="fs_017">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_017_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_018">
+      <surface xml:id="fs_018">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_018_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_019">
+      <surface xml:id="fs_019">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_019_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_020">
+      <surface xml:id="fs_020">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_020_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_021">
+      <surface xml:id="fs_021">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_021_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_022">
+      <surface xml:id="fs_022">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_022_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_023">
+      <surface xml:id="fs_023">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_023_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_024">
+      <surface xml:id="fs_024">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_024_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_025">
+      <surface xml:id="fs_025">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_025_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_026">
+      <surface xml:id="fs_026">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_026_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_027">
+      <surface xml:id="fs_027">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_027_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_028">
+      <surface xml:id="fs_028">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_028_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_029">
+      <surface xml:id="fs_029">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_029_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_030">
+      <surface xml:id="fs_030">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_030_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_031">
+      <surface xml:id="fs_031">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_031_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_032">
+      <surface xml:id="fs_032">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_032_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_033">
+      <surface xml:id="fs_033">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_033_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_034">
+      <surface xml:id="fs_034">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_034_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_035">
+      <surface xml:id="fs_035">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_035_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_036">
+      <surface xml:id="fs_036">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_036_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_037">
+      <surface xml:id="fs_037">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_037_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_038">
+      <surface xml:id="fs_038">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_038_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_039">
+      <surface xml:id="fs_039">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_039_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_040">
+      <surface xml:id="fs_040">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_040_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_041">
+      <surface xml:id="fs_041">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_041_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_042">
+      <surface xml:id="fs_042">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_042_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_043">
+      <surface xml:id="fs_043">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_043_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_044">
+      <surface xml:id="fs_044">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_044_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_045">
+      <surface xml:id="fs_045">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_045_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_046">
+      <surface xml:id="fs_046">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_046_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_047">
+      <surface xml:id="fs_047">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_047_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_048">
+      <surface xml:id="fs_048">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_048_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_049">
+      <surface xml:id="fs_049">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_049_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_050">
+      <surface xml:id="fs_050">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_050_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_051">
+      <surface xml:id="fs_051">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_051_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_052">
+      <surface xml:id="fs_052">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_052_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_053">
+      <surface xml:id="fs_053">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_053_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_054">
+      <surface xml:id="fs_054">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_054_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_055">
+      <surface xml:id="fs_055">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_055_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_056">
+      <surface xml:id="fs_056">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_056_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_057">
+      <surface xml:id="fs_057">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_057_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_058">
+      <surface xml:id="fs_058">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_058_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_059">
+      <surface xml:id="fs_059">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_059_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_060">
+      <surface xml:id="fs_060">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_060_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_061">
+      <surface xml:id="fs_061">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_061_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_062">
+      <surface xml:id="fs_062">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_062_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_063">
+      <surface xml:id="fs_063">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_063_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_064">
+      <surface xml:id="fs_064">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_064_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_065">
+      <surface xml:id="fs_065">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_065_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_066">
+      <surface xml:id="fs_066">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_066_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_067">
+      <surface xml:id="fs_067">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_067_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_068">
+      <surface xml:id="fs_068">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_068_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_069">
+      <surface xml:id="fs_069">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_069_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_070">
+      <surface xml:id="fs_070">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_070_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_071">
+      <surface xml:id="fs_071">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_071_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_072">
+      <surface xml:id="fs_072">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_072_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_073">
+      <surface xml:id="fs_073">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_073_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_074">
+      <surface xml:id="fs_074">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_074_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_075">
+      <surface xml:id="fs_075">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_075_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_076">
+      <surface xml:id="fs_076">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_076_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_077">
+      <surface xml:id="fs_077">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_077_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_078">
+      <surface xml:id="fs_078">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_078_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_079">
+      <surface xml:id="fs_079">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_079_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_080">
+      <surface xml:id="fs_080">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_080_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_081">
+      <surface xml:id="fs_081">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_081_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_082">
+      <surface xml:id="fs_082">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_082_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_083">
+      <surface xml:id="fs_083">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_083_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_084">
+      <surface xml:id="fs_084">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_084_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_085">
+      <surface xml:id="fs_085">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_085_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_086">
+      <surface xml:id="fs_086">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_086_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_087">
+      <surface xml:id="fs_087">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_087_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_088">
+      <surface xml:id="fs_088">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_088_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_089">
+      <surface xml:id="fs_089">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_089_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_090">
+      <surface xml:id="fs_090">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_090_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_091">
+      <surface xml:id="fs_091">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_091_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_092">
+      <surface xml:id="fs_092">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_092_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_093">
+      <surface xml:id="fs_093">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_093_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_094">
+      <surface xml:id="fs_094">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_094_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_095">
+      <surface xml:id="fs_095">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_095_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_096">
+      <surface xml:id="fs_096">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_096_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_097">
+      <surface xml:id="fs_097">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_097_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_098">
+      <surface xml:id="fs_098">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_098_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_099">
+      <surface xml:id="fs_099">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_099_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_100">
+      <surface xml:id="fs_100">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_100_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_101">
+      <surface xml:id="fs_101">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_101_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_102">
+      <surface xml:id="fs_102">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_102_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_103">
+      <surface xml:id="fs_103">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_103_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_104">
+      <surface xml:id="fs_104">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_104_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_105">
+      <surface xml:id="fs_105">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_105_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_106">
+      <surface xml:id="fs_106">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_106_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_107">
+      <surface xml:id="fs_107">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_107_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_108">
+      <surface xml:id="fs_108">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_108_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_109">
+      <surface xml:id="fs_109">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_109_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_110">
+      <surface xml:id="fs_110">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_110_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_111">
+      <surface xml:id="fs_111">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_111_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_112">
+      <surface xml:id="fs_112">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_112_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_113">
+      <surface xml:id="fs_113">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_113_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_114">
+      <surface xml:id="fs_114">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_114_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_115">
+      <surface xml:id="fs_115">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_115_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_116">
+      <surface xml:id="fs_116">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_116_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_117">
+      <surface xml:id="fs_117">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_117_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_118">
+      <surface xml:id="fs_118">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_118_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_119">
+      <surface xml:id="fs_119">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_119_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_120">
+      <surface xml:id="fs_120">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_120_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_121">
+      <surface xml:id="fs_121">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_121_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_122">
+      <surface xml:id="fs_122">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_122_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_123">
+      <surface xml:id="fs_123">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_123_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_124">
+      <surface xml:id="fs_124">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_124_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_125">
+      <surface xml:id="fs_125">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_125_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_126">
+      <surface xml:id="fs_126">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_126_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_127">
+      <surface xml:id="fs_127">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_127_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_128">
+      <surface xml:id="fs_128">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_128_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_129">
+      <surface xml:id="fs_129">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_129_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_130">
+      <surface xml:id="fs_130">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_130_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_131">
+      <surface xml:id="fs_131">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_131_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_132">
+      <surface xml:id="fs_132">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_132_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_133">
+      <surface xml:id="fs_133">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_133_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_134">
+      <surface xml:id="fs_134">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_134_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_135">
+      <surface xml:id="fs_135">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_135_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_136">
+      <surface xml:id="fs_136">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_136_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_137">
+      <surface xml:id="fs_137">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_137_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_138">
+      <surface xml:id="fs_138">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_138_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_139">
+      <surface xml:id="fs_139">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_139_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_140">
+      <surface xml:id="fs_140">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_140_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_141">
+      <surface xml:id="fs_141">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_141_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_142">
+      <surface xml:id="fs_142">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_142_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_143">
+      <surface xml:id="fs_143">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_143_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_144">
+      <surface xml:id="fs_144">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_144_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_145">
+      <surface xml:id="fs_145">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_145_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_146">
+      <surface xml:id="fs_146">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_146_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_147">
+      <surface xml:id="fs_147">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_147_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_148">
+      <surface xml:id="fs_148">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_148_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_149">
+      <surface xml:id="fs_149">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_149_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_150">
+      <surface xml:id="fs_150">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_150_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_151">
+      <surface xml:id="fs_151">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_151_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_152">
+      <surface xml:id="fs_152">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_152_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_153">
+      <surface xml:id="fs_153">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_153_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_154">
+      <surface xml:id="fs_154">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_154_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_155">
+      <surface xml:id="fs_155">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_155_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_156">
+      <surface xml:id="fs_156">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_156_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_157">
+      <surface xml:id="fs_157">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_157_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_158">
+      <surface xml:id="fs_158">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_158_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_159">
+      <surface xml:id="fs_159">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_159_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_160">
+      <surface xml:id="fs_160">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_160_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_161">
+      <surface xml:id="fs_161">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_161_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_162">
+      <surface xml:id="fs_162">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_162_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_163">
+      <surface xml:id="fs_163">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_163_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_164">
+      <surface xml:id="fs_164">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_164_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_165">
+      <surface xml:id="fs_165">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_165_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_166">
+      <surface xml:id="fs_166">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_166_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_166a">
+      <surface xml:id="fs_166a">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_166a_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_166b">
+      <surface xml:id="fs_166b">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_166b_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_166c">
+      <surface xml:id="fs_166c">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_166c_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_166d">
+      <surface xml:id="fs_166d">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_166d_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_167">
+      <surface xml:id="fs_167">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_167_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_168">
+      <surface xml:id="fs_168">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_168_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_169">
+      <surface xml:id="fs_169">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_169_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_170">
+      <surface xml:id="fs_170">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_170_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_171">
+      <surface xml:id="fs_171">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_171_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_172">
+      <surface xml:id="fs_172">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_172_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_173">
+      <surface xml:id="fs_173">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_173_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_174">
+      <surface xml:id="fs_174">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_174_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_175">
+      <surface xml:id="fs_175">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_175_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_176">
+      <surface xml:id="fs_176">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_176_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_177">
+      <surface xml:id="fs_177">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_177_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_178">
+      <surface xml:id="fs_178">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_178_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_179">
+      <surface xml:id="fs_179">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_179_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_180">
+      <surface xml:id="fs_180">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_180_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_181">
+      <surface xml:id="fs_181">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_181_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_182">
+      <surface xml:id="fs_182">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_182_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_183">
+      <surface xml:id="fs_183">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_183_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_184">
+      <surface xml:id="fs_184">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_184_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_185">
+      <surface xml:id="fs_185">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_185_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_186">
+      <surface xml:id="fs_186">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_186_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_187">
+      <surface xml:id="fs_187">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_187_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_188">
+      <surface xml:id="fs_188">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_188_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_189">
+      <surface xml:id="fs_189">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_189_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_190">
+      <surface xml:id="fs_190">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_190_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_191">
+      <surface xml:id="fs_191">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_191_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_192">
+      <surface xml:id="fs_192">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_192_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_193">
+      <surface xml:id="fs_193">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_193_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_194">
+      <surface xml:id="fs_194">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_194_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_195">
+      <surface xml:id="fs_195">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_195_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_196">
+      <surface xml:id="fs_196">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_196_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_197">
+      <surface xml:id="fs_197">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_197_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_198">
+      <surface xml:id="fs_198">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_198_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_199">
+      <surface xml:id="fs_199">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_199_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_200">
+      <surface xml:id="fs_200">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_200_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_201">
+      <surface xml:id="fs_201">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_201_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_202">
+      <surface xml:id="fs_202">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_202_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_203">
+      <surface xml:id="fs_203">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_203_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_204">
+      <surface xml:id="fs_204">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_204_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_205">
+      <surface xml:id="fs_205">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_205_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_206">
+      <surface xml:id="fs_206">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_206_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_207">
+      <surface xml:id="fs_207">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_207_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_208">
+      <surface xml:id="fs_208">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_208_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_209">
+      <surface xml:id="fs_209">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_209_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_210">
+      <surface xml:id="fs_210">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_210_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_211">
+      <surface xml:id="fs_211">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_211_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_212">
+      <surface xml:id="fs_212">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_212_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_213">
+      <surface xml:id="fs_213">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_213_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_214">
+      <surface xml:id="fs_214">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_214_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_215">
+      <surface xml:id="fs_215">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_215_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_216">
+      <surface xml:id="fs_216">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_216_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_217">
+      <surface xml:id="fs_217">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_217_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_218">
+      <surface xml:id="fs_218">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_218_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_219">
+      <surface xml:id="fs_219">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_219_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_220">
+      <surface xml:id="fs_220">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_220_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_221">
+      <surface xml:id="fs_221">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_221_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_222">
+      <surface xml:id="fs_222">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_222_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_223">
+      <surface xml:id="fs_223">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_223_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_224">
+      <surface xml:id="fs_224">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_224_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_225">
+      <surface xml:id="fs_225">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_225_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_226">
+      <surface xml:id="fs_226">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_226_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_227">
+      <surface xml:id="fs_227">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_227_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_228">
+      <surface xml:id="fs_228">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_228_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_229">
+      <surface xml:id="fs_229">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_229_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_230">
+      <surface xml:id="fs_230">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_230_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_231">
+      <surface xml:id="fs_231">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_231_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_232">
+      <surface xml:id="fs_232">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_232_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_233">
+      <surface xml:id="fs_233">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_233_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_234">
+      <surface xml:id="fs_234">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_234_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_235">
+      <surface xml:id="fs_235">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_235_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_236">
+      <surface xml:id="fs_236">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_236_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_237">
+      <surface xml:id="fs_237">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_237_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_238">
+      <surface xml:id="fs_238">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_238_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_239">
+      <surface xml:id="fs_239">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_239_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_240">
+      <surface xml:id="fs_240">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_240_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_241">
+      <surface xml:id="fs_241">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_241_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_242">
+      <surface xml:id="fs_242">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_242_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_243">
+      <surface xml:id="fs_243">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_243_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_244">
+      <surface xml:id="fs_244">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_244_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_245">
+      <surface xml:id="fs_245">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_245_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_246">
+      <surface xml:id="fs_246">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_246_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_247">
+      <surface xml:id="fs_247">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_247_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_248">
+      <surface xml:id="fs_248">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_248_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_249">
+      <surface xml:id="fs_249">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_249_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_250">
+      <surface xml:id="fs_250">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_250_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_251">
+      <surface xml:id="fs_251">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_251_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_252">
+      <surface xml:id="fs_252">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_252_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_253">
+      <surface xml:id="fs_253">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_253_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_254">
+      <surface xml:id="fs_254">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_254_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_255">
+      <surface xml:id="fs_255">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_255_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_256">
+      <surface xml:id="fs_256">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_256_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_257">
+      <surface xml:id="fs_257">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_257_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_258">
+      <surface xml:id="fs_258">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_258_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_259">
+      <surface xml:id="fs_259">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_259_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_260">
+      <surface xml:id="fs_260">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_260_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_261">
+      <surface xml:id="fs_261">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_261_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_262">
+      <surface xml:id="fs_262">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_262_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_263">
+      <surface xml:id="fs_263">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_263_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_264">
+      <surface xml:id="fs_264">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_264_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_264a">
+      <surface xml:id="fs_264a">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_264a_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_265">
+      <surface xml:id="fs_265">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_265_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_265a">
+      <surface xml:id="fs_265a">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_265a_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_266">
+      <surface xml:id="fs_266">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_266_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_267">
+      <surface xml:id="fs_267">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_267_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_268">
+      <surface xml:id="fs_268">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_268_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_269">
+      <surface xml:id="fs_269">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_269_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_270">
+      <surface xml:id="fs_270">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_270_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_271">
+      <surface xml:id="fs_271">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_271_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_272">
+      <surface xml:id="fs_272">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_272_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_273">
+      <surface xml:id="fs_273">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_273_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_274">
+      <surface xml:id="fs_274">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_274_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_275">
+      <surface xml:id="fs_275">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_275_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_276">
+      <surface xml:id="fs_276">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_276_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_277">
+      <surface xml:id="fs_277">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_277_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_278">
+      <surface xml:id="fs_278">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_278_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_279">
+      <surface xml:id="fs_279">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_279_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_280">
+      <surface xml:id="fs_280">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_280_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_281">
+      <surface xml:id="fs_281">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_281_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_282">
+      <surface xml:id="fs_282">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_282_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_283">
+      <surface xml:id="fs_283">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_283_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_284">
+      <surface xml:id="fs_284">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_284_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_285">
+      <surface xml:id="fs_285">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_285_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_286">
+      <surface xml:id="fs_286">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_286_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_287">
+      <surface xml:id="fs_287">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_287_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_288">
+      <surface xml:id="fs_288">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_288_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_289">
+      <surface xml:id="fs_289">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_289_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_290">
+      <surface xml:id="fs_290">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_290_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_291">
+      <surface xml:id="fs_291">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_291_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_292">
+      <surface xml:id="fs_292">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_292_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_293">
+      <surface xml:id="fs_293">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_293_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_294">
+      <surface xml:id="fs_294">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_294_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_295">
+      <surface xml:id="fs_295">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_295_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_296">
+      <surface xml:id="fs_296">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_296_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_297">
+      <surface xml:id="fs_297">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_297_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_298">
+      <surface xml:id="fs_298">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_298_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_299">
+      <surface xml:id="fs_299">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_299_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_300">
+      <surface xml:id="fs_300">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_300_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_301">
+      <surface xml:id="fs_301">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_301_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_302">
+      <surface xml:id="fs_302">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_302_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_303">
+      <surface xml:id="fs_303">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_303_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_304">
+      <surface xml:id="fs_304">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_304_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_305">
+      <surface xml:id="fs_305">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_305_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_306">
+      <surface xml:id="fs_306">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_306_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_307">
+      <surface xml:id="fs_307">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_307_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_308">
+      <surface xml:id="fs_308">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_308_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_309">
+      <surface xml:id="fs_309">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_309_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_310">
+      <surface xml:id="fs_310">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_310_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_311">
+      <surface xml:id="fs_311">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_311_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_312">
+      <surface xml:id="fs_312">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_312_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_313">
+      <surface xml:id="fs_313">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_313_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_314">
+      <surface xml:id="fs_314">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_314_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_315">
+      <surface xml:id="fs_315">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_315_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_316">
+      <surface xml:id="fs_316">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_316_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_317">
+      <surface xml:id="fs_317">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_317_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_318">
+      <surface xml:id="fs_318">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_318_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_319">
+      <surface xml:id="fs_319">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_319_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_320">
+      <surface xml:id="fs_320">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_320_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_321">
+      <surface xml:id="fs_321">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_321_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_322">
+      <surface xml:id="fs_322">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_322_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_323">
+      <surface xml:id="fs_323">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_323_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_324">
+      <surface xml:id="fs_324">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_324_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_324a">
+      <surface xml:id="fs_324a">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_324a_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_325">
+      <surface xml:id="fs_325">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_325_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_325a">
+      <surface xml:id="fs_325a">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_325a_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_326">
+      <surface xml:id="fs_326">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_326_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_327">
+      <surface xml:id="fs_327">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_327_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_328">
+      <surface xml:id="fs_328">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_328_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_329">
+      <surface xml:id="fs_329">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_329_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_330">
+      <surface xml:id="fs_330">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_330_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_331">
+      <surface xml:id="fs_331">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_331_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_332">
+      <surface xml:id="fs_332">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_332_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_333">
+      <surface xml:id="fs_333">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_333_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_334">
+      <surface xml:id="fs_334">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_334_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_335">
+      <surface xml:id="fs_335">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_335_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_336">
+      <surface xml:id="fs_336">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_336_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_337">
+      <surface xml:id="fs_337">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_337_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_338">
+      <surface xml:id="fs_338">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_338_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_339">
+      <surface xml:id="fs_339">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_339_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_340">
+      <surface xml:id="fs_340">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_340_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_341">
+      <surface xml:id="fs_341">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_341_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_342">
+      <surface xml:id="fs_342">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_342_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_343">
+      <surface xml:id="fs_343">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_343_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_344">
+      <surface xml:id="fs_344">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_344_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_345">
+      <surface xml:id="fs_345">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_345_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_346">
+      <surface xml:id="fs_346">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_346_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_347">
+      <surface xml:id="fs_347">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_347_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_348">
+      <surface xml:id="fs_348">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_348_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_349">
+      <surface xml:id="fs_349">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_349_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_350">
+      <surface xml:id="fs_350">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_350_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_351">
+      <surface xml:id="fs_351">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_351_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_352">
+      <surface xml:id="fs_352">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_352_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_353">
+      <surface xml:id="fs_353">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_353_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_354">
+      <surface xml:id="fs_354">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_354_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_355">
+      <surface xml:id="fs_355">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_355_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_356">
+      <surface xml:id="fs_356">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_356_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_357">
+      <surface xml:id="fs_357">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_357_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_358">
+      <surface xml:id="fs_358">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_358_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_359">
+      <surface xml:id="fs_359">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_359_TC_46/full/full/0/default.jpg"/>
       </surface>
-      <surface id="fs_360">
+      <surface xml:id="fs_360">
          <graphic url="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_360_TC_46/full/full/0/default.jpg"/>
       </surface>
    </facsimile>
-   <text id="reppol_trans">
+   <text xml:id="reppol_trans">
       <body>
  <!--DÉBUT 001--><div type="page">
 
@@ -1682,7 +1683,7 @@ Wher &amp; whan he toke <expan>the</expan> his oth of <expan>the</expan> renu<ex
 
  <!--DÉBUT 010--><div type="page">
 
-<div type="article" n="2"><div part="d1e2597"><pb n="010" facs="#fs_010"/>
+<div type="article" n="2"><div sameAs="d1e2597"><pb n="010" facs="#fs_010"/>
 $Images$ Peple may knele bifore images w<expan>ith</expan> their bookes &amp; beads
  kysse their feete, sence they<expan>m</expan>, &amp; offre to they<expan>m</expan>, so <expan>that</expan>
  they directe al this hono<expan>ur</expan> to the sayntes in heavyn.
@@ -1744,7 +1745,7 @@ $Images$ Peple may knele bifore images w<expan>ith</expan> their bookes &amp; be
 
  <!--DÉBUT 011--><div type="page">
 
-<div type="article" n="3"><div part="d1e2726"><pb n="011" facs="#fs_011"/>
+<div type="article" n="3"><div sameAs="d1e2726"><pb n="011" facs="#fs_011"/>
 Upon this text, you must pray w<expan>ith</expan>out int<expan>er</expan>mission, he said
  Som felowes say <expan>that</expan> this is impossible, but I shal tel you
  good chris<expan>ti</expan>anes how to <expan>per</expan>forme this. It is a co<expan>m</expan>mon sayinge
@@ -3173,7 +3174,7 @@ Item he preached: that there was some that saied
 
  <!--DÉBUT 043--><div type="page">
 
-<div type="article" n="56"><div part="d1e5133"><pb n="043" facs="#fs_043"/>
+<div type="article" n="56"><div sameAs="d1e5133"><pb n="043" facs="#fs_043"/>
 $seditious$ He preached at ffaversham in festo dedicationis eccl<expan>es</expan>ie
  Anno. 1542. That the dedications of materiall
  churches was instituted for the bishoppes profites. and
@@ -3210,7 +3211,7 @@ $seditious$ He preached at ffaversham in festo dedicationis eccl<expan>es</expan
 
  <!--DÉBUT 044--><div type="page">
 
-<div type="article" n="56"><div part="d1e5133"><pb n="044" facs="#fs_044"/>
+<div type="article" n="56"><div sameAs="d1e5133"><pb n="044" facs="#fs_044"/>
 $seditious$ thincking rather by intercession of saintz. to obtayne the
  victory of their ennemyes / But good people
  (q<expan>uo</expan>d he) forasmuche as saintes be circumscript, it is not
@@ -3263,7 +3264,7 @@ $seditious$ thincking rather by intercession of saintz. to obtayne the
 
  <!--DÉBUT 045--><div type="page">
 
-<div type="article" n="57"><div part="d1e5194"><pb n="045" facs="#fs_045"/>
+<div type="article" n="57"><div sameAs="d1e5194"><pb n="045" facs="#fs_045"/>
 than beware and follow it not / adding thies wourdes
  yf yo<expan>u</expan> will aske your conscience what she thinketh
  of suche newe fangles as is brought into the
@@ -3432,7 +3433,7 @@ than beware and follow it not / adding thies wourdes
 
  <!--DÉBUT 049--><div type="page">
 
-<div type="article" n="62"><div part="d1e5421"><pb n="049" facs="#fs_049"/>
+<div type="article" n="62"><div sameAs="d1e5421"><pb n="049" facs="#fs_049"/>
 $seditious$ Item that the materiall churche is a thinge made
  and ordeyned to content thaffection of man, and is
  not the thinge that pleaseth god / nor that gods
@@ -3464,7 +3465,7 @@ $seditious$ Item that the materiall churche is a thinge made
 
  <!--DÉBUT 050--><div type="page">
 
-<div type="article" n="62"><div part="d1e5421"><pb n="050" facs="#fs_050"/>
+<div type="article" n="62"><div sameAs="d1e5421"><pb n="050" facs="#fs_050"/>
 Item the same day and sermon he saied that the
  holly gooste was neither in this place nor that
  as Christ was never in Italy: nor never
@@ -3677,7 +3678,7 @@ Item the same day and sermon he saied that the
 
  <!--DÉBUT 054--><div type="page">
 
-<div type="article" n="67"><div part="d1e5685"><pb n="054" facs="#fs_054"/>
+<div type="article" n="67"><div sameAs="d1e5685"><pb n="054" facs="#fs_054"/>
 Item he reportid repentid hymself that ev<expan>er</expan> he did
  somoche almes and good dead<expan>e</expan>s for his fathers soule
  and caused to be don
@@ -3811,7 +3812,7 @@ $ fastynge dayes$ He denyeth that god did nev<expan>er</expan> make fasting daie
 
  <!--DÉBUT 056--><div type="page">
 
-<div type="article" n="72"><div part="d1e5855"><pb n="056" facs="#fs_056"/>
+<div type="article" n="72"><div sameAs="d1e5855"><pb n="056" facs="#fs_056"/>
 $Injunctions$ It<expan>e</expan>m he hath taken away oute of the churche the
  bible contrary to the kynges Inju<expan>n</expan>ctions and <expan>pro</expan>clamations
  $holy wat<expan>er</expan>$ Item he badde one yong wiffe to take holy water and
@@ -3863,7 +3864,7 @@ $Injunctions$ It<expan>e</expan>m he hath taken away oute of the churche the
 
  <!--DÉBUT 057--><div type="page">
 
-<div type="article" n="73"><div part="d1e5904"><pb n="057" facs="#fs_057"/>
+<div type="article" n="73"><div sameAs="d1e5904"><pb n="057" facs="#fs_057"/>
 good people forasmoche as sainctes be circumscripte, it ys
  not possible for that saincte that is in the north to here <expan>the</expan>
  prayer that is made in the southe, nor the saincte that is
@@ -3923,7 +3924,7 @@ good people forasmoche as sainctes be circumscripte, it ys
 
  <!--DÉBUT 058--><div type="page">
 
-<div type="article" n="75"><div part="d1e5991"><pb n="058" facs="#fs_058"/>
+<div type="article" n="75"><div sameAs="d1e5991"><pb n="058" facs="#fs_058"/>
 ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to be
  pulled down but also to be disfigured and nothing
  of suche ymages to remayne w<expan>ith</expan> the tabernacle / Mr.
@@ -4071,7 +4072,7 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
 
  <!--DÉBUT 061--><div type="page">
 
-<div type="article" n="78"><div part="d1e6193"><pb n="061" facs="#fs_061"/>
+<div type="article" n="78"><div sameAs="d1e6193"><pb n="061" facs="#fs_061"/>
 thought wourthy of reformac<expan>i</expan>on other in hym or
  in any other, by reason of whiche facte and wourd<expan>es</expan>
  of the said Mr. Batterste, it is thought that other
@@ -4227,7 +4228,7 @@ thought wourthy of reformac<expan>i</expan>on other in hym or
 
  <!--DÉBUT 064--><div type="page">
 
-<div type="article" n="82"><div part="d1e6464"><pb n="064" facs="#fs_064"/>
+<div type="article" n="82"><div sameAs="d1e6464"><pb n="064" facs="#fs_064"/>
 S<expan>ir</expan> Symon Oxley preest saied to hym. Yf I
  were your goostely father I wold neither absolve
  you / nor geve you pen<expan>au</expan>nce /
@@ -4398,7 +4399,7 @@ $Orphen$ Articuli in quilz sentio mrm Chroseam Nevenson meret reformandum  $Co<e
 
  <!--DÉBUT 068--><div type="page">
 
-<div type="article" n="89"><div part="d1e6696"><pb n="068" facs="#fs_068"/>
+<div type="article" n="89"><div sameAs="d1e6696"><pb n="068" facs="#fs_068"/>
 $Imag<expan>es</expan>$ He saied that the sight of the ymage of saint
  Michaell w<expan>ith</expan> the balaunce is enowgh to
  bringe a man to the deviull
@@ -4437,7 +4438,7 @@ $Imag<expan>es</expan>$ He saied that the sight of the ymage of saint
 
  <!--DÉBUT 069--><div type="page">
 
-<div type="article" n="89"><div part="d1e6696"><pb n="069" facs="#fs_069"/>
+<div type="article" n="89"><div sameAs="d1e6696"><pb n="069" facs="#fs_069"/>
 $seditious$ He saied in a Sermon made at Staple on marye
  magdalen day last past. John Baptist had
  his hed smytten of for speaking of the truthe
@@ -4471,7 +4472,7 @@ $seditious$ He saied in a Sermon made at Staple on marye
 
  <!--DÉBUT 070--><div type="page">
 
-<div type="article" n="89"><div part="d1e6696"><pb n="070" facs="#fs_070"/>
+<div type="article" n="89"><div sameAs="d1e6696"><pb n="070" facs="#fs_070"/>
 $offensive$ On the masse booke is plaine detestable heresies
  and in the masse also. /
  $Inju<expan>n</expan>ctions$ Item that the maynteyning of light<expan>es</expan> before the
@@ -4509,7 +4510,7 @@ $offensive$ On the masse booke is plaine detestable heresies
 
  <!--DÉBUT 071--><div type="page">
 
-<div type="article" n="89"><div part="d1e6696"><pb n="071" facs="#fs_071"/>
+<div type="article" n="89"><div sameAs="d1e6696"><pb n="071" facs="#fs_071"/>
 suche wourdes. Rich<expan>ard </expan>wades John Sowde <add place=""/> pilcherde.
  Robert <expan>par</expan>ker, the vicar of Northgate. henry ffissher. Rog<expan>er</expan>
                   <pilcherde> mantel.</pilcherde>
@@ -4556,7 +4557,7 @@ suche wourdes. Rich<expan>ard </expan>wades John Sowde <add place=""/> pilcherde
 
  <!--DÉBUT 072--><div type="page">
 
-<div type="article" n="91"><div part="d1e6893"><pb n="072" facs="#fs_072"/>
+<div type="article" n="91"><div sameAs="d1e6893"><pb n="072" facs="#fs_072"/>
 heresies / and other that have made them selfes <expan>pre</expan>eest
  and wer none as Giles Barham. a moncke of
  Dovor that celebrated in northegate churche and
@@ -4594,7 +4595,7 @@ heresies / and other that have made them selfes <expan>pre</expan>eest
 
  <!--DÉBUT 073--><div type="page">
 
-<div type="article" n="91"><div part="d1e6893"><pb n="073" facs="#fs_073"/>
+<div type="article" n="91"><div sameAs="d1e6893"><pb n="073" facs="#fs_073"/>
 John Toftes assisted and defended opinly in the
  Consisterye of Caunterbury Joane Boucher
  being detected and endictd for a sacramentary
@@ -4723,7 +4724,7 @@ John Toftes assisted and defended opinly in the
 
  <!--DÉBUT 076--><div type="page">
 
-<div type="article" n="95"><div part="d1e7095"><pb n="076" facs="#fs_076"/>
+<div type="article" n="95"><div sameAs="d1e7095"><pb n="076" facs="#fs_076"/>
 hath ben But only dimission money receyvid
  Item he wolde that absoluc<expan>i</expan>on shoulde be differrid from
  suche <expan>per</expan>sons as could not saye the pater noster and
@@ -4758,7 +4759,7 @@ hath ben But only dimission money receyvid
 
  <!--DÉBUT 077--><div type="page">
 
-<div type="article" n="95"><div part="d1e7095"><pb n="077" facs="#fs_077"/>
+<div type="article" n="95"><div sameAs="d1e7095"><pb n="077" facs="#fs_077"/>
 $Imag<expan>es</expan>$ He pulled down the Images in Northgate churche
  and had home to his house the pictures of o<expan>ur l</expan>ady / with
  the tabernacle, Hewid her all in pec<expan>es</expan> w<expan>ith</expan> div<expan>er</expan>s oth<expan>er</expan>
@@ -4794,7 +4795,7 @@ $Imag<expan>es</expan>$ He pulled down the Images in Northgate churche
 
  <!--DÉBUT 078--><div type="page">
 
-<div type="article" n="95"><div part="d1e7095"><pb n="078" facs="#fs_078"/>
+<div type="article" n="95"><div sameAs="d1e7095"><pb n="078" facs="#fs_078"/>
 whiche Rauf delyv<expan>er</expan>ed the said Buckem<expan>er</expan> to the 
  Comissarye and the witnes also, whiche
  Comissarie trepened one John Todd, whiche
@@ -8803,7 +8804,7 @@ The wordes y<expan>our</expan> grace had to me Arthur seintleger at feversam  yo
 
 		</body>
    </text>
-   <text id="calendar_trans">
+   <text xml:id="calendar_trans">
       <body>
 		</body>
    </text>
