@@ -11,32 +11,31 @@
       <link rel="stylesheet" href="reppol.css" type="text/css">
       <title>RePPOL - transcription 040</title>
    </head>
-   <body>
-      <header id="top">
-         <div class="logo"><a href="reppol_home.html"><img src="logo_reppol-noir-rouge.png" class="logo"></a></div>
-         <nav class="nav_top">
-            <ul>
-               <li><a href="reppol_about.html">The project</a></li>
-               <li><a href="reppol_transcription.html">Transcriptions</a></li>
-               <li><a href="reppol_trancriptioninteractive.html">Interactive transcriptions</a></li>
-               <li>Index
-                  						
-                  <ul class="nav_index">
-                     <li><a href="reppol_indexcharacters.html">Persons</a></li>
-                     <li><a href="reppol_indexplaces.html">Places</a></li>
-                     <li><a href="reppol_indexdates.html">Dates</a></li>
-                  </ul>
-               </li>
-            </ul>
-         </nav>
-      </header>
-      <article class="transcription">
-         <section><a href="reppol_transcription.html"><button>Previous page</button></a><a href="reppol_transcription043.html" style="position:absolute; right:0;"><button>Next page</button></a></section>
-         <section id="transcription_reppol">
-            <div class="transcript">
+   <body style="background-color:#efe9e3;">
+      <div class="article_container">
+         <header id="top">
+            <div class="logo"><a href="reppol_home.html"><img src="logo_reppol-noir-rouge.png" class="logo"></a></div>
+            <nav class="nav_top">
+               <ul>
+                  <li><a href="reppol_about.html">The project</a></li>
+                  <li><a href="reppol_transcription.html">Transcriptions</a></li>
+                  <li><a href="reppol_trancriptioninteractive.html">Interactive transcriptions</a></li>
+                  <li>Index 
+                     <ul class="nav_index">
+                        <li><a href="reppol_indexcharacters.html">Persons</a></li>
+                        <li><a href="reppol_indexplaces.html">Places</a></li>
+                        <li><a href="reppol_indexdates.html">Dates</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="reppol_legals.html">Legals</a></li>
+               </ul>
+            </nav>
+         </header>
+         <article class="transcription">
+            <section class="page_nav"><a href="reppol_transcription.html"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png" class="page_nav left"></a><a href="reppol_transcription043.html"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png" class="page_nav right"></a></section>
+            <section id="transcription_reppol" class="transcript">
                <div id="facspage"><img class="facspage" src="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_040_TC_46/full/full/0/default.jpg"></div>
-               <div id="text">
-                  <div class="page">
+               <div id="text"><button onclick="reppol_t();" class="t_nav active">Transcription RePPOL</button><button onclick="calendar_t();" class="t_nav">Transcription Calendar</button><div class="page">
                      				
                      				
                      <div class="article">
@@ -129,14 +128,10 @@
                         				</div>
                      			</div>
                </div>
-               <div class="t_nav"><button onclick="reppol_t();">RePPOL</button><button onclick="calendar_t();">Calendar</button></div>
-            </div>
-            <div style="width:100%; clear:both; height:60px;"></div>
-         </section>
-         <section id="calendar">
-            <div class="transcript">
+            </section>
+            <section id="calendar" class="transcript">
                <div id="facspage"><img class="facspage" src="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_040_TC_46/full/full/0/default.jpg"></div>
-               <div id="text">
+               <div id="text"><button onclick="reppol_t();" class="t_nav">Transcription RePPOL</button><button onclick="calendar_t();" class="t_nav active">Transcription Calendar</button>
                   				
                   				
                   <div>
@@ -155,19 +150,18 @@
                         						so we for meddling with the Scripture of Christ."</p>
                      				</div>
                   			</div>
-               <div class="t_nav"><button onclick="reppol_t();">RePPOL</button><button onclick="calendar_t();">Calendar</button></div>
-            </div>
-            <div style="width:100%; clear:both; height:60px;"></div>
-         </section>
-      </article><script>
+            </section>
+            <section class="page_nav"><a href="reppol_transcription.html"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png" class="page_nav left"></a><a href="reppol_transcription043.html"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png" class="page_nav right"></a></section>
+         </article>
+      </div><script>
 			
 			function reppol_t(){
 			document.getElementById("calendar").style.display="none";
-			document.getElementById("transcription_reppol").style.display="block";
+			document.getElementById("transcription_reppol").style.display="flex";
 			}
 			function calendar_t(){
 			document.getElementById("transcription_reppol").style.display="none";
-			document.getElementById("calendar").style.display="block";
+			document.getElementById("calendar").style.display="flex";
 			}
 			function topFunction() {
 			document.body.scrollTop = 0; // For Safari
@@ -187,19 +181,5 @@
 			evt.currentTarget.className += " active_tab";
 			}
 			
-		</script><a href="#top"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png" class="top" style="position:fixed; bottom:20px; right:30px; z-index:99; padding:5px; font-size:14pt;"></a><footer>
-         <div class="footer_icons">
-            <div class="footer_logo"><a href="http://www.isite-ulne.fr/index.php/fr/page-daccueil/" target="blanck"><img src="http://www.isite-ulne.fr/wp-content/uploads/2018/07/I-SITE-ULNE_Logo-COUL_RVB.png"></a></div>
-            <div class="footer_logo"><a href="https://comod.universite-lyon.fr/site-francais/" target="blanck"><img src="https://comod.universite-lyon.fr/medias/photo/labex-comod-png-300dpi-sans-fond-blanc_1551950869031-png?ID_FICHE=41153"></a></div>
-            <div class="footer_logo"><a href="https://www.univ-lille.fr/" target="blanck"><img src="https://www.univ-lille.fr/typo3conf/ext/ul2fpfb/Resources/Public/assets/img/logos/ULille-nb.svg"></a></div>
-            <div class="footer_logo"><a href="https://www.meshs.fr/page/accueil" target="blanck"><img src="http://medias.meshs.fr/medias/images/logos/meshs/MESHS_Logo_NoirRouge_Sans.png"></a></div>
-            <div class="footer_logo"><a href="https://cecille.univ-lille.fr/" target="blanck"><img src="http://gis-religions.fr/images/logos/labos/GIS-LOGO-CECILLE.jpg"></a></div>
-            <div class="footer_logo"><a href="http://larhra.ish-lyon.cnrs.fr/" target="blanck"><img src="https://halshs.archives-ouvertes.fr/LARHRA/public/logo_larhra_fond_blanc.jpg"></a></div>
-         </div>
-         <div class="footer_legal">
-            				Ce site et les transcriptions réalisées dans le cadre du projet RePPOL sont mis
-            à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Licence Creative Commons Attribution 4.0 International</a><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licence Creative Commons" style="border-width:0; margin:10px;" src="https://creativecommons.org/images/chooser/chooser_cc.png" height="50%"><img alt="Licence Creative Commons" style="border-width:0; margin:10px;" src="https://creativecommons.org/images/chooser/chooser_by.png" height="50%"></a><p>More documentation on <a href="https://github.com/Victorialf/RePPOL" target="blanck">Github</a></p>
-         </div>
-      </footer>
-   </body>
+		</script><a href="#top"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png" class="top"></a></body>
 </html>
