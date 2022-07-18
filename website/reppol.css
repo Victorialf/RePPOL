@@ -268,20 +268,27 @@ article#legals section{
 
 
 /*PAGE INDEX*/
+section.index_prelist{
+	position: sticky;
+	top: 0;
+	overflow: auto;
+	scrollbar-width: thin;
+}
 section.index{
 	margin-left: 30px;
 	height: fit-content;
 	border: none;
 	width: 100%;
 }
-article.date_index h2 {
+article.index h2 {
 	position: sticky;
 	top: 0;
 	background-color: #f26339;
 	z-index: 99;
 	width: 100%;
+	margin-top: 0;
 }
-article.date_index img.top{
+article.index img.top{
 	z-index: 0;
 }
 div.index_container {
@@ -343,7 +350,7 @@ ul.index a:hover {
 img.index_map {
 	width: 100%;
 }
-article.date_index{
+article.index{
 	display: flex;
 	margin-left: 1%;
 	margin-right: 2%;

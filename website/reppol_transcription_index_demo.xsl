@@ -184,15 +184,18 @@
 				<body style="background-color:#f26339;">
 					<div class="article_container">
 						<xsl:call-template name="header"/>
-						<article>
-							<section class="index">
-								<h2>Person index :</h2>
+						<article class="index">
+							<section class="index_prelist">
+								<h2>Pick a person :</h2>
 								<ul>
 									<xsl:apply-templates select="//tei:persName"
 										mode="index_prelist">
 										<xsl:sort select="@key"/>
 									</xsl:apply-templates>
 								</ul>
+							</section>
+							<section class="index">
+								<h2>Person index :</h2>
 								<xsl:apply-templates select="//tei:persName" mode="index">
 									<xsl:sort select="@key"/>
 								</xsl:apply-templates>
@@ -264,7 +267,7 @@
 				<body style="background-color:#f26339;">
 					<div class="article_container">
 						<xsl:call-template name="header"/>
-						<article class="date_index">
+						<article class="index">
 							<section class="calendar">
 								<h2>Pick a date :</h2>
 								<xsl:call-template name="calendar"/>
@@ -1157,18 +1160,23 @@
 		<xsl:variable name="ref" select="@ref"/>
 		<xsl:variable name="key" select="@key"/>
 		<xsl:if test="not(preceding::tei:persName[@key = $key])">
-			<div class="index_unit">
-
-				<h6 id="{generate-id()}">
+			<div id="{generate-id()}" class="index_unit">
+				<h3>
 					<xsl:call-template name="CamelCase">
 						<!--cf : https://askcodez.com/convertir-le-premier-caractere-de-chaque-mot-en-majuscule.html-->
 						<xsl:with-param name="key_change">
 							<xsl:value-of select="@key"/>
 						</xsl:with-param>
 					</xsl:call-template>
-				</h6>
-				<p>Functions : <xsl:value-of select="@type"/>, <xsl:value-of
-						select="descendant::tei:roleName/@type"/></p>
+				</h3>
+				<p>Functions : 
+					<xsl:if test="@type='religious'"><xsl:value-of select="@type"/></xsl:if>
+					<xsl:if test="@type='lay_man'">lay man</xsl:if>
+					<xsl:if test="@type='lay_woman'">lay woman</xsl:if>
+				
+					
+					<xsl:for-each select="descendant::tei:roleName">, <xsl:value-of
+						select="@type"/></xsl:for-each>.</p>
 				<p>Mentioned :</p>
 				<ul>
 					<xsl:apply-templates select=". | following::tei:persName[@key = $key]"
