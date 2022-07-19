@@ -68,6 +68,14 @@
 					</li>
 				</ul>
 			</nav>
+			<div class="links">
+				<a href="https://github.com/Victorialf/RePPOL" target="blanck">
+					<img src="GitHub-Mark-32px.png"/>
+				</a>
+				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_cc.png"/></a>
+				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_by.png"/></a>
+				
+			</div>
 		</header>
 	</xsl:template>
 	<!--template pour SCRIPT-->
@@ -200,7 +208,7 @@
 <!--						footer v2 to be implemented-->
 						</section>
 					</article>
-					<xsl:call-template name="footer"/>
+<!--					<xsl:call-template name="footer"/>-->
 					</div>
 					<xsl:call-template name="script"/>
 					
@@ -271,7 +279,7 @@
 							<p>The original manuscrit...... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, sempe</p>
 							<div style="display:flex; align-items:center;">
 								<p>This site and the transcriptions produced as part of the RePPOL project are made available under the terms of the <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Licence Creative Commons Attribution 4.0 International</a></p>
-								<a rel="license" href="http://creativecommons.org/licenses/by/4.0/" style="margin-left:10px;"><img alt="Licence Creative Commons" style="border-width:0; filter:invert(15%) sepia(28%) saturate(7429%) hue-rotate(243deg) brightness(47%) contrast(117%); height:50px;" src="https://creativecommons.org/images/chooser/chooser_cc.png"/><img alt="Licence Creative Commons" style="border-width:0;filter:invert(15%) sepia(28%) saturate(7429%) hue-rotate(243deg) brightness(47%) contrast(117%); height:50px;" src="https://creativecommons.org/images/chooser/chooser_by.png"/></a>
+								<a rel="license" href="http://creativecommons.org/licenses/by/4.0/" style="margin-left:10px;"><img alt="Licence Creative Commons" class="links" src="https://creativecommons.org/images/chooser/chooser_cc.png"/><img alt="Licence Creative Commons" class="links" src="https://creativecommons.org/images/chooser/chooser_by.png"/></a>.
 							</div>
 							<!--<p>Les <a href="{$pedago}" target="blanck">transcriptions interactives</a> vous propose une démonstration sur dix pages de transcriptions interactives paléographiques et pédagogiques constituées à l'aide de la transformation <a href="https://github.com/TimotheAlbouy/Interfaxim" target="blanck">Interfaxim</a> développé par <a href="https://github.com/TimotheAlbouy" target="blanck">M. Thimothe Albouy</a>.</p>-->
 							<p>The ten pages long demonstration offered as <a href="{$pedago}" target="blanck">interactive transcriptions</a> would not have been possible without the <a href="https://github.com/TimotheAlbouy/Interfaxim" target="blanck">Interfaxim</a> XSL-stylesheet developped by <a href="https://github.com/TimotheAlbouy" target="blanck">Mr Thimothe Albouy</a> and is licensed under <a href="https://choosealicense.com/licenses/mit/" target="blanck">MIT License</a>.</p>
@@ -346,7 +354,7 @@
 					</article>
 					</div>
 					<xsl:call-template name="script"/>
-					<xsl:call-template name="footer"/>
+<!--					<xsl:call-template name="footer"/>-->
 				</body>
 			</html>
 		</xsl:result-document>
@@ -358,6 +366,7 @@
 						<xsl:with-param name="title" select="'interactive transcriptions'"/>
 					</xsl:call-template>
 					<body style="background-color:#f26339;">
+						<div class="article_container">
 						<xsl:call-template name="header"/>
 						<article id="transcription_pedago"><!--div transcription et navigation entre les pages-->
 							<!--<h2>PAPE-RePPOL</h2>-->
@@ -401,8 +410,9 @@
 								</div>
 							</xsl:for-each>
 						</article>
+						</div>
 						<xsl:call-template name="script"/>
-						<xsl:call-template name="footer"/>
+<!--						<xsl:call-template name="footer"/>-->
 					</body>
 				</html>
 		</xsl:result-document>

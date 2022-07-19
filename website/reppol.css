@@ -12,7 +12,7 @@ body {
 }
 div.article_container{
 	border: 2px solid #1f0f7e;
-	margin: 50px;
+	margin: 5%; /*50px;*/
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -84,6 +84,19 @@ ul.nav_index li a:hover{
 }
 .nav_top ul li:hover ul.nav_index {
 	display: block;
+}
+div.links{
+/*	border-left: 2px solid #1f0f7e;*/
+	flex-grow: 1;
+	display: grid;
+	align-content: baseline;
+	justify-content: right;
+}
+div.links *{grid-row: 1;}
+div.links img, img.links{
+	height: 32px;
+	filter:invert(15%) sepia(28%) saturate(7429%) hue-rotate(243deg) brightness(47%) contrast(361%);
+	margin: 2px;
 }
 a {
 	text-decoration: none;
@@ -268,11 +281,17 @@ article#legals section{
 
 
 /*PAGE INDEX*/
+article.index{
+	display: flex;
+	margin-left: 1%;
+	margin-right: 2%;
+}
 section.index_prelist{
 	position: sticky;
 	top: 0;
 	overflow: auto;
 	scrollbar-width: thin;
+	margin-bottom: 0;
 }
 section.index{
 	margin-left: 30px;
@@ -318,6 +337,7 @@ div.index_unit {
 	margin-right:10px;
 	height: fit-content;
 	position: relative;
+	padding-top: 20px;/*sert à empêcher le chevauchement de l'item ciblé par h2*/
 }
 div.index_unit h6 {
 	font-size: 22pt;
@@ -350,11 +370,6 @@ ul.index a:hover {
 img.index_map {
 	width: 100%;
 }
-article.index{
-	display: flex;
-	margin-left: 1%;
-	margin-right: 2%;
-}
 section.calendar{
 	width: 50%;
 	position: sticky;
@@ -362,6 +377,7 @@ section.calendar{
 	overflow: auto;
 	scrollbar-color: #1f0f7e #f26339;/*might not always work*/
 	scrollbar-width: thin;
+	margin-bottom: 0;
 }
 div.c_tabs {/*contener des tabs des dates*/
 	max-width: 100%;
@@ -408,45 +424,61 @@ div.tabs_content{/*tabs de contenu 1 par an*/
 	padding: 5px;
 }
 .tabs_content a {
-	color: inherit!important;
 }
 
-.tabs_content a:hover {
-	color: #932311!important;
+.tabs_content a.date_valid:hover {
+	color: #efe9e3!important;
 }
 div.active_tabs_content{/*le tab de date actif*/
-
-
+}
+.date_valid{
+	color: #1f0f7e;
 }
 
 
 /*PAGE TRANSCRIPTION INTERACTIVE : */	
-article.transcription_pedago{
+article#transcription_pedago{
+	margin-left: 0;
+	margin-right: 0;
+	padding-right: 0;
+	display: flex;
 }			
 .tabs {
 	/*overflow: auto;
 	border: 1px solid darkgrey;
 	background-color: gainsboro;*/
-	margin: auto;
+	margin: 0;
 	/*position: fixed;
 	left: 0;*/
 	/*position: fixed;
 	left: 0px;
 	max-width: 30%;*/
+	display: flex;
+	flex-shrink: 0;
+	flex-flow: column;
+	position: sticky;
+	top: 0;
+	left: 0;
+	/*overflow-y: scroll;*/
+	overflow-x: hidden;
+	height: inherit;
+	scrollbar-width: thin;
+	width: 7%;
+	z-index: 45;
+	background-color: #f26339;
 }
 .tabs button {
 	background-color: inherit;
-	padding: 0.5em;
+	padding: 10px;
 	/*float: left;*/
 	border: none;
-	border-radius: 15px;
+	/*border-radius: 15px;*/
 	outline: none;
 	cursor: pointer;
-	transition: 0.3s;
+	transition: 0.2s;
 	font-size: 1em;
 	display: inline-block;
 	color: inherit;
-	width: 10%;
 }
 .tabs button:hover {
 	color: #1f0f7e;/*#666*/
@@ -455,6 +487,11 @@ article.transcription_pedago{
 }
 .section-wrapper {
 	position: relative;
+	/*width: 90%;*/
+	height: fit-content;
+	border: 1px solid #1f0f7e;
+	margin: 10px 0px;
+	flex-shrink: 1;
 }
 div.zone {
 	position: absolute;

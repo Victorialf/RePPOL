@@ -39,13 +39,8 @@
 	<xsl:template name="header">
 		<header id="top">
 			<div class="logo">
-				<a href="{$home}">
-					<img src="logo_reppol-noir-rouge.png" class="logo"/>
-				</a>
+				<a href="{$home}"><img src="logo_reppol-noir-rouge.png" class="logo"></img></a>
 			</div>
-			<!--						<h1>
-							RePPOL-PAPE
-						</h1>-->
 			<nav class="nav_top">
 				<ul>
 					<!--<li>
@@ -60,7 +55,8 @@
 					<li>
 						<a href="{$pedago}">Interactive transcriptions</a>
 					</li>
-					<li>Index <ul class="nav_index">
+					<li>Index
+						<ul class="nav_index">
 							<li><a href="{$index_characters}">Persons</a></li>
 							<li><a href="{$index_places}">Places</a></li>
 							<li><a href="{$index_dates}">Dates</a></li>
@@ -71,6 +67,14 @@
 					</li>
 				</ul>
 			</nav>
+			<div class="links">
+				<a href="https://github.com/Victorialf/RePPOL" target="blanck">
+					<img src="GitHub-Mark-32px.png"/>
+				</a>
+				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_cc.png"/></a>
+				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_by.png"/></a>
+				
+			</div>
 		</header>
 	</xsl:template>
 	<!--template pour SCRIPT-->
@@ -194,7 +198,7 @@
 									</xsl:apply-templates>
 								</ul>
 							</section>
-							<section class="index">
+							<section class="index" id="top_2">
 								<h2>Person index :</h2>
 								<xsl:apply-templates select="//tei:persName" mode="index">
 									<xsl:sort select="@key"/>
@@ -220,7 +224,7 @@
 							<section style="width:50%;">
 								<img class="index_map" src=""/>
 							</section>
-							<section class="index">
+							<section class="index" id="top_2">
 								<!--<h2>Place index :</h2>-->
 								<h3>Counties</h3>
 								<ul class="index">
@@ -272,7 +276,7 @@
 								<h2>Pick a date :</h2>
 								<xsl:call-template name="calendar"/>
 							</section>
-							<section class="index">
+							<section class="index" id="top_2">
 								<h2>Date index :</h2>
 								<xsl:apply-templates select="//tei:date[ancestor::tei:body]"
 									mode="index">
@@ -1196,10 +1200,10 @@
 				</p>
 				<!--dans l'idéal tester la nature du @ref, le début du @ref pour cced la suite pour DNB-->
 				<!--				<a href=""></a>-->
-				<a href="#top">
+				<a href="#top_2">
 					<img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png"
 						class="top"
-						style="position:absolute; bottom:0; right:0; z-index:99; padding:5px; width:30px;"
+						style="position:absolute; bottom:0; right:0; padding:5px; width:30px;"
 					/>
 				</a>
 			</div>
@@ -1299,23 +1303,30 @@
 
 	<xsl:template name="calendar">
 		<div class="c_tabs">
+<!--			le passage via regex d'un tableau où chaque case = un lien vers un date qui possiblement n'a pas d'existence dans le texte à un tableau où les liens ne sont créés que si date existe dans texte est documenté dans le git (webstite/calendar/cleaning_and_anchoring.pl)-->
 			<div class="tabs_nav">
-				<button class="c_tabs_b active_tab" onclick="tabsAnimation(event, '1540')"
+				<button class="c_tabs_b active_tab" onclick="tabsAnimation(event, 'c_1540')"
 					>1540</button>
-				<button class="c_tabs_b" onclick="tabsAnimation(event, '1541')">1541</button>
-				<button class="c_tabs_b" onclick="tabsAnimation(event, '1542')">1542</button>
-				<button class="c_tabs_b" onclick="tabsAnimation(event, '1543')">1543</button>
+				<button class="c_tabs_b" onclick="tabsAnimation(event, 'c_1541')">1541</button>
+				<button class="c_tabs_b" onclick="tabsAnimation(event, 'c_1542')">1542</button>
+				<button class="c_tabs_b" onclick="tabsAnimation(event, 'c_1543')">1543</button>
 			</div>
-			<div id="1540" class="tabs_content active_tabs_content">
+			<div id="c_1540" class="tabs_content active_tabs_content">
 <!--				<h3>1540</h3>-->
 				<div style="display:flex; flex-wrap:wrap; justify-content:space-between;">
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1540-01">January</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01'">
+<a href="#1540-01" class="date_valid">January</a></xsl:when>					<xsl:otherwise>January</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1540">1540</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540'">
+<a href="#1540" class="date_valid">1540</a></xsl:when>					<xsl:otherwise>1540</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -1330,105 +1341,198 @@
 						<tr>
 							<td/>
 							<td>
-								<a href="#1540-01-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-01'">
+<a href="#1540-01-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-01-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-02'">
+<a href="#1540-01-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-01-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-03'">
+<a href="#1540-01-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-01-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-04'">
+<a href="#1540-01-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-01-05">5</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-05'">
+<a href="#1540-01-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-01-06">6</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-01-07">7</a>
-							</td>
-							<td>
-								<a href="#1540-01-08">8</a>
-							</td>
-							<td>
-								<a href="#1540-01-09">9</a>
-							</td>
-							<td>
-								<a href="#1540-01-10">10</a>
-							</td>
-							<td>
-								<a href="#1540-01-11">11</a>
-							</td>
-							<td>
-								<a href="#1540-01-12">12</a>
-							</td>
-							<td>
-								<a href="#1540-01-13">13</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-06'">
+<a href="#1540-01-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1540-01-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-07'">
+<a href="#1540-01-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-01-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-08'">
+<a href="#1540-01-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-01-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-09'">
+<a href="#1540-01-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-01-17">17</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-10'">
+<a href="#1540-01-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-01-18">18</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-11'">
+<a href="#1540-01-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-01-19">19</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-12'">
+<a href="#1540-01-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-01-20">20</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-01-21">21</a>
-							</td>
-							<td>
-								<a href="#1540-01-22">22</a>
-							</td>
-							<td>
-								<a href="#1540-01-23">23</a>
-							</td>
-							<td>
-								<a href="#1540-01-24">24</a>
-							</td>
-							<td>
-								<a href="#1540-01-25">25</a>
-							</td>
-							<td>
-								<a href="#1540-01-26">26</a>
-							</td>
-							<td>
-								<a href="#1540-01-27">27</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-13'">
+<a href="#1540-01-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1540-01-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-14'">
+<a href="#1540-01-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-01-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-15'">
+<a href="#1540-01-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-01-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-16'">
+<a href="#1540-01-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-01-31">31</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-17'">
+<a href="#1540-01-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-18'">
+<a href="#1540-01-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-19'">
+<a href="#1540-01-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-20'">
+<a href="#1540-01-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-21'">
+<a href="#1540-01-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-22'">
+<a href="#1540-01-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-23'">
+<a href="#1540-01-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-24'">
+<a href="#1540-01-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-25'">
+<a href="#1540-01-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-26'">
+<a href="#1540-01-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-27'">
+<a href="#1540-01-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-28'">
+<a href="#1540-01-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-29'">
+<a href="#1540-01-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-30'">
+<a href="#1540-01-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-01-31'">
+<a href="#1540-01-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td/>
 							<td/>
@@ -1438,10 +1542,16 @@
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1540-02">February</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02'">
+<a href="#1540-02" class="date_valid">February</a></xsl:when>					<xsl:otherwise>February</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1540">1540</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540'">
+<a href="#1540" class="date_valid">1540</a></xsl:when>					<xsl:otherwise>1540</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -1459,99 +1569,186 @@
 							<td/>
 							<td/>
 							<td>
-								<a href="#1540-02-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-01'">
+<a href="#1540-02-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-02-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-02'">
+<a href="#1540-02-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-02-03">3</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-02-04">4</a>
-							</td>
-							<td>
-								<a href="#1540-02-05">5</a>
-							</td>
-							<td>
-								<a href="#1540-02-06">6</a>
-							</td>
-							<td>
-								<a href="#1540-02-07">7</a>
-							</td>
-							<td>
-								<a href="#1540-02-08">8</a>
-							</td>
-							<td>
-								<a href="#1540-02-09">9</a>
-							</td>
-							<td>
-								<a href="#1540-02-10">10</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-03'">
+<a href="#1540-02-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1540-02-11">11</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-04'">
+<a href="#1540-02-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-02-12">12</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-05'">
+<a href="#1540-02-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-02-13">13</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-06'">
+<a href="#1540-02-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-02-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-07'">
+<a href="#1540-02-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-02-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-08'">
+<a href="#1540-02-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-02-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-09'">
+<a href="#1540-02-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-02-17">17</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-02-18">18</a>
-							</td>
-							<td>
-								<a href="#1540-02-19">19</a>
-							</td>
-							<td>
-								<a href="#1540-02-20">20</a>
-							</td>
-							<td>
-								<a href="#1540-02-21">21</a>
-							</td>
-							<td>
-								<a href="#1540-02-22">22</a>
-							</td>
-							<td>
-								<a href="#1540-02-23">23</a>
-							</td>
-							<td>
-								<a href="#1540-02-24">24</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-10'">
+<a href="#1540-02-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1540-02-25">25</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-11'">
+<a href="#1540-02-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-02-26">26</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-12'">
+<a href="#1540-02-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-02-27">27</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-13'">
+<a href="#1540-02-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-02-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-14'">
+<a href="#1540-02-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-02-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-15'">
+<a href="#1540-02-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-16'">
+<a href="#1540-02-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-17'">
+<a href="#1540-02-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-18'">
+<a href="#1540-02-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-19'">
+<a href="#1540-02-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-20'">
+<a href="#1540-02-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-21'">
+<a href="#1540-02-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-22'">
+<a href="#1540-02-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-23'">
+<a href="#1540-02-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-24'">
+<a href="#1540-02-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-25'">
+<a href="#1540-02-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-26'">
+<a href="#1540-02-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-27'">
+<a href="#1540-02-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-28'">
+<a href="#1540-02-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-02-29'">
+<a href="#1540-02-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td/>
 							<td/>
@@ -1560,10 +1757,16 @@
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1540-03">March</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03'">
+<a href="#1540-03" class="date_valid">March</a></xsl:when>					<xsl:otherwise>March</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1540">1540</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540'">
+<a href="#1540" class="date_valid">1540</a></xsl:when>					<xsl:otherwise>1540</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -1582,490 +1785,200 @@
 							<td/>
 							<td/>
 							<td>
-								<a href="#1540-03-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-01'">
+<a href="#1540-03-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-03-02">2</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-03-03">3</a>
-							</td>
-							<td>
-								<a href="#1540-03-04">4</a>
-							</td>
-							<td>
-								<a href="#1540-03-05">5</a>
-							</td>
-							<td>
-								<a href="#1540-03-06">6</a>
-							</td>
-							<td>
-								<a href="#1540-03-07">7</a>
-							</td>
-							<td>
-								<a href="#1540-03-08">8</a>
-							</td>
-							<td>
-								<a href="#1540-03-09">9</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-02'">
+<a href="#1540-03-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1540-03-10">10</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-03'">
+<a href="#1540-03-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-03-11">11</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-04'">
+<a href="#1540-03-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-03-12">12</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-05'">
+<a href="#1540-03-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-03-13">13</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-06'">
+<a href="#1540-03-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-03-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-07'">
+<a href="#1540-03-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-03-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-08'">
+<a href="#1540-03-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-03-16">16</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-03-17">17</a>
-							</td>
-							<td>
-								<a href="#1540-03-18">18</a>
-							</td>
-							<td>
-								<a href="#1540-03-19">19</a>
-							</td>
-							<td>
-								<a href="#1540-03-20">20</a>
-							</td>
-							<td>
-								<a href="#1540-03-21">21</a>
-							</td>
-							<td>
-								<a href="#1540-03-22">22</a>
-							</td>
-							<td>
-								<a href="#1540-03-23">23</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-09'">
+<a href="#1540-03-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1540-03-24">24</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-10'">
+<a href="#1540-03-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-03-25">25</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-11'">
+<a href="#1540-03-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-03-26">26</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-12'">
+<a href="#1540-03-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-03-27">27</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-13'">
+<a href="#1540-03-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-03-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-14'">
+<a href="#1540-03-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-03-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-15'">
+<a href="#1540-03-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-03-30">30</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-03-31">31</a>
-							</td>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td colspan="5">
-								<a href="#1540-04">April</a>
-							</td>
-							<td colspan="2">
-								<a href="#1540">1540</a>
-							</td>
-						</tr>
-						<tr>
-							<td>S</td>
-							<td>M</td>
-							<td>T</td>
-							<td>W</td>
-							<td>T</td>
-							<td>F</td>
-							<td>S</td>
-						</tr>
-						<tr>
-							<td/>
-							<td>
-								<a href="#1540-04-01">1</a>
-							</td>
-							<td>
-								<a href="#1540-04-02">2</a>
-							</td>
-							<td>
-								<a href="#1540-04-03">3</a>
-							</td>
-							<td>
-								<a href="#1540-04-04">4</a>
-							</td>
-							<td>
-								<a href="#1540-04-05">5</a>
-							</td>
-							<td>
-								<a href="#1540-04-06">6</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-16'">
+<a href="#1540-03-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1540-04-07">7</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-17'">
+<a href="#1540-03-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-04-08">8</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-18'">
+<a href="#1540-03-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-04-09">9</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-19'">
+<a href="#1540-03-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-04-10">10</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-20'">
+<a href="#1540-03-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-04-11">11</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-21'">
+<a href="#1540-03-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-04-12">12</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-22'">
+<a href="#1540-03-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-04-13">13</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-04-14">14</a>
-							</td>
-							<td>
-								<a href="#1540-04-15">15</a>
-							</td>
-							<td>
-								<a href="#1540-04-16">16</a>
-							</td>
-							<td>
-								<a href="#1540-04-17">17</a>
-							</td>
-							<td>
-								<a href="#1540-04-18">18</a>
-							</td>
-							<td>
-								<a href="#1540-04-19">19</a>
-							</td>
-							<td>
-								<a href="#1540-04-20">20</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-23'">
+<a href="#1540-03-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1540-04-21">21</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-24'">
+<a href="#1540-03-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-04-22">22</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-25'">
+<a href="#1540-03-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-04-23">23</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-26'">
+<a href="#1540-03-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-04-24">24</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-27'">
+<a href="#1540-03-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-04-25">25</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-28'">
+<a href="#1540-03-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-04-26">26</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-29'">
+<a href="#1540-03-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-04-27">27</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-04-28">28</a>
-							</td>
-							<td>
-								<a href="#1540-04-29">29</a>
-							</td>
-							<td>
-								<a href="#1540-04-30">30</a>
-							</td>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td colspan="5">
-								<a href="#1540-05">May</a>
-							</td>
-							<td colspan="2">
-								<a href="#1540">1540</a>
-							</td>
-						</tr>
-						<tr>
-							<td>S</td>
-							<td>M</td>
-							<td>T</td>
-							<td>W</td>
-							<td>T</td>
-							<td>F</td>
-							<td>S</td>
-						</tr>
-						<tr>
-							<td/>
-							<td/>
-							<td/>
-							<td>
-								<a href="#1540-05-01">1</a>
-							</td>
-							<td>
-								<a href="#1540-05-02">2</a>
-							</td>
-							<td>
-								<a href="#1540-05-03">3</a>
-							</td>
-							<td>
-								<a href="#1540-05-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-30'">
+<a href="#1540-03-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1540-05-05">5</a>
-							</td>
-							<td>
-								<a href="#1540-05-06">6</a>
-							</td>
-							<td>
-								<a href="#1540-05-07">7</a>
-							</td>
-							<td>
-								<a href="#1540-05-08">8</a>
-							</td>
-							<td>
-								<a href="#1540-05-09">9</a>
-							</td>
-							<td>
-								<a href="#1540-05-10">10</a>
-							</td>
-							<td>
-								<a href="#1540-05-11">11</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-05-12">12</a>
-							</td>
-							<td>
-								<a href="#1540-05-13">13</a>
-							</td>
-							<td>
-								<a href="#1540-05-14">14</a>
-							</td>
-							<td>
-								<a href="#1540-05-15">15</a>
-							</td>
-							<td>
-								<a href="#1540-05-16">16</a>
-							</td>
-							<td>
-								<a href="#1540-05-17">17</a>
-							</td>
-							<td>
-								<a href="#1540-05-18">18</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-05-19">19</a>
-							</td>
-							<td>
-								<a href="#1540-05-20">20</a>
-							</td>
-							<td>
-								<a href="#1540-05-21">21</a>
-							</td>
-							<td>
-								<a href="#1540-05-22">22</a>
-							</td>
-							<td>
-								<a href="#1540-05-23">23</a>
-							</td>
-							<td>
-								<a href="#1540-05-24">24</a>
-							</td>
-							<td>
-								<a href="#1540-05-25">25</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-05-26">26</a>
-							</td>
-							<td>
-								<a href="#1540-05-27">27</a>
-							</td>
-							<td>
-								<a href="#1540-05-28">28</a>
-							</td>
-							<td>
-								<a href="#1540-05-29">29</a>
-							</td>
-							<td>
-								<a href="#1540-05-30">30</a>
-							</td>
-							<td>
-								<a href="#1540-05-31">31</a>
-							</td>
-							<td/>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td colspan="5">
-								<a href="#1540-06">June</a>
-							</td>
-							<td colspan="2">
-								<a href="#1540">1540</a>
-							</td>
-						</tr>
-						<tr>
-							<td>S</td>
-							<td>M</td>
-							<td>T</td>
-							<td>W</td>
-							<td>T</td>
-							<td>F</td>
-							<td>S</td>
-						</tr>
-						<tr>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-							<td>
-								<a href="#1540-06-01">1</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-06-02">2</a>
-							</td>
-							<td>
-								<a href="#1540-06-03">3</a>
-							</td>
-							<td>
-								<a href="#1540-06-04">4</a>
-							</td>
-							<td>
-								<a href="#1540-06-05">5</a>
-							</td>
-							<td>
-								<a href="#1540-06-06">6</a>
-							</td>
-							<td>
-								<a href="#1540-06-07">7</a>
-							</td>
-							<td>
-								<a href="#1540-06-08">8</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-06-09">9</a>
-							</td>
-							<td>
-								<a href="#1540-06-10">10</a>
-							</td>
-							<td>
-								<a href="#1540-06-11">11</a>
-							</td>
-							<td>
-								<a href="#1540-06-12">12</a>
-							</td>
-							<td>
-								<a href="#1540-06-13">13</a>
-							</td>
-							<td>
-								<a href="#1540-06-14">14</a>
-							</td>
-							<td>
-								<a href="#1540-06-15">15</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-06-16">16</a>
-							</td>
-							<td>
-								<a href="#1540-06-17">17</a>
-							</td>
-							<td>
-								<a href="#1540-06-18">18</a>
-							</td>
-							<td>
-								<a href="#1540-06-19">19</a>
-							</td>
-							<td>
-								<a href="#1540-06-20">20</a>
-							</td>
-							<td>
-								<a href="#1540-06-21">21</a>
-							</td>
-							<td>
-								<a href="#1540-06-22">22</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-06-23">23</a>
-							</td>
-							<td>
-								<a href="#1540-06-24">24</a>
-							</td>
-							<td>
-								<a href="#1540-06-25">25</a>
-							</td>
-							<td>
-								<a href="#1540-06-26">26</a>
-							</td>
-							<td>
-								<a href="#1540-06-27">27</a>
-							</td>
-							<td>
-								<a href="#1540-06-28">28</a>
-							</td>
-							<td>
-								<a href="#1540-06-29">29</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-06-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-03-31'">
+<a href="#1540-03-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td/>
 							<td/>
@@ -2078,10 +1991,16 @@
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1540-07">July</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04'">
+<a href="#1540-04" class="date_valid">April</a></xsl:when>					<xsl:otherwise>April</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1540">1540</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540'">
+<a href="#1540" class="date_valid">1540</a></xsl:when>					<xsl:otherwise>1540</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -2096,355 +2015,193 @@
 						<tr>
 							<td/>
 							<td>
-								<a href="#1540-07-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-01'">
+<a href="#1540-04-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-07-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-02'">
+<a href="#1540-04-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-07-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-03'">
+<a href="#1540-04-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-07-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-04'">
+<a href="#1540-04-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-07-05">5</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-05'">
+<a href="#1540-04-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-07-06">6</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-07-07">7</a>
-							</td>
-							<td>
-								<a href="#1540-07-08">8</a>
-							</td>
-							<td>
-								<a href="#1540-07-09">9</a>
-							</td>
-							<td>
-								<a href="#1540-07-10">10</a>
-							</td>
-							<td>
-								<a href="#1540-07-11">11</a>
-							</td>
-							<td>
-								<a href="#1540-07-12">12</a>
-							</td>
-							<td>
-								<a href="#1540-07-13">13</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-06'">
+<a href="#1540-04-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1540-07-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-07'">
+<a href="#1540-04-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-07-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-08'">
+<a href="#1540-04-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-07-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-09'">
+<a href="#1540-04-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-07-17">17</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-10'">
+<a href="#1540-04-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-07-18">18</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-11'">
+<a href="#1540-04-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-07-19">19</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-12'">
+<a href="#1540-04-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-07-20">20</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-07-21">21</a>
-							</td>
-							<td>
-								<a href="#1540-07-22">22</a>
-							</td>
-							<td>
-								<a href="#1540-07-23">23</a>
-							</td>
-							<td>
-								<a href="#1540-07-24">24</a>
-							</td>
-							<td>
-								<a href="#1540-07-25">25</a>
-							</td>
-							<td>
-								<a href="#1540-07-26">26</a>
-							</td>
-							<td>
-								<a href="#1540-07-27">27</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-13'">
+<a href="#1540-04-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1540-07-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-14'">
+<a href="#1540-04-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-07-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-15'">
+<a href="#1540-04-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-07-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-16'">
+<a href="#1540-04-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-07-31">31</a>
-							</td>
-							<td/>
-							<td/>
-							<td/>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td colspan="5">
-								<a href="#1540-08">August</a>
-							</td>
-							<td colspan="2">
-								<a href="#1540">1540</a>
-							</td>
-						</tr>
-						<tr>
-							<td>S</td>
-							<td>M</td>
-							<td>T</td>
-							<td>W</td>
-							<td>T</td>
-							<td>F</td>
-							<td>S</td>
-						</tr>
-						<tr>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-							<td>
-								<a href="#1540-08-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-17'">
+<a href="#1540-04-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-08-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-18'">
+<a href="#1540-04-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-08-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-19'">
+<a href="#1540-04-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-20'">
+<a href="#1540-04-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1540-08-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-21'">
+<a href="#1540-04-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-08-05">5</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-22'">
+<a href="#1540-04-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-08-06">6</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-23'">
+<a href="#1540-04-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-08-07">7</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-24'">
+<a href="#1540-04-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-08-08">8</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-25'">
+<a href="#1540-04-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-08-09">9</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-26'">
+<a href="#1540-04-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-08-10">10</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-27'">
+<a href="#1540-04-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1540-08-11">11</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-28'">
+<a href="#1540-04-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-08-12">12</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-29'">
+<a href="#1540-04-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-08-13">13</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-04-30'">
+<a href="#1540-04-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
 							</td>
-							<td>
-								<a href="#1540-08-14">14</a>
-							</td>
-							<td>
-								<a href="#1540-08-15">15</a>
-							</td>
-							<td>
-								<a href="#1540-08-16">16</a>
-							</td>
-							<td>
-								<a href="#1540-08-17">17</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-08-18">18</a>
-							</td>
-							<td>
-								<a href="#1540-08-19">19</a>
-							</td>
-							<td>
-								<a href="#1540-08-20">20</a>
-							</td>
-							<td>
-								<a href="#1540-08-21">21</a>
-							</td>
-							<td>
-								<a href="#1540-08-22">22</a>
-							</td>
-							<td>
-								<a href="#1540-08-23">23</a>
-							</td>
-							<td>
-								<a href="#1540-08-24">24</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-08-25">25</a>
-							</td>
-							<td>
-								<a href="#1540-08-26">26</a>
-							</td>
-							<td>
-								<a href="#1540-08-27">27</a>
-							</td>
-							<td>
-								<a href="#1540-08-28">28</a>
-							</td>
-							<td>
-								<a href="#1540-08-29">29</a>
-							</td>
-							<td>
-								<a href="#1540-08-30">30</a>
-							</td>
-							<td>
-								<a href="#1540-08-31">31</a>
-							</td>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td colspan="5">
-								<a href="#1540-09">September</a>
-							</td>
-							<td colspan="2">
-								<a href="#1540">1540</a>
-							</td>
-						</tr>
-						<tr>
-							<td>S</td>
-							<td>M</td>
-							<td>T</td>
-							<td>W</td>
-							<td>T</td>
-							<td>F</td>
-							<td>S</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-09-01">1</a>
-							</td>
-							<td>
-								<a href="#1540-09-02">2</a>
-							</td>
-							<td>
-								<a href="#1540-09-03">3</a>
-							</td>
-							<td>
-								<a href="#1540-09-04">4</a>
-							</td>
-							<td>
-								<a href="#1540-09-05">5</a>
-							</td>
-							<td>
-								<a href="#1540-09-06">6</a>
-							</td>
-							<td>
-								<a href="#1540-09-07">7</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-09-08">8</a>
-							</td>
-							<td>
-								<a href="#1540-09-09">9</a>
-							</td>
-							<td>
-								<a href="#1540-09-10">10</a>
-							</td>
-							<td>
-								<a href="#1540-09-11">11</a>
-							</td>
-							<td>
-								<a href="#1540-09-12">12</a>
-							</td>
-							<td>
-								<a href="#1540-09-13">13</a>
-							</td>
-							<td>
-								<a href="#1540-09-14">14</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-09-15">15</a>
-							</td>
-							<td>
-								<a href="#1540-09-16">16</a>
-							</td>
-							<td>
-								<a href="#1540-09-17">17</a>
-							</td>
-							<td>
-								<a href="#1540-09-18">18</a>
-							</td>
-							<td>
-								<a href="#1540-09-19">19</a>
-							</td>
-							<td>
-								<a href="#1540-09-20">20</a>
-							</td>
-							<td>
-								<a href="#1540-09-21">21</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-09-22">22</a>
-							</td>
-							<td>
-								<a href="#1540-09-23">23</a>
-							</td>
-							<td>
-								<a href="#1540-09-24">24</a>
-							</td>
-							<td>
-								<a href="#1540-09-25">25</a>
-							</td>
-							<td>
-								<a href="#1540-09-26">26</a>
-							</td>
-							<td>
-								<a href="#1540-09-27">27</a>
-							</td>
-							<td>
-								<a href="#1540-09-28">28</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-09-29">29</a>
-							</td>
-							<td>
-								<a href="#1540-09-30">30</a>
-							</td>
-							<td/>
 							<td/>
 							<td/>
 							<td/>
@@ -2454,10 +2211,1140 @@
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1540-10">October</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05'">
+<a href="#1540-05" class="date_valid">May</a></xsl:when>					<xsl:otherwise>May</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1540">1540</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540'">
+<a href="#1540" class="date_valid">1540</a></xsl:when>					<xsl:otherwise>1540</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>S</td>
+							<td>M</td>
+							<td>T</td>
+							<td>W</td>
+							<td>T</td>
+							<td>F</td>
+							<td>S</td>
+						</tr>
+						<tr>
+							<td/>
+							<td/>
+							<td/>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-01'">
+<a href="#1540-05-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-02'">
+<a href="#1540-05-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-03'">
+<a href="#1540-05-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-04'">
+<a href="#1540-05-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-05'">
+<a href="#1540-05-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-06'">
+<a href="#1540-05-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-07'">
+<a href="#1540-05-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-08'">
+<a href="#1540-05-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-09'">
+<a href="#1540-05-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-10'">
+<a href="#1540-05-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-11'">
+<a href="#1540-05-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-12'">
+<a href="#1540-05-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-13'">
+<a href="#1540-05-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-14'">
+<a href="#1540-05-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-15'">
+<a href="#1540-05-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-16'">
+<a href="#1540-05-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-17'">
+<a href="#1540-05-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-18'">
+<a href="#1540-05-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-19'">
+<a href="#1540-05-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-20'">
+<a href="#1540-05-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-21'">
+<a href="#1540-05-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-22'">
+<a href="#1540-05-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-23'">
+<a href="#1540-05-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-24'">
+<a href="#1540-05-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-25'">
+<a href="#1540-05-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-26'">
+<a href="#1540-05-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-27'">
+<a href="#1540-05-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-28'">
+<a href="#1540-05-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-29'">
+<a href="#1540-05-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-30'">
+<a href="#1540-05-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-05-31'">
+<a href="#1540-05-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td/>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td colspan="5">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06'">
+<a href="#1540-06" class="date_valid">June</a></xsl:when>					<xsl:otherwise>June</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td colspan="2">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540'">
+<a href="#1540" class="date_valid">1540</a></xsl:when>					<xsl:otherwise>1540</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>S</td>
+							<td>M</td>
+							<td>T</td>
+							<td>W</td>
+							<td>T</td>
+							<td>F</td>
+							<td>S</td>
+						</tr>
+						<tr>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-01'">
+<a href="#1540-06-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-02'">
+<a href="#1540-06-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-03'">
+<a href="#1540-06-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-04'">
+<a href="#1540-06-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-05'">
+<a href="#1540-06-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-06'">
+<a href="#1540-06-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-07'">
+<a href="#1540-06-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-08'">
+<a href="#1540-06-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-09'">
+<a href="#1540-06-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-10'">
+<a href="#1540-06-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-11'">
+<a href="#1540-06-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-12'">
+<a href="#1540-06-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-13'">
+<a href="#1540-06-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-14'">
+<a href="#1540-06-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-15'">
+<a href="#1540-06-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-16'">
+<a href="#1540-06-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-17'">
+<a href="#1540-06-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-18'">
+<a href="#1540-06-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-19'">
+<a href="#1540-06-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-20'">
+<a href="#1540-06-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-21'">
+<a href="#1540-06-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-22'">
+<a href="#1540-06-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-23'">
+<a href="#1540-06-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-24'">
+<a href="#1540-06-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-25'">
+<a href="#1540-06-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-26'">
+<a href="#1540-06-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-27'">
+<a href="#1540-06-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-28'">
+<a href="#1540-06-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-29'">
+<a href="#1540-06-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-06-30'">
+<a href="#1540-06-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td colspan="5">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07'">
+<a href="#1540-07" class="date_valid">July</a></xsl:when>					<xsl:otherwise>July</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td colspan="2">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540'">
+<a href="#1540" class="date_valid">1540</a></xsl:when>					<xsl:otherwise>1540</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>S</td>
+							<td>M</td>
+							<td>T</td>
+							<td>W</td>
+							<td>T</td>
+							<td>F</td>
+							<td>S</td>
+						</tr>
+						<tr>
+							<td/>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-01'">
+<a href="#1540-07-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-02'">
+<a href="#1540-07-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-03'">
+<a href="#1540-07-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-04'">
+<a href="#1540-07-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-05'">
+<a href="#1540-07-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-06'">
+<a href="#1540-07-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-07'">
+<a href="#1540-07-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-08'">
+<a href="#1540-07-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-09'">
+<a href="#1540-07-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-10'">
+<a href="#1540-07-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-11'">
+<a href="#1540-07-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-12'">
+<a href="#1540-07-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-13'">
+<a href="#1540-07-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-14'">
+<a href="#1540-07-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-15'">
+<a href="#1540-07-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-16'">
+<a href="#1540-07-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-17'">
+<a href="#1540-07-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-18'">
+<a href="#1540-07-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-19'">
+<a href="#1540-07-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-20'">
+<a href="#1540-07-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-21'">
+<a href="#1540-07-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-22'">
+<a href="#1540-07-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-23'">
+<a href="#1540-07-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-24'">
+<a href="#1540-07-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-25'">
+<a href="#1540-07-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-26'">
+<a href="#1540-07-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-27'">
+<a href="#1540-07-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-28'">
+<a href="#1540-07-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-29'">
+<a href="#1540-07-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-30'">
+<a href="#1540-07-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-07-31'">
+<a href="#1540-07-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td colspan="5">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08'">
+<a href="#1540-08" class="date_valid">August</a></xsl:when>					<xsl:otherwise>August</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td colspan="2">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540'">
+<a href="#1540" class="date_valid">1540</a></xsl:when>					<xsl:otherwise>1540</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>S</td>
+							<td>M</td>
+							<td>T</td>
+							<td>W</td>
+							<td>T</td>
+							<td>F</td>
+							<td>S</td>
+						</tr>
+						<tr>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-01'">
+<a href="#1540-08-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-02'">
+<a href="#1540-08-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-03'">
+<a href="#1540-08-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-04'">
+<a href="#1540-08-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-05'">
+<a href="#1540-08-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-06'">
+<a href="#1540-08-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-07'">
+<a href="#1540-08-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-08'">
+<a href="#1540-08-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-09'">
+<a href="#1540-08-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-10'">
+<a href="#1540-08-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-11'">
+<a href="#1540-08-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-12'">
+<a href="#1540-08-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-13'">
+<a href="#1540-08-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-14'">
+<a href="#1540-08-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-15'">
+<a href="#1540-08-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-16'">
+<a href="#1540-08-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-17'">
+<a href="#1540-08-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-18'">
+<a href="#1540-08-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-19'">
+<a href="#1540-08-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-20'">
+<a href="#1540-08-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-21'">
+<a href="#1540-08-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-22'">
+<a href="#1540-08-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-23'">
+<a href="#1540-08-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-24'">
+<a href="#1540-08-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-25'">
+<a href="#1540-08-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-26'">
+<a href="#1540-08-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-27'">
+<a href="#1540-08-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-28'">
+<a href="#1540-08-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-29'">
+<a href="#1540-08-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-30'">
+<a href="#1540-08-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-08-31'">
+<a href="#1540-08-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td colspan="5">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09'">
+<a href="#1540-09" class="date_valid">September</a></xsl:when>					<xsl:otherwise>September</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td colspan="2">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540'">
+<a href="#1540" class="date_valid">1540</a></xsl:when>					<xsl:otherwise>1540</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>S</td>
+							<td>M</td>
+							<td>T</td>
+							<td>W</td>
+							<td>T</td>
+							<td>F</td>
+							<td>S</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-01'">
+<a href="#1540-09-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-02'">
+<a href="#1540-09-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-03'">
+<a href="#1540-09-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-04'">
+<a href="#1540-09-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-05'">
+<a href="#1540-09-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-06'">
+<a href="#1540-09-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-07'">
+<a href="#1540-09-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-08'">
+<a href="#1540-09-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-09'">
+<a href="#1540-09-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-10'">
+<a href="#1540-09-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-11'">
+<a href="#1540-09-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-12'">
+<a href="#1540-09-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-13'">
+<a href="#1540-09-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-14'">
+<a href="#1540-09-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-15'">
+<a href="#1540-09-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-16'">
+<a href="#1540-09-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-17'">
+<a href="#1540-09-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-18'">
+<a href="#1540-09-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-19'">
+<a href="#1540-09-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-20'">
+<a href="#1540-09-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-21'">
+<a href="#1540-09-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-22'">
+<a href="#1540-09-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-23'">
+<a href="#1540-09-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-24'">
+<a href="#1540-09-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-25'">
+<a href="#1540-09-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-26'">
+<a href="#1540-09-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-27'">
+<a href="#1540-09-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-28'">
+<a href="#1540-09-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-29'">
+<a href="#1540-09-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-09-30'">
+<a href="#1540-09-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td colspan="5">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10'">
+<a href="#1540-10" class="date_valid">October</a></xsl:when>					<xsl:otherwise>October</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td colspan="2">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540'">
+<a href="#1540" class="date_valid">1540</a></xsl:when>					<xsl:otherwise>1540</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -2473,105 +3360,198 @@
 							<td/>
 							<td/>
 							<td>
-								<a href="#1540-10-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-01'">
+<a href="#1540-10-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-10-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-02'">
+<a href="#1540-10-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-10-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-03'">
+<a href="#1540-10-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-10-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-04'">
+<a href="#1540-10-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-10-05">5</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-10-06">6</a>
-							</td>
-							<td>
-								<a href="#1540-10-07">7</a>
-							</td>
-							<td>
-								<a href="#1540-10-08">8</a>
-							</td>
-							<td>
-								<a href="#1540-10-09">9</a>
-							</td>
-							<td>
-								<a href="#1540-10-10">10</a>
-							</td>
-							<td>
-								<a href="#1540-10-11">11</a>
-							</td>
-							<td>
-								<a href="#1540-10-12">12</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-05'">
+<a href="#1540-10-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1540-10-13">13</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-06'">
+<a href="#1540-10-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-10-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-07'">
+<a href="#1540-10-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-10-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-08'">
+<a href="#1540-10-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-10-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-09'">
+<a href="#1540-10-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-10-17">17</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-10'">
+<a href="#1540-10-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-10-18">18</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-11'">
+<a href="#1540-10-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-10-19">19</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-10-20">20</a>
-							</td>
-							<td>
-								<a href="#1540-10-21">21</a>
-							</td>
-							<td>
-								<a href="#1540-10-22">22</a>
-							</td>
-							<td>
-								<a href="#1540-10-23">23</a>
-							</td>
-							<td>
-								<a href="#1540-10-24">24</a>
-							</td>
-							<td>
-								<a href="#1540-10-25">25</a>
-							</td>
-							<td>
-								<a href="#1540-10-26">26</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-12'">
+<a href="#1540-10-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1540-10-27">27</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-13'">
+<a href="#1540-10-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-10-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-14'">
+<a href="#1540-10-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-10-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-15'">
+<a href="#1540-10-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-10-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-16'">
+<a href="#1540-10-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-10-31">31</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-17'">
+<a href="#1540-10-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-18'">
+<a href="#1540-10-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-19'">
+<a href="#1540-10-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-20'">
+<a href="#1540-10-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-21'">
+<a href="#1540-10-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-22'">
+<a href="#1540-10-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-23'">
+<a href="#1540-10-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-24'">
+<a href="#1540-10-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-25'">
+<a href="#1540-10-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-26'">
+<a href="#1540-10-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-27'">
+<a href="#1540-10-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-28'">
+<a href="#1540-10-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-29'">
+<a href="#1540-10-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-30'">
+<a href="#1540-10-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-10-31'">
+<a href="#1540-10-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td/>
 							<td/>
@@ -2580,10 +3560,16 @@
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1540-11">November</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11'">
+<a href="#1540-11" class="date_valid">November</a></xsl:when>					<xsl:otherwise>November</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1540">1540</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540'">
+<a href="#1540" class="date_valid">1540</a></xsl:when>					<xsl:otherwise>1540</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -2602,112 +3588,208 @@
 							<td/>
 							<td/>
 							<td>
-								<a href="#1540-11-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-01'">
+<a href="#1540-11-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-11-02">2</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-11-03">3</a>
-							</td>
-							<td>
-								<a href="#1540-11-04">4</a>
-							</td>
-							<td>
-								<a href="#1540-11-05">5</a>
-							</td>
-							<td>
-								<a href="#1540-11-06">6</a>
-							</td>
-							<td>
-								<a href="#1540-11-07">7</a>
-							</td>
-							<td>
-								<a href="#1540-11-08">8</a>
-							</td>
-							<td>
-								<a href="#1540-11-09">9</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-02'">
+<a href="#1540-11-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1540-11-10">10</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-03'">
+<a href="#1540-11-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-11-11">11</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-04'">
+<a href="#1540-11-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-11-12">12</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-05'">
+<a href="#1540-11-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-11-13">13</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-06'">
+<a href="#1540-11-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-11-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-07'">
+<a href="#1540-11-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-11-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-08'">
+<a href="#1540-11-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-11-16">16</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-11-17">17</a>
-							</td>
-							<td>
-								<a href="#1540-11-18">18</a>
-							</td>
-							<td>
-								<a href="#1540-11-19">19</a>
-							</td>
-							<td>
-								<a href="#1540-11-20">20</a>
-							</td>
-							<td>
-								<a href="#1540-11-21">21</a>
-							</td>
-							<td>
-								<a href="#1540-11-22">22</a>
-							</td>
-							<td>
-								<a href="#1540-11-23">23</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-09'">
+<a href="#1540-11-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1540-11-24">24</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-10'">
+<a href="#1540-11-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-11-25">25</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-11'">
+<a href="#1540-11-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-11-26">26</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-12'">
+<a href="#1540-11-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-11-27">27</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-13'">
+<a href="#1540-11-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-11-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-14'">
+<a href="#1540-11-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-11-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-15'">
+<a href="#1540-11-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-11-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-16'">
+<a href="#1540-11-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-17'">
+<a href="#1540-11-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-18'">
+<a href="#1540-11-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-19'">
+<a href="#1540-11-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-20'">
+<a href="#1540-11-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-21'">
+<a href="#1540-11-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-22'">
+<a href="#1540-11-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-23'">
+<a href="#1540-11-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-24'">
+<a href="#1540-11-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-25'">
+<a href="#1540-11-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-26'">
+<a href="#1540-11-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-27'">
+<a href="#1540-11-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-28'">
+<a href="#1540-11-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-29'">
+<a href="#1540-11-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-11-30'">
+<a href="#1540-11-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 					</table>
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1540-12">December</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12'">
+<a href="#1540-12" class="date_valid">December</a></xsl:when>					<xsl:otherwise>December</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1540">1540</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540'">
+<a href="#1540" class="date_valid">1540</a></xsl:when>					<xsl:otherwise>1540</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -2721,105 +3803,198 @@
 						</tr>
 						<tr>
 							<td>
-								<a href="#1540-12-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-01'">
+<a href="#1540-12-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-12-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-02'">
+<a href="#1540-12-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-12-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-03'">
+<a href="#1540-12-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-12-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-04'">
+<a href="#1540-12-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-12-05">5</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-05'">
+<a href="#1540-12-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-12-06">6</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-06'">
+<a href="#1540-12-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-12-07">7</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-12-08">8</a>
-							</td>
-							<td>
-								<a href="#1540-12-09">9</a>
-							</td>
-							<td>
-								<a href="#1540-12-10">10</a>
-							</td>
-							<td>
-								<a href="#1540-12-11">11</a>
-							</td>
-							<td>
-								<a href="#1540-12-12">12</a>
-							</td>
-							<td>
-								<a href="#1540-12-13">13</a>
-							</td>
-							<td>
-								<a href="#1540-12-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-07'">
+<a href="#1540-12-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1540-12-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-08'">
+<a href="#1540-12-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-12-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-09'">
+<a href="#1540-12-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-12-17">17</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-10'">
+<a href="#1540-12-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-12-18">18</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-11'">
+<a href="#1540-12-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-12-19">19</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-12'">
+<a href="#1540-12-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-12-20">20</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-13'">
+<a href="#1540-12-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-12-21">21</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1540-12-22">22</a>
-							</td>
-							<td>
-								<a href="#1540-12-23">23</a>
-							</td>
-							<td>
-								<a href="#1540-12-24">24</a>
-							</td>
-							<td>
-								<a href="#1540-12-25">25</a>
-							</td>
-							<td>
-								<a href="#1540-12-26">26</a>
-							</td>
-							<td>
-								<a href="#1540-12-27">27</a>
-							</td>
-							<td>
-								<a href="#1540-12-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-14'">
+<a href="#1540-12-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1540-12-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-15'">
+<a href="#1540-12-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-12-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-16'">
+<a href="#1540-12-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1540-12-31">31</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-17'">
+<a href="#1540-12-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-18'">
+<a href="#1540-12-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-19'">
+<a href="#1540-12-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-20'">
+<a href="#1540-12-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-21'">
+<a href="#1540-12-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-22'">
+<a href="#1540-12-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-23'">
+<a href="#1540-12-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-24'">
+<a href="#1540-12-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-25'">
+<a href="#1540-12-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-26'">
+<a href="#1540-12-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-27'">
+<a href="#1540-12-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-28'">
+<a href="#1540-12-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-29'">
+<a href="#1540-12-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-30'">
+<a href="#1540-12-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1540-12-31'">
+<a href="#1540-12-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td/>
 							<td/>
@@ -2829,16 +4004,22 @@
 					</table>
 				</div>
 			</div>
-			<div id="1541" class="tabs_content">
+			<div id="c_1541" class="tabs_content">
 <!--				<h3>1541</h3>-->
 				<div style="display:flex; flex-wrap:wrap; justify-content:space-between;">
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1541-01">January</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01'">
+<a href="#1541-01" class="date_valid">January</a></xsl:when>					<xsl:otherwise>January</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1541">1541</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541'">
+<a href="#1541" class="date_valid">1541</a></xsl:when>					<xsl:otherwise>1541</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -2855,105 +4036,198 @@
 							<td/>
 							<td/>
 							<td>
-								<a href="#1541-01-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-01'">
+<a href="#1541-01-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-01-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-02'">
+<a href="#1541-01-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-01-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-03'">
+<a href="#1541-01-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-01-04">4</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-01-05">5</a>
-							</td>
-							<td>
-								<a href="#1541-01-06">6</a>
-							</td>
-							<td>
-								<a href="#1541-01-07">7</a>
-							</td>
-							<td>
-								<a href="#1541-01-08">8</a>
-							</td>
-							<td>
-								<a href="#1541-01-09">9</a>
-							</td>
-							<td>
-								<a href="#1541-01-10">10</a>
-							</td>
-							<td>
-								<a href="#1541-01-11">11</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-04'">
+<a href="#1541-01-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1541-01-12">12</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-05'">
+<a href="#1541-01-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-01-13">13</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-06'">
+<a href="#1541-01-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-01-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-07'">
+<a href="#1541-01-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-01-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-08'">
+<a href="#1541-01-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-01-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-09'">
+<a href="#1541-01-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-01-17">17</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-10'">
+<a href="#1541-01-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-01-18">18</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-01-19">19</a>
-							</td>
-							<td>
-								<a href="#1541-01-20">20</a>
-							</td>
-							<td>
-								<a href="#1541-01-21">21</a>
-							</td>
-							<td>
-								<a href="#1541-01-22">22</a>
-							</td>
-							<td>
-								<a href="#1541-01-23">23</a>
-							</td>
-							<td>
-								<a href="#1541-01-24">24</a>
-							</td>
-							<td>
-								<a href="#1541-01-25">25</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-11'">
+<a href="#1541-01-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1541-01-26">26</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-12'">
+<a href="#1541-01-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-01-27">27</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-13'">
+<a href="#1541-01-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-01-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-14'">
+<a href="#1541-01-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-01-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-15'">
+<a href="#1541-01-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-01-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-16'">
+<a href="#1541-01-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-01-31">31</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-17'">
+<a href="#1541-01-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-18'">
+<a href="#1541-01-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-19'">
+<a href="#1541-01-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-20'">
+<a href="#1541-01-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-21'">
+<a href="#1541-01-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-22'">
+<a href="#1541-01-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-23'">
+<a href="#1541-01-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-24'">
+<a href="#1541-01-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-25'">
+<a href="#1541-01-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-26'">
+<a href="#1541-01-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-27'">
+<a href="#1541-01-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-28'">
+<a href="#1541-01-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-29'">
+<a href="#1541-01-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-30'">
+<a href="#1541-01-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-01-31'">
+<a href="#1541-01-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td/>
 						</tr>
@@ -2961,10 +4235,16 @@
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1541-02">February</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02'">
+<a href="#1541-02" class="date_valid">February</a></xsl:when>					<xsl:otherwise>February</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1541">1541</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541'">
+<a href="#1541" class="date_valid">1541</a></xsl:when>					<xsl:otherwise>1541</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -2984,96 +4264,180 @@
 							<td/>
 							<td/>
 							<td>
-								<a href="#1541-02-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-01'">
+<a href="#1541-02-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1541-02-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-02'">
+<a href="#1541-02-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-02-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-03'">
+<a href="#1541-02-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-02-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-04'">
+<a href="#1541-02-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-02-05">5</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-05'">
+<a href="#1541-02-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-02-06">6</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-06'">
+<a href="#1541-02-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-02-07">7</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-07'">
+<a href="#1541-02-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-02-08">8</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-02-09">9</a>
-							</td>
-							<td>
-								<a href="#1541-02-10">10</a>
-							</td>
-							<td>
-								<a href="#1541-02-11">11</a>
-							</td>
-							<td>
-								<a href="#1541-02-12">12</a>
-							</td>
-							<td>
-								<a href="#1541-02-13">13</a>
-							</td>
-							<td>
-								<a href="#1541-02-14">14</a>
-							</td>
-							<td>
-								<a href="#1541-02-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-08'">
+<a href="#1541-02-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1541-02-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-09'">
+<a href="#1541-02-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-02-17">17</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-10'">
+<a href="#1541-02-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-02-18">18</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-11'">
+<a href="#1541-02-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-02-19">19</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-12'">
+<a href="#1541-02-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-02-20">20</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-13'">
+<a href="#1541-02-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-02-21">21</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-14'">
+<a href="#1541-02-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-02-22">22</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-15'">
+<a href="#1541-02-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1541-02-23">23</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-16'">
+<a href="#1541-02-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-02-24">24</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-17'">
+<a href="#1541-02-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-02-25">25</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-18'">
+<a href="#1541-02-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-02-26">26</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-19'">
+<a href="#1541-02-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-02-27">27</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-20'">
+<a href="#1541-02-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-02-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-21'">
+<a href="#1541-02-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-22'">
+<a href="#1541-02-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-23'">
+<a href="#1541-02-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-24'">
+<a href="#1541-02-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-25'">
+<a href="#1541-02-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-26'">
+<a href="#1541-02-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-27'">
+<a href="#1541-02-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-02-28'">
+<a href="#1541-02-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td/>
 						</tr>
@@ -3081,10 +4445,16 @@
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1541-03">March</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03'">
+<a href="#1541-03" class="date_valid">March</a></xsl:when>					<xsl:otherwise>March</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1541">1541</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541'">
+<a href="#1541" class="date_valid">1541</a></xsl:when>					<xsl:otherwise>1541</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -3104,481 +4474,200 @@
 							<td/>
 							<td/>
 							<td>
-								<a href="#1541-03-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-01'">
+<a href="#1541-03-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1541-03-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-02'">
+<a href="#1541-03-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-03-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-03'">
+<a href="#1541-03-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-03-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-04'">
+<a href="#1541-03-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-03-05">5</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-05'">
+<a href="#1541-03-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-03-06">6</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-06'">
+<a href="#1541-03-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-03-07">7</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-07'">
+<a href="#1541-03-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-03-08">8</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-03-09">9</a>
-							</td>
-							<td>
-								<a href="#1541-03-10">10</a>
-							</td>
-							<td>
-								<a href="#1541-03-11">11</a>
-							</td>
-							<td>
-								<a href="#1541-03-12">12</a>
-							</td>
-							<td>
-								<a href="#1541-03-13">13</a>
-							</td>
-							<td>
-								<a href="#1541-03-14">14</a>
-							</td>
-							<td>
-								<a href="#1541-03-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-08'">
+<a href="#1541-03-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1541-03-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-09'">
+<a href="#1541-03-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-03-17">17</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-10'">
+<a href="#1541-03-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-03-18">18</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-11'">
+<a href="#1541-03-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-03-19">19</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-12'">
+<a href="#1541-03-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-03-20">20</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-13'">
+<a href="#1541-03-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-03-21">21</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-14'">
+<a href="#1541-03-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-03-22">22</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-03-23">23</a>
-							</td>
-							<td>
-								<a href="#1541-03-24">24</a>
-							</td>
-							<td>
-								<a href="#1541-03-25">25</a>
-							</td>
-							<td>
-								<a href="#1541-03-26">26</a>
-							</td>
-							<td>
-								<a href="#1541-03-27">27</a>
-							</td>
-							<td>
-								<a href="#1541-03-28">28</a>
-							</td>
-							<td>
-								<a href="#1541-03-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-15'">
+<a href="#1541-03-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1541-03-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-16'">
+<a href="#1541-03-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-03-31">31</a>
-							</td>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td colspan="5">
-								<a href="#1541-04">April</a>
-							</td>
-							<td colspan="2">
-								<a href="#1541">1541</a>
-							</td>
-						</tr>
-						<tr>
-							<td>S</td>
-							<td>M</td>
-							<td>T</td>
-							<td>W</td>
-							<td>T</td>
-							<td>F</td>
-							<td>S</td>
-						</tr>
-						<tr>
-							<td/>
-							<td/>
-							<td>
-								<a href="#1541-04-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-17'">
+<a href="#1541-03-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-04-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-18'">
+<a href="#1541-03-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-04-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-19'">
+<a href="#1541-03-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-04-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-20'">
+<a href="#1541-03-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-04-05">5</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-21'">
+<a href="#1541-03-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-22'">
+<a href="#1541-03-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1541-04-06">6</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-23'">
+<a href="#1541-03-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-04-07">7</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-24'">
+<a href="#1541-03-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-04-08">8</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-25'">
+<a href="#1541-03-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-04-09">9</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-26'">
+<a href="#1541-03-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-04-10">10</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-27'">
+<a href="#1541-03-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-04-11">11</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-28'">
+<a href="#1541-03-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-04-12">12</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-04-13">13</a>
-							</td>
-							<td>
-								<a href="#1541-04-14">14</a>
-							</td>
-							<td>
-								<a href="#1541-04-15">15</a>
-							</td>
-							<td>
-								<a href="#1541-04-16">16</a>
-							</td>
-							<td>
-								<a href="#1541-04-17">17</a>
-							</td>
-							<td>
-								<a href="#1541-04-18">18</a>
-							</td>
-							<td>
-								<a href="#1541-04-19">19</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-29'">
+<a href="#1541-03-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1541-04-20">20</a>
-							</td>
-							<td>
-								<a href="#1541-04-21">21</a>
-							</td>
-							<td>
-								<a href="#1541-04-22">22</a>
-							</td>
-							<td>
-								<a href="#1541-04-23">23</a>
-							</td>
-							<td>
-								<a href="#1541-04-24">24</a>
-							</td>
-							<td>
-								<a href="#1541-04-25">25</a>
-							</td>
-							<td>
-								<a href="#1541-04-26">26</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-04-27">27</a>
-							</td>
-							<td>
-								<a href="#1541-04-28">28</a>
-							</td>
-							<td>
-								<a href="#1541-04-29">29</a>
-							</td>
-							<td>
-								<a href="#1541-04-30">30</a>
-							</td>
-							<td/>
-							<td/>
-							<td/>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td colspan="5">
-								<a href="#1541-05">May</a>
-							</td>
-							<td colspan="2">
-								<a href="#1541">1541</a>
-							</td>
-						</tr>
-						<tr>
-							<td>S</td>
-							<td>M</td>
-							<td>T</td>
-							<td>W</td>
-							<td>T</td>
-							<td>F</td>
-							<td>S</td>
-						</tr>
-						<tr>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-							<td>
-								<a href="#1541-05-01">1</a>
-							</td>
-							<td>
-								<a href="#1541-05-02">2</a>
-							</td>
-							<td>
-								<a href="#1541-05-03">3</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-05-04">4</a>
-							</td>
-							<td>
-								<a href="#1541-05-05">5</a>
-							</td>
-							<td>
-								<a href="#1541-05-06">6</a>
-							</td>
-							<td>
-								<a href="#1541-05-07">7</a>
-							</td>
-							<td>
-								<a href="#1541-05-08">8</a>
-							</td>
-							<td>
-								<a href="#1541-05-09">9</a>
-							</td>
-							<td>
-								<a href="#1541-05-10">10</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-05-11">11</a>
-							</td>
-							<td>
-								<a href="#1541-05-12">12</a>
-							</td>
-							<td>
-								<a href="#1541-05-13">13</a>
-							</td>
-							<td>
-								<a href="#1541-05-14">14</a>
-							</td>
-							<td>
-								<a href="#1541-05-15">15</a>
-							</td>
-							<td>
-								<a href="#1541-05-16">16</a>
-							</td>
-							<td>
-								<a href="#1541-05-17">17</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-05-18">18</a>
-							</td>
-							<td>
-								<a href="#1541-05-19">19</a>
-							</td>
-							<td>
-								<a href="#1541-05-20">20</a>
-							</td>
-							<td>
-								<a href="#1541-05-21">21</a>
-							</td>
-							<td>
-								<a href="#1541-05-22">22</a>
-							</td>
-							<td>
-								<a href="#1541-05-23">23</a>
-							</td>
-							<td>
-								<a href="#1541-05-24">24</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-05-25">25</a>
-							</td>
-							<td>
-								<a href="#1541-05-26">26</a>
-							</td>
-							<td>
-								<a href="#1541-05-27">27</a>
-							</td>
-							<td>
-								<a href="#1541-05-28">28</a>
-							</td>
-							<td>
-								<a href="#1541-05-29">29</a>
-							</td>
-							<td>
-								<a href="#1541-05-30">30</a>
-							</td>
-							<td>
-								<a href="#1541-05-31">31</a>
-							</td>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td colspan="5">
-								<a href="#1541-06">June</a>
-							</td>
-							<td colspan="2">
-								<a href="#1541">1541</a>
-							</td>
-						</tr>
-						<tr>
-							<td>S</td>
-							<td>M</td>
-							<td>T</td>
-							<td>W</td>
-							<td>T</td>
-							<td>F</td>
-							<td>S</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-06-01">1</a>
-							</td>
-							<td>
-								<a href="#1541-06-02">2</a>
-							</td>
-							<td>
-								<a href="#1541-06-03">3</a>
-							</td>
-							<td>
-								<a href="#1541-06-04">4</a>
-							</td>
-							<td>
-								<a href="#1541-06-05">5</a>
-							</td>
-							<td>
-								<a href="#1541-06-06">6</a>
-							</td>
-							<td>
-								<a href="#1541-06-07">7</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-06-08">8</a>
-							</td>
-							<td>
-								<a href="#1541-06-09">9</a>
-							</td>
-							<td>
-								<a href="#1541-06-10">10</a>
-							</td>
-							<td>
-								<a href="#1541-06-11">11</a>
-							</td>
-							<td>
-								<a href="#1541-06-12">12</a>
-							</td>
-							<td>
-								<a href="#1541-06-13">13</a>
-							</td>
-							<td>
-								<a href="#1541-06-14">14</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-06-15">15</a>
-							</td>
-							<td>
-								<a href="#1541-06-16">16</a>
-							</td>
-							<td>
-								<a href="#1541-06-17">17</a>
-							</td>
-							<td>
-								<a href="#1541-06-18">18</a>
-							</td>
-							<td>
-								<a href="#1541-06-19">19</a>
-							</td>
-							<td>
-								<a href="#1541-06-20">20</a>
-							</td>
-							<td>
-								<a href="#1541-06-21">21</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-06-22">22</a>
-							</td>
-							<td>
-								<a href="#1541-06-23">23</a>
-							</td>
-							<td>
-								<a href="#1541-06-24">24</a>
-							</td>
-							<td>
-								<a href="#1541-06-25">25</a>
-							</td>
-							<td>
-								<a href="#1541-06-26">26</a>
-							</td>
-							<td>
-								<a href="#1541-06-27">27</a>
-							</td>
-							<td>
-								<a href="#1541-06-28">28</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-06-29">29</a>
-							</td>
-							<td>
-								<a href="#1541-06-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-30'">
+<a href="#1541-03-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-03-31'">
+<a href="#1541-03-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td/>
 							<td/>
@@ -3590,10 +4679,16 @@
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1541-07">July</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04'">
+<a href="#1541-04" class="date_valid">April</a></xsl:when>					<xsl:otherwise>April</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1541">1541</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541'">
+<a href="#1541" class="date_valid">1541</a></xsl:when>					<xsl:otherwise>1541</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -3609,240 +4704,193 @@
 							<td/>
 							<td/>
 							<td>
-								<a href="#1541-07-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-01'">
+<a href="#1541-04-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-02'">
+<a href="#1541-04-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-03'">
+<a href="#1541-04-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-04'">
+<a href="#1541-04-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-05">5</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-05'">
+<a href="#1541-04-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1541-07-06">6</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-06'">
+<a href="#1541-04-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-07">7</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-07'">
+<a href="#1541-04-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-08">8</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-08'">
+<a href="#1541-04-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-09">9</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-09'">
+<a href="#1541-04-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-10">10</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-10'">
+<a href="#1541-04-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-11">11</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-11'">
+<a href="#1541-04-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-12">12</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-12'">
+<a href="#1541-04-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1541-07-13">13</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-13'">
+<a href="#1541-04-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-14'">
+<a href="#1541-04-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-15'">
+<a href="#1541-04-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-16'">
+<a href="#1541-04-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-17">17</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-17'">
+<a href="#1541-04-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-18">18</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-18'">
+<a href="#1541-04-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-19">19</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-19'">
+<a href="#1541-04-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1541-07-20">20</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-20'">
+<a href="#1541-04-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-21">21</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-21'">
+<a href="#1541-04-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-22">22</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-22'">
+<a href="#1541-04-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-23">23</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-23'">
+<a href="#1541-04-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-24">24</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-24'">
+<a href="#1541-04-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-25">25</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-25'">
+<a href="#1541-04-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-26">26</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-26'">
+<a href="#1541-04-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1541-07-27">27</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-27'">
+<a href="#1541-04-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-28'">
+<a href="#1541-04-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-29'">
+<a href="#1541-04-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-07-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-04-30'">
+<a href="#1541-04-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
 							</td>
-							<td>
-								<a href="#1541-07-31">31</a>
-							</td>
-							<td/>
-							<td/>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td colspan="5">
-								<a href="#1541-08">August</a>
-							</td>
-							<td colspan="2">
-								<a href="#1541">1541</a>
-							</td>
-						</tr>
-						<tr>
-							<td>S</td>
-							<td>M</td>
-							<td>T</td>
-							<td>W</td>
-							<td>T</td>
-							<td>F</td>
-							<td>S</td>
-						</tr>
-						<tr>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-							<td>
-								<a href="#1541-08-01">1</a>
-							</td>
-							<td>
-								<a href="#1541-08-02">2</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-08-03">3</a>
-							</td>
-							<td>
-								<a href="#1541-08-04">4</a>
-							</td>
-							<td>
-								<a href="#1541-08-05">5</a>
-							</td>
-							<td>
-								<a href="#1541-08-06">6</a>
-							</td>
-							<td>
-								<a href="#1541-08-07">7</a>
-							</td>
-							<td>
-								<a href="#1541-08-08">8</a>
-							</td>
-							<td>
-								<a href="#1541-08-09">9</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-08-10">10</a>
-							</td>
-							<td>
-								<a href="#1541-08-11">11</a>
-							</td>
-							<td>
-								<a href="#1541-08-12">12</a>
-							</td>
-							<td>
-								<a href="#1541-08-13">13</a>
-							</td>
-							<td>
-								<a href="#1541-08-14">14</a>
-							</td>
-							<td>
-								<a href="#1541-08-15">15</a>
-							</td>
-							<td>
-								<a href="#1541-08-16">16</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-08-17">17</a>
-							</td>
-							<td>
-								<a href="#1541-08-18">18</a>
-							</td>
-							<td>
-								<a href="#1541-08-19">19</a>
-							</td>
-							<td>
-								<a href="#1541-08-20">20</a>
-							</td>
-							<td>
-								<a href="#1541-08-21">21</a>
-							</td>
-							<td>
-								<a href="#1541-08-22">22</a>
-							</td>
-							<td>
-								<a href="#1541-08-23">23</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-08-24">24</a>
-							</td>
-							<td>
-								<a href="#1541-08-25">25</a>
-							</td>
-							<td>
-								<a href="#1541-08-26">26</a>
-							</td>
-							<td>
-								<a href="#1541-08-27">27</a>
-							</td>
-							<td>
-								<a href="#1541-08-28">28</a>
-							</td>
-							<td>
-								<a href="#1541-08-29">29</a>
-							</td>
-							<td>
-								<a href="#1541-08-30">30</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-08-31">31</a>
-							</td>
-							<td/>
-							<td/>
-							<td/>
 							<td/>
 							<td/>
 							<td/>
@@ -3851,10 +4899,920 @@
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1541-09">September</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05'">
+<a href="#1541-05" class="date_valid">May</a></xsl:when>					<xsl:otherwise>May</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1541">1541</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541'">
+<a href="#1541" class="date_valid">1541</a></xsl:when>					<xsl:otherwise>1541</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>S</td>
+							<td>M</td>
+							<td>T</td>
+							<td>W</td>
+							<td>T</td>
+							<td>F</td>
+							<td>S</td>
+						</tr>
+						<tr>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-01'">
+<a href="#1541-05-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-02'">
+<a href="#1541-05-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-03'">
+<a href="#1541-05-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-04'">
+<a href="#1541-05-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-05'">
+<a href="#1541-05-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-06'">
+<a href="#1541-05-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-07'">
+<a href="#1541-05-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-08'">
+<a href="#1541-05-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-09'">
+<a href="#1541-05-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-10'">
+<a href="#1541-05-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-11'">
+<a href="#1541-05-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-12'">
+<a href="#1541-05-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-13'">
+<a href="#1541-05-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-14'">
+<a href="#1541-05-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-15'">
+<a href="#1541-05-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-16'">
+<a href="#1541-05-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-17'">
+<a href="#1541-05-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-18'">
+<a href="#1541-05-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-19'">
+<a href="#1541-05-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-20'">
+<a href="#1541-05-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-21'">
+<a href="#1541-05-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-22'">
+<a href="#1541-05-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-23'">
+<a href="#1541-05-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-24'">
+<a href="#1541-05-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-25'">
+<a href="#1541-05-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-26'">
+<a href="#1541-05-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-27'">
+<a href="#1541-05-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-28'">
+<a href="#1541-05-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-29'">
+<a href="#1541-05-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-30'">
+<a href="#1541-05-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-05-31'">
+<a href="#1541-05-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td colspan="5">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06'">
+<a href="#1541-06" class="date_valid">June</a></xsl:when>					<xsl:otherwise>June</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td colspan="2">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541'">
+<a href="#1541" class="date_valid">1541</a></xsl:when>					<xsl:otherwise>1541</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>S</td>
+							<td>M</td>
+							<td>T</td>
+							<td>W</td>
+							<td>T</td>
+							<td>F</td>
+							<td>S</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-01'">
+<a href="#1541-06-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-02'">
+<a href="#1541-06-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-03'">
+<a href="#1541-06-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-04'">
+<a href="#1541-06-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-05'">
+<a href="#1541-06-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-06'">
+<a href="#1541-06-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-07'">
+<a href="#1541-06-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-08'">
+<a href="#1541-06-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-09'">
+<a href="#1541-06-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-10'">
+<a href="#1541-06-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-11'">
+<a href="#1541-06-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-12'">
+<a href="#1541-06-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-13'">
+<a href="#1541-06-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-14'">
+<a href="#1541-06-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-15'">
+<a href="#1541-06-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-16'">
+<a href="#1541-06-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-17'">
+<a href="#1541-06-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-18'">
+<a href="#1541-06-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-19'">
+<a href="#1541-06-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-20'">
+<a href="#1541-06-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-21'">
+<a href="#1541-06-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-22'">
+<a href="#1541-06-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-23'">
+<a href="#1541-06-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-24'">
+<a href="#1541-06-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-25'">
+<a href="#1541-06-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-26'">
+<a href="#1541-06-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-27'">
+<a href="#1541-06-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-28'">
+<a href="#1541-06-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-29'">
+<a href="#1541-06-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-06-30'">
+<a href="#1541-06-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td colspan="5">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07'">
+<a href="#1541-07" class="date_valid">July</a></xsl:when>					<xsl:otherwise>July</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td colspan="2">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541'">
+<a href="#1541" class="date_valid">1541</a></xsl:when>					<xsl:otherwise>1541</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>S</td>
+							<td>M</td>
+							<td>T</td>
+							<td>W</td>
+							<td>T</td>
+							<td>F</td>
+							<td>S</td>
+						</tr>
+						<tr>
+							<td/>
+							<td/>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-01'">
+<a href="#1541-07-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-02'">
+<a href="#1541-07-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-03'">
+<a href="#1541-07-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-04'">
+<a href="#1541-07-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-05'">
+<a href="#1541-07-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-06'">
+<a href="#1541-07-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-07'">
+<a href="#1541-07-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-08'">
+<a href="#1541-07-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-09'">
+<a href="#1541-07-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-10'">
+<a href="#1541-07-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-11'">
+<a href="#1541-07-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-12'">
+<a href="#1541-07-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-13'">
+<a href="#1541-07-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-14'">
+<a href="#1541-07-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-15'">
+<a href="#1541-07-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-16'">
+<a href="#1541-07-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-17'">
+<a href="#1541-07-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-18'">
+<a href="#1541-07-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-19'">
+<a href="#1541-07-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-20'">
+<a href="#1541-07-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-21'">
+<a href="#1541-07-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-22'">
+<a href="#1541-07-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-23'">
+<a href="#1541-07-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-24'">
+<a href="#1541-07-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-25'">
+<a href="#1541-07-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-26'">
+<a href="#1541-07-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-27'">
+<a href="#1541-07-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-28'">
+<a href="#1541-07-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-29'">
+<a href="#1541-07-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-30'">
+<a href="#1541-07-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-07-31'">
+<a href="#1541-07-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td colspan="5">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08'">
+<a href="#1541-08" class="date_valid">August</a></xsl:when>					<xsl:otherwise>August</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td colspan="2">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541'">
+<a href="#1541" class="date_valid">1541</a></xsl:when>					<xsl:otherwise>1541</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>S</td>
+							<td>M</td>
+							<td>T</td>
+							<td>W</td>
+							<td>T</td>
+							<td>F</td>
+							<td>S</td>
+						</tr>
+						<tr>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-01'">
+<a href="#1541-08-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-02'">
+<a href="#1541-08-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-03'">
+<a href="#1541-08-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-04'">
+<a href="#1541-08-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-05'">
+<a href="#1541-08-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-06'">
+<a href="#1541-08-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-07'">
+<a href="#1541-08-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-08'">
+<a href="#1541-08-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-09'">
+<a href="#1541-08-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-10'">
+<a href="#1541-08-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-11'">
+<a href="#1541-08-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-12'">
+<a href="#1541-08-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-13'">
+<a href="#1541-08-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-14'">
+<a href="#1541-08-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-15'">
+<a href="#1541-08-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-16'">
+<a href="#1541-08-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-17'">
+<a href="#1541-08-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-18'">
+<a href="#1541-08-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-19'">
+<a href="#1541-08-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-20'">
+<a href="#1541-08-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-21'">
+<a href="#1541-08-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-22'">
+<a href="#1541-08-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-23'">
+<a href="#1541-08-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-24'">
+<a href="#1541-08-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-25'">
+<a href="#1541-08-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-26'">
+<a href="#1541-08-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-27'">
+<a href="#1541-08-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-28'">
+<a href="#1541-08-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-29'">
+<a href="#1541-08-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-30'">
+<a href="#1541-08-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-08-31'">
+<a href="#1541-08-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td colspan="5">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09'">
+<a href="#1541-09" class="date_valid">September</a></xsl:when>					<xsl:otherwise>September</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td colspan="2">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541'">
+<a href="#1541" class="date_valid">1541</a></xsl:when>					<xsl:otherwise>1541</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -3869,102 +5827,192 @@
 						<tr>
 							<td/>
 							<td>
-								<a href="#1541-09-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-01'">
+<a href="#1541-09-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-09-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-02'">
+<a href="#1541-09-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-09-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-03'">
+<a href="#1541-09-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-09-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-04'">
+<a href="#1541-09-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-09-05">5</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-05'">
+<a href="#1541-09-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-09-06">6</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-09-07">7</a>
-							</td>
-							<td>
-								<a href="#1541-09-08">8</a>
-							</td>
-							<td>
-								<a href="#1541-09-09">9</a>
-							</td>
-							<td>
-								<a href="#1541-09-10">10</a>
-							</td>
-							<td>
-								<a href="#1541-09-11">11</a>
-							</td>
-							<td>
-								<a href="#1541-09-12">12</a>
-							</td>
-							<td>
-								<a href="#1541-09-13">13</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-06'">
+<a href="#1541-09-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1541-09-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-07'">
+<a href="#1541-09-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-09-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-08'">
+<a href="#1541-09-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-09-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-09'">
+<a href="#1541-09-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-09-17">17</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-10'">
+<a href="#1541-09-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-09-18">18</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-11'">
+<a href="#1541-09-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-09-19">19</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-12'">
+<a href="#1541-09-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-09-20">20</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-09-21">21</a>
-							</td>
-							<td>
-								<a href="#1541-09-22">22</a>
-							</td>
-							<td>
-								<a href="#1541-09-23">23</a>
-							</td>
-							<td>
-								<a href="#1541-09-24">24</a>
-							</td>
-							<td>
-								<a href="#1541-09-25">25</a>
-							</td>
-							<td>
-								<a href="#1541-09-26">26</a>
-							</td>
-							<td>
-								<a href="#1541-09-27">27</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-13'">
+<a href="#1541-09-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1541-09-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-14'">
+<a href="#1541-09-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-09-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-15'">
+<a href="#1541-09-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-09-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-16'">
+<a href="#1541-09-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-17'">
+<a href="#1541-09-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-18'">
+<a href="#1541-09-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-19'">
+<a href="#1541-09-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-20'">
+<a href="#1541-09-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-21'">
+<a href="#1541-09-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-22'">
+<a href="#1541-09-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-23'">
+<a href="#1541-09-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-24'">
+<a href="#1541-09-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-25'">
+<a href="#1541-09-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-26'">
+<a href="#1541-09-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-27'">
+<a href="#1541-09-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-28'">
+<a href="#1541-09-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-29'">
+<a href="#1541-09-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-09-30'">
+<a href="#1541-09-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td/>
 							<td/>
@@ -3975,10 +6023,16 @@
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1541-10">October</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10'">
+<a href="#1541-10" class="date_valid">October</a></xsl:when>					<xsl:otherwise>October</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1541">1541</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541'">
+<a href="#1541" class="date_valid">1541</a></xsl:when>					<xsl:otherwise>1541</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -3995,105 +6049,198 @@
 							<td/>
 							<td/>
 							<td>
-								<a href="#1541-10-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-01'">
+<a href="#1541-10-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-10-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-02'">
+<a href="#1541-10-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-10-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-03'">
+<a href="#1541-10-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-10-04">4</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-10-05">5</a>
-							</td>
-							<td>
-								<a href="#1541-10-06">6</a>
-							</td>
-							<td>
-								<a href="#1541-10-07">7</a>
-							</td>
-							<td>
-								<a href="#1541-10-08">8</a>
-							</td>
-							<td>
-								<a href="#1541-10-09">9</a>
-							</td>
-							<td>
-								<a href="#1541-10-10">10</a>
-							</td>
-							<td>
-								<a href="#1541-10-11">11</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-04'">
+<a href="#1541-10-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1541-10-12">12</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-05'">
+<a href="#1541-10-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-10-13">13</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-06'">
+<a href="#1541-10-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-10-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-07'">
+<a href="#1541-10-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-10-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-08'">
+<a href="#1541-10-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-10-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-09'">
+<a href="#1541-10-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-10-17">17</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-10'">
+<a href="#1541-10-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-10-18">18</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-10-19">19</a>
-							</td>
-							<td>
-								<a href="#1541-10-20">20</a>
-							</td>
-							<td>
-								<a href="#1541-10-21">21</a>
-							</td>
-							<td>
-								<a href="#1541-10-22">22</a>
-							</td>
-							<td>
-								<a href="#1541-10-23">23</a>
-							</td>
-							<td>
-								<a href="#1541-10-24">24</a>
-							</td>
-							<td>
-								<a href="#1541-10-25">25</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-11'">
+<a href="#1541-10-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1541-10-26">26</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-12'">
+<a href="#1541-10-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-10-27">27</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-13'">
+<a href="#1541-10-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-10-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-14'">
+<a href="#1541-10-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-10-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-15'">
+<a href="#1541-10-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-10-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-16'">
+<a href="#1541-10-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-10-31">31</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-17'">
+<a href="#1541-10-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-18'">
+<a href="#1541-10-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-19'">
+<a href="#1541-10-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-20'">
+<a href="#1541-10-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-21'">
+<a href="#1541-10-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-22'">
+<a href="#1541-10-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-23'">
+<a href="#1541-10-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-24'">
+<a href="#1541-10-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-25'">
+<a href="#1541-10-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-26'">
+<a href="#1541-10-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-27'">
+<a href="#1541-10-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-28'">
+<a href="#1541-10-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-29'">
+<a href="#1541-10-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-30'">
+<a href="#1541-10-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-10-31'">
+<a href="#1541-10-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td/>
 						</tr>
@@ -4101,10 +6248,16 @@
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1541-11">November</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11'">
+<a href="#1541-11" class="date_valid">November</a></xsl:when>					<xsl:otherwise>November</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1541">1541</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541'">
+<a href="#1541" class="date_valid">1541</a></xsl:when>					<xsl:otherwise>1541</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -4124,104 +6277,194 @@
 							<td/>
 							<td/>
 							<td>
-								<a href="#1541-11-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-01'">
+<a href="#1541-11-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1541-11-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-02'">
+<a href="#1541-11-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-11-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-03'">
+<a href="#1541-11-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-11-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-04'">
+<a href="#1541-11-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-11-05">5</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-05'">
+<a href="#1541-11-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-11-06">6</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-06'">
+<a href="#1541-11-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-11-07">7</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-07'">
+<a href="#1541-11-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-11-08">8</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-11-09">9</a>
-							</td>
-							<td>
-								<a href="#1541-11-10">10</a>
-							</td>
-							<td>
-								<a href="#1541-11-11">11</a>
-							</td>
-							<td>
-								<a href="#1541-11-12">12</a>
-							</td>
-							<td>
-								<a href="#1541-11-13">13</a>
-							</td>
-							<td>
-								<a href="#1541-11-14">14</a>
-							</td>
-							<td>
-								<a href="#1541-11-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-08'">
+<a href="#1541-11-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1541-11-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-09'">
+<a href="#1541-11-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-11-17">17</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-10'">
+<a href="#1541-11-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-11-18">18</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-11'">
+<a href="#1541-11-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-11-19">19</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-12'">
+<a href="#1541-11-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-11-20">20</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-13'">
+<a href="#1541-11-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-11-21">21</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-14'">
+<a href="#1541-11-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-11-22">22</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-11-23">23</a>
-							</td>
-							<td>
-								<a href="#1541-11-24">24</a>
-							</td>
-							<td>
-								<a href="#1541-11-25">25</a>
-							</td>
-							<td>
-								<a href="#1541-11-26">26</a>
-							</td>
-							<td>
-								<a href="#1541-11-27">27</a>
-							</td>
-							<td>
-								<a href="#1541-11-28">28</a>
-							</td>
-							<td>
-								<a href="#1541-11-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-15'">
+<a href="#1541-11-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1541-11-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-16'">
+<a href="#1541-11-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-17'">
+<a href="#1541-11-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-18'">
+<a href="#1541-11-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-19'">
+<a href="#1541-11-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-20'">
+<a href="#1541-11-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-21'">
+<a href="#1541-11-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-22'">
+<a href="#1541-11-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-23'">
+<a href="#1541-11-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-24'">
+<a href="#1541-11-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-25'">
+<a href="#1541-11-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-26'">
+<a href="#1541-11-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-27'">
+<a href="#1541-11-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-28'">
+<a href="#1541-11-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-29'">
+<a href="#1541-11-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-11-30'">
+<a href="#1541-11-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td/>
 							<td/>
@@ -4234,10 +6477,16 @@
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1541-12">December</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12'">
+<a href="#1541-12" class="date_valid">December</a></xsl:when>					<xsl:otherwise>December</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1541">1541</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541'">
+<a href="#1541" class="date_valid">1541</a></xsl:when>					<xsl:otherwise>1541</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -4252,105 +6501,198 @@
 						<tr>
 							<td/>
 							<td>
-								<a href="#1541-12-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-01'">
+<a href="#1541-12-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-12-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-02'">
+<a href="#1541-12-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-12-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-03'">
+<a href="#1541-12-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-12-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-04'">
+<a href="#1541-12-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-12-05">5</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-05'">
+<a href="#1541-12-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-12-06">6</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-12-07">7</a>
-							</td>
-							<td>
-								<a href="#1541-12-08">8</a>
-							</td>
-							<td>
-								<a href="#1541-12-09">9</a>
-							</td>
-							<td>
-								<a href="#1541-12-10">10</a>
-							</td>
-							<td>
-								<a href="#1541-12-11">11</a>
-							</td>
-							<td>
-								<a href="#1541-12-12">12</a>
-							</td>
-							<td>
-								<a href="#1541-12-13">13</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-06'">
+<a href="#1541-12-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1541-12-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-07'">
+<a href="#1541-12-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-12-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-08'">
+<a href="#1541-12-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-12-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-09'">
+<a href="#1541-12-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-12-17">17</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-10'">
+<a href="#1541-12-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-12-18">18</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-11'">
+<a href="#1541-12-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-12-19">19</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-12'">
+<a href="#1541-12-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-12-20">20</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1541-12-21">21</a>
-							</td>
-							<td>
-								<a href="#1541-12-22">22</a>
-							</td>
-							<td>
-								<a href="#1541-12-23">23</a>
-							</td>
-							<td>
-								<a href="#1541-12-24">24</a>
-							</td>
-							<td>
-								<a href="#1541-12-25">25</a>
-							</td>
-							<td>
-								<a href="#1541-12-26">26</a>
-							</td>
-							<td>
-								<a href="#1541-12-27">27</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-13'">
+<a href="#1541-12-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1541-12-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-14'">
+<a href="#1541-12-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-12-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-15'">
+<a href="#1541-12-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-12-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-16'">
+<a href="#1541-12-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1541-12-31">31</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-17'">
+<a href="#1541-12-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-18'">
+<a href="#1541-12-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-19'">
+<a href="#1541-12-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-20'">
+<a href="#1541-12-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-21'">
+<a href="#1541-12-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-22'">
+<a href="#1541-12-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-23'">
+<a href="#1541-12-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-24'">
+<a href="#1541-12-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-25'">
+<a href="#1541-12-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-26'">
+<a href="#1541-12-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-27'">
+<a href="#1541-12-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-28'">
+<a href="#1541-12-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-29'">
+<a href="#1541-12-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-30'">
+<a href="#1541-12-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1541-12-31'">
+<a href="#1541-12-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td/>
 							<td/>
@@ -4359,16 +6701,22 @@
 					</table>
 				</div>
 			</div>
-			<div id="1542" class="tabs_content">
+			<div id="c_1542" class="tabs_content">
 <!--				<h3>1542</h3>-->
 				<div style="display:flex; flex-wrap:wrap; justify-content:space-between;">
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1542-01">January</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01'">
+<a href="#1542-01" class="date_valid">January</a></xsl:when>					<xsl:otherwise>January</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1542">1542</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542'">
+<a href="#1542" class="date_valid">1542</a></xsl:when>					<xsl:otherwise>1542</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -4386,115 +6734,214 @@
 							<td/>
 							<td/>
 							<td>
-								<a href="#1542-01-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-01'">
+<a href="#1542-01-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-01-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-02'">
+<a href="#1542-01-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-01-03">3</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-01-04">4</a>
-							</td>
-							<td>
-								<a href="#1542-01-05">5</a>
-							</td>
-							<td>
-								<a href="#1542-01-06">6</a>
-							</td>
-							<td>
-								<a href="#1542-01-07">7</a>
-							</td>
-							<td>
-								<a href="#1542-01-08">8</a>
-							</td>
-							<td>
-								<a href="#1542-01-09">9</a>
-							</td>
-							<td>
-								<a href="#1542-01-10">10</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-03'">
+<a href="#1542-01-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1542-01-11">11</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-04'">
+<a href="#1542-01-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-01-12">12</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-05'">
+<a href="#1542-01-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-01-13">13</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-06'">
+<a href="#1542-01-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-01-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-07'">
+<a href="#1542-01-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-01-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-08'">
+<a href="#1542-01-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-01-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-09'">
+<a href="#1542-01-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-01-17">17</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-01-18">18</a>
-							</td>
-							<td>
-								<a href="#1542-01-19">19</a>
-							</td>
-							<td>
-								<a href="#1542-01-20">20</a>
-							</td>
-							<td>
-								<a href="#1542-01-21">21</a>
-							</td>
-							<td>
-								<a href="#1542-01-22">22</a>
-							</td>
-							<td>
-								<a href="#1542-01-23">23</a>
-							</td>
-							<td>
-								<a href="#1542-01-24">24</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-10'">
+<a href="#1542-01-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1542-01-25">25</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-11'">
+<a href="#1542-01-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-01-26">26</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-12'">
+<a href="#1542-01-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-01-27">27</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-13'">
+<a href="#1542-01-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-01-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-14'">
+<a href="#1542-01-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-01-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-15'">
+<a href="#1542-01-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-01-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-16'">
+<a href="#1542-01-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-01-31">31</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-17'">
+<a href="#1542-01-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-18'">
+<a href="#1542-01-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-19'">
+<a href="#1542-01-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-20'">
+<a href="#1542-01-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-21'">
+<a href="#1542-01-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-22'">
+<a href="#1542-01-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-23'">
+<a href="#1542-01-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-24'">
+<a href="#1542-01-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-25'">
+<a href="#1542-01-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-26'">
+<a href="#1542-01-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-27'">
+<a href="#1542-01-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-28'">
+<a href="#1542-01-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-29'">
+<a href="#1542-01-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-30'">
+<a href="#1542-01-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-01-31'">
+<a href="#1542-01-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 					</table>
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1542-02">February</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02'">
+<a href="#1542-02" class="date_valid">February</a></xsl:when>					<xsl:otherwise>February</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1542">1542</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542'">
+<a href="#1542" class="date_valid">1542</a></xsl:when>					<xsl:otherwise>1542</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -4508,104 +6955,194 @@
 						</tr>
 						<tr>
 							<td>
-								<a href="#1542-02-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-01'">
+<a href="#1542-02-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-02-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-02'">
+<a href="#1542-02-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-02-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-03'">
+<a href="#1542-02-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-02-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-04'">
+<a href="#1542-02-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-02-05">5</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-05'">
+<a href="#1542-02-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-02-06">6</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-06'">
+<a href="#1542-02-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-02-07">7</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-02-08">8</a>
-							</td>
-							<td>
-								<a href="#1542-02-09">9</a>
-							</td>
-							<td>
-								<a href="#1542-02-10">10</a>
-							</td>
-							<td>
-								<a href="#1542-02-11">11</a>
-							</td>
-							<td>
-								<a href="#1542-02-12">12</a>
-							</td>
-							<td>
-								<a href="#1542-02-13">13</a>
-							</td>
-							<td>
-								<a href="#1542-02-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-07'">
+<a href="#1542-02-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1542-02-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-08'">
+<a href="#1542-02-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-02-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-09'">
+<a href="#1542-02-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-02-17">17</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-10'">
+<a href="#1542-02-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-02-18">18</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-11'">
+<a href="#1542-02-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-02-19">19</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-12'">
+<a href="#1542-02-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-02-20">20</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-13'">
+<a href="#1542-02-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-02-21">21</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-14'">
+<a href="#1542-02-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1542-02-22">22</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-15'">
+<a href="#1542-02-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-02-23">23</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-16'">
+<a href="#1542-02-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-02-24">24</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-17'">
+<a href="#1542-02-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-02-25">25</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-18'">
+<a href="#1542-02-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-02-26">26</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-19'">
+<a href="#1542-02-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-02-27">27</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-20'">
+<a href="#1542-02-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-02-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-21'">
+<a href="#1542-02-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-22'">
+<a href="#1542-02-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-23'">
+<a href="#1542-02-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-24'">
+<a href="#1542-02-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-25'">
+<a href="#1542-02-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-26'">
+<a href="#1542-02-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-27'">
+<a href="#1542-02-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-02-28'">
+<a href="#1542-02-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 					</table>
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1542-03">March</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03'">
+<a href="#1542-03" class="date_valid">March</a></xsl:when>					<xsl:otherwise>March</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1542">1542</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542'">
+<a href="#1542" class="date_valid">1542</a></xsl:when>					<xsl:otherwise>1542</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -4619,488 +7156,198 @@
 						</tr>
 						<tr>
 							<td>
-								<a href="#1542-03-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-01'">
+<a href="#1542-03-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-03-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-02'">
+<a href="#1542-03-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-03-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-03'">
+<a href="#1542-03-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-03-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-04'">
+<a href="#1542-03-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-03-05">5</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-05'">
+<a href="#1542-03-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-03-06">6</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-06'">
+<a href="#1542-03-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-03-07">7</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-03-08">8</a>
-							</td>
-							<td>
-								<a href="#1542-03-09">9</a>
-							</td>
-							<td>
-								<a href="#1542-03-10">10</a>
-							</td>
-							<td>
-								<a href="#1542-03-11">11</a>
-							</td>
-							<td>
-								<a href="#1542-03-12">12</a>
-							</td>
-							<td>
-								<a href="#1542-03-13">13</a>
-							</td>
-							<td>
-								<a href="#1542-03-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-07'">
+<a href="#1542-03-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1542-03-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-08'">
+<a href="#1542-03-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-03-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-09'">
+<a href="#1542-03-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-03-17">17</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-10'">
+<a href="#1542-03-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-03-18">18</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-11'">
+<a href="#1542-03-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-03-19">19</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-12'">
+<a href="#1542-03-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-03-20">20</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-13'">
+<a href="#1542-03-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-03-21">21</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-03-22">22</a>
-							</td>
-							<td>
-								<a href="#1542-03-23">23</a>
-							</td>
-							<td>
-								<a href="#1542-03-24">24</a>
-							</td>
-							<td>
-								<a href="#1542-03-25">25</a>
-							</td>
-							<td>
-								<a href="#1542-03-26">26</a>
-							</td>
-							<td>
-								<a href="#1542-03-27">27</a>
-							</td>
-							<td>
-								<a href="#1542-03-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-14'">
+<a href="#1542-03-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1542-03-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-15'">
+<a href="#1542-03-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-03-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-16'">
+<a href="#1542-03-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-03-31">31</a>
-							</td>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td colspan="5">
-								<a href="#1542-04">April</a>
-							</td>
-							<td colspan="2">
-								<a href="#1542">1542</a>
-							</td>
-						</tr>
-						<tr>
-							<td>S</td>
-							<td>M</td>
-							<td>T</td>
-							<td>W</td>
-							<td>T</td>
-							<td>F</td>
-							<td>S</td>
-						</tr>
-						<tr>
-							<td/>
-							<td/>
-							<td/>
-							<td>
-								<a href="#1542-04-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-17'">
+<a href="#1542-03-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-04-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-18'">
+<a href="#1542-03-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-04-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-19'">
+<a href="#1542-03-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-04-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-20'">
+<a href="#1542-03-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-21'">
+<a href="#1542-03-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1542-04-05">5</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-22'">
+<a href="#1542-03-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-04-06">6</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-23'">
+<a href="#1542-03-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-04-07">7</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-24'">
+<a href="#1542-03-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-04-08">8</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-25'">
+<a href="#1542-03-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-04-09">9</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-26'">
+<a href="#1542-03-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-04-10">10</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-27'">
+<a href="#1542-03-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-04-11">11</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-04-12">12</a>
-							</td>
-							<td>
-								<a href="#1542-04-13">13</a>
-							</td>
-							<td>
-								<a href="#1542-04-14">14</a>
-							</td>
-							<td>
-								<a href="#1542-04-15">15</a>
-							</td>
-							<td>
-								<a href="#1542-04-16">16</a>
-							</td>
-							<td>
-								<a href="#1542-04-17">17</a>
-							</td>
-							<td>
-								<a href="#1542-04-18">18</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-28'">
+<a href="#1542-03-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1542-04-19">19</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-29'">
+<a href="#1542-03-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-04-20">20</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-30'">
+<a href="#1542-03-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-04-21">21</a>
-							</td>
-							<td>
-								<a href="#1542-04-22">22</a>
-							</td>
-							<td>
-								<a href="#1542-04-23">23</a>
-							</td>
-							<td>
-								<a href="#1542-04-24">24</a>
-							</td>
-							<td>
-								<a href="#1542-04-25">25</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-04-26">26</a>
-							</td>
-							<td>
-								<a href="#1542-04-27">27</a>
-							</td>
-							<td>
-								<a href="#1542-04-28">28</a>
-							</td>
-							<td>
-								<a href="#1542-04-29">29</a>
-							</td>
-							<td>
-								<a href="#1542-04-30">30</a>
-							</td>
-							<td/>
-							<td/>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td colspan="5">
-								<a href="#1542-05">May</a>
-							</td>
-							<td colspan="2">
-								<a href="#1542">1542</a>
-							</td>
-						</tr>
-						<tr>
-							<td>S</td>
-							<td>M</td>
-							<td>T</td>
-							<td>W</td>
-							<td>T</td>
-							<td>F</td>
-							<td>S</td>
-						</tr>
-						<tr>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-							<td>
-								<a href="#1542-05-01">1</a>
-							</td>
-							<td>
-								<a href="#1542-05-02">2</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-05-03">3</a>
-							</td>
-							<td>
-								<a href="#1542-05-04">4</a>
-							</td>
-							<td>
-								<a href="#1542-05-05">5</a>
-							</td>
-							<td>
-								<a href="#1542-05-06">6</a>
-							</td>
-							<td>
-								<a href="#1542-05-07">7</a>
-							</td>
-							<td>
-								<a href="#1542-05-08">8</a>
-							</td>
-							<td>
-								<a href="#1542-05-09">9</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-05-10">10</a>
-							</td>
-							<td>
-								<a href="#1542-05-11">11</a>
-							</td>
-							<td>
-								<a href="#1542-05-12">12</a>
-							</td>
-							<td>
-								<a href="#1542-05-13">13</a>
-							</td>
-							<td>
-								<a href="#1542-05-14">14</a>
-							</td>
-							<td>
-								<a href="#1542-05-15">15</a>
-							</td>
-							<td>
-								<a href="#1542-05-16">16</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-05-17">17</a>
-							</td>
-							<td>
-								<a href="#1542-05-18">18</a>
-							</td>
-							<td>
-								<a href="#1542-05-19">19</a>
-							</td>
-							<td>
-								<a href="#1542-05-20">20</a>
-							</td>
-							<td>
-								<a href="#1542-05-21">21</a>
-							</td>
-							<td>
-								<a href="#1542-05-22">22</a>
-							</td>
-							<td>
-								<a href="#1542-05-23">23</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-05-24">24</a>
-							</td>
-							<td>
-								<a href="#1542-05-25">25</a>
-							</td>
-							<td>
-								<a href="#1542-05-26">26</a>
-							</td>
-							<td>
-								<a href="#1542-05-27">27</a>
-							</td>
-							<td>
-								<a href="#1542-05-28">28</a>
-							</td>
-							<td>
-								<a href="#1542-05-29">29</a>
-							</td>
-							<td>
-								<a href="#1542-05-30">30</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-05-31">31</a>
-							</td>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td colspan="5">
-								<a href="#1542-06">June</a>
-							</td>
-							<td colspan="2">
-								<a href="#1542">1542</a>
-							</td>
-						</tr>
-						<tr>
-							<td>S</td>
-							<td>M</td>
-							<td>T</td>
-							<td>W</td>
-							<td>T</td>
-							<td>F</td>
-							<td>S</td>
-						</tr>
-						<tr>
-							<td/>
-							<td>
-								<a href="#1542-06-01">1</a>
-							</td>
-							<td>
-								<a href="#1542-06-02">2</a>
-							</td>
-							<td>
-								<a href="#1542-06-03">3</a>
-							</td>
-							<td>
-								<a href="#1542-06-04">4</a>
-							</td>
-							<td>
-								<a href="#1542-06-05">5</a>
-							</td>
-							<td>
-								<a href="#1542-06-06">6</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-06-07">7</a>
-							</td>
-							<td>
-								<a href="#1542-06-08">8</a>
-							</td>
-							<td>
-								<a href="#1542-06-09">9</a>
-							</td>
-							<td>
-								<a href="#1542-06-10">10</a>
-							</td>
-							<td>
-								<a href="#1542-06-11">11</a>
-							</td>
-							<td>
-								<a href="#1542-06-12">12</a>
-							</td>
-							<td>
-								<a href="#1542-06-13">13</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-06-14">14</a>
-							</td>
-							<td>
-								<a href="#1542-06-15">15</a>
-							</td>
-							<td>
-								<a href="#1542-06-16">16</a>
-							</td>
-							<td>
-								<a href="#1542-06-17">17</a>
-							</td>
-							<td>
-								<a href="#1542-06-18">18</a>
-							</td>
-							<td>
-								<a href="#1542-06-19">19</a>
-							</td>
-							<td>
-								<a href="#1542-06-20">20</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-06-21">21</a>
-							</td>
-							<td>
-								<a href="#1542-06-22">22</a>
-							</td>
-							<td>
-								<a href="#1542-06-23">23</a>
-							</td>
-							<td>
-								<a href="#1542-06-24">24</a>
-							</td>
-							<td>
-								<a href="#1542-06-25">25</a>
-							</td>
-							<td>
-								<a href="#1542-06-26">26</a>
-							</td>
-							<td>
-								<a href="#1542-06-27">27</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-06-28">28</a>
-							</td>
-							<td>
-								<a href="#1542-06-29">29</a>
-							</td>
-							<td>
-								<a href="#1542-06-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-03-31'">
+<a href="#1542-03-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td/>
 							<td/>
@@ -5111,10 +7358,16 @@
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1542-07">July</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04'">
+<a href="#1542-04" class="date_valid">April</a></xsl:when>					<xsl:otherwise>April</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1542">1542</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542'">
+<a href="#1542" class="date_valid">1542</a></xsl:when>					<xsl:otherwise>1542</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -5131,240 +7384,193 @@
 							<td/>
 							<td/>
 							<td>
-								<a href="#1542-07-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-01'">
+<a href="#1542-04-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-02'">
+<a href="#1542-04-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-03'">
+<a href="#1542-04-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-04'">
+<a href="#1542-04-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1542-07-05">5</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-05'">
+<a href="#1542-04-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-06">6</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-06'">
+<a href="#1542-04-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-07">7</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-07'">
+<a href="#1542-04-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-08">8</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-08'">
+<a href="#1542-04-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-09">9</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-09'">
+<a href="#1542-04-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-10">10</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-10'">
+<a href="#1542-04-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-11">11</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-11'">
+<a href="#1542-04-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1542-07-12">12</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-12'">
+<a href="#1542-04-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-13">13</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-13'">
+<a href="#1542-04-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-14'">
+<a href="#1542-04-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-15'">
+<a href="#1542-04-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-16'">
+<a href="#1542-04-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-17">17</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-17'">
+<a href="#1542-04-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-18">18</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-18'">
+<a href="#1542-04-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1542-07-19">19</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-19'">
+<a href="#1542-04-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-20">20</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-20'">
+<a href="#1542-04-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-21">21</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-21'">
+<a href="#1542-04-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-22">22</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-22'">
+<a href="#1542-04-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-23">23</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-23'">
+<a href="#1542-04-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-24">24</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-24'">
+<a href="#1542-04-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-25">25</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-25'">
+<a href="#1542-04-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1542-07-26">26</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-26'">
+<a href="#1542-04-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-27">27</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-27'">
+<a href="#1542-04-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-28'">
+<a href="#1542-04-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-29'">
+<a href="#1542-04-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-07-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-04-30'">
+<a href="#1542-04-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
 							</td>
-							<td>
-								<a href="#1542-07-31">31</a>
-							</td>
-							<td/>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td colspan="5">
-								<a href="#1542-08">August</a>
-							</td>
-							<td colspan="2">
-								<a href="#1542">1542</a>
-							</td>
-						</tr>
-						<tr>
-							<td>S</td>
-							<td>M</td>
-							<td>T</td>
-							<td>W</td>
-							<td>T</td>
-							<td>F</td>
-							<td>S</td>
-						</tr>
-						<tr>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-							<td>
-								<a href="#1542-08-01">1</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-08-02">2</a>
-							</td>
-							<td>
-								<a href="#1542-08-03">3</a>
-							</td>
-							<td>
-								<a href="#1542-08-04">4</a>
-							</td>
-							<td>
-								<a href="#1542-08-05">5</a>
-							</td>
-							<td>
-								<a href="#1542-08-06">6</a>
-							</td>
-							<td>
-								<a href="#1542-08-07">7</a>
-							</td>
-							<td>
-								<a href="#1542-08-08">8</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-08-09">9</a>
-							</td>
-							<td>
-								<a href="#1542-08-10">10</a>
-							</td>
-							<td>
-								<a href="#1542-08-11">11</a>
-							</td>
-							<td>
-								<a href="#1542-08-12">12</a>
-							</td>
-							<td>
-								<a href="#1542-08-13">13</a>
-							</td>
-							<td>
-								<a href="#1542-08-14">14</a>
-							</td>
-							<td>
-								<a href="#1542-08-15">15</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-08-16">16</a>
-							</td>
-							<td>
-								<a href="#1542-08-17">17</a>
-							</td>
-							<td>
-								<a href="#1542-08-18">18</a>
-							</td>
-							<td>
-								<a href="#1542-08-19">19</a>
-							</td>
-							<td>
-								<a href="#1542-08-20">20</a>
-							</td>
-							<td>
-								<a href="#1542-08-21">21</a>
-							</td>
-							<td>
-								<a href="#1542-08-22">22</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-08-23">23</a>
-							</td>
-							<td>
-								<a href="#1542-08-24">24</a>
-							</td>
-							<td>
-								<a href="#1542-08-25">25</a>
-							</td>
-							<td>
-								<a href="#1542-08-26">26</a>
-							</td>
-							<td>
-								<a href="#1542-08-27">27</a>
-							</td>
-							<td>
-								<a href="#1542-08-28">28</a>
-							</td>
-							<td>
-								<a href="#1542-08-29">29</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-08-30">30</a>
-							</td>
-							<td>
-								<a href="#1542-08-31">31</a>
-							</td>
-							<td/>
-							<td/>
-							<td/>
 							<td/>
 							<td/>
 						</tr>
@@ -5372,134 +7578,16 @@
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1542-09">September</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05'">
+<a href="#1542-05" class="date_valid">May</a></xsl:when>					<xsl:otherwise>May</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1542">1542</a>
-							</td>
-						</tr>
-						<tr>
-							<td>S</td>
-							<td>M</td>
-							<td>T</td>
-							<td>W</td>
-							<td>T</td>
-							<td>F</td>
-							<td>S</td>
-						</tr>
-						<tr>
-							<td/>
-							<td/>
-							<td>
-								<a href="#1542-09-01">1</a>
-							</td>
-							<td>
-								<a href="#1542-09-02">2</a>
-							</td>
-							<td>
-								<a href="#1542-09-03">3</a>
-							</td>
-							<td>
-								<a href="#1542-09-04">4</a>
-							</td>
-							<td>
-								<a href="#1542-09-05">5</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-09-06">6</a>
-							</td>
-							<td>
-								<a href="#1542-09-07">7</a>
-							</td>
-							<td>
-								<a href="#1542-09-08">8</a>
-							</td>
-							<td>
-								<a href="#1542-09-09">9</a>
-							</td>
-							<td>
-								<a href="#1542-09-10">10</a>
-							</td>
-							<td>
-								<a href="#1542-09-11">11</a>
-							</td>
-							<td>
-								<a href="#1542-09-12">12</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-09-13">13</a>
-							</td>
-							<td>
-								<a href="#1542-09-14">14</a>
-							</td>
-							<td>
-								<a href="#1542-09-15">15</a>
-							</td>
-							<td>
-								<a href="#1542-09-16">16</a>
-							</td>
-							<td>
-								<a href="#1542-09-17">17</a>
-							</td>
-							<td>
-								<a href="#1542-09-18">18</a>
-							</td>
-							<td>
-								<a href="#1542-09-19">19</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-09-20">20</a>
-							</td>
-							<td>
-								<a href="#1542-09-21">21</a>
-							</td>
-							<td>
-								<a href="#1542-09-22">22</a>
-							</td>
-							<td>
-								<a href="#1542-09-23">23</a>
-							</td>
-							<td>
-								<a href="#1542-09-24">24</a>
-							</td>
-							<td>
-								<a href="#1542-09-25">25</a>
-							</td>
-							<td>
-								<a href="#1542-09-26">26</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-09-27">27</a>
-							</td>
-							<td>
-								<a href="#1542-09-28">28</a>
-							</td>
-							<td>
-								<a href="#1542-09-29">29</a>
-							</td>
-							<td>
-								<a href="#1542-09-30">30</a>
-							</td>
-							<td/>
-							<td/>
-							<td/>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td colspan="5">
-								<a href="#1542-10">October</a>
-							</td>
-							<td colspan="2">
-								<a href="#1542">1542</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542'">
+<a href="#1542" class="date_valid">1542</a></xsl:when>					<xsl:otherwise>1542</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -5516,226 +7604,204 @@
 							<td/>
 							<td/>
 							<td/>
+							<td/>
 							<td>
-								<a href="#1542-10-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-01'">
+<a href="#1542-05-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-02">2</a>
-							</td>
-							<td>
-								<a href="#1542-10-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-02'">
+<a href="#1542-05-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1542-10-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-03'">
+<a href="#1542-05-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-05">5</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-04'">
+<a href="#1542-05-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-06">6</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-05'">
+<a href="#1542-05-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-07">7</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-06'">
+<a href="#1542-05-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-08">8</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-07'">
+<a href="#1542-05-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-09">9</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-08'">
+<a href="#1542-05-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-10">10</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-09'">
+<a href="#1542-05-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1542-10-11">11</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-10'">
+<a href="#1542-05-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-12">12</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-11'">
+<a href="#1542-05-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-13">13</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-12'">
+<a href="#1542-05-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-13'">
+<a href="#1542-05-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-14'">
+<a href="#1542-05-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-15'">
+<a href="#1542-05-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-17">17</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-16'">
+<a href="#1542-05-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1542-10-18">18</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-17'">
+<a href="#1542-05-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-19">19</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-18'">
+<a href="#1542-05-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-20">20</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-19'">
+<a href="#1542-05-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-21">21</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-20'">
+<a href="#1542-05-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-22">22</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-21'">
+<a href="#1542-05-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-23">23</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-22'">
+<a href="#1542-05-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-24">24</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-23'">
+<a href="#1542-05-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1542-10-25">25</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-24'">
+<a href="#1542-05-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-26">26</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-25'">
+<a href="#1542-05-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-27">27</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-26'">
+<a href="#1542-05-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-27'">
+<a href="#1542-05-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-28'">
+<a href="#1542-05-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-29'">
+<a href="#1542-05-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-10-31">31</a>
-							</td>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td colspan="5">
-								<a href="#1542-11">November</a>
-							</td>
-							<td colspan="2">
-								<a href="#1542">1542</a>
-							</td>
-						</tr>
-						<tr>
-							<td>S</td>
-							<td>M</td>
-							<td>T</td>
-							<td>W</td>
-							<td>T</td>
-							<td>F</td>
-							<td>S</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-11-01">1</a>
-							</td>
-							<td>
-								<a href="#1542-11-02">2</a>
-							</td>
-							<td>
-								<a href="#1542-11-03">3</a>
-							</td>
-							<td>
-								<a href="#1542-11-04">4</a>
-							</td>
-							<td>
-								<a href="#1542-11-05">5</a>
-							</td>
-							<td>
-								<a href="#1542-11-06">6</a>
-							</td>
-							<td>
-								<a href="#1542-11-07">7</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-30'">
+<a href="#1542-05-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1542-11-08">8</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-05-31'">
+<a href="#1542-05-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
 							</td>
-							<td>
-								<a href="#1542-11-09">9</a>
-							</td>
-							<td>
-								<a href="#1542-11-10">10</a>
-							</td>
-							<td>
-								<a href="#1542-11-11">11</a>
-							</td>
-							<td>
-								<a href="#1542-11-12">12</a>
-							</td>
-							<td>
-								<a href="#1542-11-13">13</a>
-							</td>
-							<td>
-								<a href="#1542-11-14">14</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-11-15">15</a>
-							</td>
-							<td>
-								<a href="#1542-11-16">16</a>
-							</td>
-							<td>
-								<a href="#1542-11-17">17</a>
-							</td>
-							<td>
-								<a href="#1542-11-18">18</a>
-							</td>
-							<td>
-								<a href="#1542-11-19">19</a>
-							</td>
-							<td>
-								<a href="#1542-11-20">20</a>
-							</td>
-							<td>
-								<a href="#1542-11-21">21</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-11-22">22</a>
-							</td>
-							<td>
-								<a href="#1542-11-23">23</a>
-							</td>
-							<td>
-								<a href="#1542-11-24">24</a>
-							</td>
-							<td>
-								<a href="#1542-11-25">25</a>
-							</td>
-							<td>
-								<a href="#1542-11-26">26</a>
-							</td>
-							<td>
-								<a href="#1542-11-27">27</a>
-							</td>
-							<td>
-								<a href="#1542-11-28">28</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-11-29">29</a>
-							</td>
-							<td>
-								<a href="#1542-11-30">30</a>
-							</td>
+							<td/>
 							<td/>
 							<td/>
 							<td/>
@@ -5746,10 +7812,695 @@
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1542-12">December</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06'">
+<a href="#1542-06" class="date_valid">June</a></xsl:when>					<xsl:otherwise>June</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1542">1542</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542'">
+<a href="#1542" class="date_valid">1542</a></xsl:when>					<xsl:otherwise>1542</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>S</td>
+							<td>M</td>
+							<td>T</td>
+							<td>W</td>
+							<td>T</td>
+							<td>F</td>
+							<td>S</td>
+						</tr>
+						<tr>
+							<td/>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-01'">
+<a href="#1542-06-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-02'">
+<a href="#1542-06-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-03'">
+<a href="#1542-06-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-04'">
+<a href="#1542-06-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-05'">
+<a href="#1542-06-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-06'">
+<a href="#1542-06-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-07'">
+<a href="#1542-06-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-08'">
+<a href="#1542-06-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-09'">
+<a href="#1542-06-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-10'">
+<a href="#1542-06-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-11'">
+<a href="#1542-06-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-12'">
+<a href="#1542-06-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-13'">
+<a href="#1542-06-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-14'">
+<a href="#1542-06-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-15'">
+<a href="#1542-06-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-16'">
+<a href="#1542-06-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-17'">
+<a href="#1542-06-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-18'">
+<a href="#1542-06-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-19'">
+<a href="#1542-06-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-20'">
+<a href="#1542-06-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-21'">
+<a href="#1542-06-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-22'">
+<a href="#1542-06-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-23'">
+<a href="#1542-06-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-24'">
+<a href="#1542-06-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-25'">
+<a href="#1542-06-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-26'">
+<a href="#1542-06-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-27'">
+<a href="#1542-06-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-28'">
+<a href="#1542-06-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-29'">
+<a href="#1542-06-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-06-30'">
+<a href="#1542-06-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td colspan="5">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07'">
+<a href="#1542-07" class="date_valid">July</a></xsl:when>					<xsl:otherwise>July</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td colspan="2">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542'">
+<a href="#1542" class="date_valid">1542</a></xsl:when>					<xsl:otherwise>1542</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>S</td>
+							<td>M</td>
+							<td>T</td>
+							<td>W</td>
+							<td>T</td>
+							<td>F</td>
+							<td>S</td>
+						</tr>
+						<tr>
+							<td/>
+							<td/>
+							<td/>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-01'">
+<a href="#1542-07-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-02'">
+<a href="#1542-07-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-03'">
+<a href="#1542-07-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-04'">
+<a href="#1542-07-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-05'">
+<a href="#1542-07-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-06'">
+<a href="#1542-07-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-07'">
+<a href="#1542-07-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-08'">
+<a href="#1542-07-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-09'">
+<a href="#1542-07-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-10'">
+<a href="#1542-07-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-11'">
+<a href="#1542-07-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-12'">
+<a href="#1542-07-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-13'">
+<a href="#1542-07-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-14'">
+<a href="#1542-07-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-15'">
+<a href="#1542-07-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-16'">
+<a href="#1542-07-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-17'">
+<a href="#1542-07-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-18'">
+<a href="#1542-07-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-19'">
+<a href="#1542-07-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-20'">
+<a href="#1542-07-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-21'">
+<a href="#1542-07-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-22'">
+<a href="#1542-07-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-23'">
+<a href="#1542-07-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-24'">
+<a href="#1542-07-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-25'">
+<a href="#1542-07-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-26'">
+<a href="#1542-07-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-27'">
+<a href="#1542-07-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-28'">
+<a href="#1542-07-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-29'">
+<a href="#1542-07-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-30'">
+<a href="#1542-07-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-07-31'">
+<a href="#1542-07-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td/>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td colspan="5">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08'">
+<a href="#1542-08" class="date_valid">August</a></xsl:when>					<xsl:otherwise>August</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td colspan="2">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542'">
+<a href="#1542" class="date_valid">1542</a></xsl:when>					<xsl:otherwise>1542</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>S</td>
+							<td>M</td>
+							<td>T</td>
+							<td>W</td>
+							<td>T</td>
+							<td>F</td>
+							<td>S</td>
+						</tr>
+						<tr>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-01'">
+<a href="#1542-08-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-02'">
+<a href="#1542-08-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-03'">
+<a href="#1542-08-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-04'">
+<a href="#1542-08-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-05'">
+<a href="#1542-08-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-06'">
+<a href="#1542-08-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-07'">
+<a href="#1542-08-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-08'">
+<a href="#1542-08-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-09'">
+<a href="#1542-08-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-10'">
+<a href="#1542-08-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-11'">
+<a href="#1542-08-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-12'">
+<a href="#1542-08-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-13'">
+<a href="#1542-08-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-14'">
+<a href="#1542-08-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-15'">
+<a href="#1542-08-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-16'">
+<a href="#1542-08-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-17'">
+<a href="#1542-08-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-18'">
+<a href="#1542-08-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-19'">
+<a href="#1542-08-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-20'">
+<a href="#1542-08-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-21'">
+<a href="#1542-08-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-22'">
+<a href="#1542-08-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-23'">
+<a href="#1542-08-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-24'">
+<a href="#1542-08-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-25'">
+<a href="#1542-08-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-26'">
+<a href="#1542-08-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-27'">
+<a href="#1542-08-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-28'">
+<a href="#1542-08-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-29'">
+<a href="#1542-08-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-30'">
+<a href="#1542-08-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-08-31'">
+<a href="#1542-08-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td colspan="5">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09'">
+<a href="#1542-09" class="date_valid">September</a></xsl:when>					<xsl:otherwise>September</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td colspan="2">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542'">
+<a href="#1542" class="date_valid">1542</a></xsl:when>					<xsl:otherwise>1542</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -5765,105 +8516,863 @@
 							<td/>
 							<td/>
 							<td>
-								<a href="#1542-12-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-01'">
+<a href="#1542-09-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-12-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-02'">
+<a href="#1542-09-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-12-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-03'">
+<a href="#1542-09-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-12-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-04'">
+<a href="#1542-09-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-12-05">5</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-12-06">6</a>
-							</td>
-							<td>
-								<a href="#1542-12-07">7</a>
-							</td>
-							<td>
-								<a href="#1542-12-08">8</a>
-							</td>
-							<td>
-								<a href="#1542-12-09">9</a>
-							</td>
-							<td>
-								<a href="#1542-12-10">10</a>
-							</td>
-							<td>
-								<a href="#1542-12-11">11</a>
-							</td>
-							<td>
-								<a href="#1542-12-12">12</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-05'">
+<a href="#1542-09-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1542-12-13">13</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-06'">
+<a href="#1542-09-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-12-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-07'">
+<a href="#1542-09-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-12-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-08'">
+<a href="#1542-09-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-12-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-09'">
+<a href="#1542-09-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-12-17">17</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-10'">
+<a href="#1542-09-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-12-18">18</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-11'">
+<a href="#1542-09-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-12-19">19</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1542-12-20">20</a>
-							</td>
-							<td>
-								<a href="#1542-12-21">21</a>
-							</td>
-							<td>
-								<a href="#1542-12-22">22</a>
-							</td>
-							<td>
-								<a href="#1542-12-23">23</a>
-							</td>
-							<td>
-								<a href="#1542-12-24">24</a>
-							</td>
-							<td>
-								<a href="#1542-12-25">25</a>
-							</td>
-							<td>
-								<a href="#1542-12-26">26</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-12'">
+<a href="#1542-09-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1542-12-27">27</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-13'">
+<a href="#1542-09-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-12-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-14'">
+<a href="#1542-09-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-12-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-15'">
+<a href="#1542-09-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-12-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-16'">
+<a href="#1542-09-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1542-12-31">31</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-17'">
+<a href="#1542-09-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-18'">
+<a href="#1542-09-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-19'">
+<a href="#1542-09-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-20'">
+<a href="#1542-09-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-21'">
+<a href="#1542-09-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-22'">
+<a href="#1542-09-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-23'">
+<a href="#1542-09-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-24'">
+<a href="#1542-09-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-25'">
+<a href="#1542-09-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-26'">
+<a href="#1542-09-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-27'">
+<a href="#1542-09-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-28'">
+<a href="#1542-09-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-29'">
+<a href="#1542-09-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-09-30'">
+<a href="#1542-09-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td colspan="5">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10'">
+<a href="#1542-10" class="date_valid">October</a></xsl:when>					<xsl:otherwise>October</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td colspan="2">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542'">
+<a href="#1542" class="date_valid">1542</a></xsl:when>					<xsl:otherwise>1542</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>S</td>
+							<td>M</td>
+							<td>T</td>
+							<td>W</td>
+							<td>T</td>
+							<td>F</td>
+							<td>S</td>
+						</tr>
+						<tr>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-01'">
+<a href="#1542-10-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-02'">
+<a href="#1542-10-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-03'">
+<a href="#1542-10-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-04'">
+<a href="#1542-10-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-05'">
+<a href="#1542-10-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-06'">
+<a href="#1542-10-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-07'">
+<a href="#1542-10-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-08'">
+<a href="#1542-10-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-09'">
+<a href="#1542-10-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-10'">
+<a href="#1542-10-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-11'">
+<a href="#1542-10-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-12'">
+<a href="#1542-10-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-13'">
+<a href="#1542-10-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-14'">
+<a href="#1542-10-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-15'">
+<a href="#1542-10-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-16'">
+<a href="#1542-10-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-17'">
+<a href="#1542-10-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-18'">
+<a href="#1542-10-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-19'">
+<a href="#1542-10-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-20'">
+<a href="#1542-10-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-21'">
+<a href="#1542-10-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-22'">
+<a href="#1542-10-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-23'">
+<a href="#1542-10-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-24'">
+<a href="#1542-10-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-25'">
+<a href="#1542-10-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-26'">
+<a href="#1542-10-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-27'">
+<a href="#1542-10-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-28'">
+<a href="#1542-10-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-29'">
+<a href="#1542-10-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-30'">
+<a href="#1542-10-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-10-31'">
+<a href="#1542-10-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td colspan="5">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11'">
+<a href="#1542-11" class="date_valid">November</a></xsl:when>					<xsl:otherwise>November</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td colspan="2">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542'">
+<a href="#1542" class="date_valid">1542</a></xsl:when>					<xsl:otherwise>1542</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>S</td>
+							<td>M</td>
+							<td>T</td>
+							<td>W</td>
+							<td>T</td>
+							<td>F</td>
+							<td>S</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-01'">
+<a href="#1542-11-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-02'">
+<a href="#1542-11-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-03'">
+<a href="#1542-11-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-04'">
+<a href="#1542-11-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-05'">
+<a href="#1542-11-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-06'">
+<a href="#1542-11-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-07'">
+<a href="#1542-11-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-08'">
+<a href="#1542-11-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-09'">
+<a href="#1542-11-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-10'">
+<a href="#1542-11-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-11'">
+<a href="#1542-11-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-12'">
+<a href="#1542-11-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-13'">
+<a href="#1542-11-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-14'">
+<a href="#1542-11-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-15'">
+<a href="#1542-11-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-16'">
+<a href="#1542-11-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-17'">
+<a href="#1542-11-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-18'">
+<a href="#1542-11-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-19'">
+<a href="#1542-11-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-20'">
+<a href="#1542-11-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-21'">
+<a href="#1542-11-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-22'">
+<a href="#1542-11-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-23'">
+<a href="#1542-11-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-24'">
+<a href="#1542-11-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-25'">
+<a href="#1542-11-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-26'">
+<a href="#1542-11-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-27'">
+<a href="#1542-11-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-28'">
+<a href="#1542-11-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-29'">
+<a href="#1542-11-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-11-30'">
+<a href="#1542-11-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td colspan="5">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12'">
+<a href="#1542-12" class="date_valid">December</a></xsl:when>					<xsl:otherwise>December</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td colspan="2">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542'">
+<a href="#1542" class="date_valid">1542</a></xsl:when>					<xsl:otherwise>1542</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>S</td>
+							<td>M</td>
+							<td>T</td>
+							<td>W</td>
+							<td>T</td>
+							<td>F</td>
+							<td>S</td>
+						</tr>
+						<tr>
+							<td/>
+							<td/>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-01'">
+<a href="#1542-12-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-02'">
+<a href="#1542-12-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-03'">
+<a href="#1542-12-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-04'">
+<a href="#1542-12-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-05'">
+<a href="#1542-12-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-06'">
+<a href="#1542-12-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-07'">
+<a href="#1542-12-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-08'">
+<a href="#1542-12-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-09'">
+<a href="#1542-12-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-10'">
+<a href="#1542-12-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-11'">
+<a href="#1542-12-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-12'">
+<a href="#1542-12-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-13'">
+<a href="#1542-12-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-14'">
+<a href="#1542-12-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-15'">
+<a href="#1542-12-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-16'">
+<a href="#1542-12-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-17'">
+<a href="#1542-12-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-18'">
+<a href="#1542-12-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-19'">
+<a href="#1542-12-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-20'">
+<a href="#1542-12-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-21'">
+<a href="#1542-12-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-22'">
+<a href="#1542-12-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-23'">
+<a href="#1542-12-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-24'">
+<a href="#1542-12-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-25'">
+<a href="#1542-12-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-26'">
+<a href="#1542-12-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-27'">
+<a href="#1542-12-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-28'">
+<a href="#1542-12-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-29'">
+<a href="#1542-12-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-30'">
+<a href="#1542-12-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1542-12-31'">
+<a href="#1542-12-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td/>
 							<td/>
@@ -5871,16 +9380,22 @@
 					</table>
 				</div>
 			</div>
-			<div id="1543" class="tabs_content">
+			<div id="c_1543" class="tabs_content">
 				<!--<h3>1543</h3>-->
 				<div style="display:flex; flex-wrap:wrap; justify-content:space-between;">
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1543-01">January</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01'">
+<a href="#1543-01" class="date_valid">January</a></xsl:when>					<xsl:otherwise>January</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1543">1543</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543'">
+<a href="#1543" class="date_valid">1543</a></xsl:when>					<xsl:otherwise>1543</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -5899,107 +9414,200 @@
 							<td/>
 							<td/>
 							<td>
-								<a href="#1543-01-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-01'">
+<a href="#1543-01-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-01-02">2</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-01-03">3</a>
-							</td>
-							<td>
-								<a href="#1543-01-04">4</a>
-							</td>
-							<td>
-								<a href="#1543-01-05">5</a>
-							</td>
-							<td>
-								<a href="#1543-01-06">6</a>
-							</td>
-							<td>
-								<a href="#1543-01-07">7</a>
-							</td>
-							<td>
-								<a href="#1543-01-08">8</a>
-							</td>
-							<td>
-								<a href="#1543-01-09">9</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-02'">
+<a href="#1543-01-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1543-01-10">10</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-03'">
+<a href="#1543-01-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-01-11">11</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-04'">
+<a href="#1543-01-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-01-12">12</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-05'">
+<a href="#1543-01-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-01-13">13</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-06'">
+<a href="#1543-01-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-01-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-07'">
+<a href="#1543-01-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-01-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-08'">
+<a href="#1543-01-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-01-16">16</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-01-17">17</a>
-							</td>
-							<td>
-								<a href="#1543-01-18">18</a>
-							</td>
-							<td>
-								<a href="#1543-01-19">19</a>
-							</td>
-							<td>
-								<a href="#1543-01-20">20</a>
-							</td>
-							<td>
-								<a href="#1543-01-21">21</a>
-							</td>
-							<td>
-								<a href="#1543-01-22">22</a>
-							</td>
-							<td>
-								<a href="#1543-01-23">23</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-09'">
+<a href="#1543-01-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1543-01-24">24</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-10'">
+<a href="#1543-01-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-01-25">25</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-11'">
+<a href="#1543-01-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-01-26">26</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-12'">
+<a href="#1543-01-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-01-27">27</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-13'">
+<a href="#1543-01-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-01-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-14'">
+<a href="#1543-01-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-01-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-15'">
+<a href="#1543-01-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-01-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-16'">
+<a href="#1543-01-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1543-01-31">31</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-17'">
+<a href="#1543-01-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-18'">
+<a href="#1543-01-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-19'">
+<a href="#1543-01-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-20'">
+<a href="#1543-01-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-21'">
+<a href="#1543-01-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-22'">
+<a href="#1543-01-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-23'">
+<a href="#1543-01-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-24'">
+<a href="#1543-01-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-25'">
+<a href="#1543-01-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-26'">
+<a href="#1543-01-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-27'">
+<a href="#1543-01-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-28'">
+<a href="#1543-01-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-29'">
+<a href="#1543-01-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-30'">
+<a href="#1543-01-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-01-31'">
+<a href="#1543-01-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td/>
 							<td/>
@@ -6012,10 +9620,16 @@
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1543-02">February</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02'">
+<a href="#1543-02" class="date_valid">February</a></xsl:when>					<xsl:otherwise>February</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1543">1543</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543'">
+<a href="#1543" class="date_valid">1543</a></xsl:when>					<xsl:otherwise>1543</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -6030,96 +9644,180 @@
 						<tr>
 							<td/>
 							<td>
-								<a href="#1543-02-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-01'">
+<a href="#1543-02-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-02-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-02'">
+<a href="#1543-02-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-02-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-03'">
+<a href="#1543-02-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-02-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-04'">
+<a href="#1543-02-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-02-05">5</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-05'">
+<a href="#1543-02-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-02-06">6</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-02-07">7</a>
-							</td>
-							<td>
-								<a href="#1543-02-08">8</a>
-							</td>
-							<td>
-								<a href="#1543-02-09">9</a>
-							</td>
-							<td>
-								<a href="#1543-02-10">10</a>
-							</td>
-							<td>
-								<a href="#1543-02-11">11</a>
-							</td>
-							<td>
-								<a href="#1543-02-12">12</a>
-							</td>
-							<td>
-								<a href="#1543-02-13">13</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-06'">
+<a href="#1543-02-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1543-02-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-07'">
+<a href="#1543-02-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-02-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-08'">
+<a href="#1543-02-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-02-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-09'">
+<a href="#1543-02-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-02-17">17</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-10'">
+<a href="#1543-02-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-02-18">18</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-11'">
+<a href="#1543-02-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-02-19">19</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-12'">
+<a href="#1543-02-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-02-20">20</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-02-21">21</a>
-							</td>
-							<td>
-								<a href="#1543-02-22">22</a>
-							</td>
-							<td>
-								<a href="#1543-02-23">23</a>
-							</td>
-							<td>
-								<a href="#1543-02-24">24</a>
-							</td>
-							<td>
-								<a href="#1543-02-25">25</a>
-							</td>
-							<td>
-								<a href="#1543-02-26">26</a>
-							</td>
-							<td>
-								<a href="#1543-02-27">27</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-13'">
+<a href="#1543-02-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1543-02-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-14'">
+<a href="#1543-02-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-15'">
+<a href="#1543-02-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-16'">
+<a href="#1543-02-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-17'">
+<a href="#1543-02-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-18'">
+<a href="#1543-02-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-19'">
+<a href="#1543-02-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-20'">
+<a href="#1543-02-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-21'">
+<a href="#1543-02-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-22'">
+<a href="#1543-02-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-23'">
+<a href="#1543-02-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-24'">
+<a href="#1543-02-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-25'">
+<a href="#1543-02-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-26'">
+<a href="#1543-02-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-27'">
+<a href="#1543-02-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-02-28'">
+<a href="#1543-02-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td/>
 							<td/>
@@ -6132,10 +9830,16 @@
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1543-03">March</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03'">
+<a href="#1543-03" class="date_valid">March</a></xsl:when>					<xsl:otherwise>March</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1543">1543</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543'">
+<a href="#1543" class="date_valid">1543</a></xsl:when>					<xsl:otherwise>1543</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -6150,105 +9854,198 @@
 						<tr>
 							<td/>
 							<td>
-								<a href="#1543-03-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-01'">
+<a href="#1543-03-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-03-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-02'">
+<a href="#1543-03-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-03-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-03'">
+<a href="#1543-03-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-03-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-04'">
+<a href="#1543-03-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-03-05">5</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-05'">
+<a href="#1543-03-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-03-06">6</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-03-07">7</a>
-							</td>
-							<td>
-								<a href="#1543-03-08">8</a>
-							</td>
-							<td>
-								<a href="#1543-03-09">9</a>
-							</td>
-							<td>
-								<a href="#1543-03-10">10</a>
-							</td>
-							<td>
-								<a href="#1543-03-11">11</a>
-							</td>
-							<td>
-								<a href="#1543-03-12">12</a>
-							</td>
-							<td>
-								<a href="#1543-03-13">13</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-06'">
+<a href="#1543-03-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1543-03-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-07'">
+<a href="#1543-03-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-03-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-08'">
+<a href="#1543-03-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-03-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-09'">
+<a href="#1543-03-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-03-17">17</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-10'">
+<a href="#1543-03-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-03-18">18</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-11'">
+<a href="#1543-03-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-03-19">19</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-12'">
+<a href="#1543-03-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-03-20">20</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-03-21">21</a>
-							</td>
-							<td>
-								<a href="#1543-03-22">22</a>
-							</td>
-							<td>
-								<a href="#1543-03-23">23</a>
-							</td>
-							<td>
-								<a href="#1543-03-24">24</a>
-							</td>
-							<td>
-								<a href="#1543-03-25">25</a>
-							</td>
-							<td>
-								<a href="#1543-03-26">26</a>
-							</td>
-							<td>
-								<a href="#1543-03-27">27</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-13'">
+<a href="#1543-03-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1543-03-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-14'">
+<a href="#1543-03-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-03-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-15'">
+<a href="#1543-03-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-03-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-16'">
+<a href="#1543-03-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-03-31">31</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-17'">
+<a href="#1543-03-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-18'">
+<a href="#1543-03-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-19'">
+<a href="#1543-03-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-20'">
+<a href="#1543-03-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-21'">
+<a href="#1543-03-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-22'">
+<a href="#1543-03-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-23'">
+<a href="#1543-03-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-24'">
+<a href="#1543-03-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-25'">
+<a href="#1543-03-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-26'">
+<a href="#1543-03-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-27'">
+<a href="#1543-03-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-28'">
+<a href="#1543-03-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-29'">
+<a href="#1543-03-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-30'">
+<a href="#1543-03-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-03-31'">
+<a href="#1543-03-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td/>
 							<td/>
@@ -6258,10 +10055,16 @@
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1543-04">April</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04'">
+<a href="#1543-04" class="date_valid">April</a></xsl:when>					<xsl:otherwise>April</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1543">1543</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543'">
+<a href="#1543" class="date_valid">1543</a></xsl:when>					<xsl:otherwise>1543</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -6279,102 +10082,192 @@
 							<td/>
 							<td/>
 							<td>
-								<a href="#1543-04-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-01'">
+<a href="#1543-04-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-04-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-02'">
+<a href="#1543-04-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-04-03">3</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-04-04">4</a>
-							</td>
-							<td>
-								<a href="#1543-04-05">5</a>
-							</td>
-							<td>
-								<a href="#1543-04-06">6</a>
-							</td>
-							<td>
-								<a href="#1543-04-07">7</a>
-							</td>
-							<td>
-								<a href="#1543-04-08">8</a>
-							</td>
-							<td>
-								<a href="#1543-04-09">9</a>
-							</td>
-							<td>
-								<a href="#1543-04-10">10</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-03'">
+<a href="#1543-04-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1543-04-11">11</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-04'">
+<a href="#1543-04-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-04-12">12</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-05'">
+<a href="#1543-04-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-04-13">13</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-06'">
+<a href="#1543-04-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-04-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-07'">
+<a href="#1543-04-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-04-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-08'">
+<a href="#1543-04-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-04-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-09'">
+<a href="#1543-04-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-04-17">17</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-04-18">18</a>
-							</td>
-							<td>
-								<a href="#1543-04-19">19</a>
-							</td>
-							<td>
-								<a href="#1543-04-20">20</a>
-							</td>
-							<td>
-								<a href="#1543-04-21">21</a>
-							</td>
-							<td>
-								<a href="#1543-04-22">22</a>
-							</td>
-							<td>
-								<a href="#1543-04-23">23</a>
-							</td>
-							<td>
-								<a href="#1543-04-24">24</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-10'">
+<a href="#1543-04-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1543-04-25">25</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-11'">
+<a href="#1543-04-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-04-26">26</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-12'">
+<a href="#1543-04-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-04-27">27</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-13'">
+<a href="#1543-04-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-04-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-14'">
+<a href="#1543-04-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-04-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-15'">
+<a href="#1543-04-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-04-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-16'">
+<a href="#1543-04-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-17'">
+<a href="#1543-04-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-18'">
+<a href="#1543-04-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-19'">
+<a href="#1543-04-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-20'">
+<a href="#1543-04-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-21'">
+<a href="#1543-04-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-22'">
+<a href="#1543-04-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-23'">
+<a href="#1543-04-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-24'">
+<a href="#1543-04-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-25'">
+<a href="#1543-04-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-26'">
+<a href="#1543-04-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-27'">
+<a href="#1543-04-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-28'">
+<a href="#1543-04-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-29'">
+<a href="#1543-04-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-04-30'">
+<a href="#1543-04-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td/>
 						</tr>
@@ -6382,10 +10275,16 @@
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1543-05">May</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05'">
+<a href="#1543-05" class="date_valid">May</a></xsl:when>					<xsl:otherwise>May</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1543">1543</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543'">
+<a href="#1543" class="date_valid">1543</a></xsl:when>					<xsl:otherwise>1543</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -6405,743 +10304,201 @@
 							<td/>
 							<td/>
 							<td>
-								<a href="#1543-05-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-01'">
+<a href="#1543-05-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1543-05-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-02'">
+<a href="#1543-05-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-05-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-03'">
+<a href="#1543-05-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-05-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-04'">
+<a href="#1543-05-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-05-05">5</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-05'">
+<a href="#1543-05-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-05-06">6</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-06'">
+<a href="#1543-05-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-05-07">7</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-07'">
+<a href="#1543-05-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-05-08">8</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-05-09">9</a>
-							</td>
-							<td>
-								<a href="#1543-05-10">10</a>
-							</td>
-							<td>
-								<a href="#1543-05-11">11</a>
-							</td>
-							<td>
-								<a href="#1543-05-12">12</a>
-							</td>
-							<td>
-								<a href="#1543-05-13">13</a>
-							</td>
-							<td>
-								<a href="#1543-05-14">14</a>
-							</td>
-							<td>
-								<a href="#1543-05-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-08'">
+<a href="#1543-05-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1543-05-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-09'">
+<a href="#1543-05-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-05-17">17</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-10'">
+<a href="#1543-05-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-05-18">18</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-11'">
+<a href="#1543-05-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-05-19">19</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-12'">
+<a href="#1543-05-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-05-20">20</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-13'">
+<a href="#1543-05-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-05-21">21</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-14'">
+<a href="#1543-05-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-05-22">22</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-05-23">23</a>
-							</td>
-							<td>
-								<a href="#1543-05-24">24</a>
-							</td>
-							<td>
-								<a href="#1543-05-25">25</a>
-							</td>
-							<td>
-								<a href="#1543-05-26">26</a>
-							</td>
-							<td>
-								<a href="#1543-05-27">27</a>
-							</td>
-							<td>
-								<a href="#1543-05-28">28</a>
-							</td>
-							<td>
-								<a href="#1543-05-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-15'">
+<a href="#1543-05-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1543-05-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-16'">
+<a href="#1543-05-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-05-31">31</a>
-							</td>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td colspan="5">
-								<a href="#1543-06">June</a>
-							</td>
-							<td colspan="2">
-								<a href="#1543">1543</a>
-							</td>
-						</tr>
-						<tr>
-							<td>S</td>
-							<td>M</td>
-							<td>T</td>
-							<td>W</td>
-							<td>T</td>
-							<td>F</td>
-							<td>S</td>
-						</tr>
-						<tr>
-							<td/>
-							<td/>
-							<td>
-								<a href="#1543-06-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-17'">
+<a href="#1543-05-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-06-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-18'">
+<a href="#1543-05-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-06-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-19'">
+<a href="#1543-05-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-06-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-20'">
+<a href="#1543-05-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-06-05">5</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-21'">
+<a href="#1543-05-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-22'">
+<a href="#1543-05-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1543-06-06">6</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-23'">
+<a href="#1543-05-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-06-07">7</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-24'">
+<a href="#1543-05-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-06-08">8</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-25'">
+<a href="#1543-05-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-06-09">9</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-26'">
+<a href="#1543-05-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-06-10">10</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-27'">
+<a href="#1543-05-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-06-11">11</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-28'">
+<a href="#1543-05-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-06-12">12</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-06-13">13</a>
-							</td>
-							<td>
-								<a href="#1543-06-14">14</a>
-							</td>
-							<td>
-								<a href="#1543-06-15">15</a>
-							</td>
-							<td>
-								<a href="#1543-06-16">16</a>
-							</td>
-							<td>
-								<a href="#1543-06-17">17</a>
-							</td>
-							<td>
-								<a href="#1543-06-18">18</a>
-							</td>
-							<td>
-								<a href="#1543-06-19">19</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-29'">
+<a href="#1543-05-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1543-06-20">20</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-30'">
+<a href="#1543-05-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-06-21">21</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-05-31'">
+<a href="#1543-05-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
 							</td>
-							<td>
-								<a href="#1543-06-22">22</a>
-							</td>
-							<td>
-								<a href="#1543-06-23">23</a>
-							</td>
-							<td>
-								<a href="#1543-06-24">24</a>
-							</td>
-							<td>
-								<a href="#1543-06-25">25</a>
-							</td>
-							<td>
-								<a href="#1543-06-26">26</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-06-27">27</a>
-							</td>
-							<td>
-								<a href="#1543-06-28">28</a>
-							</td>
-							<td>
-								<a href="#1543-06-29">29</a>
-							</td>
-							<td>
-								<a href="#1543-06-30">30</a>
-							</td>
-							<td/>
-							<td/>
-							<td/>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td colspan="5">
-								<a href="#1543-07">July</a>
-							</td>
-							<td colspan="2">
-								<a href="#1543">1543</a>
-							</td>
-						</tr>
-						<tr>
-							<td>S</td>
-							<td>M</td>
-							<td>T</td>
-							<td>W</td>
-							<td>T</td>
-							<td>F</td>
-							<td>S</td>
-						</tr>
-						<tr>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-							<td>
-								<a href="#1543-07-01">1</a>
-							</td>
-							<td>
-								<a href="#1543-07-02">2</a>
-							</td>
-							<td>
-								<a href="#1543-07-03">3</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-07-04">4</a>
-							</td>
-							<td>
-								<a href="#1543-07-05">5</a>
-							</td>
-							<td>
-								<a href="#1543-07-06">6</a>
-							</td>
-							<td>
-								<a href="#1543-07-07">7</a>
-							</td>
-							<td>
-								<a href="#1543-07-08">8</a>
-							</td>
-							<td>
-								<a href="#1543-07-09">9</a>
-							</td>
-							<td>
-								<a href="#1543-07-10">10</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-07-11">11</a>
-							</td>
-							<td>
-								<a href="#1543-07-12">12</a>
-							</td>
-							<td>
-								<a href="#1543-07-13">13</a>
-							</td>
-							<td>
-								<a href="#1543-07-14">14</a>
-							</td>
-							<td>
-								<a href="#1543-07-15">15</a>
-							</td>
-							<td>
-								<a href="#1543-07-16">16</a>
-							</td>
-							<td>
-								<a href="#1543-07-17">17</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-07-18">18</a>
-							</td>
-							<td>
-								<a href="#1543-07-19">19</a>
-							</td>
-							<td>
-								<a href="#1543-07-20">20</a>
-							</td>
-							<td>
-								<a href="#1543-07-21">21</a>
-							</td>
-							<td>
-								<a href="#1543-07-22">22</a>
-							</td>
-							<td>
-								<a href="#1543-07-23">23</a>
-							</td>
-							<td>
-								<a href="#1543-07-24">24</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-07-25">25</a>
-							</td>
-							<td>
-								<a href="#1543-07-26">26</a>
-							</td>
-							<td>
-								<a href="#1543-07-27">27</a>
-							</td>
-							<td>
-								<a href="#1543-07-28">28</a>
-							</td>
-							<td>
-								<a href="#1543-07-29">29</a>
-							</td>
-							<td>
-								<a href="#1543-07-30">30</a>
-							</td>
-							<td>
-								<a href="#1543-07-31">31</a>
-							</td>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td colspan="5">
-								<a href="#1543-08">August</a>
-							</td>
-							<td colspan="2">
-								<a href="#1543">1543</a>
-							</td>
-						</tr>
-						<tr>
-							<td>S</td>
-							<td>M</td>
-							<td>T</td>
-							<td>W</td>
-							<td>T</td>
-							<td>F</td>
-							<td>S</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-08-01">1</a>
-							</td>
-							<td>
-								<a href="#1543-08-02">2</a>
-							</td>
-							<td>
-								<a href="#1543-08-03">3</a>
-							</td>
-							<td>
-								<a href="#1543-08-04">4</a>
-							</td>
-							<td>
-								<a href="#1543-08-05">5</a>
-							</td>
-							<td>
-								<a href="#1543-08-06">6</a>
-							</td>
-							<td>
-								<a href="#1543-08-07">7</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-08-08">8</a>
-							</td>
-							<td>
-								<a href="#1543-08-09">9</a>
-							</td>
-							<td>
-								<a href="#1543-08-10">10</a>
-							</td>
-							<td>
-								<a href="#1543-08-11">11</a>
-							</td>
-							<td>
-								<a href="#1543-08-12">12</a>
-							</td>
-							<td>
-								<a href="#1543-08-13">13</a>
-							</td>
-							<td>
-								<a href="#1543-08-14">14</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-08-15">15</a>
-							</td>
-							<td>
-								<a href="#1543-08-16">16</a>
-							</td>
-							<td>
-								<a href="#1543-08-17">17</a>
-							</td>
-							<td>
-								<a href="#1543-08-18">18</a>
-							</td>
-							<td>
-								<a href="#1543-08-19">19</a>
-							</td>
-							<td>
-								<a href="#1543-08-20">20</a>
-							</td>
-							<td>
-								<a href="#1543-08-21">21</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-08-22">22</a>
-							</td>
-							<td>
-								<a href="#1543-08-23">23</a>
-							</td>
-							<td>
-								<a href="#1543-08-24">24</a>
-							</td>
-							<td>
-								<a href="#1543-08-25">25</a>
-							</td>
-							<td>
-								<a href="#1543-08-26">26</a>
-							</td>
-							<td>
-								<a href="#1543-08-27">27</a>
-							</td>
-							<td>
-								<a href="#1543-08-28">28</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-08-29">29</a>
-							</td>
-							<td>
-								<a href="#1543-08-30">30</a>
-							</td>
-							<td>
-								<a href="#1543-08-31">31</a>
-							</td>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td colspan="5">
-								<a href="#1543-09">September</a>
-							</td>
-							<td colspan="2">
-								<a href="#1543">1543</a>
-							</td>
-						</tr>
-						<tr>
-							<td>S</td>
-							<td>M</td>
-							<td>T</td>
-							<td>W</td>
-							<td>T</td>
-							<td>F</td>
-							<td>S</td>
-						</tr>
-						<tr>
-							<td/>
-							<td/>
-							<td/>
-							<td>
-								<a href="#1543-09-01">1</a>
-							</td>
-							<td>
-								<a href="#1543-09-02">2</a>
-							</td>
-							<td>
-								<a href="#1543-09-03">3</a>
-							</td>
-							<td>
-								<a href="#1543-09-04">4</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-09-05">5</a>
-							</td>
-							<td>
-								<a href="#1543-09-06">6</a>
-							</td>
-							<td>
-								<a href="#1543-09-07">7</a>
-							</td>
-							<td>
-								<a href="#1543-09-08">8</a>
-							</td>
-							<td>
-								<a href="#1543-09-09">9</a>
-							</td>
-							<td>
-								<a href="#1543-09-10">10</a>
-							</td>
-							<td>
-								<a href="#1543-09-11">11</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-09-12">12</a>
-							</td>
-							<td>
-								<a href="#1543-09-13">13</a>
-							</td>
-							<td>
-								<a href="#1543-09-14">14</a>
-							</td>
-							<td>
-								<a href="#1543-09-15">15</a>
-							</td>
-							<td>
-								<a href="#1543-09-16">16</a>
-							</td>
-							<td>
-								<a href="#1543-09-17">17</a>
-							</td>
-							<td>
-								<a href="#1543-09-18">18</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-09-19">19</a>
-							</td>
-							<td>
-								<a href="#1543-09-20">20</a>
-							</td>
-							<td>
-								<a href="#1543-09-21">21</a>
-							</td>
-							<td>
-								<a href="#1543-09-22">22</a>
-							</td>
-							<td>
-								<a href="#1543-09-23">23</a>
-							</td>
-							<td>
-								<a href="#1543-09-24">24</a>
-							</td>
-							<td>
-								<a href="#1543-09-25">25</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-09-26">26</a>
-							</td>
-							<td>
-								<a href="#1543-09-27">27</a>
-							</td>
-							<td>
-								<a href="#1543-09-28">28</a>
-							</td>
-							<td>
-								<a href="#1543-09-29">29</a>
-							</td>
-							<td>
-								<a href="#1543-09-30">30</a>
-							</td>
-							<td/>
-							<td/>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td colspan="5">
-								<a href="#1543-10">October</a>
-							</td>
-							<td colspan="2">
-								<a href="#1543">1543</a>
-							</td>
-						</tr>
-						<tr>
-							<td>S</td>
-							<td>M</td>
-							<td>T</td>
-							<td>W</td>
-							<td>T</td>
-							<td>F</td>
-							<td>S</td>
-						</tr>
-						<tr>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-							<td/>
-							<td>
-								<a href="#1543-10-01">1</a>
-							</td>
-							<td>
-								<a href="#1543-10-02">2</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-10-03">3</a>
-							</td>
-							<td>
-								<a href="#1543-10-04">4</a>
-							</td>
-							<td>
-								<a href="#1543-10-05">5</a>
-							</td>
-							<td>
-								<a href="#1543-10-06">6</a>
-							</td>
-							<td>
-								<a href="#1543-10-07">7</a>
-							</td>
-							<td>
-								<a href="#1543-10-08">8</a>
-							</td>
-							<td>
-								<a href="#1543-10-09">9</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-10-10">10</a>
-							</td>
-							<td>
-								<a href="#1543-10-11">11</a>
-							</td>
-							<td>
-								<a href="#1543-10-12">12</a>
-							</td>
-							<td>
-								<a href="#1543-10-13">13</a>
-							</td>
-							<td>
-								<a href="#1543-10-14">14</a>
-							</td>
-							<td>
-								<a href="#1543-10-15">15</a>
-							</td>
-							<td>
-								<a href="#1543-10-16">16</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-10-17">17</a>
-							</td>
-							<td>
-								<a href="#1543-10-18">18</a>
-							</td>
-							<td>
-								<a href="#1543-10-19">19</a>
-							</td>
-							<td>
-								<a href="#1543-10-20">20</a>
-							</td>
-							<td>
-								<a href="#1543-10-21">21</a>
-							</td>
-							<td>
-								<a href="#1543-10-22">22</a>
-							</td>
-							<td>
-								<a href="#1543-10-23">23</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-10-24">24</a>
-							</td>
-							<td>
-								<a href="#1543-10-25">25</a>
-							</td>
-							<td>
-								<a href="#1543-10-26">26</a>
-							</td>
-							<td>
-								<a href="#1543-10-27">27</a>
-							</td>
-							<td>
-								<a href="#1543-10-28">28</a>
-							</td>
-							<td>
-								<a href="#1543-10-29">29</a>
-							</td>
-							<td>
-								<a href="#1543-10-30">30</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-10-31">31</a>
-							</td>
-							<td/>
 							<td/>
 							<td/>
 							<td/>
@@ -7152,10 +10509,16 @@
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1543-11">November</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06'">
+<a href="#1543-06" class="date_valid">June</a></xsl:when>					<xsl:otherwise>June</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1543">1543</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543'">
+<a href="#1543" class="date_valid">1543</a></xsl:when>					<xsl:otherwise>1543</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -7169,103 +10532,643 @@
 						</tr>
 						<tr>
 							<td/>
+							<td/>
 							<td>
-								<a href="#1543-11-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-01'">
+<a href="#1543-06-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-11-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-02'">
+<a href="#1543-06-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-11-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-03'">
+<a href="#1543-06-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-11-04">4</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-04'">
+<a href="#1543-06-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-11-05">5</a>
-							</td>
-							<td>
-								<a href="#1543-11-06">6</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-11-07">7</a>
-							</td>
-							<td>
-								<a href="#1543-11-08">8</a>
-							</td>
-							<td>
-								<a href="#1543-11-09">9</a>
-							</td>
-							<td>
-								<a href="#1543-11-10">10</a>
-							</td>
-							<td>
-								<a href="#1543-11-11">11</a>
-							</td>
-							<td>
-								<a href="#1543-11-12">12</a>
-							</td>
-							<td>
-								<a href="#1543-11-13">13</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-05'">
+<a href="#1543-06-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1543-11-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-06'">
+<a href="#1543-06-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-11-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-07'">
+<a href="#1543-06-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-11-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-08'">
+<a href="#1543-06-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-11-17">17</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-09'">
+<a href="#1543-06-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-11-18">18</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-10'">
+<a href="#1543-06-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-11-19">19</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-11'">
+<a href="#1543-06-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-11-20">20</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-11-21">21</a>
-							</td>
-							<td>
-								<a href="#1543-11-22">22</a>
-							</td>
-							<td>
-								<a href="#1543-11-23">23</a>
-							</td>
-							<td>
-								<a href="#1543-11-24">24</a>
-							</td>
-							<td>
-								<a href="#1543-11-25">25</a>
-							</td>
-							<td>
-								<a href="#1543-11-26">26</a>
-							</td>
-							<td>
-								<a href="#1543-11-27">27</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-12'">
+<a href="#1543-06-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1543-11-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-13'">
+<a href="#1543-06-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-11-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-14'">
+<a href="#1543-06-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-11-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-15'">
+<a href="#1543-06-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-16'">
+<a href="#1543-06-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-17'">
+<a href="#1543-06-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-18'">
+<a href="#1543-06-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-19'">
+<a href="#1543-06-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-20'">
+<a href="#1543-06-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-21'">
+<a href="#1543-06-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-22'">
+<a href="#1543-06-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-23'">
+<a href="#1543-06-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-24'">
+<a href="#1543-06-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-25'">
+<a href="#1543-06-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-26'">
+<a href="#1543-06-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-27'">
+<a href="#1543-06-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-28'">
+<a href="#1543-06-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-29'">
+<a href="#1543-06-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-06-30'">
+<a href="#1543-06-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td colspan="5">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07'">
+<a href="#1543-07" class="date_valid">July</a></xsl:when>					<xsl:otherwise>July</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td colspan="2">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543'">
+<a href="#1543" class="date_valid">1543</a></xsl:when>					<xsl:otherwise>1543</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>S</td>
+							<td>M</td>
+							<td>T</td>
+							<td>W</td>
+							<td>T</td>
+							<td>F</td>
+							<td>S</td>
+						</tr>
+						<tr>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-01'">
+<a href="#1543-07-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-02'">
+<a href="#1543-07-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-03'">
+<a href="#1543-07-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-04'">
+<a href="#1543-07-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-05'">
+<a href="#1543-07-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-06'">
+<a href="#1543-07-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-07'">
+<a href="#1543-07-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-08'">
+<a href="#1543-07-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-09'">
+<a href="#1543-07-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-10'">
+<a href="#1543-07-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-11'">
+<a href="#1543-07-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-12'">
+<a href="#1543-07-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-13'">
+<a href="#1543-07-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-14'">
+<a href="#1543-07-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-15'">
+<a href="#1543-07-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-16'">
+<a href="#1543-07-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-17'">
+<a href="#1543-07-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-18'">
+<a href="#1543-07-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-19'">
+<a href="#1543-07-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-20'">
+<a href="#1543-07-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-21'">
+<a href="#1543-07-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-22'">
+<a href="#1543-07-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-23'">
+<a href="#1543-07-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-24'">
+<a href="#1543-07-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-25'">
+<a href="#1543-07-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-26'">
+<a href="#1543-07-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-27'">
+<a href="#1543-07-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-28'">
+<a href="#1543-07-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-29'">
+<a href="#1543-07-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-30'">
+<a href="#1543-07-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-07-31'">
+<a href="#1543-07-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td colspan="5">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08'">
+<a href="#1543-08" class="date_valid">August</a></xsl:when>					<xsl:otherwise>August</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td colspan="2">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543'">
+<a href="#1543" class="date_valid">1543</a></xsl:when>					<xsl:otherwise>1543</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>S</td>
+							<td>M</td>
+							<td>T</td>
+							<td>W</td>
+							<td>T</td>
+							<td>F</td>
+							<td>S</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-01'">
+<a href="#1543-08-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-02'">
+<a href="#1543-08-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-03'">
+<a href="#1543-08-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-04'">
+<a href="#1543-08-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-05'">
+<a href="#1543-08-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-06'">
+<a href="#1543-08-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-07'">
+<a href="#1543-08-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-08'">
+<a href="#1543-08-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-09'">
+<a href="#1543-08-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-10'">
+<a href="#1543-08-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-11'">
+<a href="#1543-08-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-12'">
+<a href="#1543-08-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-13'">
+<a href="#1543-08-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-14'">
+<a href="#1543-08-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-15'">
+<a href="#1543-08-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-16'">
+<a href="#1543-08-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-17'">
+<a href="#1543-08-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-18'">
+<a href="#1543-08-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-19'">
+<a href="#1543-08-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-20'">
+<a href="#1543-08-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-21'">
+<a href="#1543-08-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-22'">
+<a href="#1543-08-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-23'">
+<a href="#1543-08-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-24'">
+<a href="#1543-08-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-25'">
+<a href="#1543-08-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-26'">
+<a href="#1543-08-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-27'">
+<a href="#1543-08-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-28'">
+<a href="#1543-08-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-29'">
+<a href="#1543-08-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-30'">
+<a href="#1543-08-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-08-31'">
+<a href="#1543-08-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td/>
 							<td/>
@@ -7276,10 +11179,16 @@
 					<table>
 						<tr>
 							<td colspan="5">
-								<a href="#1543-12">December</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09'">
+<a href="#1543-09" class="date_valid">September</a></xsl:when>					<xsl:otherwise>September</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td colspan="2">
-								<a href="#1543">1543</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543'">
+<a href="#1543" class="date_valid">1543</a></xsl:when>					<xsl:otherwise>1543</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
@@ -7296,105 +11205,872 @@
 							<td/>
 							<td/>
 							<td>
-								<a href="#1543-12-01">1</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-01'">
+<a href="#1543-09-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-12-02">2</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-02'">
+<a href="#1543-09-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-12-03">3</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-03'">
+<a href="#1543-09-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-12-04">4</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-12-05">5</a>
-							</td>
-							<td>
-								<a href="#1543-12-06">6</a>
-							</td>
-							<td>
-								<a href="#1543-12-07">7</a>
-							</td>
-							<td>
-								<a href="#1543-12-08">8</a>
-							</td>
-							<td>
-								<a href="#1543-12-09">9</a>
-							</td>
-							<td>
-								<a href="#1543-12-10">10</a>
-							</td>
-							<td>
-								<a href="#1543-12-11">11</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-04'">
+<a href="#1543-09-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1543-12-12">12</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-05'">
+<a href="#1543-09-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-12-13">13</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-06'">
+<a href="#1543-09-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-12-14">14</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-07'">
+<a href="#1543-09-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-12-15">15</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-08'">
+<a href="#1543-09-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-12-16">16</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-09'">
+<a href="#1543-09-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-12-17">17</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-10'">
+<a href="#1543-09-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-12-18">18</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#1543-12-19">19</a>
-							</td>
-							<td>
-								<a href="#1543-12-20">20</a>
-							</td>
-							<td>
-								<a href="#1543-12-21">21</a>
-							</td>
-							<td>
-								<a href="#1543-12-22">22</a>
-							</td>
-							<td>
-								<a href="#1543-12-23">23</a>
-							</td>
-							<td>
-								<a href="#1543-12-24">24</a>
-							</td>
-							<td>
-								<a href="#1543-12-25">25</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-11'">
+<a href="#1543-09-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a href="#1543-12-26">26</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-12'">
+<a href="#1543-09-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-12-27">27</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-13'">
+<a href="#1543-09-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-12-28">28</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-14'">
+<a href="#1543-09-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-12-29">29</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-15'">
+<a href="#1543-09-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-12-30">30</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-16'">
+<a href="#1543-09-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td>
-								<a href="#1543-12-31">31</a>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-17'">
+<a href="#1543-09-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-18'">
+<a href="#1543-09-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-19'">
+<a href="#1543-09-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-20'">
+<a href="#1543-09-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-21'">
+<a href="#1543-09-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-22'">
+<a href="#1543-09-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-23'">
+<a href="#1543-09-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-24'">
+<a href="#1543-09-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-25'">
+<a href="#1543-09-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-26'">
+<a href="#1543-09-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-27'">
+<a href="#1543-09-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-28'">
+<a href="#1543-09-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-29'">
+<a href="#1543-09-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-09-30'">
+<a href="#1543-09-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td colspan="5">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10'">
+<a href="#1543-10" class="date_valid">October</a></xsl:when>					<xsl:otherwise>October</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td colspan="2">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543'">
+<a href="#1543" class="date_valid">1543</a></xsl:when>					<xsl:otherwise>1543</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>S</td>
+							<td>M</td>
+							<td>T</td>
+							<td>W</td>
+							<td>T</td>
+							<td>F</td>
+							<td>S</td>
+						</tr>
+						<tr>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-01'">
+<a href="#1543-10-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-02'">
+<a href="#1543-10-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-03'">
+<a href="#1543-10-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-04'">
+<a href="#1543-10-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-05'">
+<a href="#1543-10-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-06'">
+<a href="#1543-10-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-07'">
+<a href="#1543-10-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-08'">
+<a href="#1543-10-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-09'">
+<a href="#1543-10-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-10'">
+<a href="#1543-10-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-11'">
+<a href="#1543-10-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-12'">
+<a href="#1543-10-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-13'">
+<a href="#1543-10-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-14'">
+<a href="#1543-10-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-15'">
+<a href="#1543-10-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-16'">
+<a href="#1543-10-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-17'">
+<a href="#1543-10-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-18'">
+<a href="#1543-10-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-19'">
+<a href="#1543-10-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-20'">
+<a href="#1543-10-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-21'">
+<a href="#1543-10-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-22'">
+<a href="#1543-10-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-23'">
+<a href="#1543-10-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-24'">
+<a href="#1543-10-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-25'">
+<a href="#1543-10-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-26'">
+<a href="#1543-10-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-27'">
+<a href="#1543-10-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-28'">
+<a href="#1543-10-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-29'">
+<a href="#1543-10-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-30'">
+<a href="#1543-10-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-10-31'">
+<a href="#1543-10-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td colspan="5">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11'">
+<a href="#1543-11" class="date_valid">November</a></xsl:when>					<xsl:otherwise>November</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td colspan="2">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543'">
+<a href="#1543" class="date_valid">1543</a></xsl:when>					<xsl:otherwise>1543</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>S</td>
+							<td>M</td>
+							<td>T</td>
+							<td>W</td>
+							<td>T</td>
+							<td>F</td>
+							<td>S</td>
+						</tr>
+						<tr>
+							<td/>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-01'">
+<a href="#1543-11-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-02'">
+<a href="#1543-11-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-03'">
+<a href="#1543-11-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-04'">
+<a href="#1543-11-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-05'">
+<a href="#1543-11-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-06'">
+<a href="#1543-11-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-07'">
+<a href="#1543-11-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-08'">
+<a href="#1543-11-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-09'">
+<a href="#1543-11-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-10'">
+<a href="#1543-11-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-11'">
+<a href="#1543-11-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-12'">
+<a href="#1543-11-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-13'">
+<a href="#1543-11-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-14'">
+<a href="#1543-11-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-15'">
+<a href="#1543-11-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-16'">
+<a href="#1543-11-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-17'">
+<a href="#1543-11-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-18'">
+<a href="#1543-11-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-19'">
+<a href="#1543-11-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-20'">
+<a href="#1543-11-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-21'">
+<a href="#1543-11-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-22'">
+<a href="#1543-11-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-23'">
+<a href="#1543-11-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-24'">
+<a href="#1543-11-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-25'">
+<a href="#1543-11-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-26'">
+<a href="#1543-11-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-27'">
+<a href="#1543-11-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-28'">
+<a href="#1543-11-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-29'">
+<a href="#1543-11-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-11-30'">
+<a href="#1543-11-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td colspan="5">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12'">
+<a href="#1543-12" class="date_valid">December</a></xsl:when>					<xsl:otherwise>December</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td colspan="2">
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543'">
+<a href="#1543" class="date_valid">1543</a></xsl:when>					<xsl:otherwise>1543</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>S</td>
+							<td>M</td>
+							<td>T</td>
+							<td>W</td>
+							<td>T</td>
+							<td>F</td>
+							<td>S</td>
+						</tr>
+						<tr>
+							<td/>
+							<td/>
+							<td/>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-01'">
+<a href="#1543-12-01" class="date_valid">1</a></xsl:when>					<xsl:otherwise>1</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-02'">
+<a href="#1543-12-02" class="date_valid">2</a></xsl:when>					<xsl:otherwise>2</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-03'">
+<a href="#1543-12-03" class="date_valid">3</a></xsl:when>					<xsl:otherwise>3</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-04'">
+<a href="#1543-12-04" class="date_valid">4</a></xsl:when>					<xsl:otherwise>4</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-05'">
+<a href="#1543-12-05" class="date_valid">5</a></xsl:when>					<xsl:otherwise>5</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-06'">
+<a href="#1543-12-06" class="date_valid">6</a></xsl:when>					<xsl:otherwise>6</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-07'">
+<a href="#1543-12-07" class="date_valid">7</a></xsl:when>					<xsl:otherwise>7</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-08'">
+<a href="#1543-12-08" class="date_valid">8</a></xsl:when>					<xsl:otherwise>8</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-09'">
+<a href="#1543-12-09" class="date_valid">9</a></xsl:when>					<xsl:otherwise>9</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-10'">
+<a href="#1543-12-10" class="date_valid">10</a></xsl:when>					<xsl:otherwise>10</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-11'">
+<a href="#1543-12-11" class="date_valid">11</a></xsl:when>					<xsl:otherwise>11</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-12'">
+<a href="#1543-12-12" class="date_valid">12</a></xsl:when>					<xsl:otherwise>12</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-13'">
+<a href="#1543-12-13" class="date_valid">13</a></xsl:when>					<xsl:otherwise>13</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-14'">
+<a href="#1543-12-14" class="date_valid">14</a></xsl:when>					<xsl:otherwise>14</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-15'">
+<a href="#1543-12-15" class="date_valid">15</a></xsl:when>					<xsl:otherwise>15</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-16'">
+<a href="#1543-12-16" class="date_valid">16</a></xsl:when>					<xsl:otherwise>16</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-17'">
+<a href="#1543-12-17" class="date_valid">17</a></xsl:when>					<xsl:otherwise>17</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-18'">
+<a href="#1543-12-18" class="date_valid">18</a></xsl:when>					<xsl:otherwise>18</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-19'">
+<a href="#1543-12-19" class="date_valid">19</a></xsl:when>					<xsl:otherwise>19</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-20'">
+<a href="#1543-12-20" class="date_valid">20</a></xsl:when>					<xsl:otherwise>20</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-21'">
+<a href="#1543-12-21" class="date_valid">21</a></xsl:when>					<xsl:otherwise>21</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-22'">
+<a href="#1543-12-22" class="date_valid">22</a></xsl:when>					<xsl:otherwise>22</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-23'">
+<a href="#1543-12-23" class="date_valid">23</a></xsl:when>					<xsl:otherwise>23</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-24'">
+<a href="#1543-12-24" class="date_valid">24</a></xsl:when>					<xsl:otherwise>24</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-25'">
+<a href="#1543-12-25" class="date_valid">25</a></xsl:when>					<xsl:otherwise>25</xsl:otherwise>
+</xsl:choose>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-26'">
+<a href="#1543-12-26" class="date_valid">26</a></xsl:when>					<xsl:otherwise>26</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-27'">
+<a href="#1543-12-27" class="date_valid">27</a></xsl:when>					<xsl:otherwise>27</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-28'">
+<a href="#1543-12-28" class="date_valid">28</a></xsl:when>					<xsl:otherwise>28</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-29'">
+<a href="#1543-12-29" class="date_valid">29</a></xsl:when>					<xsl:otherwise>29</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-30'">
+<a href="#1543-12-30" class="date_valid">30</a></xsl:when>					<xsl:otherwise>30</xsl:otherwise>
+</xsl:choose>
+							</td>
+							<td>
+								<xsl:choose>
+<xsl:when test="//tei:text//tei:date/@when='1543-12-31'">
+<a href="#1543-12-31" class="date_valid">31</a></xsl:when>					<xsl:otherwise>31</xsl:otherwise>
+</xsl:choose>
 							</td>
 							<td/>
 						</tr>
@@ -7414,7 +12090,7 @@
 				<ul>
 					<xsl:apply-templates select=". | //tei:date[@when = $when]" mode="sub_index"/>
 				</ul>
-				<a href="#top">
+				<a href="#top_2">
 					<img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png"
 						class="top"
 						style="position:absolute; bottom:0; right:0; padding:5px; width:30px;"
