@@ -12,7 +12,7 @@ body {
 }
 div.article_container{
 	border: 2px solid #1f0f7e;
-	margin: 5%; /*50px;*/
+	margin: 2% 5%; /*50px;*/
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -68,10 +68,12 @@ ul.nav_index {
 	font-size: 18pt;
 	transition: 0.3ms;
 	position: absolute;
+	left: -50px;
 }
 ul.nav_index li{
 	display: flex!important;
 	padding: 0;
+	padding-left: 5px;
 	transition: 0.2ms;
 	/*position: relative;
 	left: -10px;*/
@@ -83,7 +85,7 @@ ul.nav_index li a:hover{
 	color: #efe9e3!important;
 }
 .nav_top ul li:hover ul.nav_index {
-	display: block;
+	display: flex;
 }
 div.links{
 /*	border-left: 2px solid #1f0f7e;*/
@@ -143,7 +145,7 @@ article {
 	font-family: 'Times New Roman', serif;
 	scrollbar-color: #1f0f7e #f26339;/*might not always work*/
 	scrollbar-width: thin;
-	height: 500px;/*nécessaire pour le scroll laissant header out of it*/
+	height: 600px;/*nécessaire pour le scroll laissant header out of it*/
 	overflow: auto;/*nécessaire pour le scroll laissant header out of it*/
 	width: 100%;
 }
@@ -722,12 +724,11 @@ div.t_nav button a:hover{
 }*/
 button.t_nav {
 	width: 50%;
-	background: none;
+	background: #efe9e3;
 	border: 0.5px solid #1f0f7e;
 	height: 40px;
 	position: sticky;
 	top: 0;
-	background-color: #efe9e3;
 }
 button.t_nav:hover {
 	cursor: pointer;

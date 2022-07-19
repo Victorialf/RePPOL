@@ -32,6 +32,7 @@
 			<!--LINK ICI-->
 			<link rel="stylesheet" href="reppol.css" type="text/css"/>
 			<!--LINK ICI-->
+			
 			<title>RePPOL - <xsl:value-of select="$title"/></title>
 		</head>
 	</xsl:template>
@@ -55,7 +56,7 @@
 					<li>
 						<a href="{$pedago}">Interactive transcriptions</a>
 					</li>
-					<li>Index
+					<li style="position:relative;">Index
 						<ul class="nav_index">
 							<li><a href="{$index_characters}">Persons</a></li>
 							<li><a href="{$index_places}">Places</a></li>
@@ -67,6 +68,10 @@
 					</li>
 				</ul>
 			</nav>
+			<div>
+<!--				FORM & SEARCH-->
+				
+			</div>
 			<div class="links">
 				<a href="https://github.com/Victorialf/RePPOL" target="blanck">
 					<img src="GitHub-Mark-32px.png"/>
@@ -323,6 +328,7 @@
 				<!--				<xsl:call-template name="footer"/>-->
 			</html>
 		</xsl:result-document>
+<!--		PAGES DE TRANSCRIPTIONS INDIVIDUELLES-->
 		<xsl:for-each select="//tei:text[@xml:id = 'reppol_trans']//tei:pb">
 			<xsl:variable name="facs" select="@facs"/>
 			<xsl:variable name="startid">#</xsl:variable>

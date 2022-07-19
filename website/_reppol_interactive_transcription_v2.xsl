@@ -39,9 +39,6 @@
 			<div class="logo">
 				<a href="{$home}"><img src="logo_reppol-noir-rouge.png" class="logo"></img></a>
 			</div>
-			<!--						<h1>
-							RePPOL-PAPE
-						</h1>-->
 			<nav class="nav_top">
 				<ul>
 					<!--<li>
@@ -56,7 +53,7 @@
 					<li>
 						<a href="{$pedago}">Interactive transcriptions</a>
 					</li>
-					<li>Index
+					<li style="position:relative;">Index
 						<ul class="nav_index">
 							<li><a href="{$index_characters}">Persons</a></li>
 							<li><a href="{$index_places}">Places</a></li>
@@ -68,6 +65,10 @@
 					</li>
 				</ul>
 			</nav>
+			<div>
+				<!--				FORM & SEARCH-->
+				
+			</div>
 			<div class="links">
 				<a href="https://github.com/Victorialf/RePPOL" target="blanck">
 					<img src="GitHub-Mark-32px.png"/>
