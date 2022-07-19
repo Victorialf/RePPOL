@@ -471,8 +471,8 @@
 							<p>Chacun des éléments <gi>surface</gi> sera l'objet d'un renvoi ciblant
 								la valeur de son attribut <att>xml:id</att> dans un élément
 									<gi>pb</gi>
-								<gloss>page begining</gloss> qui fait l'objet d'une explication
-								détaillées.</p>
+								<gloss>page begining</gloss> qui fait<listRef><ref target="#pb"> l'objet d'une explication
+								détaillées</ref></listRef>.</p>
 
 						</div4>
 						<div4>
@@ -485,7 +485,7 @@
 								chacune des pages du Calendar dans un élément <gi>div</gi> de
 									<att>type</att>
 								<val>page_calendar</val> suivi d'un élément <gi>pb</gi> traité de
-								manière identique au <gi>pb</gi> de la transcription RePPOL.</p>
+								<listRef><ref target="#pb"> manière identique au <gi>pb</gi> de la transcription RePPOL</ref></listRef>.</p>
 
 							<p>Après quoi nous ajoutons des éléments <gi>div</gi>
 								<gloss>division</gloss> contenant des éléments <gi>head</gi>
@@ -625,9 +625,10 @@
 									xmlns="http://www.tei-c.org/ns/Examples"><div
 										type="question_set" n="7"/></egXML> car il s'agit du
 								troisième élément de <att>type</att>
-								<val>"question_set"</val> et que cette information nous est plus
+								<val>"question_set"</val> et que cette information nous est jugée par l'équipe scientifique plus
 								précieuse que le fait de savoir qu'il s'agit du septième élément
-									<gi>div</gi> de deuxième niveau. </p>
+								<gi>div</gi> de deuxième niveau. <listRef><ref target="#restru">Cliquez ici pour en apprendre plus sur la restructuration nécessaire pour ajouter la modélisation des pages à l'encodage.</ref></listRef></p>
+							
 							<div5>
 								<head>La <gi>div</gi> typée <val>"index"</val></head>
 								<p>La première des valeurs de <att>type</att> retenue est la valeur
@@ -1959,6 +1960,132 @@
 						</div4>
 					</div3>
 				</div2>
+				<div2 xml:id="restru">
+					<head>Restructuration en page</head>
+					<p>Afin de permettre une visualisation web page par page, l'équipe du projet a choisi d'opérer une restructuration de l'encodage. En plus du découpage par collection, section et sous-section nous ajoutons des éléments <gi>div</gi> <att>type</att> <val>page</val> autour du contenu de chacune des pages. Ces <gi>div</gi> doivent être placées au niveau directement inférieur à une section et doivent contenir l'élément <gi>pb</gi>.
+					<egXML xmlns="http://www.tei-c.org/ns/Examples">
+						<div type="collection" n="88">
+							<div type="deposition" n="22">
+								<div type="page">
+									<pb n="359" facs="#fs_359"/>
+									<!-- le contenu de la page 359 -->
+								</div>
+								<!--1 div refermée-->
+							</div>
+						</div>
+					</egXML>
+					Dans les cas où la section est un élément <gi>div</gi> de <att>type</att> <val>article</val>, l'élément <gi>div</gi> de <att>type</att> <val>page</val> est à un niveau hiérarchique supérieur.
+					<egXML xmlns="http://www.tei-c.org/ns/Examples">
+						<div type="collection" n="4">
+							<!--DÉBUT 009-->
+							<div type="page">
+								<pb n="009" facs="#fs_009"/>
+								<div type="article" n="1">
+									<head>Serles</head>
+<!--									contenu de la sous-section-->
+									<div>
+										<head>At layname</head>
+										
+<!--										contenu de la sous-section-->
+										
+									</div>
+								</div>
+								<!--la suite de la page 9-->
+							</div>
+						</div>
+					</egXML></p>
+					<p>Si dans la plupart des cas l'ajout des <gi>div</gi> de <att>type</att> <val>page</val> ne pose pas de problème, des cas gênants surviennent lorsque des sections ou des sous-sections sont à cheval sur plusieurs pages. Ces cas gênants ne surviennent que dans les 100 première pages du manuscrit sur un nombre limité d’entre elles, toujours pour des <gi>div</gi> de <att>type</att> <val>article</val> et éventuellement une sous-section. Ainsi l'article 2 et sa première sous-section commence page 9 et termine page 10 :
+					<egXML xmlns="http://www.tei-c.org/ns/Examples">
+						<div type="article" n="2">
+							<head>Sandwich al<expan>ias</expan> Gardin<expan>er </expan></head>
+							
+							<div>
+								<head>in <expan>ser</expan>mon in
+									Christes church <date type="procedure" when=""><expan>the</expan> iiide sonday aft<expan>er</expan> xii day</date>.</head>
+								<!-- le début de la sous-section -->
+								
+								<!--FIN 009-->
+								
+								<!--DÉBUT 010-->
+								<pb n="010" facs="#fs_010"/>
+								<!--la fin de la sous-section-->
+							</div>
+							
+							<div>
+								<head><date type="procedure" when="">The next sonday aft<expan>er</expan>.</date></head>
+								<!--la sous-section suivante-->
+							</div>
+						</div>
+					</egXML></p>
+					<p>Pour produire un encodage xml valide il convient alors de restructurer l'encodage de ces pages. Cette restructuration a été automatisée via une transformation XSLT disponible dans le <ref target="https://github.com/Victorialf/RePPOL">github du projet</ref>. La solutions trouvée consiste à fermer les <gi>div</gi> gênantes et d'en créer de nouvelle englobant la suite de son contenu sur la page suivante. Pour permettre d'identifier les sections comme n'étant qu'une seule et même section divisée on reproduit ces attributs <att>type</att> et <att>n</att> à l'identique. Dans le cas des sous-sections un attribut <gi>xml:id</gi> est ajouté avec un valeur générée automatiquement par le moteur de la transformation xslt à l'élément <gi>div</gi>refermé prématurément et un attribut <att>sameAs</att> avec pour valeur la valeur de l'attribut <att>xml:id</att> correspondant, cette valeur est elle aussi générée automatiquement par la transformation. Ce qui donne pour l'exemple précédent :
+					<egXML xmlns="http://www.tei-c.org/ns/Examples">
+						<div type="collection" n="4">
+							<!--DÉBUT 009-->
+							<div type="page">
+								<pb n="009" facs="#fs_009"/>
+								<div type="article" n="1">
+									<head>Serles</head>
+									<!--contenu de la 1e sous-section de l'article 1-->
+									<div>
+										<head>At layname</head>
+										<!--contenu de la 2e sous-section de l'article 1-->
+									</div>
+								</div>
+								<div type="article" n="2">
+									<head>Sandwich al<expan>ias</expan> Gardin<expan>er </expan>
+									</head>
+									<div xml:id="d1e2597"><!-- La sous-section est désormais munie d'un identifiant unique -->
+										<head>in <expan>ser</expan>mon in
+											Christes church <date type="procedure" when="">
+												<expan>the</expan> iiide sonday aft<expan>er</expan> xii day</date>.</head>
+										<!--contenu de la 1e sous-section de l'article 2-->
+
+										<!--FIN 009-->
+									</div>
+								</div>
+							</div>
+							<!--3 div refermées, la sous-section, la section, la page-->
+							
+							<!--DÉBUT 010-->
+							<div type="page">
+								<div type="article" n="2"><!--la section est recrée avec ses attributs permettant de l'identifier-->
+									<div sameAs="d1e2597"><!--la sous-section est recréer avec un @part renvoyant au début de la sous-section-->
+										<pb n="010" facs="#fs_010"/>
+										<!--contenu de la 1e sous-section de l'article 2-->
+									
+								</div>
+									<div>
+										<head>
+											<date type="procedure" when="">The next sonday aft<expan>er</expan>.</date>
+										</head>
+										
+										<!--contenu de la 2e sous-section de l'article 1-->
+										
+									</div>
+								</div>
+								<div type="article" n="3">
+									<head>Shether.</head>
+									<div>
+										<head>
+											<date type="procedure" when="">23 Apriles</date> in <expan>the</expan> chapt<expan>er</expan> howse.</head>
+										
+										<!--contenu de la 1e sous-section de l'article 1-->
+									</div>
+									<div xml:id="d1e2726"><!-- La sous-section est désormais munie d'un identifiant unique -->
+										<head>
+											<date type="procedure" when="">15 Maii</date> at saynt Stevyns.</head>
+										
+										<!--contenu de la 2e sous-section de l'article 1-->
+										
+										<!--FIN 010-->
+									</div>
+								</div>
+							</div>
+							<!--3 div refermées, la sous-section, la section, la page-->
+						</div>
+					</egXML></p>
+					<p>À noter : la transformation de restructuration utilisée a été développée pour être utilisée après la génération via de multiples scripts perl d'un corpus unifié, nettoyé et sur lequel les <gi>pb</gi>, <gi>div</gi> de <att>type</att> <val>collection</val>, les sections et les sous-sections ont déjà été placées. Si une étape venait à être ajoutée ou retirée du processus des erreurs pourraient survenir.</p>
+				</div2>
 				<div2>
 					<head>Balisage sémantique</head>
 					<p>Nous désignons par le terme "balisage sémantique" tout ce qui nous paraît
@@ -2240,7 +2367,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 						<p>Il convient de n'utiliser cette alternative de balisage qu'en ultime
 							recours. Il existe des ressources en ligne permettant d'identifier les
 							dates des fêtes religieuses des années
-							passées.<!--NEED INFO FELIPE ?--></p>
+							passées.</p>
 						<!--REPRENDRE EXEMPLE PRÉCÉDENT, PAGE 11 et démontrer de quel jour il s'agit (sans doute 1543 puisqu'il semble que c'est le moment de rédaction de la plupart du manuscrit à vérifier)-->
 					</div3>
 					<!--<div3>
@@ -3735,7 +3862,6 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 							<memberOf key="att.written" mode="delete"/>
 							<memberOf key="att.declaring" mode="delete"/>
 							<memberOf key="att.fragmentable" mode="delete"/>
-							<!--POURRAIT ÊTRE UTILE POUR LA RESTRUCTURATION POUR ÉDITION HTML-->
 							<memberOf key="att.typed"/>
 							<!--							<memberOf key="att.global.linking"/>-->
 						</classes>
@@ -3750,6 +3876,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 								<elementRef key="list"/>
 								<elementRef key="pb"/>
 								<elementRef key="ab" maxOccurs="1"/>
+								<elementRef key="space" maxOccurs="1"/>
 								<!--							<elementRef key="metamark"/>-->
 							</alternate>
 						</content>
@@ -3767,12 +3894,16 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 							<attDef ident="xml:space" mode="delete"/>
 							<attDef ident="subtype" mode="delete"/>
 							<attDef ident="synch" mode="delete"/>
-							<attDef ident="sameAs" mode="delete"/>
 							<attDef ident="copyOf" mode="delete"/>
 							<attDef ident="next" mode="delete"/>
 							<attDef ident="prev" mode="delete"/>
 							<attDef ident="select" mode="delete"/>
 							<attDef ident="exclude" mode="delete"/>
+							<attDef ident="sameAs" mode="change" usage="opt">
+								<gloss>Identique à</gloss>
+								<desc> pointe vers un élément identique à l'élément en question.</desc>
+								<valDesc>La valeur de cet attribut est la même que la valeur de l'attribut <att>xml:id</att> de l'élément <gi>div</gi> correspondant.</valDesc>
+							</attDef>
 							<attDef ident="corresp" mode="change" usage="opt">
 								<gloss>Correspondance</gloss>
 								<desc> indique pour les div de @type "answer_set" à quelle question
@@ -3780,10 +3911,10 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 							</attDef>
 							<attDef ident="xml:id" mode="change" usage="opt">
 								<gloss>Identifiant</gloss>
-								<desc> indique pour les div de @type "question_set" de quelle
+								<desc> indique pour les <gi>div </gi>de @type "question_set" de quelle
 									question il s'agit dans quel set. La valeur de cette attribut
 									est formé sur le modèle <eg>set8_q2 = signifie la question 2 du
-										huitième set de questions</eg></desc>
+										huitième set de questions</eg> OU fournit un identifiant unique pour les <gi>div</gi> qui sont des sous-sections de <gi>div</gi> <att>type</att> <val>article</val> lorsqu'elle seront restructurées.</desc>
 							</attDef>
 							<attDef ident="n" mode="change" usage="opt">
 								<gloss>Numéros</gloss>
@@ -3798,6 +3929,14 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 											potentiellement hétérogènes qui ont été identifiés par
 											l'équipe scientifique du projet comme étant un ensemble
 											qui ont été réuni par le ou les compilateurs.</desc>
+									</valItem>
+									<valItem ident="page">
+										<gloss>Page</gloss>
+										<desc> la div typée ainsi représente une page</desc>
+									</valItem>
+									<valItem ident="page_calendar">
+										<gloss>Page calendar</gloss>
+										<desc> la div typée ainsi représente une page de la transcription du calendar</desc>
 									</valItem>
 									<valItem ident="index">
 										<gloss>Index </gloss>

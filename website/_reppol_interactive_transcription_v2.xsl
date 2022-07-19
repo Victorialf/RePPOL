@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tei="http://www.tei-c.org/ns/1.0"
-	exclude-result-prefixes="xs" version="2.0">
+	exclude-result-prefixes="xs" version="3.0">
 	<xsl:output method="html" encoding="UTF-8" doctype-public="-//W3C//DTD HTML 4.01//EN" indent="yes"/>
 	
 	<xsl:template match="/" name="interfaxim">
@@ -13,6 +13,7 @@
 	<xsl:variable name="basename">reppol</xsl:variable>
 	<xsl:variable name="home" select="concat($basename, '_home','.html')"/>
 	<xsl:variable name="about" select="concat($basename, '_about','.html')"/>
+	<xsl:variable name="legals" select="concat($basename, '_legals.html')"/>
 	<xsl:variable name="pedago" select="concat($basename, '_trancriptioninteractive','.html')"/>
 	<xsl:variable name="index_characters" select="concat($basename,'_indexcharacters.html')"/>
 	<xsl:variable name="index_places" select="concat($basename,'_indexplaces.html')"/>
@@ -62,8 +63,19 @@
 							<li><a href="{$index_dates}">Dates</a></li>
 						</ul>
 					</li>
+					<li>
+						<a href="{$legals}">Legals</a>
+					</li>
 				</ul>
 			</nav>
+			<div class="links">
+				<a href="https://github.com/Victorialf/RePPOL" target="blanck">
+					<img src="GitHub-Mark-32px.png"/>
+				</a>
+				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_cc.png"/></a>
+				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_by.png"/></a>
+				
+			</div>
 		</header>
 	</xsl:template>
 	<!--template pour SCRIPT-->
@@ -117,7 +129,7 @@
 			//manipulate the height as you want if it is different than the maindiv's height
 			$('#text').css('max-height', 'Height');-->
 		</script>
-		<a href="#top"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png" class="top" style="position:fixed; bottom:20px; right:30px; z-index:99; padding:5px; font-size:14pt;"/></a>
+		<a href="#top"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png" class="top"/></a>
 	</xsl:template>
 	<!--	template pour FOOTER-->
 	<xsl:template name="footer">
@@ -153,25 +165,6 @@
 				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licence Creative Commons" style="border-width:0; margin:10px;" src="https://creativecommons.org/images/chooser/chooser_cc.png" height="50%"/><img alt="Licence Creative Commons" style="border-width:0; margin:10px;" src="https://creativecommons.org/images/chooser/chooser_by.png" height="50%"/></a>
 				<p>More documentation on <a href="https://github.com/Victorialf/RePPOL" target="blanck">Github</a></p>
 			</div>
-			
-			
-			<!--<div>
-				<p>More documentation on <a href="https://github.com/Victorialf/RePPOL" target="blanck">Github</a></p>
-			</div>-->
-			<!--<div>
-				<p><a href="https://creativecommons.org/licenses/by/2.0/fr/legalcode" target="blanck">Mention légales</a> : CC BY FR 2.0</p>
-				<a rel="license" href="http://creativecommons.org/licenses/by/2.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/2.0/fr/88x31.png" /></a><br />Ce(tte) œuvre est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by/2.0/fr/">Licence Creative Commons Attribution 2.0 France</a>
-			</div>-->
-			<!--<div>
-				<p>Events about RePPOL</p>
-				<ul>
-					<li><a href="" target="blanck">exemple</a></li>
-					<li><a href="" target="blanck">exemple</a></li>
-					<li><a href="" target="blanck">placeholder</a></li>
-					<li><a href="" target="blanck">placeholder</a></li>
-					<li><a href="" target="blanck">placeholder</a></li>
-				</ul>
-			</div>-->
 		</footer>
 	</xsl:template>
 	
@@ -182,14 +175,16 @@
 				<xsl:call-template name="head">
 					<xsl:with-param name="title" select="'home'"/>
 				</xsl:call-template>
-				<body>
+				<body style="background-color:#f26339;">
+					<div class="article_container">
 					<xsl:call-template name="header"/>
 					<article id="home">
 						<section>
 							<!--<p>Le projet RePPOL est un projet scientifique et pédagogique collaboratif consacré à la transcription, l'édition critique et l'analyse du manuscrit <a href="https://parker.stanford.edu/parker/catalog/ps908cx9813" target="blanck">MS 128 conservé à la bibliothèque de Corpus Christi College, Cambridge</a>.</p>-->
+							<h1>RETHINKING THE PREBENDARIES PLOT ONLINE</h1>
 							<p>The Rethinking Prebendaries Plot Online (RePPOL) project is a pedagogic, scientific and collaborative project dedicated to the transcription, critical edition and analysis of the <a href="https://parker.stanford.edu/parker/catalog/ps908cx9813" target="blanck">MS 128 manuscript kept in the Parker Library</a>.</p>
 						</section>
-						<section class="home_buttons">
+						<!--<section class="home_buttons">
 							<a class="button" href="{concat($transcriptions, '.html')}"><button>
 								Transcriptions
 							</button></a>
@@ -208,33 +203,105 @@
 							<a class="button" href="{$index_dates}"><button>
 								Dates index
 							</button></a>
-						</section>
-						<!--Alternative version - abandoned cause ugly
-							<section>
-							<p>To read the transcriptions made by the RePPOL project click <a href="{$transcriptions}">here</a>.</p>
-							<p>To learn more about the project click <a href="{$about}">here</a>.</p>
-							<p>To enjoy the interactive transcriptions click <a href="{$pedago}">here</a>.</p>
-							<p>Or take a look at the indexes :</p>
-							<ul>
-								<li>to learn about the <a href="{$index_characters}">characters</a></li>
-								<li>to discover <a href="{$index_places}">places</a></li>
-								<li>to check the <a href="{$index_dates}">dates</a></li>
-							</ul>
 						</section>-->
+						<section class="footer">
+<!--						footer v2 to be implemented-->
+						</section>
 					</article>
+<!--					<xsl:call-template name="footer"/>-->
+					</div>
 					<xsl:call-template name="script"/>
-					<xsl:call-template name="footer"/>
+					
 				</body>
 			</html>
 		</xsl:result-document>
 <!--	FIN page HOME-->
+<!--	DÉBUT page LEGALS-->
+		<xsl:result-document href="{$legals}">
+			<html>
+				<xsl:call-template name="head">
+					<xsl:with-param name="title" select="'legals'"/>
+				</xsl:call-template>
+				<body style="background-color:#f26339;">
+					<div class="article_container">
+						<xsl:call-template name="header"/>
+						<article id="legals">
+							<h2>Legals</h2>
+								<h3>Publisher</h3>
+								<p><a href="https://www.meshs.fr/page/accueil" target="blanck">MESHS de Lille</a></p>
+								<ul>
+									<xsl:for-each select="//tei:addrLine">
+										<li><xsl:apply-templates/></li>
+									</xsl:for-each>
+								</ul>
+							
+						<!--class="project_right" /version colonne/-->
+								<!--		<!-\-<h2>The project</h2>-\->
+							<p>Le projet RePPOL est un projet scientifique et pédagogique collaboratif consacré à la transcription, l'édition critique et l'analyse du manuscrit <a href="https://parker.stanford.edu/parker/catalog/ps908cx9813" target="blanck">MS 128 conservé à la bibliothèque de Corpus Christi College, Cambridge</a>.<br />Pour en savoir plus, cliquez <a href="#moreabout">ICI</a>.</p>-->
+								<h3>The team</h3>
+								<ul>
+									<xsl:for-each select="//tei:respStmt">
+										<li>
+											<xsl:apply-templates/>
+										</li>
+									</xsl:for-each>
+								</ul>
+							
+		
+								<h3>Sponsors</h3>
+								<ul>
+									<xsl:for-each select="//tei:funder">
+										<li>
+											<xsl:element name="a">
+												<xsl:attribute name="href">
+													<xsl:value-of select="@ref"/>
+												</xsl:attribute>
+												<xsl:attribute name="target">blanck</xsl:attribute>
+												<xsl:value-of select="."/>
+											</xsl:element>
+										</li>
+									</xsl:for-each>
+									<xsl:for-each select="//tei:sponsor">
+										<li>
+											<xsl:element name="a">
+												<xsl:attribute name="href">
+													<xsl:value-of select="@ref"/>
+												</xsl:attribute>
+												<xsl:attribute name="target">blanck</xsl:attribute>
+												<xsl:value-of select="."/>
+											</xsl:element>
+										</li>
+									</xsl:for-each>
+								</ul>
+							<h3>Host</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.</p>
+							<h3>Licence</h3>
+							<p>The original manuscrit...... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, sempe</p>
+							<div style="display:flex; align-items:center;">
+								<p>This site and the transcriptions produced as part of the RePPOL project are made available under the terms of the <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Licence Creative Commons Attribution 4.0 International</a></p>
+								<a rel="license" href="http://creativecommons.org/licenses/by/4.0/" style="margin-left:10px;"><img alt="Licence Creative Commons" class="links" src="https://creativecommons.org/images/chooser/chooser_cc.png"/><img alt="Licence Creative Commons" class="links" src="https://creativecommons.org/images/chooser/chooser_by.png"/></a>.
+							</div>
+							<!--<p>Les <a href="{$pedago}" target="blanck">transcriptions interactives</a> vous propose une démonstration sur dix pages de transcriptions interactives paléographiques et pédagogiques constituées à l'aide de la transformation <a href="https://github.com/TimotheAlbouy/Interfaxim" target="blanck">Interfaxim</a> développé par <a href="https://github.com/TimotheAlbouy" target="blanck">M. Thimothe Albouy</a>.</p>-->
+							<p>The ten pages long demonstration offered as <a href="{$pedago}" target="blanck">interactive transcriptions</a> would not have been possible without the <a href="https://github.com/TimotheAlbouy/Interfaxim" target="blanck">Interfaxim</a> XSL-stylesheet developped by <a href="https://github.com/TimotheAlbouy" target="blanck">Mr Thimothe Albouy</a> and is licensed under <a href="https://choosealicense.com/licenses/mit/" target="blanck">MIT License</a>.</p>
+							<h3>Citations</h3>
+							<p>To cite the website as a whole : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, sempe</p>
+							<p>To cite a particular page of the transcriptions : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, sempe</p>
+							<h3>Contact</h3>
+							<p>To report a bug, a mistake or only to give us a thumbs up get in touch at : xxxx@xxx.fr</p>
+						</article>
+					</div>
+				</body>
+			</html>
+		</xsl:result-document>
+<!--	FIN page LEGALS-->
 <!--	DÉBUT page ABOUT-->
 		<xsl:result-document href="{$about}">
 			<html>
 				<xsl:call-template name="head">
 					<xsl:with-param name="title" select="'about'"/>
 				</xsl:call-template>
-				<body>
+				<body style="background-color:#f26339;">
+					<div class="article_container">
 					<xsl:call-template name="header"/>
 					<article id="about">
 						<section><!--class="project_right" /version colonne/-->
@@ -284,13 +351,10 @@
 								</p>
 							</xsl:for-each>
 						</section>
-						<section><!--class="project_right" /version colonne/-->
-							<!--<p>Les <a href="{$pedago}" target="blanck">transcriptions interactives</a> vous propose une démonstration sur dix pages de transcriptions interactives paléographiques et pédagogiques constituées à l'aide de la transformation <a href="https://github.com/TimotheAlbouy/Interfaxim" target="blanck">Interfaxim</a> développé par <a href="https://github.com/TimotheAlbouy" target="blanck">M. Thimothe Albouy</a>.</p>-->
-							<p>The ten pages long demonstration offered as <a href="{$pedago}" target="blanck">interactive transcriptions</a> wouldn't have been possible without the <a href="https://github.com/TimotheAlbouy/Interfaxim" target="blanck">Interfaxim</a> XSL-stylesheet developped by <a href="https://github.com/TimotheAlbouy" target="blanck">Mr Thimothe Albouy</a> and is licensed under <a href="https://choosealicense.com/licenses/mit/" target="blanck">MIT License</a>.</p>
-						</section>
 					</article>
+					</div>
 					<xsl:call-template name="script"/>
-					<xsl:call-template name="footer"/>
+<!--					<xsl:call-template name="footer"/>-->
 				</body>
 			</html>
 		</xsl:result-document>
@@ -301,7 +365,8 @@
 					<xsl:call-template name="head">
 						<xsl:with-param name="title" select="'interactive transcriptions'"/>
 					</xsl:call-template>
-					<body>
+					<body style="background-color:#f26339;">
+						<div class="article_container">
 						<xsl:call-template name="header"/>
 						<article id="transcription_pedago"><!--div transcription et navigation entre les pages-->
 							<!--<h2>PAPE-RePPOL</h2>-->
@@ -345,8 +410,9 @@
 								</div>
 							</xsl:for-each>
 						</article>
+						</div>
 						<xsl:call-template name="script"/>
-						<xsl:call-template name="footer"/>
+<!--						<xsl:call-template name="footer"/>-->
 					</body>
 				</html>
 		</xsl:result-document>
