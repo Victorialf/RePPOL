@@ -62,3 +62,19 @@ $html = "$html"."\n"."$line";
 			print HTMLOUT $html;
 close (HTMLIN);
 close (HTMLOUT);
+
+#DANS OXYGEN
+#Passage d'un tableau avec full lien (souvent sans cible réellement présente dans le texte) à un tableau où les liens vides sont supprimés (et le texte dans les cases sans lien, via css, est couleur identique au fond donc invisible) et les seuls les liens avec une cible réelles sont créés : 
+#
+#on recherche -  <a href="#(.+?)">(.+?)</a>
+#SEULEMENT SUR LES LIGNES SELECTIONNÉES en selectionnant les div des tableaux
+#
+#
+#on remplace par
+#<xsl:choose>
+#<xsl:when test="//tei:text//tei:date/@when='$1'">
+#<a href="#$1" class="date_valid">$2</a></xsl:when>					<xsl:otherwise>$2</xsl:otherwise>
+#</xsl:choose>
+#
+#Version 1, pour tester le test
+#<xsl:if test="//tei:text//tei:date/@when='1542-03-04'"><xsl:attribute name="class">date_valid</xsl:attribute></xsl:if>
