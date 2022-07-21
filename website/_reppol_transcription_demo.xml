@@ -20,23 +20,23 @@
 				<respStmt>
 					<name ref="https://pro.univ-lille.fr/aude-de-mezerac/">Aude de
 						Mézerac-Zanetti</name>
-					<resp>Directrice scientifique</resp>
+					<resp>Coordinateur du projet</resp>
 				</respStmt>
 				<respStmt>
 					<name ref="http://larhra.ish-lyon.cnrs.fr/membre/334">Olivier Spina</name>
-					<resp>Directeur scientifique</resp>
+					<resp>Coordinateur du projet</resp>
 				</respStmt>
 				<respStmt>
 					<name>Victoria Le Fourner</name>
-					<resp>Directrice technique</resp>
+					<resp>Responsable technique</resp>
 				</respStmt>
 				<respStmt>
 					<name>Felipe Goes Silva</name>
-					<resp>Transcription</resp>
+					<resp>Chargé de transcription</resp>
 				</respStmt>
 				<respStmt>
 					<name>Adrien Mével</name>
-					<resp>Responsable encodage</resp>
+					<resp>Chargé d'encodage</resp>
 				</respStmt>
 			</titleStmt>
 			<extent>
@@ -703,7 +703,7 @@
 							<persName type="religious" ref="x" key="willoughby_john">Mr Williby</persName> moved such matt<expan>er</expan>s much ther by reson <hi rend="underline">he said
 								<expan>that</expan> he had spoken w<expan>ith </expan>many of the
 							kinges cownsell in it</hi> &amp; that he wold take upon him to be the hole
-							setter forth of the matter. After the woordes <persName type="lay_man" ref="x" key="baker_john">Mr baker</persName> did send for <persName type="x" ref="x" key="parkhurst_richard">Mr p<expan>ar</expan>khurst</persName> <persName type="religious" ref="90003" key="gardiner_william">Mr garden<expan>er</expan></persName> &amp; me. </p>
+							setter forth of the matter. After the woordes <persName type="lay_man" ref="x" key="baker_john">Mr baker</persName> did send for <persName type="x" ref="x" key="parkhurste_richard">Mr p<expan>ar</expan>khurst</persName> <persName type="religious" ref="90003" key="gardiner_william">Mr garden<expan>er</expan></persName> &amp; me. </p>
 					</div>
 					<div xml:id="aset_11_a2" corresp="qset_4_q2">
 						<note rend="margin_left"><metamark>2</metamark></note>

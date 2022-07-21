@@ -28,16 +28,23 @@
 			<meta name="author" content="Aude DE MÉZERAC-ZANETI; Olivier SPINA; Victoria LE FOURNER; Felipe GOES SILVA; Adrien MÉVEL;"/>
 			<meta name="description" content="transcriptions échantillons de Cambridge, Corpus Christi College, MS 128: Documents Relating to Archbishop Cranmer, manuscrit conservé à la Parker Library"/>
 			<meta name="keywords" content="XSLT,XML,TEI"/>
-			<link rel="icon" type="image/jpg" href="logo_reppol-noir-rouge.png"/><!--LINK ICI-->
+			<link rel="stylesheet" href="https://use.typekit.net/duu3aei.css"/>
+			<link rel="icon" type="image/jpg" href="img/logo_rep_or.png"/><!--LINK ICI-->
 			<link rel="stylesheet" href="reppol.css" type="text/css"/><!--LINK ICI-->
 			<title>RePPOL - <xsl:value-of select="$title"/></title>
 		</head>
 	</xsl:template>
 	<!--	template pour HEADER-->
 	<xsl:template name="header">
+		<xsl:param name="white"/>
 		<header id="top">
 			<div class="logo">
-				<a href="{$home}"><img src="logo_reppol-noir-rouge.png" class="logo"></img></a>
+				<a href="{$home}">
+					<xsl:choose>
+						<xsl:when test="$white='yes'"><img src="img/logo_rep_or.png" class="logo"/></xsl:when>
+						<xsl:otherwise><img src="img/logo_rep_wh.png" class="logo"/></xsl:otherwise>
+					</xsl:choose>
+				</a>
 			</div>
 			<nav class="nav_top">
 				<ul>
@@ -71,7 +78,7 @@
 			</div>
 			<div class="links">
 				<a href="https://github.com/Victorialf/RePPOL" target="blanck">
-					<img src="GitHub-Mark-32px.png"/>
+					<img src="img/GitHub-Mark-32px.png"/>
 				</a>
 				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_cc.png"/></a>
 				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_by.png"/></a>
@@ -130,26 +137,54 @@
 			//manipulate the height as you want if it is different than the maindiv's height
 			$('#text').css('max-height', 'Height');-->
 		</script>
-		<a href="#top"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png" class="top"/></a>
+<!--<!-\-		Plus nécessaie après body{overflow:nope}-\->
+		<a href="#top"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png" class="top"/></a>-->
 	</xsl:template>
 	<!--	template pour FOOTER-->
 	<xsl:template name="footer">
-		<footer>
+		<section class="home footer">
+			<div class="footer_logo">
+				<a href="http://www.isite-ulne.fr/index.php/fr/page-daccueil/" target="blanck"><img src="img/logo_isite.png"/></a>
+			</div>
+			<div class="footer_logo">
+				<a href="https://comod.universite-lyon.fr/site-francais/" target="blanck"><img src="img/logo_labex.png"/></a>
+			</div>
+			<div class="footer_logo">
+				<a href="https://www.univ-lille.fr/" target="blanck">
+					<img src="img/logo_u_lille.png"/></a>
+			</div>
+			<div class="footer_logo">
+				<a href="https://www.meshs.fr/page/accueil" target="blanck">
+					<img src="img/logo_meshs.png"/>
+					
+				</a>
+			</div>
+			<div class="footer_logo">
+				<a href="https://cecille.univ-lille.fr/" target="blanck"><img src="img/logo_cecille.png"/></a>
+			</div>
+			<div class="footer_logo">
+				<a href="http://larhra.ish-lyon.cnrs.fr/" target="blanck">
+					<img src="img/logo_lahra.png"/>
+				</a>
+			</div>
+		</section>
+		
+		<!--<footer>
 			<div class="footer_icons">
 				<div class="footer_logo">
 					<a href="http://www.isite-ulne.fr/index.php/fr/page-daccueil/" target="blanck"><img src="http://www.isite-ulne.fr/wp-content/uploads/2018/07/I-SITE-ULNE_Logo-COUL_RVB.png"/></a>
 				</div>
 				<div class="footer_logo">
-					<a href="https://comod.universite-lyon.fr/site-francais/" target="blanck"><!--<img src="https://comod.universite-lyon.fr/medias/photo/labex-comod-noir-png-300dpi-sans-fond-blanc_1551950983580-png?ID_FICHE=41153"/>--><img src="https://comod.universite-lyon.fr/medias/photo/labex-comod-png-300dpi-sans-fond-blanc_1551950869031-png?ID_FICHE=41153"/></a>
+					<a href="https://comod.universite-lyon.fr/site-francais/" target="blanck"><!-\-<img src="https://comod.universite-lyon.fr/medias/photo/labex-comod-noir-png-300dpi-sans-fond-blanc_1551950983580-png?ID_FICHE=41153"/>-\-><img src="https://comod.universite-lyon.fr/medias/photo/labex-comod-png-300dpi-sans-fond-blanc_1551950869031-png?ID_FICHE=41153"/></a>
 				</div>
 				<div class="footer_logo">
-					<a href="https://www.univ-lille.fr/" target="blanck"><!--<img src="ULille.sans.baseline-Horizontal-CMJN-Noir.png"/>-->
+					<a href="https://www.univ-lille.fr/" target="blanck"><!-\-<img src="ULille.sans.baseline-Horizontal-CMJN-Noir.png"/>-\->
 						<img src="https://www.univ-lille.fr/typo3conf/ext/ul2fpfb/Resources/Public/assets/img/logos/ULille-nb.svg"/></a>
 				</div>
 				<div class="footer_logo">
 					<a href="https://www.meshs.fr/page/accueil" target="blanck">
 						<img src="http://medias.meshs.fr/medias/images/logos/meshs/MESHS_Logo_NoirRouge_Sans.png"/>
-						<!--<img src="http://medias.meshs.fr/medias/images/logos/meshs/MESHS_Logo_NoirGris_Sans.png"/>-->
+						<!-\-<img src="http://medias.meshs.fr/medias/images/logos/meshs/MESHS_Logo_NoirGris_Sans.png"/>-\->
 					</a>
 				</div>
 				<div class="footer_logo">
@@ -166,9 +201,46 @@
 				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licence Creative Commons" style="border-width:0; margin:10px;" src="https://creativecommons.org/images/chooser/chooser_cc.png" height="50%"/><img alt="Licence Creative Commons" style="border-width:0; margin:10px;" src="https://creativecommons.org/images/chooser/chooser_by.png" height="50%"/></a>
 				<p>More documentation on <a href="https://github.com/Victorialf/RePPOL" target="blanck">Github</a></p>
 			</div>
-		</footer>
+		</footer>-->
 	</xsl:template>
 	
+	<xsl:template name="members">
+		<section class="home project_members">
+			<div class="project_member" style="grid-row-start:1; grid-column-start:1;">
+				<!--<a href="https://pro.univ-lille.fr/aude-de-mezerac/" target="blanck"><img src="img/anne_boleyn.png"/></a>-->
+				<p><span class="name"><a href="https://pro.univ-lille.fr/aude-de-mezerac/" target="blanck">Aude de
+					Mézerac-Zanetti</a></span><br /><span class="resp">Coordinatrice du projet</span></p>
+			</div>
+			<div class="project_member">
+				<!--<a href="http://larhra.ish-lyon.cnrs.fr/membre/334" target="blanck"><img src="img/henry8.png"/></a>-->
+				<p><span class="name"><a href="http://larhra.ish-lyon.cnrs.fr/membre/334" target="blanck">Olivier Spina</a></span><br /><span class="resp">Coordinateur du projet</span></p>
+			</div>
+			<div class="project_member" style="grid-row-start:1; grid-column-start:2; margin-top:30px">
+<!--				<img src="img/elizabeth_princess.png"/>-->
+				<p><span class="name">Victoria Le Fourner</span><br /><span class="resp">Responsable technique</span></p>
+			</div>
+			<div class="project_member">
+<!--				<img src="img/cromwell_thomas.png"/>-->
+				<p><span class="name">Felipe Goes Silva</span><br /><span class="resp">chargé de transcription</span></p>
+			</div>
+			<div class="project_member" style="grid-column-start:2;">
+<!--				<img src="img/gardiner_stephan.png"/>-->
+				<p><span class="name">Adrien Mével</span><br /><span class="resp">chargé d'encodage</span></p>
+			</div>
+		</section>
+		<section class="home lab">
+			<xsl:for-each select="//tei:funder">
+				<p><a href="{@ref}" target="blanck"><xsl:apply-templates/></a></p>
+			</xsl:for-each>
+		</section>
+<!--			<hr/>-->
+		<section class="home sponsor">
+			<h2>Sponsors :</h2>
+			<xsl:for-each select="//tei:sponsor">
+				<p><a href="{@ref}" target="blanck"><xsl:apply-templates/></a></p>
+			</xsl:for-each>
+		</section>
+	</xsl:template>
 <!--	DÉBUT page home-->
 	<xsl:template match="tei:TEI">
 		<xsl:result-document href="{$home}">
@@ -176,15 +248,17 @@
 				<xsl:call-template name="head">
 					<xsl:with-param name="title" select="'home'"/>
 				</xsl:call-template>
-				<body style="background-color:#f26339;">
+				<body><!--RIP style="background-color:#f26339;"-->
 					<div class="article_container">
-					<xsl:call-template name="header"/>
+					<xsl:call-template name="header"><xsl:with-param name="white" select="'yes'"/></xsl:call-template><!--RIP style="background-color:#f26339;"-->
 					<article id="home">
-						<section>
+						<section class="home">
 							<!--<p>Le projet RePPOL est un projet scientifique et pédagogique collaboratif consacré à la transcription, l'édition critique et l'analyse du manuscrit <a href="https://parker.stanford.edu/parker/catalog/ps908cx9813" target="blanck">MS 128 conservé à la bibliothèque de Corpus Christi College, Cambridge</a>.</p>-->
-							<h1>RETHINKING THE PREBENDARIES PLOT ONLINE</h1>
+							<h1><span class="ambroise_bold_empty">RETHINKING THE</span> <span class="ambroise_bold_filled"> PREBENDARIES PLOT</span> <span class="ambroise_bold_italic"> ONLINE</span></h1>
 							<p>The Rethinking Prebendaries Plot Online (RePPOL) project is a pedagogic, scientific and collaborative project dedicated to the transcription, critical edition and analysis of the <a href="https://parker.stanford.edu/parker/catalog/ps908cx9813" target="blanck">MS 128 manuscript kept in the Parker Library</a>.</p>
 						</section>
+						<xsl:call-template name="members"/>
+						
 						<!--<section class="home_buttons">
 							<a class="button" href="{concat($transcriptions, '.html')}"><button>
 								Transcriptions
@@ -205,12 +279,13 @@
 								Dates index
 							</button></a>
 						</section>-->
-						<section class="footer">
-<!--						footer v2 to be implemented-->
-						</section>
+						<xsl:call-template name="footer"/>
 					</article>
-<!--					<xsl:call-template name="footer"/>-->
+						
+						<img class="home_img" src="img/cranmer_bichromie3.png"/>
+					
 					</div>
+					
 					<xsl:call-template name="script"/>
 					
 				</body>
@@ -223,9 +298,9 @@
 				<xsl:call-template name="head">
 					<xsl:with-param name="title" select="'legals'"/>
 				</xsl:call-template>
-				<body style="background-color:#f26339;">
+				<body><!--RIP style="background-color:#f26339;"-->
 					<div class="article_container">
-						<xsl:call-template name="header"/>
+						<xsl:call-template name="header"><xsl:with-param name="white" select="'yes'"/></xsl:call-template><!--RIP style="background-color:#f26339;"-->
 						<article id="legals">
 							<h2>Legals</h2>
 								<h3>Publisher</h3>
@@ -274,8 +349,8 @@
 										</li>
 									</xsl:for-each>
 								</ul>
-							<h3>Host</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.</p>
+							<!--<h3>Host</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.</p>-->
 							<h3>Licence</h3>
 							<p>The original manuscrit...... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, sempe</p>
 							<div style="display:flex; align-items:center;">
@@ -301,13 +376,13 @@
 				<xsl:call-template name="head">
 					<xsl:with-param name="title" select="'about'"/>
 				</xsl:call-template>
-				<body style="background-color:#f26339;">
+				<body><!--RIP style="background-color:#f26339;"-->
 					<div class="article_container">
-					<xsl:call-template name="header"/>
+					<xsl:call-template name="header"><xsl:with-param name="white" select="'yes'"/></xsl:call-template><!--RIP style="background-color:#f26339;"-->
 					<article id="about">
-						<section><!--class="project_right" /version colonne/-->
-							<!--		<!-\-<h2>The project</h2>-\->
-							<p>Le projet RePPOL est un projet scientifique et pédagogique collaboratif consacré à la transcription, l'édition critique et l'analyse du manuscrit <a href="https://parker.stanford.edu/parker/catalog/ps908cx9813" target="blanck">MS 128 conservé à la bibliothèque de Corpus Christi College, Cambridge</a>.<br />Pour en savoir plus, cliquez <a href="#moreabout">ICI</a>.</p>-->
+						<!--<section><!-\-class="project_right" /version colonne/-\->
+							<!-\-		<!-\\-<h2>The project</h2>-\\->
+							<p>Le projet RePPOL est un projet scientifique et pédagogique collaboratif consacré à la transcription, l'édition critique et l'analyse du manuscrit <a href="https://parker.stanford.edu/parker/catalog/ps908cx9813" target="blanck">MS 128 conservé à la bibliothèque de Corpus Christi College, Cambridge</a>.<br />Pour en savoir plus, cliquez <a href="#moreabout">ICI</a>.</p>-\->
 							<p>Led by :</p>
 							<ul>
 								<xsl:for-each select="//tei:respStmt">
@@ -344,15 +419,19 @@
 									</li>
 								</xsl:for-each>
 							</ul>
-						</section>
-						<section> <!--class="project_left" /version colonne/-->
+						</section>-->
+						<section class="home"> <!--class="project_left" /version colonne/-->
+							<h2>About the project :</h2>
 							<xsl:for-each select="//tei:projectDesc/tei:p[@xml:lang='en']">
 								<p>
 									<xsl:apply-templates/>
 								</p>
 							</xsl:for-each>
 						</section>
+						<xsl:call-template name="members"/>
+						<xsl:call-template name="footer"/>
 					</article>
+						<img class="home_img" src="img/cranmer_bichromie3.png"/>
 					</div>
 					<xsl:call-template name="script"/>
 <!--					<xsl:call-template name="footer"/>-->
@@ -366,9 +445,9 @@
 					<xsl:call-template name="head">
 						<xsl:with-param name="title" select="'interactive transcriptions'"/>
 					</xsl:call-template>
-					<body style="background-color:#f26339;">
+					<body><!--RIP style="background-color:#f26339;"-->
 						<div class="article_container">
-						<xsl:call-template name="header"/>
+						<xsl:call-template name="header"><xsl:with-param name="white" select="'yes'"/></xsl:call-template><!--RIP style="background-color:#f26339;"-->
 						<article id="transcription_pedago"><!--div transcription et navigation entre les pages-->
 							<!--<h2>PAPE-RePPOL</h2>-->
 							<div id="tabs-sections" class="tabs">
