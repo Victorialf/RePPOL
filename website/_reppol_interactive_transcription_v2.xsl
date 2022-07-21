@@ -52,23 +52,23 @@
 						<a href="{$home}">Home</a>
 					</li>-->
 					<li>
-						<a href="{$about}">The project</a>
+						<a href="{$about}">the project</a>
 					</li>
 					<li>
-						<a href="{concat($transcriptions,'.html')}">Transcriptions</a>
+						<a href="{concat($transcriptions,'.html')}">transcriptions</a>
 					</li>
 					<li>
-						<a href="{$pedago}">Interactive transcriptions</a>
+						<a href="{$pedago}">interactive transcriptions</a>
 					</li>
-					<li style="position:relative;">Index
+					<li style="position:relative;">index
 						<ul class="nav_index">
-							<li><a href="{$index_characters}">Persons</a></li>
-							<li><a href="{$index_places}">Places</a></li>
-							<li><a href="{$index_dates}">Dates</a></li>
+							<li><a href="{$index_characters}">persons</a></li>
+							<li><a href="{$index_places}">places</a></li>
+							<li><a href="{$index_dates}">cates</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="{$legals}">Legals</a>
+						<a href="{$legals}">legals</a>
 					</li>
 				</ul>
 			</nav>
@@ -235,7 +235,7 @@
 		</section>
 <!--			<hr/>-->
 		<section class="home sponsor">
-			<h2>Sponsors :</h2>
+			<h2>sponsors :</h2>
 			<xsl:for-each select="//tei:sponsor">
 				<p><a href="{@ref}" target="blanck"><xsl:apply-templates/></a></p>
 			</xsl:for-each>
@@ -302,8 +302,8 @@
 					<div class="article_container">
 						<xsl:call-template name="header"><xsl:with-param name="white" select="'yes'"/></xsl:call-template><!--RIP style="background-color:#f26339;"-->
 						<article id="legals">
-							<h2>Legals</h2>
-								<h3>Publisher</h3>
+							<h2>legals</h2>
+								<h3>publisher</h3>
 								<p><a href="https://www.meshs.fr/page/accueil" target="blanck">MESHS de Lille</a></p>
 								<ul>
 									<xsl:for-each select="//tei:addrLine">
@@ -314,7 +314,7 @@
 						<!--class="project_right" /version colonne/-->
 								<!--		<!-\-<h2>The project</h2>-\->
 							<p>Le projet RePPOL est un projet scientifique et pédagogique collaboratif consacré à la transcription, l'édition critique et l'analyse du manuscrit <a href="https://parker.stanford.edu/parker/catalog/ps908cx9813" target="blanck">MS 128 conservé à la bibliothèque de Corpus Christi College, Cambridge</a>.<br />Pour en savoir plus, cliquez <a href="#moreabout">ICI</a>.</p>-->
-								<h3>The team</h3>
+								<h3>the team</h3>
 								<ul>
 									<xsl:for-each select="//tei:respStmt">
 										<li>
@@ -324,7 +324,7 @@
 								</ul>
 							
 		
-								<h3>Sponsors</h3>
+								<h3>sponsors</h3>
 								<ul>
 									<xsl:for-each select="//tei:funder">
 										<li>
@@ -351,18 +351,18 @@
 								</ul>
 							<!--<h3>Host</h3>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.</p>-->
-							<h3>Licence</h3>
+							<h3>licence</h3>
 							<p>The original manuscrit...... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, sempe</p>
 							<div style="display:flex; align-items:center;">
-								<p>This site and the transcriptions produced as part of the RePPOL project are made available under the terms of the <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Licence Creative Commons Attribution 4.0 International</a></p>
-								<a rel="license" href="http://creativecommons.org/licenses/by/4.0/" style="margin-left:10px;"><img alt="Licence Creative Commons" class="links" src="https://creativecommons.org/images/chooser/chooser_cc.png"/><img alt="Licence Creative Commons" class="links" src="https://creativecommons.org/images/chooser/chooser_by.png"/></a>.
+								<p>This site and the transcriptions produced as part of the RePPOL project are made available under the terms of the <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Licence Creative Commons Attribution 4.0 International</a><a rel="license" href="http://creativecommons.org/licenses/by/4.0/" style="margin-left:10px;"><img alt="Licence Creative Commons" class="links" src="https://creativecommons.org/images/chooser/chooser_cc.png"/><img alt="Licence Creative Commons" class="links" src="https://creativecommons.org/images/chooser/chooser_by.png"/></a>.</p>
+								
 							</div>
 							<!--<p>Les <a href="{$pedago}" target="blanck">transcriptions interactives</a> vous propose une démonstration sur dix pages de transcriptions interactives paléographiques et pédagogiques constituées à l'aide de la transformation <a href="https://github.com/TimotheAlbouy/Interfaxim" target="blanck">Interfaxim</a> développé par <a href="https://github.com/TimotheAlbouy" target="blanck">M. Thimothe Albouy</a>.</p>-->
 							<p>The ten pages long demonstration offered as <a href="{$pedago}" target="blanck">interactive transcriptions</a> would not have been possible without the <a href="https://github.com/TimotheAlbouy/Interfaxim" target="blanck">Interfaxim</a> XSL-stylesheet developped by <a href="https://github.com/TimotheAlbouy" target="blanck">Mr Thimothe Albouy</a> and is licensed under <a href="https://choosealicense.com/licenses/mit/" target="blanck">MIT License</a>.</p>
-							<h3>Citations</h3>
+							<h3>citations</h3>
 							<p>To cite the website as a whole : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, sempe</p>
 							<p>To cite a particular page of the transcriptions : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, sempe</p>
-							<h3>Contact</h3>
+							<h3>contact</h3>
 							<p>To report a bug, a mistake or only to give us a thumbs up get in touch at : xxxx@xxx.fr</p>
 						</article>
 					</div>
@@ -421,7 +421,7 @@
 							</ul>
 						</section>-->
 						<section class="home"> <!--class="project_left" /version colonne/-->
-							<h2>About the project :</h2>
+							<h2>about the project :</h2>
 							<xsl:for-each select="//tei:projectDesc/tei:p[@xml:lang='en']">
 								<p>
 									<xsl:apply-templates/>

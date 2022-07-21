@@ -55,23 +55,23 @@
 						<a href="{$home}">Home</a>
 					</li>-->
 					<li>
-						<a href="{$about}">The project</a>
+						<a href="{$about}">the project</a>
 					</li>
 					<li>
-						<a href="{concat($transcriptions,'.html')}">Transcriptions</a>
+						<a href="{concat($transcriptions,'.html')}">transcriptions</a>
 					</li>
 					<li>
-						<a href="{$pedago}">Interactive transcriptions</a>
+						<a href="{$pedago}">interactive transcriptions</a>
 					</li>
-					<li style="position:relative;">Index
+					<li style="position:relative;">index
 						<ul class="nav_index">
-							<li><a href="{$index_characters}">Persons</a></li>
-							<li><a href="{$index_places}">Places</a></li>
-							<li><a href="{$index_dates}">Dates</a></li>
+							<li><a href="{$index_characters}">persons</a></li>
+							<li><a href="{$index_places}">places</a></li>
+							<li><a href="{$index_dates}">cates</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="{$legals}">Legals</a>
+						<a href="{$legals}">legals</a>
 					</li>
 				</ul>
 			</nav>
@@ -201,7 +201,7 @@
 						<xsl:call-template name="header"><xsl:with-param name="white" select="'yes'"/></xsl:call-template><!--RIP style="background-color:#f26339;"-->
 						<article class="index">
 							<section class="index_prelist">
-								<h2>Pick a person :</h2>
+								<h2>pick a person :</h2>
 								<ul>
 									<xsl:apply-templates select="//tei:persName"
 										mode="index_prelist">
@@ -210,7 +210,7 @@
 								</ul>
 							</section>
 							<section class="index" id="top_2">
-								<h2>Person index :</h2>
+								<h2>person index :</h2>
 								<xsl:apply-templates select="//tei:persName" mode="index">
 									<xsl:sort select="@key"/>
 								</xsl:apply-templates>
@@ -231,34 +231,31 @@
 				<body><!--RIP style="background-color:#f26339;"-->
 					<div class="article_container">
 						<xsl:call-template name="header"><xsl:with-param name="white" select="'yes'"/></xsl:call-template><!--RIP style="background-color:#f26339;"-->
-						<article style="display:flex;">
-							<section style="width:50%;">
-								<img class="index_map" src=""/>
-							</section>
-							<section class="index" id="top_2">
+						<article class="index">
+							<section class="index_prelist">
 								<!--<h2>Place index :</h2>-->
-								<h3>Counties</h3>
+								<h3>counties</h3>
 								<ul class="index">
 									<xsl:apply-templates select="//tei:placeName[@type = 'county']"
 										mode="index">
 										<xsl:sort select="lower-case(.)"/>
 									</xsl:apply-templates>
 								</ul>
-								<h3>Cities</h3>
+								<h3>cities</h3>
 								<ul class="index">
 									<xsl:apply-templates select="//tei:placeName[@type = 'city']"
 										mode="index">
 										<xsl:sort select="lower-case(.)"/>
 									</xsl:apply-templates>
 								</ul>
-								<h3>Parishes</h3>
+								<h3>parishes</h3>
 								<ul class="index">
 									<xsl:apply-templates select="//tei:placeName[@type = 'parish']"
 										mode="index">
 										<xsl:sort select="lower-case(.)"/>
 									</xsl:apply-templates>
 								</ul>
-								<h3>Villages</h3>
+								<h3>settlements</h3>
 								<ul class="index">
 									<xsl:apply-templates
 										select="//tei:placeName[@type = 'settlement']" mode="index">
@@ -266,6 +263,10 @@
 									</xsl:apply-templates>
 								</ul>
 							</section>
+							<section id="top_2" class="index">
+								<img class="index_map" src=""/>
+							</section>
+							
 						</article>
 					</div>
 					<xsl:call-template name="script"/>
@@ -284,11 +285,11 @@
 						<xsl:call-template name="header"><xsl:with-param name="white" select="'yes'"/></xsl:call-template><!--RIP style="background-color:#f26339;"-->
 						<article class="index">
 							<section class="calendar">
-								<h2>Pick a date :</h2>
+								<h2>pick a date :</h2>
 								<xsl:call-template name="calendar"/>
 							</section>
 							<section class="index" id="top_2">
-								<h2>Date index :</h2>
+								<h2>date index :</h2>
 								<xsl:apply-templates select="//tei:date[ancestor::tei:body]"
 									mode="index">
 									<xsl:sort select="@when"/>
@@ -1203,7 +1204,15 @@
 							<xsl:text>-</xsl:text>
 						</xsl:when>
 						<xsl:when test="not(number(@ref))">
-							<a href="{@ref}"> Oxford DNB </a>
+							<xsl:analyze-string select="@ref" regex="\s\d+">
+								<xsl:matching-substring>
+<!--									<a href="{substring-before(.,' ')}"> Oxford DNB </a>-->
+									<a href="{concat($base_uri, substring-after(.,' '))}"> CCED </a>
+								</xsl:matching-substring>
+								<xsl:non-matching-substring>
+									<a href="{.}"> Oxford DNB </a></xsl:non-matching-substring>
+							</xsl:analyze-string>
+							
 						</xsl:when>
 						<xsl:otherwise>
 							<a href="{concat($base_uri, @ref)}"> CCED </a>
@@ -1225,7 +1234,7 @@
 		<li><xsl:text>"</xsl:text><xsl:apply-templates/><xsl:text>"</xsl:text>: p.<a
 				href="{concat($transcriptions, preceding::tei:pb[1]/@n, '.html')}"><xsl:value-of
 					select="preceding::tei:pb[1]/@n"/></a></li>
-		<!-- ajouter un link ici générer automatiquement vers la page concernée ? -->
+		<!-- ajouter un link ici généré automatiquement vers la page concernée ? -->
 	</xsl:template>
 
 	<!--cf : https://askcodez.com/convertir-le-premier-caractere-de-chaque-mot-en-majuscule.html-->
