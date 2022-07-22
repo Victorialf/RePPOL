@@ -12,8 +12,9 @@
 	<!--	déclaration variable pour RESULTS-DOC-->
 	<xsl:variable name="basename">reppol</xsl:variable>
 	<xsl:variable name="home" select="concat($basename, '_home','.html')"/>
-	<xsl:variable name="about" select="concat($basename, '_about','.html')"/>
-	<xsl:variable name="legals" select="concat($basename, '_legals.html')"/>
+	<xsl:variable name="about" select="concat($basename, '_project','.html')"/>
+	<xsl:variable name="legals" select="concat($basename, '_about.html')"/>
+	<xsl:variable name="biblio" select="concat($basename,'_biblio.html')"/>
 	<xsl:variable name="pedago" select="concat($basename, '_trancriptioninteractive','.html')"/>
 	<xsl:variable name="index_characters" select="concat($basename,'_indexcharacters.html')"/>
 	<xsl:variable name="index_places" select="concat($basename,'_indexplaces.html')"/>
@@ -64,11 +65,14 @@
 						<ul class="nav_index">
 							<li><a href="{$index_characters}">persons</a></li>
 							<li><a href="{$index_places}">places</a></li>
-							<li><a href="{$index_dates}">cates</a></li>
+							<li><a href="{$index_dates}">dates</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="{$legals}">legals</a>
+						<a href="{$biblio}">bibliography</a>
+					</li>
+					<li>
+						<a href="{$legals}">about</a>
 					</li>
 				</ul>
 			</nav>
@@ -204,39 +208,44 @@
 		</footer>-->
 	</xsl:template>
 	
+<!--		template pour MEMBER-->
 	<xsl:template name="members">
 		<section class="home project_members">
 			<div class="project_member" style="grid-row-start:1; grid-column-start:1;">
 				<!--<a href="https://pro.univ-lille.fr/aude-de-mezerac/" target="blanck"><img src="img/anne_boleyn.png"/></a>-->
 				<p><span class="name"><a href="https://pro.univ-lille.fr/aude-de-mezerac/" target="blanck">Aude de
-					Mézerac-Zanetti</a></span><br /><span class="resp">Coordinatrice du projet</span></p>
+					Mézerac-Zanetti</a></span><br /><span class="resp">Principal investigator</span></p><!-- Coordinatrice du projet -->
+			</div>
+			<div class="project_member" style="grid-row-start:1; grid-column-start:2;">
+				<!--<a href="http://larhra.ish-lyon.cnrs.fr/membre/334" target="blanck"><img src="img/henry8.png"/></a>-->
+				<p><span class="name"><a href="http://larhra.ish-lyon.cnrs.fr/membre/334" target="blanck">Olivier Spina</a></span><br /><span class="resp">Principal investigator</span></p><!-- Coordinateur du projet -->
 			</div>
 			<div class="project_member">
-				<!--<a href="http://larhra.ish-lyon.cnrs.fr/membre/334" target="blanck"><img src="img/henry8.png"/></a>-->
-				<p><span class="name"><a href="http://larhra.ish-lyon.cnrs.fr/membre/334" target="blanck">Olivier Spina</a></span><br /><span class="resp">Coordinateur du projet</span></p>
-			</div>
-			<div class="project_member" style="grid-row-start:1; grid-column-start:2; margin-top:30px">
 <!--				<img src="img/elizabeth_princess.png"/>-->
-				<p><span class="name">Victoria Le Fourner</span><br /><span class="resp">Responsable technique</span></p>
+				<p><span class="name">Victoria Le Fourner</span><br /><span class="resp">Digital humanities manager</span></p><!-- Responsable technique -->
+			</div>
+			<div class="project_member">
+				<p><span class="name">Florence Perret</span><br /><span class="resp">Designer</span></p>
 			</div>
 			<div class="project_member">
 <!--				<img src="img/cromwell_thomas.png"/>-->
-				<p><span class="name">Felipe Goes Silva</span><br /><span class="resp">chargé de transcription</span></p>
+				<p><span class="name">Felipe Goes Silva</span><br /><span class="resp">Graduate student, transcription contributor</span></p><!-- chargé de transcription -->
 			</div>
-			<div class="project_member" style="grid-column-start:2;">
+			<div class="project_member">
 <!--				<img src="img/gardiner_stephan.png"/>-->
-				<p><span class="name">Adrien Mével</span><br /><span class="resp">chargé d'encodage</span></p>
+				<p><span class="name">Adrien Mével</span><br /><span class="resp">Graduate student &amp; intern, encoder and digital editor</span></p><!-- chargé d'encodage, digital humanities support -->
 			</div>
 		</section>
 		<section class="home lab">
-			<xsl:for-each select="//tei:funder">
+			
+			<xsl:for-each select="//tei:sponsor">
 				<p><a href="{@ref}" target="blanck"><xsl:apply-templates/></a></p>
 			</xsl:for-each>
 		</section>
 <!--			<hr/>-->
 		<section class="home sponsor">
 			<h2>sponsors :</h2>
-			<xsl:for-each select="//tei:sponsor">
+			<xsl:for-each select="//tei:funder">
 				<p><a href="{@ref}" target="blanck"><xsl:apply-templates/></a></p>
 			</xsl:for-each>
 		</section>
@@ -296,13 +305,13 @@
 		<xsl:result-document href="{$legals}">
 			<html>
 				<xsl:call-template name="head">
-					<xsl:with-param name="title" select="'legals'"/>
+					<xsl:with-param name="title" select="'about'"/>
 				</xsl:call-template>
 				<body><!--RIP style="background-color:#f26339;"-->
 					<div class="article_container">
 						<xsl:call-template name="header"><xsl:with-param name="white" select="'yes'"/></xsl:call-template><!--RIP style="background-color:#f26339;"-->
 						<article id="legals">
-							<h2>legals</h2>
+							<h2>credits</h2>
 								<h3>publisher</h3>
 								<p><a href="https://www.meshs.fr/page/accueil" target="blanck">MESHS de Lille</a></p>
 								<ul>
@@ -352,29 +361,48 @@
 							<!--<h3>Host</h3>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.</p>-->
 							<h3>licence</h3>
-							<p>The original manuscrit...... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, sempe</p>
+							<p>The original manuscrit is stored in at the <a href="https://parker.stanford.edu/parker" target="blanck">Parker Library in Cambridge, UK</a> can be freely accessed <a href="https://parker.stanford.edu/parker/catalog/ps908cx9813" target="blanck">here</a></p>
 							<div style="display:flex; align-items:center;">
-								<p>This site and the transcriptions produced as part of the RePPOL project are made available under the terms of the <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Licence Creative Commons Attribution 4.0 International</a><a rel="license" href="http://creativecommons.org/licenses/by/4.0/" style="margin-left:10px;"><img alt="Licence Creative Commons" class="links" src="https://creativecommons.org/images/chooser/chooser_cc.png"/><img alt="Licence Creative Commons" class="links" src="https://creativecommons.org/images/chooser/chooser_by.png"/></a>.</p>
+								<p>This site and the transcription produced as part of the RePPOL project are made available under the terms of the <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Licence Creative Commons Attribution 4.0 International</a><a rel="license" href="http://creativecommons.org/licenses/by/4.0/" style="margin-left:10px;"><img alt="Licence Creative Commons" class="links" src="https://creativecommons.org/images/chooser/chooser_cc.png"/><img alt="Licence Creative Commons" class="links" src="https://creativecommons.org/images/chooser/chooser_by.png"/></a>.</p>
 								
 							</div>
 							<!--<p>Les <a href="{$pedago}" target="blanck">transcriptions interactives</a> vous propose une démonstration sur dix pages de transcriptions interactives paléographiques et pédagogiques constituées à l'aide de la transformation <a href="https://github.com/TimotheAlbouy/Interfaxim" target="blanck">Interfaxim</a> développé par <a href="https://github.com/TimotheAlbouy" target="blanck">M. Thimothe Albouy</a>.</p>-->
-							<p>The ten pages long demonstration offered as <a href="{$pedago}" target="blanck">interactive transcriptions</a> would not have been possible without the <a href="https://github.com/TimotheAlbouy/Interfaxim" target="blanck">Interfaxim</a> XSL-stylesheet developped by <a href="https://github.com/TimotheAlbouy" target="blanck">Mr Thimothe Albouy</a> and is licensed under <a href="https://choosealicense.com/licenses/mit/" target="blanck">MIT License</a>.</p>
+							<p>The <a href="{$pedago}" target="blanck">interactive transcriptions</a> would not have been possible without the <a href="https://github.com/TimotheAlbouy/Interfaxim" target="blanck">Interfaxim</a> XSL-stylesheet developped by <a href="https://github.com/TimotheAlbouy" target="blanck">Mr Thimothe Albouy</a> and is licensed under <a href="https://choosealicense.com/licenses/mit/" target="blanck">MIT License</a>.</p>
 							<h3>citations</h3>
 							<p>To cite the website as a whole : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, sempe</p>
-							<p>To cite a particular page of the transcriptions : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, sempe</p>
+							<p>To cite a particular page of the transcription : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, sempe</p>
 							<h3>contact</h3>
-							<p>To report a bug, a mistake or only to give us a thumbs up get in touch at : xxxx@xxx.fr</p>
+							<p>To report a bug, a mistake or just to give us a thumbs up, get in touch : aude.de-mezerac@univ-lille.fr Olivier.Spina@univ-lyon2.fr</p>
 						</article>
 					</div>
 				</body>
 			</html>
 		</xsl:result-document>
 <!--	FIN page LEGALS-->
+<!--	DÉBUT page BIBLIO-->
+		<xsl:result-document href="{$biblio}">
+			<html>
+				<xsl:call-template name="head">
+					<xsl:with-param name="title" select="'bibliography'"/>
+				</xsl:call-template>
+				<body>
+					<div class="article_container">
+						<xsl:call-template name="header"><xsl:with-param name="white" select="'yes'"></xsl:with-param></xsl:call-template>
+						<article id="biblio">
+							<section></section>
+						</article>
+						<img class="home_img" src="img/cranmer_bichromie3.png"/>
+					</div>
+					<xsl:call-template name="script"/>
+				</body>
+			</html>
+		</xsl:result-document>
+<!--	FIN page BIBLIO-->
 <!--	DÉBUT page ABOUT-->
 		<xsl:result-document href="{$about}">
 			<html>
 				<xsl:call-template name="head">
-					<xsl:with-param name="title" select="'about'"/>
+					<xsl:with-param name="title" select="'project'"/>
 				</xsl:call-template>
 				<body><!--RIP style="background-color:#f26339;"-->
 					<div class="article_container">

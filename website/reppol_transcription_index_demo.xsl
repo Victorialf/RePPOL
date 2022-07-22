@@ -8,8 +8,9 @@
 	<!--	déclaration variable pour RESULTS-DOC-->
 	<xsl:variable name="basename">reppol</xsl:variable>
 	<xsl:variable name="home" select="concat($basename, '_home', '.html')"/>
-	<xsl:variable name="about" select="concat($basename, '_about', '.html')"/>
-	<xsl:variable name="legals" select="concat($basename, '_legals.html')"/>
+	<xsl:variable name="about" select="concat($basename, '_project', '.html')"/>
+	<xsl:variable name="legals" select="concat($basename, '_about.html')"/>
+	<xsl:variable name="biblio" select="concat($basename,'_biblio.html')"/>
 	<xsl:variable name="pedago" select="concat($basename, '_trancriptioninteractive', '.html')"/>
 	<xsl:variable name="index_characters" select="concat($basename, '_indexcharacters.html')"/>
 	<xsl:variable name="index_places" select="concat($basename, '_indexplaces.html')"/>
@@ -67,11 +68,14 @@
 						<ul class="nav_index">
 							<li><a href="{$index_characters}">persons</a></li>
 							<li><a href="{$index_places}">places</a></li>
-							<li><a href="{$index_dates}">cates</a></li>
+							<li><a href="{$index_dates}">dates</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="{$legals}">legals</a>
+						<a href="{$biblio}">bibliography</a>
+					</li>
+					<li>
+						<a href="{$legals}">about</a>
 					</li>
 				</ul>
 			</nav>
@@ -201,7 +205,7 @@
 						<xsl:call-template name="header"><xsl:with-param name="white" select="'yes'"/></xsl:call-template><!--RIP style="background-color:#f26339;"-->
 						<article class="index">
 							<section class="index_prelist">
-								<h2>pick a person :</h2>
+								<h2>browse :</h2>
 								<ul>
 									<xsl:apply-templates select="//tei:persName"
 										mode="index_prelist">
@@ -233,40 +237,19 @@
 						<xsl:call-template name="header"><xsl:with-param name="white" select="'yes'"/></xsl:call-template><!--RIP style="background-color:#f26339;"-->
 						<article class="index">
 							<section class="index_prelist">
-								<!--<h2>Place index :</h2>-->
-								<h3>counties</h3>
+								<h2>browse :</h2>
 								<ul class="index">
-									<xsl:apply-templates select="//tei:placeName[@type = 'county']"
+									<xsl:apply-templates select="//tei:placeName"
 										mode="index">
 										<xsl:sort select="lower-case(.)"/>
 									</xsl:apply-templates>
 								</ul>
-								<h3>cities</h3>
-								<ul class="index">
-									<xsl:apply-templates select="//tei:placeName[@type = 'city']"
-										mode="index">
-										<xsl:sort select="lower-case(.)"/>
-									</xsl:apply-templates>
-								</ul>
-								<h3>parishes</h3>
-								<ul class="index">
-									<xsl:apply-templates select="//tei:placeName[@type = 'parish']"
-										mode="index">
-										<xsl:sort select="lower-case(.)"/>
-									</xsl:apply-templates>
-								</ul>
-								<h3>settlements</h3>
-								<ul class="index">
-									<xsl:apply-templates
-										select="//tei:placeName[@type = 'settlement']" mode="index">
-										<xsl:sort select="lower-case(.)"/>
-									</xsl:apply-templates>
-								</ul>
+							</section>														<section id="top_2" class="index">
+								
 							</section>
-							<section id="top_2" class="index">
+							<section class="index">
 								<img class="index_map" src=""/>
 							</section>
-							
 						</article>
 					</div>
 					<xsl:call-template name="script"/>
@@ -285,7 +268,7 @@
 						<xsl:call-template name="header"><xsl:with-param name="white" select="'yes'"/></xsl:call-template><!--RIP style="background-color:#f26339;"-->
 						<article class="index">
 							<section class="calendar">
-								<h2>pick a date :</h2>
+								<h2>browse :</h2>
 								<xsl:call-template name="calendar"/>
 							</section>
 							<section class="index" id="top_2">
@@ -302,6 +285,7 @@
 				</body>
 			</html>
 		</xsl:result-document>
+<!--		FIN page INDEX DATE-->
 		<!--PAGE : SELECTEUR TRANSCRIPTION-->
 		<xsl:result-document href="{concat($transcriptions, '.html')}">
 			<html>
@@ -355,6 +339,7 @@
 											src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png"
 											class="page_nav left"/>
 									</a>
+									<h2 class="page"><!--ms128, -->p. <xsl:value-of select="@n"/></h2>
 									<a
 										href="{concat($transcriptions, following::tei:pb[1]/@n, '.html')}">
 										<img
@@ -1121,7 +1106,7 @@
 					</xsl:attribute>
 					<xsl:if test="$meta = 'n'">
 						<!--ajout d'un style particulier pour les metamark = n-->
-						<xsl:attribute name="style">color:#1c481f; font-size:18pt;</xsl:attribute>
+						<xsl:attribute name="style">font-size:18pt;</xsl:attribute><!-- color:#1c481f; -->
 					</xsl:if>
 					<xsl:apply-templates/>
 				</xsl:element>

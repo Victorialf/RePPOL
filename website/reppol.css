@@ -12,7 +12,7 @@
 body {
 	background-color: #efe9e3;
 	color: #1f0f7e/*#F2F2F2*/;
-	font-size: 16pt;
+	font-size: 18pt;
 	margin: 0;
 	overflow: hidden;/*ATTENTION permet de bloquer le scroll nécessite une taille fixe aux articles pour permettre de les scroller*/
 }
@@ -45,7 +45,7 @@ img.logo {
 	margin: 40px 30px 30px 30px;
 }
 .nav_top {
-	font-size: 20pt;
+	font-size: 21pt;
 	border-left: 2px solid #1f0f7e;
 	font-family: 'Source Code Pro', helvetica, sans-serif!important;
 	font-variant: small-caps;
@@ -59,6 +59,10 @@ img.logo {
 .nav_top ul li {
 	color: #1f0f7e;
 	/*padding: 49px 40px 0px 10px;important for proper display*/
+	flex-grow: 1;
+	flex-shrink: 1;
+	max-width: 300px;
+	text-align: center;
 }
 .nav_top ul li:hover {
 	/*background-color: #efe9e3; /*première option, casse gueule*/
@@ -70,7 +74,7 @@ img.logo {
 .nav_top ul li a{
 	text-decoration: none;
 	color: inherit;
-	padding: 49px 40px 0px 40px;/*important for proper display*/
+	padding: 49px 20px 0px 20px;/*important for proper display*/
 	display: block;
 	width: 100%;
 	height: 100%;
@@ -84,7 +88,7 @@ ul.nav_index {
 	display: none;
 	z-index: 999;
 	padding: 0;
-	font-size: 18pt;
+	font-size: 19pt;
 	transition: 0.3ms;
 	position: absolute;
 	/*left: -50px;*/
@@ -370,7 +374,7 @@ div.project_member p{
 }
 span.name{
 	color: #f26339;
-	font-size: 18pt;
+	font-size: 20pt;
 }
 span.resp{
 	font-style: italic;
@@ -379,13 +383,13 @@ section.lab {
 	border-top: 1px solid #1f0f7e;
 	text-align: left;
 	color: #1f0f7e !important;
-	font-size: 20pt;
+	font-size: 21pt;
 }
 section.sponsor{
 	border-top: 1px solid #1f0f7e;
 	border-bottom: 1px solid #1f0f7e;
 	color: #1f0f7e !important;
-	font-size: 20pt;
+	font-size: 21pt;
 }
 section.sponsor p, section.sponsor h2{
 	text-align: right
@@ -459,7 +463,7 @@ div.index_container {
 }
 div.index {
 	/*width: 30%;*/
-	font-size: 14pt;
+	font-size: 16pt;
 	position: relative;
 	border-right: 2px solid #0a1515;
 	border-bottom: 2px solid #0a1515;
@@ -492,7 +496,7 @@ div.index_unit ul {
 	font-weight: 400;
 }
 div.index h3 {
-	font-size: 16pt;
+	font-size: 18pt;
 	padding-left: 10px;
 	transition: 0.2s;
 }
@@ -501,7 +505,7 @@ div.index:hover h3 {
 
 }
 div.index_unit .expan {
-	color: #0a1515!important;
+	/*color: #0a1515!important;*/
 }
 ul.index {
 
@@ -636,9 +640,12 @@ article#transcription_pedago{
 	position: relative;
 	/*width: 90%;*/
 	height: fit-content;
-	border: 1px solid #1f0f7e;
+	/*border: 1px solid #1f0f7e;*/
 	margin: 10px 0px;
 	flex-shrink: 1;
+}
+.section-wrapper img{
+	border: 1px solid #1f0f7e;
 }
 div.zone {
 	position: absolute;
@@ -682,12 +689,21 @@ div.zone span { /*la version d'origine écrivait "div.zone &gt; span" &gt; étan
 }*/
 /*STYLE POUR DETAILS ET SUMMARY*/
 summary {
-	transition: all .4s ease;
+	transition: all .2s ease;
+	/*color: #f26339;*/
+	margin-left: 5px;
+	text-decoration-color: #f26339 ;
+
+}
+summary::marker {
+	color: #f26339;
 }
 summary:hover{
-	border-left: 60px solid #33333300; /*Gris translucide*/
+	margin-left: 60px; /*Gris translucide*/
 	text-decoration: underline;
-	transition: all .4s ease;
+	transition: all .2s ease;
+	text-decoration-color: #f26339 ;
+	
 }
 details {
 	cursor: pointer;
@@ -695,23 +711,16 @@ details {
 	border-bottom: 2px solid black;
 	border-radius: 15px;
 	box-shadow: 10px 10px 10px black;*/
-	margin-left: 60px;
+	/*margin-left: 60px;*/
 }
-/*
 div.comment {
-	margin-top: 60px;
+	/*margin-top: 60px;
 	margin-bottom: 60px;
-	background-color: #efac18/*ALT#639e94/*OLD#28162a;
-	border-radius: 15px;
-}*/
-/*Version alternative*/
-div.comment {
-	margin-top: 60px;
-	margin-bottom: 60px;
-	border-radius: 15px;
-	border: 2px solid #efac18/*ALT#639e94*//*OLD#28162a*/;
-	border-top: none;
-	border-left: none;
+	border-radius: 15px;*/
+	margin: 60px;
+	border: 1px solid #1f0f7e;
+	/*border-top: none;*/
+	/*border-left: none;*/
 }
 	/*class créées depuis attributs*/
 .pape_strikethrough {
@@ -737,7 +746,7 @@ div.comment {
 }
 .pape_expan {
 	font-style: italic;
-	color: /*#771919*/#932311 !important;
+	/*color: #771919!important;*/
 }
 .pape_note {
 	font-size: 24pt !important;
@@ -796,7 +805,7 @@ div.fac_selector h6{
 	/*top: 50%;/*version par-dessus*/
 	/*left: 50%;/*version par-dessus*/
 	/*transform: translate(-50%, -50%);/*version par-dessus*/
-	font-size: 14pt;
+	font-size: 16pt;
 	/*transition: 0.2s ease-out;*/
 /*	display: none;/*version opacity*/
 }
@@ -815,7 +824,7 @@ div.fac_selector img:hover {
 	/*height: 200px; /*pour la version qui s'aggrandit*/
 	/*opacity: 1;*/
 }
-/*PAGES TRNASCRIPTIONS INDDIVIDUELLES*/
+/*PAGES TRANSCRIPTIONS INDDIVIDUELLES*/
 section.page_nav{/*les boutons de navigations entres les pages*/
 	display: flex;
 	justify-content: space-between;
@@ -842,6 +851,13 @@ img.page_nav {/*les boutons de navigations entres les pages*/
 	-ms-transform: rotate(90deg);
 	-o-transform: rotate(90deg);
 	transform: rotate(90deg);
+}
+h2.page {
+	font-size: 20pt;
+	border: none;
+	margin-bottom: 0;
+	font-variant: normal;
+	color: #1f0f7e;
 }
 /*div.t_nav button{
 	float: right;
@@ -1085,7 +1101,7 @@ li {
 }
 .expan {
 	font-style: italic;
-	color: #771919 !important;
+	/*color: #771919 !important;*/
 }
 .note {
 	margin-top: 10px;
