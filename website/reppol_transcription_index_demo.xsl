@@ -8,8 +8,9 @@
 	<!--	déclaration variable pour RESULTS-DOC-->
 	<xsl:variable name="basename">reppol</xsl:variable>
 	<xsl:variable name="home" select="concat($basename, '_home', '.html')"/>
-	<xsl:variable name="about" select="concat($basename, '_about', '.html')"/>
-	<xsl:variable name="legals" select="concat($basename, '_legals.html')"/>
+	<xsl:variable name="about" select="concat($basename, '_project', '.html')"/>
+	<xsl:variable name="legals" select="concat($basename, '_about.html')"/>
+	<xsl:variable name="biblio" select="concat($basename,'_biblio.html')"/>
 	<xsl:variable name="pedago" select="concat($basename, '_trancriptioninteractive', '.html')"/>
 	<xsl:variable name="index_characters" select="concat($basename, '_indexcharacters.html')"/>
 	<xsl:variable name="index_places" select="concat($basename, '_indexplaces.html')"/>
@@ -28,18 +29,26 @@
 			<meta name="description"
 				content="transcriptions échantillons de Cambridge, Corpus Christi College, MS 128: Documents Relating to Archbishop Cranmer, manuscrit conservé à la Parker Library"/>
 			<meta name="keywords" content="XSLT,XML,TEI"/>
-			<link rel="icon" type="image/jpg" href="logo_reppol-noir-rouge.png"/>
+			<link rel="stylesheet" href="https://use.typekit.net/duu3aei.css"/>
+			<link rel="icon" type="image/jpg" href="img/logo_rep_or.png"/>
 			<!--LINK ICI-->
 			<link rel="stylesheet" href="reppol.css" type="text/css"/>
 			<!--LINK ICI-->
+			
 			<title>RePPOL - <xsl:value-of select="$title"/></title>
 		</head>
 	</xsl:template>
 	<!--	template pour HEADER-->
 	<xsl:template name="header">
+		<xsl:param name="white"/>
 		<header id="top">
 			<div class="logo">
-				<a href="{$home}"><img src="logo_reppol-noir-rouge.png" class="logo"></img></a>
+				<a href="{$home}">
+					<xsl:choose>
+						<xsl:when test="$white='yes'"><img src="img/logo_rep_or.png" class="logo"/></xsl:when>
+						<xsl:otherwise><img src="img/logo_rep_wh.png" class="logo"/></xsl:otherwise>
+					</xsl:choose>
+				</a>
 			</div>
 			<nav class="nav_top">
 				<ul>
@@ -47,29 +56,36 @@
 						<a href="{$home}">Home</a>
 					</li>-->
 					<li>
-						<a href="{$about}">The project</a>
+						<a href="{$about}">the project</a>
 					</li>
 					<li>
-						<a href="{concat($transcriptions,'.html')}">Transcriptions</a>
+						<a href="{concat($transcriptions,'.html')}">transcriptions</a>
 					</li>
 					<li>
-						<a href="{$pedago}">Interactive transcriptions</a>
+						<a href="{$pedago}">interactive transcriptions</a>
 					</li>
-					<li>Index
+					<li style="position:relative;">index
 						<ul class="nav_index">
-							<li><a href="{$index_characters}">Persons</a></li>
-							<li><a href="{$index_places}">Places</a></li>
-							<li><a href="{$index_dates}">Dates</a></li>
+							<li><a href="{$index_characters}">persons</a></li>
+							<li><a href="{$index_places}">places</a></li>
+							<li><a href="{$index_dates}">dates</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="{$legals}">Legals</a>
+						<a href="{$biblio}">bibliography</a>
+					</li>
+					<li>
+						<a href="{$legals}">about</a>
 					</li>
 				</ul>
 			</nav>
+			<div>
+<!--				FORM & SEARCH-->
+				
+			</div>
 			<div class="links">
 				<a href="https://github.com/Victorialf/RePPOL" target="blanck">
-					<img src="GitHub-Mark-32px.png"/>
+					<img src="img/GitHub-Mark-32px.png"/>
 				</a>
 				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_cc.png"/></a>
 				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_by.png"/></a>
@@ -110,72 +126,71 @@
 			//manipulate the height as you want if it is different than the maindiv's height
 			$('#text').css('max-height', 'Height');-->
 		</script>
-		<a href="#top">
-			<img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png" class="top"
-			/>
-		</a>
+		<!--<!-\-		Plus nécessaie après body{overflow:nope}-\->
+		<a href="#top"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png" class="top"/></a>-->
 	</xsl:template>
 	<!--	template pour FOOTER-->
 	<xsl:template name="footer">
-		<footer>
+		<section class="home footer">
+			<div class="footer_logo">
+				<a href="http://www.isite-ulne.fr/index.php/fr/page-daccueil/" target="blanck"><img src="img/logo_isite.png"/></a>
+			</div>
+			<div class="footer_logo">
+				<a href="https://comod.universite-lyon.fr/site-francais/" target="blanck"><img src="img/logo_labex.png"/></a>
+			</div>
+			<div class="footer_logo">
+				<a href="https://www.univ-lille.fr/" target="blanck">
+					<img src="img/logo_u_lille.png"/></a>
+			</div>
+			<div class="footer_logo">
+				<a href="https://www.meshs.fr/page/accueil" target="blanck">
+					<img src="img/logo_meshs.png"/>
+					
+				</a>
+			</div>
+			<div class="footer_logo">
+				<a href="https://cecille.univ-lille.fr/" target="blanck"><img src="img/logo_cecille.png"/></a>
+			</div>
+			<div class="footer_logo">
+				<a href="http://larhra.ish-lyon.cnrs.fr/" target="blanck">
+					<img src="img/logo_lahra.png"/>
+				</a>
+			</div>
+		</section>
+		
+		<!--<footer>
 			<div class="footer_icons">
 				<div class="footer_logo">
-					<a href="http://www.isite-ulne.fr/index.php/fr/page-daccueil/" target="blanck">
-						<img
-							src="http://www.isite-ulne.fr/wp-content/uploads/2018/07/I-SITE-ULNE_Logo-COUL_RVB.png"
-						/>
-					</a>
+					<a href="http://www.isite-ulne.fr/index.php/fr/page-daccueil/" target="blanck"><img src="http://www.isite-ulne.fr/wp-content/uploads/2018/07/I-SITE-ULNE_Logo-COUL_RVB.png"/></a>
 				</div>
 				<div class="footer_logo">
-					<a href="https://comod.universite-lyon.fr/site-francais/" target="blanck">
-						<!--<img src="https://comod.universite-lyon.fr/medias/photo/labex-comod-noir-png-300dpi-sans-fond-blanc_1551950983580-png?ID_FICHE=41153"/>-->
-						<img
-							src="https://comod.universite-lyon.fr/medias/photo/labex-comod-png-300dpi-sans-fond-blanc_1551950869031-png?ID_FICHE=41153"
-						/>
-					</a>
+					<a href="https://comod.universite-lyon.fr/site-francais/" target="blanck"><!-\-<img src="https://comod.universite-lyon.fr/medias/photo/labex-comod-noir-png-300dpi-sans-fond-blanc_1551950983580-png?ID_FICHE=41153"/>-\-><img src="https://comod.universite-lyon.fr/medias/photo/labex-comod-png-300dpi-sans-fond-blanc_1551950869031-png?ID_FICHE=41153"/></a>
 				</div>
 				<div class="footer_logo">
-					<a href="https://www.univ-lille.fr/" target="blanck">
-						<!--<img src="ULille.sans.baseline-Horizontal-CMJN-Noir.png"/>-->
-						<img
-							src="https://www.univ-lille.fr/typo3conf/ext/ul2fpfb/Resources/Public/assets/img/logos/ULille-nb.svg"
-						/>
-					</a>
+					<a href="https://www.univ-lille.fr/" target="blanck"><!-\-<img src="ULille.sans.baseline-Horizontal-CMJN-Noir.png"/>-\->
+						<img src="https://www.univ-lille.fr/typo3conf/ext/ul2fpfb/Resources/Public/assets/img/logos/ULille-nb.svg"/></a>
 				</div>
 				<div class="footer_logo">
 					<a href="https://www.meshs.fr/page/accueil" target="blanck">
-						<img
-							src="http://medias.meshs.fr/medias/images/logos/meshs/MESHS_Logo_NoirRouge_Sans.png"/>
-						<!--<img src="http://medias.meshs.fr/medias/images/logos/meshs/MESHS_Logo_NoirGris_Sans.png"/>-->
+						<img src="http://medias.meshs.fr/medias/images/logos/meshs/MESHS_Logo_NoirRouge_Sans.png"/>
+						<!-\-<img src="http://medias.meshs.fr/medias/images/logos/meshs/MESHS_Logo_NoirGris_Sans.png"/>-\->
 					</a>
 				</div>
 				<div class="footer_logo">
-					<a href="https://cecille.univ-lille.fr/" target="blanck">
-						<img src="http://gis-religions.fr/images/logos/labos/GIS-LOGO-CECILLE.jpg"/>
-					</a>
+					<a href="https://cecille.univ-lille.fr/" target="blanck"><img src="http://gis-religions.fr/images/logos/labos/GIS-LOGO-CECILLE.jpg"/></a>
 				</div>
 				<div class="footer_logo">
 					<a href="http://larhra.ish-lyon.cnrs.fr/" target="blanck">
-						<img
-							src="https://halshs.archives-ouvertes.fr/LARHRA/public/logo_larhra_fond_blanc.jpg"
-						/>
+						<img src="https://halshs.archives-ouvertes.fr/LARHRA/public/logo_larhra_fond_blanc.jpg"/>
 					</a>
 				</div>
 			</div>
-			<div class="footer_legal"> Ce site et les transcriptions réalisées dans le cadre du
-				projet RePPOL sont mis à disposition selon les termes de la <a rel="license"
-					href="http://creativecommons.org/licenses/by/4.0/">Licence Creative Commons
-					Attribution 4.0 International</a>
-				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img
-						alt="Licence Creative Commons" style="border-width:0; margin:10px;"
-						src="https://creativecommons.org/images/chooser/chooser_cc.png" height="50%"
-						/><img alt="Licence Creative Commons" style="border-width:0; margin:10px;"
-						src="https://creativecommons.org/images/chooser/chooser_by.png" height="50%"
-					/></a>
-				<p>More documentation on <a href="https://github.com/Victorialf/RePPOL"
-						target="blanck">Github</a></p>
+			<div class="footer_legal">
+				Ce site et les transcriptions réalisées dans le cadre du projet RePPOL sont mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Licence Creative Commons Attribution 4.0 International</a>
+				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licence Creative Commons" style="border-width:0; margin:10px;" src="https://creativecommons.org/images/chooser/chooser_cc.png" height="50%"/><img alt="Licence Creative Commons" style="border-width:0; margin:10px;" src="https://creativecommons.org/images/chooser/chooser_by.png" height="50%"/></a>
+				<p>More documentation on <a href="https://github.com/Victorialf/RePPOL" target="blanck">Github</a></p>
 			</div>
-		</footer>
+		</footer>-->
 	</xsl:template>
 
 	<xsl:template match="/">
@@ -185,12 +200,12 @@
 				<xsl:call-template name="head">
 					<xsl:with-param name="title" select="'character index'"/>
 				</xsl:call-template>
-				<body style="background-color:#f26339;">
+				<body><!--RIP style="background-color:#f26339;"-->
 					<div class="article_container">
-						<xsl:call-template name="header"/>
+						<xsl:call-template name="header"><xsl:with-param name="white" select="'yes'"/></xsl:call-template><!--RIP style="background-color:#f26339;"-->
 						<article class="index">
 							<section class="index_prelist">
-								<h2>Pick a person :</h2>
+								<h2>browse :</h2>
 								<ul>
 									<xsl:apply-templates select="//tei:persName"
 										mode="index_prelist">
@@ -199,7 +214,7 @@
 								</ul>
 							</section>
 							<section class="index" id="top_2">
-								<h2>Person index :</h2>
+								<h2>person index :</h2>
 								<xsl:apply-templates select="//tei:persName" mode="index">
 									<xsl:sort select="@key"/>
 								</xsl:apply-templates>
@@ -217,43 +232,23 @@
 				<xsl:call-template name="head">
 					<xsl:with-param name="title" select="'place index'"/>
 				</xsl:call-template>
-				<body style="background-color:#f26339;">
+				<body><!--RIP style="background-color:#f26339;"-->
 					<div class="article_container">
-						<xsl:call-template name="header"/>
-						<article style="display:flex;">
-							<section style="width:50%;">
-								<img class="index_map" src=""/>
+						<xsl:call-template name="header"><xsl:with-param name="white" select="'yes'"/></xsl:call-template><!--RIP style="background-color:#f26339;"-->
+						<article class="index">
+							<section class="index_prelist">
+								<h2>browse :</h2>
+								<ul class="index">
+									<xsl:apply-templates select="//tei:placeName"
+										mode="index">
+										<xsl:sort select="lower-case(.)"/>
+									</xsl:apply-templates>
+								</ul>
+							</section>														<section id="top_2" class="index">
+								
 							</section>
-							<section class="index" id="top_2">
-								<!--<h2>Place index :</h2>-->
-								<h3>Counties</h3>
-								<ul class="index">
-									<xsl:apply-templates select="//tei:placeName[@type = 'county']"
-										mode="index">
-										<xsl:sort select="lower-case(.)"/>
-									</xsl:apply-templates>
-								</ul>
-								<h3>Cities</h3>
-								<ul class="index">
-									<xsl:apply-templates select="//tei:placeName[@type = 'city']"
-										mode="index">
-										<xsl:sort select="lower-case(.)"/>
-									</xsl:apply-templates>
-								</ul>
-								<h3>Parishes</h3>
-								<ul class="index">
-									<xsl:apply-templates select="//tei:placeName[@type = 'parish']"
-										mode="index">
-										<xsl:sort select="lower-case(.)"/>
-									</xsl:apply-templates>
-								</ul>
-								<h3>Villages</h3>
-								<ul class="index">
-									<xsl:apply-templates
-										select="//tei:placeName[@type = 'settlement']" mode="index">
-										<xsl:sort select="lower-case(.)"/>
-									</xsl:apply-templates>
-								</ul>
+							<section class="index">
+								<img class="index_map" src=""/>
 							</section>
 						</article>
 					</div>
@@ -268,16 +263,16 @@
 				<xsl:call-template name="head">
 					<xsl:with-param name="title" select="'date index'"/>
 				</xsl:call-template>
-				<body style="background-color:#f26339;">
+				<body><!--RIP style="background-color:#f26339;"-->
 					<div class="article_container">
-						<xsl:call-template name="header"/>
+						<xsl:call-template name="header"><xsl:with-param name="white" select="'yes'"/></xsl:call-template><!--RIP style="background-color:#f26339;"-->
 						<article class="index">
 							<section class="calendar">
-								<h2>Pick a date :</h2>
+								<h2>browse :</h2>
 								<xsl:call-template name="calendar"/>
 							</section>
 							<section class="index" id="top_2">
-								<h2>Date index :</h2>
+								<h2>date index :</h2>
 								<xsl:apply-templates select="//tei:date[ancestor::tei:body]"
 									mode="index">
 									<xsl:sort select="@when"/>
@@ -290,15 +285,16 @@
 				</body>
 			</html>
 		</xsl:result-document>
+<!--		FIN page INDEX DATE-->
 		<!--PAGE : SELECTEUR TRANSCRIPTION-->
 		<xsl:result-document href="{concat($transcriptions, '.html')}">
 			<html>
 				<xsl:call-template name="head">
 					<xsl:with-param name="title" select="'transcriptions'"/>
 				</xsl:call-template>
-				<body style="background-color:#f26339;">
+				<body><!--RIP style="background-color:#f26339;"-->
 					<div class="article_container">
-						<xsl:call-template name="header"/>
+						<xsl:call-template name="header"><xsl:with-param name="white" select="'yes'"/></xsl:call-template><!--RIP style="background-color:#f26339;"-->
 						<article class="fac_selector">
 							<xsl:for-each select="//tei:surface">
 								<xsl:variable name="facs" select="concat('#', @xml:id)"/>
@@ -323,6 +319,7 @@
 				<!--				<xsl:call-template name="footer"/>-->
 			</html>
 		</xsl:result-document>
+<!--		PAGES DE TRANSCRIPTIONS INDIVIDUELLES-->
 		<xsl:for-each select="//tei:text[@xml:id = 'reppol_trans']//tei:pb">
 			<xsl:variable name="facs" select="@facs"/>
 			<xsl:variable name="startid">#</xsl:variable>
@@ -333,7 +330,7 @@
 					</xsl:call-template>
 					<body style="background-color:#efe9e3;">
 						<div class="article_container">
-							<xsl:call-template name="header"/>
+							<xsl:call-template name="header"><xsl:with-param name="white" select="'yes'"/></xsl:call-template>
 							<article class="transcription">
 								<section class="page_nav">
 									<a
@@ -342,6 +339,7 @@
 											src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png"
 											class="page_nav left"/>
 									</a>
+									<h2 class="page"><!--ms128, -->p. <xsl:value-of select="@n"/></h2>
 									<a
 										href="{concat($transcriptions, following::tei:pb[1]/@n, '.html')}">
 										<img
@@ -1108,7 +1106,7 @@
 					</xsl:attribute>
 					<xsl:if test="$meta = 'n'">
 						<!--ajout d'un style particulier pour les metamark = n-->
-						<xsl:attribute name="style">color:#1c481f; font-size:18pt;</xsl:attribute>
+						<xsl:attribute name="style">font-size:18pt;</xsl:attribute><!-- color:#1c481f; -->
 					</xsl:if>
 					<xsl:apply-templates/>
 				</xsl:element>
@@ -1191,7 +1189,15 @@
 							<xsl:text>-</xsl:text>
 						</xsl:when>
 						<xsl:when test="not(number(@ref))">
-							<a href="{@ref}"> Oxford DNB </a>
+							<xsl:analyze-string select="@ref" regex="\s\d+">
+								<xsl:matching-substring>
+<!--									<a href="{substring-before(.,' ')}"> Oxford DNB </a>-->
+									<a href="{concat($base_uri, substring-after(.,' '))}"> CCED </a>
+								</xsl:matching-substring>
+								<xsl:non-matching-substring>
+									<a href="{.}"> Oxford DNB </a></xsl:non-matching-substring>
+							</xsl:analyze-string>
+							
 						</xsl:when>
 						<xsl:otherwise>
 							<a href="{concat($base_uri, @ref)}"> CCED </a>
@@ -1213,7 +1219,7 @@
 		<li><xsl:text>"</xsl:text><xsl:apply-templates/><xsl:text>"</xsl:text>: p.<a
 				href="{concat($transcriptions, preceding::tei:pb[1]/@n, '.html')}"><xsl:value-of
 					select="preceding::tei:pb[1]/@n"/></a></li>
-		<!-- ajouter un link ici générer automatiquement vers la page concernée ? -->
+		<!-- ajouter un link ici généré automatiquement vers la page concernée ? -->
 	</xsl:template>
 
 	<!--cf : https://askcodez.com/convertir-le-premier-caractere-de-chaque-mot-en-majuscule.html-->

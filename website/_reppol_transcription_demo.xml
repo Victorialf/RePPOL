@@ -20,23 +20,27 @@
 				<respStmt>
 					<name ref="https://pro.univ-lille.fr/aude-de-mezerac/">Aude de
 						Mézerac-Zanetti</name>
-					<resp>Directrice scientifique</resp>
+					<resp>Principal investigator</resp>
 				</respStmt>
 				<respStmt>
 					<name ref="http://larhra.ish-lyon.cnrs.fr/membre/334">Olivier Spina</name>
-					<resp>Directeur scientifique</resp>
+					<resp>Principal investigator</resp>
 				</respStmt>
 				<respStmt>
 					<name>Victoria Le Fourner</name>
-					<resp>Directrice technique</resp>
+					<resp>Digital humanities manager</resp>
+				</respStmt>
+				<respStmt>
+					<name>Florence Perret</name>
+					<resp>Designer</resp>
 				</respStmt>
 				<respStmt>
 					<name>Felipe Goes Silva</name>
-					<resp>Transcription</resp>
+					<resp>Graduate student, transcription contributor</resp>
 				</respStmt>
 				<respStmt>
 					<name>Adrien Mével</name>
-					<resp>Responsable encodage</resp>
+					<resp>Graduate student &amp; intern, encoder and digital editor</resp>
 				</respStmt>
 			</titleStmt>
 			<extent>
@@ -73,11 +77,11 @@
 						<objectDesc>
 							<supportDesc>
 								<extent>Plusieurs folios reliés constituant un total de <measure
-										unit="pages" quantity="442">442 pages</measure> en
-										<material>papier</material> mesurant <height unit="mm"
+									unit="pages" quantity="442">442 pages</measure> en
+									<material>papier</material> mesurant <height unit="mm"
 										quantity="314">314 mm de haut</height> pour <width unit="mm"
-										quantity="210">210 mm de large</width> dont seulement
-										<measure unit="pages" quantity="360">360 pages</measure>
+											quantity="210">210 mm de large</width> dont seulement
+									<measure unit="pages" quantity="360">360 pages</measure>
 									sont traitées dans le cadre du projet RePPOL. </extent>
 								<foliation>ff. i-ii + pp. 1-2 (3-4 missing) + 5-166 + 166a-d +
 									167-264 + 264a-265a + 265-324 + 324a-325a + 325-436 + 436a +
@@ -89,9 +93,6 @@
 							<handNote> </handNote>
 						</handDesc>-->
 					</physDesc>
-					<!--<history>
-						<p/>
-					</history>-->
 				</msDesc>
 			</sourceDesc>
 		</fileDesc>
@@ -111,7 +112,9 @@
 			<creation>
 				<date>[ca. 1500-1599]</date>
 			</creation>
-			<langUsage><p>Principalement rédigé en Anglais avec quelques passages en Latin.</p></langUsage>
+			<langUsage>
+				<p>Principalement rédigé en Anglais avec quelques passages en Latin.</p>
+			</langUsage>
 			<calendarDesc>
 				<calendar>
 					<p>Anno Domini (Christian Era)</p>
@@ -122,22 +125,151 @@
 			</calendarDesc>
 		</profileDesc>
 		<encodingDesc>
-			<projectDesc><!--
+			<projectDesc>
+				<!--
 				<!-\-				En commentaire pour le site, évitant les redites : -\->
 				<p>RePPOL est un projet scientifique et pédagogique collaboratif mené par <ref target="https://pro.univ-lille.fr/aude-de-mezerac/">Aude de Mézerac-Zanetti</ref>, spécialiste d'histoire religieuse de l'Angleterre d'Henri VIII (Mcf, aude.de-mezerac@univ-lille.fr, Université de Lille, <ref target="https://cecille.univ-lille.fr/">CECILLE</ref>), <ref target="http://larhra.ish-lyon.cnrs.fr/membre/334">Olivier Spina</ref>, spécialiste d'histoire politique de l'Angleterre Tudor (Mcf, olivier.spina@univ-lyon2.fr, Université de Lyon 2, <ref target="http://larhra.ish-lyon.cnrs.fr/">LARHRA</ref>) et Victoria Le Fourner (ingénieure d’études, spécialiste des humanités numériques à la <ref target="https://www.meshs.fr/page/accueil">MESHS</ref> de Lille) avec l’aide de Felipe Goes-Silva (étudiant en M1 Recherche en Études Anglophones à l’Université de Lille) et de Adrien Mével (étudiant en M1 Éditions numériques et imprimées de texte littéraires à l'Université de Lille. Ce projet est financé majoritairement par l'<ref  target="http://www.isite-ulne.fr/index.php/fr/page-daccueil/">I-site Université Lille-Nord-Europe</ref> et par le <ref target="https://comod.universite-lyon.fr/">LABEX COMOD</ref> (Université de Lyon) et soutenu par la <ref target="https://www.meshs.fr/page/accueil">Maison Européenne des Sciences de l'Homme et de la Société Lille Nord de France (MESHS)</ref>.</p><!-\-récupéré sur https://ahmuf.hypotheses.org/9528 et tact   + ajouts et modifications A. Mével-\->-->
-				<p xml:lang="fr">Notre projet est consacré à la transcription, l’édition critique et l’analyse d’un document exceptionnel : le manuscrit MS 128 conservé à la bibliothèque de Corpus Christi College, Cambridge (à voir sur la <ref target="https://tact.demarre-shs.fr/project/31">plateforme TACT</ref>). Il s’agit d’un manuscrit composite d’environ 220 folios qui contient la documentation rassemblée en 1543 sous l’égide de l’Archevêque de Cantorbéry, Thomas Cranmer. Celui-ci, gagné aux idées réformées, est visé par un complot ourdi par des chanoines de sa propre cathédrale (d’où le surnom de Prebendaries Plot) en lien avec des prêtres et des laïcs « conservateurs » du diocèse du Kent. Ces derniers initient un travail de collecte de dénonciations attestant de la radicalité religieuse de Cranmer et de certains de ses clients réformés afin de discréditer l’archevêque de Cantorbéry aux yeux du roi et précipiter sa chute. Cependant, le roi maintient sa faveur à Cranmer mais le charge d’enquêter sur toutes les croyances ou pratiques non conformistes dans son diocèse. L’objectif de cette vaste enquête est encore à élucider. L’archevêque semble saisir cette occasion pour incriminer les clercs et les laïcs conservateurs qui ont participé au Prebendaries Plot : ses agents collectent dénonciations et témoignages de croyances ou pratiques « superstitieuses » ou « papistes » ; mais, le manuscrit renferme également des dénonciations de sacramentaires, d’iconoclastes et d’évangéliques radicaux, qui auraient davantage pu susciter l’indulgence de Cranmer.</p>
-				<p xml:lang="fr">Dès lors, le manuscrit MS 128, fruits de ces collectes antinomiques, est une mosaïque double. Mosaïque de documents d’abord, puisqu’il comporte des lettres de dénonciations, des interrogatoires ou encore des mémorandums dont le sens nous échappe en partie ; mais il est aussi une mosaïque de traces des croyances et des pratiques religieuses dans un comté anglais des années 1540. En effet, il renferme plus d’une centaine de témoignages ou dénonciations émanant de clercs et de laïcs des deux sexes et de tout rang. Cette documentation fragmentée révèle l’éclectisme des croyances et des pratiques dans cette Angleterre qui a rompu avec Rome depuis près de dix ans et dans laquelle Henri VIII peine à imposer une quelconque uniformité malgré l’instauration de la Suprématie royale. Ce manuscrit serait-il la trace archivistique des tentatives royales (et de leurs limites) d’imposer une « uniformité religieuse » désirée par Henri VIII depuis le début des années 1530 ?</p>
-				<p xml:lang="fr">Jusqu’à présent, plusieurs historiens ont mobilisé partiellement cette source dans le contexte d’études plus larges (Ethan Shagan afin d’explorer l’avancée de la Réforme en Angleterre, Diarmaid MacCulloch pour dresser les portraits des détracteurs de Thomas Cranmer dans la biographie qu’il lui consacre…), mais aucune étude du manuscrit per se n’a été menée et on ne l’a jamais fait dialoguer avec des documents proches (interrogatoires, dénonciations…) pour en dégager les éclairages politiques, religieux ou sociaux qu’il peut apporter sur la période.</p>
-				<p xml:lang="fr">Or, le projet RePPOL entend montrer que cette source exceptionnelle permet non seulement d’éclairer les croyances et les pratiques liturgiques populaires souvent inattendues, parfois cocasses, dans un Kent en « transition confessionnelle », mais aussi de saisir la Réforme anglaise comme un phénomène de transformation anthropologique du rapport au religieux, processus qui s’étend sur des plusieurs décennies du XVIe siècle. RePPOL s’inscrit enfin dans le cadre des renouvellements historiographiques récents sur le rôle du peuple dans la production du politique à l’époque moderne, ces témoignages permettant de comprendre le rôle actif que les sujets, y compris les laïcs les plus infimes, ont pu jouer dans les processus de mutations politico-religieuses que connaît l’Angleterre henricienne.</p>
+				<p xml:lang="fr">Notre projet est consacré à la transcription, l’édition critique et
+					l’analyse d’un document exceptionnel : le manuscrit MS 128 conservé à la
+					bibliothèque de Corpus Christi College, Cambridge (à voir sur la <ref
+						target="https://tact.demarre-shs.fr/project/31">plateforme TACT</ref>). Il
+					s’agit d’un manuscrit composite d’environ 220 folios qui contient la
+					documentation rassemblée en 1543 sous l’égide de l’Archevêque de Cantorbéry,
+					Thomas Cranmer. Celui-ci, gagné aux idées réformées, est visé par un complot
+					ourdi par des chanoines de sa propre cathédrale (d’où le surnom de Prebendaries
+					Plot) en lien avec des prêtres et des laïcs « conservateurs » du diocèse du
+					Kent. Ces derniers initient un travail de collecte de dénonciations attestant de
+					la radicalité religieuse de Cranmer et de certains de ses clients réformés afin
+					de discréditer l’archevêque de Cantorbéry aux yeux du roi et précipiter sa
+					chute. Cependant, le roi maintient sa faveur à Cranmer mais le charge d’enquêter
+					sur toutes les croyances ou pratiques non conformistes dans son diocèse.
+					L’objectif de cette vaste enquête est encore à élucider. L’archevêque semble
+					saisir cette occasion pour incriminer les clercs et les laïcs conservateurs qui
+					ont participé au Prebendaries Plot : ses agents collectent dénonciations et
+					témoignages de croyances ou pratiques « superstitieuses » ou « papistes » ;
+					mais, le manuscrit renferme également des dénonciations de sacramentaires,
+					d’iconoclastes et d’évangéliques radicaux, qui auraient davantage pu susciter
+					l’indulgence de Cranmer.</p>
+				<p xml:lang="fr">Dès lors, le manuscrit MS 128, fruits de ces collectes
+					antinomiques, est une mosaïque double. Mosaïque de documents d’abord, puisqu’il
+					comporte des lettres de dénonciations, des interrogatoires ou encore des
+					mémorandums dont le sens nous échappe en partie ; mais il est aussi une mosaïque
+					de traces des croyances et des pratiques religieuses dans un comté anglais des
+					années 1540. En effet, il renferme plus d’une centaine de témoignages ou
+					dénonciations émanant de clercs et de laïcs des deux sexes et de tout rang.
+					Cette documentation fragmentée révèle l’éclectisme des croyances et des
+					pratiques dans cette Angleterre qui a rompu avec Rome depuis près de dix ans et
+					dans laquelle Henri VIII peine à imposer une quelconque uniformité malgré
+					l’instauration de la Suprématie royale. Ce manuscrit serait-il la trace
+					archivistique des tentatives royales (et de leurs limites) d’imposer une «
+					uniformité religieuse » désirée par Henri VIII depuis le début des années 1530
+					?</p>
+				<p xml:lang="fr">Jusqu’à présent, plusieurs historiens ont mobilisé partiellement
+					cette source dans le contexte d’études plus larges (Ethan Shagan afin d’explorer
+					l’avancée de la Réforme en Angleterre, Diarmaid MacCulloch pour dresser les
+					portraits des détracteurs de Thomas Cranmer dans la biographie qu’il lui
+					consacre…), mais aucune étude du manuscrit per se n’a été menée et on ne l’a
+					jamais fait dialoguer avec des documents proches (interrogatoires,
+					dénonciations…) pour en dégager les éclairages politiques, religieux ou sociaux
+					qu’il peut apporter sur la période.</p>
+				<p xml:lang="fr">Or, le projet RePPOL entend montrer que cette source exceptionnelle
+					permet non seulement d’éclairer les croyances et les pratiques liturgiques
+					populaires souvent inattendues, parfois cocasses, dans un Kent en « transition
+					confessionnelle », mais aussi de saisir la Réforme anglaise comme un phénomène
+					de transformation anthropologique du rapport au religieux, processus qui s’étend
+					sur des plusieurs décennies du XVIe siècle. RePPOL s’inscrit enfin dans le cadre
+					des renouvellements historiographiques récents sur le rôle du peuple dans la
+					production du politique à l’époque moderne, ces témoignages permettant de
+					comprendre le rôle actif que les sujets, y compris les laïcs les plus infimes,
+					ont pu jouer dans les processus de mutations politico-religieuses que connaît
+					l’Angleterre henricienne.</p>
 				<!--Récupéré sur  https://ahmuf.hypotheses.org/9528-->
 				<!--ci-dessous : écrit d'après les infos collectées-->
-				<p>Adoptant une démarche de recherche collaborative et de formation par la recherche, ce projet s'articule en trois temps. La première étape (fin juin 2021-début 2022) vise à transcrire l'intégralité du manuscrit, par une démarche collaborative mobilisant enseignants-chercheurs et étudiants dans le cadre du cours de paléographie moderne. La transcription semi-diplomatique est réalisé via la <ref target="https://tact.demarre-shs.fr/">plateforme de Transcription et d'Annotations de Corpus Textuel (TACT)</ref> développée par l'Université de Grenoble. Les images des folios ont été numérisées par la <ref target="https://parker.stanford.edu/parker/catalog/ps908cx9813">Parker Library</ref> et y étaient accessibles selon le cadre interopérable <ref target="https://iiif.io/">International Image Interoperability Framework (3IF)</ref>. La seconde étape du travail (2022) est consacrée à l'analyse fine de cette source à la lumière de documents archivistiques de nature similaire. La troisième étape, dont le présent document est l'une des incarnations, est la constitution d'une édition numérique en ligne permettant via balisage en xml-tei l'interrogation du contenu du document par des index.</p>
+				<p>Adoptant une démarche de recherche collaborative et de formation par la
+					recherche, ce projet s'articule en trois temps. La première étape (fin juin
+					2021-début 2022) vise à transcrire l'intégralité du manuscrit, par une démarche
+					collaborative mobilisant enseignants-chercheurs et étudiants dans le cadre du
+					cours de paléographie moderne. La transcription semi-diplomatique est réalisé
+					via la <ref target="https://tact.demarre-shs.fr/">plateforme de Transcription et
+						d'Annotations de Corpus Textuel (TACT)</ref> développée par l'Université de
+					Grenoble. Les images des folios ont été numérisées par la <ref
+						target="https://parker.stanford.edu/parker/catalog/ps908cx9813">Parker
+						Library</ref> et y étaient accessibles selon le cadre interopérable <ref
+							target="https://iiif.io/">International Image Interoperability Framework
+							(3IF)</ref>. La seconde étape du travail (2022) est consacrée à l'analyse
+					fine de cette source à la lumière de documents archivistiques de nature
+					similaire. La troisième étape, dont le présent document est l'une des
+					incarnations, est la constitution d'une édition numérique en ligne permettant
+					via balisage en xml-tei l'interrogation du contenu du document par des
+					index.</p>
 				<!--Translated with www.DeepL.com/Translator (free version)-->
-				<p xml:lang="en">Our project is devoted to the transcription, critical edition, and analysis of an exceptional document: the manuscript MS 128 held in the library of Corpus Christi College, Cambridge (can be viewed on the <ref target="https://tact.demarre-shs.fr/project/31">TACT platform</ref>). It is a composite manuscript of about 220 folios that contains the documentation gathered in 1543 under the supervision of the Archbishop of Canterbury, Thomas Cranmer. The latter, won over to the Reformed ideas, was the target of a plot hatched by canons of his own cathedral (hence the nickname of the Prebendaries Plot) in connection with priests and "conservative" laymen of the diocese of Kent. The latter initiated a work of collecting denunciations attesting to the religious radicalism of Cranmer and some of his reformed clients in order to discredit the archbishop of Canterbury in the eyes of the king and precipitate his fall. However, the king maintained his favor to Cranmer but charged him with investigating all non-conformist beliefs or practices in his diocese. The purpose of this vast investigation is yet to be clarified. The archbishop seemed to take the opportunity to incriminate conservative clerics and laymen who had participated in the Prebendaries Plot: his agents collected denunciations and testimonies of "superstitious" or "papist" beliefs or practices; but the manuscript also contained denunciations of sacramentarians, iconoclasts and radical evangelicals, which might have been more likely to elicit Cranmer's leniency.</p>
-				<p xml:lang="en">The manuscript MS 128, fruit of these antinomic collections, is a double mosaic. A mosaic of documents, since it contains letters of denunciation, interrogations and memoranda whose meaning partly escapes us; but it is also a mosaic of traces of religious beliefs and practices in an English county in the 1540's. Indeed, it contains more than a hundred testimonies or denunciations emanating from clerics and laymen of both sexes and of all ranks. This fragmented documentation reveals the eclecticism of beliefs and practices in an England that broke with Rome nearly ten years ago and in which Henry VIII struggled to impose any kind of uniformity despite the establishment of the Royal Supremacy. Could this manuscript be the archival trace of the royal attempts (and their limits) to impose a "religious uniformity" desired by Henry VIII since the early 1530s ?</p>
-				<p xml:lang="en">Several historians have partially mobilized this source in the context of broader studies (Ethan Shagan in order to explore the progress of the Reformation in England, Diarmaid MacCulloch in order to draw up portraits of Thomas Cranmer's detractors in his biography of him... ), but no study of the manuscript per se has been carried out and it has never been put in dialogue with related documents (interrogations, denunciations...) in order to bring out the political, religious or social insights that it can bring to the period.</p>
-				<p xml:lang="en">The RePPOL project intends to show that this exceptional source not only sheds light on the often unexpected, sometimes comical, popular beliefs and liturgical practices in a Kent undergoing a "confessional transition", but also to grasp the English Reformation as a phenomenon of anthropological transformation of the relationship to religion, a process that extends over several decades of the sixteenth century. Finally, RePPOL is part of the recent historiographic renewal on the role of the people in the production of politics in the modern era, as these testimonies allow us to understand the active role that subjects, including the most minute laymen, were able to play in the processes of political and religious mutations that Henrician England experienced.</p>
-				<p xml:lang="en">Adopting a collaborative and training-through-research approach, this project is articulated in three stages. The first stage (end of June 2021-beginning of 2022) aims to transcribe the entire manuscript, through a collaborative approach mobilizing teacher-researchers and students in the context of the modern paleography course. The semi-diplomatic transcription is carried out via the <ref target="https://tact.demarre-shs.fr/">Transcription and Annotation Platform for Textual Corpus (TACT)</ref> developed by the University of Grenoble. The images of the folios were digitized by the <ref target="https://parker.stanford.edu/parker/catalog/ps908cx9813">Parker Library</ref> and were accessible there according to the <ref target="https://iiif.io/">International Image Interoperability Framework (3IF)</ref>. The second stage of the work (2022) is devoted to fine-grained analysis of this source in light of archival records of a similar nature. The third step, of which the present document is one of the incarnations, is the constitution of an online digital edition allowing via xml-tei tagging the interrogation of the document content by indexes.</p>
+				<p xml:lang="en">Our project is devoted to the transcription, critical edition, and
+					analysis of an exceptional document: the manuscript MS 128 held in the library
+					of Corpus Christi College, Cambridge (can be viewed on the <ref
+						target="https://tact.demarre-shs.fr/project/31">TACT platform</ref>). It is
+					a composite manuscript of about 220 folios that contains the documentation
+					gathered in 1543 under the supervision of the Archbishop of Canterbury, Thomas
+					Cranmer. The latter, won over to the Reformed ideas, was the target of a plot
+					hatched by canons of his own cathedral (hence the nickname of the Prebendaries
+					Plot) in connection with priests and "conservative" laymen of the diocese of
+					Kent. The latter initiated a work of collecting denunciations attesting to the
+					religious radicalism of Cranmer and some of his reformed clients in order to
+					discredit the archbishop of Canterbury in the eyes of the king and precipitate
+					his fall. However, the king maintained his favor to Cranmer but charged him with
+					investigating all non-conformist beliefs or practices in his diocese. The
+					purpose of this vast investigation is yet to be clarified. The archbishop seemed
+					to take the opportunity to incriminate conservative clerics and laymen who had
+					participated in the Prebendaries Plot: his agents collected denunciations and
+					testimonies of "superstitious" or "papist" beliefs or practices; but the
+					manuscript also contained denunciations of sacramentarians, iconoclasts and
+					radical evangelicals, which might have been more likely to elicit Cranmer's
+					leniency.</p>
+				<p xml:lang="en">The manuscript MS 128, fruit of these antinomic collections, is a
+					double mosaic. A mosaic of documents, since it contains letters of denunciation,
+					interrogations and memoranda whose meaning partly escapes us; but it is also a
+					mosaic of traces of religious beliefs and practices in an English county in the
+					1540's. Indeed, it contains more than a hundred testimonies or denunciations
+					emanating from clerics and laymen of both sexes and of all ranks. This
+					fragmented documentation reveals the eclecticism of beliefs and practices in an
+					England that broke with Rome nearly ten years ago and in which Henry VIII
+					struggled to impose any kind of uniformity despite the establishment of the
+					Royal Supremacy. Could this manuscript be the archival trace of the royal
+					attempts (and their limits) to impose a "religious uniformity" desired by Henry
+					VIII since the early 1530s ?</p>
+				<p xml:lang="en">Several historians have partially mobilized this source in the
+					context of broader studies (Ethan Shagan in order to explore the progress of the
+					Reformation in England, Diarmaid MacCulloch in order to draw up portraits of
+					Thomas Cranmer's detractors in his biography of him... ), but no study of the
+					manuscript per se has been carried out and it has never been put in dialogue
+					with related documents (interrogations, denunciations...) in order to bring out
+					the political, religious or social insights that it can bring to the period.</p>
+				<p xml:lang="en">The RePPOL project intends to show that this exceptional source not
+					only sheds light on the often unexpected, sometimes comical, popular beliefs and
+					liturgical practices in a Kent undergoing a "confessional transition", but also
+					to grasp the English Reformation as a phenomenon of anthropological
+					transformation of the relationship to religion, a process that extends over
+					several decades of the sixteenth century. Finally, RePPOL is part of the recent
+					historiographic renewal on the role of the people in the production of politics
+					in the modern era, as these testimonies allow us to understand the active role
+					that subjects, including the most minute laymen, were able to play in the
+					processes of political and religious mutations that Henrician England
+					experienced.</p>
+				<p xml:lang="en">Adopting a collaborative and training-through-research approach,
+					this project is articulated in three stages. The first stage (end of June
+					2021-beginning of 2022) aims to transcribe the entire manuscript, through a
+					collaborative approach mobilizing teacher-researchers and students in the
+					context of the modern paleography course. The semi-diplomatic transcription is
+					carried out via the <ref target="https://tact.demarre-shs.fr/">Transcription and
+						Annotation Platform for Textual Corpus (TACT)</ref> developed by the
+					University of Grenoble. The images of the folios were digitized by the <ref
+						target="https://parker.stanford.edu/parker/catalog/ps908cx9813">Parker
+						Library</ref> and were accessible there according to the <ref
+							target="https://iiif.io/">International Image Interoperability Framework
+							(3IF)</ref>. The second stage of the work (2022) is devoted to fine-grained
+					analysis of this source in light of archival records of a similar nature. The
+					third step, of which the present document is one of the incarnations, is the
+					constitution of an online digital edition allowing via xml-tei tagging the
+					interrogation of the document content by indexes.</p>
 			</projectDesc>
 			<editorialDecl>
 				<p>Encodage de la structure sémantique du texte en essayant également de rendre
@@ -149,7 +281,8 @@
 				<normalization>
 					<p>Lors de la transcription, les abréviations ont été systématiquement
 						développées, elles ont ensuite été encodées pour être affichées en italituqe
-						conformément au standard de la <ref target="https://www.folger.edu/">Folger Shakespeare Library</ref>.</p>
+						conformément au standard de la <ref target="https://www.folger.edu/">Folger
+							Shakespeare Library</ref>.</p>
 				</normalization>
 			</editorialDecl>
 			<appInfo>
@@ -703,7 +836,7 @@
 							<persName type="religious" ref="x" key="willoughby_john">Mr Williby</persName> moved such matt<expan>er</expan>s much ther by reson <hi rend="underline">he said
 								<expan>that</expan> he had spoken w<expan>ith </expan>many of the
 							kinges cownsell in it</hi> &amp; that he wold take upon him to be the hole
-							setter forth of the matter. After the woordes <persName type="lay_man" ref="x" key="baker_john">Mr baker</persName> did send for <persName type="x" ref="x" key="parkhurst_richard">Mr p<expan>ar</expan>khurst</persName> <persName type="religious" ref="90003" key="gardiner_william">Mr garden<expan>er</expan></persName> &amp; me. </p>
+							setter forth of the matter. After the woordes <persName type="lay_man" ref="x" key="baker_john">Mr baker</persName> did send for <persName type="x" ref="x" key="parkhurste_richard">Mr p<expan>ar</expan>khurst</persName> <persName type="religious" ref="90003" key="gardiner_william">Mr garden<expan>er</expan></persName> &amp; me. </p>
 					</div>
 					<div xml:id="aset_11_a2" corresp="qset_4_q2">
 						<note rend="margin_left"><metamark>2</metamark></note>
@@ -735,7 +868,7 @@
 					</div>
 					<div xml:id="aset_11_a6" corresp="qset_4_q6">
 						<note rend="margin_left"><metamark>n</metamark> <metamark>6</metamark></note>
-						<p rend="main">I know no matters ony in <placeName type="city" ref="51.517877524802, -0.12701088757433363">london</placeName> knoweth <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615" key="cranmer_thomas">my <roleName type="archbishop">lordes</roleName> grace</persName><!--pas sûr de comment baliser le truc précédent en comprenant grace ?--> culpable in but
+						<p rend="main">I know no matters ony in <placeName type="city" ref="51.517877524802, -0.12701088757433363">london</placeName> knoweth <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615 3" key="cranmer_thomas">my <roleName type="archbishop">lordes</roleName> grace</persName><!--pas sûr de comment baliser le truc précédent en comprenant grace ?--> culpable in but
 							in such articles as <persName type="x" ref="x">mast<expan>er</expan> baker</persName> willed us to say what we
 							hard we did</p>
 					</div>
@@ -778,13 +911,13 @@
 					<div xml:id="aset_11_a6a" corresp="qset_4_q6">
 						<note><metamark>n</metamark></note>
 						<note rend="margin_left"><metamark>6</metamark></note>
-						<p rend="main">I have hard men say many thinges as that <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615" key="cranmer_thomas">my <roleName type="archbishop">lord</roleName></persName> did nkow of
+						<p rend="main">I have hard men say many thinges as that <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615 3" key="cranmer_thomas">my <roleName type="archbishop">lord</roleName></persName> did nkow of
 								<persName type="x" ref="x">bukn<expan>er</expan>s</persName> opynion of <persName type="x" ref="x">Joan barnes</persName> opynion: that <persName type="x" ref="x">gilles
 							of barran</persName> used the office of a prest being no prest &amp; other thinges
 								w<expan>hich</expan> were not reformed but thes thinges manye wer
-							done before I cam in to thes p<expan>ar</expan>tes &amp; whrin he <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615" key="cranmer_thomas">my
+							done before I cam in to thes p<expan>ar</expan>tes &amp; whrin he <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615 3" key="cranmer_thomas">my
 							<roleName type="archbishop">lordes</roleName> grace</persName> is culpable it is not in me to say nor I know not what
-							other do know <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615" key="cranmer_thomas">my <roleName type="archbishop">lord</roleName></persName> to be culpable in</p>
+							other do know <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615 3" key="cranmer_thomas">my <roleName type="archbishop">lord</roleName></persName> to be culpable in</p>
 					</div>
 				</div>
 					</div>
@@ -878,7 +1011,7 @@
 						>A</del> Awnsswere unto/by my lord off <placeName type="city" ref="51.279882209155474, 1.0827774233594474">Caunt<expan>erbury</expan></placeName></head>
 					<div>
 						<note rend="margin_left">
-							<hi rend="vertical_bottom-top">It<expan>e</expan>m whyther <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615" key="cranmer_thomas"><roleName type="archbishop">tharchBysshop</roleName></persName>
+							<hi rend="vertical_bottom-top">It<expan>e</expan>m whyther <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615 3" key="cranmer_thomas"><roleName type="archbishop">tharchBysshop</roleName></persName>
 								dyd of <unclear/> consystory <expan>that</expan> the kynges plesure
 								was to have III prechers of the new lernyng &amp; III of tholde Thys
 								<del rend="strikethrough">Aw </del>ys Awnssweryd to yn the
@@ -890,7 +1023,7 @@
 					<div>
 						<note rend="margin_left">1</note>
 						<p rend="main"> In p<expan>ri</expan>mis whether they
-							p<expan>re</expan>sented unto <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615" key="cranmer_thomas"><roleName type="archbishop">Tharchbysshopp</roleName></persName> off
+							p<expan>re</expan>sented unto <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615 3" key="cranmer_thomas"><roleName type="archbishop">Tharchbysshopp</roleName></persName> off
 							<placeName type="city" ref="51.279882209155474, 1.0827774233594474">Caunt<expan>erbury</expan></placeName> the selfsame Arti<expan>cles</expan> that
 							be co<expan>n</expan>teyned yn the Boke of co<expan>m</expan>playnt. or
 							whether be more or ffewer <del rend="strikethrough">off </del>or
@@ -922,14 +1055,14 @@
 					</div>
 					<div>
 						<note rend="margin_left">4</note>
-						<p rend="main"> It<expan>e</expan>m whether <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615" key="cranmer_thomas"><roleName type="archbishop">Tharchebysshopp</roleName> of
+						<p rend="main"> It<expan>e</expan>m whether <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615 3" key="cranmer_thomas"><roleName type="archbishop">Tharchebysshopp</roleName> of
 							<placeName type="city" ref="51.279882209155474, 1.0827774233594474">Caunt<expan>erbury</expan></placeName></persName> dyd Rebuke Serlys for <expan>that</expan>
 							he p<expan>re</expan>ched that ymages myght be <expan>per</expan>mytted
 							yn the Churche as rep<expan>re</expan>sentors off Saynttes and not
 							ydollys</p>
 					</div>
 					<div>
-						<p rend="main">To thys y sey that <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615" key="cranmer_thomas">my lordes grace</persName> dyd
+						<p rend="main">To thys y sey that <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615 3" key="cranmer_thomas">my lordes grace</persName> dyd
 							challe<expan>n</expan>ge <persName type="religious" ref="47085" key="searles_robert">mr Serelys</persName> for p<expan>re</expan>chyng but I do
 							not Remembre that hys grace dyd Rebuke or chalenge the seyde <persName type="religious" ref="47085" key="searles_robert">mr Serelys</persName>
 							for that he p<expan>re</expan>ched that ymagys myght be permytted yn the
@@ -944,7 +1077,7 @@
 							sholde be gevyn to cryst // Aft<expan>er </expan>that my lord seyde that
 							he had put yn III prechers off the oolde lernyng &amp; III of the new.
 							The<expan>n</expan> seyde <persName type="religious" ref="90003" key="gardiner_william">mr Garden<expan>er</expan></persName> that ys a mene
-							to set A dyvysyon. then <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615" key="cranmer_thomas">my lordes grace</persName> seyde <add place="above">as I
+							to set A dyvysyon. then <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615 3" key="cranmer_thomas">my lordes grace</persName> seyde <add place="above">as I
 								remebre now</add> that hyt was the kynges plesure or the kynge
 							woolde have hyt so / for the Second parte that my lordes grace shold so
 							sey yn the Co<expan>n</expan>systory. Threwly I was not
