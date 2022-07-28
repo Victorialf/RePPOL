@@ -2269,7 +2269,7 @@
 						</p>
 						<div4>
 							<head>L'attribut <att>ref</att> des <gi>placeName</gi></head>
-							<p>Nous adjoignons un attribut <att>ref</att> aux toponymes dont la valeur est constitué des coordonées géographiques du lieu identifié. Ces valeurs sont répertoriées dans les <ref target="https://github.com/Victorialf/RePPOL/tree/Dev/_data_balisage_semantique">bases de données</ref> constituées par l'équipe du projet.</p>
+							<p>Nous adjoignons un attribut <att>ref</att> aux toponymes dont la valeur est constitué du numéros identifiant le lieux dans la base de donnée du CCED, les valeurs connues sont répertoriées dans les <ref target="https://github.com/Victorialf/RePPOL/tree/Dev/_data_balisage_semantique">bases de données</ref>.</p>
 						</div4>
 					</div3>
 					<div3>
@@ -4474,6 +4474,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 								<elementRef key="expan"/>
 								<alternate maxOccurs="unbounded">
 									<elementRef key="roleName"/>
+									<elementRef key="persName"/>
 									<textNode/>
 									<elementRef key="placeName"/>
 									<elementRef key="expan"/>
@@ -4519,6 +4520,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 						<content>
 							<alternate maxOccurs="unbounded">
 								<elementRef key="expan"/>
+								<elementRef key="placeName"/>
 								<textNode/>
 							</alternate>
 						</content>
@@ -4563,9 +4565,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 							</attDef>
 							<attDef ident="ref" usage="req">
 								<gloss>Référent</gloss>
-								<desc> il s'agit des coordonnées de l'élément qui peut être
-									retrouvées dans le tableur placename.ods constitué pour le
-									projet.</desc>
+								<desc> l'identifiant du lieu dans le CCED</desc>
 							</attDef>
 							<attDef ident="subtype" mode="delete"/>
 							<attDef ident="key" mode="delete"/>

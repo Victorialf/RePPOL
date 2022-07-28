@@ -24,7 +24,8 @@
 	<!--reproduction de tous les éléments avec leurs attributs, leurs valeurs leur contenus-->
 	<xsl:template match="*" >
 		<xsl:element name="{local-name()}">
-			<xsl:for-each select="attribute()">
+	
+			<xsl:for-each select="attribute()" >
 				<xsl:attribute name="{local-name()}">
 					<xsl:value-of select="."/>
 				</xsl:attribute>
