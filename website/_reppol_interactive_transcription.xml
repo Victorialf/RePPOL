@@ -28,7 +28,7 @@
 				</respStmt>
 				<respStmt>
 					<name>Victoria Le Fourner</name>
-					<resp>Digital humanities manager</resp>
+					<resp>Digital humanities coordinator</resp>
 				</respStmt>
 				<respStmt>
 					<name>Florence Perret</name>
@@ -76,11 +76,8 @@
 					<physDesc>
 						<objectDesc>
 							<supportDesc>
-								<extent>Plusieurs folios reliés constituant un total de <measure
-									unit="pages" quantity="442">442 pages</measure> en
-									<material>papier</material> mesurant <height unit="mm"
-										quantity="314">314 mm de haut</height> pour <width unit="mm"
-											quantity="210">210 mm de large</width> dont seulement
+								<extent>Plusieurs folios reliés constituant un total de <measure unit="pages" quantity="442">442 pages</measure> en
+									<material>papier</material> mesurant <height unit="mm" quantity="314">314 mm de haut</height> pour <width unit="mm" quantity="210">210 mm de large</width> dont seulement
 									<measure unit="pages" quantity="360">360 pages</measure>
 									sont traitées dans le cadre du projet RePPOL. </extent>
 								<foliation>ff. i-ii + pp. 1-2 (3-4 missing) + 5-166 + 166a-d +
@@ -129,10 +126,9 @@
 				<!--
 				<!-\-				En commentaire pour le site, évitant les redites : -\->
 				<p>RePPOL est un projet scientifique et pédagogique collaboratif mené par <ref target="https://pro.univ-lille.fr/aude-de-mezerac/">Aude de Mézerac-Zanetti</ref>, spécialiste d'histoire religieuse de l'Angleterre d'Henri VIII (Mcf, aude.de-mezerac@univ-lille.fr, Université de Lille, <ref target="https://cecille.univ-lille.fr/">CECILLE</ref>), <ref target="http://larhra.ish-lyon.cnrs.fr/membre/334">Olivier Spina</ref>, spécialiste d'histoire politique de l'Angleterre Tudor (Mcf, olivier.spina@univ-lyon2.fr, Université de Lyon 2, <ref target="http://larhra.ish-lyon.cnrs.fr/">LARHRA</ref>) et Victoria Le Fourner (ingénieure d’études, spécialiste des humanités numériques à la <ref target="https://www.meshs.fr/page/accueil">MESHS</ref> de Lille) avec l’aide de Felipe Goes-Silva (étudiant en M1 Recherche en Études Anglophones à l’Université de Lille) et de Adrien Mével (étudiant en M1 Éditions numériques et imprimées de texte littéraires à l'Université de Lille. Ce projet est financé majoritairement par l'<ref  target="http://www.isite-ulne.fr/index.php/fr/page-daccueil/">I-site Université Lille-Nord-Europe</ref> et par le <ref target="https://comod.universite-lyon.fr/">LABEX COMOD</ref> (Université de Lyon) et soutenu par la <ref target="https://www.meshs.fr/page/accueil">Maison Européenne des Sciences de l'Homme et de la Société Lille Nord de France (MESHS)</ref>.</p><!-\-récupéré sur https://ahmuf.hypotheses.org/9528 et tact   + ajouts et modifications A. Mével-\->-->
-				<p xml:lang="fr">Notre projet est consacré à la transcription, l’édition critique et
+				<p lang="fr">Notre projet est consacré à la transcription, l’édition critique et
 					l’analyse d’un document exceptionnel : le manuscrit MS 128 conservé à la
-					bibliothèque de Corpus Christi College, Cambridge (à voir sur la <ref
-						target="https://tact.demarre-shs.fr/project/31">plateforme TACT</ref>). Il
+					bibliothèque de Corpus Christi College, Cambridge (à voir sur la <ref target="https://tact.demarre-shs.fr/project/31">plateforme TACT</ref>). Il
 					s’agit d’un manuscrit composite d’environ 220 folios qui contient la
 					documentation rassemblée en 1543 sous l’égide de l’Archevêque de Cantorbéry,
 					Thomas Cranmer. Celui-ci, gagné aux idées réformées, est visé par un complot
@@ -150,7 +146,7 @@
 					mais, le manuscrit renferme également des dénonciations de sacramentaires,
 					d’iconoclastes et d’évangéliques radicaux, qui auraient davantage pu susciter
 					l’indulgence de Cranmer.</p>
-				<p xml:lang="fr">Dès lors, le manuscrit MS 128, fruits de ces collectes
+				<p lang="fr">Dès lors, le manuscrit MS 128, fruits de ces collectes
 					antinomiques, est une mosaïque double. Mosaïque de documents d’abord, puisqu’il
 					comporte des lettres de dénonciations, des interrogatoires ou encore des
 					mémorandums dont le sens nous échappe en partie ; mais il est aussi une mosaïque
@@ -164,7 +160,7 @@
 					archivistique des tentatives royales (et de leurs limites) d’imposer une «
 					uniformité religieuse » désirée par Henri VIII depuis le début des années 1530
 					?</p>
-				<p xml:lang="fr">Jusqu’à présent, plusieurs historiens ont mobilisé partiellement
+				<p lang="fr">Jusqu’à présent, plusieurs historiens ont mobilisé partiellement
 					cette source dans le contexte d’études plus larges (Ethan Shagan afin d’explorer
 					l’avancée de la Réforme en Angleterre, Diarmaid MacCulloch pour dresser les
 					portraits des détracteurs de Thomas Cranmer dans la biographie qu’il lui
@@ -172,7 +168,7 @@
 					jamais fait dialoguer avec des documents proches (interrogatoires,
 					dénonciations…) pour en dégager les éclairages politiques, religieux ou sociaux
 					qu’il peut apporter sur la période.</p>
-				<p xml:lang="fr">Or, le projet RePPOL entend montrer que cette source exceptionnelle
+				<p lang="fr">Or, le projet RePPOL entend montrer que cette source exceptionnelle
 					permet non seulement d’éclairer les croyances et les pratiques liturgiques
 					populaires souvent inattendues, parfois cocasses, dans un Kent en « transition
 					confessionnelle », mais aussi de saisir la Réforme anglaise comme un phénomène
@@ -192,10 +188,8 @@
 					cours de paléographie moderne. La transcription semi-diplomatique est réalisé
 					via la <ref target="https://tact.demarre-shs.fr/">plateforme de Transcription et
 						d'Annotations de Corpus Textuel (TACT)</ref> développée par l'Université de
-					Grenoble. Les images des folios ont été numérisées par la <ref
-						target="https://parker.stanford.edu/parker/catalog/ps908cx9813">Parker
-						Library</ref> et y étaient accessibles selon le cadre interopérable <ref
-							target="https://iiif.io/">International Image Interoperability Framework
+					Grenoble. Les images des folios ont été numérisées par la <ref target="https://parker.stanford.edu/parker/catalog/ps908cx9813">Parker
+						Library</ref> et y étaient accessibles selon le cadre interopérable <ref target="https://iiif.io/">International Image Interoperability Framework
 							(3IF)</ref>. La seconde étape du travail (2022) est consacrée à l'analyse
 					fine de cette source à la lumière de documents archivistiques de nature
 					similaire. La troisième étape, dont le présent document est l'une des
@@ -203,10 +197,9 @@
 					via balisage en xml-tei l'interrogation du contenu du document par des
 					index.</p>
 				<!--Translated with www.DeepL.com/Translator (free version)-->
-				<p xml:lang="en">Our project is devoted to the transcription, critical edition, and
+				<p lang="en">Our project is devoted to the transcription, critical edition, and
 					analysis of an exceptional document: the manuscript MS 128 held in the library
-					of Corpus Christi College, Cambridge (can be viewed on the <ref
-						target="https://tact.demarre-shs.fr/project/31">TACT platform</ref>). It is
+					of Corpus Christi College, Cambridge (can be viewed on the <ref target="https://tact.demarre-shs.fr/project/31">TACT platform</ref>). It is
 					a composite manuscript of about 220 folios that contains the documentation
 					gathered in 1543 under the supervision of the Archbishop of Canterbury, Thomas
 					Cranmer. The latter, won over to the Reformed ideas, was the target of a plot
@@ -224,7 +217,7 @@
 					manuscript also contained denunciations of sacramentarians, iconoclasts and
 					radical evangelicals, which might have been more likely to elicit Cranmer's
 					leniency.</p>
-				<p xml:lang="en">The manuscript MS 128, fruit of these antinomic collections, is a
+				<p lang="en">The manuscript MS 128, fruit of these antinomic collections, is a
 					double mosaic. A mosaic of documents, since it contains letters of denunciation,
 					interrogations and memoranda whose meaning partly escapes us; but it is also a
 					mosaic of traces of religious beliefs and practices in an English county in the
@@ -236,14 +229,14 @@
 					Royal Supremacy. Could this manuscript be the archival trace of the royal
 					attempts (and their limits) to impose a "religious uniformity" desired by Henry
 					VIII since the early 1530s ?</p>
-				<p xml:lang="en">Several historians have partially mobilized this source in the
+				<p lang="en">Several historians have partially mobilized this source in the
 					context of broader studies (Ethan Shagan in order to explore the progress of the
 					Reformation in England, Diarmaid MacCulloch in order to draw up portraits of
 					Thomas Cranmer's detractors in his biography of him... ), but no study of the
 					manuscript per se has been carried out and it has never been put in dialogue
 					with related documents (interrogations, denunciations...) in order to bring out
 					the political, religious or social insights that it can bring to the period.</p>
-				<p xml:lang="en">The RePPOL project intends to show that this exceptional source not
+				<p lang="en">The RePPOL project intends to show that this exceptional source not
 					only sheds light on the often unexpected, sometimes comical, popular beliefs and
 					liturgical practices in a Kent undergoing a "confessional transition", but also
 					to grasp the English Reformation as a phenomenon of anthropological
@@ -254,17 +247,15 @@
 					that subjects, including the most minute laymen, were able to play in the
 					processes of political and religious mutations that Henrician England
 					experienced.</p>
-				<p xml:lang="en">Adopting a collaborative and training-through-research approach,
+				<p lang="en">Adopting a collaborative and training-through-research approach,
 					this project is articulated in three stages. The first stage (end of June
 					2021-beginning of 2022) aims to transcribe the entire manuscript, through a
 					collaborative approach mobilizing teacher-researchers and students in the
 					context of the modern paleography course. The semi-diplomatic transcription is
 					carried out via the <ref target="https://tact.demarre-shs.fr/">Transcription and
 						Annotation Platform for Textual Corpus (TACT)</ref> developed by the
-					University of Grenoble. The images of the folios were digitized by the <ref
-						target="https://parker.stanford.edu/parker/catalog/ps908cx9813">Parker
-						Library</ref> and were accessible there according to the <ref
-							target="https://iiif.io/">International Image Interoperability Framework
+					University of Grenoble. The images of the folios were digitized by the <ref target="https://parker.stanford.edu/parker/catalog/ps908cx9813">Parker
+						Library</ref> and were accessible there according to the <ref target="https://iiif.io/">International Image Interoperability Framework
 							(3IF)</ref>. The second stage of the work (2022) is devoted to fine-grained
 					analysis of this source in light of archival records of a similar nature. The
 					third step, of which the present document is one of the incarnations, is the
@@ -278,7 +269,7 @@
 					toponymes, les noms de personnes, les rôles et les référents culturels. Enfin
 					l'encodage s'emploie également à rendre compte de la génétique du texte, tentant
 					d'identifier les différentes mains.</p>
-				<normalization>
+				<normalization method="silent">
 					<p>Lors de la transcription, les abréviations ont été systématiquement
 						développées, elles ont ensuite été encodées pour être affichées en italituqe
 						conformément au standard de la <ref target="https://www.folger.edu/">Folger
