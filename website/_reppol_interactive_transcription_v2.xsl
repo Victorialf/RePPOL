@@ -222,7 +222,7 @@
 			</div>
 			<div class="project_member">
 <!--				<img src="img/elizabeth_princess.png"/>-->
-				<p><span class="name">Victoria Le Fourner</span><br /><span class="resp">Digital humanities manager</span></p><!-- Responsable technique -->
+				<p><span class="name">Victoria Le Fourner</span><br /><span class="resp">Digital humanities coordinator</span></p><!-- Responsable technique -->
 			</div>
 			<div class="project_member">
 				<p><span class="name">Florence Perret</span><br /><span class="resp">Designer</span></p>

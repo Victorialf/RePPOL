@@ -5,12 +5,12 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2022-07-13T13:20:33Z. .
+Schema generated from ODD source 2022-07-29T11:55:45Z. .
 TEI Edition: Version 4.4.0. Last updated on
         19th April 2022, revision ff9cc28b0
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.4.0/
   
---><!--[https://creativecommons.org/licenses/by/2.0/fr/legalcode] CC BY 2.0 FR-->
+--><!--[https://creativecommons.org/licenses/by/4.0/legalcode] CC BY 4.0 International-->
    <define name="macro.paraContent">
       <zeroOrMore>
          <choice>
@@ -2286,6 +2286,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
                <oneOrMore>
                   <choice>
                      <ref name="roleName"/>
+                     <ref name="persName"/>
                      <text/>
                      <ref name="placeName"/>
                      <ref name="expan"/>
@@ -2386,6 +2387,7 @@ Suggested values include: 1] archbishop (Archevêque); 2] bishop (Evêque); 3] v
          <oneOrMore>
             <choice>
                <ref name="expan"/>
+               <ref name="placeName"/>
                <text/>
             </choice>
          </oneOrMore>
@@ -2407,7 +2409,7 @@ Suggested values include: 1] archbishop (Archevêque); 2] bishop (Evêque); 3] v
             </choice>
          </attribute>
          <attribute name="ref">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Référent) il s'agit des coordonnées de l'élément qui peut être retrouvées dans le tableur placename.ods constitué pour le projet.</a:documentation>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Référent) l'identifiant du lieu dans le CCED</a:documentation>
             <text/>
          </attribute>
          <empty/>

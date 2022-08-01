@@ -159,7 +159,7 @@
                            							
                            <div class="display_unit">
                               <div class="margin_left">
-                                 <p class="note"><span class="persName">Mr. Isaac</span> <span class="metamark" style="font-size:18pt;">n</span></p>
+                                 <p class="note"><span class="persName">Mr. Isaac</span> <span class="metamark" style="font-size:18pt; color:#999;">n</span></p>
                               </div>
                               <div class="main">
                                  <p><span class="persName">Mr. Isaac</span> toke a <span class="roleName">preiste</span> named <span class="persName"><span class="roleName">Sir</span> Thomas</span>, and put into a seculer mannys apparell, made hym a <span class="roleName">horsekeper</span></p>
@@ -255,5 +255,25 @@
 			evt.currentTarget.className += " active_tab";
 			}
 			
+			function openTab(evt, tabName) {
+			// Declare all variables
+			var i, placetabcontent, placetablinks;
+			
+			// Get all elements with class="tabcontent" and hide them
+			placetabcontent = document.getElementsByClassName("placetabcontent");
+			for (i = 0; i < placetabcontent.length; i++) {
+			placetabcontent[i].style.display = "none";
+			}
+			
+			// Get all elements with class="tablinks" and remove the class "active"
+			placetablinks = document.getElementsByClassName("placetablinks");
+			for (i = 0; i < placetablinks.length; i++) {
+			placetablinks[i].className = placetablinks[i].className.replace(" active", "");
+			}
+			
+			// Show the current tab, and add an "active" class to the button that opened the tab
+			document.getElementById(tabName).style.display = "block";
+			evt.currentTarget.className += " active";
+			} 
 		</script></body>
 </html>
