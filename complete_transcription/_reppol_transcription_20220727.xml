@@ -2559,59 +2559,73 @@
 
 <pb n="030" facs="#fs_030"/>
             <div type="article" n="33">
-               <head>Edwarde Dyngleden of Rolvynden.</head>
+               <head><persName type="" ref="" key="">Edwarde Dyngleden of <placeName type="parish" ref="">Rolvynden</placeName></persName>.</head>
 
- $pilgrimages$ he hath forsaken his own parish church at <expan>the</expan> tyme of
- Est<expan>er</expan> thies ii yeres togither, &amp; hath gone to walsyngam
- &amp; wolde at no tyme shewe to <expan>the</expan> Vicar a lawful certi-
- $n$ ficate <expan>that</expan> he had receyved <expan>the</expan> blessed sacrament at <expan>the</expan>
- tymes co<expan>m</expan>monly accustomed as a christen man ought to do
- $pat<expan>er</expan> nost<expan>er</expan> in english$ he obstinatly refuseth to lerne his pat<expan>er</expan> nost<expan>er</expan>, Ave, Crede and
+            	<div>
+            		<note rend="margin_left">pilgrimages</note>
+            		<note rend="margin_left"><metamark>n</metamark></note>
+            		<p rend="main"> he hath forsaken his own parish church at <expan>the</expan> <date type="narrative" when="">tyme of
+ Est<expan>er</expan></date> thies ii yeres togither, &amp; hath gone to walsyngam
+ &amp; wolde at no tyme shewe to <expan>the</expan> <roleName type="vicar">Vicar</roleName> a lawful certi-
+ ficate <expan>that</expan> he had receyved <expan>the</expan> blessed sacrament at <expan>the</expan>
+ tymes co<expan>m</expan>monly accustomed as a christen man ought to do</p></div>
+	<div>
+		<note rend="margin_left">pat<expan>er</expan> nost<expan>er</expan> in english</note>
+		<p rend="main">he obstinatly refuseth to lerne his pat<expan>er</expan> nost<expan>er</expan>, Ave, Crede and
  <expan>the</expan> x co<expan>m</expan>maundme<expan>n</expan>tes in English, accordynge to <expan>the</expan> kynges
- inju<expan>n</expan>ctions. The curate of Rolvenden, &amp; he can declare other
- wytnes.
+ inju<expan>n</expan>ctions. The curate of Rolvenden, &amp; he can declare other wytnes.</p>
+	</div>
  
 </div>
             <div type="article" n="34">
-               <head>Sir Edwarde Spon<expan>er</expan> vicar of Boughton.</head>
+               <head><persName type="religious" ref="" key="sponer_edward"><roleName type="sir">Sir</roleName> Edwarde Spon<expan>er</expan> <roleName type="vicar">vicar</roleName> of <placeName type="city" ref="">Boughton</placeName></persName>.</head>
 
- $ceremonies$ he hath not declared to his <expan>par</expan>ishioneres <expan>the</expan> right use of
+<div><note rend="margin_left">ceremonies</note><note rend="margin_left"><metamark>n</metamark></note>
+	<p rend="main">he hath not declared to his <expan>par</expan>ishioneres <expan>the</expan> right use of
  ceremonies, neither shewed <expan>the</expan> difference bitwene they<expan>m</expan>
  &amp; workes co<expan>m</expan>maunded by god, as he is co<expan>m</expan>maunded by <expan>the</expan>
- $n$ kynges <expan>pro</expan>clamations
- $<expan>the</expan> busshope of Rome$ he hath not p<expan>re</expan>ched agaynst <expan>the</expan> bisshope of Rome his
+  kynges <expan>pro</expan>clamations</p></div>
+            	<div><note rend="margin_left"><roleName type="pope"><expan>the</expan> busshope of Rome</roleName></note><p rend="main">he hath not p<expan>re</expan>ched agaynst <roleName type="pope"><expan>the</expan> busshope of Rome</roleName> his
  usurped power, &amp; set furth <expan>the</expan> kynges sup<expan>re</expan>micie, as he
- is bownde by <expan>the</expan> kynges inju<expan>n</expan>ctions &amp; o<expan>ther</expan> his <expan>pro</expan>cedynges.
- he hath not p<expan>re</expan>ched his quart<expan>er</expan>
+ 	is bownde by <expan>the</expan> kynges inju<expan>n</expan>ctions &amp; o<expan>ther</expan> his <expan>pro</expan>cedynges.</p></div>
+ <div><p rend="main">he hath not p<expan>re</expan>ched his quart<expan>er</expan>
                <expan>ser</expan>mons, neither at
- Boughton, nor at his benefice in <expan>the</expan> marshe.
- $proclamations$ he nev<expan>er</expan> declared <expan>that the</expan> evyns of such sayntes whose holy
- dayes be abrogated, be no fastynge dayes. Witnes Mr
- hawkyns with other of both his parisshes.
+ <placeName type="city" ref="">Boughton</placeName>, nor at his benefice in <expan>the</expan> marshe.</p></div>
+ <div>
+ 	<note rend="margin_left">proclamations</note>
+ 	<p rend="main">he nev<expan>er</expan> declared <expan>that the</expan> evyns of such sayntes whose holy
+ dayes be abrogated, be no fastynge dayes. Witnes <persName type="" ref="" key="">Mr
+ hawkyns</persName> with other of both his parisshes.</p>
+ </div>
  
 </div>
             <div type="article" n="35">
-               <head>Archdiacon<expan>us</expan> Cantuarien<expan>sis</expan>
+               <head><persName type="" ref="" key=""><roleName type="archdeacon">Archdiacon<expan>us</expan></roleName> Cantuarien<expan>sis</expan></persName>
                </head>
 
- $Images$ The morowe aft<expan>er the</expan> Ascension was iii yeres he toke out
- of the church of saynt Andres in Canturbery iii lampes
+<div>
+	<note rend="margin_left">Images</note>
+	<p rend="main"><date type="narrative" when="">The morowe aft<expan>er the</expan> Ascension was iii yeres</date> he toke out
+ of the church of <placeName type="parish" ref="">saynt Andres in <placeName type="city" ref="">Canturbery</placeName></placeName> iii lampes
  taperes bre<expan>n</expan>nynge bifore the sacrament, &amp; a cote from a roode
- &amp; dyd violently breake <expan>the</expan> armes and legges of <expan>the</expan> roode.
+ &amp; dyd violently breake <expan>the</expan> armes and legges of <expan>the</expan> roode.</p></div>
  
 </div>
             <div type="article" n="36">
                <head>
-                  <expan>Sir</expan> Willi<expan>a</expan>m kempe Vicar of Northgate</head>
+               	<persName type="religious" ref="42441" key="kempe_william"><roleName type="sir"><expan>Sir</expan></roleName> Willi<expan>a</expan>m kempe <roleName type="vicar">Vicar</roleName> of <placeName type="parish" ref="73">Northgate</placeName></persName></head>
 
- he hath not red the bible syns pentecost as he was co<expan>m</expan>maunded
- by <expan>the</expan> ordinary
- $ceremonies$ he doth not declare <to his="" parishioneres=""> to his parishoners the right vse of holy water, holy breade,</to>
- berynge of candelles opon candlemas day, gyvynge of Ashes, berin[ge]
- of palmes, crepinge of <expan>the</expan> crosse. ffor lacke wherof <the most="" part=""> many yn most part of the</the>
+ <div><p rend="main">he hath not red the bible syns pentecost as he was co<expan>m</expan>maunded
+ by <expan>the</expan> ordinary</p></div>
+            	<div>
+            		<note rend="margin_left">ceremonies</note>
+            		<p rend="main">he doth not declare <add place="above"> to his parishoners</add> the right vse of holy water, holy breade,
+ berynge of candelles opon candlemas day, gyvynge of Ashes, berin<unclear>ge</unclear>
+ of palmes, crepinge of <expan>the</expan> crosse. ffor lacke wherof <add place="above">the most part</add> many yn most part of the
  said parish be as ignorant in such thynges as ev<expan>er</expan> they were
  &amp; many of theym do abuse the same holy wat<expan>er</expan>, In so much <expan>that</expan>
- agaynst tempestes of thonder &amp; lightenynge many do ru<expan>n</expan>ne
+ agaynst tempestes of thonder &amp; lightenynge many do ru<expan>n</expan>ne</p>
+            	</div>
 <!--FIN 030--></div>
 </div>
 <!--2 div refermées-->
@@ -2619,7 +2633,7 @@
  <!--DÉBUT 031--><div type="page">
 
 <div type="article" n="36"><pb n="031" facs="#fs_031"/>
-<num type="pagination" subtype="red">31</num> <num type="pagination" subtype="black">7</num>
+<div><ab><num type="pagination" subtype="red">31</num> <num type="pagination" subtype="black">7</num></ab></div>
  to the church for holy watter to cast about their howses
  to dryve away il spirites and devilles, notwithstandynge
  the kynges majesties proclamations to the contrary in the same.
@@ -2740,7 +2754,7 @@
  <!--DÉBUT 033--><div type="page">
 
 <pb n="033" facs="#fs_033"/>
-<num type="pagination" subtype="red">33</num> <num type="pagination" subtype="black">8</num>
+<div><ab><num type="pagination" subtype="red">33</num> <num type="pagination" subtype="black">8</num></ab></div>
  
 <div type="article" n="44">
                <head>Orphewe curate of lyd.</head>
@@ -2875,7 +2889,7 @@
 
 <pb n="035" facs="#fs_035"/>
 
- <num type="pagination" subtype="red">35</num> <num type="pagination" subtype="black">9</num>
+ <div><ab><num type="pagination" subtype="red">35</num> <num type="pagination" subtype="black">9</num></ab></div>
  
 <div type="article" n="51">
                <head>Sandewiche. </head>
@@ -3175,7 +3189,7 @@ Item he preached than and there. That all the
 <pb n="042" facs="#fs_042"/>
             <div type="article" n="56">
                <head>
-                  <date type="procedure" when="">20 Septembre: 1543,</date>
+                  <date type="procedure" when="1543-09-20">20 Septembre: 1543,</date>
                </head>
                <div xml:id="d1e5023">
                   <head rend="margin_left">Scorye</head>
@@ -3213,7 +3227,7 @@ Item he preached than and there. That all the
  <!--DÉBUT 043--><div type="page">
 
 <div type="article" n="56"><div sameAs="d1e5023"><pb n="043" facs="#fs_043"/>
-<num type="pagination" subtype="red">43</num> <num type="pagination" subtype="black">13</num>
+<div><ab><num type="pagination" subtype="red">43</num> <num type="pagination" subtype="black">13</num></ab></div>
  $seditious$ He preached at ffaversham in festo dedicationis eccl<expan>es</expan>ie
  Anno. 1542. That the dedications of materiall
  churches was instituted for the bishoppes profites. and
@@ -3263,7 +3277,7 @@ $seditious$ thincking rather by intercession of saintz. to obtayne the
             </div>
             <div type="article" n="57">
                <head>
-                  <date type="procedure" when="">20 Septembre Anno 1543</date>.</head>
+                  <date type="procedure" when="1543-09-20">20 Septembre Anno 1543</date>.</head>
                <div xml:id="d1e5084">
                   <head rend="margin_left">Shether</head>
  He preached in Sandwiche the xxiii day of June
@@ -3304,7 +3318,7 @@ $seditious$ thincking rather by intercession of saintz. to obtayne the
  <!--DÉBUT 045--><div type="page">
 
 <div type="article" n="57"><div sameAs="d1e5084"><pb n="045" facs="#fs_045"/>
-<num type="pagination" subtype="red">45</num> <num type="pagination" subtype="black">14</num>
+<div><ab><num type="pagination" subtype="red">45</num> <num type="pagination" subtype="black">14</num></ab></div>
  than beware and follow it not / adding thies wourdes
  yf yo<expan>u</expan> will aske your conscience what she thinketh
  of suche newe fangles as is brought into the
@@ -3378,11 +3392,11 @@ $seditious$ thincking rather by intercession of saintz. to obtayne the
  <!--DÉBUT 047--><div type="page">
 
 <pb n="047" facs="#fs_047"/>
-<num type="pagination" subtype="red">47</num> <num type="pagination" subtype="black">15</num>
+<div><ab><num type="pagination" subtype="red">47</num> <num type="pagination" subtype="black">15</num></ab></div>
  
 <div type="article" n="60">
                <head>
-                  <date type="procedure" when="">22 Septembris 1543</date>
+                  <date type="procedure" when="1543-09-22">22 Septembris 1543</date>
                </head>
                <div>
                   <head rend="margin_left">Mr. Ridley prebendary</head>
@@ -3408,7 +3422,7 @@ $seditious$ thincking rather by intercession of saintz. to obtayne the
             </div>
             <div type="article" n="61">
                <head>
-                  <date type="procedure" when="">24 Septembre 1543</date>
+                  <date type="procedure" when="1543-09-24">24 Septembre 1543</date>
                </head>
                <div>
                   <head rend="margin_left">Joan frenche</head>
@@ -3443,7 +3457,7 @@ $seditious$ thincking rather by intercession of saintz. to obtayne the
             </div>
             <div type="article" n="62">
                <head>
-                  <date type="procedure" when="">26 Septembris Anno 1543</date>
+                  <date type="procedure" when="1543-09-26">26 Septembris Anno 1543</date>
                </head>
                <div xml:id="d1e5311">
                   <head rend="margin_left">Drumme</head>
@@ -3520,7 +3534,7 @@ Item the same day and sermon he saied that the
             </div>
             <div type="article" n="63">
                <head>
-                  <date type="procedure" when="">26 Septembre 1543</date>,</head>
+                  <date type="procedure" when="1543-09-26">26 Septembre 1543</date>,</head>
                <div>
                   <head rend="margin_left">Lancaster</head>
  Lancaster <expan>par</expan>sonne of pluckley useth neither in the
@@ -3551,7 +3565,7 @@ Item the same day and sermon he saied that the
  <!--DÉBUT 051--><div type="page">
 
 <pb n="051" facs="#fs_051"/>
-<num type="pagination" subtype="red">51</num> <num type="pagination" subtype="black">17</num>
+<div><ab><num type="pagination" subtype="red">51</num> <num type="pagination" subtype="black">17</num></ab></div>
  
 <div type="article" n="64">
                <head>The curate of muche Mongeham</head>
@@ -3621,7 +3635,7 @@ Item the same day and sermon he saied that the
 <pb n="052" facs="#fs_052"/>
             <div type="article" n="67">
                <head>
-                  <date type="procedure" when="">21 Septembris 1543</date>.</head>
+                  <date type="procedure" when="1543-09-21">21 Septembris 1543</date>.</head>
                <div>
                   <head rend="margin_left">Marget Toftes the yongar</head>
  $1$ The 25 daye of July last past in northegat
@@ -3669,7 +3683,7 @@ Item the same day and sermon he saied that the
  <!--DÉBUT 053--><div type="page">
 
 <div type="article" n="67"><pb n="053" facs="#fs_053"/>
-<num type="pagination" subtype="red">53</num> <num type="pagination" subtype="black">18</num>
+<div><ab><num type="pagination" subtype="red">53</num> <num type="pagination" subtype="black">18</num></ab></div>
  
 <div>
                   <head rend="margin_left">M<expan>ist</expan>res. Starkey</head>
@@ -3741,7 +3755,7 @@ Item he reportid repentid hymself that ev<expan>er</expan> he did
             </div>
             <div type="article" n="68">
                <head>
-                  <date type="procedure" when="">22 Septembris 1543</date>
+                  <date type="procedure" when="1543-09-22">22 Septembris 1543</date>
                </head>
                <div>
                   <head rend="margin_left">Humfray Cotton preiste;</head>
@@ -3758,7 +3772,7 @@ $ herecie$ He said that there be heresies in the Bible
             </div>
             <div type="article" n="69">
                <head>
-                  <date type="procedure" when="">26 Septembris 1543</date>
+                  <date type="procedure" when="1543-09-26">26 Septembris 1543</date>
                </head>
                <div>
                   <head rend="margin_left">The <expan>par</expan>son of Witchelyng</head>
@@ -3775,7 +3789,7 @@ $ herecie$ He said that there be heresies in the Bible
             </div>
             <div type="article" n="70">
                <head>
-                  <date type="procedure" when="">23 Septembris 1543</date>.</head>
+                  <date type="procedure" when="1543-09-23">23 Septembris 1543</date>.</head>
                <div>
                   <head rend="margin_left">John Riche;</head>
 $ fastynge dayes$ He denyeth that god did nev<expan>er</expan> make fasting daies
@@ -3792,7 +3806,7 @@ $ fastynge dayes$ He denyeth that god did nev<expan>er</expan> make fasting daie
  <!--DÉBUT 055--><div type="page">
 
 <div type="article" n="70"><pb n="055" facs="#fs_055"/>
-<num type="pagination" subtype="red">55</num> <num type="pagination" subtype="black">19</num>
+<div><ab><num type="pagination" subtype="red">55</num> <num type="pagination" subtype="black">19</num></ab></div>
  
 <div>
                   <head rend="margin_left">John Castelen</head>
@@ -3824,7 +3838,7 @@ $ fastynge dayes$ He denyeth that god did nev<expan>er</expan> make fasting daie
             </div>
             <div type="article" n="71">
                <head>
-                  <date type="procedure" when="">22 Septembris 1543</date>
+                  <date type="procedure" when="1543-09-22">22 Septembris 1543</date>
                </head>
                <div>
                   <head rend="margin_left">Swan vicar of Sheldewyche</head>
@@ -3847,7 +3861,7 @@ $ fastynge dayes$ He denyeth that god did nev<expan>er</expan> make fasting daie
             </div>
             <div type="article" n="72">
                <head>
-                  <date type="procedure" when="">22 Septembris 1543</date>
+               	<date type="procedure" when="1543-09-22">22 Septembris 1543</date>
                </head>
                <div xml:id="d1e5745">
                   <head rend="margin_left">Norton vicarof ffeversham</head>
@@ -3871,7 +3885,7 @@ $Injunctions$ It<expan>e</expan>m he hath taken away oute of the churche the
             </div>
             <div type="article" n="73">
                <head>
-                  <date type="procedure" when="">22 Septemb<expan>ris</expan>
+               	<date type="procedure" when="1543-09-22">22 Septemb<expan>ris</expan>
                   </date>
                </head>
                <div>
@@ -3926,7 +3940,7 @@ $Injunctions$ It<expan>e</expan>m he hath taken away oute of the churche the
             </div>
             <div type="article" n="74">
                <head>
-                  <date type="procedure" when=""> 21 Septembr<expan>is</expan> 1543</date>
+               	<date type="procedure" when="1543-09-21"> 21 Septembr<expan>is</expan> 1543</date>
                </head>
                <div>
                   <head rend="margin_left">Strawghwyn</head>
@@ -4000,7 +4014,7 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
             </div>
             <div type="article" n="76">
                <head>
-                  <date type="procedure" when="">26 Septembris 1543</date>
+               	<date type="procedure" when="1543-09-26">26 Septembris 1543</date>
                </head>
                <div>
                   <head rend="margin_left">Jo Starkey</head>
@@ -4024,7 +4038,7 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
  <!--DÉBUT 059--><div type="page">
 
 <div type="article" n="76"><pb n="059" facs="#fs_059"/>
-<num type="pagination" subtype="red">59</num> <num type="pagination" subtype="black">21</num>
+<div><ab><num type="pagination" subtype="red">59</num> <num type="pagination" subtype="black">21</num></ab></div>
  
 <div>
                   <head rend="margin_left">Thomas Dalle</head>
@@ -4059,7 +4073,7 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
             </div>
             <div type="article" n="77">
                <head>
-                  <date type="procedure" when="">26 Septembr 1543</date>
+               	<date type="procedure" when="1543-09-26">26 Septembr 1543</date>
                </head>
 
  $ceremonies$ Willi<expan>a</expan>m kempe vicar of northgate in Canterbury
@@ -4125,7 +4139,7 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
  <!--DÉBUT 061--><div type="page">
 
 <div type="article" n="78"><div sameAs="d1e6085"><pb n="061" facs="#fs_061"/>
-<num type="pagination" subtype="red">61</num> <num type="pagination" subtype="black">22</num>
+<div><ab><num type="pagination" subtype="red">61</num> <num type="pagination" subtype="black">22</num></ab></div>
  thought wourthy of reformac<expan>i</expan>on other in hym or
  in any other, by reason of whiche facte and wourd<expan>es</expan>
  of the said Mr. Batterste, it is thought that other
@@ -4217,7 +4231,7 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
             </div>
             <div type="article" n="80">
                <head>
-                  <date type="procedure" when="">21 Septemb<expan>ris</expan> 1543</date>.</head>
+                  <date type="procedure" when="1543-09-21">21 Septemb<expan>ris</expan> 1543</date>.</head>
                <div>
                   <head rend="margin_left">Ric<expan>hard</expan> Turner</head>
  He said on passion Sondaye laste paste that
@@ -4233,7 +4247,7 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
  <!--DÉBUT 063--><div type="page">
 
 <pb n="063" facs="#fs_063"/>
-<num type="pagination" subtype="red">63</num> <num type="pagination" subtype="black">23</num>
+<div><ab><num type="pagination" subtype="red">63</num> <num type="pagination" subtype="black">23</num></ab></div>
  
 <div type="article" n="81">
                <head>
@@ -4268,7 +4282,7 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
             </div>
             <div type="article" n="82">
                <head>
-                  <date type="procedure" when="">21 Septembris 1543</date>.</head>
+                  <date type="procedure" when="1543-09-21">21 Septembris 1543</date>.</head>
                <div xml:id="d1e6356">
                   <head rend="margin_left">Archebolde of faversham</head>
 
@@ -4333,11 +4347,10 @@ S<expan>ir</expan> Symon Oxley preest saied to hym. Yf I
  <!--DÉBUT 065--><div type="page">
 
 <pb n="065" facs="#fs_065"/>
-<num type="pagination" subtype="red">65</num> <num type="pagination" subtype="black">24</num>
- 
+<div><ab><num type="pagination" subtype="red">65</num> <num type="pagination" subtype="black">24</num></ab></div> 
 <div type="article" n="84">
                <head>
-                  <date type="procedure" when="">24 Septembr 1543</date>
+                  <date type="procedure" when="1543-09-24">24 Septembr 1543</date>
                </head>
                <div>
                   <head rend="margin_left">Antony Ager; Simon Castlyn</head>
@@ -4351,7 +4364,7 @@ S<expan>ir</expan> Symon Oxley preest saied to hym. Yf I
             </div>
             <div type="article" n="85">
                <head>
-                  <date type="procedure" when="">26 Septembr<expan>is</expan> 1543</date>
+                  <date type="procedure" when="1543-09-26">26 Septembr<expan>is</expan> 1543</date>
                </head>
 .
  
@@ -4373,7 +4386,7 @@ S<expan>ir</expan> Symon Oxley preest saied to hym. Yf I
             </div>
             <div type="article" n="86">
                <head>
-                  <date type="procedure" when="">26 Septembr<expan>is</expan> 1543</date>
+                  <date type="procedure" when="1543-09-26">26 Septembr<expan>is</expan> 1543</date>
                </head>
 .
  $Saint Mary of Sandwiche$ Sundry ymages as of S. George and other
@@ -4408,7 +4421,7 @@ $Orphen$ Articuli in quilz sentio mrm Chroseam Nevenson meret reformandum  $Co<e
  <!--DÉBUT 067--><div type="page">
 
 <pb n="067" facs="#fs_067"/>
-<num type="pagination" subtype="red">67</num> <num type="pagination" subtype="black">25</num>
+<div><ab><num type="pagination" subtype="red">67</num> <num type="pagination" subtype="black">25</num></ab></div>
  
 <div type="article" n="88">
                <head>
@@ -4498,7 +4511,7 @@ $Imag<expan>es</expan>$ He saied that the sight of the ymage of saint
  <!--DÉBUT 069--><div type="page">
 
 <div type="article" n="89"><div sameAs="d1e6590"><pb n="069" facs="#fs_069"/>
-<num type="pagination" subtype="red">69</num> <num type="pagination" subtype="black">26</num>
+<div><ab><num type="pagination" subtype="red">69</num> <num type="pagination" subtype="black">26</num></ab></div>
  $seditious$ He saied in a Sermon made at Staple on marye
  magdalen day last past. John Baptist had
  his hed smytten of for speaking of the truthe
@@ -4571,7 +4584,7 @@ $offensive$ On the masse booke is plaine detestable heresies
  <!--DÉBUT 071--><div type="page">
 
 <div type="article" n="89"><div sameAs="d1e6590"><pb n="071" facs="#fs_071"/>
-<num type="pagination" subtype="red">71</num> <num type="pagination" subtype="black">27</num>
+<div><ab><num type="pagination" subtype="red">71</num> <num type="pagination" subtype="black">27</num></ab></div>
  suche wourdes. Rich<expan>ard </expan>wades John Sowde <add place=""/> pilcherde.
  Robert <expan>par</expan>ker, the vicar of Northgate. henry ffissher. Rog<expan>er</expan>
                   <pilcherde> mantel.</pilcherde>
@@ -4587,7 +4600,7 @@ $offensive$ On the masse booke is plaine detestable heresies
             </div>
             <div type="article" n="90">
                <head>
-                  <date type="procedure" when="">26 Septembr<expan>is</expan> 1543</date>.</head>
+                  <date type="procedure" when="1543-09-26">26 Septembr<expan>is</expan> 1543</date>.</head>
                <div>
                   <head rend="margin_left">Boucher</head>
  John boucher of ffretynden saied that mattens and
