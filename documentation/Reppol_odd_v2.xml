@@ -7,7 +7,8 @@
 	<teiHeader>
 		<fileDesc>
 			<titleStmt>
-				<title>ODD, projet RePPOL</title>
+				<title>Cambridge, Corpus Christi College, MS 128: Documents Relating to Archbishop
+					Cranmer</title>
 				<funder ref="http://www.isite-ulne.fr/index.php/fr/page-daccueil/">I-site Université
 					Lille-Nord-Europe</funder>
 				<funder ref="https://comod.universite-lyon.fr/">LabEx COMOD, université de
@@ -20,23 +21,27 @@
 				<respStmt>
 					<name ref="https://pro.univ-lille.fr/aude-de-mezerac/">Aude de
 						Mézerac-Zanetti</name>
-					<resp>Directrice scientifique</resp>
+					<resp>Principal investigator</resp>
 				</respStmt>
 				<respStmt>
 					<name ref="http://larhra.ish-lyon.cnrs.fr/membre/334">Olivier Spina</name>
-					<resp>Directeur scientifique</resp>
+					<resp>Principal investigator</resp>
 				</respStmt>
 				<respStmt>
 					<name>Victoria Le Fourner</name>
-					<resp>Directrice technique</resp>
+					<resp>Digital humanities coordinator</resp>
+				</respStmt>
+				<respStmt>
+					<name>Florence Perret</name>
+					<resp>Designer</resp>
 				</respStmt>
 				<respStmt>
 					<name>Felipe Goes Silva</name>
-					<resp>Transcription</resp>
+					<resp>Graduate student, transcription contributor</resp>
 				</respStmt>
 				<respStmt>
 					<name>Adrien Mével</name>
-					<resp>Responsable encodage</resp>
+					<resp>Graduate student &amp; intern, encoder and digital editor</resp>
 				</respStmt>
 			</titleStmt>
 			<extent>
@@ -55,8 +60,7 @@
 				<authority>Projet RePPOL</authority>
 				<date>2022</date>
 				<availability>
-					<licence target="https://creativecommons.org/licenses/by/2.0/fr/legalcode">CC BY
-						2.0 FR</licence>
+					<licence target="https://creativecommons.org/licenses/by/4.0/legalcode">CC BY 4.0 International</licence>
 				</availability>
 			</publicationStmt>
 			<sourceDesc>
@@ -73,12 +77,9 @@
 					<physDesc>
 						<objectDesc>
 							<supportDesc>
-								<extent>Plusieurs folios reliés constituant un total de <measure
-										unit="pages" quantity="442">442 pages</measure> en
-										<material>papier</material> mesurant <height unit="mm"
-										quantity="314">314 mm de haut</height> pour <width unit="mm"
-										quantity="210">210 mm de large</width> dont seulement
-										<measure unit="pages" quantity="360">360 pages</measure>
+								<extent>Plusieurs folios reliés constituant un total de <measure unit="pages" quantity="442">442 pages</measure> en
+									<material>papier</material> mesurant <height unit="mm" quantity="314">314 mm de haut</height> pour <width unit="mm" quantity="210">210 mm de large</width> dont seulement
+									<measure unit="pages" quantity="360">360 pages</measure>
 									sont traitées dans le cadre du projet RePPOL. </extent>
 								<foliation>ff. i-ii + pp. 1-2 (3-4 missing) + 5-166 + 166a-d +
 									167-264 + 264a-265a + 265-324 + 324a-325a + 325-436 + 436a +
@@ -128,8 +129,7 @@
 				<p>RePPOL est un projet scientifique et pédagogique collaboratif mené par <ref target="https://pro.univ-lille.fr/aude-de-mezerac/">Aude de Mézerac-Zanetti</ref>, spécialiste d'histoire religieuse de l'Angleterre d'Henri VIII (Mcf, aude.de-mezerac@univ-lille.fr, Université de Lille, <ref target="https://cecille.univ-lille.fr/">CECILLE</ref>), <ref target="http://larhra.ish-lyon.cnrs.fr/membre/334">Olivier Spina</ref>, spécialiste d'histoire politique de l'Angleterre Tudor (Mcf, olivier.spina@univ-lyon2.fr, Université de Lyon 2, <ref target="http://larhra.ish-lyon.cnrs.fr/">LARHRA</ref>) et Victoria Le Fourner (ingénieure d’études, spécialiste des humanités numériques à la <ref target="https://www.meshs.fr/page/accueil">MESHS</ref> de Lille) avec l’aide de Felipe Goes-Silva (étudiant en M1 Recherche en Études Anglophones à l’Université de Lille) et de Adrien Mével (étudiant en M1 Éditions numériques et imprimées de texte littéraires à l'Université de Lille. Ce projet est financé majoritairement par l'<ref  target="http://www.isite-ulne.fr/index.php/fr/page-daccueil/">I-site Université Lille-Nord-Europe</ref> et par le <ref target="https://comod.universite-lyon.fr/">LABEX COMOD</ref> (Université de Lyon) et soutenu par la <ref target="https://www.meshs.fr/page/accueil">Maison Européenne des Sciences de l'Homme et de la Société Lille Nord de France (MESHS)</ref>.</p><!-\-récupéré sur https://ahmuf.hypotheses.org/9528 et tact   + ajouts et modifications A. Mével-\->-->
 				<p xml:lang="fr">Notre projet est consacré à la transcription, l’édition critique et
 					l’analyse d’un document exceptionnel : le manuscrit MS 128 conservé à la
-					bibliothèque de Corpus Christi College, Cambridge (à voir sur la <ref
-						target="https://tact.demarre-shs.fr/project/31">plateforme TACT</ref>). Il
+					bibliothèque de Corpus Christi College, Cambridge (à voir sur la <ref target="https://tact.demarre-shs.fr/project/31">plateforme TACT</ref>). Il
 					s’agit d’un manuscrit composite d’environ 220 folios qui contient la
 					documentation rassemblée en 1543 sous l’égide de l’Archevêque de Cantorbéry,
 					Thomas Cranmer. Celui-ci, gagné aux idées réformées, est visé par un complot
@@ -189,11 +189,9 @@
 					cours de paléographie moderne. La transcription semi-diplomatique est réalisé
 					via la <ref target="https://tact.demarre-shs.fr/">plateforme de Transcription et
 						d'Annotations de Corpus Textuel (TACT)</ref> développée par l'Université de
-					Grenoble. Les images des folios ont été numérisées par la <ref
-						target="https://parker.stanford.edu/parker/catalog/ps908cx9813">Parker
-						Library</ref> et y étaient accessibles selon le cadre interopérable <ref
-						target="https://iiif.io/">International Image Interoperability Framework
-						(3IF)</ref>. La seconde étape du travail (2022) est consacrée à l'analyse
+					Grenoble. Les images des folios ont été numérisées par la <ref target="https://parker.stanford.edu/parker/catalog/ps908cx9813">Parker
+						Library</ref> et y étaient accessibles selon le cadre interopérable <ref target="https://iiif.io/">International Image Interoperability Framework
+							(3IF)</ref>. La seconde étape du travail (2022) est consacrée à l'analyse
 					fine de cette source à la lumière de documents archivistiques de nature
 					similaire. La troisième étape, dont le présent document est l'une des
 					incarnations, est la constitution d'une édition numérique en ligne permettant
@@ -202,8 +200,7 @@
 				<!--Translated with www.DeepL.com/Translator (free version)-->
 				<p xml:lang="en">Our project is devoted to the transcription, critical edition, and
 					analysis of an exceptional document: the manuscript MS 128 held in the library
-					of Corpus Christi College, Cambridge (can be viewed on the <ref
-						target="https://tact.demarre-shs.fr/project/31">TACT platform</ref>). It is
+					of Corpus Christi College, Cambridge (can be viewed on the <ref target="https://tact.demarre-shs.fr/project/31">TACT platform</ref>). It is
 					a composite manuscript of about 220 folios that contains the documentation
 					gathered in 1543 under the supervision of the Archbishop of Canterbury, Thomas
 					Cranmer. The latter, won over to the Reformed ideas, was the target of a plot
@@ -258,11 +255,9 @@
 					context of the modern paleography course. The semi-diplomatic transcription is
 					carried out via the <ref target="https://tact.demarre-shs.fr/">Transcription and
 						Annotation Platform for Textual Corpus (TACT)</ref> developed by the
-					University of Grenoble. The images of the folios were digitized by the <ref
-						target="https://parker.stanford.edu/parker/catalog/ps908cx9813">Parker
-						Library</ref> and were accessible there according to the <ref
-						target="https://iiif.io/">International Image Interoperability Framework
-						(3IF)</ref>. The second stage of the work (2022) is devoted to fine-grained
+					University of Grenoble. The images of the folios were digitized by the <ref target="https://parker.stanford.edu/parker/catalog/ps908cx9813">Parker
+						Library</ref> and were accessible there according to the <ref target="https://iiif.io/">International Image Interoperability Framework
+							(3IF)</ref>. The second stage of the work (2022) is devoted to fine-grained
 					analysis of this source in light of archival records of a similar nature. The
 					third step, of which the present document is one of the incarnations, is the
 					constitution of an online digital edition allowing via xml-tei tagging the
@@ -275,7 +270,7 @@
 					toponymes, les noms de personnes, les rôles et les référents culturels. Enfin
 					l'encodage s'emploie également à rendre compte de la génétique du texte, tentant
 					d'identifier les différentes mains.</p>
-				<normalization>
+				<normalization method="silent">
 					<p>Lors de la transcription, les abréviations ont été systématiquement
 						développées, elles ont ensuite été encodées pour être affichées en italituqe
 						conformément au standard de la <ref target="https://www.folger.edu/">Folger
