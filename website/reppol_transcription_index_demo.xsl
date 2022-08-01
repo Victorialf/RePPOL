@@ -125,6 +125,26 @@
 			<!--var Height = $('#facspage').css('height');
 			//manipulate the height as you want if it is different than the maindiv's height
 			$('#text').css('max-height', 'Height');-->
+			function openTab(evt, tabName) {
+			// Declare all variables
+			var i, placetabcontent, placetablinks;
+			
+			// Get all elements with class="tabcontent" and hide them
+			placetabcontent = document.getElementsByClassName("placetabcontent");
+			for (i = 0; i &lt; placetabcontent.length; i++) {
+			placetabcontent[i].style.display = "none";
+			}
+			
+			// Get all elements with class="tablinks" and remove the class "active"
+			placetablinks = document.getElementsByClassName("placetablinks");
+			for (i = 0; i &lt; placetablinks.length; i++) {
+			placetablinks[i].className = placetablinks[i].className.replace(" active", "");
+			}
+			
+			// Show the current tab, and add an "active" class to the button that opened the tab
+			document.getElementById(tabName).style.display = "block";
+			evt.currentTarget.className += " active";
+			} 
 		</script>
 		<!--<!-\-		Plus nécessaie après body{overflow:nope}-\->
 		<a href="#top"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png" class="top"/></a>-->
@@ -240,16 +260,27 @@
 								<h2>browse :</h2>
 								<ul class="index">
 									<xsl:apply-templates select="//tei:placeName"
-										mode="index">
+										mode="index_prelist">
 										<xsl:sort select="lower-case(.)"/>
 									</xsl:apply-templates>
 								</ul>
-							</section>														<section id="top_2" class="index">
-								
 							</section>
-							<section class="index">
-								<img class="index_map" src=""/>
-							</section>
+							<div class="place_section_container" id="top_2">
+								<section class="place_index_tab">
+									<button class="placetablinks" onclick="openTab(event, 'place_index')">place index :</button>
+									<button class="placetablinks" onclick="openTab(event, 'place_map')">map :</button>
+								</section>
+								<section id="place_index" class="placetabcontent">
+<!--									<h2>place index :</h2>-->
+									<xsl:apply-templates select="//tei:placeName" mode="index">
+										<xsl:sort select="lower-case(.)"/>
+									</xsl:apply-templates>
+								</section>
+								<section id="place_map" class="placetabcontent">
+<!--									<h2>map :</h2>-->
+									<img class="index_map" src=""/>
+								</section>
+							</div>
 						</article>
 					</div>
 					<xsl:call-template name="script"/>
@@ -1106,7 +1137,7 @@
 					</xsl:attribute>
 					<xsl:if test="$meta = 'n'">
 						<!--ajout d'un style particulier pour les metamark = n-->
-						<xsl:attribute name="style">font-size:18pt;</xsl:attribute><!-- color:#1c481f; -->
+						<xsl:attribute name="style">font-size:18pt; color:#999;</xsl:attribute><!-- color:#1c481f; -->
 					</xsl:if>
 					<xsl:apply-templates/>
 				</xsl:element>
@@ -1185,7 +1216,7 @@
 						mode="sub_index"/>
 				</ul>
 				<p>Link : <xsl:choose>
-						<xsl:when test="@ref = 'x'">
+						<xsl:when test="@ref = ('x')or()">
 							<xsl:text>-</xsl:text>
 						</xsl:when>
 						<xsl:when test="not(number(@ref))">
@@ -1219,7 +1250,6 @@
 		<li><xsl:text>"</xsl:text><xsl:apply-templates/><xsl:text>"</xsl:text>: p.<a
 				href="{concat($transcriptions, preceding::tei:pb[1]/@n, '.html')}"><xsl:value-of
 					select="preceding::tei:pb[1]/@n"/></a></li>
-		<!-- ajouter un link ici généré automatiquement vers la page concernée ? -->
 	</xsl:template>
 
 	<!--cf : https://askcodez.com/convertir-le-premier-caractere-de-chaque-mot-en-majuscule.html-->
@@ -1284,11 +1314,93 @@
 		/>
 	</xsl:template>
 
-
+	
+	<xsl:template match="tei:placeName" mode="index_prelist">
+<!--		<xsl:variable name="key" select="@key"/>-->
+		<xsl:variable name="ref" select="@ref"/>
+		<xsl:if test="not(preceding::tei:placeName[@ref = $ref])">
+			<li>
+				<xsl:element name="a">
+					<xsl:attribute name="href">
+						<xsl:value-of select="concat('#', generate-id())"/>
+					</xsl:attribute>
+					<xsl:call-template name="CamelCase_space">
+						<xsl:with-param name="name_change" select="."/>
+					</xsl:call-template>
+				</xsl:element>
+			</li>
+		</xsl:if>
+	</xsl:template>
 	<xsl:template match="tei:placeName" mode="index">
 		<xsl:variable name="ref_base" select="'https://www.openstreetmap.org/search?query='"/>
 		<xsl:variable name="ref" select="@ref"/>
-		<xsl:choose>
+<!--		<xsl:variable name="key" select="@key"/>-->
+		<xsl:variable name="base_uri" select="'https://theclergydatabase.org.uk/jsp/locations/DisplayLocation.jsp?locKey='"/>
+		<xsl:if test="not(preceding::tei:placeName[@ref = $ref])">
+			<div id="{generate-id()}" class="index_unit">
+				<h3>
+					<xsl:call-template name="CamelCase_space">
+						<xsl:with-param name="name_change" select="."/>
+					</xsl:call-template>
+				</h3>
+				<p>Type : <xsl:value-of select="@type"/></p>
+				<p>Mentioned :</p>
+				<ul>
+					<xsl:apply-templates select=". | following::tei:placeName[@ref = $ref]" mode="sub_index"/>
+				</ul>
+				<p>Link : <xsl:choose>
+					<xsl:when test="@ref = ('x')or()">
+						<xsl:text>-</xsl:text>
+					</xsl:when>
+					<xsl:otherwise>
+						<a href="{concat($base_uri, @ref)}">CCED </a>
+						<xsl:choose>
+							<xsl:when test="@ref='6'"><a href="{concat($ref_base, '51.09563666023264, 0.9443751452224245')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='16'"><a href="{concat($ref_base, '51.14576352159874, 0.8740108702332904')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='27'"><a href="{concat($ref_base, '51.12951242200254, 0.7540032430536673')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='43'"><a href="{concat($ref_base, '51.19975420080327, 0.9056226109356197')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='44'"><a href="{concat($ref_base, '51.21257428841646, 0.6897059854433114')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='45'"><a href="{concat($ref_base, '51.23442640656221, 0.5323448277713716')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='46'"><a href="{concat($ref_base, '51.29513818915764, 0.9572080376614853')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='57'"><a href="{concat($ref_base, '51.13212895787294, 1.302947579018137')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='66'"><a href="{concat($ref_base, '51.277648633703876, 1.0828494602763346')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='73'"><a href="{concat($ref_base, '51.276275986548235, 1.07757578974423')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='76'"><a href="{concat($ref_base, '51.27810202522983, 1.0855233549998646')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='85'"><a href="{concat($ref_base, '51.38426722257884, 0.5228846292421128')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='93'"><a href="{concat($ref_base, '51.244905091064496, 0.9627086167814554')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='148'"><a href="{concat($ref_base, '51.3177,0.8928')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='242'"><a href="{concat($ref_base, '50.95117535978458, 0.9065697644456505')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='260'"><a href="{concat($ref_base, '51.44254433958588, 0.3833232467670284')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='265'"><a href="{concat($ref_base, '51.21450426826586, 1.3592873680943796')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='275'"><a href="{concat($ref_base, '51.09713728823203, 1.1169920368954644')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='276'"><a href="{concat($ref_base, '51.35412251588519, 0.6670796932072199')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='291'"><a href="{concat($ref_base, '51.30844209417786, 0.8698966668067528')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='303'"><a href="{concat($ref_base, '51.17755453243505, 0.7561188280618952')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='310'"><a href="{concat($ref_base, '51.3642637207888, 0.6109353741360732')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='316'"><a href="{concat($ref_base, '51.196316274741974, 1.3611056342813097')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='338'"><a href="{concat($ref_base, '51.27381571344677, 1.3423353026039284')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='339'"><a href="{concat($ref_base, '51.27738721984441, 1.3388088425220264')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='340'"><a href="{concat($ref_base, '51.27505327417798, 1.339810656014829')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='349'"><a href="{concat($ref_base, '51.27434058957334, 0.8809924458287133')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='361'"><a href="{concat($ref_base, '51.24289954742153, 0.8096375733057797')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='366'"><a href="{concat($ref_base, '51.30033387972874, 1.1813821021641806')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='385'"><a href="{concat($ref_base, '51.0703845886681, 0.6850335175063367')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='408'"><a href="{concat($ref_base, '51.30926777086775, 1.1410263130109777')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='429'"><a href="{concat($ref_base, '51.27329987024547, 0.7544625439546462')}">Open street map</a></xsl:when>
+						</xsl:choose>
+					</xsl:otherwise>
+				</xsl:choose>
+				</p>
+				<a href="#top_2">
+					<img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png"
+						class="top"
+						style="position:absolute; bottom:0; right:0; padding:5px; width:30px;"/>
+				</a>
+			</div>
+		</xsl:if>
+		
+		
+		<!--<xsl:choose>
 			<xsl:when test="@ref = 'x'">
 				<xsl:element name="li">
 					<xsl:apply-templates/>
@@ -1303,8 +1415,14 @@
 					</a>
 				</xsl:element>
 			</xsl:when>
-		</xsl:choose>
+		</xsl:choose>-->
 	</xsl:template>
+	<xsl:template match="tei:placeName" mode="sub_index">
+		<li><xsl:text>"</xsl:text><xsl:apply-templates/><xsl:text>"</xsl:text>: p.<a
+			href="{concat($transcriptions, preceding::tei:pb[1]/@n, '.html')}"><xsl:value-of
+				select="preceding::tei:pb[1]/@n"/></a></li>
+	</xsl:template>
+	
 
 
 	<xsl:template name="calendar">

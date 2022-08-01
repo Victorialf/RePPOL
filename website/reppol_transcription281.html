@@ -186,5 +186,25 @@
 			evt.currentTarget.className += " active_tab";
 			}
 			
+			function openTab(evt, tabName) {
+			// Declare all variables
+			var i, placetabcontent, placetablinks;
+			
+			// Get all elements with class="tabcontent" and hide them
+			placetabcontent = document.getElementsByClassName("placetabcontent");
+			for (i = 0; i < placetabcontent.length; i++) {
+			placetabcontent[i].style.display = "none";
+			}
+			
+			// Get all elements with class="tablinks" and remove the class "active"
+			placetablinks = document.getElementsByClassName("placetablinks");
+			for (i = 0; i < placetablinks.length; i++) {
+			placetablinks[i].className = placetablinks[i].className.replace(" active", "");
+			}
+			
+			// Show the current tab, and add an "active" class to the button that opened the tab
+			document.getElementById(tabName).style.display = "block";
+			evt.currentTarget.className += " active";
+			} 
 		</script></body>
 </html>
