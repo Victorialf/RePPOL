@@ -3823,10 +3823,20 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 						</attList>
 					</elementSpec>
 					<elementSpec ident="space" mode="change">
+						<classes>
+							<!--<memberOf key="att.global.rendition" mode="delete"/>
+							<memberOf key="att.global.linking" mode="delete"/>
+							<memberOf key="att.global.facs" mode="delete"/>-->
+							<memberOf key="att.dimensions"/>
+						</classes>
 						<content>
 							<empty/>
 						</content>
 						<attList>
+							<attDef ident="extent" mode="delete"/>
+							<attDef ident="precision" mode="delete"/>
+							<attDef ident="scope" mode="delete"/>
+							<attDef ident="dim" mode="delete"/>
 							<attDef ident="quantity" mode="change" usage="req">
 								<valList mode="change" type="closed">
 									<valItem ident="1"/>
@@ -3834,7 +3844,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 							</attDef>
 							<attDef ident="unit" mode="change" usage="req">
 								<valList mode="change" type="closed">
-									<valItem ident="pages"/>
+									<valItem ident="pages" mode="add"/>
 								</valList>
 							</attDef>
 						</attList>
