@@ -1400,7 +1400,8 @@
  <div type="collection" n="1">
             <div type="index" n="1">
 <!--DÉBUT 002-->
-            	<div type="page">
+            	<!--V1, de nombreuses div réunissent les textes par groupes horizontaux. 
+            		<div type="page">
 			<pb n="002" facs="#fs_002"/>
             		<div>
  				<note rend="main">Manus Thomæ Cranmer</note>
@@ -1633,7 +1634,149 @@
             				<item>le ffitzwiliams 28.38.</item>
             			</list>
             		</div>
-<!--FIN 002-->
+<!-\-FIN 002-\->
+            	</div>-->
+            	<div type="page">
+            		<pb n="002" facs="#fs_002"/>
+            		<div>
+            			<note rend="main">Manus Thomæ Cranmer</note>
+            		</div>
+            		<div>
+            			<note rend="margin_left"><metamark>n</metamark></note>
+            			<note rend="margin_left">th <metamark>n</metamark></note>
+            			<note rend="margin_left">th</note>
+            			<note rend="margin_left">th</note>
+            			<note rend="margin_left"><metamark>n</metamark></note>
+            			<note rend="margin_left"><metamark>n</metamark></note>
+            			<note rend="margin_left">th <metamark>n</metamark></note>
+            			<note rend="margin_left"><metamark>n</metamark></note>
+            			<note rend="margin_left">th</note>
+            			<note rend="margin_left"><metamark>n</metamark></note>
+            			<note rend="margin_left">th</note>
+            			<note rend="margin_left">th</note>
+            			<note rend="margin_left"><metamark>n</metamark></note>
+            			<note rend="margin_left"><metamark>n</metamark></note>
+            			<note rend="margin_left">th</note>
+            			<note rend="margin_left">th <metamark>n</metamark></note>
+            			<note rend="margin_left"><metamark>n</metamark></note>
+            			<list rend="main_left">
+            				<item>Serles. 1.2.4.<add place="above">8</add>.11.36.</item>
+            				<item>Gardiner. 2.3.4.9.</item>
+            				<item>Shether. 2.4.7.<add place="above">9</add>.13.37</item>
+            				<item>Vicarius de ffeversham. 3.19.</item>
+            				<item>the parson of westbere. 3.</item>
+            				<item>Sir hunfray Cotton. 18.38.</item>
+            				<item>Milles. 4.</item>
+            				<item>Commissary. 4.20.21.22.29.<add place="above">30</add>.35.</item>
+            				<item>Parkurst. 4.5</item>
+            				<item>Henry laurence 4.</item>
+            				<item>Bartilmewe the surgeon. 4.</item>
+            				<item>Bland. 4.25.</item>
+            				<item>Thomas Gylet alias Barbour. 4.</item>
+            				<item>The vicar of Chillam. 5.10.</item>
+            				<item>Sir laurence curate of Chalocke. 5.</item>
+            				<item>Vicarius de Tenterden. 5.</item>
+            				<item>Parson of Riple. 5.</item>
+            				<item>Vicar of Betrisden. 5.</item>
+            				<item>John Thatcher Juniore. 5.19.38.</item>
+            				<item>Vicarius Sancte Pauli Cantuarie. 5.</item>
+            				<item>Estwel. 5.</item>
+            				<item>Quilter. 5.</item>
+            				<item>Parson of Milton. 5.</item>
+            				<item>Parson of Pluckley. 6.</item>
+            				<item>Chirden. 6.</item>
+            				<item>Vincent Ingeam. 6.</item>
+            				<item>Sir Thomas curat of Sholden. 6.</item>
+            				<item>Sir hue Curtoppe</item>
+            				<item>Thomas Sawier. 6.</item>
+            				<item>Thomas Bleane. 6</item>
+            				<item>Edwarde Dingleden. 6</item>
+            				<item>Sponer vicar of Boughton. 6</item>
+            				<item>Archdecon of Canturbery. 6</item>
+            				<item>Vicarius de Northgate. 6.</item>
+            				<item>Bartilmew Joye. 7.</item>
+            				<item>John Toftes. 7</item>
+            				<item>Christofer Levenysh. 7.28.</item>
+            				<item>Johana Meryweder. 7.</item>
+            				<item>Rauff belrynger of christes church. 7.</item>
+            				<item>Coxson peticanon. 7. </item>
+            				<item>the parson of Alington. 7.</item>
+            				<item>Orphewe. 8.24.</item>
+            				<item>the curate off Stodmershe. 8.</item>
+            				<item>Turnour. 8.22.38.</item>
+            				<item>Burgrave a brickleyer. 10.</item>
+            				<item>Browne of Chartam. 10.</item>
+            			</list>
+            			<note rend="main_right">th</note>
+            			<note rend="main_right">th</note>
+            			<note rend="main_right">th</note>
+            			<note rend="main_right">th</note>
+            			<note rend="main_right">th</note>
+            			<note rend="main_right"><metamark>n</metamark></note>
+            			<note rend="main_right">th</note>
+            			<note rend="main_right">th<metamark>n</metamark></note>
+            			<note rend="main_right">th</note>
+            			<note rend="main_right">th</note>
+            			<note rend="main_right">th</note>
+            			<note rend="main_right">th</note>
+            			<note rend="main_right">th</note>
+            			<list rend="main_right">
+            				<item>Sir Jamis Newman. 18</item>
+            				<item>Laurence brother to Master mores. 8.</item>
+            				<item>The curate of Chartam. 8. </item>
+            				<item>Scory. 12.19.31.36.</item>
+            				<item>Broke. 14.</item>
+            				<item>Carden. 14.</item>
+            				<item>Ridley prebendary. 15.</item>
+            				<item>John ffrensh. 15.</item>
+            				<item>henry Tillet. 15.</item>
+            				<item>Nicolas huget. 15.</item>
+            				<item>Drumme 15.19.36.</item>
+            				<item>Lancaster. 16.</item>
+            				<item>the curate of moch mongeam</item>
+            				<item>Robert Newington. 17.</item>
+            				<item>Makeblith. 17.32.</item>
+            				<item>Mr. Isaac. 17.</item>
+            				<item>Margret Toftes Junior. 17.</item>
+            				<item>Margret Toftes senior. 17.18.</item>
+            				<item>Mres. Starkey. 18.</item>
+            				<item>Thomas Hasilden. 18.</item>
+            				<item>Hamon bet. 18.</item>
+            				<item>Parson of witchlynge 18.</item>
+            				<item>John Riche. 18.</item>
+            				<item>John Castelyn. 19.</item>
+            				<item>George Wyburne. 19.</item>
+            				<item>John Chapman. 20 19.</item>
+            				<item>Vicar of Shelwich. 19.37.</item>
+            				<item>Robert Strawyn 20.37.</item>
+            				<item>John Starkey. 20.</item>
+            				<item>Thomas Dale. 21.</item>
+            				<item>Walmar. 21.</item>
+            				<item>Vicar of Stalfylde. 21.</item>
+            				<item>John Parkurst. 21.</item>
+            				<item>Batersay. 21.</item>
+            				<item>Salter. 21.</item>
+            				<item>George Hardes. 22.37.</item><item>Raynolde Buckmer 22.35.</item>
+            				<item>John Benson. 22.37.</item>
+            				<item>Joys Benson. 22.37.</item>
+            				<item>Sir hugh Couper 23.37.</item>
+            				<item>Archbolde. 23.</item>
+            				<item>Thomas Baker. 23.</item>
+            				<item>John Tonge. 23.</item>
+            				<item>Nicolas Tery 23.</item>
+            				<item>John ffishcocke. 23.</item>
+            				<item>Antony Ager. 24.</item>
+            				<item>Simon Castlyn 24.</item>
+            				<item>Vicar of Newyngton. 24.</item>
+            				<item>Vicar of s. Mary of Sandwich 24</item>
+            				<item>Rich Butler. 24.</item>
+            				<item>holy. 25.</item>
+            				<item>Bocher. 27</item>
+            				<item>John Toftes. 27</item>
+            				<item>le ffitzwiliams 28.38.</item>
+            			</list>
+            		</div>
+            		<!--FIN 002-->
             	</div>
 <!--1 div refermée-->
 	</div>
@@ -3438,7 +3581,7 @@ mations, letteres and iniu<expan>n</expan>ctions.</p>
  justifieth, / and he that dothe deny that only faith
  dothe justifye / would denye if he durst be
  so s bold That Christ dothe justifye,
-	<persName type="religious" ref="90003" key="gardiner_william">Gardiner</persName>, <persName type="religious" ref="90155" key="<persName type="religious" ref="90155" key="hunt_william">hunt</persName>_william"><persName type="religious" ref="90155" key="hunt_william">hunt</persName></persName>. <persName type="religious" ref="39569" key="cocke_william">Cockes of <placeName type="building" ref="">Christes church</placeName></persName>.</p>
+	<persName type="religious" ref="90003" key="gardiner_william">Gardiner</persName>, <persName type="religious" ref="90155" key="hunt_william">hunt</persName>. <persName type="religious" ref="39569" key="cocke_william">Cockes of <placeName type="building" ref="">Christes church</placeName></persName>.</p>
  <p rend="main">He preached in a Sermon made at <placeName type="building" ref="">Christchurche</placeName>
  that the Supper of the lorde whiche is
  sacrificium et hostia. is not hostia pro peccates: but
@@ -3657,7 +3800,7 @@ mations, letteres and iniu<expan>n</expan>ctions.</p>
  <div><note rend="margin_left">Errour</note><p rend="main">ffirst he saied that he supposed that Saint
  Katherine was rather a devill in hell, than
  a saint in heaven</p></div>
-               	<div><note rend="margin_left">herecie <metamark>n</metamark><note rend="margin_left">
+               	<div><note rend="margin_left">herecie <metamark>n</metamark></note>
                		<p rend="main">He preached that the people say nought / and that
  this terme is nought to say. That they shuld
  receyve their maker at Easter: but they shuld
@@ -4020,7 +4163,7 @@ of the font is no better than other water is,
  
 </div>
                <div>
-               	<head rend="margin_left"><persName type="lay_woman"key="">Margaret Toftes senio<expan>ur</expan></persName>
+               	<head rend="margin_left"><persName type="lay_woman" key="">Margaret Toftes senio<expan>ur</expan></persName>
                   </head>
                	<div><note rend="margin_left">Erro<expan>ur</expan></note>
                	<note rend="margin_left">ceremonies</note>
@@ -4373,12 +4516,13 @@ of the font is no better than other water is,
 
 <div type="article" n="73"><div sameAs="d1e5794"><pb n="057" facs="#fs_057"/>
 <div><ab><num type="pagination" subtype="red">57</num> <num type="pagination" subtype="black">20</num></ab></div>
- good people forasmoche as sainctes be circumscripte, it ys
+	<div><note rend="margin_left"><metamark>+</metamark></note>
+		<p rend="main">good people forasmoche as sainctes be circumscripte, it ys
  not possible for that saincte that is in the north to here <expan>the</expan>
  prayer that is made in the southe, nor the saincte that is
  in the south to here the prayer that ys made in the northe
- witnes <persName type="religious" ref="90155" key="hunt_william">william hunte</persName>, <persName type="religious" key="gardiner_william" ref="90003">william gardener</persName>, Jo mylles
- <note rend="margin_left">+</note> <persName type="religious" key="searles_robert" ref="47085">Robert Serles</persName>, Jo ffallowfelde
+ witnes <persName type="religious" ref="90155" key="hunt_william">william hunte</persName>, <persName type="religious" key="gardiner_william" ref="90003">william gardener</persName>, <persName type="religious" ref="45336" key="mylles_john">Jo mylles</persName>
+  <persName type="religious" key="searles_robert" ref="47085">Robert Serles</persName>, <persName type="" key="" ref="">Jo ffallowfelde</persName></p></div>
 
 </div>
             </div>
@@ -4387,44 +4531,57 @@ of the font is no better than other water is,
                	<date type="procedure" when="1543-09-21"> 21 Septembr<expan>is</expan> 1543</date>
                </head>
                <div>
-                  <head rend="margin_left">Strawghwyn</head>
- He said in the wedensdaye of the Rogacion weke laste
- paste at davyngton, you be not bounde <expan>(quod</expan> he)
+               	<head rend="margin_left"><persName type="" key="strongwhen_robert" ref="">Strawghwyn</persName></head>
+               	<div>
+               		
+               		<p rend="main">He said in <date type="narrative" when="">the wedensdaye of the Rogacion weke laste
+ paste</date> at <placeName type="parish" ref="">davyngton</placeName>, you be not bounde <expan>(quod</expan> he)
  to beleve any thing w<expan>hich</expan> is not written or co<expan>n</expan>teyned
  in the holie scripture, Nor ought to beleve, any
- other thing, than godes wourde founde in holie scripture
- <note rend="margin_left">prayinge to sayntes</note> In the same sermon he said as towching praying to
- sainctes I deny it quyete q<expan>uo</expan>d he knacking therat
- his fyngers
- It<expan>e</expan>m he said that sainctes can neith<expan>er</expan> helpe us / nor
- here us / nor do nothing for us
- He said that the holie water is no better than other
- water / John Seth. Rich<expan>ard</expan> Dryland. laurence ma<expan>n</expan>by.
- John hampton Nic<expan>holas</expan> Burdwash. Joseph Bev<expan>er</expan>slay. Tho<expan>mas</expan> Transam. John pelleyne.
- Cleme<expan>n</expan>t Norton. Tho<expan>mas</expan> Deve. Tho<expan>mas</expan> Okinfeld. Raynold Becke. willi<expan>a</expan>m Amoore.
- Ro<expan>bert</expan> ffynes. Rich<expan>ard</expan> Stickney
+ other thing, than godes wourde founde in holie scripture</p></div>
+               	<div>
+               		<note rend="margin_left">prayinge to sayntes</note>
+               		<p rend="main">In the same sermon he said as towching praying to
+               			sainctes I deny it quyete q<expan>uo</expan>d he knacking therat
+               			his fyngers</p>
+               		<p rend="main">It<expan>e</expan>m he said that sainctes can neith<expan>er</expan> helpe us / nor
+               			here us / nor do nothing for us</p>
+               		<p rend="main">He said that the holie water is no better than other
+               			water / <persName type="" ref="" key="seth_john">John Seth</persName>. <persName type="religious" key="dryland_richard" ref="89855">Rich<expan>ard</expan> Dryland</persName>. <persName type="" ref="" key="">laurence ma<expan>n</expan>by</persName>.</p>
+               		<p rend="whole_width"><persName type="" ref="" key="">John hampton</persName> <persName type="" ref="" key="">Nic<expan>holas</expan> Burdwash</persName>. <persName type="" ref="" key="">Joseph Bev<expan>er</expan>slay</persName>. <persName type="" ref="" key="">Tho<expan>mas</expan> Transam</persName>. <persName type="" ref="" key="">John pelleyne</persName>.
+               			<persName type="religious" ref="39067" key="norton_clement">Cleme<expan>n</expan>t Norton</persName>. <persName type="religious" ref="40652" key="deve_thomas">Tho<expan>mas</expan> Deve</persName>. <persName type="" ref="" key="">Tho<expan>mas</expan> Okinfeld</persName>. <persName type="" ref="" key="">Raynold Becke</persName>. <persName type="" ref="" key="">willi<expan>a</expan>m Amoore</persName>.
+               			<persName type="religious" ref="41122" key="fynes_robert">Ro<expan>bert</expan> ffynes</persName>. <persName type="" ref="" key="">Rich<expan>ard</expan> Stickney</persName></p>
+               	</div>
+
+ 
+ 
+ 
  
 </div>
             </div>
             <div type="article" n="75">
-               <head>The <date type="procedure" when="">vii daye of novembre A<expan>nno</expan> 1541</date>
+               <head>The <date type="procedure" when="1541-11-07">vii daye of novembre A<expan>nno</expan> 1541</date>
                </head>
                <div xml:id="d1e5881">
-                  <head rend="margin_left">George of Cant<expan>erbury</expan>
+               	<head rend="margin_left">George of <placeName type="city" ref="">Cant<expan>erbury</expan></placeName>
                   </head>
- I John tofere <expan>par</expan>son of S Georges in Canterbury did
- <note rend="margin_left"><roleName type="commissary">Co<expan>m</expan>missary</roleName></note> write unto my <roleName type="curate">Curate</roleName> John Paris and the churche
- wardens Mr. Rand and Mr. Bartilmewe to take down
- <note rend="margin_left">Images</note> the ymage of S George at the co<expan>m</expan>mandment of Mr.
- Comissarye being then in london, yf it be not don
+               	<div>
+               		<note rend="margin_left"><roleName type="commissary">Co<expan>m</expan>missary</roleName></note>
+               	
+               		<note rend="margin_left">Images</note>
+               		<p rend="main">I <persName type="religious" key="" ref="">John tofere <roleName type=""><expan>par</expan>son</roleName> of <placeName type="building" ref="66">S Georges in <placeName type="city" ref="">Canterbury</placeName></placeName></persName> did
+  write unto my <roleName type="curate">Curate</roleName> <persName type="religious" ref="" key="">John Paris</persName> and the <roleName type="">churche
+  	wardens</roleName> <persName type="" key="" ref="">Mr. Rand</persName> and <persName ref="" key="bartholomew_joy" type="">Mr. Bartilmewe</persName> to take down
+  the ymage of S George at the co<expan>m</expan>mandment of <roleName type="commissary">Mr.
+ Comissarye</roleName> being then in <placeName type="city" ref="">london</placeName>, yf it be not don
  before my co<expan>m</expan>myng home I will see it down myself
- according to my masters l<expan>ett</expan>re / I and the cherche warde<expan>n</expan>s
- did take it down the ymage. The fryday after Mr.
- Comissary sent for the forsaid Jo paris <roleName type="curate">curate</roleName> and
+ according to my masters l<expan>ett</expan>re / I and the <roleName type="">cherche warde<expan>n</expan>s</roleName>
+               			did take it down the ymage. The fryday after <roleName type="commissary">Mr.
+ Comissary</roleName> sent for the forsaid <persName type="religious" ref="" key="">Jo paris <roleName type="curate">curate</roleName></persName> and
  the churche wardens aforsaid and asked, whither ye
  have pulled down the ymage of s. george or no: thei made 
  answer and said yea, have ye cut it in pec<expan>es</expan>? thei said
- no : than said the Comissarye. It is not only the kyng<expan>es</expan>
+               			no : than said <roleName type="commissary">the Comissarye</roleName>. It is not only the kyng<expan>es</expan></p></div>
                   <!--FIN 057--></div>
 </div>
 </div>
@@ -4433,26 +4590,29 @@ of the font is no better than other water is,
  <!--DÉBUT 058--><div type="page">
 
 <div type="article" n="75"><div sameAs="d1e5881"><pb n="058" facs="#fs_058"/>
+<div><note rend="margin_left"><metamark>n</metamark></note>
+	<p rend="main">
 ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to be
  pulled down but also to be disfigured and nothing
- of suche ymages to remayne w<expan>ith</expan> the tabernacle / Mr.
- Rande made this answer and said, he thought it not
+ of suche ymages to remayne w<expan>ith</expan> the tabernacle / <persName type="" key="" ref="">Mr.
+ Rande</persName> made this answer and said, he thought it not
  the kyng<expan>es</expan> gracious pleas<expan>ur </expan>where no comyn offering
  was to pull down suche pictures being patron of
- yngland, and the churche dedicate in the same name
- of the holie saincte, Why not said the Comissarye as
+ <placeName type="country" ref="">yngland</placeName>, and the churche dedicate in the same name
+ of the holie saincte, Why not said <roleName type="commissary">the Comissarye</roleName> as
  well as the crucifix we have no patron but only
- Christe: Than answered Mr. Rand, yf you pull
+ Christe: Than answered <persName type="" key="" ref="">Mr. Rand</persName>, yf you pull
  down the crucifix, than pull down all, ffor the
  more suertie, he co<expan>m</expan>mandid this to be don and his
- somner Jo Brigges to see it down, Other cause
+		somner <persName type="" key="" ref="">Jo Brigges</persName> to see it down, Other cause
  had thei none, but by cause he was borne in <expan>pro</expan>cession
- <note rend="margin_left"><metamark>n</metamark></note> on S. Georgis daye in the hono<expan>ur</expan> of god and the king
- w<expan>ith</expan> Mr. Maier, the Aldermen, their wiff<expan>es</expan> w<expan>ith</expan> all
+  on S. Georgis daye in the hono<expan>ur</expan> of god and the king
+		w<expan>ith</expan> <persName type="" key="" ref="">Mr. Maier</persName>, the Aldermen, their wiff<expan>es</expan> w<expan>ith</expan> all
  the co<expan>m</expan>mens of the same going in procession, Witnes
- of this John Toffer <expan>par</expan>son, Jo paris <roleName type="curate">curate</roleName>.<expan> christ</expan>ofer
- Ovyngton / Gregory Rand / bartilmew peters
- Rob<expan>ert </expan>Lawrence, Edwarde Cotles w<expan>ith</expan> moo /
+		of this <persName type="religious" key="" ref="">John Toffer <roleName type=""><expan>par</expan>son</roleName></persName>, <persName type="religious" key="" ref="">Jo paris <roleName type="curate">curate</roleName></persName>.<persName type="" key="" ref=""><expan> christ</expan>ofer
+			Ovyngton</persName> / <persName type="" key="" ref="">Gregory Rand</persName> / <persName type="" key="" ref="">bartilmew peters</persName>
+		<persName type="" key="" ref="">Rob<expan>ert </expan>Lawrence</persName>, <persName type="" key="" ref="">Edwarde Cotles</persName> w<expan>ith</expan> moo /</p>
+</div>
  
 </div>
             </div>
@@ -4461,18 +4621,20 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
                	<date type="procedure" when="1543-09-26">26 Septembris 1543</date>
                </head>
                <div>
-                  <head rend="margin_left">Jo Starkey</head>
- John Starkey said that the Rode light shold not be
- <note rend="margin_left">Ceremony</note> lighted, but when it pleasid hym, And although
+               	<head rend="margin_left"><persName type="" key="" ref="">Jo Starkey</persName></head>
+               	<div><note rend="margin_left">Ceremony</note>
+               		<p rend="main"><persName type="" key="" ref="">John Starkey</persName> said that the Rode light shold not be
+  lighted, but when it pleasid hym, And although
  the king had suffered light before the Rode, yet he
- gave no co<expan>m</expan>mandme<expan>n</expan>t to light theym
- Starkey spake other div<expan>er</expan>s wourd<expan>es</expan> specified in the
- detection of Northgate
- Testes
- <persName type="religious"ref="42441" key="kempe_william">William kempe</persName> vicar
- Thomas Bradkerke
- Roger mantell
- John Boydon
+ gave no co<expan>m</expan>mandme<expan>n</expan>t to light theym</p>
+               	<p rend="main"><persName type="" key="" ref="">Starkey</persName> spake other div<expan>er</expan>s wourd<expan>es</expan> specified in the
+ detection of <placeName type="parish" ref="73">Northgate</placeName></p></div>
+<div><list>
+	<head>Testes</head>
+ <item><persName type="religious" ref="42441" key="kempe_william">William kempe <roleName type="vicar">vicar</roleName></persName></item>
+	<item><persName type="religious" key="" ref="">Thomas Bradkerke</persName></item>
+               	<item><persName type="" key="" ref="">Roger mantell</persName></item>
+               		<item><persName type="" key="" ref="">John Boydon</persName></item></list></div>
 
 </div>
                <!--FIN 058--></div>
@@ -4485,33 +4647,40 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
 <div><ab><num type="pagination" subtype="red">59</num> <num type="pagination" subtype="black">21</num></ab></div>
  
 <div>
-                  <head rend="margin_left">Thomas Dalle</head>
- Thomas Dalle cam to to the churche of S Andrewe
- in Canterbury A<expan>nno</expan> xxxiid d<expan>omino</expan> n<expan>os</expan>tro Regis apon Easter
- daye to receyve the blessid sacrament, and whan
- <note rend="margin_left">offensive</note> he had receyvid, the same tyme Tho. wayneflette
- churche warden came w<expan>ith</expan> the chalice to give hym wyne
+	<head rend="margin_left"><persName type="" key="" ref="">Thomas Dalle</persName></head>
+	<div>
+		<note rend="margin_left">offensive</note>
+		<p rend="main"><persName type="" key="" ref="">Thomas Dalle</persName> cam to to <placeName type="building" ref="59">the churche of S Andrewe
+ in <placeName type="city" ref="">Canterbury</placeName></placeName> <date type="narrative" when="">A<expan>nno</expan> xxxiid d<expan>omino</expan> n<expan>os</expan>tro Regis apon Easter
+ daye </date>to receyve the blessid sacrament, and whan
+  he had receyvid, the same tyme <persName type="" ref="" key="">Tho. wayneflette
+  	<roleName type="">churche warden</roleName></persName> came w<expan>ith</expan> the chalice to give hym wyne
  the chalice was not covered with a cloth but bare, Take
  the chalice w<expan>ith</expan> the towell in yo<expan>ur</expan> hande as oth<expan>er</expan> folkes doo
- q<expan>uo</expan>d Wayneflet, Dale said that almyghtie god did make
+			q<expan>uo</expan>d <persName type="" key="" ref="">Wayneflet</persName>, <persName type="" key="" ref="">Dale</persName> said that almyghtie god did make
  he hande aswell as he did the prestes, and so willingly
  and presumptiously did take the chalice in his bare
  hande, comparing that the <roleName type="priest">preistes</roleName> hande is no better
- <note rend="margin_left"><metamark>n</metamark></note> than his
+		 than his</p></div>
+	<div><note rend="margin_left"><metamark>n</metamark></note></div>
  
 </div>
                <div>
-                  <head rend="margin_left">Walmair</head>
- The Parishe is destitute of a <expan>per</expan>petuall vicar
+               	<head rend="margin_left"><persName ref="" key="" type="">Walmair</persName></head>
+ <div><p rend="main">The Parishe is destitute of a <expan>per</expan>petuall <roleName type="vicar">vicar</roleName>
  thindument of the vicarege is not sufficie<expan>n</expan>t for a
- <roleName type="priest">preist</roleName><expan>es</expan> lyving
- <note rend="margin_left">Imag<expan>es</expan></note> The <roleName type="priest">preiste</roleName> and clerke have taken down ymages
- not abused and brent theym
- Testes
- Jo<expan>hn</expan> Gallow
- Tho<expan>mas</expan> Gallow
- W<expan>illiam</expan> Sharpe
- Jo<expan>hn</expan> Turrey
+ 	<roleName type="priest">preist<expan>es</expan></roleName> lyving</p></div>
+ <div><note rend="margin_left">Imag<expan>es</expan></note><p rend="main">The <roleName type="priest">preiste</roleName> and <roleName type="">clerke</roleName> have taken down ymages
+ not abused and brent theym</p></div>
+<div>
+	<list rend="main">
+	<head>Testes</head>
+<item><persName type="" ref="" key="">Jo<expan>hn</expan> Gallow</persName></item>
+	<item><persName type="" ref="" key="">Tho<expan>mas</expan> Gallow</persName></item>
+		<item><persName type="" ref="" key="">W<expan>illiam</expan> Sharpe</persName></item>
+		<item><persName type="" ref="" key="">Jo<expan>hn</expan> Turrey</persName></item>
+	</list>
+</div>
  
 </div>
             </div>
@@ -4519,12 +4688,16 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
                <head>
                	<date type="procedure" when="1543-09-26">26 Septembr 1543</date>
                </head>
-
- <note rend="margin_left">ceremonies</note> Willi<expan>a</expan>m kempe <roleName type="vicar">vicar</roleName> of northgate in Canterbury
+<div>
+	<note rend="margin_left">ceremonies</note>
+	<p rend="main"><persName type="religious" key="kempe_william" ref="42441">Willi<expan>a</expan>m kempe <roleName type="vicar">vicar</roleName> of <placeName type="parish" ref="73">northgate in <placeName type="city" ref="">Canterbury</placeName></placeName></persName>
  ys denu<expan>n</expan>ced, that he doith not declare the ceremonies
  and significac<expan>i</expan>on of theym
- It<expan>e</expan>m that he hath not redde the bible
- <note rend="margin_left">Inju<expan>n</expan>ctions</note> It<expan>e</expan>m he hath not redde the king<expan>es</expan> Inju<expan>n</expan>ctions as he ought to do
+ It<expan>e</expan>m that he hath not redde the bible</p></div>
+<div>
+	<note rend="margin_left">Inju<expan>n</expan>ctions</note>
+	<p rend="main">It<expan>e</expan>m he hath not redde the king<expan>es</expan> Inju<expan>n</expan>ctions as he ought to do</p>
+</div>
 <!--FIN 059--></div>
 </div>
 <!--2 div refermées-->
@@ -4533,97 +4706,125 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
 
 <div type="article" n="77"><pb n="060" facs="#fs_060"/>
                <div>
-                  <head rend="margin_left">Vicar of Sttallefeld</head>
- The vicar of Stallefeld said at Leneham
- <note rend="margin_left"><metamark>n</metamark></note> the tewysdaye before Lam<expan>m</expan>as daye last past that
- <note rend="margin_left">the <roleName type="pope">busshope of Rome</roleName></note> it was no erro<expan>ur</expan> to preache the bisshop of Rome
+                  <head rend="margin_left"><persName type="religious" key="david_hugo" ref=""><roleName type="vicar">Vicar</roleName> of <placeName type="parish" ref="361">Sttallefeld</placeName></persName></head>
+               	<div>
+               		<note rend="margin_left"><metamark>n</metamark></note>
+               		<note rend="margin_left">the <roleName type="pope">busshope of Rome</roleName></note>
+               		<p rend="main"><persName type="religious" key="david_hugo" ref=""><roleName type="vicar">The vicar</roleName> of <placeName type="parish" ref="361">Stallefeld</placeName></persName> said at <placeName type="parish" ref="">Leneham</placeName>
+  the tewysdaye before <date type="narrative" when="">Lam<expan>m</expan>as daye last past</date> that
+               			it was no erro<expan>ur</expan> to preache <roleName type="pope">the bisshop of Rome</roleName>
  Supremehed of the churche untill the king had
- enacted the contrary
- Testes
- Willi<expan>a</expan>m Lancaster
- John Abbot <roleName type="priest">preistes</roleName>
- Stephen ffreer
- Thomas Iden bowcher
- <note rend="margin_left"><metamark>n</metamark></note> 
+ enacted the contrary</p>
+               	</div>
+<div>
+	<list rend="main"><head>Testes</head>
+ <item><persName type="religious" ref="" key="lancaster_william">Willi<expan>a</expan>m Lancaster</persName></item>
+		<item><persName type="religious" key="">John Abbot <roleName type="priest">preistes</roleName></persName></item>
+		<item><persName ref="" type="" key="">Stephen ffreer</persName></item>
+		<item><persName ref="" type="" key="">Thomas Iden bowcher</persName></item>
+	</list>
+</div>
+<div><note rend="margin_left"><metamark>n</metamark></note> </div>
 </div>
             </div>
             <div type="article" n="78">
                <head>
-                  <date type="procedure" when="">23 Septembr<expan>is</expan>
-                  </date>
+                  <date type="procedure" when="1543-09-23">23 Septembr<expan>is</expan></date>
                </head>
                <div>
-                  <head rend="margin_left">Jo Parkehurste</head>
- Jo<expan>hn</expan> Parkehurste of Leneham said the tewisdaye
- <note rend="margin_left">seditious</note> before Lammas last past, That the doctrine that
+                  <head rend="margin_left"><persName key="" type="" ref="">Jo Parkehurste</persName></head>
+               	<div>
+               		<note rend="margin_left">seditious</note>
+               		<p rend="main"><persName type="" ref="" key="parkhurste_john">Jo<expan>hn</expan> Parkehurste of <placeName type="parish" ref="">Leneham</placeName></persName> said <date type="narrative" when="">the tewisdaye
+  before Lammas last past</date>, That the doctrine that
  was tawght xx or xxx yeres ago was as
- good as the doctrine whiche is set furthe now adaie
- Testes sup<expan>ra</expan> no<expan>m</expan>i<expan>n</expan>ati
+ good as the doctrine whiche is set furthe now adaie</p>
+               		<p rend="main">Testes sup<expan>ra</expan> no<expan>m</expan>i<expan>n</expan>ati</p>
+               	</div>
  
 </div>
                <div xml:id="d1e6085">
-                  <head rend="margin_left">Battersthe; Salter; Chyrden, Hardes; Nevenson; Wryte</head>
- Mr. Batterste of Canterbury and Mr. Salter
- one of the king<expan>es</expan> beademen <expan>pro</expan>cured men to subscribe
+               	<head rend="margin_left"><persName ref="" type="" key="">Battersthe</persName>; <persName ref="" type="" key="">Salter</persName>; <persName ref="religious" type="" key="chirden_humphrey">Chyrden</persName>, <persName ref="" type="" key="">Hardes</persName>; <persName ref="religious" type="" key="nevenson_christopher">Nevenson</persName>; <persName ref="" type="" key="">Wryte</persName></head>
+               	<div>
+               		<p rend="main"><persName ref="" type="" key="">Mr. Batterste of <placeName type="city" ref="">Canterbury</placeName></persName> and <persName ref="" type="" key="">Mr. Salter
+ one of the king<expan>es</expan> beademen</persName> <expan>pro</expan>cured men to subscribe
  unto a bill whiche thei had devised for the declarac<expan>i</expan>on
- of <roleName type="sir">Sir</roleName> humfray Cherdian <expan>par</expan>son of S. Alpheges, while
- he was in exa<expan>m</expan>i<expan>n</expan>ac<expan>i</expan>on before my lord<expan>es</expan> grace of Cant<expan>erbury</expan> at
- Lambeth as Jo uggden, Rauf Albright, Rob<expan>er</expan>t abselon and
- Jo<expan>hn</expan> barton cam witnes, And the said Mr. batterst said
- unto Jo uggden, that Mr Garden<expan>er</expan> and Mr. <persName type="religious" key="shetheir_edmund" ref="90880">Shether</persName>
- should quale for trublyng of the said <roleName type="sir">Sir</roleName> humfray
- where as in dede the named Mr. Garden<expan>er</expan> and <persName type="religious" key="shetheir_edmund" ref="90880">Shether</persName>
+               			of <persName ref="" type="religious" key="chirden_humphrey"><roleName type="sir">Sir</roleName> humfray Cherdian <roleName type=""><expan>par</expan>son</roleName> of <placeName type="parish" ref="">S. Alpheges</placeName></persName>, while
+               			he was in exa<expan>m</expan>i<expan>n</expan>ac<expan>i</expan>on before <persName type="religious" ref="https://theclergydatabase.org.uk/jsp/bishops/DisplayBishop.jsp?ordTenID=3 https://doi.org/10.1093/ref:odnb/6615" key="cranmer_thomas">my <roleName type="archbishop">lord</roleName><expan>es</expan> grace of <placeName type="city" ref="">Cant<expan>erbury</expan></placeName></persName> at
+               			Lambeth as <persName type="" ref="" key="">Jo uggden</persName>, <persName type="" ref="" key="">Rauf Albright</persName>, <persName type="" ref="" key="">Rob<expan>er</expan>t abselon</persName> and
+               			<persName type="" ref="" key="">Jo<expan>hn</expan> barton</persName> cam witnes, And the said <persName type="" ref="" key="">Mr. batterst</persName> said
+               			unto <persName type="" ref="" key="">Jo uggden</persName>, that <persName type="religious" key="gardiner_william" ref="90003">Mr Garden<expan>er</expan></persName> and <persName type="religious" key="shetheir_edmund" ref="90880">Mr. Shether</persName>
+               			should quale for trublyng of the said <persName type="religious" ref="" key="chirden_humphrey"><roleName type="sir">Sir</roleName> humfray</persName>
+               			where as in dede the named <persName type="religious" key="gardiner_william" ref="90003">Mr. Garden<expan>er</expan></persName> and <persName type="religious" key="shetheir_edmund" ref="90880">Shether</persName>
  disclosid nothing but as thei were required by my
- lord<expan>es</expan> grac<expan>es</expan> l<expan>ett</expan>res to signifie unto his grace what they
+ lord<expan>es</expan> grac<expan>es</expan> l<expan>ett</expan>res to signifie unto his grace what they</p>
+               		</div>
 <!--FIN 060--></div>
 </div>
 </div>
 <!--3 div refermées-->
 
  <!--DÉBUT 061--><div type="page">
-
-<div type="article" n="78"><div sameAs="d1e6085"><pb n="061" facs="#fs_061"/>
-<div><ab><num type="pagination" subtype="red">61</num> <num type="pagination" subtype="black">22</num></ab></div>
- thought wourthy of reformac<expan>i</expan>on other in hym or
+ 	<div type="article" n="78">
+ 		<div sameAs="d1e6085">
+ 			<pb n="061" facs="#fs_061"/>
+ 			<div>
+ 				<ab>
+ 					<num type="pagination" subtype="red">61</num>
+ 					<num type="pagination" subtype="black">22</num>
+ 				</ab>
+ 			</div>
+ 			<div>
+ 				<p rend="main">thought wourthy of reformac<expan>i</expan>on other in hym or
  in any other, by reason of whiche facte and wourd<expan>es</expan>
  of the said Mr. Batterste, it is thought that other
  do feare the rather to shewe thair mynd<expan>es</expan> to speake in
- like causes and specially now at this tyme
- As one ffather hardes the kinges beademan ending
+ like causes and specially now at this tyme</p>
+ 			</div>
+ 			<div>
+ 				<note rend="margin_left">herecie</note>
+ 				<note rend="margin_left"><metamark>n</metamark></note>
+ 				<p rend="main">As one <persName type="" ref="" key="">ffather hardes <roleName type="">the kinges beademan</roleName></persName> ending
  his praier said Jesus Christe very god and man:
- <note rend="margin_left">herecie</note> one tolde hym, that Christ was nat man, and in
+  one tolde hym, that Christ was nat man, and in
  farther reasonyng said that Christ appering after
  his resurrection was but a spirite, This tale the said
- <note rend="margin_left"><metamark>n</metamark></note> father herd<expan>es</expan> hath shewid secretely to Mr. <persName type="religious" key="shetheir_edmund" ref="90880">Shether</persName>
+  father herd<expan>es</expan> hath shewid secretely to <persName type="religious" key="shetheir_edmund" ref="90880">Mr. Shether</persName>
  And it is to be feared (if it be true) that the <expan>par</expan>son
- w<expan>hich</expan> rehersid it ones hath rehersid it oftener /
+ w<expan>hich</expan> rehersid it ones hath rehersid it oftener /</p>
+ 			</div>
  
 </div>
                <div>
-                  <head rend="margin_left">Mr. Commis<expan>ser</expan>
+               	<head rend="margin_left"><roleName type="commissary">Mr. Commis<expan>ser</expan></roleName>
                   </head>
- Mr. Comissary docto<expan>ur</expan> Nevenson rebuked on Lent
- was xii moneth <roleName type="sir">Sir</roleName> John write <roleName type="priest">preist</roleName> dwelling
- <note rend="margin_left">co<expan>n</expan>fession</note> in S. Alpheges because he wolde not absolve
- Barthelmew Joy w<expan>ith</expan>out any confession made of ony
- cryme or fawte as the said <roleName type="sir">Sir</roleName> write can testifie
+               	<div>
+               		<note rend="margin_left">co<expan>n</expan>fession</note>
+               		<p rend="main"><persName type="religious" ref="" key="nevenson_christopher">Mr. Comissary <roleName type="doctor">docto<expan>ur</expan></roleName> Nevenson</persName> rebuked on Lent
+ was xii moneth <persName type="" key="" ref=""><roleName type="sir">Sir</roleName> John write <roleName type="priest">preist</roleName></persName> dwelling
+  in <placeName ref="" type="parish">S. Alpheges</placeName> because he wolde not absolve
+               			<persName type="" ref="" key="bartholomew_joy">Barthelmew Joy </persName>w<expan>ith</expan>out any confession made of ony
+               			cryme or fawte as the said <persName type="" key="" ref=""><roleName type="sir">Sir</roleName> write</persName> can testifie</p></div>
  
 </div>
                <div>
-                  <head rend="margin_left">George hard<expan>es</expan>
+               	<head rend="margin_left"><persName type="" key="" ref="">George hard<expan>es</expan></persName>
                   </head>
- James Hardes exa<expan>min</expan>ed saith, that george Hard<expan>es</expan> about
- vii monethes past in the quire of <expan>Christ</expan>e churche at <expan>the</expan>
+               	<div>
+               		<note rend="margin_left">herecie</note>
+               		<note rend="margin_left"><metamark>n</metamark></note>
+               		<p rend="main"><persName type="" key="" ref="">James Hardes</persName> exa<expan>min</expan>ed saith, that <persName type="" key="" ref="">george Hard<expan>es</expan></persName> about
+ vii monethes past in the quire of <placeName type="building" ref=""><expan>Christ</expan>e churche</placeName> at <expan>the</expan>
  elevacion of the chalice said to this Inquisite prayng thus
  Almyghtie god my blessid savio<expan>ur</expan> both god and man <expan>preser</expan>ve
  me this day and ev<expan>er</expan> frome my mortall enemy the devill
- At whiche prayer george Herd<expan>es</expan> standing by said to this
- <note rend="margin_left">herecie</note> depone<expan>n</expan>t, what Cosen, why pray you so far, He is 
- <note rend="margin_left"><metamark>n</metamark></note> god and no man, why q<expan>uo</expan>d he, what make yo<expan>u </expan>of <expan>Christ</expan>e,
- did he not rise both god and man, No q<expan>uo</expan>d george, He
+ At whiche prayer <persName type="" ref="" key="">george Herd<expan>es</expan></persName> standing by said to this
+  depone<expan>n</expan>t, what Cosen, why pray you so far, He is 
+  god and no man, why q<expan>uo</expan>d he, what make yo<expan>u </expan>of <expan>Christ</expan>e,
+               			did he not rise both god and man, No q<expan>uo</expan>d <persName type="" ref="" key="">george</persName>, He
  rose god, but not man, for he rose but in spirite
  wherunto I answered I beleve that he rose both god
- and man, nullo alio pr<expan>ese</expan>nte
+ and man, nullo alio pr<expan>ese</expan>nte</p></div>
 
 </div>
                <!--FIN 061--></div>
@@ -4634,42 +4835,59 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
 
 <div type="article" n="78"><pb n="062" facs="#fs_062"/>
                <div>
-                  <head rend="margin_left">Raynold Buckem<expan>er</expan>
+                  <head rend="margin_left"><persName type="" key="" ref="">Raynold Buckem<expan>er</expan></persName>
                   </head>
- He said that the sacrame<expan>n</expan>t of the Alter was bred
- <note rend="margin_left">herecie</note> as other brede was / And that the knave <roleName type="priest">preistes</roleName> did
+               	<div>
+               		<note rend="margin_left">herecie</note>
+			<p rend="main">He said that the sacrame<expan>n</expan>t of the Alter was bred
+  as other brede was / And that the knave <roleName type="priest">preistes</roleName> did
  receyve hym before none, and did pisse and shite hym
- at hooreys arseis at after no none,
- Jo<expan>hn</expan> Maie
- Jo<expan>hn</expan> ToddeTestes
- Jo<expan>hn</expan> Stokewell
- Henry Cloke
+ at hooreys arseis at after no none,</p>
+               	</div>
+<div>
+	<list>
+		<item><persName type="" ref="" key="">Jo<expan>hn</expan> Maie</persName></item>
+		<item><persName type="" ref="" key="">Jo<expan>hn</expan> Todde</persName></item>
+		<item><persName type="" ref="" key="">Jo<expan>hn</expan> Stokewell</persName></item>
+		<item><persName type="" ref="" key="">Henry Cloke</persName></item>
+	</list>
+	<p rend="main">
+		<metamark>}</metamark>
+		Testes</p>
+</div>
  
 </div>
             </div>
             <div type="article" n="79">
                <head>
-                  <date type="procedure" when="">21 Septembris</date>
+                  <date type="procedure" when="1543-09-21">21 Septembris</date>
                </head>
                <div>
-                  <head rend="margin_left">Johne Benson</head>
- Off alhaloud aye parishe in Canterbury spake
+               	<head rend="margin_left"><persName type="" ref="" key="">Johne Benson</persName></head>
+               	<div>
+               		<note rend="margin_left">offensive</note>
+               		<p rend="main">Off <placeName type="parish" ref="">alhaloud aye parishe in <placeName type="city" ref="">Canterbury</placeName></placeName> spake
  in contempte of the sacrame<expan>n</expan>t of Extreme unction
- <note rend="margin_left">offensive</note> thus, If I should chaunce to be sicke and die
+  thus, If I should chaunce to be sicke and die
  I had as leve to smethe my cote q<expan>uo</expan>d he therwich
- as his bodie, ffor I can sweate faste enowgh
+ as his bodie, ffor I can sweate faste enowgh</p></div>
  
 </div>
                <div>
-                  <head rend="margin_left">Joys Benson</head>
- Johne Benson and Joyse his wife talking of o<expan>ur</expan>
- <note rend="margin_left">offensive &amp; ero<expan>ur</expan></note> Ladie said that she vz, mary should have born
- <expan>Christ</expan>e, askyng her no leave
- Testes
- Willi<expan>a</expan>m parker smythe
- Tho<expan>mas</expan> wood
- Myllys s<expan>er</expan>v<expan>a</expan>nte to Mr.
- Jo<expan>hn</expan> Culpeper
+               	<head rend="margin_left"><persName type="lay_woman" ref="" key="">Joys Benson</persName></head>
+               	<div>
+               		<note rend="margin_left">offensive &amp; ero<expan>ur</expan></note>
+               		<p rend="main"><persName type="" ref="" key="">Johne Benson</persName> and <persName type="lay_woman" ref="" key="">Joyse his wife</persName> talking of o<expan>ur</expan>
+  Ladie said that she vz, mary should have born
+ <expan>Christ</expan>e, askyng her no leave</p></div>
+<div>
+	<list rend="main">
+		<head>Testes</head>
+		<item><persName type="" key="" ref="">Willi<expan>a</expan>m parker smythe</persName></item>
+		<item><persName type="" key="" ref="">Tho<expan>mas</expan> wood</persName></item>
+		<item><persName type="lay_woman" key="" ref="">Myllys s<expan>er</expan>v<expan>a</expan>nte to <persName type="" key="" ref="">Mr.
+ Jo<expan>hn</expan> Culpeper</persName></persName></item>
+</list></div>
  
 </div>
             </div>
@@ -4677,11 +4895,14 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
                <head>
                   <date type="procedure" when="1543-09-21">21 Septemb<expan>ris</expan> 1543</date>.</head>
                <div>
-                  <head rend="margin_left">Ric<expan>hard</expan> Turner</head>
- He said on passion Sondaye laste paste that
+                  <head rend="margin_left"><persName type="" ref="" key="turner_richard">Ric<expan>hard</expan> Turner</persName></head>
+
+               	<div>
+               		<p rend="main"> He said on <date type="narrative" when="">passion Sondaye laste paste</date> that
  Almyghtie god was the soule <roleName type="priest">preiste</roleName> and song
  the last masse of requiem, And other masses <expan>pro</expan>fyteth
- not theym that be departed
+ not theym that be departed</p>
+               	</div>
 
 </div>
             </div>
@@ -4695,32 +4916,59 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
  
 <div type="article" n="81">
                <head>
-                  <date type="procedure" when="">21 Septembr<expan>is</expan>
+                  <date type="procedure" when="1543-09-21">21 Septembr<expan>is</expan>
                   </date>
                </head>
                <div>
-                  <head rend="margin_left">Hugh Coop<expan>er</expan> of Tenterden</head>
- He saied the xviii day of ffebruarye last past. That
- <note rend="margin_left">fastynge</note> allmighty god was neither <pleased>
-                     <add place="">pleased </add>with fasting nor</pleased>
- distcontent w<expan>ith</expan> eating
- <note rend="margin_left">Ero<expan>ur</expan></note> The iiiith day of Marche last past he preached this
+               	<head rend="margin_left"><persName type="" ref="" key="">Hugh Coop<expan>er</expan> of <placeName ref="385" type="parish">Tenterden</placeName></persName></head>
+               	
+               	<div>
+               		<note rend="margin_left">fastynge</note>
+               		<p rend="main">He saied the <date type="narrative" when="1542-02-18">xviii day of ffebruarye last past</date>. That allmighty god was neither <add place="above">pleased </add>with fasting nor distcontent w<expan>ith</expan> eating</p></div>
+               	<div>
+               		<note rend="margin_left">Ero<expan>ur</expan></note>
+               		<p rend="main">The <date type="narrative" when="1542-03-04">iiiith day of marche last past</date> he preached this
  Neither almes dead<expan>es</expan> fasting, neither prayer
- dothe help the soule of man. but faith allonly
- <note rend="margin_left">Ero<expan>ur</expan></note> The same daye he saied thies wourdes: He that
+ dothe help the soule of man. but faith allonly</p>
+               	</div>
+               	<div>
+			<note rend="margin_left">Ero<expan>ur</expan></note>
+               		<note rend="margin_left">seditious</note>
+               		<p rend="main">The same daye he saied thies wourdes: He that
  dothe trust to have any help, by the praiers of any
  p creature or <expan>per</expan>sonne, dothe co<expan>m</expan>mitt Idolatry that
  ev<expan>er</expan> god made dothe comyt Idolatrye / and dothe
  make hym an Idoll. whiche is contrary to the
- <note rend="margin_left">seditious</note>co<expan>m</expan>maundeme<expan>n</expan>t of god,
- <note rend="margin_left">S<expan>ir</expan> hu<expan>m</expan>fray Cotton; Rich<expan>ard</expan> Alcocke; John parker; willi<expan>a</expan>m hegges; Ro. ffoch; Jo<expan>hn</expan> Bayly; walt<expan>er</expan> Coiff; George Sorel; pet<expan>er</expan> Short</note> He inverted thordre of the confiteor (omytting
+ co<expan>m</expan>maundeme<expan>n</expan>t of god,</p></div>
+               	<div>
+               		<note rend="margin_left">
+               			<list>
+               				<item><persName type="religious" ref="39651" key="cotten_humphrey"><roleName type="sir">S<expan>ir</expan></roleName> hu<expan>m</expan>fray Cotton</persName>;</item>
+               				<item><persName type="" ref="" key="">Rich<expan>ard</expan> Alcocke</persName>;</item>
+               				<item><persName type="religious" ref="90724" key="parker_john">John parker</persName>;</item>
+               				<item><persName type="" key="" ref="">willi<expan>a</expan>m hegges</persName>;</item>
+               				<item><persName type="" ref="" key="">Ro. ffoch</persName>; </item>
+               				<item><persName type="religious" ref="74794" key="bayly_john">Jo<expan>hn</expan> Bayly</persName>;</item>
+               				<item><persName type="" key="" ref="">walt<expan>er</expan> Coiff</persName>;</item>
+               				<item><persName type="" key="" ref="">George Sorel</persName>;</item>
+               				<item><persName type="" key="" ref="">pet<expan>er</expan> Short</persName></item>
+               			</list>
+               			<metamark>}</metamark>
+               		</note>
+               		<p rend="main">He inverted thordre of the confiteor (omytting
  the name of mary and all sainctz. Saying
- Confiteor deo et vobis &amp; precor vos. orare <expan>pro</expan> me <expan>christ</expan>i,
- He preached the xxviii day of Aprill last past
+ Confiteor deo et vobis &amp; precor vos. orare <expan>pro</expan> me <expan>christ</expan>i,</p>
+               	</div>
+               	<div>
+               		<p rend="main">He preached the <date type="narrative" when="1542-04-28">xxviii day of Aprill last past</date>
  and saied. That god dothe not regarde the
- prayers but the <expan>per</expan>sonnes,
- <note rend="margin_left">fastynge</note> The vi day of may he said. Opon saturday you shal have whitson
- evyn, you nede not to fast except you wil.
+ prayers but the <expan>per</expan>sonnes,</p>
+               	</div>
+               	<div>
+               		<note rend="margin_left">fastynge</note>
+               		<p rend="whole_width"><add place="inline"><date type="narrative" when="1543-05-06">The vi day of may</date> he said. Opon saturday you shal have whitson
+ evyn, you nede not to fast except you wil.</add></p>
+               	</div>
  
 </div>
             </div>
@@ -4728,12 +4976,14 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
                <head>
                   <date type="procedure" when="1543-09-21">21 Septembris 1543</date>.</head>
                <div xml:id="d1e6356">
-                  <head rend="margin_left">Archebolde of faversham</head>
+               	<head rend="margin_left"><persName type="" key="" ref="">Archebolde of <placeName type="parish" ref="148">faversham</placeName></persName></head>
 
- I will q<expan>uo</expan>d he come to my goostely father and shewed to hym
- <note rend="margin_left">Confession</note> I have synned in the vii dedely synnes / and have broken
+               	<div>
+               		<note rend="margin_left">Confession</note>
+               		<p rend="main">I will q<expan>uo</expan>d he come to my goostely father and shewed to hym
+  I have synned in the vii dedely synnes / and have broken
  the x co<expan>m</expan>maund<expan>ementes</expan> and myspent my v wittes / and will
- desire hym of his goostly counseill.
+ desire hym of his goostly counseill.</p></div>
 <!--FIN 063--></div>
 </div>
 </div>
@@ -7452,7 +7702,7 @@ delever them to my lorde of venchester &amp; that same day he master london<mast
  for the same artekyll<expan>es</expan> beyng at home In his purse.
  even in palmeson weke of schyre thorsday or good fryday as
  <note rend="margin_left"><metamark>4.</metamark></note> i thenke I came home &amp; tolde garner &amp; asched for the wrytyng
- <at serlys="" sent="" for=""> at serlys sent for &amp; salsbere colde not befonde &amp; efter dener <<persName type="religious" key="gardiner_william" ref="90003">gardiner</persName>> <persName type="religious" key="gardiner_william" ref="90003">gardiner</persName> callyd me In to the</<persName type="religious" key="gardiner_william" ref="90003">gardiner</persName>>
+ <at serlys="" sent="" for=""> at serlys sent for &amp; salsbere colde not befonde &amp; efter dener <add><persName type="religious" key="gardiner_william" ref="90003">gardiner</persName></add> callyd me In to the
                </at>
  gardyn &amp; deleverde me the oder wryttyng &amp; bad me schow
  them to master london &amp; to my lorde of venchester bot
@@ -8080,7 +8330,7 @@ It<expan>e</expan>m whither complaynyng to thair Ordynary, at his  handes, thei 
 
 <num type="pagination" subtype="red">219</num> Ad p<expan>ri</expan>m<expan>u</expan>m articulu<expan>m</expan> Respondeo They p<expan>re</expan>sentyd nott Thys artycle In w<expan>ri</expan>tyng att thatt tyme: scz ther ys none In hevy<expan>n </expan>butt christ: butt <del rend="">
                   <illisible/>
-               </del> by mowzthe It<expan>em</expan> ther ys addyd unto thys artycle In the p<expan>ri</expan>mytyffe tyme: c when as the p<expan>re</expan>cher sayde off iii thyng<expan>es</expan> he wold speke: off <!--??--> the ffourthe w<expan>hich</expan> was co<expan>m</expan>munyte he wold nott speke : he sayde nott co<expan>m</expan>munyte off all thing<expan>es</expan>: butt co<expan>m</expan>munyte <del rend="">al</del> noo thyng addyng: wherffor thes word<expan>es</expan> / off all thyng<expan>es</expan> ar addyd. Ad 2um R<expan>espo</expan>ndeo <note rend="margin_left">It<expan>em</note></expan> As ffar as I <add place="">Mr schether</add> herd them say ther was noo thyng <expan>pro</expan>vyde a yenst hy<expan>m</expan> butt all onely by one may off sayntt <deleted words="">
+</del> by mowzthe It<expan>em</expan> ther ys addyd unto thys artycle In the p<expan>ri</expan>mytyffe tyme: c when as the p<expan>re</expan>cher sayde off iii thyng<expan>es</expan> he wold speke: off <!--??--> the ffourthe w<expan>hich</expan> was co<expan>m</expan>munyte he wold nott speke : he sayde nott co<expan>m</expan>munyte off all thing<expan>es</expan>: butt co<expan>m</expan>munyte <del rend="">al</del> noo thyng addyng: wherffor thes word<expan>es</expan> / off all thyng<expan>es</expan> ar addyd. Ad 2um R<expan>espo</expan>ndeo <note rend="margin_left">It<expan>em</expan></note> As ffar as I <add place="">Mr schether</add> herd them say ther was noo thyng <expan>pro</expan>vyde a yenst hy<expan>m</expan> butt all onely by one may off sayntt <deleted words="">
                   <del rend=""> Jamys howss</del> Johannes howsse &amp; <expan>Sir </expan>cherden <expan>par</expan>son of sayntt aelpheges: Butt now I <expan>per</expan>ceyve the contrary many and dyv<expan>er</expan>sse artycles were<expan> pro</expan>vyd a yenst them  And lykewyse a yenst Mr Serles: off the w<expan>hich</expan> be ffore thys tyme I  had noo knowlege: now knowyng hytt : I conffesse thatt artycle <add place="">to be </add>ffalsse: Ad 2 um Respondeo dyv<expan>er</expan>sse artyclys were <expan>pro</expan>vyd: butt as I doo now know: all were nott: althoghe men w<expan>hich</expan> were then callyd to be wytnesse sayde them as they thoght all were <expan>pro</expan>vyd As 3um Respondeo <add place="">why iii off </add>the artyclys p<expan>re</expan>sentyd were left owt In good ffayzth I  know nott: and whether ony were left owt I know nott: ffor I know now how many were p<expan>re</expan>sentyd unto my lordes g<expan>ra</expan>ce Ad 4 um  He rebukyd Mr Serles ffor p<expan>re</expan>chyng: thatt no ydolatry mygthe be don unto an ymage w<expan>hich</expan> rep<expan>re</expan>sentyd a sayntt. Ad 5um he had schewyd unto the kynges hygnesse whatt he had don In ordenyng the vi p<expan>re</expan>chers : iii off the new &amp; iii off the old: And the kyng was well plaesyd therwith Ad 6um I know noo other accusers b off them butt ther wytnesse w<expan>hich</expan> came a yenst the<expan>m</expan> and as Mr schether sayde ffor hys, Mr serles ffor hys they were by comyn ffame notyd off evyll opynyons.         </deleted>
                <!--FIN 219--></div>
 <!--1 div refermée-->

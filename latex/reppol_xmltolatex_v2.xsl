@@ -45,6 +45,11 @@
 \usepackage{enumitem}
 \usepackage{parskip} 
 \usepackage{reledmac}
+%ajout 05/08
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{multicol}
+%
 \setlist{nosep}
 \pagestyle{fancy}
 \lhead{RePPOL}
@@ -53,16 +58,51 @@
 \fancyfoot[]{}
 
 \rfoot{\thepage}
-\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\headrulewidth}{0.2pt}
 \renewcommand{\footrulewidth}{0.3pt}
 \usepackage[french, english]{babel}
 \title{MS128}
 \author{RePPOL project}
 \date{august 2022}
 \begin{document}
-\maketitle
+<!--\maketitle-->
 <!--			pages de titre
 			avant-propos détaillant choix d'édition etc.-->
+			%ajout 05/08
+			\begin{titlepage}
+			\includegraphics[width=\textwidth]{logo_rep_or.png}
+			\begin{center}
+			\textsc{\huge MS 128}
+			
+			\small 0.7.1, last updated on 05/08/2022
+			\end{center}
+			\vspace{4cm}{}{}
+			\textbf{To cite this version :}
+			
+			CITATION
+			
+			\textbf{To read the ultra-diplomatic version :}
+			
+			\href{}{check our website}
+			\vspace{2cm}{}{}
+			
+			\begin{center}
+			This is version 0.7 of the edition, last updated on 05/08/2022.
+			\end{center}
+			\begin{multicols}{2}
+			Le projet Rethinking the Pebendaries Plot OnLine consacré à la transcription, l’édition critique et l’analyse du manuscrit MS 128 conservé à la bibliothèque de \href{https://parker.stanford.edu/parker/catalog/ps908cx9813}{Corpus Christi College}, Cambridge est fier de vous présenter cette version pdf des transcriptions réalisées par Mme Aude de Mézerac-Zaneti, M. Olivier Spina et M. Felipe Goes-Silva.
+			\end{multicols}
+			\end{titlepage}
+			\begin{center}
+			\vspace{3cm}{}{}
+			\scshape{\large Notes sur la présente édition}
+			\end{center}
+			\tableofcontents
+<!--			CONSTITUTION DE LA STRUCTURE DU MANUSCRIT ie chapter/section/subsection non numérottés qui s'afficheront auto dans la table of content-->
+			<!--<xsl:for-each select="//div[@type!='page']">
+				<xsl:call-template name="content"/>
+			</xsl:for-each>-->
+			
 			<xsl:for-each select="//div[@type = 'page']">
 				<xsl:variable name="page_n" select="descendant::pb[1]/@n"/>
 				<xsl:variable name="doc_title" select="concat('MS128, page ', $page_n)"/>
@@ -175,7 +215,7 @@
 				[...]\footnoteB{\textit{ illisible}}
 			</xsl:when>
 			<xsl:otherwise>
-				[<xsl:apply-templates/>]
+				<xsl:text>[</xsl:text><xsl:apply-templates/><xsl:text>]</xsl:text>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
@@ -221,11 +261,12 @@
 
 
 
-	<xsl:template match="div">
+	<xsl:template name="content">
 		<xsl:choose>
 			<xsl:when test="@type='collection'"><!--collection, boîterouge = chapter-->
-				\chapter[collection<xsl:text> </xsl:text><xsl:value-of select="@n"/>]
-				<xsl:apply-templates/>
+				<xsl:text> \addcontentsline{toc}{chapter}{Collection </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
+				<xsl:text> \chapter*<!--[collection </xsl:text><xsl:value-of select="@n"/><xsl:text>]-->{}</xsl:text>
+				<!--<xsl:apply-templates/>-->
 			</xsl:when>
 			<xsl:when test="@type!='collection'"><!--section, boîte verte = section-->
 				<xsl:choose>
@@ -233,14 +274,18 @@
 						<xsl:variable name="article_n" select="@n"/>
 						<xsl:choose>
 							<xsl:when test="$article_n = preceding::div[@type = 'article']/@n">
-								<xsl:apply-templates/>
+<!--								<xsl:apply-templates/>-->
 							</xsl:when>
-							<xsl:otherwise> \section[<xsl:value-of select="@type"/><xsl:text> </xsl:text><xsl:value-of select="@n"/>]
+							<xsl:otherwise>
+								<xsl:text> \addcontentsline{toc}{section}{ </xsl:text><xsl:value-of select="@type"/><xsl:text> </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
+								<xsl:text> \section*<!--[</xsl:text><xsl:value-of select="@type"/><xsl:text> </xsl:text><xsl:value-of select="@n"/><xsl:text>]-->{}</xsl:text>
 								<xsl:apply-templates/>
 							</xsl:otherwise>
 						</xsl:choose>
 					</xsl:when>
-					<xsl:otherwise> \section[<xsl:value-of select="@type"/><xsl:text> </xsl:text><xsl:value-of select="@n"/>]
+					<xsl:otherwise>
+						<xsl:text> \addcontentsline{toc}{section}{ </xsl:text><xsl:value-of select="@type"/><xsl:text> </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
+						<xsl:text> \section*<!--[</xsl:text><xsl:value-of select="@type"/><xsl:text> </xsl:text><xsl:value-of select="@n"/><xsl:text>]-->{}</xsl:text>
 						<xsl:apply-templates/>
 					</xsl:otherwise>
 				</xsl:choose>
@@ -252,13 +297,15 @@
 							<xsl:when test="@sameAs = ancestor::div[@type = 'article']/@xml:id">
 								<xsl:apply-templates/>
 							</xsl:when>
-							<xsl:otherwise> \subsection[<xsl:value-of select="descendant::head[1]"/>]
+							<xsl:otherwise>
+								<xsl:text> \addcontentsline{toc}{subsection}{ </xsl:text><xsl:value-of select="descendant::head[1]"/><xsl:text>}</xsl:text>
+								<xsl:text> \subsection*<!--[</xsl:text><xsl:value-of select="descendant::head[1]"/>]-->{}</xsl:text>
 								<xsl:apply-templates/>
 							</xsl:otherwise>
 						</xsl:choose>
 					</xsl:when>
 					<xsl:otherwise><!--div de plus bas niveau-->
-						<xsl:apply-templates/>
+<!--						<xsl:apply-templates/>-->
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:otherwise>
