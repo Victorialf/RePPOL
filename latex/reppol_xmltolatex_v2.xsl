@@ -19,6 +19,7 @@
 		<xsl:output-character character="&amp;" string="\&amp;"/>
 		<!--<xsl:output-character character="}" string="\}"/>-->
 		<xsl:output-character character="_" string="\_"/>
+		<xsl:output-character character="^" string="\^"/>
 	</xsl:character-map>
 	<!--<xsl:template match="text()">
 		<xsl:value-of select="replace(., '&amp;', '\\&amp;')" />
@@ -49,6 +50,8 @@
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{multicol}
+%ajout du 08/08
+\usepackage{ifthen}
 %
 \setlist{nosep}
 \pagestyle{fancy}
@@ -97,19 +100,89 @@
 			\vspace{3cm}{}{}
 			\scshape{\large Notes sur la présente édition}
 			\end{center}
+			Proposer une édition d'un manuscrit aussi composite que le MS128 dont les auteurs n'avaient sans doute jamais supposé qu'il serait un jour étudié et même édité, relève du challenge. Outre la difficulté de proposer une transcription des 220 folios qui constituent le document, la présentation elle-même du texte relève de choix/décisions pour lesquel/les  des critères tels la fidélité vis-à-vis de la source, le confort de lecture et la clarté à la fois de la structure du manuscrit et de ces choix eux-même entrent en ligne de compte pour produire, autant qu'une édition destiné à la lecture, un outil de travail efficace.
+			
+			Ainsi l'équipe scientifique du projet a souhaité que les anotations marginales du manuscrit soient reproduites le plus fidèlement possible. Outres des gloses ou interprétations, sans doute de la main de Thomas Cranmer, de nombreux symboles ponctuent les marges du document parmi lesquelles la lettre "n" est à concevoir comme l'abbréviation de "notandum" que nous avons choisi de ne pas développer afin de permettre une meilleure lisibilité du texte. Toujours dans un souci de lisibilité les informations structurantes, titres ou listes de témoins parfois isncrites dans la marge par la particularité d'un scribe sont reproduit dans le corps du document et anoté en bas de page.
+			
+			Cette édition réalisée dans le cadre du projet RePPOL s'inscrit dans la tradition anglo-saxonne de la transcription diplomatique, ainsi exception faites des "n\textit{otandum}" marginaux les abbréviations sont systématiquement développées et signalées par l'emploi de l'italique. Les additions supra- infra- ou intralinéaire sont reproduites dans le corps du texte, une note les signales. De même, les passages ratûrés sont conservés, une note signalant la ratûre et son aspect. Les numéros de folios indiqués dans le corps même du texte sont accompagnés des deux paginations présentes sur le manuscrit, reproduites afin de permettre une consultation rapide du document originel si besoin. Les passages illisibles qu'ils soient dûs à la particularité d'un scribe, à un défaut de numérisation ou à un dégât du document original sont signalés par des crochets droits et parfois reconstitués par l'équipe scientifique du projet.
+			
+			Enfin, si l'automatisation de la constitution de cette édition depuis un encodage XML-TEI a l'avantage de permettre un rendu rapide et d'assurer la cohérence du texte tout au long du présent document, elle peut occasioner des appels de notes qui parfois pourraient paraître disjoints, nous prions nos lecteurs de ne pas nous en tenir rigueur.
 			\tableofcontents
+			\newpage
 <!--			CONSTITUTION DE LA STRUCTURE DU MANUSCRIT ie chapter/section/subsection non numérottés qui s'afficheront auto dans la table of content-->
-			<!--<xsl:for-each select="//div[@type!='page']">
-				<xsl:call-template name="content"/>
+			
+			<xsl:for-each select="//div">
+				<!-- boucle sur div -->
+				<xsl:choose>
+					<!--les pages lancent les traitements-->
+					<xsl:when test="@type='page'">
+						<xsl:variable name="page_n" select="descendant::pb[1]/@n"/>
+						<xsl:variable name="doc_title" select="concat('MS128, page ', $page_n)"/>
+						
+						\lfoot{<xsl:value-of select="$doc_title"/>}
+						<!-- test si la pag est impair pour les notes de marge -->
+						\ifthenelse{\isodd{\thepage}}
+						{\reversemarginpar}
+						{\normalmarginpar}
+						\textit{folio <xsl:value-of select="descendant::pb[1]/@n"/>}<!--on boucle sur les pages--><xsl:apply-templates/><!--\newpage-->
+						\dotfill
+					</xsl:when>
+					<xsl:when test="@type='collection'"><!--si c'est une collection, boîterouge = chapter-->
+						<xsl:text> \addcontentsline{toc}{chapter}{Collection </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
+					</xsl:when>
+					<xsl:when test="@type='memorandum'">
+						<!--section, boîte verte = section-->
+						<xsl:text> \addcontentsline{toc}{section}{Memorandum </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
+					</xsl:when>
+					<xsl:when test="@type='question_set'">
+						<xsl:text> \addcontentsline{toc}{section}{Question set</xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
+					</xsl:when>
+					<xsl:when test="@type='answer_set'">
+						<xsl:text> \addcontentsline{toc}{section}{Answer set </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
+					</xsl:when>
+					<xsl:when test="@type='index'">
+						<xsl:text> \addcontentsline{toc}{section}{Index </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
+					</xsl:when>
+					<xsl:when test="@type='testimony'">
+						<xsl:text> \addcontentsline{toc}{section}{Testimony </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
+					</xsl:when>
+					<xsl:when test="@type='deposition'">
+						<xsl:text> \addcontentsline{toc}{section}{Deposition </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
+					</xsl:when>
+					<xsl:when test="@type='article'">
+						<xsl:variable name="article_n" select="@n"/>
+						<xsl:choose>
+							<xsl:when test="(@type='article')and($article_n != preceding::div[@type = 'article']/@n)">
+								<xsl:text> \addcontentsline{toc}{section}{Article </xsl:text><xsl:value-of select="@n"/><xsl:text> </xsl:text><xsl:value-of select="descendant::head[1]"/><xsl:text>}</xsl:text>
+							</xsl:when>
+							
+						</xsl:choose>
+					</xsl:when>
+					<xsl:otherwise/>
+				</xsl:choose>
+			</xsl:for-each>
+			
+			
+			
+			
+			
+			<!--<xsl:for-each select="//div[@type='question_set'or'answer_set'or'index'or'testimony'or'deposition'or'memorandum']">
+				<xsl:text> \addcontentsline{toc}{section}{ </xsl:text><xsl:value-of select="@type"/><xsl:text> </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
 			</xsl:for-each>-->
 			
-			<xsl:for-each select="//div[@type = 'page']">
+			<!--<xsl:for-each select="//div[@type = 'page']">
 				<xsl:variable name="page_n" select="descendant::pb[1]/@n"/>
 				<xsl:variable name="doc_title" select="concat('MS128, page ', $page_n)"/>
+				
 				\lfoot{<xsl:value-of select="$doc_title"/>}
-			\textit{folio <xsl:value-of select="descendant::pb[1]/@n"/>}<!--on boucle sur les pages--><xsl:apply-templates/><!--\newpage-->
+				<!-\- test si la pag est impair pour les notes de marge -\->
+				\ifthenelse{\isodd{\thepage}}
+				{\reversemarginpar}
+				{\normalmarginpar}
+			\textit{folio <xsl:value-of select="descendant::pb[1]/@n"/>}<!-\-on boucle sur les pages-\-><xsl:apply-templates/><!-\-\newpage-\->
 				\dotfill
-			</xsl:for-each>
+				
+			</xsl:for-each>-->
 <!--			ANNEXES POTENTIELLES
 				table des matières
 				index personnages, lieux, dates avec page selon @key ou @ref
@@ -179,7 +252,7 @@
 				<xsl:apply-templates/>
 			</xsl:when>
 			<xsl:otherwise>
-				\marginpar[\vspace{0.5cm}{\textcolor{Gray}{<xsl:apply-templates/>}}]
+				\marginpar[\vspace{0.5cm}{\textcolor{Gray}{<xsl:apply-templates/>}}]{}
 			</xsl:otherwise>
 		</xsl:choose>
 		
@@ -233,8 +306,10 @@
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
+	
+	
+	
 	<xsl:template match="del">
-		<!-- teste longueur -->
 		<xsl:choose>
 			<xsl:when test="@rend = 'overstrike'">
 				<xsl:apply-templates/>\footnoteB{<xsl:call-template name="note"><xsl:with-param name="desc" select="'\textit{barré par une grande croix.}'"/></xsl:call-template>}
@@ -244,6 +319,9 @@
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
+	
+	
+	
 	<xsl:template match="hi">
 		<xsl:choose>
 			<xsl:when test="@rend='text-align_bottom-top'">
@@ -261,54 +339,5 @@
 
 
 
-	<xsl:template name="content">
-		<xsl:choose>
-			<xsl:when test="@type='collection'"><!--collection, boîterouge = chapter-->
-				<xsl:text> \addcontentsline{toc}{chapter}{Collection </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
-				<xsl:text> \chapter*<!--[collection </xsl:text><xsl:value-of select="@n"/><xsl:text>]-->{}</xsl:text>
-				<!--<xsl:apply-templates/>-->
-			</xsl:when>
-			<xsl:when test="@type!='collection'"><!--section, boîte verte = section-->
-				<xsl:choose>
-					<xsl:when test="@type = 'article'">
-						<xsl:variable name="article_n" select="@n"/>
-						<xsl:choose>
-							<xsl:when test="$article_n = preceding::div[@type = 'article']/@n">
-<!--								<xsl:apply-templates/>-->
-							</xsl:when>
-							<xsl:otherwise>
-								<xsl:text> \addcontentsline{toc}{section}{ </xsl:text><xsl:value-of select="@type"/><xsl:text> </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
-								<xsl:text> \section*<!--[</xsl:text><xsl:value-of select="@type"/><xsl:text> </xsl:text><xsl:value-of select="@n"/><xsl:text>]-->{}</xsl:text>
-								<xsl:apply-templates/>
-							</xsl:otherwise>
-						</xsl:choose>
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:text> \addcontentsline{toc}{section}{ </xsl:text><xsl:value-of select="@type"/><xsl:text> </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
-						<xsl:text> \section*<!--[</xsl:text><xsl:value-of select="@type"/><xsl:text> </xsl:text><xsl:value-of select="@n"/><xsl:text>]-->{}</xsl:text>
-						<xsl:apply-templates/>
-					</xsl:otherwise>
-				</xsl:choose>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:choose>
-					<xsl:when test="(child::tei:head[1]) and (child::tei:div) and (ancestor::tei:div[1][@type = ('article') or ('answer_set')])"><!--sous-section, boîte orange = subsection-->
-						<xsl:choose>
-							<xsl:when test="@sameAs = ancestor::div[@type = 'article']/@xml:id">
-								<xsl:apply-templates/>
-							</xsl:when>
-							<xsl:otherwise>
-								<xsl:text> \addcontentsline{toc}{subsection}{ </xsl:text><xsl:value-of select="descendant::head[1]"/><xsl:text>}</xsl:text>
-								<xsl:text> \subsection*<!--[</xsl:text><xsl:value-of select="descendant::head[1]"/>]-->{}</xsl:text>
-								<xsl:apply-templates/>
-							</xsl:otherwise>
-						</xsl:choose>
-					</xsl:when>
-					<xsl:otherwise><!--div de plus bas niveau-->
-<!--						<xsl:apply-templates/>-->
-					</xsl:otherwise>
-				</xsl:choose>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:template>
+	
 </xsl:stylesheet>

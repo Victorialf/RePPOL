@@ -3322,7 +3322,7 @@ mations, letteres and iniu<expan>n</expan>ctions.</p>
 
 	<div>
 		<note rend="margin_left">a Shryne</note>
-		<note rend="margin_left"><metamark>n</metamark></note>/note>
+		<note rend="margin_left"><metamark>n</metamark></note>
 		<p rend="main">In primis why the said <persName type="religious" ref="" key="willoughby_john"><roleName type="vicar">vicar</roleName> of <placeName type="parish" ref="93">Chilham</placeName></persName> having speciall
  comandement by vertue of the kinges highnes le<expan>tt</expan>res frome hull,
  doith yet kepe in his churche a certeyn Shryne gilted named 
@@ -4173,7 +4173,7 @@ of the font is no better than other water is,
  and she wolde crepe to the Lorde in her harte, and
  that was the right creping</p></div>
  <div>
- 	<list>
+ 	<list rend="main_left">
  	<head>Testes He</head>
  		<item><persName type="" ref="" key="">Henry hayghehowe</persName></item>
  		<item><persName type="" ref="" key="">Jo. Boydon</persName></item>
@@ -4629,7 +4629,7 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
  gave no co<expan>m</expan>mandme<expan>n</expan>t to light theym</p>
                	<p rend="main"><persName type="" key="" ref="">Starkey</persName> spake other div<expan>er</expan>s wourd<expan>es</expan> specified in the
  detection of <placeName type="parish" ref="73">Northgate</placeName></p></div>
-<div><list>
+<div><list rend="main_left">
 	<head>Testes</head>
  <item><persName type="religious" ref="42441" key="kempe_william">William kempe <roleName type="vicar">vicar</roleName></persName></item>
 	<item><persName type="religious" key="" ref="">Thomas Bradkerke</persName></item>
@@ -4845,13 +4845,13 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
  at hooreys arseis at after no none,</p>
                	</div>
 <div>
-	<list>
+	<list rend="main_left">
 		<item><persName type="" ref="" key="">Jo<expan>hn</expan> Maie</persName></item>
 		<item><persName type="" ref="" key="">Jo<expan>hn</expan> Todde</persName></item>
 		<item><persName type="" ref="" key="">Jo<expan>hn</expan> Stokewell</persName></item>
 		<item><persName type="" ref="" key="">Henry Cloke</persName></item>
 	</list>
-	<p rend="main">
+	<p rend="main_right">
 		<metamark>}</metamark>
 		Testes</p>
 </div>
@@ -4942,7 +4942,7 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
  co<expan>m</expan>maundeme<expan>n</expan>t of god,</p></div>
                	<div>
                		<note rend="margin_left">
-               			<list>
+               			<list rend="margin_left">
                				<item><persName type="religious" ref="39651" key="cotten_humphrey"><roleName type="sir">S<expan>ir</expan></roleName> hu<expan>m</expan>fray Cotton</persName>;</item>
                				<item><persName type="" ref="" key="">Rich<expan>ard</expan> Alcocke</persName>;</item>
                				<item><persName type="religious" ref="90724" key="parker_john">John parker</persName>;</item>
@@ -4992,38 +4992,45 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
  <!--DÉBUT 064--><div type="page">
 
 <div type="article" n="82"><div sameAs="d1e6356"><pb n="064" facs="#fs_064"/>
-S<expan>ir</expan> Symon Oxley preest saied to hym. Yf I
+<div>
+	<p rend="main"><persName type="" key="" ref=""><roleName type="sir">S<expan>ir</expan></roleName> Symon Oxley <roleName type="priest">preest</roleName></persName> saied to hym. Yf I
  were your goostely father I wold neither absolve
- you / nor geve you pen<expan>au</expan>nce /
- Archebold aunswered: haste thou auctority to absolve
+ you / nor geve you pen<expan>au</expan>nce /</p>
+	<p rend="main"><persName type="" ref="" key="">Archebold</persName> aunswered: haste thou auctority to absolve
  me or geve my me pen<expan>au</expan>nce, nay thou maiste
- kepe sheepe
- Christ saied mas apon the mount of Calvary
+ kepe sheepe</p>
+	<p rend="main">Christ saied mas apon the mount of Calvary
  and that is sufficient for my soule
- S<expan>ir</expan> Rich<expan>ard</expan> Stickney. Edwarde lull of Davyngton &amp; oth<expan>er</expan>.
+ <persName type="" key="" ref=""><roleName type="sir">S<expan>ir</expan></roleName> Rich<expan>ard</expan> Stickney</persName>. <persName type="" ref="" key="">Edwarde lull of <placeName type="parish" ref="">Davyngton</placeName></persName> &amp; oth<expan>er</expan>.</p></div>
  
 </div>
             </div>
             <div type="article" n="83">
                <head>
-                  <date type="procedure" when="">23 Septembr</date>
+                  <date type="procedure" when="1543-09-23">23 Septembr</date>
                </head>
                <expan>is</expan>
                <div>
-                  <head rend="margin_left">Hedcrone, Thomas Baker; john Tonge; Nicolas Tery</head>
- Thomas bakerbe sediciouse and p<expan>er</expan>v<expan>er</expan>se <expan>per</expan>sonnes
- john Tongewhiche refuse to use suche
- Nicolas Terylaudable ceremonies of this
- Realme as taking of hally bread / and hally water
+               	<head rend="margin_left"><persName type="" key="" ref="">Hedcrone</persName>, <persName type="" key="" ref="">Thomas Baker</persName>; <persName type="" key="" ref="">john Tonge</persName>; <persName type="" key="" ref="">Nicolas Tery</persName></head>
+               	<div>
+               		<list rend="main_left">
+               			<item><persName type="" key="" ref="">Thomas baker</persName></item>
+               			<item><persName type="" key="" ref="">john Tonge</persName></item>
+               			<item><persName type="" key="" ref="">Nicolas Tery</persName></item>
+               		</list>
+               		<p rend="main_right"><metamark>}</metamark>be sediciouse and p<expan>er</expan>v<expan>er</expan>se <expan>per</expan>sonnes whiche refuse to use suche laudable ceremonies of this</p>
+               	</div>
+ <div><p rend="main">Realme as taking of hally bread / and hally water
  bearing of Candelles on palme sonday / and
  creaping to the crosse. which also do comonly use
  to sitt in the churche or ellis to be in the ale hous
- in the tyme of procession
+ in the tyme of procession</p></div>
  
 </div>
                <div>
-                  <head rend="margin_left">john ffishcocke</head>
- Johne ffishecocke the yong<expan>er</expan> will nev<expan>er</expan> receyve the pax
+               	<head rend="margin_left"><persName type="" key="" ref="">john ffishcocke</persName></head>
+               	<div>
+               		<p rend="main"><persName type="" key="" ref="">Johne ffishecocke the yong<expan>er</expan></persName> will nev<expan>er</expan> receyve the pax
  but is redy to strike the children that bring it
  he was not this yere confessed after the co<expan>m</expan>mon sort
  of the churche but aft<expan>er</expan> this sorte: first w<expan>ith</expan>out
@@ -5031,7 +5038,7 @@ S<expan>ir</expan> Symon Oxley preest saied to hym. Yf I
  am a grevouse synner / and noon so grevouse as I
  ffor I am not able to kepe the co<expan>m</expan>maundeme<expan>n</expan>t<expan>es</expan>
  for who so offendeth in one offendeth in all
- And therefore I crye god mercy :
+ And therefore I crye god mercy :</p></div>
 
 </div>
             </div>
@@ -5047,12 +5054,14 @@ S<expan>ir</expan> Symon Oxley preest saied to hym. Yf I
                   <date type="procedure" when="1543-09-24">24 Septembr 1543</date>
                </head>
                <div>
-                  <head rend="margin_left">Antony Ager; Simon Castlyn</head>
- Anthony Ager shomaker and Symon Castelyn of Cant<expan>erbury</expan>
- said. That god is in no place made by mannes hand<expan>es</expan>
- Symond Castlyn saied That. the booke named
- the king<expan>es</expan> booke was made at a Spittill house in
- london /
+               	<head rend="margin_left"><persName type="" key="" ref="">Antony Ager</persName>; <persName type="" key="" ref="">Simon Castlyn</persName></head>
+               	<div>
+               		<p rend="main"><persName type="" key="" ref="">Anthony Ager <roleName type="">shomaker</roleName></persName> and <persName type="" key="" ref="">Symon Castelyn of <placeName type="city" ref="">Cant<expan>erbury</expan></placeName></persName>
+ said. That god is in no place made by mannes hand<expan>es</expan></p>
+               	<p rend="main"><persName type="" key="" ref="">Symond Castlyn</persName> saied That. the booke named
+               	the king<expan>es</expan> booke was made at a <placeName type="building" ref=""><persName type="" key="" ref="">Spittill</persName> house in
+ <placeName type="city" ref="">london</placeName></placeName> /</p>
+               	</div>
  
 </div>
             </div>
@@ -5064,17 +5073,20 @@ S<expan>ir</expan> Symon Oxley preest saied to hym. Yf I
  
 <div>
                   <head rend="margin_left">
-                     <expan>The</expan> vicar of Newingto<expan>n</expan>
+                     <persName type="religious" ref="" key="hiwe_robert"><expan>The</expan> <roleName type="vicar">vicar</roleName> of <placeName type="parish" ref="276">Newingto<expan>n</expan></placeName></persName>
                   </head>
- Robert howe vicar of newington iux<expan>ta</expan> Sittingbourn
- <note rend="margin_left">imag<expan>es</expan></note> hathe pulled owne many ymag<expan>es</expan> in his h churche
+	<div>
+		<note rend="margin_left">imag<expan>es</expan></note>
+		<p rend="main"><persName type="religious" ref="" key="hiwe_robert">Robert howe <roleName type="vicar">vicar</roleName> of <placeName type="parish" ref="276">newington iux<expan>ta</expan> <placeName type="" ref="">Sittingbourn</placeName></placeName></persName>
+  hathe pulled owne many ymag<expan>es</expan> in his h churche
  as the ymage of o<expan>ur</expan> lady of Pitie patrones of the
  churche. The Trinitie. S. Steven. Item of
  o<expan>ur</expan> lady of Christ and of sainct Thomas thapostel
  the whiche ii he sent to london and wer set up ther
- Item he scraped of the gilding of divers other ymag<expan>es</expan>
- Test.
- Thomas Smyth and the churchewardeynes
+		</p>
+<p rend="main">Item he scraped of the gilding of divers other ymag<expan>es</expan></p>
+<p rend="main">Test.</p>
+ <p rend="main"><persName type="" ref="" key="">Thomas Smyth</persName> and the <roleName type="">churchewardeynes</roleName></p></div>
  
 </div>
             </div>
@@ -5083,18 +5095,25 @@ S<expan>ir</expan> Symon Oxley preest saied to hym. Yf I
                   <date type="procedure" when="1543-09-26">26 Septembr<expan>is</expan> 1543</date>
                </head>
 .
- <note rend="margin_left">Saint Mary of Sandwiche</note> Sundry ymages as of S. George and other
+ <div>
+ 	<note rend="margin_left"><placeName type="parish" ref="339">Saint Mary of <placeName type="city" ref="">Sandwiche</placeName></placeName></note>
+ 	<p rend="main">Sundry ymages as of S. George and other</p></div>
  
 <div>
-                  <head rend="margin_left">the vicar of s. mary</head>
- taken downe by the vicar of o<expan>ur </expan>ladye in Sandwiche
- to the value of xxx £,
- <note rend="margin_left">Rich<expan>ard</expan> Butler</note> Item a parrish church in Sandwiche called S. James
- <expan>pros</expan>trated by Richard Butler and the vicar of our
- lady churche.
- testes
- Tho<expan>mas</expan> wyngfild vyncent Kingham John maistre
- Tho<expan>mas </expan>hungerford. Tho<expan>mas</expan> patche
+                  <head rend="margin_left"><persName type="religious" key="" ref="">the <roleName type="vicar">vicar</roleName> of <placeName type="parish" ref="339">s. mary</placeName></persName></head>
+	<p rend="main">taken downe by the <roleName type="vicar">vicar</roleName> of <placeName type="parish" ref="339">o<expan>ur </expan>ladye in <placeName type="parish" ref="">Sandwiche</placeName></placeName>
+ to the value of xxx £,</p>
+<div>
+	<note rend="margin_left"><persName ref="" type="" key="">Rich<expan>ard</expan> Butler</persName></note>
+	<p rend="main">Item a <placeName type="parish" ref="">parrish church in <placeName type="city" ref="">Sandwiche</placeName> called S. James</placeName>
+ <expan>pros</expan>trated by <persName key="" type="" ref="">Richard Butler</persName> and <persName type="religious" key="" ref="">the <roleName type="vicar">vicar</roleName> of <placeName type="parish" ref="339">our
+ lady churche</placeName></persName>.</p>
+</div>
+<div>
+	<p rend="main">testes</p>
+	<p rend="main"><persName key="" type="" ref="">Tho<expan>mas</expan> wyngfild</persName> <persName key="" type="" ref="">vyncent Kingham</persName> <persName key="" type="" ref="">John maistre</persName>
+		<persName key="" type="" ref="">Tho<expan>mas </expan>hungerford</persName>. <persName key="" type="" ref="">Tho<expan>mas</expan> patche</persName></p>
+</div>
 
 </div>
             </div>
@@ -5104,60 +5123,116 @@ S<expan>ir</expan> Symon Oxley preest saied to hym. Yf I
  <!--DÉBUT 066--><div type="page">
 
 <pb n="066" facs="#fs_066"/>
-            <div type="article" n="87">
+ 	<div type="article" n="87">
+ 		<head>Articuli in quilz sentio <persName ref="" type="religious" key="nevenson_christopher">mrm Chroseam Nevenson</persName> meret reformandum </head>
+		<div><note rend="margin_left"><persName key="" type="" ref="">Orphen</persName></note></div>
+ 		<div>
+ 			<note rend="margin_left"><persName ref="" type="religious" key="nevenson_christopher"><roleName type="commissary">Co<expan>m</expan>missary</roleName></persName> <metamark>1</metamark></note>
+ 			<p rend="main">Ab exco<expan>mmun</expan>icatione absoluende mi^stem usurpat qu  non heater potestates clavem</p>
+ 		</div>
+ 		<div>
+ 			<note rend="margin_left"><metamark>2</metamark></note>
+ 			<p rend="main">Devotum inter Christianos eitum nititur abrogare  quo vult populum admoneri / ne quam bembam heanter in donulz sius aspergant</p>
+ 		</div>
 
-<note rend="margin_left">Orphen</note> Articuli in quilz sentio mrm Chroseam Nevenson meret reformandum  <note rend="margin_left"><roleName type="commissary">Co<expan>m</expan>missary</roleName></note> <note rend="margin_left"><metamark>1</metamark></note> Ab exco<expan>mmun</expan>icatione absoluende mi^stem usurpat qu  non heater potestates clavem <note rend="margin_left"><metamark>2</metamark></note> Devotum inter Christianos eitum nititur abrogare  quo vult populum admoneri / ne quam bembam heanter in donulz sius aspergant  <note rend="margin_left"><metamark>3</metamark></note> Precepit quoq ne quis morientem, certo benedicto (ut appellitant) consignent <note rend="margin_left"><metamark>4</metamark></note> Ignorante siiam intulit, nulla suspen <add place="">ne </add>preina <note rend="margin_left"><metamark>5</metamark></note> Complures in visitacione libellos perspexi illi pro &amp; reformatione tradites (permia vero ; per dimissione curie exacta) nullam prorsus reformationem adhibint, quo inhil zele ad eclesiam se<del rend=""> a</del> habere comprobat <note rend="margin_left"><metamark>6</metamark></note> Ignorantilz recensere in anglices orationem divicam cum symbolo. interdixit dari absolutione ; Si vero  propter serium aut distende in ydnertatem merito excusenter absoluantur in latinis. Ita ut st &amp; absolutes esse non agnostant Per me william Orphen curantus  The vicar of boughton subtus blean The <roleName type="curate">Curat</roleName> of new and old Romney The <roleName type="curate">Curat</roleName> of hernehill
+ 		<div>
+ 			<note rend="margin_left"><metamark>3</metamark></note>
+ 			<p rend="main">Precepit quoq ne quis morientem, certo benedicto (ut appellitant) consignent</p>
+ 			</div>
+ 		<div>
+ 			<note rend="margin_left"><metamark>4</metamark></note>
+ 			<p rend="main">Ignorante siiam intulit, nulla suspen <add place="above">ne </add>preina</p>
+ 		</div>
+		<div>
+			<note rend="margin_left"><metamark>5</metamark></note>
+			<p rend="main">Complures in visitacione libellos perspexi illi pro &amp; reformatione tradites (permia vero ; per dimissione curie exacta) nullam prorsus reformationem adhibint, quo inhil zele ad eclesiam se<del rend=""> a</del> habere comprobat</p>
+		</div>
+ 		<div>
+ 			<note rend="margin_left"><metamark>6</metamark></note>
+ 			<p rend="main">Ignorantilz recensere in anglices orationem divicam cum symbolo. interdixit dari absolutione ; Si vero  propter serium aut distende in ydnertatem merito excusenter absoluantur in latinis. Ita ut st &amp; absolutes esse non agnostant</p></div>
+ 		
+ 		<div><p rend="main_right">Per me <persName type="" ref="" key="">william Orphen <roleName type="">curantus</roleName></persName></p></div>
+ 		<div>
+ 			<list rend="main_left">
+ 			<item><persName type="religious" ref="" key="">The <roleName type="vicar">vicar</roleName> of <placeName type="parish" ref="46">boughton subtus blean</placeName></persName></item>
+ 			<item><persName type="religious" ref="" key="">The <roleName type="curate">Curat</roleName> of <placeName ref="" type="parish">new and old Romney</placeName></persName></item>
+ 			<item><persName key="" ref="" type="religious">The <roleName type="curate">Curat</roleName> of <placeName type="" ref="">hernehill</placeName></persName></item>
+ 		</list>
+ 		</div>
 
 </div>
             <!--FIN 066--></div>
 <!--1 div refermée-->
 
- <!--DÉBUT 067--><div type="page">
+ <!--DÉBUT 067-->
+         	<div type="page">
 
 <pb n="067" facs="#fs_067"/>
-<div><ab><num type="pagination" subtype="red">67</num> <num type="pagination" subtype="black">25</num></ab></div>
+		<div>
+			<ab>
+				<num type="pagination" subtype="red">67</num>
+				<num type="pagination" subtype="black">25</num>
+			</ab>
+		</div>
  
-<div type="article" n="88">
-               <head>
-                  <date type="procedure" when="">24 Septembris</date>
-               </head>
-               <div>
-                  <head rend="margin_left">Holy</head>
- Thomas holly of saint Clement<expan>es</expan> of Sandwiche
- <note rend="margin_left"><expan>pro</expan>cession</note> during the space of iiii yeres now past hath
- alwayes refused to followe the cros of Christ in
- procession
- <note rend="margin_left">ceremonies</note> Item he hathe also refuced / to beare his candill
- and palme, at suche tymes as be for thos laudable
- ceremonyes by the kinges ma<expan>jestie</expan> admitted and allowed
- In contempt of the same ceremonies / and th to the
- occasion of muche murmuryng and disquietnes w<expan>ith</expan>in
- the same <expan>par</expan>ishe by reason of his obstinacy in that
- behalf.
- <note rend="margin_left">Imag<expan>es</expan></note> Item he and William Morris pulled downe
- sundry ymag<expan>es</expan> in S. Cleme<expan>n</expan>t<expan>es</expan> churche.
- Nicolas pooke. William Crippes S<expan>ir</expan> John Atkynson Vicar <expan>Sir</expan> John hal <roleName type="priest">preist</roleName>.
- <expan>Sir</expan> John Watson <roleName type="priest">preist</roleName>
- Testes
- Nicolas peeke
- william CrippesJurates
- John Atkinson John hallpreestes
- John watson
- 
-</div>
-            </div>
+		<div type="article" n="88">
+		               <head>
+		                  <date type="procedure" when="1543-09-24">24 Septembris</date>
+		               </head>
+		               <div>
+		                  <head rend="margin_left"><persName type="" ref="" key="holly_thomas">Holy</persName></head>
+		               	<div>
+		               		<note rend="margin_left"><expan>pro</expan>cession</note>
+		               		<p rend="main"><persName type="" ref="" key="holly_thomas">Thomas holly of <placeName type="parish" ref="338">saint Clement<expan>es</expan> of <placeName ref="" type="city">Sandwiche</placeName></placeName></persName>
+		  during the space of <date type="narrative" from="1540" to="1543">iiii yeres now past</date> hath
+		 alwayes refused to followe the cros of Christ in
+		 procession</p>
+		               	</div>
+		<div>
+			<note rend="margin_left">ceremonies</note>
+			<p rend="main">Item he hathe also refuced / to beare his candill
+		 and palme, at suche tymes as be for thos laudable
+		 ceremonyes by the kinges ma<expan>jestie</expan> admitted and allowed
+		 In contempt of the same ceremonies / and th to the
+		 occasion of muche murmuryng and disquietnes w<expan>ith</expan>in
+		 the same <expan>par</expan>ishe by reason of his obstinacy in that
+		 behalf.</p>
+		</div>
+		<div><note rend="margin_left">Imag<expan>es</expan></note>
+			<p rend="main">Item he and <persName type="" key="" ref="">William Morris</persName> pulled downe
+		 sundry ymag<expan>es</expan> in <placeName type="parish" ref="338">S. Cleme<expan>n</expan>t<expan>es</expan> churche</placeName>.</p></div>
+		               	<div><p rend="whole_width"><add place="inline"><persName type="" key="" ref="">Nicolas pooke</persName>. <persName type="" key="" ref="">William Crippes</persName> <persName type="religious" key="" ref=""><roleName type="sir">S<expan>ir</expan></roleName> John Atkynson <roleName type="vicar">Vicar</roleName></persName> <persName type="religious" key="" ref=""><roleName type="sir"><expan>Sir</expan></roleName> John hal <roleName type="priest">preist</roleName></persName>.
+		               		<persName type="religious" key="" ref=""><roleName type="sir"><expan>Sir</expan></roleName> John Watson <roleName type="priest">preist</roleName></persName></add></p></div>
+		<div>
+			<list rend="main_left">
+				<head>Testes</head>
+				<item><persName type="" ref="" key="">Nicolas peeke</persName></item>
+				<item><persName type="" ref="" key="">william Crippes</persName></item>
+			</list>
+			<p rend="main_right"><metamark>}</metamark> <roleName type="">Jurates</roleName></p>
+			<list rend="main_left">
+				<item><persName type="religious" ref="" key="">John Atkinson</persName></item>
+				<item><persName type="religious" ref="" key="">John hall</persName></item>
+				<item><persName type="religious" ref="" key="">John watson</persName></item>
+			</list>
+			<p rend="main_right"><metamark>}</metamark> <roleName type="priest">preestes</roleName></p>
+			</list>
+		</div>
+		 
+		</div>
+		            </div>
             <div type="article" n="89">
                <head>
-                  <date type="procedure" when="">21 Septembr<expan>is</expan> 1543</date>
+                  <date type="procedure" when="1543-09-21">21 Septembr<expan>is</expan> 1543</date>
                </head>
                <div xml:id="d1e6590">
-                  <head rend="margin_left">Bland</head>
+                  <head rend="margin_left"><persName type="religious" ref="39292" key="bland_john">Bland</persName></head>
 
- In a Sermon made at faversham the xxiiird sonday
- aftre Trinitye Anno 1539: he said that the mas
+               	<div><p rend="main">In a Sermon made at <placeName type="parish" ref="148">faversham</placeName> <date type="narrative" when="">the xxiiird sonday
+ aftre Trinitye Anno 1539</date>: he said that the mas
  is no satisfaction for synne: nother dothe any thinge
  help against synne: and that it is but a reme<expan>m</expan>bra<expan>n</expan>ce
- or memory of the passion of Christ /
+ or memory of the passion of Christ /</p></div>
 <!--FIN 067--></div>
 </div>
 </div>
@@ -5166,37 +5241,50 @@ S<expan>ir</expan> Symon Oxley preest saied to hym. Yf I
  <!--DÉBUT 068--><div type="page">
 
 <div type="article" n="89"><div sameAs="d1e6590"><pb n="068" facs="#fs_068"/>
-<note rend="margin_left">Imag<expan>es</expan></note> He saied that the sight of the ymage of saint
+<div>
+	<note rend="margin_left">Imag<expan>es</expan></note>
+	<p rend="main">He saied that the sight of the ymage of saint
  Michaell w<expan>ith</expan> the balaunce is enowgh to
- bringe a man to the deviull
- <note rend="margin_left">pray<expan>or</expan> to saintes</note> That no man may pray to Sainctz for any thinge
- <note rend="margin_left">Co<expan>n</expan>fession</note> He saied that it was not necessary nor convenie<expan>n</expan>t
+ bringe a man to the deviull</p></div>
+ <div>
+ 	<note rend="margin_left">pray<expan>or</expan> to saintes</note>
+ 	<p rend="main">That no man may pray to Sainctz for any thinge</p>
+ </div>
+ <div>
+ 	<note rend="margin_left">Co<expan>n</expan>fession</note>
+ 	<p rend="main">He saied that it was not necessary nor convenie<expan>n</expan>t
  that men shuld confesse their offenc<expan>es</expan>
                   <expan>par</expan>ticulerly
  but that is was sufficient to say I am a synn<expan>er</expan>
- and have offendid in thought wourde and dede
- <note rend="margin_left">Imag<expan>es</expan></note> He saied That, to knele or bowe unto a crosse,
+ and have offendid in thought wourde and dede</p>
+ </div>
+<div><note rend="margin_left">Imag<expan>es</expan></note>
+	<p rend="main">He saied That, to knele or bowe unto a crosse,
  yea though it wer the veray crosse that Christ
- dyed on it was Idolatrie /
- <note rend="margin_left">seditious</note> He saied that bisshoppes did make <roleName type="priest">priest</roleName><expan>es</expan> for mony
+ dyed on it was Idolatrie /</p></div>
+ <div>
+ 	<note rend="margin_left">seditious</note>
+ 	<p rend="main">He saied that <roleName type="bishop">bisshoppes</roleName> did make <roleName type="priest">priest</roleName><expan>es</expan> for mony
  yea although they could stantely reade, and he
- knewe it so to be /
- <note rend="margin_left">candelles</note> He saied that they did nought that did sett up or
+ knewe it so to be /</p></div>
+<div>
+	<note rend="margin_left">candelles</note>
+	<p rend="main">He saied that they did nought that did sett up or
  offre any candelles before the sacrament. and if
  they wer well taught they wold not use suche
- superstition. John Seth. Richard Drylande. laurence manby.
- John hampton. Nicolas Burdwashe. Josepth Bev<expan>erl</expan>ay. Th<expan>omas</expan> Cra<expan>n</expan>se
- John pellayne. Clement Norton. Tho<expan>mas</expan> Deve. Th<expan>omas</expan> Okenfelde.
- Raynolde Becke. william amoore. Ro<expan>bert </expan>ffynes. Rich<expan>ard</expan> Stickney.
+ superstition. <add place="inline"><persName type="" ref="" key="seth_john">John Seth</persName>. <persName type="religious" ref="89855" key="dryland_richard">Richard Drylande</persName>. <persName type="" ref="" key="">laurence manby</persName>.
+		<persName type="" ref="" key="">John hampton</persName>. <persName type="" ref="" key="">Nicolas Burdwashe</persName>. <persName type="" ref="" key="">Josepth Bev<expan>erl</expan>ay</persName>. <persName type="" ref="" key="">Th<expan>omas</expan> Cra<expan>n</expan>se</persName>
+ 	<persName type="" ref="" key="">John pellayne</persName>. <persName type="religious" ref="39067" key="norton_clement">Clement Norton</persName>. <persName type="religious" ref="40652" key="deve_thomas">Tho<expan>mas</expan> Deve</persName>. <persName type="" ref="" key="">Th<expan>omas</expan> Okenfelde</persName>.
+		<persName type="" ref="" key="">Raynolde Becke</persName>. <persName type="" ref="" key="">william amoore</persName>. <persName type="" ref="" key="">Ro<expan>bert </expan>ffynes</persName>. <persName type="" ref="" key="">Rich<expan>ard</expan> Stickney</persName>.</add>
  He saied that the masse is no satisfaction for
- synne, nor therefore offred
- <note rend="margin_left">Co<expan>n</expan>fession</note> He preached in Lynsted churche on saint Mathues
- day in Anno 1542./ that auriculier confession is not
+ synne, nor therefore offred</p></div>
+ <div><note rend="margin_left">Co<expan>n</expan>fession</note><p rend="main">He preached in <placeName type="building" ref=""><placeName type="parish" ref="">Lynsted</placeName> churche</placeName> on <date type="narrative" when="">saint Mathues
+ day in Anno 1542</date>./ that auriculier confession is not
  in the scriptur<expan>e</expan> of god /. nor in the lawe of god.
  I m<expan>er</expan>vaill<expan>e quod</expan> he / why, hit is used in the churche
  also q<expan>uod</expan> he, it hath been often put down
- William Alban. Hugo Cru<expan>m</expan>pton <roleName type="priest">preist</roleName> Thomas ffarrer.
- Raff Vouldegate. Rich lashforde. Antony Browne.
+ 	<persName type="" ref="" key="">William Alban</persName>. <persName type="" ref="" key="">Hugo Cru<expan>m</expan>pton <roleName type="priest">preist</roleName></persName> <persName type="" ref="" key="">Thomas ffarrer</persName>.
+ 	<persName type="" ref="" key="">Raff Vouldegate</persName>. <persName type="" ref="" key="">Rich lashforde</persName>. <persName type="" ref="" key="">Antony Browne</persName>.</p></div>
 <!--FIN 068--></div>
 </div>
 </div>
@@ -5206,32 +5294,37 @@ S<expan>ir</expan> Symon Oxley preest saied to hym. Yf I
 
 <div type="article" n="89"><div sameAs="d1e6590"><pb n="069" facs="#fs_069"/>
 <div><ab><num type="pagination" subtype="red">69</num> <num type="pagination" subtype="black">26</num></ab></div>
- <note rend="margin_left">seditious</note> He saied in a Sermon made at Staple on marye
- magdalen day last past. John Baptist had
+<div>
+	<note rend="margin_left">seditious</note>
+	<p rend="main">He saied in a Sermon made at <placeName type="parish" ref="">Staple</placeName> on <date type="narrative" when="">marye
+ magdalen day last past</date>. John Baptist had
  his hed smytten of for speaking of the truthe
  and so now a daies / for speking of the truthe
- many have ther hedd<expan>es</expan> broken
- he saied he was no chaungelyng: but loke what
- he taught us before tyme: he will abud by it
- <note rend="margin_left">palmes</note> He saied in his churche of <staple> Staple Addisham the xviii of</staple>
- Marche 1542. That if the people knew the
+ many have ther hedd<expan>es</expan> broken</p>
+	<p rend="main">he saied he was no chaungelyng: but loke what
+ he taught us before tyme: he will abud by it</p></div>
+<div>
+	<note rend="margin_left">palmes</note>
+	<p rend="main">He saied in his churche of <add place="above"><placeName type="parish" ref="">Staple</placeName></add> Addisham <date type="narrative" when="1542-03-18">the xviii of
+ Marche 1542</date>. That if the people knew the
  abhomynable wourdes that are saied in the
  hallowing of palmes. they wold not beare
- them. /
- <note rend="margin_left">sclanderous to me</note> He saied the same day that he had com<expan>m</expan>aundeme<expan>n</expan>t
+ them. /</p></div>
+<div> <note rend="margin_left">sclanderous to me</note> <p rend="main">He saied the same day that he had com<expan>m</expan>aundeme<expan>n</expan>t
  of certaine of the counseill to sett furthe suche
- thing<expan>es</expan>:
- <note rend="margin_left">sclanderous</note> He saied he could not fynde in his conscience to
+ thing<expan>es</expan>:</p></div>
+ <div><note rend="margin_left">sclanderous</note> <p rend="main">He saied he could not fynde in his conscience to
  say or singe Ave Rex before the Roode: for it
- is playne Idolatry
- <note rend="margin_left">sclande seditious</note> He saied that the ymage of the Trinitie is not
+ is playne Idolatry</p></div>
+ <div><note rend="margin_left"><del rend="strikethrough">sclande</del> seditious</note> <p rend="main">He saied that the ymage of the Trinitie is not
  to be suffred nor that he cannot fynde Trinitas
  thorought scripture / but that Athnasius put
- it in his symbolu<expan>m</expan>
- <note rend="margin_left">halowinge of <expan>the</expan> fonte</note> He saied it is not consonaunt to the lawe of god
+ it in his symbolu<expan>m</expan></p></div>
+ <div><note rend="margin_left">halowinge of <expan>the</expan> fonte</note>
+ 	<p rend="main">He saied it is not consonaunt to the lawe of god
  that wee shuld crye or call to saintz. or to sing
  or saye the letany before the hallowing of the
- font / nor other tymes, ne no <expan>pro</expan>cession co<expan>m</expan>maundid.
+ font / nor other tymes, ne no <expan>pro</expan>cession co<expan>m</expan>maundid.</p></div>
 <!--FIN 069--></div>
 </div>
 </div>
@@ -5240,36 +5333,47 @@ S<expan>ir</expan> Symon Oxley preest saied to hym. Yf I
  <!--DÉBUT 070--><div type="page">
 
 <div type="article" n="89"><div sameAs="d1e6590"><pb n="070" facs="#fs_070"/>
-<note rend="margin_left">offensive</note> On the masse booke is plaine detestable heresies
- and in the masse also. /
- <note rend="margin_left">Inju<expan>n</expan>ctions</note> Item that the maynteyning of light<expan>es</expan> before the
- sacrament is not acceptable in the sight of god
- nor that god is pleased w<expan>ith</expan> suche
- William Qwilt<expan>er</expan>. Thomas Steseday. William Steseday.
- Rich Tucker. John Dowglas. Cornelis Nevil.
- Item in a Sermon made at Boughton under the
- bleane the xviii of Aprill Anno 1542. The
- masse did not profite for synnes, for than Christ
- had died in vayn,
- <note rend="margin_left">Erro<expan>r</expan></note> Item he saied wee may not pray to sainctz.
- <note rend="margin_left">Co<expan>n</expan>fession</note> Item in a Sermon made the iiii of ffebruary
- last past / he saied that Auriculier confession was
- the mooste abhomination that could be
- <note rend="margin_left">offensive</note> Item he saied on Sainct Stephins day Anno d<expan>omino</expan>
- no<expan>stro</expan> R<expan>egi</expan>s xxxiiiito in the parrishe of northgat in
- Caunterbury. That if wymen did understand
+	<div>
+		<note rend="margin_left">offensive</note>
+		<p rend="main">On the masse booke is plaine detestable heresies
+	 and in the masse also. /</p>
+	</div>
+	 <div>
+	 	<note rend="margin_left">Inju<expan>n</expan>ctions</note>
+	 	<p rend="main">Item that the maynteyning of light<expan>es</expan> before the
+	 sacrament is not acceptable in the sight of god
+	 nor that god is pleased w<expan>ith</expan> suche</p>
+	 	<p rend="main"><add place="inline"><persName type="" ref="" key="">William Qwilt<expan>er</expan></persName>. <persName type="" ref="" key="">Thomas Steseday</persName>. <persName type="" ref="" key="">William Steseday</persName>.
+	 		<persName type="" ref="" key="">Rich Tucker</persName>. <persName type="" ref="" key="">John Dowglas</persName>. <persName type="" ref="" key="">Cornelis Nevil</persName>.</add></p>
+		<p rend="main">Item in a Sermon made at <placeName type="parish" ref="46">Boughton under the
+	 bleane</placeName> <date type="narrative" when="1542-04-18">the xviii of Aprill Anno 1542</date>. The
+	 masse did not profite for synnes, for than Christ
+	 had died in vayn,</p>
+	 </div>
+ <div><note rend="margin_left">Erro<expan>r</expan></note> <p rend="main">Item he saied wee may not pray to sainctz.</p></div>
+ <div><note rend="margin_left">Co<expan>n</expan>fession</note> <p rend="main">Item in a Sermon made <date type="narrative" when="">the iiii of ffebruary
+ last past</date> / he saied that Auriculier confession was
+ the mooste abhomination that could be</p></div>
+ <div>
+ 	<note rend="margin_left">offensive</note>
+ 	<p rend="main">Item he saied on<date type="narrative" when=""> Sainct Stephins day Anno d<expan>omino</expan>
+ no<expan>stro</expan> R<expan>egi</expan>s xxxiiiito</date> in <placeName type="parish" ref="73">the parrishe of northgat in
+ <placeName type="city" ref="">Caunterbury</placeName></placeName>. That if wymen did understand
  what was redde and songe in the matyns. mas,
  and evensonge they wold be ashamed  one of
  another: for their was in it bothe heresye
- and treason. John Starkey Alderman. Alice Boydon.
- Margery Bredekirke.
- <note rend="margin_left">Co<expan>n</expan>fession</note> He saied on Candelmas day last past at s. Johns
- in Cant<expan>erbury</expan>: that if the people knewe what the
+ and treason. <add place="inline"><persName ref="" type="" key="">John Starkey</persName> <persName type="" key="" ref="">Alderman</persName>. <persName type="lay_woman" key="boydon_alice">Alice Boydon</persName>.
+ 	<add place="below"><persName type="lay_woman" key="bredekirke_margery">Margery Bredekirke</persName>.</add></add></p>
+ </div>
+ <div>
+ 	<note rend="margin_left">Co<expan>n</expan>fession</note>
+ 	<p rend="main"> He saied <date type="narrative" when="">on Candelmas day last past</date> at <placeName type="parish" ref="">s. Johns
+ in Cant<expan>erbury</expan></placeName>: that if the people knewe what the
  wourdes were that the preest saieth. whan he layeth
  his hand apon y<expan>our</expan> hedd<expan>es</expan> after yo<expan>ur</expan> confession: You
  wold be ashamed to heare them / for it is an
  abhomination to speke them / and I wold think
- my self the worse: q<expan>uo</expan>d he a moneth aft<expan>er</expan> to speke
+ my self the worse: q<expan>uo</expan>d he a moneth aft<expan>er</expan> to speke</p></div>
 <!--FIN 070--></div>
 </div>
 </div>
@@ -5279,16 +5383,21 @@ S<expan>ir</expan> Symon Oxley preest saied to hym. Yf I
 
 <div type="article" n="89"><div sameAs="d1e6590"><pb n="071" facs="#fs_071"/>
 <div><ab><num type="pagination" subtype="red">71</num> <num type="pagination" subtype="black">27</num></ab></div>
- suche wourdes. Rich<expan>ard </expan>wades John Sowde <add place=""/> pilcherde.
- Robert <expan>par</expan>ker, the vicar of Northgate. henry ffissher. Rog<expan>er</expan>
-                  <pilcherde> mantel.</pilcherde>
- <note rend="margin_left">Confession</note> Item in northegate parrishe he saied if yo<expan>u</expan> knew
+	<div><p rend="main">suche wourdes. <persName type="" key="" ref="">Rich<expan>ard </expan>wades</persName> <persName type="" key="" ref="">John Sowde</persName> <add place="above"> <persName type="" key="" ref="">pilcherde</persName>.</add>
+		<persName type="" key="" ref="">Robert <expan>par</expan>ker</persName>, <persName type="religious" key="42441" ref="kempe_william">the <roleName type="vicar">vicar</roleName> of <placeName ref="73" type="parish">Northgate</placeName></persName>. <persName type="" key="" ref="">henry ffissher</persName>. <persName type="" key="" ref="">Rog<expan>er</expan>
+	 mantel</persName>.</p></div>
+ <div>
+ 	<note rend="margin_left">Confession</note>
+ 	<p rend="main">Item in <placeName type="parish" ref="73">northegate parrishe</placeName> he saied if yo<expan>u</expan> knew
  what abhominations arr in the wourdes of
- absolution. whiche the preest saieth ov<expan>er</expan> yo<expan>u</expan>, whan
- you be shriven. yo<expan>u</expan> wold abhorre them.
- <note rend="margin_left">offensive</note> Item he said that in Christenyng of Children
- preestis be murderers Rog<expan>er</expan> mantil. Tho<expan>mas</expan> Bredkirke.
- and <expan>the</expan> vicar of <expan>the</expan> parish
+ absolution. whiche the <roleName type="priest">preest</roleName> saieth ov<expan>er</expan> yo<expan>u</expan>, whan
+ you be shriven. yo<expan>u</expan> wold abhorre them.</p>
+ </div>
+<div>
+	<note rend="margin_left">offensive</note>
+	<p rend="main">Item he said that in Christenyng of Children
+		<roleName type="priest">preestis</roleName> be murderers <persName type="" ref="" key="">Rog<expan>er</expan> mantil</persName>. <persName type="" key="" ref="">Tho<expan>mas</expan> Bredkirke</persName>.
+		and <persName type="religious" key="42441" ref="kempe_william"><expan>the</expan> <roleName type="vicar">vicar</roleName> of <expan>the</expan> parish</persName></p></div>
  
 </div>
             </div>
@@ -5296,28 +5405,41 @@ S<expan>ir</expan> Symon Oxley preest saied to hym. Yf I
                <head>
                   <date type="procedure" when="1543-09-26">26 Septembr<expan>is</expan> 1543</date>.</head>
                <div>
-                  <head rend="margin_left">Boucher</head>
- John boucher of ffretynden saied that mattens and
- <note rend="margin_left">Offensive</note> evensonge was no better than rombling of tubbes
- testes
- William Bartheley and other /
- Item that the masse and dirige was not laudable
- to be said for the soules de<expan>par</expan>ted
- Testes
- Clerc of hedcorn
- Item he hathe book<expan>es</expan> of Tyndall and ffrith
+               	<head rend="margin_left"><persName type="" ref="" key="">Boucher</persName></head>
+               	<div>
+               		<note rend="margin_left">Offensive <metamark>n</metamark></note>
+               		<p rend="main"><persName type="" ref="" key="">John boucher of <placeName type="parish" ref="">ffretynden</placeName></persName> saied that mattens and
+  evensonge was no better than rombling of tubbes</p>
+               	</div>
+ <div>
+ 	<list rend="main_left">
+ 	<head>testes</head>
+ 	<item><persName type="" ref="" key="">William Bartheley</persName> and other /</item>
+ </list>
+ </div>
+<div>
+	<note rend="margin_left">erro<expan>r</expan></note>
+	<p rend="main">Item that the masse and dirige was not laudable
+ to be said for the soules de<expan>par</expan>ted</p>
+</div>
+<div><list rend="main_left">Testes
+	<item><persName type="" ref="" key=""><roleName type="">Clerc</roleName> of <placeName ref="" type="">hedcorn</placeName></persName></item></list>
+<p rend="main">Item he hathe book<expan>es</expan> of Tyndall and ffrith</p></div>
  
 </div>
             </div>
             <div type="article" n="91">
                <head>
-                  <date type="procedure" when="">21 Septembr<expan>is</expan> 1543</date>
+                  <date type="procedure" when="1543-09-21">21 Septembr<expan>is</expan> 1543</date>
                </head>
                <div xml:id="d1e6787">
-                  <head rend="margin_left">Jo. Toftes</head>
- He is noted to be a common maynteyner supporter and
+                  <head rend="margin_left"><persName type="" ref="" key="">Jo. Toftes</persName></head>
+
+               	<div>
+	<p rend="main">He is noted to be a common maynteyner supporter and
  harborer of suspect <expan>per</expan>sonnes / as it hath appered
- by divers <expan>per</expan>sonnes that hathe been accused of
+ by divers <expan>per</expan>sonnes that hathe been accused of</p>
+               	</div>
 <!--FIN 071--></div>
 </div>
 </div>
@@ -9688,7 +9810,602 @@ Unto thys Int<expan>er</expan>rogatory  : whether  I have had : or herd communy
 		</body>
    </text>
    <text xml:id="calendar_trans">
-      <body>
-		</body>
+   	<body>
+   		<div type="page_calendar">
+   			<pb n="005" facs="#fs_005"/>
+   			<div>
+   				<head>Part I.Interrogatories for Dr. London :</head>
+   			<p>Whether he commanded Serles, on Palm Sunday, to write "such articles erron[eous] as had been preached in Kent" and required him to go with him to the Council to present the articles or else sign them; and threatened Serles for refusing?</p>
+   			<p>How he found out Serles?</p>
+   			<p>Whether he penned the articles anew in Serles's presence, who said to Dr. Willoughby (who had agreed to go to the Council) that they could not be proved as Dr. London now penned them?</p>
+   			<p>Whether, "beside the book subscribed by divers prebendaries and others of Canterbury, Dr. London made another great book of many more articles, where it is and who instructed him?</p>
+   			<p>What he knew against the abp. of Canterbury and others before Palm Sunday last, when he had the articles of Serles, and of whom he had such knowledge before that day." In Cranmer's hand, p. 1. </p></div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="007" facs="#fs_007"/>
+   			<div>
+   				<head>II. A paper headed : "Serles." </head>
+   				<p>1. What number of evil preachers he knows within the diocese of Canterbury, and what they have preached amiss. </p>
+   				<p>2. Whether the Commissary in his visitations commanded that the wax candles blessed upon Candlemas day shall not be delivered to the people, and whether he heard him so command; also that holy water should not be borne and cast in men's houses. </p>
+<p>3. Whether in some churches, by the Commissary's command, all the images were pulled down and hewed with axes. </p>
+<p>4. Whether the Commissary be most conversant with abjured persons and others suspect of heresy, aiding and supporting them. </p>
+<p>5. Whether Johanna Bochier were delivered by favor of the Commissary or by the King's pardon. </p>
+<p>6. Whether Giles were a layman or a priest, and what sedition or error he preached. </p>
+<p>7. Whether, upon our Lady day the Assumption was 12 months, he came to Canterbury in a courtier's coat and a beard and there lodged 10 days, and Mr. Hardes, a justice of peace, complained of him to the Commissary but the Commissary did nothing. </p>
+<p>8. Whether a tailor in Canterbury do read and expound the Bible in his own house, to which the Commissary knowingly permits open resort. </p>
+<p>9. Whether the master of St. John's, Canterbury, refused to receive and despised the Sacrament, and yet, by the Commissary's sufferance, was buried like a true Christian man, "and also is of very many praised for a good and holy man." </p>
+<p>10. Whether Mr. Blande, in communication with Mr. Sponer, vicar of Boughton, denied auricular confession to be necessary and delivered his opinion to Mr. Sponer in writing; which writing the Commissary desired Mr. Sponer to let him see, swearing he would not keep it, but when he had got it he put it in his purse. </p>
+<p>11. Whether the Commissary resigned a benefice to Mr. Blande binding Blande and his successors, by writing under seal of the Abp. and Chapter of Canterbury, to pay to him and his assigns the greater part of the clear value for many years. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="008" facs="#fs_008"/>
+   			<div>
+   				<p>12. Where and when he took his oath to the supremacy, renouncing the Bp. of Rome. </p><p>13. In what places, when and how often he has preached against the Bp. of Rome's usurped supremacy.</p> <p>14. Where and when he took his oath for the King's succession. Pp. 2. In Cranmer's hand.</p> 
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="009" facs="#fs_009"/>
+   			<div>
+   				<head>III. Depositions against different clergymen, amp;c. : i.</head>
+   				<p>Serles.The 26th of August last past in the Chapter house. (fn. 11) There be some sins that cannot be forgiven but by fasting and prayer. (fn. 11) Good people, you have been deceived with preachers, but if you have received any poison and learned any false doctrine, and believed by ignorance, you be not to blame, neither God is discontent with you. (fn. 11) "In hell is burning of brimstone, wildfire, gunpowder, sudden heat, sudden cold, and we may be sure thereof because that David, Moses, and the prophets which taught us those things, were in the pains of hell, or in a kind of hell, which is Limbo."In margin : "At Ashforth, 12 Augusti, 1543." At Layname. In the house of Mary or Martha He found a certain man very sick, and sore diseased, whose name was Lazarus, brother to these 2 virgins. Magdalen was a fair fingered gentlewoman. (fn. 11) "Christ said to Martha, Thy busyness shall have an end, but thy sister's busyness shall last and never have end."In margin : "Religion." ii. Sandwich alias Gardiner in sermon in Christ's Church the 3d Sunday after Twelfth day. (fn. 11) "The people have not had hitherto the good wine of God's word, but a day would come that they should have good wine again. But, good people, be content; for nondum venit hora, the time is not yet come that you should have good wine."In margin : "Seditious." (fn. 11) "Of late days you have had here so many waterlaggers, which have turned your good wine into water that you could have no good doctrine taught ne preached unto you but the phantasies of their own brains." Margin : "Slanderous."</p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="010" facs="#fs_010"/>
+   			<div>
+   				<p>(fn. 11) "People may kneel before images with their books or beads, kiss their feet, sence them and offer to them, so that they direct all this honour to the Saints in heaven." Margin : "Images." (fn. 11) "As Christ was accused by 2 or 3 false knaves, so a man may be accused by 2 or 3 false knaves, and the judge as false a knave as the best, and so be condemned." Margin : "Seditious." The next Sunday after. (fn. 11) "I did prove by Ezechiel, Hieremy, St. Paul and Origen that an image was none idol." Margin : Images. (fn. 11) "You are grieved with me because I called them waterlaggers which have changed our good wine into water. Truly I could invent no fitter name for them; but even as I said then, so I say again. I beshrew their hearts for me. They are come hither and have corrupt our good wine. I would they would get them home again thither from whence they came. But they must be smoked and purged round about with fire, or else we shall never be rid of them." Margin : "Seditious." (fn. 11) "Some of you thought that some should have been hanged, but if you had deserved no more to be burned than they have to be hanged you should both do well enough." Margin : "Seditious." "Prima qure fo. sequente." iii. Shether, 23 Aprilis, in the Chapter house. (fn. 11) "Nowadays, good Christians, they teach nothing but carnal liberty, no man doth teach you the Commandments of God; no man doth preach unto you God's laws; yea, no man dare do it, or rather will not." Margin : "Slanderous." 15 Maii, at St. Stevyns. (fn. 11) "He made the people believe with a great multitude of words that they had preachers here which had preached against vocal prayer, and had called vocal prayer nothing but babbling and lip labor." Margin : "Slanderous." </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="011" facs="#fs_011"/>
+   			<div>
+   				<p>
+   					(fn. 11) Upon this text, 'You must pray without intermission,' he said 'Some fellows say that this is impossible, but I shall tell you, good Christians, how to perform this. It is a common saying in the law, That a man doth by his proctor he doth it by himself. Wherefore, when thou art in the field at thy labour or otherwise occupied, hire the Church to pray for thee (the Church he called the priests) and so shalt thou continually pray.' (fn. 11) He counselled laboring men to divide their labor into 3 parts; to give one penny to the poor, another to the priests to pray for them, and the third to keep for themselves and their households. (fn. 11) He did discourage men from praying in the mother tongue, saying 'Some of you say that men cannot pray in an unknown tongue because they understand not what they say. But I say that no man understandeth what he prayeth, as St. Paul saith, Nescit homo quomodo orandum sit, sed spiritus hominis docet quomodo orandum sit. And therefore, though you do not understand what you pray, yet pray so still.' 16 Septembris in the Chapter house. (fn. 11) "All the constitutions decrees and ordinances of our Holy Mother the Church are most godly, most holy, and therefore are to be observed of all her children, Christian people, without disputing or reasoning of any of them." Margin : "Decrees." (fn. 11) God did ingrave the whole power and wisdom of the Trinity in Lucifer. iv. Sandwich alias Gardiner at Wye in Lent was 12 months in the fair. (fn. 11) He plainly affirmed the state and condition of the souls departed. (fn. 11) "Upon Palm Sunday last past he did execute in the Cathedral Church of Canterbury and hallowed the Palm and sung high mass without declaring the ceremony." Margin : "Ceremonies." In festo Pascha. (fn. 11) He said, 'There be some that be no priests that do take upon them to minister the Sacraments.' 2o Septembris. Only love grafted Paul and Magdalene in Christ. (fn. 11) "He moved the people to take again matins, evensong, their beads and 7 psalms, which of late they had cast away by them that preached against all vocal prayer." 
+   				</p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="012" facs="#fs_012"/>
+   			<div>
+   				<p>v. The Vicar of Feversam. (fn. 11) "He did not declare to his parishioners upon Candlemas day the true use of bearing candles as that day, neither of Palm Sunday or Good Friday the true use of those days' ceremonies, in bearing of palms and creeping of (sic) the cross, neither at any time he hath declared the true use of holy bread or holy water, as he is bound to do by the King's Majesty's proclamations." Margin : "Ceremonies." "2. He commanded the wife of one Newman, a tanner in his parish, that she should not lie with her husband during the time of Lent." Margin : "Lent." "3. He commanded the crysom cloth with a bell to be hanged out upon the Dedication day, which heretofore was hanged out to put the people in remembrance of pardon that they should have that time." Margin : "Crysom cloth." "4. He moved in confession John Tacknal to use his paternoster in English no more, for he knew not how soon the world would change." Margin : "Paternoster in English." 5. To like effect he moved Deacon's wife and Lambe's wife, when they were confessed. "6. He was taken suspiciously with a woman by 4 men, so that he promised to 3 of them 20 shillings to hold their peace." Margin : "Incontinency." "7. He said that if the King were examined, he would confess that he gave no leave to eat white meat in Lent but unto sick persons." Margin : "Lent." vi. The Parson of Westbere. "He hath not declared the use of holy bread, holy water, hallowed candles, ashes, palms, and creeping the cross." Margin : "Ceremonies." He said that there were 3 heavens, one for very poor men, the second for men of a mean state and condition, the 3rd for great men. He is a common diceplayer, and a common haunter and resorter to taverns and alehouses. vii. [Sir Humphrey Cotton, chantry priest at Tenterden. [He said that there be heresies in the Bible. [He said that every Christian man being baptised and holpen by the grace of God, is in as full state of free will as Adam was before his fall. [He hath a book of prophecies. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="013" facs="#fs_013"/>
+   			<div>
+   				<p>["Memorandum, to examine the doctor of Chilham, Dundy that was an Observant friar, Mr. Sentliger, Mr. Parkehurst and other, Gardiner, a bricklayer called Burgrave, Browne of Chartam, of articles contained in a sheet of paper written with mine own hand, beginning 'The Doctor of Chilham'."] (fn. 12) viii. Sandwich before Candlemas was 12 month. (fn. 11) "He made 2 very seditious sermons in the Chapter house, calling the preachers that were lately come hither waterlaggers, and that they had taken away God's word from them, and that they should never be rid of them till they purged them with smoke and fire." Margin : "Slanderous." (fn. 11) "Upon Easter last past he did again inveigh against preachers, beating into the people's heads that some had called Our Lady a saffron bag, and that they would Our Lady to have no honor, and that some did take upon them to minister which were no priests, and that some did utterly deny absolution; and then he made such exclamations, crying out 'Heretics ! Faggots ! Fire !' as though these things had been committed here indeed. D. Thornden." (fn. 13) Margin : "Slanderous." "The second day of September last past he did again inveigh against preachers that had, as he said, preached against vocal prayer, by whose means the people had laid away their beads and Latin primers, but he counselled them to take them again." Margin : "Slanderous." ix. Milles. "In a sermon made in the Chapter house before Easter last past, did inveigh against the preachers that they did preach against vocal prayer and fasting." Margin : "Slanderous." x. The Commissary. "Complaint was made to him that the Holy Sacrament of the Altar was not renewed in the church of Buckland near Feversham by the space of 2 years, but he passed over the cause without reformation." Margin : "Ceremonies." xi. Sandwich, Milles, Shether and Serles. (fn. 11) "None of them have preached against the usurped power of the Bishop of Rome and set out the King's Majesty's supremacy according to the King's Majesty's letters, injunctions and proclamations." Margin : "The Bishop of Rome." </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="014" facs="#fs_014"/>
+   			<div>
+   				<p>xii. Mr. Parkehurst, Prebendary. He hath not made yearly the ten sermons in the country, which he is bound to do by that he is prebendary. "He hath not in his own person preached in his church at Ashford against the usurpation of the Bishop of Rome, and set out the King's Majesty's supremacy according to his Majesty's letters, injunctions and proclamations; neither hath he declared to his parish the difference between ceremonies and works commanded by God; neither hath he showed the right use of the said ceremonies and the superstitions used heretofore by them, according to the said letters, injunctions and proclamations." Margin : "The Bishop of Rome." "He hath not declared in his parish that the Evens of such Saints as be abrogated to be no fasting days." Margin : "Proclamations." xiii. Henry Laurence of Rayname. "He commanded the clerk to bring no holy water to his house, and said it was good to fray the spretes of the buttry." Margin : "Ceremonies." xiv. Bartilmewe the surgeon. "He said to William Burges, general apparitor, 'Thou art he that would have pulled down our St. George, but your master lyeth by the heel, and we have showed the taking down thereof to the King's Council and were bid set it up again.'" Margin : "Images." xv. Blande, the 4 of February last at Boughton. Fasting profiteth nothing one time more than another. "He railed of the light before the Sacrament and the cloth that lay before the Altar, of the ornaments of the Church. He defaced a chapel at Ospringe, pulled down the images and sold all the stuff." In margin are the following names (of course witnesses) : "Tho. Hawkins, Tho. Porrich, Raynolde Smith, Sir John Legate, and the vicar of Boughton." xvi. Thomas Gymlot alias Barbour. The parish of Buckland complaineth that he, being a layman, hath the vicarage there given unto him under the King's broad seal, and he causeth not the cure to be served as of right appertaineth, but they be fain of their own charges to find a curate.</p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="015" facs="#fs_015"/>
+   			<div>
+   				<p>xvii. The Vicar of Chillam. "The fame is that he keepeth another man's wife :" Margin : "Incontinency." He hath not declared to his parish that the Evens of abrogate holydays be no fasting days, as the King's commandment is, neither he hath declared the good use of the ceremonies, bearing of candles and palms, creeping of the cross on Good Friday, giving of ashes on Ash Wednesday; neither he hath declared the ceremony of holy bread and holy water, according to the King's Grace's proclamation. xviii. Mr. Parkehurst, Predendary. "Upon Palm Sunday was 12 months he did execute in the Cathedral Church and hallowed the palms and sung high mass, and did not declare the use of that ceremony according to the King's Grace's proclamation." Margin : "Ceremonies." (fn. 11) He hath 2 benefices with cure, Ashforth and Limmynge, and hath no dispensation. The institutions will declare this matter. He may dispend in benefices and other small promotion 100l. by year and above, and yet he doth find no scholar at the universities according to the King's Majesty's injunctions. xix. Sir Laurence, Curate of Chalcocke. "He will not christen childer until he have taken the midwife aside, and there doth make her to swear upon a book to answer to certain questions; neither he nor the midwife will show the questions but to the ordinary." In margin : "Md., to examine him upon a bill presented by Andrew Rayne, and to examine these witnesses :Henry Hawker, William Gibbes, Tho. Worciter, William Horden, Roger Hal, Henry Reg and the mydwife." xx. The Vicar of Tenterden. "He hath not put out of the manual which he daily useth the Bishop of Rome's name, his usurped autoritie and pardon expressed in the rubric and last absolution of extreme unction." Margin : "The Bishop of Rome." xxi. The Parson of Riple. (fn. 11) "He said openly in his parish 'I am commanded to show you the paternoster in English; you may do as you will in learning of it, but it is against mine opinion. For I liken the paternoster in English to the hard shell of a nut and the paternoster in Latin to the sweet kernel." Margin : "Paternoster in English." "He did not declare the use of hallowed palms, ashes, candles, holy bread and holy water." Margin : "Ceremonies." </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="016" facs="#fs_016"/>
+   			<div>
+   				<p>xxii. The Vicar of Betrisden. "He did send a letter to a woman of his parish that sent to him for counsel for a disease, that she should take holy water and say certain words, with other sorcery." Margin : "Holy water." xxiii. [John Thatcher the younger. ["He said that the Bible was made by the Devil."] (fn. 14) xxiv. The Vicar of St. Paul's in Canterbury. "He did dissuade one Cruse, of his parish, from eating of white meat in Lent last past, and rebuked him therefor." Margin : "Lent." "He hath not declared the use of good ceremonies used of Ash Wednesday, Palm Sunday, Good Friday, Cand[le]mas day, &amp;c." Margin : "Ceremonies." (fn. 11) "He said 'This is now the 3d time that England hath been out of the faith.'" (fn. 15) xxv. Estwell. "There is in an image of Our Lady at Estwell yet standing, whereunto was continual oblation in times past of money; which image had also a coat fixed with pence." Margin : "Images." xxvi. William Quilter of Staple, gentleman. (fn. 11) Whatsoever was done in the name of God was well done. "The same William, being churchwarden and head of the parish, hath neglected the King's Majesty's injunctions given the 28th (fn. 16) year of his reign and is not yet fulfilled, whereas every parish is commanded to prepare a chest with two locks and two keys, of the common goods of the church, for the same (qu. safe?) keeping of a book or register of the names of all them that be married, christened and buried." Margin : "Injunctions." xxvii. The Parson of Milton besides Canterbury. (fn. 11) "He had in his church of Milton an image of St. Margaret, to which was a common pilgrimage, and caused it to be taken down. And upon St. Margaret's day last past Mr. John Cros, sometime cellarer of Christchurch, came to the same church and did set the same image again with a garland of flowers on the head of it, and did strowe the church and said mass there." Margin : "Images." In another hand : "His chaplain was a Observand and he a mungke." </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="017" facs="#fs_017"/>
+   			<div>
+   				<p>IV. Deposition of John Parkehurst, of Leneham in Kent, that, at London, about Whitsuntide last, he showed a roll of articles to Sir Thomas Moile and Mr. Henley against the parson of Witcheling and others; "which afterward being declared unto Sir John Bacar and by him advised to be delivered unto the commissioners when they should come into Kent, was nevertheless delivered unto my lord of Norfolk out of hand. The articles, for the most part were matter commenced before the last general pardon. Item, he saith that, about the Assumption (fn. 17) of Our Lady last past, there met at his house to make merry Mr. Richard Parkehurste his uncle, Dr. Leffe, master of Maidstone College, Dr. Mugg, parson of Harisam, Mr. Serls, the vicar of Charing, Mr. George Loys of Winchilsea, and his brother, the parson of Boughton Malarde, John Pers of Charing, and divers mo whose names he cannot remember, in which assembly was nothing entreated then concerning these matters in Kent, but of mirth and good cheer as he saith." </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="020" facs="#fs_020"/>
+   			<div>
+   				<p>P. 1. The following is in Archbishop Parker's hand on the back of the sheet : "Memorandum that King Henry, being divers times by Bishop Gardiner informed against Bishop Cranmer, and the said Gardiner having his instructions of one Dr. London, a stout and filthy prebendary of Windsor, who, there convicted, did wear a paper openly and rode through the town with his face towards the horse's tail, and also had information of Mr. Moyle, Mr. Baker and of some others promoted by the said Cranmer, whose tales he uttered to the King, who, perceiving the malice, trusted the said Cranmer with th'examination of these matters; which he did of divers persons, as by this doth appear." Underneath this is written in another hand : Vide pag. 418; referring to a passage in the brief memoir of Cranmer at the end of the Volume. (fn. 18) </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="021" facs="#fs_021"/>
+   			<div>
+   				<p>V. Interrogatories. "First, what communication by word or writing you had with Mr. Roper, Balthasar the Surgeon, Heywode, Mr. Moore, Jermen Gardiner, Mr. Bekensale, or with either of them, and to what effect such communication hath been." (fn. 19) 1. Whether you came to Serls, and said to him "Take heed to thyself or else those art like to be undone." 2. Whether you procured of Anthony Hussey the copies of Sandwich's and Serls' articles and caused them to be delivered to the said Sandwich and Serls before they were called to examination, or sent either of them word that they ought to have them. (fn. 20) 3. Whether you said that the articles of Serls and Shether are not sufficiently proved, for which they were committed and continue in prison. 4. What communication you have had with Dr. London touching me or the new opinions and enormities in Kent. 5. Whether you said that Dr. London was at the Court for promotion at the King's hand, and what knowledge you had thereof and by whom (fn. 21) 6. Whether you said that if every man were so handled as Dr. London was, there would be many papers worn,* and to what intent you said so. 7. Whether you know or heard that Dr. London, [or] that Dr. Barbour and Mr. Talbote, which w[ere] of my lord's counsel and chamber, can tell a shre[wd] tale if they were examined, for it was not for n[ought] that they were put out of service; and of whom [you heard] the same. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="022" facs="#fs_022"/>
+   			<div>
+   				<p>8. Whether you have told anyone "My lord's Grace said in his privy chamber that he could defend Ridley's and Scorie's articles if they had an indifferent judge; but he would have his judge out of Germany." 9. Whether in talking of my lord's Grace you said "An solus ipse potest clum ruens sustinere" and what you meant by it. 10. What communication you have had, at Paul's in London or elsewhere, with the Chancellor of London, Dr. Cole or Dr. Clement, and my lord of Winchester's chaplain, Mr. Medowes, touching my Lord's Grace, Dr. London, these new opinions or enormities in Kent. 11. What communication you have had with Mr. Forde, clerk of the Privy Seal, and to what effect. 12. What communication you have had touching these matters in Kent, since the beginning of this examination, with Mr. Smyth of Canterbury, Mr. Talbote vicar of Westwell, Mr. Collens, sometime commissary here, or with Anthony Hussey touching Dr. London or the matters in Kent. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="023" facs="#fs_023"/>
+   			<div><p>13. What communication you have had with any persons touching new opinions, these enormities in Kent, my lord's Grace, his household or any of his servants or any of the preachers, or what letters you have written or received about them. 14. Whether you were ever moved to be a doer or a witness in the premises, and by whom and when. 15. Whether you have heard say that you have been suspect, both in the Court and in the country, to be one of the conspiracy against my lord, and by whom. 16. What communication you have had openly of the princes of Germany, "and whether amongst other things you had this, 'That they were robbers and thieves,' saying 'You may see now whereunto the Gospel is come,' and what moved you so to say." 17. Whether you said "The congregation of Hadley is a worshipful congregation. If one of them were hanged against another it were not a halfpenny matter," and what moved you so to say. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="024" facs="#fs_024"/>
+   			<div><p>18. What communication you have had at London or elsewhere of Dr. Legh's being with me, and with whom you have so communed. 19. Whether you know who wrote the bill of the clergy put up against the Commissary in executing ecclesiastical jurisdiction," and who was of counsel and making thereof." Pp. 4. Some articles marked in the margin. </p></div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="025" facs="#fs_025"/>
+   			<div>
+   				<p>ii. A second set of Interrogatories. First what communication you have had by word or writing with Mr. Roper, Balthasar the surgeon, Heywood, Mr. Moore, Jermeyn Gardyner or Mr. Bekensall, and to what effect. 2. What, at your last being here, with Milles the prebendary. 3. Whether you said to Milles "Here are many matters complained on, and they are greatly delayed and goeth not forward, that I am weary of altogether." 4. Who should be the cause of such delay that no more good was done, as you thought. 5. What communication you had with Killygrewe at Bekisborne; 6. What with the Chancellor of Rochester. 7. Whether you said to him "I would all ambitious knaves were hanged. I would all maintainers of new opinions were hanged. I would all knaves that breaketh orders were hanged. I would all knaves that be against the Commonwealth were hanged." Whom you meant by each of these kinds of knaves. 8. Whether you said "What should we do with my lord's Grace, seeing that Serls and Shether be in ward; for we have nothing to do there." And what moved you so to say. 9. Whether you said "Thinks my lord's Grace that is a way to a quietness in Kent to have Dr. Legh there?" and what you meant thereby. 10. Whether you have said to divers persons that you were suspect in these matters, and wherein and by whom you thought yourself suspect. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="026" facs="#fs_026"/>
+   			<div><p>11. "Whether you said that Dr. Tailor was a man of evil judgment and noselid and brought up in the same;" what moved you so to say, wherein his judgment is evil, and by whom he was so "noseled and brought up." 12. Whether you wrote a letter to Hungarforde of Sandwich, and to what effect. 13. What communication you had with Thomas Moile about the last sessions, and whether you gave or sent him any writing, and to what effect. 14. Whether you would have had Serls and Shether to come to you secretly with their articles, and helped them to the best of your power; and to whom you said these words. 15. What writing you have received of any man, and whom, &amp;c., touching these matters in Kent. 16. What communication you had at London, and with whom, touching Legh's being with me. 16. Who made the bill put up in the clergy's name against the Commissary for exercising jurisdiction ecclesiastic. What communication you have had touching these matters in Kent with the Chancellor of London, Dr. Cole, or Dr. Clement the physician. Pp. 2. In the same hand as the preceding. Some articles marked in the margin. </p></div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="029" facs="#fs_029"/>
+   			<div><p>VI. Depositions against the following persons : i. The Parson of Pluckley :Steph. Giles said that he blessed himself daily and nightly saying In nomine Patris, &c.; "and then he said, in the honor of God and Our Lady and all the Company of Heaven and for all Christian souls that God would have prayed for, a Paternoster, an Ave and a Creed. To whom the parson of Pluckley said that if he knew it of truth that the said Stevyn used the same form of prayer, he would not accompany him, nor once drink with him." ii. (fn. 11) "Sir Humfray Chirden parson of St. Elphins ye first Sunday in Lent last past :""If Judas had gone to God and confessed his fault, saying Peccavi as he went in to the priests, he had not been damned." iii. (fn. 11) Vincent Ingeam :(1) He commanded, on Easter Monday 33 Hen. VIII., that no man should read or hear the Bible read on pain of imprisonment, and cast two in prison, the one for speaking against him therein, the other for showing him the King's injunctions concerning the same. Witness, the whole parish of St. Peter's.In margin : "Injunctions." (2) He repugned against the doing of the Commissary in taking down the image of St. John by the King's commandment. Witnesses, Mr. John Master, Thomas Pynnocke, Peter Holam, Daniel Cranmer, "and al Christmas men" (sic). Margin : "Images." iv. (fn. 11) "Sir Thomas Curat of Sholden [and] Thomas Sawier" have set up again 4 images taken down by the King's commandment for abuses by pilgrimages and offerings, viz., the images of St. Nicholas, St. Stephen, St. Laurence, and Our Lady. Witnesses, Thos. Southowsand, Wm. Kenerdale, and Wm. Norres. Margin : "Images." v. (fn. 11) Thomas Bleane of North Mongeam, when the images should have been defaced, commanded the priest and churchwardens to let them alone, "saying that such ways should continue but a while, and that they should see shortly. And an image with three crowns standeth near unto his own seat till this day. [Witnesses,] Wm. Norres and Wm. Kenerdale. Margin : "Images."</p></div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="030" facs="#fs_030"/>
+   			<div>
+   				<p>vi. (fn. 11) Edw. Dyngleden of Rolwynden (1) has forsaken his own parish church at Easter for two years together and gone to Walsingham, refusing always to show the vicar a certificate that he had received the Sacrament at the accustomed times. Margin : "Pilgrimages." (2.) He obstinately refuses to learn his Paternoster, Ave, Creed and Ten Commandments in English. Witness, the curate of Rolvenden, and he can declare others. vii. (fn. 11) Sir Edw. Sponer, vicar of Boughton, (1) has not declared to his parishioners the right use of ceremonies, nor shown the difference between them and works commanded by God, as required by the King's proclamations. Margin : "Ceremonies." (2.) Has not preached against the Bp. of Rome and set forth the Supremacy. (3.) Has not preached his quarter sermons, either at Boughton or at his benefice in the Marsh; and never declared the Evens of Saints whose days be abrogated to be no fasting days. Witness, Mr. Hawkyns, with other of both his parishes. viii. "Archidiaconus Cantuariensis, (fn. 22) " the morrow of Ascension was three years, took out of thech. of St. Andrew's in Canterbury, 3 lamp tapers burning before the Sacrament, and a coat from a rood, "and did violently break the arms and legs of the rood." ix. Sir William Kempe, vicar of Northgate, (1) has not read the Bible since Pentecost as commanded by the Ordinary; (2) does not declare to his parishioners the right use of holy water, holy bread, bearing of candles upon Candlemas day, giving of ashes, bearing of palms, "creeping of the Cross," "for lack whereof the most part of the parish be as ignorant in such things as ever they were, and many of them do abuse holy water; insomuch that against tempests of thunder and lightning many run </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="031" facs="#fs_031"/>
+   			<div><p>to the church for holy water to cast about their houses to drive away ill spirits and devils, notwithstanding the King's Majesty's proclamations in the same." 3. He has not read to them the King's injunctions "by reason whereof the parish be blind and ignorant in them. Witness, the parish." x. Bartilmew Joye confessed to his curate in general "I am a sinner"; and, when the vicar asked him wherein, said he had confessed himself to the Lord already and would make no other confession. Wm. Kempe, vicar. xi. John Toftes, Chr. Levenysh and Bartylmewe Joye, 17 Nov., ao 30. They pulled down all the pictures in the ch. of Northgate in Canterbury except the rood, Mary and John, the 12 Apostles, the pictures of Our Lady and St. John Baptist. (2.) On 2 Dec. 34 H. VIII., John Toftes pulled down the picture of Our Lady "and had her and the tabernacle home to his house, and there did hew her all in pieces." (3.) On 15 July ult. preterito, "John Toftes openly and with loud voice read the Bible in English in the church to his wife, Sterkey's wife, George Toftes' wife, to the midwife of the same parish, and to as many other as then were present." xii. Johanna Meryweder of St. Mildred's parish, "for displeasure that she bare to a young maid named Elizabeth Celsay and her mother, made a fire upon the dung of the said Elizabeth and took a holy candle, and dropped upon the said dung 7 times; and she told her neighbours that the said enchantment would make the cule of the said maid to divide into two parts. Presented by the old schoolmaster." In margin : "Superstition"; and in another hand "She did it not, but said she would do it." xiii. "Rauffe, the bellringer of Christchurch, at the burial of Dr. Champion, after the priest had censed [the] grave, and a boy was bearing away the censers and the coals, called again the boy and took the censers and poured the hot coals upon him in the grave, to the great slander of the said Dr. Champion, as though he had been an heretic worthy burning. Witness, all the quere that were present." (2.) "He said the King was content that all images should be honored as they were wont to be. Filpot." </p></div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="032" facs="#fs_032"/>
+   			<div>
+   				<p>xiv. Mr. Shether, when he made his recantation or declaration added, "Good Christians, I take God to record that I never preached anything to you in my life but the truth.Mr. Nevil, Mr. Scory, Mr. Toftes, Peter Kelsame, George Toftes." (2.) He preached that, by the law of God, no man ought to excommunicate, but only a priest. xv. Coxsom, petty canon of Christchurch, made his testament by advice of Mr. Parkhurst, Mr. Sandwich and Mr. Milles, and bequeathed "to every vicar of Christchurch 20d. that had a pair of beads and would say Our Lady's psalter for his soul; which is thought to be against the King's book last set forth in the article of prayer for the souls departed. And this was executed according to the will." xvi. The parson of Alyngton (fn. 23) "never preached in his church of Alyngton* nor Smeth against the usurped power of the Bishop of Rome, nor set forth the King's supremacy." (2.) He has been a great setter forth in his parish of the Maid of Kent, pilgrimages, feigned relics and other superstitions, and yet never recanted or reproved the same. (3.) He has not declared to his parishioners "that the Eves of such holy days as be abrogate be no fasting days." (4.) On the Sundays, Candlemas day, Ash Wednesday, Palm Sunday, and Good Friday he has not declared the true use of the ceremonies used those days according to the King's proclamations.Jas. Blechynden and Wm. Benefelde, gentlemen, Mr. Everynge, John Knyght, Jas. Toft with other. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="033" facs="#fs_033"/>
+   			<div>
+   				<p>xvii. Orphewe, curate of Lyd, has preached many times, but never against the Bp. of Rome and set forth the King's supremacy, "or at the least every quarter of a year, according to the King's proclamations and letters." (2.) He has been a great setter forth of pilgrimages, feigned relics and other superstitions, and never recanted. (3.) He has not declared in going of procession that better it were to omit the litany than the other suffrages following, according to the King's injunctions. (4.) On the Sundays, Candlemas day, Ash Wednesday, Palm Sunday and Good Friday, he has not declared the true use of holy bread, holy water and other ceremonies for those days, according to the proclamations.Thos. Strogle, Eve Bat, Thos. Atye, Mr. Barowe town clerk, Mr. Moore and others of Lyd. xviii. The curate of Strodmersh dissuaded men from eating white meat last Lent and rebuked them for doing so. Witness, Godfray, with others of the parish. (2.) Upon Candlemas day, Ash Wednesday, Palm Sunday and Good Friday he did not declare the true use of the ceremonies for those days. (3.) About All Hallowtide was twelve month he preached in St. Dunstan's beside Canterbury that men should love and fear God, but not trust Him too much. Wm. Laslynge, Mich. Wryght, Wm. Reve, John Bodwarde, Chr. Henry and others of the parish. xix. Turnour. When at Chartam "he did cast no holy water, neither before the Sacrament nor upon any altar in the church, nor also before the crucifix in the rood loft, according to the laudable ceremonies, &amp;c." (2.) "He christened 3 children upon one day and did not anoint them with holy oil, neither upon the back nor belly." </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="034" facs="#fs_034"/>
+   			<div><p>(3.) "He neither incensed the crucifix in the rood loft nor any altar in the church, except the high altar, nor distributed any holy candle among his parochianes as hath been accustomed. Will'm Saunder, John Browne, Edmunde Purdue, Will'm Sacre, John Browne." xx. Sir James Newname and one Laurence, brother to Mr. Mores, "took down an image of Our Lady, to the which there was no offering (except candles at the purification of women) nor noted to be done there any miracles by the said image. Will'm Saunder cum aliis qui supra." xxi. The curate of Chartam that now is "casteth no holy water upon the crucifix in the rood loft, nor upon any altar in the church except the high altar. Saunder cum aliis qui supra." xxii. Scory. "He said that such superstitions were used in the church as making of crosses upon Palm Sunday, setting up of them and blessing them with the holy candle, ringing of bells in the thunder. For, think you, said he, that the Devil will be afraid or flee away cross making, hurling of holy water, ringing of bells and such other ceremonies when he was not afraid to take Christ himself and cast him on his back and set him on a pinacle?These things that be good of themselves may not utterly be put away, although they be abused; for then the holy Sacrament of the altar should be set aside, which is daily bought and sold." Rich. Parkhurst present; Bradkirke, priest, Mr. Shether, John Marden and Robert Colman, witnesses. xxiii. "Serles, Dominica 8 post Trinit.If the preacher preach error and erroneous doctrine, the simple man, though he receive it and believe it, it doth not infect or corrupt him. And this he repeated twice." (fn. 24) (2.) "He said also that Moises sent letters from Hell to teach the state thereof, and how men should live, and another likewise out of heaven." (3.) "Item, they say, said he, that only faith justifieth and that it maketh no matter how we do live. Christ died for us and by his blood hath washed all our sins away. Therefore what needeth us to fast or pray?" </p></div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="035" facs="#fs_035"/>
+   			<div><p>xxiv. Sandwiche. "Do. in 70 (Septuagesima Sunday) Anno Domini 1542." "Whereas I, good Christians, have ever preached unto you truly the word of God, as I report me to the conscience of you all, yet some that have evil ears did evil report of me. But if their ears were cut off as Malchus' was and set up where every man might wonder at them, I think therein a man should not wish much against charity." "Do. 4a post pascha Ao. D'ni. 1543.Some, if they see other given to goodness to follow the decrees of the Holy Church, to kneel before the Blessed Sacrament, they will counsel them from the same and say Deus in manufactis templis non habitat. They will have none of the holy doctors. They will not have St. Augustine, St. Ambrose, St. Hierome, St. Gregory, Basyll, Gregory Nazianzene, &amp;c." "Since the time that we have been given to newfangells the spirit of newfangells hath brought in the spirit of error. But what remedy then, said he, to obtain the spirit of truth again? Of that, said he, I spake last time that I preached, and showed you that we must return where we went out. We must return to our dog, to our conscience again, and that will certify us where is the truth. "Do. 3a, Ao Do. 1533 (sic).Populus Judaicus pronus erat ad idolatriam, unde a Domino, inquit, prohibiti sunt facere ymagines; at nunc, cessante causa, viz. studio idolatri, cessat effectus." </p></div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="036" facs="#fs_036"/>
+   			<div><p>xxv. Shether. That there was one straight way to the truth, which all men have gone a long time, saving a few now of late, who have wandered in divers pathways to seek a nearer way. These were like one who being clean lost continually asked his way and was told "You be clean out of the way and must turn back again to where you left." Nothing at all admonishing the people of the way which men had lost by defending and retaining the usurpation of Rome; nor of no mention that the King's majesty hath reformed the abuses of superstitious religion"; but bidding them revert to their superstition and blindness.D. Nico. Rydley, D. Lancelot Ridley, Mr. Drumme, Mr. Scory, Mr. Broke, Mr. Nevil, Toftes, Kesham. xxvi. Browne of Charteham promised a lease to Jas. Terry and after the indenture was drawn discharged him because the King's title of Supremacy was left out.Sir Ric. Tur[ner], Jas. Terry and Badcocke. (2.) At Candlemas was 12 month he, for him and his wife alone, offered candles to the rood against the King's injunctions. Witness, the whole parish. (3.) He will not pay his tithes as in times past (Turner). He repines at the collection for the aid against the Turks. Witnesses, Mr. Evias and Mr. Hedde. </p></div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="037" facs="#fs_037"/>
+   			<div><p>xxvii. The Vicar of Chilham named Dr. Willoughby. Why he, having special commandment by the King's letters from Hull, (fn. 25) "doth yet keep in his church a certain shrine gilted named St. Austin's shrine; which shrine was conveyed from St. Austin's in Canterbury unto the parish church of Chilham at the suppression of the monastery of St. Austin's." (2.) "A rood there, which had shoes of silver, being a monument of pilgrimage or offering, standeth yet still, being only spoiled of the monument. Mr. Commissary can tell of it." (3.) "Item, he said that images had power of God to help sick people vowing unto them, the communication then being of Our Lady of Cutupstrete between the said vicar and one Dawson of Chartham, miller, being present Mr. Petite, the chantry priest of Chiham (sic) and the parish priest of Chilham." (4.) "Md. of his incontinency, to examine Stryngar and his wife and the curate of Molishe." (5.) "Md. that Potter's wife was banished out of Feversham for her suspect living with Dr. Willoughby, and also was compelled to forsake Chilham for the same about 2 or 3 years past, and yet she remaineth in the company of the said Doctor." (6.) "Wherefore he reported in Canterbury and Chilham, about Whitsuntide last past, that 2 or 3 of my lord of Canterbury's servants would have bett him and how they knew that they were my lord of Canterbury's servants."Friderick's widow of St. Elphies, Leonard Stryngar. (7.) "Whether he did not imagine that they were his servants, to bring him and his servants into slander." </p></div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="038" facs="#fs_038"/>
+   			<div><p>xxviii. Burgrave, a bricklayer. To examine him of these words : "That my lord of Canterbury preached like a worshipful prelate that prayed 7 years before the Bishop of Rome fell that the said Bishop might be expelled this realm."Margin : "Mr. Evias of Charteham, Maistres Dartenall." (2.) Whether he said that 20 in Canterbury would say as much as he had said, adding that it became my lord of Canterbury to preach as Mr. Hadley did, and other mo of the old fashion." (3 (fn. 26).) "To examine Sir Anthony Browne's chaplain what words he spake of me at Wickam in the presence of one Gybbes of Westbere. Examine first the said Gibbes, young Toftes and Anthony May of Fordich." (4 (fn. 26).) "To examine Kempe what treason he knoweth by Toftes. Starkey." (5 (fn. 26).) "Item, Mr. Crosse for keeping of Advent fast." (6 (fn. 26).) "Item, to examine Sir Thomas Bynge, parson of Milton, by whose means the image of St. Margaret, taken down by the virtue of the King's letters sent from Hull, was set up again, and how many of Chartam were of counsel thereof." (7 (fn. 26).) "Md., to examine the complaint of Bridge and Barton." Pp. 10. </p></div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="039" facs="#fs_039"/>
+   			<div><p>VII. Further depositions. Against Serles for a sermon made in the chapterhouse of Christch in Aug. 1543 on the text Ex fructibus &amp;c. and other sermons elsewhere. He warned his hearers against preachers who said no matins, mass nor evensong once in a quarter and never confessed nor "occupied" porteous or mass-book, or used vocal prayer.(Witness D. Thornden.) At Leneham on the feast of Assumption of Our Lady last he said, as the moon was full at 14 days, even so Mary was conceived fully with Christ when she was 14 years old; also, that if one had looked in Mary when she was full conceived with Christ he should have perceived him in his mother's womb with a bush of thorns on his back; that Mary bore Christ poorly for she had no fire, but begged a coal of one and a stick of another to warm her child; that she nourished her son with milk, not material milk but milk that came from heaven; for no woman can nourish her child with material milk but she that is conceived by knowledge of man; </p></div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb facs="#fs_040" n="040"/>
+   			<div>
+   				<p>that all the faith of the world remained in Mary only for 3 days and 3 nights
+   					from the death of Christ till his Resurrection, and her sorrows were more
+   					painful than Christ's but for death only; that when Christ ascended into
+   					Heaven many ascended with him, to bear witness of it. (Witnesses, Sir Rauff
+   					Post, clk., Robert Burges, John Colier, John Furner, Jas. Perry.) On 12 Aug.
+   					he preached in the parish ch. of Ashford that prayer was not acceptable to
+   					God but in the church only, alleging the text Domus mea domus orationis
+   					rocabitur; he also discouraged men from reading the Bible, saying "You
+   					fellows of the new trickery that go up and down with your Testaments in your
+   					hands, I pray you what profit take you by them?" (fn. 27) He also said, as
+   					Adam was expelled from Paradise for meddling with a tree of knowledge. "even
+   					so we for meddling with the Scripture of Christ."</p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="041" facs="#fs_041"/>
+   			<div><p>He also preached that there were some who said "that part of the Ave Maria was made by a strumpet." In one sermon he preached "that Christ in the gospel confounded Mary Magdalen with 2 parables, likening her to an alestake and to a poor woman whom an Emperor had married and in his presence did lie with a leporous lazar man." He preached in Kennington ch. on Good Friday 1542 "that as a man was creeping the cross upon Good Friday the image loosed itself off the cross and met the man before he came at the cross and kissed him." "He preached at the burial of Mr. Boys that by the receiving of the Sacraments and penance all a man's deadly sins were forgiven clearly, but the venial sins remained; and for them they that died should be punished except they were relieved by masses and diriges after their death." "He preacheth no sermon but one part of it is an invective against the other preachers of Christ's Church." (fn. 28) </p></div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="042" facs="#fs_042"/>
+   			<div><p>20 Sept. 1543.Scorye. He preached at St. Elphie's on Ascension Day 1541 that there is none in Heaven but Christ only. (Note by Cranmer : "Bradkirke priest, Mr. Shether, John Marden, Rob. Colman; these four be witness against all the articles of Ridley and Scory in the first detection made to me 2 years past.") "He preached in August last in the Chapter house of Christ church that no man may pray in anywise in Latin or other tongue, except he understand what he prayeth; adding that priests and clerks do offend, taking any money or reward for saying Dirige and mass." (Note by Cranmer : Dr. Thornden.) He says that some preachers brought in their sermons Gesta Romanorum, persuading the people that it was the Gospel or the Bible. (Note by Cranmer. Dr. Thornden.) He preached the 4th Sunday in Lent 1541 in Christchurch, Canterbury, that only faith justifieth, and he that doth deny that only faith doth justify would deny, if he durst be so bold, that Christ doth justify. (Note by Cranmer : Gardiner, Hunt, Cockes of Christchurch.) He preached at Christchurch "that the supper of the Lord which is Sacrificium et hostia is not hostia pro peccatis but hostia laudis."</p></div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="043" facs="#fs_043"/>
+   			<div><p>"He preached at Faversham in festo Dedicationis ecclesie Anno 1542 that the dedications of material churches was instituted for the Bishops' profits, and that he could not see by Scripture that they might use any such fashions for that purpose; for they use conjurations and then they must conjure the Devil out of the ground, or out of the lime and stone; and if so, then it were as well necessary for every man's house to be consecrate or dedicate. Item, admit, quod he, that the dedication of the same were lawful, yet the Bishops should always preach, for that is their office, and other men might and may consecrate them as well as they. Item, he said This sumptuous adorning of churches is against the old fashion of the primitive Church. They had no such copes or chalices nor other jewels, nor gildings, nor paintings of images as we now have, and therefore if I were curate I would sell all such things, or lay them to pledge to help the poor." (Note by Cranmer : John Seth, Rich. Dryland, Lawrence Manby, John Hampton, Nich. Burdwast, Joseph Beverslay, T. Transham, John Pellayne, Clement Norton, Tho. Dove, Tho. Okinfelde, Raynold Becke, Will'm a Moore, Ro. Fynes, Rich. Sticknay.) ["Item, at Christmas last there was a general procession by the King's Majesty. Mr. Scory preached these words : Every country hath a custom to choose a patron, as England hath chosen St. George, Scotland St. Andrew </p></div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb facs="#fs_044" n="044"/>
+   			<div>
+   				<p> thinking rather by intercession of Saints to obtain the victory of their
+   					enemies. But, good people, quod he, for as much as Saints be circumscript,
+   					it is not possible for that Saint that is in the North to hear the prayer
+   					that is made in the South, nor that Saint that is in the South to hear the
+   					prayer that is made in the North."] (fn. 29)</p>
+   				<p>Most of the above sayings of Scory are noted by Cranmer in the margin as
+   					"Error," "slanderous" or "seditious."</p>
+   			</div>
+   			<div>
+   				<head>20 Sept. 1543.Shether.</head>
+   				<p>He preached at Sandwich, 23 June 1542 that Baptism takes away only original
+   					sin (Cr. "Heresy"); and on the 29 July 34 Hen. VIII. that every man since
+   					the Passion of Christ has as much free will as Adam had in Paradise (Cr.
+   					"Error"); also that the new preachers with the liberty of the Gospel have
+   					caused our living to be worse than the Turks; that Zachary and Elizabeth his
+   					wife kept all the commandments, and that it was a light thing for every man
+   					to keep them if he would; that if a man sinned after baptism he must
+   					purchase remission by penance like Mary Magdalen; also of a king that had a
+   					leprosy and had a vision to go to Jordan to wash and be made whole; but in
+   					going he thought the well waters of his own country would be as good and
+   					turned back and washed in them, but, not being cured, went to Jordan and so
+   					was made whole. He compared a man's conscience to a dog, and said "Beware of
+   					these false preachers, which preach to you new fangells. Will you know how
+   					to discern a true preacher from a false? You have a dog, which is your
+   					conscience. Whensoever you shall come to any sermon ask your dog what he
+   					saith unto it. If he say it be good, then follow it; but if your dog bark
+   					against it and say that it is naught,</p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="046" facs="#fs_046"/>
+   			<div>
+   				<p>24 Sept. 1543.Thomas Carden vicar of Lynne said in Selling church two or three years ago that he supposed St. Katharine was rather a devil in Hell than a saint in Heaven; that it was wrong for people to say they should receive their Maker at Easter, but they should say We shall receive our housel. In his own church he preached that the water of the font is no better than other water. (Ws., Sir Rob. Browne, vicar of Selling, Ric. Poole and Th. DilnotCr. in a separate note makes the first "dom. Rich'us Browne.") </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="047" facs="#fs_047"/>
+   			<div>
+   				<p>(NOTE FROM ORIGINAL TRANSCRIPTION:Pp. 47. Names of witnesses have been omitted for brevity in the latter part of these depositions.)22 Sept. 1543.Mr. Ridley, prebendary, preached at St. Stephen's in Rogation week 32 H. VIII. that "auricular confession was but a mere positive law, and ordained as a godly mean for the sinner to come to the priest for counsel; but he could not find it in Scripture." (Ws., Parkehurst, Hunt, the vicar of St. Paul's); "that there was no meeter term to be given to the ceremonies of the Church than to call them beggarly ceremonies." (Ws., Parkehurst, Hunt, Gardiner.) The Te Deum has been commonly sung in English at Herne where he is vicar. (Ws., Mr. Seth, Wm. Lee, Steph. Sayer and others of the parish.) 24 Sept. 1543.Joan Frenche denied the Sacrament of the Altar, saying it was but a figure or memory of Christ's Passion and has spoken against the ceremonies of the Church. Henry Tillet is suspected to be of evil opinions, has spoken against the ceremonies of the Church and has read the Bible contrary to the King's injunctions. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="048" facs="#fs_048"/>
+   			<div>
+   				<p>Nich. Huget, Ric. Pemyll, Geoff. Bayle and Rob. Tofte are vehemently suspected of evil opinions. 26 Sept. 1543.Drumme preached in Christchurch against praying in an unknown tongue, and said the psalmody in the Church, if not understood, was taking God's name in vain; so those who do not know Latin should pray in the mother tongue </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="049" facs="#fs_049"/>
+   			<div><p>that "the material Church" was a thing to satisfy the affection of man, not that God required it, like a toy which a father gives to his child, not to please himself. [He preached in Christchurch on Whitsunday last that images were very dangerously permitted in the Church, and that they who went about to take away the reading of the Bible went about to pluck Christ's words and the Holy Ghost's from the people; </p></div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="050" facs="#fs050"/>
+   			<div>
+   				<p>that the Holy Ghost was neither in this place nor in that, as Christ was never in Italy nor spoke of Italy; "but if thou wilt have the Holy Ghost, said he, seek him in His word and in thy heart."] (fn. 30) 26 Sept.Lancaster, parson of Pluckley, uses no holy water in the church porch and great part of his parish do not receive holy bread. In going on procession he does not rehearse Sancta Maria or any other Saints' names. When told that Stephen Giles in his presence and that of Henry Giles and others said that he blessed himself daily and nightly In nomine Patris, &amp;c. and that he said a Paternoster, an Ave and a Creed in honor of God and Our Lady, &amp;c., the parson said that if he knew that Giles had used that form of prayer he would never accompany him or drink with him. This Giles has acknowledged to be true before Sir Thomas Moyle. </p>
+   			</div>
+   		</div>
+   		
+   		<div type="page_calendar">
+   			<pb facs="#fs_051" n="051"/>
+   			<div>
+   				<head>The curate of Much Mongeam, 24 Sept., 1543.</head>
+   				<p>In going on procession he will sing no litany. </p>
+   			</div>
+   			<div>
+   				<head>Rob. Newington, 24 Sept. 1543.</head>
+   				<p>Refuses to come to the Sepulchre at Easter "unless there were bread and drink there," and has rebuked others for doing it. "He hath refused and resisted against making of lights about the rood loft;" says "it is idolatry to the Sepulture," and refuses to go in procession.</p> 
+   			</div>
+   			<div>
+   				<head>Thos. Makeblyth of Canterbury, barber, 26 Sept. 1543.</head>
+   				<p>Did not bear palm last Palm Sunday, but read the Bible in procession time. On Easter day he went into a corner at the Resurrection time and went not a procession as others did. Mr. Isaac took a priest named Sir Thomas, put him in secular apparel and made him a horsekeeper. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="052" facs="#fs_052"/>
+   			<div>
+   				<p>21 Sept. 1543.-Margaret Toftes the younger said, 25 July last in Northegate parish, that images in the church were devils and idols, and wished the church and they were set on fire. She also said "that her daughter could piss as good holy water as the priest could make any." She warned the parish clerk's servant not to bring any holy water to her house and said the water in her well was as good. " She said that it cannot be read in Scripture that Our Lady should be in Heaven. " She has not crept to the Cross on Good Friday or Easter day for three years past, nor any of her house. She said openly in the Church on Good Friday that it was abominable idolatry to see it. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="053" facs="#fs_053"/>
+   			<div>
+   				<p>Mrs. Starkey said it was idolatry to creep to the Cross.On examination she denied this. (Cr.'s hand.) Marg. Toftes the elder, among other words, said "When my lord of Canterbury's Grace comethe down to Canterbury we trust to have a day against you," and divers other "threpenyng" words. She said she would speak to Mr. Commissary to command all the curates in Canterbury to read the Bible as they have of late done. "Bradford saying, he shall then do contrary to the King's ordinances, Act and injunctions, she said again, It is the more pity that God's Word shall so little be set by that it may not be read openly." Tho. Hasylden of Elmestede spoke contemptuously of the King's injunctions, saying "A fart for them;" asked why he should do more reverence to the Crucifix than to the gallows; said he knew his words would be disclosed and he would come to his answer; also, "that and he could live without sin he were as good as God." Added by Cr. "He was commanded by Sir Thos. Moyle to set up images which he had taken down and to garnish them. He hath set them up but not garnished them." Hamond Bett said that when he died he would neither have ringing nor singing nor any manner of alms deed to be done for his soul, and cared not whether he were buried in a ditch. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="054" facs="#fs_054"/>
+   			<div>
+   				<p>He repented that ever he did so much good deeds for his father's soul. 22 Sept. 1543.Humfray Cotton, priest, "said there be heresies in the Bible" and "that every Christian man being regenerate by the Sacrament of baptism and holpen by the Grace of God is in as full state of free will as Adam was before his fall. (Cr. interlines : "Upon Good Friday last the collect for the Bishop of Rome was remaining in his Mass book, with this word Papa.") He has a book of prophecies. 26 Sept. 1543."Thomas Cawby, parson of Wicheling, said openly in a general (sic) kept at Tonge for the deanery of Sittingbourne at dinner that he said no matins these four or five years; which words are offensive to many persons, both spiritual and temporal." 23 Sept. 1543.John Riche denies that God ever made fasting days. "Item, that the Imberyng days were made by the intercession of one Emme, the Bishop of Rome's concubine, and therefore he will not fast them, nor none other." </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="055" facs="#fs_055"/>
+   			<div>
+   				<p>"John Castelen for sale of images not abused, as Our Lady, St. Anne." "George Wyborne did head and quarter St. Stephen, and also burned him." "John Chapman of Appuldore said that Henry Geldyng and other honest men there caused him to commit idolatry, because he did creep to the Cross more for company than for devotion.""He repugneth against the lights of the Crossbeam." 22 Sept. 1543.Swan, vicar of Sheldewyche, preached to his parishioners about twelve months past "Christ did not die, neither for you nor for me, nor your fathers nor my fathers, but for the fathers of the old law, and left us to be saved by our works." John Thatcher, younger, "on Candlemas Even was Twelve-month told unto one Starkey, a barber of Canterbury, that the Bible was made by the Devil."Added by Cr. : "He said that my lord of Canterbury was a maintainer of heretics.[Witness] Fysh of Canterbury." 22 Sept. 1543.Norton, vicar of Feversham, in Lent last dissuaded his parishioners from eating white meat, and rebuked them that did eat, contrary to the King's licence. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="056" facs="#fs_056"/>
+   			<div>
+   				<p>He has taken away the Bible out of the church, contrary to the King's injunctions. He bade one Young wife take holy water and other sorcery for the piles. 22 Sept.Mr. Drumme, preacher of Canterbury, preached on Whitsunday last that images were dangerously permitted in the church, alleging Deut. iv "Ne errore decepti adoremus et colamus ea; also "that they which went about to take away the reading of the Bible did even go about to pluck Christ's words and the Holy Ghost's from the people, as the Bishop of Rome hath done in time past; which, by restraining the people from reading the Bible, took first an occasion by that mean of his usurped power," Also that the Holy Ghost was neither in this or that, &amp;c. (see above). Mr. Scorye. "About Christmas last when there was a general procession commanded by the King, Mr. Scorye, preacher of Christ's [church] in Canterbury, said these words : Every country hath a custom to choose a private patron, as England hath chosen St. George," &amp;c. (see p. 305). </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="057" facs="#fs_057"/>
+   			<div>
+   				<p>21 Sept. 1543.Ro. Strawghwyn said on Wednesday of the Rogation week last at Davyngton, "You be not bound to believe anything which is not written or contained in the Holy Scripture, nor ought to believe any other thing than God's word found in Holy Scripture;" and in the same sermon, as touching praying to Saints, "I deny it quite, quod he, knacking thereat his fingers," adding that Saints could neither help us nor hear us; also that holy water was no better than other water. (A number of witnesses' names here inserted by Cr.) 7 Nov. 1541."I, John Tofer, parson of St. George's in Canterbury, did write unto my curate John Paris and the churchwardens, Mr. Rand and Mr. Bartilmewe, to take down the image of St. George, at the commandment of Mr. Commissary, being then in London. If it be not done before my coming home I will see it done myself according to my master's letter. I and the churchwardens did take down the image. The Friday after, Mr. Commissary sent for the foresaid John Paris, curate, and the churchwardens aforesaid, and asked whether you have pulled down the image of St. George or no. They made answer and said Yea. Have ye cut it in pieces? They said No. Then said the Commissary It is not only the King's </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="058" facs="#fs_058"/>
+   			<div>
+   				<p>Majesty's pleasure to have such images abused to be pulled down, but also to be disfigured, and nothing of such images to remain, with the tabernacle. Mr. Rande made this answer and said he thought it not the King's gracious pleasure, where no common offering was, to pull down such pictures, being patron of England and the church dedicate in the name of the holy Saint. Why not, said the Commissary, as well as the Crucifix? We have no patron but Christ. Then answered Mr. Rand If you pull down the Crucifix, then pull down all. For the more surety he commanded this to be done, and his sumner, John Brigges, to see it done. Other cause had they none but because he was borne in procession on St. George's day in the honor of God and the King, with Mr. Mayor, the aldermen, their wives, with all the commons of the same going in procession. Witness of this John Toffer, parson, John Paris, curate, Christopher Ovyngton, Gregory Rond, Bartilmew Peters, Robert Lawrence, Edward Cotles, with moo." 26 Sept."John Starkey said that the rood light should not be lighted but when it pleased him, and although the King had suffered light before the rood yet he gave no commandment to light them." "Starkey spake other words specified in the detection of North gate." </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="059" facs="#fs_059"/>
+   			<div>
+   				<p>Thos. Dalle came to St. Andrew's ch. in Canterbury Ao 32 H. VIII. on Easter day and, when he had received the sacrament, Thos. Wayneflette, churchwarden, came with the chalice to give him wine. "The chalice was not covered with a cloth but bare. Take the chalice with the towel in your hand, as other folks do, quod Wayneflet. Dale said that Almighty God did make he (qu. his?) hand as well as He did the priest's; and so willingly and presumptuously did take the chalice in his bare hand, comparing that the priest's hand is no better than his." Walmair. "The parish is destitute of a perpetual vicar; the endowment of the vicarage is not sufficient for a priest's living." "The priest and clerk have taken down images, not abused, and brent them." 26 Sept. 1543.Wm. Kempe, vicar of Northgate, Canterbury, is denounced for not declaring the ceremonies and their significance, and that he hath not read the Bible, nor the King's injunctions. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="060" facs="#fs_060"/>
+   			<div>
+   				<p>The vicar of Stallefeld said at Lenneham on Tuesday before Lammas day that it was no error to preach the Bp. of Rome Supreme head of the Church until the King had enacted the contrary. 23 Sept.John Parkehurst of Lenneham said on Tuesday before Lammas that the doctrine that was taught 20 or 30 years ago was as good as the doctrine which was set forth nowadays. Mr. Batterste of Canterbury and Mr. Salter, one of the King's beadmen, procured men to subscribe to a bill devised by them "for the declaration of Sir Humfray Cherdian, parson of St. Alphege's, while he was in examination before my Lord's Grace of Canterbury at Lambeth, as Jo. Uggden, Rauf. Albright, Robert Abselon and Jo. Barton, can witness. And the said Mr. Batterste said unto Jo. Uggden that Mr. Gardener and Mr. Shether should quail for troubling of the said Sir Humfray; whereas indeed the named Mr. Gardener and Shether disclosed nothing but as they were required by my Lord's Grace's letters to signify unto his Grace what they </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="061" facs="#fs_061"/>
+   			<div>
+   				<p>thought worthy of reformation, other in him or in any other; by reason of which fact and words of the said Mr. Batterste it is thought that other do fear the rather to show their minds to speak in like causes, and specially now at this time." "As one Father Hardes, the King's beadman, ending his prayer, said, Jesus Christ very God and man, one told him that Christ was not man, and in further reasoning said that Christ appearing after his resurrection was but a spirit. This tale the said Father Herdes hath showed secretly to Mr. Shether, and it is to be feared (if it be true) that the parson, which rehearsed it once hath rehearsed it oftener." "Mr. Commissary, Dr. Nevenson, rebuked, on Lent was 12 month, Sir John Write, priest, dwelling in St. Alphege's because he would not absolve Barthelmew Joy without any confession made of any crime or fault as the said Sir Write can testify." Jas. Hardes examined says "that George Hardes about 7 months past in the choir of Christchurch at the elevation of the Chalice said to this inquisite praying thus : Almighty God, my blessed Saviour, both God and man, preserve me this day and ever from my mortal enemy the Devil. At which prayer George Herdes, standing by, said to this deponent, What, cousin? Why pray you so far? He is God and no man. Why, quod he, what make you of Christ? Did he not rise, both God and man? No, quod George. He rose God, but not man, for he rose but in Spirit, Whereunto I answered, I believe that he rose both God and man; nullo alio presente." </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="062" facs="#fs_062"/>
+   			<div>
+   				<p>Raymond Buckemer said "that the Sacrament of the Altar was bread as other bread was, and that the knave priests did receive him before noon and did piss and shit him at hooreys arses at afternoon." 21 Sept.John Benson of Alhalond parish in Canterbury "spake in contempt of the Sacrament of extreme unction thus : If I should chance to be sick and die I had as leve to smethe my cote, quod he, therewith as his body; for I can sweat fast enough." "John Benson and Joyse his wife talking of Our Lady said that she, viz. Mary, should have borne Christ asking her no leave." 21 Sept. 1543.Ric. Turner said on Passion Sunday that Almighty God was the soul priest and sung the last mass of requiem, and other masses profiteth not them that be departed.</p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb facs="#fs_063" n="063"/>
+   			<div>
+   				<head>21 Sept.</head>
+   				<p>Hugh Cooper of Tenterden said, 18 Feb. last, that God was neither pleased
+   					with fasting nor discontent with eating. On the 4 March last he preached
+   					that neither alms deeds, fasting, nor prayer did help the soul, but faith
+   					only; also that whoever trusted to have help by the prayers of any person
+   					that ever God made committed idolatry. He inverted the order of the
+   					Confiteor, omitting the name of Mary and All Saints. He preached 28 April
+   					that God did not regard the prayers but the persons. Added by Cr. :On the 6
+   					May he said "On Saturday you shall have Whitsun Even. You need not to fast
+   					except you will."</p>
+   			</div>
+   			<div>
+   				<head>21 Sept. 1543.</head>
+   				<p>Archebolde of Faversham. "I will, quod he, come to my ghostly father and show
+   					to him I have sinned in the 7 deadly sins and have broken the 10
+   					commandments, and misspent my 5 wits and will desire him of his ghostly
+   					counsel." </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="064" facs="#fs_064"/>
+   			<div>
+   				<p>Sir Simon Oxley, priest, said to him "If I were your ghostly father, I would neither absolve you nor give you penance." He answered "Hast thou authority to absolve me or give me penance? Nay, thou mayest keep sheep." "Christ said mass upon the Mount of Calvary and that is sufficient for my soul." 23 Sept., Hedcrone.Thos. Baker, John Tonge and Nic. Terry refuse laudable ceremonies and commonly sit in the church or are in the alehouse at the time of procession. John Fishecock the younger will not receive the pax but is ready to strike the children that bring it. He was not confessed this year after the common sort, but thus :first, without Benedicite, he said "I knowledge to God that I am a grievous sinner, and none so grievous as I, for I am not able to keep the commandments; for whoso offendeth in one offendeth in all. And therefore I cry God mercy." </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="065" facs="#fs_065"/>
+   			<div>
+   				<p>24 Sept.Anthony Ager, shoemaker, and Simon Castelyn of Canterbury said "that God is in no place made by man's hands." Castelyn also said "that a book named the King's book was made at a Spital house in London." 26 Sept. 1543.Robert Howe, vicar of Newington juxta Sittingbourne, has pulled down many images in his ch., e.g. of Our Lady of Pity, patroness of the church, the Trinity, St. Stephen, of Our Lady, of Christ, of St. Thomas the Apostle, "the which two he sent to London and were set up there." He scraped off the gilding of divers other images. 26 Sept. 1543.The vicar of St. Mary, Sandwich. Sundry images taken down by him, to the value of 30; the parish ch. of St. James Sandwich prostrated by Ric. Butler with his assistance. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="066" facs="#fs_066"/>
+   			<div>
+   				<p>Against the Commissary by Wm. Orphen, curate of Lydd :"Articuli in quibus sentio M'rum Christoferum Nevenson merito reformandum." 1. He usurps the office of absolving, not having the power of the keys (potestatis clavem qu. for potestatem clavium?). 2. He tries to abrogate a devout Christian rite, warning people not to take holy water to sprinkle their houses. 3. "Precepit quoque ne quis morientem cereo benedicto (ut appellitant) consignet." 4. "Ignoranti sententiam intulit, nulla suspensione previa." 5. "Complures in visitatione libellos perspexi illi pro reformatione traditos : pecunia vero pro dimissione curi exacta, nullam prorsus reformationem adhibuit; quo nihil zeli ad ecclesiam se habere comprobat." 6. He forbade absolution to be given to persons unable to repeat the Lord's Prayer and creed in English. "Si vero propter senium aut discendi in ydoneitatem merito excusentur, absolvantur in Latinis, ita ut se absolutos esse non agnoscant." Underneath is written : The Vicar of Boughton subtus Blean. The Curat of New and Old Romney. The Curat of Hernehill. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="067" facs="#fs_067"/>
+   			<div>
+   				<p>24 Sept.Thos. Holly of St. Clement's of Sandwich has for four years refused to follow the Cross in procession. He has also refused to bear his candle and palm at the times approved by the King; which has occasioned much murmuring. He and Wm. Morris pulled down sundry images in St. Clement's church. 21 Sept. 1543.Bland, in a sermon at Faversham the 23d Sunday after Trin., said the mass was no satisfaction for sin but only a remembrance of Christ's passion. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="068" facs="#fs_068"/>
+   			<div>
+   				<p>He said that the sight of the image of St. Michael with the balance was enough to bring a man to the Devil; that no man may pray to saints for anything; that particular confession was not necessary; that to kneel or bow to a cross, yea, though it were the very cross that Christ died on, was idolatry; that bps. did make priests for money, yea though they could scantly read, and he knew it to be so; that setting up candles before the Sacrament was superstitious. He preached in Lynsted ch. on St. Matthues day, 1542, that auricular confession was not scriptural, nor in the law of God. "I marvel, quod he, why it is used in the Church; also, quod he, it hath been often put down." </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="069" facs="#fs_069"/>
+   			<div>
+   				<p>He said in a sermon at Staple on Mary Magdalen's day : "John Baptist had his head smitten off for speaking of the truth; and so, nowadays, for speaking of the truth, many have their heads broken." He said he was no changeling but would abide by what he said. He said in his ch. of Addisham (Cr. has written "Staple" over) 18 March, 1542, that if the people knew what abominable words are said in the hallowing of palms, they would not bear them; also, that he had commandment of certain of the Council to set forth such things; that he could not find in his conscience to say or sing Ave Rex before the rood, for it was plain idolatry; that the image of the Trinity is not to be suffered and he cannot find Trinitas throughout Scripture, but that Athanasius put it in his Symbolum; that it is not consonant to the law of God that we should cry or call to Saints, or sing or say the litany before the hallowing of the font, "nor other times, ne no procession commanded."</p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="070" facs="#fs_070"/>
+   			<div>
+   				<p>In the mass book is plain detestable heresies, and in the mass also. God is not pleased with lights before the Sacraments. In a sermon made at Boughton under the Bleane, 18 April 1541, he said the mass did not profit for sins, else Christ had died in vain. On 4 Feb. last he preached "that auricular confession was the most abomination that could be." On St. Stephen's day, 34 H. VIII. he said in the parish of Northgate, Canterbury, "that if women did understand what was read and sung in the matins, mass and evensong, they would be ashamed one of another; for there was in it both heresy and treason." He said on Candlemas day last at St. John's a' Cant' "that if the people knew what the words were that the priest sayeth when he layeth his hand upon your heads after your confession, you would be ashamed to hear them, for it is an abomination to speak them. And I would think myself the worse, quod he, a month after, to speak </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="071" facs="#fs_071"/>
+   			<div>
+   				<p>such words." In Northgate parish he said "If you knew what abominations are in the words of absolution which the priest sayeth over you when you be shriven, you would abhor them;" also "that in the christening of children priests be murderers." 26 Sept. 1543.John Boucher of Fretynden said "that matins and evensong was no better than rumbling of tubs"; also that mass and dirige were not laudable. Cr. : "Offensive." Clerk of Hedcorn has books of Tyndall and Frith. 21 Sept. 1543.Jo. Toftes is noted as a common maintainer and harbourer of persons accused of heresies, </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="072" facs="#fs_072"/>
+   			<div>
+   				<p>and of persons who have made themselves priests and were none, as Giles Barham, a monk of Dover that celebrated in Northgate ch. and heard confessions in Lent. He kept Joan Boucher in his house after she was accused. He "was surety for one John Clercke that brake their fast on Easter anno d. R. xxxijdo in the morning with a calf's head, and Joan Boucher with him; which would the same day have received their Maker." He was surety for Joan Clerk's forthcoming; "which Clerk fled." His house has been the resort of Bland, Tournour, the parson of Hothefild, "Jonas the priest, that was married to a man's daughter of Barham at St. John's Hospital, and after commonly resorted to Toftes' house." He said in Easter week last that it was abominable idolatry to kneel before the Sepulture; and, since, that it was no honor to God to have lights set up, for Christ is Lux mundi. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="073" facs="#fs_073"/>
+   			<div>
+   				<p>He assisted and defended Joan Boucher in the consistory of Canterbury when she was detected as a sacramentary. When asked by Andrew Kempe why he had spoiled the images, he said he had done nothing but his Prince's commandment. and of persons who have made themselves priests and were none, as Giles Barham, a monk of Dover that celebrated in Northgate ch. and heard confessions in Lent. He kept Joan Boucher in his house after she was accused. He "was surety for one John Clercke that brake their fast on Easter anno d. R. xxxijdo in the morning with a calf's head, and Joan Boucher with him; which would the same day have received their Maker." He was surety for Joan Clerk's forthcoming; "which Clerk fled." His house has been the resort of Bland, Tournour, the parson of Hothefild, "Jonas the priest, that was married to a man's daughter of Barham at St. John's Hospital, and after commonly resorted to Toftes' house." He said in Easter week last that it was abominable idolatry to kneel before the Sepulture; and, since, that it was no honor to God to have lights set up, for Christ is Lux mundi. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="074" facs="#fs_074"/>
+   			<div>
+   				<p>24 Sept. 1543.Chr. Levennyshe pulled down certain images in Canterbury bury and in the par. ch. of Our Lady of Northgate and in St. Peter's violently. He burned the bones of St. Blase in St. Peter's parish in his own house, as appears by record in the Court hall with his own hand. 26 Sept. 1543.Nic. Fitzwilliams on the 5 Aug. 35 H. VIII. maintained that prayers did not help souls departed and explained the De profundis in English. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="075" facs="#fs_075"/>
+   			<div>
+   				<p>Turnour christened 3 children in one day without anointing them either on the back or breast, and taught some children in Northgate parish to say the Ave Maria in English. 21 Sept. 1543.It is complained that Mr. Nevinson in a visitation at Sevington commanded the clergy to give no absolution to those who could not say the Paternoster and Credo in English, "or at the least, their age and simplicity considered, to absolve them in Latin, so that they knew not that they were or be absolved." He commanded the curates to warn their parishioners to carry no holy water home to their houses; and that they should bless no person departing this life with the holy candle. Presentations have been made in sundry visitations of things worthy of reformation, but nothing </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="076" facs="#fs_076"/>
+   			<div>
+   				<p>has been done but only dimission money received. He wished absolution deferred till Easter to persons who could not say the Paternoster and Creed in English, and then given with their communion. He asked, where will you find auricular confession in Scripture? And being reminded of those who came to John the Baptist confessing their sins, pointed out that that was public. He commanded that the curates and people should go on procession in harvest time only on holy days. Sir Jas. Newnam, a priest of Chartham, in his Confiteor refused to rehearse the name of Our Lady, and he said it was against his conscience to cense the crucifix; "which things presented by the churchwardens to Mr. Commissary was never punished." When told that Jo. Clerke and Joan Bowcher had eaten a calf's head on Easter day in the morning, Mr. Commissary answered "If they have broken their fast to-day let them have their rights to-morrow." </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="077" facs="#fs_077"/>
+   			<div>
+   				<p>He pulled down the images in Northgate ch., and had home to his house the pictures of Our Lady with the tabernacle, and hewed her all in pieces, with other pictures of the Apostles. He commanded Anth. Persons to read and expound the Bible on Palm Sunday in All Hallows' ch. Canterbury; which when the parson refused, he brought a token from Mr. Commissary so to do; "whereby he did read, and it is said that by sufferance of him and such other evil persons, hath caused such mischief in this diocese." He caused images to be hewn in pieces at Ashford and compelled the curate to say he did it. He cast the parson of Pevyngton's beads into the fire in derision and gave him a penny for them. "Dr. Nevinson in Lent was 12 month rebuked one Sir John Write, priest dwelling in St. Alpheis, because he would not absolve Bartylmew Joye without any confession made of any crime or fault." Raynold Buckemer of Boxley taken before Sir Chr. Halles, knt., at Maidstone 32 H. VIII. for a sacramentary "was delivered in writing to Mr. Nevinson, Commissary, by Harry Cleke, servant to the said Sir Christopher, with his detection by Raf Joneson; </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="078" facs="#fs_078"/>
+   			<div>
+   				<p>"Pleaseth your Grace, most of the vulgar people think the foundation of these errors in these parts cometh by the fault of heresies not punished set forth by Joan Baron, sometime called Joan Bucher of Westgate, she being a prisoner detect of heresies, being in prison, set at liberty, free for any man to common with her, which is against the law of God and of our Sovereign King." 1. She being a prisoner for 2 years, more or less, no evidence was brought against her, though she manifestly denied the Sacrament of the Altar with many slanderous words, her own confession remaining with the spiritual officers. 2. When delivered by the temporal </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="079" facs="#fs_079"/>
+   			<div>
+   				<p>judge into the hands of your officers, your Commissary would have delivered her by proclamation as a "gynteles" person; "whereupon I came in and said Mr. Commissary ye do not well to deliver her by proclamation, for her own confession hath condemned her. Then said Mr. Comissary, Be you all able to prove that you have spoken? And so caused me with many other worshipful folk to justify. Then said I, Sir, [her] own confession is in your registry. Then Mr. Commissary made answer and said, I have inquired for them, but I cannot find them. But I will look them out, for shorting of the matter." On Palm week next after, Mr. Commissary calling forth many of his witnesses sent for me to examine me. "I said, Sir, I marvel why ye do thus trouble yourself and other. If ye had sent to your officer for her confession ye should need no other business. Then said he, I have done so, but I cannot find them. Then I made him answer, Sir, it is not so; for within these 2 days they were forthcoming. Then said Mr. Commissary, Can you fetch them? And I made answer, No, I think Mr. Draper will not deliver them unto me. But if it please you to send your servant with me I am sure he will deliver them." And so he sent his servant with me and I brought them. And, as soon as he had read them, he discharged 5 or mo of their examination; and, as all we took it, which were or should have been examined, if our tales had not been according, it had been for her discharge and to our high rebuke. Then next court day appointed for that matter, he declared her to be an heretic, both by her confession and also by witness; which thing she utterly denied. But then, said he, you cannot deny it, but said to her </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="080" facs="#fs_080"/>
+   			<div>
+   				<p>without any confession on her part of her fault or offences, or without any requiring of her part of any pardon, You have a thing to stick to which may do you good. I advise you to stick to it. Then did she bring forth the King's pardon which was given to the Anabaptists for their deliverance (fn. 31), repenting themselves. Which pardon, what else it contained, be it in your judgment. Also, at that time Toftes the elder stood in the Consistory there pleading her cause for her defence, where before he never was proctor in that court, nother sythe. Also, at that time came forth to the Court the parson of Westbere with 2 honest men of the parish, that said that they heard her husband say that she was abjured at Colchester. Then said Mr. Commissary Do you know it for truth that she was abjured? No, said they, but thus said her husband. Then said Mr. Commissary, I take you for no witness in this point, and so delivered her, she requiring no pardon, nor confessing her offence why the pardon should be ministered to her. Witness to this John Milles, priest. Also, there was one Jonas was married at St. John's house without Northgate to the daughter of one Marsh of Barham, he being a priest, as the voice went, but the truth is, she is married unto another, and Jonas stale away. Also, one Mr. Store ("Scory" by Cr. in margin) preached in St. Elphis church upon Ascension day was 12 month saying, Ye have a saying, the child which is born between man and wife, it is born in original </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="081" facs="#fs_081"/>
+   			<div>
+   				<p>sin, and so it is : And ye say that the sin is taken away by the water of baptism, but it is not so. But look how that the wife that occupieth the fire all the day and at night covereth it with ashes to preserve the fire; so doth the sin remain under the Sacrament. Also, Anthony Parson read a lecture upon Palm Sunday last past saying it was the office of the Father of Heaven to make Heaven and Earth and all that is in them. Also, he said that it was the office of the Second Person to die by his Passion to redeem man. "Also, it was the office of the Holy Ghost to give wit and knowledge to the Apostles." ["The same Sunday Thos. Makebley, barber, sat in the church all the procession time and bore no palm nor would follow the procession.] (fn. 30) Also, upon Easter day following, at the Resurrection, followed not the procession as all other people did." </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="082" facs="#fs_082"/>
+   			<div>
+   				<p>Thos. Dawby, now parson of Wycheling, sometime curate of Leneham, many times procured persons of Leneham and other parishes "to read the Bible, even at the choir door where divine service was sung or said, from the beginning of the service to the ending, with as low a voice as they could." He went into the pulpit incontinent with the King's injunctions, and expounded them that it was lawful for all manner of men to read the Bible at all times and that no one ought to discourage them. "And said if singing and playing were to God's honor as men would have it seem to be, think you that our Prince would have pulled down these abbeys as he hath done?" Also that all men from the highest to the lowest, were not only free to marry, but were bound to marry rather than to burn. Also (1542 about Christmas) that Christ's Passion is alone sufficient for all our sins, partly despising good works and penance, when he had occasion to speak of them; and that good works were no part of our salvation. Also (1539) that Our Lady was no better than another woman, and that "she was but a sack to put Christ in." He took down eight or more images in the said church "that never were abused by any pilgrimage," contrary to the King's injunction. He induced Sir John Abbey, now curate of Leneham, "to take the key of the church door secretly from the sexton's house and to go privily into the church, and take down one image more of Our Lady Pity, and brake her in pieces; which is the fairest image in the church and never abused." </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="083" facs="#fs_083"/>
+   			<div>
+   				<p>He did his best when curate of Leneham to persuade the parish to have taken down all the images in the church, and said they were directly against God's commandment. He caused divers to break their fast that were disposed to keep it, saying all days were alike (1539). He said "Such a day, you shall have Our Lady, as for the Even you may fast that listeth." He would never say De profundis (1542), declaring that the service in the church is but baggage, "and always he rebelled against them that used to say their service and such as bere any portis about them." He called the chrismatory a juggling box and a priest's crown Balaam's mark (1540). He asked an honest man why he made reverence when he came before the Sacrament. In the Rogation days he would neither sing nor say any Gospel in Latin, nor have any holy water carried with him, nor would sing nor say any part of the litany or call on any Saint while he was curate, which was for one year and more. He said at Sittingborne, 4 August 34 Hen. VIII., to one Alex. Plott who had observed to him "Images stand in our church," "Your curate is more knave." "Why do they stand in Cranebroke, then? said Alexander Plotte, seeing that there dwelleth worshipful men, the King's justices, and, as I think, some of them be of the King's Council? And by that they are now building of a goodly roodloft." "They are," said the parson, "pope-holy knaves and I would that the roodloft were money in my purse." The said Alexander also asked him whether we should pay tithes for "podeware," i.e. pease and tares, saying "Our horses eateth all in winter." He replied "Ye should pay none. The King hath made a law that ye shall pay, but it is contrary to God's law that ye should pay any tithe for them." </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="084" facs="#fs_084"/>
+   			<div>
+   				<p>One said "The King's Grace hath done a godly deed in making this worshipful college at Canterbury; for there is many well learned men now and many good clerks shall be brought up there." "He hath made," said the parson of Wytchelyng, "a very den of thieves." He also hoped to see the time when there should be set no taper before the Sepulture. Jas. Wourley's wife said (29 May) that good prayers and deeds should save her from the Devil. "Not so," said the parson of Wytchelyng; "thou shalt not be saved by thy deeds but only by faith;" and further to Sir Thomas Huxley "That knave thy master, the parson of Bocton, is a false heretic and a popish knave and thou also. And I shall make forty in the parish of Dodington to bark at thee, and I shall make 10,000 of my set against thee in Kent, and those shalt not tarry here this month." Also "he said the Ave Maria was never made by God, for part of it was made by a priest's harlot." Added by Cr. : "Item, he called the book lately set forth by the King and his clergy a crafty book." Sir Rauf said in the pulpit (1539) in the ch. of Leneham aforesaid "There be some priests do use to give penance in confession for sin; but I tell you, said he, whosoever giveth penance for sin robbeth God of his honor. I myself have done so, but I cry God mercy. I did it in ignorance." Sir Robert Stotte, curate of Davyngton, on Alhalonday 1541 in the pulpit of Leneham said "there was heresy sung in the church that present day"; also "that our Prince suffered dirges and masses to be said and sung in the church for priests to get money by. And Mr. Serles, vicar of Leneham, came to Leneham and preached, and to our judgment made a good sermon there. And the said Sir Robert, hearing thereof, came from Davington to Leneham the Sunday following; and after evensong the same day there was an anthem sung of Our Lady, and he said openly in the church </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="085" facs="#fs_085"/>
+   			<div>
+   				<p>that it was heresy. And incontinent he went unto the Bible and turned to the same gospel that Mr. Serls had preached the Sunday next before and expounded the contrary to Mr. Serls in every word with threatening words towards him, saying, All pickpurses' ears are not set on the pillory as yet. Whereupon divers were offended with him and many words were multiplied and great variance amongst the people; insomuch that divers persons thought there should have been a fray. And thus he came 6 or 7 times within half a year and preached half an hour at the least, always moving the people to give no credence to Mr. Serles or Mr. Shether." </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="087" facs="#fs_087"/>
+   			<div>
+   				<p>VIII. "The saying and opinion of Raynold Bucker of Boxley, spoken and obstinately declared by him in the feast of the Assumption of Our Lady or the Sunday after in the 31 years (sic) of the King's Majesty's most noble reign, in the house of John Man of Boxley, in the presence and hearing of the same John Man, John Todde and John Stockwell; which Raynold Buckley was abjured by the lord Warham, late Archbishop of Cant'; which abjuration Mr. Dr. Leef, Master of Maidstone College, can declare more at length." 1. He said that the Sacrament of the Altar was bread like other bread; "and that the knave priests did receive him before noon and did piss and shit him out at whores' arses at afternoon; which accusation was taken before Sir Christopher Hales, knight, deceased, at Maidstone the xxij (sic) year of the King's most noble reign, and in writing delivered to Mr. Nevinson, now Commissary. And afterward by Henry Cloake, then servant to the same Sir Christopher; and also the same Henry Cloke did hear the same words of Buckmer rehearsed by the witness aforesaid, and also declared it to the said Commissary. And afterwards the same Sir Christopher sent for the said Buckmer and the witness to Maidstone by Rauf Johnson his servant; which Rauf delivered the said Buckmer to the Commissary and also the witness; where the Commissary threatened the said John Todd, as he sayeth and will say. And for a while the said Buckmer was in my lord Archbishop's palace, as they said, under ward. But he went at large and did pull hemp. And after the death of the said Sir Christopher, or a little before, the same Buckmer was sent home again unpunished, contrary to the King's laws. And thus bearing and favor with such like hath been courage to other ill doers concerning ill opinions. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="088" facs="#fs_088"/>
+   			<div>
+   				<p>"In the visitation of Mr. Commissary kept at Sevington, Anno 1542, about Michaelmas, said to the said parsons and vicars standing before him at the high altar that they should give no absolution to such as were confessed except they could say their Paternoster, Ave and Creed in the English tongue, but would it be deferred until Easter and then to be given absolution to them with their Communion. Then one Mr. Parson of Allington (fn. 32) said that they would say that they uttered their confession. Then said Mr. Commissary Ubi invenies auricularem confessionem esse de jure divino? Respondit persona Venicbant ad Johannem Baptistam et confitentur peccata sua. Et addidit, Qomodo confitebantur, aut publice aut accurate? Dixit ille Publice." (NOTE:Summarized)Petition to Cranmer from the parishioners of Elmestede, representing that malicious and untrue information had been given to his Commissary that lights were kept and oblations done </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="089" facs="#fs_089"/>
+   			<div>
+   				<p>before the image of St. James, the patron saint of their church, against the King's injunctions; for since the injunctions, no such lights have been maintained. Beseech his Grace therefore to command the vicar and churchwardens to set the same image up again "in his tabernacle at the high altar's end," where he has ever stood time out of mind. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb facs="#fs_090" n="090"/>
+   			<div><p>ii. A list of heresies detected and the detectors. </p></div>
+   			<div>
+   				<head>25 Sept. 1543.Serles.</head> 
+   				<p>"Christ was nourished with celestial milk and not material." Nine witnesses named who heard the sermon at Leneham, the day of the Assumption of Our Lady. "</p>
+   			</div>
+   			<div>
+   				<head>Die Ascensionis Domini, 1541.</head>
+   				<p>"Scory. "He said there was none in heaven but Christ only." Four witnessesone of them is Shether. (2.)</p></div>
+   			<div>
+   				<head>In Lent 1541.</head>
+   				<p>"Only faith justifieth" : Ws., Gardiner, Wm. Cockes. (3.) "The Supper of the Lord, quod he, is not hostia pro peccatis but hostia laudis. Ws., Parkhurst, Gardiner, Hunt, Milles.</p>
+   			</div>
+   			<div>
+   				<head>In Die Pentecostes ultimo.</head>
+   				<p>Drumme. "The Holy Ghost is neither in this place nor that, &amp;c." Ws., Cyriack Petit, W. Hunt, Shether. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="091" facs="#fs_091"/>
+   			<div>
+   				<p>29 July.Shether. "That Christ and baptism did nothing [else] (fn. 32) but wash away our original sin, and if th[at] (fn. 33) any man after baptism did fall, he must purchase remission of his sins by penance as Mary Magdalene did." 12 witnesses. Hugh Cooper. That neither alms deeds, fasting nor prayer helped the soul of man, but faith only; that he that trusts to be helped by the prayer of any creature or person that ever God made doth commit idolatry. Eight witnesses. George Hardes "is of the Sadducee opinion, denying the resurrection of Christ in his manhood, saying, that He rose only in the Spirit." Jas. Hardes, only witness. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="092" facs="#fs_092"/>
+   			<div>
+   				<p>Strawyn "affirmed that we be not bounden to believe anything which is not written or contained in the Holy Scripture; nor ought to believe any other thing than God's word found in Holy Scripture." Six witnesses named "and other of Faversham." Swan, vicar of Sheldewiche. "Christ did not die, neither for you nor me, nor your father, nor my father, but for the fathers of the Old Law, and left us to be saved by our works." Ws. : "Sir Geo. Woddall his curate and other can testify." John Benson, "in contempt of the Sacrament of extreme unction, said If I should chance to be sick and die I had as leve to smethe my coat therewith as my body, for I can sweat fast enough." Joyce Benson, "talking of Our Lady, said that she, viz. Mary, should have borne Christ, asking her no leave." Three witnesses of the parish of All Saints, Canterbury, including Milles, servant to Mr. J. Culpeper. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="093" facs="#fs_093"/>
+   			<div>
+   				<p>Turnour said "that Almighty God was the soul pr[iest], (fn. 34) and sang the last mass of requiem, and o[ther] (fn. 34) masses profiteth not them that be dead." 2 Ws. "and other." Humfrey Cotton, priest, "said that there be heresies in the Bible." 3 Ws. of Tenterden. Nicholas Fitzwilliam "said that prayers did not help the souls that were departed this present life, for in the dirige and de profundis the priests pray for none but for themselves, &amp;c." 3 Ws. (Under Fitzwilliam's name is written in the same hand "Videat Reverendissimus"). </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="094" facs="#fs_094"/>
+   			<div>
+   				<p>Thomas Hasilden "sayeth that if he could live without sin he were as good as God." Six Ws. John Thatcher junior "said that the Bible was made by the Devil." Ws. Starkey the barber of Canterbury.</p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="095" facs="#fs_095"/>
+   			<div>
+   				<p>Remarques des transcripteurs: The handwriting is a little peculiar. IX. [Calcot to Cranmer.] (fn. 35) "Be yt knowen un to your gracyus lordshep that thes is the very bell that I deed wryt as consarnyng the ansour whan I deed ryde to the Corte, and that was thus. My lord (fn. 36) saye Have me recommend to your master (fn. 37) and tell hym that yf his matters be true and ryghtius he shal have frynddes enow; for yfe my lord of Cantorbory shold poneche them wrongfully yt wyll be gretly to his rebock and henderanc. Then at Oxford I met wyht Mr. Ford and he xed me wher I had ben. And I sayd At the Corte. And he exed me what my lord sayd, and I tolde hym. And he sayd the ansur was good enoufe. And he sayd he had hard of my masters trobell be fore. And I exed of home; and he sayd Of Mr. Docter Barbar. And then he sayd Have me recommend to your master, and then tel hym that I hard say that my lord Chancelar wold change his offes, and Mr. Bakkar shold have yt. But he sayd, Speke yt not abrod on my word tel ye here yt mor playne lyar spoken. And thes was the ansu that I had and that I deed wryte to showe my master. Ther for, my lord, I beseck your Grac to be good to me, for here is everry word as ny as I can call to my rememberanc possybell. Thus God save your graccyus Lordshep." </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="097" facs="#fs_097"/>
+   			<div>
+   				<p>X. Interrogatories "for Shether and other." 1. Who were the beginners of these matters at London; 2, and by whose advice "it was set forward." 3. With whom they had conference and who encouraged them and how. 4. What foundation they had at the beginning; 5, and whether of their own knowledge or by hearsay. 6. In what they know my lord's Grace culpable; and how they know it. 7. "The like to be ministered for the proceeding of the same matter at Canterbury." 8. How many justices of the peace, gentlemen and others they have had conference with, and what each has done or said about it. 9. "To what things they have conduced thereunto." 10. "What Petite, the clerk of the peace, or any other towards the law, hath said or done as touching indictments, panelling of inquests, and by what accusation and by whose motion or commandment. 11. "To what end or effect they intended to bring these matters." 12. By what authority they began and proceeded. "Item, whether you told and declared to the Vicar of Charing, being in his house at Charing, how that four of you did intend to preach two sermons apiece in the Isle of Thanet in one day, and to how many mo you did declare the same, and to what intent." </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="099" facs="#fs_099"/>
+   			<div>
+   				<p>Remarque des transcripteurs: In Willoughby's hand XI. A paper headed by Cranmer : "Dr. Willoughby." "My Lord, as concerning the schryne, I had never commandment to pull hit down, and also hit his bot anente thenke (an empty thing); bot Master Thwattes had hit at Sente Astens and gave hit to the cherche." Was commanded to pull down the rood, but could not do it alone; so he went the next morning with the parish priest to some parishioners and showed them the order; and they said the King's book was to the contrary, except where oblations were made to it, "and by and by cassyd (caused) that same artekell to be redde, and then all sayde ther scholde none be pollyd downe ther; and by and by cassyd a loke to be sett of the dore. Part of ther names be thes : Master Pettet, Wylzam Amys, goodman Macstede, holde fader Baker, and alle the holle paryche. And this was of a Sonday in the morning; and the nexte Sonday after, and I ham avyssed, Master Twhattes was mared; and ther Master Pettyt broke the mater to Master Moylle, and he dyd asche wherever ther wor one oblacion ther to or no; and he sayd Nay; and then sayde Master Moylle Then I warrant yow let him stonde." "Also as conserning that ever I preched of ony sante, or thowght one seche thenges I wolde I scholde never come in heven, nor never so ment; hyffe I had I wolde not aplenyd (have complained) to Master Comyssare of that thyng wyche I wolde have mantynde; and as for Colver strette I never saw hit. I have bene here bot iiij yere. How scholde I have Lade Colver (fn. 38) in honde and never harde of hyr of my consyence to this day." </p>
+   			</div>
+   		</div>
+   		
+   		<div type="page_calendar">
+   			<pb n="101" facs="#fs_101"/>
+   			<div>
+   				<p>Remarques des transcripteurs: In Willoughby's hand, pp. 2. ii. Dr. Willoughby's [first] confession, (fn. 39) containing replies to each of the interrogatories (X.) as numbered, viz. 1, That the first he ever heard of the putting forth of the matter was on Palm Sunday in Dr. London's house, of Serles and him; 2, and it was set forth by Serles only, without any man's knowledge "that I know of, for my coming to London was to speak with the chamberlain of London and his errand to Oxford. 3. Cannot tell by whose counsel or encouragement it was. 4. Cannot tell "what matter they had at the beginning more than he provided for of himself," for I can say nothing against any one but by hearsay. 5. "And whether they were of his own knowledge or by hearsay I cannot tell; but he and Gardener had been gathering of matters a quarter of a year before. I perceived that by the mossyons thay mayde to me for pottyng of them upp." 6. Of things against my lord he knew nothing they minded till he saw it in writing. 7. Nor of their preferment of their articles at the sessions; for he was not in Kent at the time, nor spoke with any justices of peace in this matter, or, 8, with any of them that was privy. At the beginning he told Mr. Moyle and Mr. Thwaytes that Dr. London said the justices would be "shent" for suffering such preaching. </p>
+   			</div>
+   		</div>
+   		<div type="page_calendar">
+   			<pb n="1" facs="#fs_1"/>
+   			<div>
+   				<p></p>
+   			</div>
+   		</div>
+   		
+   	</body>
    </text>
 </TEI>
