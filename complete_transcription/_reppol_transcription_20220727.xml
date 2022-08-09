@@ -2484,6 +2484,7 @@
          <!--DÉBUT 018-->
       	<div type="page">
 		<pb n="018" facs="#fs_018"/>
+      		<space unit="pages" quantity="1"/>
          <!--FIN 018-->
       	</div>
 <!--1 div refermée-->
@@ -2491,6 +2492,7 @@
       	<div type="page">
 		<pb n="019" facs="#fs_019"/>
 		<div><ab><num type="pagination" subtype="red">19</num></ab></div>
+      		<space unit="pages" quantity="1"/>
 <!--FIN 019-->
       	</div>
 <!--1 div refermée-->
@@ -2723,7 +2725,7 @@
 </div>
          </div>
          <!--DÉBUT 027--><div type="page">
-
+         	<space unit="pages" quantity="1"/>
 <pb n="027" facs="#fs_027"/>
 <div><ab><num type="pagination" subtype="red">27</num></ab></div>
 <!--FIN 027--></div>
@@ -5216,7 +5218,6 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
 				<item><persName type="religious" ref="" key="">John watson</persName></item>
 			</list>
 			<p rend="main_right"><metamark>}</metamark> <roleName type="priest">preestes</roleName></p>
-			</list>
 		</div>
 		 
 		</div>
@@ -5422,7 +5423,7 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
 	<p rend="main">Item that the masse and dirige was not laudable
  to be said for the soules de<expan>par</expan>ted</p>
 </div>
-<div><list rend="main_left">Testes
+<div><list rend="main_left"><head>Testes</head>
 	<item><persName type="" ref="" key=""><roleName type="">Clerc</roleName> of <placeName ref="" type="">hedcorn</placeName></persName></item></list>
 <p rend="main">Item he hathe book<expan>es</expan> of Tyndall and ffrith</p></div>
  
