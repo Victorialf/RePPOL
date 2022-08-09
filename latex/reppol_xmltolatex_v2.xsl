@@ -36,7 +36,8 @@
 		
 		<!-- création d'une variable pour avoir un titre par fichier -->
 		<xsl:result-document href="{concat($doc_name,'.tex')}"
-			><!--le nom du fichier de sortie est "nom du fichier d'origine_page_numéro de la page.tex"-->\documentclass[12pt, a4paper]{book}
+			><!--le nom du fichier de sortie est "nom du fichier d'origine_page_numéro de la page.tex"-->
+<xsl:text>\documentclass[12pt, a4paper]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}<!--embelissement-->
@@ -46,20 +47,16 @@
 \usepackage{enumitem}
 \usepackage{parskip} 
 \usepackage{reledmac}
-%ajout 05/08
-\usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{multicol}
-%ajout du 08/08
 \usepackage{ifthen}
-%
+\usepackage{hyperref}
 \setlist{nosep}
 \pagestyle{fancy}
 \lhead{RePPOL}
 \chead{MS 128}
 \rhead{}
 \fancyfoot[]{}
-
 \rfoot{\thepage}
 \renewcommand{\headrulewidth}{0.2pt}
 \renewcommand{\footrulewidth}{0.3pt}
@@ -68,95 +65,103 @@
 \author{RePPOL project}
 \date{august 2022}
 \begin{document}
-<!--\maketitle-->
-<!--			pages de titre
-			avant-propos détaillant choix d'édition etc.-->
-			%ajout 05/08
-			\begin{titlepage}
-			\includegraphics[width=\textwidth]{logo_rep_or.png}
-			\begin{center}
-			\textsc{\huge MS 128}
-			
-			\small 0.7.1, last updated on 05/08/2022
-			\end{center}
-			\vspace{4cm}{}{}
-			\textbf{To cite this version :}
-			
-			CITATION
-			
-			\textbf{To read the ultra-diplomatic version :}
-			
-			\href{}{check our website}
-			\vspace{2cm}{}{}
-			
-			\begin{center}
-			This is version 0.7 of the edition, last updated on 05/08/2022.
-			\end{center}
-			\begin{multicols}{2}
-			Le projet Rethinking the Pebendaries Plot OnLine consacré à la transcription, l’édition critique et l’analyse du manuscrit MS 128 conservé à la bibliothèque de \href{https://parker.stanford.edu/parker/catalog/ps908cx9813}{Corpus Christi College}, Cambridge est fier de vous présenter cette version pdf des transcriptions réalisées par Mme Aude de Mézerac-Zaneti, M. Olivier Spina et M. Felipe Goes-Silva.
-			\end{multicols}
-			\end{titlepage}
-			\begin{center}
-			\vspace{3cm}{}{}
-			\scshape{\large Notes sur la présente édition}
-			\end{center}
-			Proposer une édition d'un manuscrit aussi composite que le MS128 dont les auteurs n'avaient sans doute jamais supposé qu'il serait un jour étudié et même édité, relève du challenge. Outre la difficulté de proposer une transcription des 220 folios qui constituent le document, la présentation elle-même du texte relève de choix/décisions pour lesquel/les  des critères tels la fidélité vis-à-vis de la source, le confort de lecture et la clarté à la fois de la structure du manuscrit et de ces choix eux-même entrent en ligne de compte pour produire, autant qu'une édition destiné à la lecture, un outil de travail efficace.
-			
-			Ainsi l'équipe scientifique du projet a souhaité que les anotations marginales du manuscrit soient reproduites le plus fidèlement possible. Outres des gloses ou interprétations, sans doute de la main de Thomas Cranmer, de nombreux symboles ponctuent les marges du document parmi lesquelles la lettre "n" est à concevoir comme l'abbréviation de "notandum" que nous avons choisi de ne pas développer afin de permettre une meilleure lisibilité du texte. Toujours dans un souci de lisibilité les informations structurantes, titres ou listes de témoins parfois isncrites dans la marge par la particularité d'un scribe sont reproduit dans le corps du document et anoté en bas de page.
-			
-			Cette édition réalisée dans le cadre du projet RePPOL s'inscrit dans la tradition anglo-saxonne de la transcription diplomatique, ainsi exception faites des "n\textit{otandum}" marginaux les abbréviations sont systématiquement développées et signalées par l'emploi de l'italique. Les additions supra- infra- ou intralinéaire sont reproduites dans le corps du texte, une note les signales. De même, les passages ratûrés sont conservés, une note signalant la ratûre et son aspect. Les numéros de folios indiqués dans le corps même du texte sont accompagnés des deux paginations présentes sur le manuscrit, reproduites afin de permettre une consultation rapide du document originel si besoin. Les passages illisibles qu'ils soient dûs à la particularité d'un scribe, à un défaut de numérisation ou à un dégât du document original sont signalés par des crochets droits et parfois reconstitués par l'équipe scientifique du projet.
-			
-			Enfin, si l'automatisation de la constitution de cette édition depuis un encodage XML-TEI a l'avantage de permettre un rendu rapide et d'assurer la cohérence du texte tout au long du présent document, elle peut occasioner des appels de notes qui parfois pourraient paraître disjoints, nous prions nos lecteurs de ne pas nous en tenir rigueur.
-			\tableofcontents
-			\newpage
+<!--pages de titre
+avant-propos détaillant choix d'édition etc.-->
+
+\begin{titlepage}
+\includegraphics[width=\textwidth]{logo_rep_or.png}
+\begin{center}
+\textsc{\huge MS 128}
+
+\small 0.7.5.4, last updated on 09/08/2022
+\end{center}
+\vspace{4cm}{}{}
+\textbf{To cite this version :}
+
+CITATION
+
+\textbf{To read the ultra-diplomatic version :}
+
+\href{}{check our website}
+\vspace{2cm}{}{}
+
+\begin{center}
+This is version 0.7.5.4, last updated on 09/08/2022.
+\end{center}
+\begin{multicols}{2}
+Le projet Rethinking the Pebendaries Plot OnLine consacré à la transcription, l’édition critique et l’analyse du manuscrit MS 128 conservé à la bibliothèque de \href{https://parker.stanford.edu/parker/catalog/ps908cx9813}{Corpus Christi College}, Cambridge est fier de vous présenter cette version pdf des transcriptions réalisées par Mme Aude de Mézerac-Zaneti, M. Olivier Spina et M. Felipe Goes-Silva.
+\end{multicols}
+\end{titlepage}
+\begin{center}
+\vspace{3cm}{}{}
+\scshape{\large Notes sur la présente édition}
+\end{center}
+Proposer une édition d'un manuscrit aussi composite que le MS128 et dont les auteurs n'avaient sans doute jamais supposé qu'il serait un jour étudié et même édité, relève du challenge. Outre la difficulté de proposer une transcription des 220 folios qui constituent le document, la présentation elle-même du texte relève de choix/décisions pour lesquel/les des critères tels la fidélité vis-à-vis de la source, le confort de lecture et la clarté à la fois de la structure du manuscrit et de ces choix eux-même entrent en ligne de compte pour produire, autant qu'une édition destinée à la lecture, un outil de travail efficace.
+Ainsi l'équipe scientifique du projet a souhaité que les annotations marginales du manuscrit soient reproduites le plus fidèlement possible. Outres des gloses ou interprétations, sans doute de la main de Thomas Cranmer, de nombreux symboles ponctuent les marges du document parmi lesquelles la lettre "n" est à concevoir comme l’abréviation de "notandum" que nous avons choisi de ne pas développer afin de permettre une meilleure lisibilité du texte. Toujours dans un souci de lisibilité, les informations structurantes, titres ou listes de témoins parfois inscrites dans la marge par la particularité d'un scribe sont reproduits dans le corps du document et annotés en bas de page.
+Cette édition réalisée dans le cadre du projet RePPOL s'inscrit dans la tradition anglo-saxonne de la transcription diplomatique, ainsi exception faites des "n\textit{otandum}" marginaux les abréviations sont systématiquement développées et signalées par l'emploi de l'italique. Les additions supra- infra- ou intralinéaire sont reproduites dans le corps du texte, une note les signale. De même, les passages raturés sont conservés, une note signalant la rature et son aspect. Les numéros de folios indiqués dans le corps même du texte sont accompagnés des deux paginations présentes sur le manuscrit, reproduites afin de permettre une consultation rapide du document originel si besoin. Les passages illisibles qu'ils soient dus à la particularité d'un scribe, à un défaut de numérisation ou à un dégât du document original sont signalés par des crochets droits et parfois reconstitués par l'équipe scientifique du projet.
+Enfin, si l'automatisation de la constitution de cette édition depuis un encodage XML-TEI a l'avantage de permettre un rendu rapide et d'assurer la cohérence du texte tout au long du présent document, elle peut occasionner des appels de notes qui parfois pourraient paraître disjoints, nous prions nos lecteurs de ne pas nous en tenir rigueur.
+\tableofcontents
+\newpage</xsl:text>
 <!--			CONSTITUTION DE LA STRUCTURE DU MANUSCRIT ie chapter/section/subsection non numérottés qui s'afficheront auto dans la table of content-->
-			
 			<xsl:for-each select="//div">
 				<!-- boucle sur div -->
 				<xsl:choose>
+					<xsl:when test="@type='collection'"><!--si c'est une collection, boîterouge = chapter-->
+<xsl:text> \addcontentsline{toc}{section}{Collection </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text><xsl:text> \section*{}</xsl:text>
+					</xsl:when>
+					<xsl:when test="@type='memorandum'">
+						<!--section, boîte verte = section-->
+						<xsl:text> \addcontentsline{toc}{subsection}{Memorandum </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
+						<xsl:text> \subsection*{}</xsl:text>
+					</xsl:when>
+					<xsl:when test="@type='question_set'">
+						<xsl:text> \addcontentsline{toc}{subsection}{Question set </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
+						<xsl:text> \subsection*{}</xsl:text>
+					</xsl:when>
+					<xsl:when test="@type='answer_set'">
+						<xsl:text> \addcontentsline{toc}{subsection}{Answer set </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
+						<xsl:text> \subsection*{}</xsl:text>
+					</xsl:when>
+					<xsl:when test="@type='index'">
+						<xsl:text> \addcontentsline{toc}{subsection}{Index </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
+						<xsl:text> \subsection*{}</xsl:text>
+					</xsl:when>
+					<xsl:when test="@type='testimony'">
+						<xsl:text> \addcontentsline{toc}{subsection}{Testimony </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
+						<xsl:text> \subsection*{}</xsl:text>
+					</xsl:when>
+					<xsl:when test="@type='deposition'">
+						<xsl:text> \addcontentsline{toc}{subsection}{Deposition </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
+						<xsl:text> \subsection*{}</xsl:text>
+					</xsl:when>
+					<xsl:when test="@type='article'">
+						<xsl:variable name="article_n" select="preceding::div[@type='article'][1]/@n"/>
+						<xsl:choose>
+							<!--<xsl:when test="$article_n != '@n'">
+								<xsl:text> \addcontentsline{toc}{subsection}{Article </xsl:text><xsl:value-of select="@n"/><xsl:text> </xsl:text><xsl:value-of select="descendant::head[1]"/><xsl:text>}</xsl:text>
+								<xsl:text>TEST : </xsl:text>
+								<xsl:text>VALEUR DE N</xsl:text><xsl:value-of select="@n"/>
+								<xsl:text>VALEUR DE N PRÉCÉDENT</xsl:text><xsl:value-of select="preceding::div[@type='article']/@n"/>
+								<xsl:text>VALEUR DE VARIABLE</xsl:text><xsl:value-of select="$article_n"/>
+							</xsl:when>-->
+							<xsl:when test="not($article_n eq @n)">
+								<xsl:text> \addcontentsline{toc}{subsection}{Article </xsl:text><xsl:value-of select="@n"/><xsl:text> </xsl:text><xsl:value-of select="normalize-space(descendant::head[1])"/><xsl:text>}</xsl:text>
+								<xsl:text> \subsection*{}</xsl:text>
+							</xsl:when>
+							<xsl:otherwise/>
+						</xsl:choose>
+					</xsl:when>
 					<!--les pages lancent les traitements-->
 					<xsl:when test="@type='page'">
 						<xsl:variable name="page_n" select="descendant::pb[1]/@n"/>
 						<xsl:variable name="doc_title" select="concat('MS128, page ', $page_n)"/>
-						
-						\lfoot{<xsl:value-of select="$doc_title"/>}
-						<!-- test si la pag est impair pour les notes de marge -->
-						\ifthenelse{\isodd{\thepage}}
-						{\reversemarginpar}
-						{\normalmarginpar}
-						\textit{folio <xsl:value-of select="descendant::pb[1]/@n"/>}<!--on boucle sur les pages--><xsl:apply-templates/><!--\newpage-->
-						\dotfill
-					</xsl:when>
-					<xsl:when test="@type='collection'"><!--si c'est une collection, boîterouge = chapter-->
-						<xsl:text> \addcontentsline{toc}{chapter}{Collection </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
-					</xsl:when>
-					<xsl:when test="@type='memorandum'">
-						<!--section, boîte verte = section-->
-						<xsl:text> \addcontentsline{toc}{section}{Memorandum </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
-					</xsl:when>
-					<xsl:when test="@type='question_set'">
-						<xsl:text> \addcontentsline{toc}{section}{Question set</xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
-					</xsl:when>
-					<xsl:when test="@type='answer_set'">
-						<xsl:text> \addcontentsline{toc}{section}{Answer set </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
-					</xsl:when>
-					<xsl:when test="@type='index'">
-						<xsl:text> \addcontentsline{toc}{section}{Index </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
-					</xsl:when>
-					<xsl:when test="@type='testimony'">
-						<xsl:text> \addcontentsline{toc}{section}{Testimony </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
-					</xsl:when>
-					<xsl:when test="@type='deposition'">
-						<xsl:text> \addcontentsline{toc}{section}{Deposition </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text>
-					</xsl:when>
-					<xsl:when test="@type='article'">
-						<xsl:variable name="article_n" select="@n"/>
-						<xsl:choose>
-							<xsl:when test="(@type='article')and($article_n != preceding::div[@type = 'article']/@n)">
-								<xsl:text> \addcontentsline{toc}{section}{Article </xsl:text><xsl:value-of select="@n"/><xsl:text> </xsl:text><xsl:value-of select="descendant::head[1]"/><xsl:text>}</xsl:text>
-							</xsl:when>
-							
-						</xsl:choose>
+\lfoot{<xsl:value-of select="$doc_title"/>}
+<!-- test si la pag est impair pour les notes de marge -->
+\ifthenelse{\isodd{\thepage}}
+{\reversemarginpar}
+{\normalmarginpar}
+\textit{folio <xsl:value-of select="descendant::pb[1]/@n"/>}<!--on boucle sur les pages--><xsl:apply-templates/><!--\newpage-->
+\dotfill
 					</xsl:when>
 					<xsl:otherwise/>
 				</xsl:choose>
