@@ -560,7 +560,7 @@
 						<figure>
 							<head>Représentation des pages 9 et 11 divisées en sections sémantiques
 								balisées <gi>div</gi>de différents niveaux</head>
-							<graphic url="visu_structure_9-11.png" width="500px"/>
+							<graphic url="img/visu_structure_9-11.png" width="500px"/>
 						</figure>
 						<div4>
 							<head>Les <gi>spaces</gi>, marqueurs du blanc</head>
@@ -982,7 +982,7 @@
 								<figure>
 									<head>Changement dans le découpage des sections et sous-sections
 										des articles, exemple du haut de la page 44</head>
-									<graphic url="visu_structure_fine_p44_middletop.png"
+									<graphic url="img/visu_structure_fine_p44_middletop.png"
 										width="500px"/>
 								</figure>
 								<p>Pour ces cas de figure nous adjoignons à l'élément <gi>head</gi>
@@ -1027,7 +1027,7 @@
 								acquièrent par là une fonction de structure sémantique.</p>
 							<figure>
 								<head>Représentation de la page 11 divisée en <gi>div</gi></head>
-								<graphic url="visu_structure_fine_11.png" width="500px"/>
+								<graphic url="img/visu_structure_fine_11.png" width="500px"/>
 							</figure>
 							<p>Ce qui donne pour les pages 9 à 11 : <egXML
 									xmlns="http://www.tei-c.org/ns/Examples">
@@ -1357,7 +1357,7 @@
 									correspondant au même paragraphe. C'est pourquoi nous balisons
 									ainsi à la page 11 : <figure>
 										<head/>
-										<graphic url="visu_structure_fine_11_2.png" width="500px"/>
+										<graphic url="img/visu_structure_fine_11_2.png" width="500px"/>
 									</figure>
 									<egXML xmlns="http://www.tei-c.org/ns/Examples">
 										<div><!--cet élément <div> regroupe notes et paragraphe correspondant-->
@@ -1401,7 +1401,7 @@
 									<gloss>item</gloss>. Ainsi la page 92 :</p>
 								<figure>
 									<head>Le milieu de la page 92</head>
-									<graphic url="92.jpg" width="500px"/>
+									<graphic url="img/92.jpg" width="500px"/>
 								</figure>
 								<p>Se balise ainsi : <egXML xmlns="http://www.tei-c.org/ns/Examples">
 										<div><!-- cet élément <div> regroupe notes et paragraphes, mais ici il ne contient qu'un élément <list> et <metamark> -->
@@ -1470,7 +1470,7 @@
 									unifié. La page 90 est un bon exemple.</p>
 								<figure>
 									<head>La page 90</head>
-									<graphic url="90.jpg" width="500px"/>
+									<graphic url="img/90.jpg" width="500px"/>
 								</figure>
 								<p>Pour ces cas problématiques nous avons prévus des valeurs à
 									l'attribut <att>rend</att> permettant de rendre compte de
@@ -1525,7 +1525,7 @@
 										<gi>p</gi>.</p>
 								<figure>
 									<head>Une structure inhabituelle au bas de la page 40</head>
-									<graphic url="40_bottom.jpg" width="500px"/>
+									<graphic url="img/40_bottom.jpg" width="500px"/>
 								</figure>
 								<p> Il paraît alors difficile de savoir si le contenu textuel
 									concerné est un paragraphe ou une note. Un examen approfondi de
@@ -1588,7 +1588,7 @@
 										<gi>note</gi> avec le premier ou le second <gi>p</gi> ?</p>
 								<figure>
 									<head>La deuxième moitié de la page 44 </head>
-									<graphic url="visu_structure_fine_p44_2.png" width="500px"/>
+									<graphic url="img/visu_structure_fine_p44_2.png" width="500px"/>
 								</figure>
 								<p>Un examen approfondi du texte permet de déterminer que le contenu
 									de l'élément <gi>note</gi> réfère au second paragraphe. Ce qui
@@ -1600,7 +1600,7 @@
 								<figure>
 									<head>La deuxième moitié de la page 44 balisée selon
 										l'organisation sémantique du texte</head>
-									<graphic url="visu_structure_fine_p44_2_2.png" width="500px"/>
+									<graphic url="img/visu_structure_fine_p44_2_2.png" width="500px"/>
 								</figure>
 								<p>Ajoutant un élément <gi>div</gi> entourant les éléments
 										<gi>note</gi> et <gi>p</gi> concernés, représenté en rouge
@@ -1814,7 +1814,7 @@
 								<figure>
 									<head>Le haut de la page 157 où figure une question
 										barrée</head>
-									<graphic url="157_top.jpg" width="500px"/>
+									<graphic url="img/157_top.jpg" width="500px"/>
 								</figure>
 								<p>Dans ces cas il convient de ne pas donner d'attribut
 										<att>xml:id</att> à la question barrée et d'attribuer le
@@ -1928,7 +1928,7 @@
 								La page 63 nous trouvons une grande accolade dans la marge.</p>
 							<figure>
 								<head>Le milieu de la page 63</head>
-								<graphic url="63_middle.jpg" width="500px"/>
+								<graphic url="img/63_middle.jpg" width="500px"/>
 							</figure>
 							<p>Nous appliquons le principe général qui nous guide dans notre
 								balisage et intégrons l'élément <gi>metamark</gi> dans l'élément
@@ -2730,7 +2730,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 							<val>"above"</val></p>
 						<figure>
 							<head>Une addition, page 144</head>
-							<graphic url="144_middle-top.jpg" width="500px"/>
+							<graphic url="img/144_middle-top.jpg" width="500px"/>
 						</figure>
 						<egXML xmlns="http://www.tei-c.org/ns/Examples">
 							<!--page 144-->
@@ -2757,7 +2757,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 							"admytted".</p>
 						<figure>
 							<head>Une addition, page 259</head>
-							<graphic url="259_middle.jpg" width="500px"/>
+							<graphic url="img/259_middle.jpg" width="500px"/>
 						</figure>
 						<p>Nous balisons alors avec la valeur <val>"below"</val>. <egXML
 								xmlns="http://www.tei-c.org/ns/Examples">
@@ -2786,7 +2786,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 						<figure>
 							<head>Une addition à typer <val>"inline"</val> au bas de la page
 								40</head>
-							<graphic url="40_bottom.jpg" width="500px"/>
+							<graphic url="img/40_bottom.jpg" width="500px"/>
 						</figure>
 						<p> Lorsqu'il est manifeste que ce paragraphe est une addition, on opère un
 							double balisage en employant la valeur <val>"inline"</val> pour
@@ -2805,7 +2805,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 							immédiatement :</p>
 						<figure>
 							<head>Une correction à la page 44 que nous balisons <gi>add</gi></head>
-							<graphic url="44_middle.jpg" width="500px"/>
+							<graphic url="img/44_middle.jpg" width="500px"/>
 						</figure>
 						<p>Nous avons envisagé l'emploi de l'élément <gi>retrace</gi> pour baliser
 							ces passages. Cependant leur nombre réduit nous a semblé une raison
@@ -2826,7 +2826,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 						</p>
 						<figure>
 							<head>Une addition et une suppression au bas de la page 260</head>
-							<graphic url="260_bottom.jpg" width="500px"/>
+							<graphic url="img/260_bottom.jpg" width="500px"/>
 						</figure>
 						<egXML xmlns="http://www.tei-c.org/ns/Examples">
 							<!--page 260-->
@@ -2850,7 +2850,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 							Ainsi en haut de la page 44</p>
 						<figure>
 							<head>Le haut de la page 44</head>
-							<graphic url="44_top.jpg" width="500px"/>
+							<graphic url="img/44_top.jpg" width="500px"/>
 						</figure>
 						<egXML xmlns="http://www.tei-c.org/ns/Examples">
 							<div>
@@ -2870,7 +2870,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 							travers) le texte. Ainsi en bas de la page 44 :</p>
 						<figure>
 							<head>Le bas de la page 44</head>
-							<graphic url="44_bottom.jpg" width="500px"/>
+							<graphic url="img/44_bottom.jpg" width="500px"/>
 						</figure>
 						<!--      					ATTENTION EXEMPLE PROBLÉMATIQUE POUR METAMARK-->
 						<egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -2889,7 +2889,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 							mais ne se superposent pas.</p>
 						<figure>
 							<head>Addition et suppression concomitantes à la page 325</head>
-							<graphic url="325_middle_bottom.jpg" width="500px"/>
+							<graphic url="img/325_middle_bottom.jpg" width="500px"/>
 						</figure>
 						<egXML xmlns="http://www.tei-c.org/ns/Examples">
 							<p rend="main">
@@ -2903,7 +2903,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 							entourant la rature au sein d'un élément <gi>add</gi>. Nous trouvons un exemple au milieu de la page 301.</p>
 						<figure>
 							<head>Une suppression dans une addition au milieu de la page 301</head>
-							<graphic url="301_middle.jpg" width="500px"/>
+							<graphic url="img/301_middle.jpg" width="500px"/>
 						</figure>
 						<egXML xmlns="http://www.tei-c.org/ns/Examples">
 							<div>
@@ -2960,7 +2960,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 							nous importe tout de même de les signaler dans notre encodage.</p>
 						<figure>
 							<head>Le début de la page 313</head>
-							<graphic url="313_top.jpg" width="500px"/>
+							<graphic url="img/313_top.jpg" width="500px"/>
 						</figure>
 						<p>À la page 313 nous constatons des passages soulignés, pour les
 							retranscrire nous les insérerons dans un élément <gi>hi</gi> dont la
@@ -3009,7 +3009,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 							<val>"vertical_bottom-top"</val>.</p>
 						<figure>
 							<head>La page 276</head>
-							<graphic url="276.jpg" width="500px"/>
+							<graphic url="img/276.jpg" width="500px"/>
 						</figure>
 						<egXML xmlns="http://www.tei-c.org/ns/Examples">
 							<div>
@@ -3020,7 +3020,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 						</egXML>
 						<figure>
 							<head>La page 268</head>
-							<graphic url="268.jpg" width="500px"/>
+							<graphic url="img/268.jpg" width="500px"/>
 						</figure>
 						<egXML xmlns="http://www.tei-c.org/ns/Examples">
 							<div>
@@ -3033,7 +3033,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 							passages sous-ligné dans l'ajout <gi>add</gi> de la page 251 : <figure>
 								<head>Au milieu de la page 251, un élément <gi>hi</gi> au sein d'un
 									élément <gi>add</gi></head>
-								<graphic url="251_middle.jpg" width="500px"/>
+								<graphic url="img/251_middle.jpg" width="500px"/>
 							</figure>
 							<egXML xmlns="http://www.tei-c.org/ns/Examples">
 								<div>
@@ -3066,7 +3066,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 							<gloss>incertain</gloss> pour marquer ce trou dans la transcription.</p>
 						<figure>
 							<head>La marge de la page 281 coupée par la numérisation</head>
-							<graphic url="281.jpg" width="500px"/>
+							<graphic url="img/281.jpg" width="500px"/>
 						</figure>
 						<egXML xmlns="http://www.tei-c.org/ns/Examples">
 							<div>
@@ -3823,10 +3823,20 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 						</attList>
 					</elementSpec>
 					<elementSpec ident="space" mode="change">
+						<classes>
+							<!--<memberOf key="att.global.rendition" mode="delete"/>
+							<memberOf key="att.global.linking" mode="delete"/>
+							<memberOf key="att.global.facs" mode="delete"/>-->
+							<memberOf key="att.dimensions"/>
+						</classes>
 						<content>
 							<empty/>
 						</content>
 						<attList>
+							<attDef ident="extent" mode="delete"/>
+							<attDef ident="precision" mode="delete"/>
+							<attDef ident="scope" mode="delete"/>
+							<attDef ident="dim" mode="delete"/>
 							<attDef ident="quantity" mode="change" usage="req">
 								<valList mode="change" type="closed">
 									<valItem ident="1"/>
@@ -3834,7 +3844,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 							</attDef>
 							<attDef ident="unit" mode="change" usage="req">
 								<valList mode="change" type="closed">
-									<valItem ident="pages"/>
+									<valItem ident="pages" mode="add"/>
 								</valList>
 							</attDef>
 						</attList>

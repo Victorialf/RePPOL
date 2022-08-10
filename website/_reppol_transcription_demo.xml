@@ -360,7 +360,7 @@
 					</div>
 					
 					<div>
-						<p rend="main">Item the <date type="narrative" when="1543-08-12">xii daye of August</date>. Anno predictus in the <placeName type="parish" ref="51.14576352159874, 0.8740108702332904">parrishe
+						<p rend="main">Item the <date type="narrative" when="1543-08-12">xii daye of August</date>. Anno predictus in the <placeName type="parish" ref="16">parrishe
 							churche of Ashford</placeName> he preached. That prayer was not acceptable to god.
 							but in the churche only and no where ellis. Alledging this text</p>
 					</div>
@@ -481,7 +481,7 @@
 						</div>
 						<div>
 							<p rend="whole_width">
-								<add place="inline"> It<expan>em the</expan> same tyme &amp; place
+								<add place="inline">It<expan>em the</expan> same tyme &amp; place
 									he p<expan>re</expan>ched, that <expan>the</expan> new
 									p<expan>re</expan>cheres w<expan>ith the</expan> libertie of
 									the gospel hath caused our lyvynge to be worse than
@@ -490,7 +490,7 @@
 									<expan>the</expan> commaundmentes of god, &amp;
 									<expan>that</expan> it was a light thynge for
 									ev<expan>er</expan>y man to kepe they<expan>m</expan>, if he
-									wolde. </add>
+									wolde.</add>
 							</p>
 						</div>
 						<div>
@@ -547,12 +547,12 @@
 						</ab>
 					</div>
 					<div type="article" n="">
-						<head><persName type="religious" ref="45144" key="white_robert">The <roleName type="curate">curate</roleName> of <placeName type="parish" ref="51.21450426826586, 1.3592873680943796">muche Mongeham</placeName></persName></head>
+						<head><persName type="religious" ref="45144" key="white_robert">The <roleName type="curate">curate</roleName> of <placeName type="parish" ref="265">muche Mongeham</placeName></persName></head>
 						<div>
 							<head><date type="procedure" when="1543-09-24">24 Septembris Anno 1543</date></head>
 							<div>
-								<note rend="margin_left"><persName type="religious" ref="45144" key="white_robert">The <roleName type="curate">curate</roleName> of <placeName type="parish"  ref="51.21450426826586, 1.3592873680943796">moche mongeham</placeName></persName></note>
-								<p rend="main"><persName type="religious" ref="45144" key="white_robert">The <roleName type="curate">curate</roleName> of <placeName type="parish" ref="51.21450426826586, 1.3592873680943796">muche mongeham</placeName></persName> goyng on <expan>pro</expan>cession
+								<note rend="margin_left"><persName type="religious" ref="45144" key="white_robert">The <roleName type="curate">curate</roleName> of <placeName type="parish" ref="265">moche mongeham</placeName></persName></note>
+								<p rend="main"><persName type="religious" ref="45144" key="white_robert">The <roleName type="curate">curate</roleName> of <placeName type="parish" ref="265">muche mongeham</placeName></persName> goyng on <expan>pro</expan>cession
 									refuseth and will in no wise syng nor say the lateny
 									in suche maner as all other <roleName type="curate">curates</roleName> doo</p>
 							</div>
@@ -565,8 +565,7 @@
 								1543</date>.</head>
 							<div>
 								<note rend="margin_left"><persName type="x" ref="x">Robert Newyngton</persName></note>
-								<p rend="main"><persName type="x" ref="x">Robert Newyngton</persName> of <placeName type="parish" ref="51.19302334549703, 0.7184985606654988
-									">Edgerton</placeName> resisteth to come to comme
+								<p rend="main"><persName type="x" ref="x">Robert Newyngton</persName> of <placeName type="parish" ref="">Edgerton</placeName> resisteth to come to comme
 									to the Sepulcher at the tyme of Eastr w<expan>ith</expan>oute their
 									were brede and drinke their, he hath rebuked other
 									that have don it</p>
@@ -584,13 +583,13 @@
 						</div>
 					</div>
 					<div type="article" n="">
-						<head><persName type="lay_man" ref="x" key="makeblythe_thomas">Thomas makeblythe</persName> of <placeName  type="city" ref="51.279882209155474, 1.0827774233594474">Cant<expan>erbury</expan></placeName> <roleName type="barber">barbo<expan>ur</expan></roleName></head>
+						<head><persName type="lay_man" ref="x" key="makeblythe_thomas">Thomas makeblythe</persName> of <placeName  type="city" ref="">Cant<expan>erbury</expan></placeName> <roleName type="barber">barbo<expan>ur</expan></roleName></head>
 						<div>
 							<head><date type="procedure" when="1543-09-26">26 Septembris Anno 1543</date></head>
 							<div>
 								<note rend="margin_left"><persName type="lay_man" ref="x" key="makeblythe_thomas">Thomas makeblythe</persName></note>
 								<note rend="margin_left">ceremonies</note>
-								<p rend="main"><persName type="lay_man" ref="x" key="makeblythe_thomas">Thomas makeblith</persName> <roleName type="barbour">Barbour</roleName> of <placeName type="city" ref="51.279882209155474, 1.0827774233594474">Canterbury</placeName> did not
+								<p rend="main"><persName type="lay_man" ref="x" key="makeblythe_thomas">Thomas makeblith</persName> <roleName type="barbour">Barbour</roleName> of <placeName type="city" ref="">Canterbury</placeName> did not
 									bere palme on <date type="narrative" when="1543">palme sondaye last past</date>, but rede
 									the bible in procession tyme</p>
 							</div>
@@ -620,10 +619,10 @@
 									<item><persName type="x" ref="x">Thomas Calcot</persName> &amp; </item>
 								</list>
 								<list rend="main_right">
-									<item><persName type="religious" ref="42441" key="kempe_william"><expan>the</expan> <roleName type="vicar">vicar</roleName> of <placeName type="parish" ref="51.276275986548235, 1.07757578974423">Northgate</placeName></persName></item>
+									<item><persName type="religious" ref="42441" key="kempe_william"><expan>the</expan> <roleName type="vicar">vicar</roleName> of <placeName type="parish" ref="73">Northgate</placeName></persName></item>
 									<item><persName type="x" ref="x">Nicolas Raynolde</persName></item>
 									<item><persName type="x" ref="x">Thomas Calcot</persName> and oth<expan>er</expan> of <expan>the</expan></item>
-									<item>oth<expan>er</expan>parish of <placeName type="parish" ref="51.276275986548235, 1.07757578974423">Northgate</placeName>.</item>
+									<item>oth<expan>er</expan>parish of <placeName type="parish" ref="73">Northgate</placeName>.</item>
 								</list>
 							</div>
 						</div>
