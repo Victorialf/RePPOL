@@ -396,7 +396,7 @@ while (my $ligne = <TEXTE>) {
 		$ligne=~s/\$(Nevenson)\$/$se$hs$1$eh/;
 	}
 	if($page eq "078"){
-		$ligne=~s/(\$Concernyng )/$end$end$ar$1/;
+		$ligne=~s/\$(Concernyng Joane Bucher)\$/$end$end$ar$hs$1$eh/;
 	}
 	if($page eq "081"){
 		$ligne=~s/(<!--FIN 081-->)/$end$1/;
