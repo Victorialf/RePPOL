@@ -278,7 +278,7 @@
 								</section>
 								<section id="place_map" class="placetabcontent">
 <!--									<h2>map :</h2>-->
-									<img class="index_map" src=""/>
+									<img class="index_map" src="img/map_kent.png"/>
 								</section>
 							</div>
 						</article>
