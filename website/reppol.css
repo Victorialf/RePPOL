@@ -347,6 +347,17 @@ a.button {
 	left: -100px;
 	width: 40%;
 }
+article#home +.home_img{
+	animation: cranmer_translation 1.5s linear;
+}
+@keyframes cranmer_translation {
+	from{left: -400px; width: 30%;}
+	to{left: -100px; width: 40%;}
+}
+@-webkit-keyframes cranmer_translation{
+	from{left: -400px; width: 30%;}
+	to{left: -100px; width: 40%;}
+}
 section.project_members{
 	display: grid;
 	gap: 10px;
