@@ -393,7 +393,7 @@
 											<button onclick="reppol_t();" class="t_nav active">Transcription RePPOL</button>
 											<button onclick="calendar_t();" class="t_nav">Transcription Calendar</button>
 										<xsl:apply-templates
-											select="//tei:div[@type = 'page'][child::tei:pb[@facs = $facs]]"
+											select="//tei:div[@type = 'page'][descendant::tei:pb[@facs = $facs]]"
 											mode="text"/>
 									</div>
 
@@ -404,14 +404,14 @@
 								</section>
 								<section id="calendar" class="transcript">
 
-									<xsl:variable name="facs" select="@xml:id"/>
+									<xsl:variable name="facs" select="@facs"/>
 									<xsl:variable name="startid">#</xsl:variable>
 										<div id="facspage">
 											<xsl:element name="img">
 												<xsl:attribute name="class">facspage</xsl:attribute>
 												<xsl:attribute name="src">
 												<xsl:value-of
-												select="//tei:surface[@start = (concat($startid, $facs))]/tei:graphic/@url"
+													select="//tei:surface[@xml:id = (replace($facs, '#', ''))]/tei:graphic/@url"
 												/>
 												</xsl:attribute>
 											</xsl:element>
@@ -421,9 +421,9 @@
 												<button onclick="calendar_t();" class="t_nav active">Transcription Calendar</button>
 											
 											<xsl:choose>
-												<xsl:when test="//tei:div/tei:pb[@corresp = $facs]">
+												<xsl:when test="//tei:div/tei:pb[@facs = $facs]">
 												<xsl:apply-templates
-												select="//tei:div[@type = 'page_calendar'][child::tei:pb[@corresp = $facs]]"
+												select="//tei:div[@type = 'page_calendar'][child::tei:pb[@facs = $facs]]"
 												mode="calendar"/>
 												</xsl:when>
 												<xsl:otherwise>
@@ -469,6 +469,9 @@
 		<div class="{@type}">
 			<xsl:apply-templates mode="text"/>
 		</div>
+	</xsl:template>
+	<xsl:template match="tei:div[@sameAs] | tei:div[@xml:id]">
+		<xsl:apply-templates mode="text"/>
 	</xsl:template>
 	<xsl:template match="tei:head" mode="text">
 		<p class="{local-name()} {@rend}">

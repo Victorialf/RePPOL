@@ -734,7 +734,7 @@
 							<roleName type="priest">preestes</roleName></note>
 						<list rend="main_left">
 							<item><persName type="x" ref="x">John ffurner</persName></item>
-							<item><persName type="x" ref="x">Robert Burges</persName></item>
+							<item><persName type="x" ref="x">Ro<expan>bert</expan> Burg<expan>es</expan></persName></item>
 							<item><persName type="x" ref="x">John Colyer</persName></item>
 							<item><persName type="x" ref="x">John Brewster</persName></item>
 							<item><persName type="x" ref="x">Richard Stokes</persName></item>
@@ -768,7 +768,7 @@
 						<note rend="margin_left">
 							<list>
 								<item><persName type="religious" ref="90003" key="gardiner_william">Gardiner</persName></item>
-								<item><persName type="religious" ref="39569" key="cocke_william">William Cockes</persName></item>
+								<item><persName type="religious" ref="39569" key="cocke_william">W<expan>illia</expan>m Cock<expan>es</expan></persName></item>
 							</list>
 							<metamark>}</metamark>
 						</note>
@@ -780,9 +780,9 @@
 					<div>
 						<note rend="margin_left">
 							<list>
-								<item><persName type="religious" ref="39009" key="parkhurste_richard">Parkhurst</persName></item>
-								<item><persName type="religious" ref="90003" key="gardiner_william">gardiner</persName></item>
-								<item><persName type="religious" ref="90155" key="hunt_william">hunt</persName></item>
+								<item><persName type="religious" ref="39009" key="parkhurste_richard">Parkhurst</persName>;</item>
+								<item><persName type="religious" ref="90003" key="gardiner_william">gardiner</persName>;</item>
+								<item><persName type="religious" ref="90155" key="hunt_william">hunt</persName>;</item>
 								<item><persName type="religious" ref="45336" key="mylles_john">milles</persName></item>
 							</list>
 							<metamark>}</metamark>
@@ -799,14 +799,14 @@
 						<note rend="margin_left">
 							<list>
 								<item><persName type="x" ref="x">Cyriack petit</persName></item>
-								<item><persName type="religious" ref="90155" key="hunt_william">William hunt</persName>;</item>
+								<item><persName type="religious" ref="90155" key="hunt_william">W<expan>illiam</expan> hunt</persName>;</item>
 								<item><persName type="religious" ref="90880" key="shetheir_edmund">Shether</persName></item>
 							</list>
 							<metamark>}</metamark>
 							<metamark>n</metamark>
 						</note>
 						<p rend="main">The holly gooste is neither in this place
-							nor that etc.</p>
+							nor that &amp;c.</p>
 					</div>
 				</div>
 			</div>

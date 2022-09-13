@@ -268,15 +268,26 @@ Enfin, si l'automatisation de la constitution de cette édition depuis un encoda
 	</xsl:template>
 	<!--	LISTE-->
 	<xsl:template match="list"><!--<xsl:variable name="meta" select="following-sibling::tei:metamark[1]"/>-->
+		<xsl:variable name="meta"
+			select="following-sibling::tei:metamark[1]"/>
+		<xsl:variable name="meta_p"
+			select="following-sibling::tei:p[1]/tei:metamark[1]"/>
+		<xsl:variable name="meta_n"
+			select="following-sibling::tei:note[1]/tei:metamark[1]"/>
 		<xsl:for-each select="descendant::head">\begin{center} {\scshape <xsl:apply-templates/>} \end{center}</xsl:for-each>
-		<xsl:text>\begin{itemize}</xsl:text><xsl:apply-templates/><xsl:text>\end{itemize}</xsl:text>
+		<xsl:text>\begin{itemize}</xsl:text><xsl:apply-templates/>
+		<xsl:if test="$meta eq '}'"><xsl:text>\footnoteB{\textit{ une accolade fermante relie cet élément au suivant}}</xsl:text></xsl:if>
+		<xsl:if test="$meta_p eq '}'"><xsl:text>\footnoteB{\textit{ une accolade fermante relie cet élément au suivant}}</xsl:text></xsl:if>
+		<xsl:if test="$meta_n eq '}'"><xsl:text>\footnoteB{\textit{ une accolade fermante relie cet élément au suivant}}</xsl:text></xsl:if>
+		<xsl:text>\end{itemize}</xsl:text>
+		
 	</xsl:template>
 	<xsl:template match="item"><xsl:text>\item[]</xsl:text><xsl:apply-templates/></xsl:template>
 	<!--	METAMARK-->
 	<xsl:template match="metamark">
 		<xsl:variable name="meta" select="."/>
 		<xsl:choose>
-			<xsl:when test="$meta='}'"><xsl:text>\footnoteB{\textit{ une accolade fermante relie cet élément au suivant}}</xsl:text></xsl:when>
+			<xsl:when test="$meta='}'"/>
 			<xsl:otherwise>
 				<xsl:apply-templates/>
 			</xsl:otherwise>
