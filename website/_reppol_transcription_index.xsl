@@ -470,7 +470,7 @@
 			<xsl:apply-templates mode="text"/>
 		</div>
 	</xsl:template>
-	<xsl:template match="tei:div[@sameAs] | tei:div[@xml:id]">
+	<xsl:template match="tei:div[@sameAs] | tei:div[@xml:id]" mode="text">
 		<xsl:apply-templates mode="text"/>
 	</xsl:template>
 	<xsl:template match="tei:head" mode="text">
@@ -479,7 +479,7 @@
 			<xsl:apply-templates/>
 		</p>
 	</xsl:template>
-	<!--	template qui se charge de créer des div pour les sous-sections d'une section (uniquement dans le cas des @type=articles-->
+	<!--template qui se charge de créer des div pour les sous-sections d'une section (uniquement dans le cas des @type=articles-->
 	<xsl:template
 		match="tei:div[(child::tei:head) and (child::tei:div) and (ancestor::tei:div[@type = ('article') or ('answer_set')])]"
 		mode="text">
@@ -1191,8 +1191,6 @@
 		</xsl:if>
 	</xsl:template>
 	<xsl:template match="tei:persName" mode="index">
-		<xsl:variable name="base_uri"
-			select="'https://theclergydatabase.org.uk/jsp/persons/DisplayPerson.jsp?PersonID='"/>
 		<xsl:variable name="ref" select="@ref"/>
 		<xsl:variable name="key" select="@key"/>
 		<xsl:if test="not(preceding::tei:persName[@key = $key])">
@@ -1204,37 +1202,43 @@
 							<xsl:value-of select="@key"/>
 						</xsl:with-param>
 					</xsl:call-template>
+					<xsl:if test="@key=''">Unidentified persons</xsl:if>
 				</h3>
 				<p>Functions : 
 					<xsl:if test="@type='religious'"><xsl:value-of select="@type"/></xsl:if>
 					<xsl:if test="@type='lay_man'">lay man</xsl:if>
 					<xsl:if test="@type='lay_woman'">lay woman</xsl:if>
 				
-					
-					<xsl:for-each select="descendant::tei:roleName">, <xsl:value-of
-						select="@type"/></xsl:for-each>.</p>
+					<!--<xsl:call-template name="role_persname">
+						<xsl:with-param name="key"/>
+					</xsl:call-template>-->
+					<xsl:for-each select="//tei:roleName[ancestor::tei:persName[@key=$key]]">
+						<xsl:variable name="type" select="@type"/>
+						<xsl:choose>
+							<xsl:when test="preceding::tei:persName[@key=$key]/tei:roleName/@type=$type">
+								<!--<xsl:text>| $type = </xsl:text><xsl:value-of select="$type"/> <xsl:text>| @type = </xsl:text><xsl:value-of select="@type"/>-->
+							</xsl:when>
+							<xsl:otherwise>, <xsl:value-of select="@type"/></xsl:otherwise>
+						</xsl:choose>
+					</xsl:for-each>.
+				</p>
 				<p>Mentioned :</p>
 				<ul>
 					<xsl:apply-templates select=". | following::tei:persName[@key = $key]"
 						mode="sub_index"/>
 				</ul>
-				<p>Link : <xsl:choose>
-						<xsl:when test="@ref = ('x')or()">
+				<p>Link : 
+					<xsl:choose>
+						<xsl:when test="@ref=''"><!--Lorsque @ref est vide on écrit "-"-->
 							<xsl:text>-</xsl:text>
 						</xsl:when>
-						<xsl:when test="not(number(@ref))">
-							<xsl:analyze-string select="@ref" regex="\s\d+">
-								<xsl:matching-substring>
-<!--									<a href="{substring-before(.,' ')}"> Oxford DNB </a>-->
-									<a href="{concat($base_uri, substring-after(.,' '))}"> CCED </a>
-								</xsl:matching-substring>
-								<xsl:non-matching-substring>
-									<a href="{.}"> Oxford DNB </a></xsl:non-matching-substring>
-							</xsl:analyze-string>
-							
+						<xsl:when test="not(@ref)">
+							<xsl:text>-</xsl:text>
 						</xsl:when>
-						<xsl:otherwise>
-							<a href="{concat($base_uri, @ref)}"> CCED </a>
+						<xsl:otherwise><!--on appelle le template gérant la création des links-->
+							<xsl:call-template name="persname_link">
+								<xsl:with-param name="ref" select="@ref"/>
+							</xsl:call-template>
 						</xsl:otherwise>
 					</xsl:choose>
 				</p>
@@ -1255,67 +1259,7 @@
 					select="preceding::tei:pb[1]/@n"/></a></li>
 	</xsl:template>
 
-	<!--cf : https://askcodez.com/convertir-le-premier-caractere-de-chaque-mot-en-majuscule.html-->
-	<xsl:template name="CamelCase">
-		<xsl:param name="key_change"/>
-		<xsl:choose>
-			<xsl:when test="contains($key_change, '_')">
-				<xsl:call-template name="CamelCaseWord">
-					<xsl:with-param name="key_change" select="substring-before($key_change, '_')"/>
-				</xsl:call-template>
-				<xsl:text> </xsl:text>
-				<xsl:call-template name="CamelCase">
-					<xsl:with-param name="key_change" select="substring-after($key_change, '_')"/>
-				</xsl:call-template>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:call-template name="CamelCaseWord">
-					<xsl:with-param name="key_change" select="$key_change"/>
-				</xsl:call-template>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:template>
-
-	<xsl:template name="CamelCaseWord">
-		<xsl:param name="key_change"/>
-		<xsl:value-of
-			select="translate(substring($key_change, 1, 1), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
-		<xsl:value-of
-			select="translate(substring($key_change, 2, string-length($key_change) - 1), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')"
-		/>
-	</xsl:template>
-
-	<!--cf : https://askcodez.com/convertir-le-premier-caractere-de-chaque-mot-en-majuscule.html
-		version, plus proche de l'originale pour les placeName utilisant ' ' et pas '_'-->
-	<xsl:template name="CamelCase_space">
-		<xsl:param name="name_change"/>
-		<xsl:choose>
-			<xsl:when test="contains($name_change, ' ')">
-				<xsl:call-template name="CamelCaseWord_space">
-					<xsl:with-param name="name_change" select="substring-before($name_change, ' ')"
-					/>
-				</xsl:call-template>
-				<xsl:text> </xsl:text>
-				<xsl:call-template name="CamelCase_space">
-					<xsl:with-param name="name_change" select="substring-after($name_change, ' ')"/>
-				</xsl:call-template>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:call-template name="CamelCaseWord_space">
-					<xsl:with-param name="name_change" select="$name_change"/>
-				</xsl:call-template>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:template>
-
-	<xsl:template name="CamelCaseWord_space">
-		<xsl:param name="name_change"/>
-		<xsl:value-of
-			select="translate(substring($name_change, 1, 1), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
-		<xsl:value-of
-			select="translate(substring($name_change, 2, string-length($name_change) - 1), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')"
-		/>
-	</xsl:template>
+	
 
 	
 	<xsl:template match="tei:placeName" mode="index_prelist">
@@ -1327,9 +1271,14 @@
 					<xsl:attribute name="href">
 						<xsl:value-of select="concat('#', generate-id())"/>
 					</xsl:attribute>
-					<xsl:call-template name="CamelCase_space">
-						<xsl:with-param name="name_change" select="."/>
-					</xsl:call-template>
+					<xsl:choose>
+						<xsl:when test="@ref=''">Unidentified places</xsl:when>
+						<xsl:otherwise>
+							<xsl:call-template name="CamelCase_space">
+								<xsl:with-param name="name_change" select="."/>
+							</xsl:call-template>
+						</xsl:otherwise>
+					</xsl:choose>
 				</xsl:element>
 			</li>
 		</xsl:if>
@@ -1342,9 +1291,14 @@
 		<xsl:if test="not(preceding::tei:placeName[@ref = $ref])">
 			<div id="{generate-id()}" class="index_unit">
 				<h3>
-					<xsl:call-template name="CamelCase_space">
-						<xsl:with-param name="name_change" select="."/>
-					</xsl:call-template>
+					<xsl:choose>
+						<xsl:when test="@ref=''">Unidentified places</xsl:when>
+						<xsl:otherwise>
+							<xsl:call-template name="CamelCase_space">
+								<xsl:with-param name="name_change" select="."/>
+							</xsl:call-template>
+						</xsl:otherwise>
+					</xsl:choose>
 				</h3>
 				<p>Type : <xsl:value-of select="@type"/></p>
 				<p>Mentioned :</p>
@@ -1357,7 +1311,8 @@
 					</xsl:when>
 					<xsl:otherwise>
 						<a href="{concat($base_uri, @ref)}">CCED </a>
-						<xsl:choose>
+						
+						<xsl:choose><!--generate open-street links-->
 							<xsl:when test="@ref='6'"><a href="{concat($ref_base, '51.09563666023264, 0.9443751452224245')}">Open street map</a></xsl:when>
 							<xsl:when test="@ref='16'"><a href="{concat($ref_base, '51.14576352159874, 0.8740108702332904')}">Open street map</a></xsl:when>
 							<xsl:when test="@ref='27'"><a href="{concat($ref_base, '51.12951242200254, 0.7540032430536673')}">Open street map</a></xsl:when>
@@ -12237,4 +12192,113 @@
 			</a>
 		</li>
 	</xsl:template>
+
+<!--	TEMPLATE NAMED USED TO GENERATE STUFF-->
+	<!--cf : https://askcodez.com/convertir-le-premier-caractere-de-chaque-mot-en-majuscule.html-->
+	<xsl:template name="CamelCase">
+		<!--THIS TEMPLATE CHANGE KEY TO MAKE IT INTO A PROPER NAME WITH MAJ AND WITHOUT "_"-->
+		<xsl:param name="key_change"/>
+		<xsl:choose>
+			<xsl:when test="contains($key_change, '_')">
+				<xsl:call-template name="CamelCaseWord">
+					<xsl:with-param name="key_change" select="substring-before($key_change, '_')"/>
+				</xsl:call-template>
+				<xsl:text> </xsl:text>
+				<xsl:call-template name="CamelCase">
+					<xsl:with-param name="key_change" select="substring-after($key_change, '_')"/>
+				</xsl:call-template>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:call-template name="CamelCaseWord">
+					<xsl:with-param name="key_change" select="$key_change"/>
+				</xsl:call-template>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	
+	<xsl:template name="CamelCaseWord">
+		<!--THIS TEMPLATE CHANGE KEY TO MAKE IT INTO A PROPER NAME WITH MAJ AND WITHOUT "_"-->
+		<xsl:param name="key_change"/>
+		<xsl:value-of
+			select="translate(substring($key_change, 1, 1), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
+		<xsl:value-of
+			select="translate(substring($key_change, 2, string-length($key_change) - 1), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')"
+		/>
+	</xsl:template>
+	
+	<!--cf : https://askcodez.com/convertir-le-premier-caractere-de-chaque-mot-en-majuscule.html
+		version, plus proche de l'originale pour les placeName utilisant ' ' et pas '_'-->
+	<xsl:template name="CamelCase_space">
+		<xsl:param name="name_change"/>
+		<xsl:choose>
+			<xsl:when test="contains($name_change, ' ')">
+				<xsl:call-template name="CamelCaseWord_space">
+					<xsl:with-param name="name_change" select="substring-before($name_change, ' ')"
+					/>
+				</xsl:call-template>
+				<xsl:text> </xsl:text>
+				<xsl:call-template name="CamelCase_space">
+					<xsl:with-param name="name_change" select="substring-after($name_change, ' ')"/>
+				</xsl:call-template>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:call-template name="CamelCaseWord_space">
+					<xsl:with-param name="name_change" select="$name_change"/>
+				</xsl:call-template>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	
+	<xsl:template name="CamelCaseWord_space">
+		<xsl:param name="name_change"/>
+		<xsl:value-of
+			select="translate(substring($name_change, 1, 1), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
+		<xsl:value-of
+			select="translate(substring($name_change, 2, string-length($name_change) - 1), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')"
+		/>
+	</xsl:template>
+	
+	
+
+	
+	<xsl:template name="persname_link">
+		<xsl:param name="ref"/>
+<!--		THIS TEMPLATE GENERATES LINKS DEPENDING ON @ref -->
+		<xsl:variable name="cced" select="'https://theclergydatabase.org.uk/jsp/persons/DisplayPerson.jsp?PersonID='"/>
+		
+	<xsl:choose>
+		<!--<xsl:when test="@ref = ('x')or()"><!-\-Lorsque @ref est vide on écrit "-"-\->
+			<xsl:text>-</xsl:text>
+		</xsl:when>-->
+		<xsl:when test="not(number(@ref))">
+			<xsl:analyze-string select="@ref" regex="\s\d+">
+				<xsl:matching-substring>
+					<!--<a href="{substring-before(.,' ')}"> Oxford DNB </a>-->
+					<a href="{concat($cced, substring-after(.,' '))}"> CCED </a>
+				</xsl:matching-substring>
+				<xsl:non-matching-substring>
+					<xsl:analyze-string select="." regex="https://theclergydatabase.org.uk/jsp/bishops/DisplayBishop.jsp\?ordTenID=\d+">
+						<xsl:matching-substring>
+							<a href="{.}">CCED</a>
+						</xsl:matching-substring>
+						<xsl:non-matching-substring>
+							<a href="{substring-after(.,' ')}"> Oxford DNB </a>
+						</xsl:non-matching-substring>
+					</xsl:analyze-string>
+					<!--<a href="{.}"> Oxford DNB </a>--></xsl:non-matching-substring>
+			</xsl:analyze-string>
+			<!--<xsl:analyze-string select="@ref" regex="bishops">
+				<xsl:matching-substring>
+					<a href="{substring-before(.,' ')}"> CCED </a>
+				</xsl:matching-substring>
+				<xsl:non-matching-substring>
+					<a href="{substring-after(.,' ')}"> Oxford DNB </a>
+				</xsl:non-matching-substring>
+			</xsl:analyze-string>-->
+		</xsl:when>
+		<xsl:otherwise>
+			<a href="{concat($cced, @ref)}"> CCED </a>
+		</xsl:otherwise>
+	</xsl:choose>
+</xsl:template>
 </xsl:stylesheet>
