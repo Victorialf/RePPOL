@@ -6440,7 +6440,7 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
 		<list rend="margin_left">
 			<item><persName type="" ref="" key="">Edmond brene</persName>;</item>
 			<item><persName type="" ref="" key="">Jo<expan>hn</expan> Crosse</persName>;</item>
-			<item><persName type="" ref="" key="">Tho<expan>mas</expan> hollye</persName>;</item>
+			<item><persName type="" ref="" key="holly_thomas">Tho<expan>mas</expan> hollye</persName>;</item>
 			<item><persName type="" ref="" key="">W<expan>illiam</expan> Trigall</persName>;</item>
 			<item><persName type="" ref="" key="">John Borden</persName>,</item>
 			<item><persName type="" ref="" key="">Tho<expan>mas</expan> Menys</persName>;</item>
@@ -6465,10 +6465,10 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
  	<list>
  		<head>test<expan>es</expan>;</head>
  		<item><persName type="" ref="" key="">Ric<expan>hard</expan> Alcocke</persName>;</item>
- 		<item><persName type="" ref="" key="">Jo<expan>hn</expan> Parker</persName>;</item>
+ 		<item><persName type="religious" ref="90724" key="parker_john">Jo<expan>hn</expan> Parker</persName>;</item>
  		<item><persName type="" ref="" key="">W<expan>illiam</expan> hogges</persName>;</item>
  		<item><persName type="" ref="" key="">Robert ffoche</persName>;</item>
- 		<item><persName type="" ref="" key="">Jo<expan>hn</expan> Bayly</persName>;</item>
+ 		<item><persName type="religious" ref="74794" key="bayly_john">Jo<expan>hn</expan> Bayly</persName>;</item>
  		<item><persName type="" ref="" key="">Walt<expan>er</expan> Coffen</persName>;</item>
  		<item><persName type="" ref="" key="">George Sorel</persName>;</item>
  		<item><persName type="" ref="" key="">Petir Shorte</persName>.</item>
@@ -6484,7 +6484,8 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
             <div type="article" n="108">
             	<head><persName type="" ref="" key="">George Hardes</persName>.</head>
 
-            	<div><note rend="margin_left"><persName type="" ref="" key="">James Hard<expan>es</expan></persName>; test<expan>es</expan> unicus.</note><p rend="main"> Is of the Saduce opinion denying the resurrection
+            	<div><note rend="margin_left"><persName type="" ref="" key="">James Hard<expan>es</expan></persName>; test<expan>es</expan> unicus.</note>
+            		<p rend="main">Is of the Saduce opinion denying the resurrection
  of Christe in his Manhode. Saying that he rose
  only in spirite</p></div>
 
@@ -6497,46 +6498,63 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
 <pb n="092" facs="#fs_092"/>
             <div type="article" n="109">
                <head rend="margin_left"><persName key="" ref="" type="">Strawyn</persName></head>
- Affirmed that wee be not bounden to beleve
- <note rend="margin_left">videat reg<expan>es</expan></note> any thinge whiche is not written nor conteyned
+            	<div>
+            		<note rend="margin_left">videat reg<expan>es</expan></note>
+            	<p rend="main">Affirmed that wee be not bounden to beleve
+  any thinge whiche is not written nor conteyned
  in holly scripture. Nor ought to beleve any other
- thinge / than godd<expan>es</expan> wourde founde in holly scripture
- Testes.
- Clement Norton
- Joan Seth
- Robert ffyneux fynes
- Richard Stickney
- Richard Dryland
- Lauraunce Manby
- and other of ffav<expan>er</expan>sham
+ thinge / than godd<expan>es</expan> wourde founde in holly scripture</p>
+            	</div>
+ <div>
+ 	<list rend="main_left">
+ 	<head>Testes.</head>
+ 		<item><persName type="religious" ref="39067" key="norton_clement">Clement Norton</persName></item>
+ 		<item><persName type="" ref="" key="">Joan Seth</persName></item>
+ 		<item><persName type="religious" ref="41122" key="fynes_robert">Robert <del rend="strikethrough">ffyneux</del> fynes</persName></item>
+ 		<item><persName type="" ref="" key="">Richard Stickney</persName></item>
+ 		<item><persName type="religious" ref="89855" key="dryland_richard">Richard Dryland</persName></item>
+ 		<item><persName type="" ref="" key="">Lauraunce Manby</persName></item>
+ 		<item>and other of <placeName type="parish" ref="148">ffav<expan>er</expan>sham</placeName></item>
+ 	</list>
+ 	<p rend="main_left"><metamark>}</metamark></p>
+ </div>
  
 </div>
             <div type="article" n="110">
-               <head rend="margin_left">Swan vicar of Sheldewiche</head>
- <note rend="margin_left"><metamark>n</metamark></note> Christ did not dye, neither for yo<expan>u</expan> nor me / nor
+               <head rend="margin_left"><persName type="religious" key="" ref="">Swan <roleName type="vicar">vicar</roleName> of <placeName type="parish" ref="349">Sheldewiche</placeName></persName> <metamark>}</metamark></head>
+ <div>
+ 	<note rend="margin_left"><metamark>n</metamark></note>
+ 	<p rend="main">Christ did not dye, neither for yo<expan>u</expan> nor me / nor
  your fathers. nor my father. but for the fathers
  of tholde Lawe / And left<expan>es</expan> us be to be saved
- by our wourk<expan>es</expan>.
- S<expan>ir</expan> George Woddall his <roleName type="curate">Curat</roleName> and other can
- testifie /
+ 	by our wourk<expan>es</expan>.</p>
+<p rend="main"><persName type="religious" ref="" key=""><roleName type="sir">S<expan>ir</expan></roleName> George Woddall his <roleName type="curate">Curat</roleName></persName> and other can
+ 	testifie /</p></div>
  
 </div>
             <div type="article" n="111">
-               <head rend="margin_left">John Benson</head>
- In contempt of the Sacrament of extreme Unction
+            	<head rend="margin_left"><persName type="" ref="" key="">John Benson</persName></head>
+<div>
+	<p rend="main">In contempt of the Sacrament of extreme Unction
  said. yf I shuld chaunce to be seeke and dye
  I had as leve to smethe my cote therew<expan>ith</expan>
- as my body. for I can swete fast <fast> enough.</fast>
+	as my body. for I can swete fast <add place="above">fast</add> enough.</p>
+</div>
             </div>
             <div type="article" n="112">
-               <head rend="margin_left">Joyce Benson</head>
- Talking of our Lady said vi That she viz. mary
- shuld have borne Christ Asking her no leave /
- testes
- W<expan>illiam</expan> parker Smith
- Thomas Wood<expan>par</expan>och om<expan>n</expan>i sanctor<expan>es</expan> Cantur
- Mill<expan>es</expan>
-               <expan>ser</expan>vante to Mr. Jo<expan>hn </expan>Culpe<expan>per</expan>
+            	<head rend="margin_left"><persName type="" ref="" key="">Joyce Benson</persName></head>
+<div><p rend="main">Talking of our Lady said vi That she viz. mary
+ shuld have borne Christ Asking her no leave /</p></div>
+ 
+<div>
+	<list rend="main_left">
+		<head>testes</head>
+		<item><persName type="" ref="" key="">W<expan>illiam</expan> parker Smith</persName></item>
+		<item><persName type="" ref="" key="">Thomas Wood</persName></item>
+		<item><persName type="" ref="" key="">Mill<expan>es</expan> <roleName type=""><expan>ser</expan>vante</roleName> to <persName type="" ref="" key="">Mr. Jo<expan>hn </expan>Culpe<expan>per</expan></persName></persName></item>
+	</list>
+	<p rend="main_right"><metamark>}</metamark><expan>par</expan>och om<expan>n</expan>i sanctor<expan>es</expan> Cantur</p>
+</div>
             </div>
             <!--FIN 092--></div>
 <!--1 div refermée-->
@@ -6544,40 +6562,56 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
  <!--DÉBUT 093--><div type="page">
 
 <pb n="093" facs="#fs_093"/>
-<num type="pagination" subtype="red">93</num> <num type="pagination" subtype="black"><unclear/></num>
+<div><ab><num type="pagination" subtype="red">93</num> <num type="pagination" subtype="black"><unclear/></num></ab></div>
  
 <div type="article" n="113">
-               <head rend="margin_left">Turno<expan>ur</expan>
-               </head>
- He saide that allmighty god was the soule pr<unclear/>
-               <iest/>
- and sange the last mas of Requiem. and o<unclear/>
-               <ther/>
- <note rend="margin_left">Videat R<expan>everendissimus</expan></note> massez<expan> pro</expan>fiteth not them that be dede /
- Testes
- John Littilcott
- William Saunders
- and other /
+	<head rend="margin_left"><persName type="" ref="" key="turner_richard">Turno<expan>ur</expan></persName></head>
+	<div>
+		<note rend="margin_left">Videat R<expan>everendissimus</expan></note>
+		<p rend="main">He saide that allmighty god was the soule pr<unclear>iest</unclear>
+ and sange the last mas of Requiem. and o<unclear>ther</unclear>
+		massez<expan> pro</expan>fiteth not them that be dede /</p>
+	</div>
+<div>
+	<list rend="main_left">
+		<head>Testes</head>
+		<item><persName type="" ref="" key="">John Littilcott</persName></item>
+		<item><persName type="" ref="" key="">William Saunders</persName></item>
+		<item>and other /</item>
+	</list>
+	<p rend="main_right"><metamark>}</metamark></p>
+</div>
  
 </div>
             <div type="article" n="114">
-               <head rend="margin_left">Humphrey Cotton preest</head>
- Said that there be heresies in the bible /
- Testes
- Hugh Cooper
- Chr<expan>ist</expan>ofer bakerde Tenterden
- Petir James
+            	<head rend="margin_left"><persName type="religious" ref="39651" key="cotten_humphrey">Humphrey Cotton</persName> <roleName type="priest">preest</roleName> <metamark>}</metamark></head>
+	<div><p rend="main">Said that there be heresies in the bible /</p></div>
+ <div>
+ 	<list rend="main_left">
+ 	<head>Testes</head>
+ 		<item><persName type="" ref="" key="">Hugh Cooper</persName></item>
+ 		<item><persName type="" ref="" key="">Chr<expan>ist</expan>ofer bakerde</persName></item>
+ 		<item><persName type="" ref="" key="">Petir James</persName></item>
+	</list>
+ 	<p rend="main_right"><metamark>}</metamark> <placeName type="parish" ref="385">Tenterden</placeName></p>
+ </div>
  
 </div>
             <div type="article" n="115">
-               <head rend="margin_left">Nicolas ffitzwilliam</head>
- He saied that praiers did not help the soules that overr <wer/>
+               <head rend="margin_left"><persName ref="" type="" key="">Nicolas ffitzwilliam</persName></head>
+            	<div>
+            		<note rend="margin_left">Videat R<expan>everendissimus</expan></note>
+            		<p rend="main">He saied that praiers did not help the soules that overr <wer/>
  be departed. this present life, for in the Dirige
- <note rend="margin_left">Videat R<expan>everendissimus</expan></note> and Deprofund<expan>is</expan> the preestis pray for none but
- for them self<expan>es</expan> &amp;c.
- John Sowde
- Henry ffissher
- Robert Parker and other /
+  and Deprofund<expan>is</expan> the <roleName type="priest">preestis</roleName> pray for none but
+ for them self<expan>es</expan> &amp;c.</p></div>
+<div>
+	<list rend="main_left">
+		<item><persName type="" ref="" key="">John Sowde</persName></item>
+		<item><persName type="" ref="" key="">Henry ffissher</persName></item>
+		<item><persName type="" ref="" key="">Robert Parker</persName> and other /</item>
+	</list>
+</div>
 
 </div>
             <!--FIN 093--></div>
@@ -6586,26 +6620,34 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
  <!--DÉBUT 094--><div type="page">
 
 <pb n="094" facs="#fs_094"/>
-Thomas Hasilden. Saieth that if he could
- lyve w<expan>ith</expan>out synne he were as good as god
- Testes
+ 	<div><p rend="main"><persName type="" ref="" key="">Thomas Hasilden</persName>. Saieth that if he could
+ lyve w<expan>ith</expan>out synne he were as good as god</p></div>
+
  
 <div type="article" n="116">
-               <head rend="margin_left">Hasilden</head>
- Thomas Gibbes
- Will<expan>ia</expan>m Amount
- Nicolas Soole
- Richard Aford
- John Raynold
- Alexander Langley
- 
+	<head rend="margin_left"><persName type="" ref="" key="">Hasilden</persName></head>
+	<div>
+		<list>
+			<head>Testes</head>
+			<item><persName type="" ref="" key="">Thomas Gibbes</persName></item>
+			<item><persName type="" ref="" key="">Will<expan>ia</expan>m Amount</persName></item>
+			<item><persName type="" ref="" key="">Nicolas Soole</persName></item>
+			<item><persName type="" ref="" key="">Richard Aford</persName></item>
+			<item><persName type="" ref="" key="">John Raynold</persName></item>
+			<item><persName type="" ref="" key="">Alexander Langley</persName></item>
+		</list>
+	</div>
 </div>
             <div type="article" n="117">
-               <head rend="margin_left">John Thatcher Junior</head>
- Saide that he bibill was made by the
- Devill
- Teste
- Starkey the <roleName type="barber">barbour</roleName> of Cantur<expan>bury</expan>
+            	<head rend="margin_left"><persName type="" ref="" key="thatcher_john_younger">John Thatcher Junior</persName> <metamark>}</metamark></head>
+<div>
+	<p rend="main">Saide that he bibill was made by the
+ Devill</p></div>
+ <div><list rend="main">
+ 	<head>Teste</head>
+ 	<item><persName type="lay_man" key="">Starkey the <roleName type="barber">barbour</roleName> of <placeName ref="" type="city">Cantur<expan>bury</expan></placeName></persName></item>
+ </list>
+ </div>
             </div>
             <!--FIN 094--></div>
 <!--1 div refermée-->
@@ -6616,26 +6658,27 @@ Thomas Hasilden. Saieth that if he could
 
 <pb n="095" facs="#fs_095"/>
 
-<num type="pagination" subtype="red">95</num>
- Be yt knowen un to you<expan>r</expan> gracyus lordshep that thes is the very bill
+<div><ab><num type="pagination" subtype="red">95</num></ab></div>
+<div>
+	<p rend="whole_width">Be yt knowen un to you<expan>r</expan> gracyus lordshep that thes is the very bill
  that I deed wryt as consarnyng the ansour whan I deed ryde
  to the corte and that was thus my lord sayde have me reco<expan>m</expan>mend
  to you<expan>r</expan> master and tell hym that yf his matters be true and ryghtius
- he shal have frynddes inow for yfe my lord of cantorbory shold
+		he shal have frynddes inow for yfe <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615 https://theclergydatabase.org.uk/jsp/bishops/DisplayBishop.jsp?ordTenID=3" key="cranmer_thomas">my <roleName type="archbishop">lord</roleName> of <placeName type="city" ref="">cantorbory</placeName></persName> shold
  poneche them wrongfully yt yt wyll be gretly to his rebock
  and henderanc then at oxfort I met wyht Mr. ford &amp; he xed me
  wher I had ben and I sayd at the corte &amp; he exed me what my
  lord sayd &amp; I tolde hym &amp; he sayd the ansur was good enoufe &amp;
  he sayd he had hard of my M<expan>aster</expan>s trobell be fore &amp; I exed of howe
- &amp; he sayd of Mr. docter barbar &amp; then he sayd have me reco<expan>m</expan>mend
+ &amp; he sayd of <persName ref="" type="" key="">Mr. <roleName type="doctor">docter</roleName> barbar</persName> &amp; then he sayd have me reco<expan>m</expan>mend
  to you<expan>r</expan> M<expan>aster </expan>&amp; then tel hym that I hard say that my lord
- chancelar wold change his offes <add place="">&amp; Mr. bakkar shold have yt</add> but he sayd speke yt not
+ chancelar wold change his offes <add place="above">&amp; Mr. bakkar shold have yt</add> but he sayd speke yt not
  abrod on my word tel ye here yt mor playne lyar spoken
  &amp; thes was the ansu that I had &amp; that I deed wryte
  to showe my M<expan>aster</expan> ther for my lord I be seck you<expan>r</expan> grac to be
  good to me for here is everry word as ny as I can call to
  my rememberanc possybell thus god save you<expan>r</expan> graccyus
- lordshep
+ lordshep</p></div>
 <!--FIN 095--></div>
 <!--1 div refermée-->
 </div>
@@ -6652,42 +6695,68 @@ Thomas Hasilden. Saieth that if he could
 <!--DÉBUT 097--><div type="page">
 
 <pb n="097" facs="#fs_097"/>
+		<head>ffor <persName type="religious" key="shetheir_edmund" ref="90880">Shether</persName> and other</head>
+<div><ab><num type="pagination" subtype="red">97</num></ab></div>
+            		<div>
+				<note rend="margin_left"><metamark>1</metamark></note>
+				<p rend="main"> ffirste who was the begynners of theis mattiers that was porly at London</p>
+            		</div>
 
-<num type="pagination" subtype="red">97</num>
- ffor <persName type="religious" key="shetheir_edmund" ref="90880">Shether</persName> and other
- <note rend="margin_left"><metamark>1</metamark></note> ffirste who was the begynners of theis mattiers that was porly
- at London
- <note rend="margin_left"><metamark>2</metamark></note> It<expan>e</expan>m by whose advice and counsell it was setforwarde / knowin
- <note rend="margin_left"><metamark>3</metamark></note> It<expan>e</expan>m w<expan>ith</expan> whome thei had conference, and who did
+            		<div>
+            			<note rend="margin_left"><metamark>2</metamark></note>
+            			<p rend="main"> It<expan>e</expan>m by whose advice and counsell it was setforwarde / knowin</p>
+            		</div>
+
+            		<div>
+            			<note rend="margin_left"><metamark>3</metamark></note>
+            			<p rend="main"> It<expan>e</expan>m w<expan>ith</expan> whome thei had conference, and who did
  bolden and animate theym in the same / and in what
- forme by wourd<expan>es</expan> or writing or otherwise.
- <note rend="margin_left"><metamark>4</metamark></note> It<expan>e</expan>m what mattier thei hadd at the begynnyng for
+ forme by wourd<expan>es</expan> or writing or otherwise.</p>
+            		</div>
+            		<div>
+            			<note rend="margin_left"><metamark>4</metamark></note>
+            			<p rend="main"> It<expan>e</expan>m what mattier thei hadd at the begynnyng for
  foundation or grounde in thes thinges /
- <note rend="margin_left"><metamark>5</metamark></note> It<expan>e</expan>m if thei had any, whiter thei had theym of thair
+ </p>
+            		</div>
+
+            		<div>
+            			<note rend="margin_left"><metamark>5</metamark></note>
+            			<p rend="main"> It<expan>e</expan>m if thei had any, whiter thei had theym of thair
  awn knowledge, or by hardesaye
- <note rend="margin_left"><metamark>6</metamark></note> It<expan>e</expan>m what thing or thinges thei knowe my lord<expan>es</expan> g<expan>ra</expan>ce
+ </p>
+            		</div>
+            		<div>
+            			<note rend="margin_left"><metamark>6</metamark></note>
+            			<p rend="main"> It<expan>e</expan>m what thing or thinges thei knowe my lord<expan>es</expan> g<expan>ra</expan>ce
  culpable in, of thair awn knowledge and howe
- thei knowe it /
- <note rend="margin_left"><metamark>7</metamark></note> It<expan>e</expan>m the like to be ministred for the proceding of the
+ thei knowe it /</p>
+            		</div>
+<div><note rend="margin_left"><metamark>7</metamark></note> <p rend="main"> It<expan>e</expan>m the like to be ministred for the proceding of the
  same mattier at Canterburye
- <note rend="margin_left"><metamark>8</metamark></note> It<expan>e</expan>m howe many Justice of peace, Gentilmen and other
+ </p></div>
+<div><note rend="margin_left"><metamark>8</metamark></note> <p rend="main"> It<expan>e</expan>m howe many Justice of peace, Gentilmen and other
  persons, they have had conference w<expan>ith /</expan> in theis matters /
  and what thei and ev<expan>er</expan>y of theym have don, or spoken
  in the same matters
- <note rend="margin_left"><metamark>9</metamark></note> It<expan>e</expan>m to what thinges thei have conduced therunto
- <note rend="margin_left"><metamark>10</metamark></note> It<expan>e</expan>m what Petite / the clerke of the peace, or any
+ </p></div>
+<div><note rend="margin_left"><metamark>9</metamark></note> <p rend="main"> It<expan>e</expan>m to what thinges thei have conduced therunto
+ </p></div>
+<div><note rend="margin_left"><metamark>10</metamark></note> <p rend="main"> It<expan>e</expan>m what Petite / the clerke of the peace, or any
  other towardes the lawe haith said or don, as
  towching Inditementes / paneling of enquestes / and
  by what occasion, and by whose motion or co<expan>m</expan>mandeme<expan>n</expan>t
- <note rend="margin_left"><metamark>11</metamark></note> It<expan>e</expan>m to what ende or effecte, thei entendid to bring
+ </p></div>
+<div><note rend="margin_left"><metamark>11</metamark></note> <p rend="main"> It<expan>e</expan>m to what ende or effecte, thei entendid to bring
  theis mattiers
- <note rend="margin_left"><metamark>12</metamark></note> It<expan>e</expan>m by what authoritie thei began and <expan>pro</expan>cedid in
- theis mattiers /
- It<expan>e</expan>m whither you told and declared to the vicar of Charing
+ </p></div>
+<div><note rend="margin_left"><metamark>12</metamark></note> <p rend="main"> It<expan>e</expan>m by what authoritie thei began and <expan>pro</expan>cedid in
+	theis mattiers / </p></div>
+<div><p rend="main">It<expan>e</expan>m whither you told and declared to the vicar of Charing
  being in his house at Charing, Howe that iiii you did
  entende to preache ii sermons a pece in thile of Thanett
  in one daye, And to howe many moo you did declare the
- same, and to what entent /
+ same, and to what entent /</p></div>
 <!--FIN 097--></div>
 <!--1 div refermée-->
 </div>
