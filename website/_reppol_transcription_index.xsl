@@ -227,17 +227,20 @@
 							<section class="index_prelist">
 								<h2>browse :</h2>
 								<ul>
-									<xsl:apply-templates select="//tei:persName"
+									<xsl:apply-templates select="//tei:persName[not(@key='')]"
 										mode="index_prelist">
 										<xsl:sort select="@key"/>
+										
 									</xsl:apply-templates>
+									<xsl:apply-templates select="//tei:persName[@key='']" mode="index_prelist"/>
 								</ul>
 							</section>
 							<section class="index" id="top_2">
 								<h2>person index :</h2>
-								<xsl:apply-templates select="//tei:persName" mode="index">
+								<xsl:apply-templates select="//tei:persName[not(@key='')]" mode="index">
 									<xsl:sort select="@key"/>
 								</xsl:apply-templates>
+								<xsl:apply-templates select="//tei:persName[@key='']" mode="index"/>
 							</section>
 						</article>
 						<!--					<xsl:call-template name="footer"/>-->
@@ -259,10 +262,11 @@
 							<section class="index_prelist">
 								<h2>browse :</h2>
 								<ul class="index">
-									<xsl:apply-templates select="//tei:placeName"
+									<xsl:apply-templates select="//tei:placeName[not(@ref='')]"
 										mode="index_prelist">
 										<xsl:sort select="lower-case(.)"/>
 									</xsl:apply-templates>
+									<xsl:apply-templates select="//tei:placeName[@ref='']" mode="index_prelist"/>
 								</ul>
 							</section>
 							<div class="place_section_container" id="top_2">
@@ -272,9 +276,10 @@
 								</section>
 								<section id="place_index" class="placetabcontent">
 <!--									<h2>place index :</h2>-->
-									<xsl:apply-templates select="//tei:placeName" mode="index">
+									<xsl:apply-templates select="//tei:placeName[not(@ref='')]" mode="index">
 										<xsl:sort select="lower-case(.)"/>
 									</xsl:apply-templates>
+									<xsl:apply-templates select="//tei:placeName[@ref='']" mode="index"/>
 								</section>
 								<section id="place_map" class="placetabcontent">
 <!--									<h2>map :</h2>-->
@@ -304,10 +309,11 @@
 							</section>
 							<section class="index" id="top_2">
 								<h2>date index :</h2>
-								<xsl:apply-templates select="//tei:date[ancestor::tei:body]"
+								<xsl:apply-templates select="//tei:date[ancestor::tei:body][not(@when='')]"
 									mode="index">
 									<xsl:sort select="@when"/>
 								</xsl:apply-templates>
+								<xsl:apply-templates select="//tei:date[ancestor::tei:body][@when='']" mode="index"/>
 							</section>
 						</article>
 					</div>
@@ -470,7 +476,7 @@
 			<xsl:apply-templates mode="text"/>
 		</div>
 	</xsl:template>
-	<xsl:template match="tei:div[@sameAs] | tei:div[@xml:id]" mode="text">
+	<xsl:template match="tei:div[@sameAs]" mode="text">
 		<xsl:apply-templates mode="text"/>
 	</xsl:template>
 	<xsl:template match="tei:head" mode="text">
@@ -1017,6 +1023,87 @@
 					</div>
 				</div>
 			</xsl:when>
+			<xsl:when test="(descendant::tei:list[@rend='margin_left'])and(descendant::tei:note[@rend='main'])">
+				<div class="display_unit">
+					<div class="margin_left">
+						<xsl:for-each select="tei:list[@rend = 'margin_left']">
+							<xsl:variable name="meta"
+								select="following-sibling::tei:metamark[1]"/>
+							<xsl:variable name="meta_p"
+								select="following-sibling::tei:p[1]/tei:metamark[1]"/>
+							<xsl:variable name="meta_n"
+								select="following-sibling::tei:note[1]/tei:metamark[1]"/>
+							<xsl:for-each select="tei:head">
+								<p class="head_list">
+									<xsl:apply-templates/>
+								</p>
+							</xsl:for-each>
+							<xsl:choose>
+								<xsl:when test="$meta = '}'">
+									<ul class="bracket">
+										<xsl:for-each select="tei:item">
+											<li>
+												<xsl:apply-templates/>
+											</li>
+										</xsl:for-each>
+									</ul>
+								</xsl:when>
+								<xsl:when test="$meta_p = '}'">
+									<div class="metafloat_list">
+										<ul class="bracket">
+											<xsl:for-each select="tei:item">
+												<li>
+													<xsl:apply-templates/>
+												</li>
+											</xsl:for-each>
+										</ul>
+										<xsl:for-each select="following-sibling::tei:note">
+											<p class="metafloat note">
+												<!--											<xsl:for-each select="descendant::tei:metamark[.='}']">
+												
+											</xsl:for-each>-->
+												<xsl:apply-templates/>
+											</p>
+										</xsl:for-each>
+									</div>
+								</xsl:when>
+								<xsl:when test="($meta_n = '}') and ($meta_p != $meta_n)">
+									<div class="metafloat_list">
+										<ul class="bracket">
+											<xsl:for-each select="tei:item">
+												<li>
+													<xsl:apply-templates/>
+												</li>
+											</xsl:for-each>
+										</ul>
+										<xsl:for-each select="following-sibling::tei:note">
+											<p class="metafloat note">
+												<xsl:apply-templates/>
+											</p>
+										</xsl:for-each>
+									</div>
+								</xsl:when>
+								<xsl:otherwise>
+									<ul>
+										<xsl:for-each select="tei:item">
+											<li>
+												<xsl:apply-templates/>
+											</li>
+										</xsl:for-each>
+									</ul>
+								</xsl:otherwise>
+							</xsl:choose>
+						</xsl:for-each>
+					</div>
+					<div class="main">
+						<xsl:for-each select="note[@rend='main']">
+							<p class="note">
+								<xsl:apply-templates/>
+							</p>
+						</xsl:for-each>
+					</div>
+				</div>
+			</xsl:when>
 			<xsl:when
 				test="descendant::tei:note[@rend = 'margin_left'] and (not(descendant::tei:hi[@rend = 'vertical_bottom-top']))">
 				<!--					cas où il n'y a qu'une NOTE SEULE-->
@@ -1186,6 +1273,7 @@
 							<xsl:value-of select="@key"/>
 						</xsl:with-param>
 					</xsl:call-template>
+					<xsl:if test="@key=''">Unidentified persons</xsl:if>
 				</xsl:element>
 			</li>
 		</xsl:if>
@@ -1227,7 +1315,7 @@
 					<xsl:apply-templates select=". | following::tei:persName[@key = $key]"
 						mode="sub_index"/>
 				</ul>
-				<p>Link : 
+				<p style="display:inline-block;">Link : 
 					<xsl:choose>
 						<xsl:when test="@ref=''"><!--Lorsque @ref est vide on écrit "-"-->
 							<xsl:text>-</xsl:text>
@@ -12168,6 +12256,7 @@
 			<div class="index_unit" id="{@when}">
 				<h3>
 					<xsl:value-of select="@when"/>
+					<xsl:if test="@when=''">Unidentified dates</xsl:if>
 				</h3>
 				<ul>
 					<xsl:apply-templates select=". | //tei:date[@when = $when]" mode="sub_index"/>
@@ -12265,7 +12354,7 @@
 		<xsl:param name="ref"/>
 <!--		THIS TEMPLATE GENERATES LINKS DEPENDING ON @ref -->
 		<xsl:variable name="cced" select="'https://theclergydatabase.org.uk/jsp/persons/DisplayPerson.jsp?PersonID='"/>
-		
+		<ul class="links_inline">
 	<xsl:choose>
 		<!--<xsl:when test="@ref = ('x')or()"><!-\-Lorsque @ref est vide on écrit "-"-\->
 			<xsl:text>-</xsl:text>
@@ -12274,15 +12363,15 @@
 			<xsl:analyze-string select="@ref" regex="\s\d+">
 				<xsl:matching-substring>
 					<!--<a href="{substring-before(.,' ')}"> Oxford DNB </a>-->
-					<a href="{concat($cced, substring-after(.,' '))}"> CCED </a>
+					<li><a href="{concat($cced, substring-after(.,' '))}">CCED</a></li>
 				</xsl:matching-substring>
 				<xsl:non-matching-substring>
 					<xsl:analyze-string select="." regex="https://theclergydatabase.org.uk/jsp/bishops/DisplayBishop.jsp\?ordTenID=\d+">
 						<xsl:matching-substring>
-							<a href="{.}">CCED</a>
+							<li><a href="{.}">CCED</a></li>
 						</xsl:matching-substring>
 						<xsl:non-matching-substring>
-							<a href="{substring-after(.,' ')}"> Oxford DNB </a>
+							<li><a href="{.}">Oxford DNB</a></li>
 						</xsl:non-matching-substring>
 					</xsl:analyze-string>
 					<!--<a href="{.}"> Oxford DNB </a>--></xsl:non-matching-substring>
@@ -12297,8 +12386,9 @@
 			</xsl:analyze-string>-->
 		</xsl:when>
 		<xsl:otherwise>
-			<a href="{concat($cced, @ref)}"> CCED </a>
+			<li><a href="{concat($cced, @ref)}">CCED</a></li>
 		</xsl:otherwise>
 	</xsl:choose>
+		</ul>
 </xsl:template>
 </xsl:stylesheet>

@@ -524,6 +524,15 @@ ul.index {
 ul.index a{
 	transition: 0.2s;
 }
+ul.links_inline {
+	list-style: square;
+	display: inline-block;
+	margin: 0!important;
+}
+ul.links_inline li {
+	display: inline list-item;
+	margin-left: 15px;
+}
 /*
 ul.index a:hover {
 	color: #932311;
@@ -638,6 +647,7 @@ div.tabs_content{/*tabs de contenu 1 par an*/
 }
 .tabs_content table {
 	border-collapse: collapse;
+	font-size: 12pt;
 }
 .tabs_content td {
 	padding: 5px;
@@ -646,7 +656,7 @@ div.tabs_content{/*tabs de contenu 1 par an*/
 }
 
 .tabs_content a.date_valid:hover {
-	color: #efe9e3!important;
+	text-decoration: underline;
 }
 div.active_tabs_content{/*le tab de date actif*/
 }
@@ -1019,6 +1029,10 @@ div#text{
 }
 #calendar {
 	display: none;
+}
+#calendar div#text p {
+	margin-left: 60px;
+	margin-right: 60px;
 }
 /*collection section sous-section*/
 div.collection {
