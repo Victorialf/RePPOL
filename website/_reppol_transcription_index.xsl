@@ -227,17 +227,20 @@
 							<section class="index_prelist">
 								<h2>browse :</h2>
 								<ul>
-									<xsl:apply-templates select="//tei:persName"
+									<xsl:apply-templates select="//tei:persName[not(@key='')]"
 										mode="index_prelist">
 										<xsl:sort select="@key"/>
+										
 									</xsl:apply-templates>
+									<xsl:apply-templates select="//tei:persName[@key='']" mode="index_prelist"/>
 								</ul>
 							</section>
 							<section class="index" id="top_2">
 								<h2>person index :</h2>
-								<xsl:apply-templates select="//tei:persName" mode="index">
+								<xsl:apply-templates select="//tei:persName[not(@key='')]" mode="index">
 									<xsl:sort select="@key"/>
 								</xsl:apply-templates>
+								<xsl:apply-templates select="//tei:persName[@key='']" mode="index"/>
 							</section>
 						</article>
 						<!--					<xsl:call-template name="footer"/>-->
@@ -259,10 +262,11 @@
 							<section class="index_prelist">
 								<h2>browse :</h2>
 								<ul class="index">
-									<xsl:apply-templates select="//tei:placeName"
+									<xsl:apply-templates select="//tei:placeName[not(@ref='')]"
 										mode="index_prelist">
 										<xsl:sort select="lower-case(.)"/>
 									</xsl:apply-templates>
+									<xsl:apply-templates select="//tei:placeName[@ref='']" mode="index_prelist"/>
 								</ul>
 							</section>
 							<div class="place_section_container" id="top_2">
@@ -272,9 +276,10 @@
 								</section>
 								<section id="place_index" class="placetabcontent">
 <!--									<h2>place index :</h2>-->
-									<xsl:apply-templates select="//tei:placeName" mode="index">
+									<xsl:apply-templates select="//tei:placeName[not(@ref='')]" mode="index">
 										<xsl:sort select="lower-case(.)"/>
 									</xsl:apply-templates>
+									<xsl:apply-templates select="//tei:placeName[@ref='']" mode="index"/>
 								</section>
 								<section id="place_map" class="placetabcontent">
 <!--									<h2>map :</h2>-->
@@ -304,10 +309,11 @@
 							</section>
 							<section class="index" id="top_2">
 								<h2>date index :</h2>
-								<xsl:apply-templates select="//tei:date[ancestor::tei:body]"
+								<xsl:apply-templates select="//tei:date[ancestor::tei:body][not(@when='')]"
 									mode="index">
 									<xsl:sort select="@when"/>
 								</xsl:apply-templates>
+								<xsl:apply-templates select="//tei:date[ancestor::tei:body][@when='']" mode="index"/>
 							</section>
 						</article>
 					</div>
@@ -470,7 +476,7 @@
 			<xsl:apply-templates mode="text"/>
 		</div>
 	</xsl:template>
-	<xsl:template match="tei:div[@sameAs] | tei:div[@xml:id]">
+	<xsl:template match="tei:div[@sameAs]" mode="text">
 		<xsl:apply-templates mode="text"/>
 	</xsl:template>
 	<xsl:template match="tei:head" mode="text">
@@ -479,7 +485,7 @@
 			<xsl:apply-templates/>
 		</p>
 	</xsl:template>
-	<!--	template qui se charge de créer des div pour les sous-sections d'une section (uniquement dans le cas des @type=articles-->
+	<!--template qui se charge de créer des div pour les sous-sections d'une section (uniquement dans le cas des @type=articles-->
 	<xsl:template
 		match="tei:div[(child::tei:head) and (child::tei:div) and (ancestor::tei:div[@type = ('article') or ('answer_set')])]"
 		mode="text">
@@ -1017,6 +1023,87 @@
 					</div>
 				</div>
 			</xsl:when>
+			<xsl:when test="(descendant::tei:list[@rend='margin_left'])and(descendant::tei:note[@rend='main'])">
+				<div class="display_unit">
+					<div class="margin_left">
+						<xsl:for-each select="tei:list[@rend = 'margin_left']">
+							<xsl:variable name="meta"
+								select="following-sibling::tei:metamark[1]"/>
+							<xsl:variable name="meta_p"
+								select="following-sibling::tei:p[1]/tei:metamark[1]"/>
+							<xsl:variable name="meta_n"
+								select="following-sibling::tei:note[1]/tei:metamark[1]"/>
+							<xsl:for-each select="tei:head">
+								<p class="head_list">
+									<xsl:apply-templates/>
+								</p>
+							</xsl:for-each>
+							<xsl:choose>
+								<xsl:when test="$meta = '}'">
+									<ul class="bracket">
+										<xsl:for-each select="tei:item">
+											<li>
+												<xsl:apply-templates/>
+											</li>
+										</xsl:for-each>
+									</ul>
+								</xsl:when>
+								<xsl:when test="$meta_p = '}'">
+									<div class="metafloat_list">
+										<ul class="bracket">
+											<xsl:for-each select="tei:item">
+												<li>
+													<xsl:apply-templates/>
+												</li>
+											</xsl:for-each>
+										</ul>
+										<xsl:for-each select="following-sibling::tei:note">
+											<p class="metafloat note">
+												<!--											<xsl:for-each select="descendant::tei:metamark[.='}']">
+												
+											</xsl:for-each>-->
+												<xsl:apply-templates/>
+											</p>
+										</xsl:for-each>
+									</div>
+								</xsl:when>
+								<xsl:when test="($meta_n = '}') and ($meta_p != $meta_n)">
+									<div class="metafloat_list">
+										<ul class="bracket">
+											<xsl:for-each select="tei:item">
+												<li>
+													<xsl:apply-templates/>
+												</li>
+											</xsl:for-each>
+										</ul>
+										<xsl:for-each select="following-sibling::tei:note">
+											<p class="metafloat note">
+												<xsl:apply-templates/>
+											</p>
+										</xsl:for-each>
+									</div>
+								</xsl:when>
+								<xsl:otherwise>
+									<ul>
+										<xsl:for-each select="tei:item">
+											<li>
+												<xsl:apply-templates/>
+											</li>
+										</xsl:for-each>
+									</ul>
+								</xsl:otherwise>
+							</xsl:choose>
+						</xsl:for-each>
+					</div>
+					<div class="main">
+						<xsl:for-each select="note[@rend='main']">
+							<p class="note">
+								<xsl:apply-templates/>
+							</p>
+						</xsl:for-each>
+					</div>
+				</div>
+			</xsl:when>
 			<xsl:when
 				test="descendant::tei:note[@rend = 'margin_left'] and (not(descendant::tei:hi[@rend = 'vertical_bottom-top']))">
 				<!--					cas où il n'y a qu'une NOTE SEULE-->
@@ -1186,13 +1273,12 @@
 							<xsl:value-of select="@key"/>
 						</xsl:with-param>
 					</xsl:call-template>
+					<xsl:if test="@key=''">Unidentified persons</xsl:if>
 				</xsl:element>
 			</li>
 		</xsl:if>
 	</xsl:template>
 	<xsl:template match="tei:persName" mode="index">
-		<xsl:variable name="base_uri"
-			select="'https://theclergydatabase.org.uk/jsp/persons/DisplayPerson.jsp?PersonID='"/>
 		<xsl:variable name="ref" select="@ref"/>
 		<xsl:variable name="key" select="@key"/>
 		<xsl:if test="not(preceding::tei:persName[@key = $key])">
@@ -1204,37 +1290,43 @@
 							<xsl:value-of select="@key"/>
 						</xsl:with-param>
 					</xsl:call-template>
+					<xsl:if test="@key=''">Unidentified persons</xsl:if>
 				</h3>
 				<p>Functions : 
 					<xsl:if test="@type='religious'"><xsl:value-of select="@type"/></xsl:if>
 					<xsl:if test="@type='lay_man'">lay man</xsl:if>
 					<xsl:if test="@type='lay_woman'">lay woman</xsl:if>
 				
-					
-					<xsl:for-each select="descendant::tei:roleName">, <xsl:value-of
-						select="@type"/></xsl:for-each>.</p>
+					<!--<xsl:call-template name="role_persname">
+						<xsl:with-param name="key"/>
+					</xsl:call-template>-->
+					<xsl:for-each select="//tei:roleName[ancestor::tei:persName[@key=$key]]">
+						<xsl:variable name="type" select="@type"/>
+						<xsl:choose>
+							<xsl:when test="preceding::tei:persName[@key=$key]/tei:roleName/@type=$type">
+								<!--<xsl:text>| $type = </xsl:text><xsl:value-of select="$type"/> <xsl:text>| @type = </xsl:text><xsl:value-of select="@type"/>-->
+							</xsl:when>
+							<xsl:otherwise>, <xsl:value-of select="@type"/></xsl:otherwise>
+						</xsl:choose>
+					</xsl:for-each>.
+				</p>
 				<p>Mentioned :</p>
 				<ul>
 					<xsl:apply-templates select=". | following::tei:persName[@key = $key]"
 						mode="sub_index"/>
 				</ul>
-				<p>Link : <xsl:choose>
-						<xsl:when test="@ref = ('x')or()">
+				<p style="display:inline-block;">Link : 
+					<xsl:choose>
+						<xsl:when test="@ref=''"><!--Lorsque @ref est vide on écrit "-"-->
 							<xsl:text>-</xsl:text>
 						</xsl:when>
-						<xsl:when test="not(number(@ref))">
-							<xsl:analyze-string select="@ref" regex="\s\d+">
-								<xsl:matching-substring>
-<!--									<a href="{substring-before(.,' ')}"> Oxford DNB </a>-->
-									<a href="{concat($base_uri, substring-after(.,' '))}"> CCED </a>
-								</xsl:matching-substring>
-								<xsl:non-matching-substring>
-									<a href="{.}"> Oxford DNB </a></xsl:non-matching-substring>
-							</xsl:analyze-string>
-							
+						<xsl:when test="not(@ref)">
+							<xsl:text>-</xsl:text>
 						</xsl:when>
-						<xsl:otherwise>
-							<a href="{concat($base_uri, @ref)}"> CCED </a>
+						<xsl:otherwise><!--on appelle le template gérant la création des links-->
+							<xsl:call-template name="persname_link">
+								<xsl:with-param name="ref" select="@ref"/>
+							</xsl:call-template>
 						</xsl:otherwise>
 					</xsl:choose>
 				</p>
@@ -1255,67 +1347,7 @@
 					select="preceding::tei:pb[1]/@n"/></a></li>
 	</xsl:template>
 
-	<!--cf : https://askcodez.com/convertir-le-premier-caractere-de-chaque-mot-en-majuscule.html-->
-	<xsl:template name="CamelCase">
-		<xsl:param name="key_change"/>
-		<xsl:choose>
-			<xsl:when test="contains($key_change, '_')">
-				<xsl:call-template name="CamelCaseWord">
-					<xsl:with-param name="key_change" select="substring-before($key_change, '_')"/>
-				</xsl:call-template>
-				<xsl:text> </xsl:text>
-				<xsl:call-template name="CamelCase">
-					<xsl:with-param name="key_change" select="substring-after($key_change, '_')"/>
-				</xsl:call-template>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:call-template name="CamelCaseWord">
-					<xsl:with-param name="key_change" select="$key_change"/>
-				</xsl:call-template>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:template>
-
-	<xsl:template name="CamelCaseWord">
-		<xsl:param name="key_change"/>
-		<xsl:value-of
-			select="translate(substring($key_change, 1, 1), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
-		<xsl:value-of
-			select="translate(substring($key_change, 2, string-length($key_change) - 1), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')"
-		/>
-	</xsl:template>
-
-	<!--cf : https://askcodez.com/convertir-le-premier-caractere-de-chaque-mot-en-majuscule.html
-		version, plus proche de l'originale pour les placeName utilisant ' ' et pas '_'-->
-	<xsl:template name="CamelCase_space">
-		<xsl:param name="name_change"/>
-		<xsl:choose>
-			<xsl:when test="contains($name_change, ' ')">
-				<xsl:call-template name="CamelCaseWord_space">
-					<xsl:with-param name="name_change" select="substring-before($name_change, ' ')"
-					/>
-				</xsl:call-template>
-				<xsl:text> </xsl:text>
-				<xsl:call-template name="CamelCase_space">
-					<xsl:with-param name="name_change" select="substring-after($name_change, ' ')"/>
-				</xsl:call-template>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:call-template name="CamelCaseWord_space">
-					<xsl:with-param name="name_change" select="$name_change"/>
-				</xsl:call-template>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:template>
-
-	<xsl:template name="CamelCaseWord_space">
-		<xsl:param name="name_change"/>
-		<xsl:value-of
-			select="translate(substring($name_change, 1, 1), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
-		<xsl:value-of
-			select="translate(substring($name_change, 2, string-length($name_change) - 1), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')"
-		/>
-	</xsl:template>
+	
 
 	
 	<xsl:template match="tei:placeName" mode="index_prelist">
@@ -1327,9 +1359,14 @@
 					<xsl:attribute name="href">
 						<xsl:value-of select="concat('#', generate-id())"/>
 					</xsl:attribute>
-					<xsl:call-template name="CamelCase_space">
-						<xsl:with-param name="name_change" select="."/>
-					</xsl:call-template>
+					<xsl:choose>
+						<xsl:when test="@ref=''">Unidentified places</xsl:when>
+						<xsl:otherwise>
+							<xsl:call-template name="CamelCase_space">
+								<xsl:with-param name="name_change" select="."/>
+							</xsl:call-template>
+						</xsl:otherwise>
+					</xsl:choose>
 				</xsl:element>
 			</li>
 		</xsl:if>
@@ -1342,9 +1379,14 @@
 		<xsl:if test="not(preceding::tei:placeName[@ref = $ref])">
 			<div id="{generate-id()}" class="index_unit">
 				<h3>
-					<xsl:call-template name="CamelCase_space">
-						<xsl:with-param name="name_change" select="."/>
-					</xsl:call-template>
+					<xsl:choose>
+						<xsl:when test="@ref=''">Unidentified places</xsl:when>
+						<xsl:otherwise>
+							<xsl:call-template name="CamelCase_space">
+								<xsl:with-param name="name_change" select="."/>
+							</xsl:call-template>
+						</xsl:otherwise>
+					</xsl:choose>
 				</h3>
 				<p>Type : <xsl:value-of select="@type"/></p>
 				<p>Mentioned :</p>
@@ -1357,7 +1399,8 @@
 					</xsl:when>
 					<xsl:otherwise>
 						<a href="{concat($base_uri, @ref)}">CCED </a>
-						<xsl:choose>
+						
+						<xsl:choose><!--generate open-street links-->
 							<xsl:when test="@ref='6'"><a href="{concat($ref_base, '51.09563666023264, 0.9443751452224245')}">Open street map</a></xsl:when>
 							<xsl:when test="@ref='16'"><a href="{concat($ref_base, '51.14576352159874, 0.8740108702332904')}">Open street map</a></xsl:when>
 							<xsl:when test="@ref='27'"><a href="{concat($ref_base, '51.12951242200254, 0.7540032430536673')}">Open street map</a></xsl:when>
@@ -12213,6 +12256,7 @@
 			<div class="index_unit" id="{@when}">
 				<h3>
 					<xsl:value-of select="@when"/>
+					<xsl:if test="@when=''">Unidentified dates</xsl:if>
 				</h3>
 				<ul>
 					<xsl:apply-templates select=". | //tei:date[@when = $when]" mode="sub_index"/>
@@ -12237,4 +12281,114 @@
 			</a>
 		</li>
 	</xsl:template>
+
+<!--	TEMPLATE NAMED USED TO GENERATE STUFF-->
+	<!--cf : https://askcodez.com/convertir-le-premier-caractere-de-chaque-mot-en-majuscule.html-->
+	<xsl:template name="CamelCase">
+		<!--THIS TEMPLATE CHANGE KEY TO MAKE IT INTO A PROPER NAME WITH MAJ AND WITHOUT "_"-->
+		<xsl:param name="key_change"/>
+		<xsl:choose>
+			<xsl:when test="contains($key_change, '_')">
+				<xsl:call-template name="CamelCaseWord">
+					<xsl:with-param name="key_change" select="substring-before($key_change, '_')"/>
+				</xsl:call-template>
+				<xsl:text> </xsl:text>
+				<xsl:call-template name="CamelCase">
+					<xsl:with-param name="key_change" select="substring-after($key_change, '_')"/>
+				</xsl:call-template>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:call-template name="CamelCaseWord">
+					<xsl:with-param name="key_change" select="$key_change"/>
+				</xsl:call-template>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	
+	<xsl:template name="CamelCaseWord">
+		<!--THIS TEMPLATE CHANGE KEY TO MAKE IT INTO A PROPER NAME WITH MAJ AND WITHOUT "_"-->
+		<xsl:param name="key_change"/>
+		<xsl:value-of
+			select="translate(substring($key_change, 1, 1), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
+		<xsl:value-of
+			select="translate(substring($key_change, 2, string-length($key_change) - 1), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')"
+		/>
+	</xsl:template>
+	
+	<!--cf : https://askcodez.com/convertir-le-premier-caractere-de-chaque-mot-en-majuscule.html
+		version, plus proche de l'originale pour les placeName utilisant ' ' et pas '_'-->
+	<xsl:template name="CamelCase_space">
+		<xsl:param name="name_change"/>
+		<xsl:choose>
+			<xsl:when test="contains($name_change, ' ')">
+				<xsl:call-template name="CamelCaseWord_space">
+					<xsl:with-param name="name_change" select="substring-before($name_change, ' ')"
+					/>
+				</xsl:call-template>
+				<xsl:text> </xsl:text>
+				<xsl:call-template name="CamelCase_space">
+					<xsl:with-param name="name_change" select="substring-after($name_change, ' ')"/>
+				</xsl:call-template>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:call-template name="CamelCaseWord_space">
+					<xsl:with-param name="name_change" select="$name_change"/>
+				</xsl:call-template>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	
+	<xsl:template name="CamelCaseWord_space">
+		<xsl:param name="name_change"/>
+		<xsl:value-of
+			select="translate(substring($name_change, 1, 1), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
+		<xsl:value-of
+			select="translate(substring($name_change, 2, string-length($name_change) - 1), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')"
+		/>
+	</xsl:template>
+	
+	
+
+	
+	<xsl:template name="persname_link">
+		<xsl:param name="ref"/>
+<!--		THIS TEMPLATE GENERATES LINKS DEPENDING ON @ref -->
+		<xsl:variable name="cced" select="'https://theclergydatabase.org.uk/jsp/persons/DisplayPerson.jsp?PersonID='"/>
+		<ul class="links_inline">
+	<xsl:choose>
+		<!--<xsl:when test="@ref = ('x')or()"><!-\-Lorsque @ref est vide on écrit "-"-\->
+			<xsl:text>-</xsl:text>
+		</xsl:when>-->
+		<xsl:when test="not(number(@ref))">
+			<xsl:analyze-string select="@ref" regex="\s\d+">
+				<xsl:matching-substring>
+					<!--<a href="{substring-before(.,' ')}"> Oxford DNB </a>-->
+					<li><a href="{concat($cced, substring-after(.,' '))}">CCED</a></li>
+				</xsl:matching-substring>
+				<xsl:non-matching-substring>
+					<xsl:analyze-string select="." regex="https://theclergydatabase.org.uk/jsp/bishops/DisplayBishop.jsp\?ordTenID=\d+">
+						<xsl:matching-substring>
+							<li><a href="{.}">CCED</a></li>
+						</xsl:matching-substring>
+						<xsl:non-matching-substring>
+							<li><a href="{.}">Oxford DNB</a></li>
+						</xsl:non-matching-substring>
+					</xsl:analyze-string>
+					<!--<a href="{.}"> Oxford DNB </a>--></xsl:non-matching-substring>
+			</xsl:analyze-string>
+			<!--<xsl:analyze-string select="@ref" regex="bishops">
+				<xsl:matching-substring>
+					<a href="{substring-before(.,' ')}"> CCED </a>
+				</xsl:matching-substring>
+				<xsl:non-matching-substring>
+					<a href="{substring-after(.,' ')}"> Oxford DNB </a>
+				</xsl:non-matching-substring>
+			</xsl:analyze-string>-->
+		</xsl:when>
+		<xsl:otherwise>
+			<li><a href="{concat($cced, @ref)}">CCED</a></li>
+		</xsl:otherwise>
+	</xsl:choose>
+		</ul>
+</xsl:template>
 </xsl:stylesheet>
