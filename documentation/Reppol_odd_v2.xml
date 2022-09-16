@@ -668,7 +668,7 @@
 									</egXML></p>
 								<p>Le balisage du contenu de ces sections de <att>type</att>
 									<val>"question_set"</val> mérite une attention particulière.
-									Nous abordons ce point dans la section 1.2.2.1.3.</p>
+									<listRef><ref target="#q_a_sets">Nous abordons ce point dans la section 1.2.2.1.3.</ref></listRef></p>
 							</div5>
 							<div5>
 								<head>Les <gi>div</gi> typées <val>"answer_set"</val></head>
@@ -691,8 +691,8 @@
 										</div>
 									</egXML></p>
 								<p>Le balisage du contenu de ces sections de <att>type</att>
-									<val>"answer_set"</val> mérite une attention particulière. Nous
-									abordons ce point dans la section 1.2.2.1.3.</p>
+									<val>"answer_set"</val> mérite une attention particulière. <ref target="#q_a_sets">Nous
+									abordons ce point dans la section 1.2.2.1.3.</ref></p>
 							</div5>
 							<div5>
 								<head>Les <gi>div</gi> typées <val>"letter"</val></head>
@@ -1758,7 +1758,7 @@
 									</egXML>
 								</p>
 							</div5>
-							<div5>
+							<div5 xml:id="q_a_sets">
 								<head>Le cas des éléments <gi>div</gi> typés
 										<val>"question_set"</val> et <val>"answer_set"</val></head>
 								<p>Une attention particulière est portée aux éléments <gi>div</gi>
@@ -1901,6 +1901,77 @@
 									convient-il de se référer à la table des matières établie par
 									l'équipe scientifique pour appliquer un balisage pertinent à ces
 									éléments.</p>
+								<p xml:id="corresp_q_a">Tableau des correspondances des sets de questions et sets de réponses identifiés par l'équipe scientifique du projet</p>
+								<table>
+									<!--<row>
+										<cell>CORRESPONDANCE RÉPONSES-QUESTIONS</cell>
+									</row>-->
+									<row>
+										<cell>@type=answer_set, valeur de @n et page(s)</cell>
+										<cell> --> </cell>
+										<cell>@type=question_set, valeur de @n et page(s)</cell>
+									</row>
+									<row>
+										<cell>answer_set 4 p. 160</cell>
+										<cell> --> </cell>
+										<cell>question_set 8 p. 157</cell>
+									</row>
+									<row>
+										<cell>answer_set 6 p.171-172</cell>
+										<cell> --> </cell>
+										<cell>questiont_set 9 p.167-169</cell>
+									</row>
+									<row>
+										<cell>answer_set 8 p.211-215</cell>
+										<cell> --> </cell>
+										<cell>questiont_set 10 p.173</cell>
+									</row>
+									<row>
+										<cell>answer_set 9 p.219-220</cell>
+										<cell> --> </cell>
+										<cell>questiont_set 11 p.217</cell>
+									</row>
+									<row>
+										<cell>answer_set 11 p.255-256</cell>
+										<cell> --> </cell>
+										<cell>questiont_set 5 p.97</cell>
+									</row>
+									<row>
+										<cell>answer_set 12 p.264a-265</cell>
+										<cell> --> </cell>
+										<cell>questiont_set 13 p.259</cell>
+									</row>
+									<row>
+										<cell>answer_set 13 p.277-279</cell>
+										<cell> --> </cell>
+										<cell>questiont_set 5 p.97</cell>
+									</row>
+									<row>
+										<cell>answer_set 14 p.281-286</cell>
+										<cell> --> </cell>
+										<cell>questiont_set 5 p.259</cell>
+									</row>
+									<row>
+										<cell>answer_set 15 p.293</cell>
+										<cell> --> </cell>
+										<cell>questiont_set 5 p.259</cell>
+									</row>
+									<row>
+										<cell>answer_set 16 p.297-299</cell>
+										<cell> --> </cell>
+										<cell>questiont_set 5 p.259</cell>
+									</row>
+									<row>
+										<cell>answer_set 17 p.303</cell>
+										<cell> --> </cell>
+										<cell>questiont_set 16 p.301</cell>
+									</row>
+									<row>
+										<cell>answer_set 19 p.337-341</cell>
+										<cell> --> </cell>
+										<cell>questiont_set 18 p.335</cell>
+									</row>
+								</table>
 							</div5>
 						</div4>
 						<div4>
