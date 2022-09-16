@@ -595,6 +595,7 @@ img.index_map {
 	border: 1px solid #1f0f7e;
 	margin: 3px;
 	margin-left: 0px;
+	opacity: 0.8;
 }
 /*calendar _ date index*/
 section.calendar{

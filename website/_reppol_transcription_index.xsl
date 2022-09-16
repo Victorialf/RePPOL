@@ -283,7 +283,8 @@
 								</section>
 								<section id="place_map" class="placetabcontent">
 <!--									<h2>map :</h2>-->
-									<img class="index_map" src="img/map_kent.png"/>
+									<a href="https://gallica.bnf.fr/ark:/12148/btv1b550004040" target="blanck"><img class="index_map" src="https://gallica.bnf.fr/iiif/ark:/12148/btv1b550004040/f1/7041,2304,1306,960/1280,/0/grey.jpg" alt="Kent's map by Symonson Philip, Source : Gallica.bnf.fr / Bibliothèque nationale de France"/></a>
+									<p style="text-align:right;">Source : Gallica.bnf.fr / Bibliothèque nationale de France</p>
 								</section>
 							</div>
 						</article>
