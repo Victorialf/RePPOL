@@ -71,9 +71,9 @@
 							<li><a href="{$index_dates}">dates</a></li>
 						</ul>
 					</li>
-					<li>
+					<!--<li>
 						<a href="{$biblio}">bibliography</a>
-					</li>
+					</li>-->
 					<li>
 						<a href="{$legals}">about</a>
 					</li>
@@ -283,7 +283,8 @@
 								</section>
 								<section id="place_map" class="placetabcontent">
 <!--									<h2>map :</h2>-->
-									<img class="index_map" src="img/map_kent.png"/>
+									<a href="https://gallica.bnf.fr/ark:/12148/btv1b550004040" target="blanck"><img class="index_map" src="https://gallica.bnf.fr/iiif/ark:/12148/btv1b550004040/f1/7041,2304,1306,960/1280,/0/grey.jpg" alt="Kent's map by Symonson Philip, Source : Gallica.bnf.fr / Bibliothèque nationale de France"/></a>
+									<p style="text-align:right;">Source : Gallica.bnf.fr / Bibliothèque nationale de France</p>
 								</section>
 							</div>
 						</article>
@@ -1130,7 +1131,7 @@
 				</div>
 			</xsl:when>
 			<xsl:otherwise>
-				<p>JE NE SUIS PAS CONFIGURÉ POUR CE CAS DE FIGURE, VOIR XSLT</p>
+				<p>If you're reading this automatically generated text, it means this part of the transcription is still a work in progress. Please, come back later.</p>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
@@ -1393,47 +1394,49 @@
 				<ul>
 					<xsl:apply-templates select=". | following::tei:placeName[@ref = $ref]" mode="sub_index"/>
 				</ul>
-				<p>Link : <xsl:choose>
+				<p style="display:inline-block;">Link : <xsl:choose>
 					<xsl:when test="@ref = ('x')or()">
 						<xsl:text>-</xsl:text>
 					</xsl:when>
 					<xsl:otherwise>
-						<a href="{concat($base_uri, @ref)}">CCED </a>
+						<ul class="links_inline">
+							<li><a href="{concat($base_uri, @ref)}">CCED</a></li>
 						
 						<xsl:choose><!--generate open-street links-->
-							<xsl:when test="@ref='6'"><a href="{concat($ref_base, '51.09563666023264, 0.9443751452224245')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='16'"><a href="{concat($ref_base, '51.14576352159874, 0.8740108702332904')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='27'"><a href="{concat($ref_base, '51.12951242200254, 0.7540032430536673')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='43'"><a href="{concat($ref_base, '51.19975420080327, 0.9056226109356197')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='44'"><a href="{concat($ref_base, '51.21257428841646, 0.6897059854433114')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='45'"><a href="{concat($ref_base, '51.23442640656221, 0.5323448277713716')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='46'"><a href="{concat($ref_base, '51.29513818915764, 0.9572080376614853')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='57'"><a href="{concat($ref_base, '51.13212895787294, 1.302947579018137')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='66'"><a href="{concat($ref_base, '51.277648633703876, 1.0828494602763346')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='73'"><a href="{concat($ref_base, '51.276275986548235, 1.07757578974423')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='76'"><a href="{concat($ref_base, '51.27810202522983, 1.0855233549998646')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='85'"><a href="{concat($ref_base, '51.38426722257884, 0.5228846292421128')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='93'"><a href="{concat($ref_base, '51.244905091064496, 0.9627086167814554')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='148'"><a href="{concat($ref_base, '51.3177,0.8928')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='242'"><a href="{concat($ref_base, '50.95117535978458, 0.9065697644456505')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='260'"><a href="{concat($ref_base, '51.44254433958588, 0.3833232467670284')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='265'"><a href="{concat($ref_base, '51.21450426826586, 1.3592873680943796')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='275'"><a href="{concat($ref_base, '51.09713728823203, 1.1169920368954644')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='276'"><a href="{concat($ref_base, '51.35412251588519, 0.6670796932072199')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='291'"><a href="{concat($ref_base, '51.30844209417786, 0.8698966668067528')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='303'"><a href="{concat($ref_base, '51.17755453243505, 0.7561188280618952')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='310'"><a href="{concat($ref_base, '51.3642637207888, 0.6109353741360732')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='316'"><a href="{concat($ref_base, '51.196316274741974, 1.3611056342813097')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='338'"><a href="{concat($ref_base, '51.27381571344677, 1.3423353026039284')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='339'"><a href="{concat($ref_base, '51.27738721984441, 1.3388088425220264')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='340'"><a href="{concat($ref_base, '51.27505327417798, 1.339810656014829')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='349'"><a href="{concat($ref_base, '51.27434058957334, 0.8809924458287133')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='361'"><a href="{concat($ref_base, '51.24289954742153, 0.8096375733057797')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='366'"><a href="{concat($ref_base, '51.30033387972874, 1.1813821021641806')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='385'"><a href="{concat($ref_base, '51.0703845886681, 0.6850335175063367')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='408'"><a href="{concat($ref_base, '51.30926777086775, 1.1410263130109777')}">Open street map</a></xsl:when>
-							<xsl:when test="@ref='429'"><a href="{concat($ref_base, '51.27329987024547, 0.7544625439546462')}">Open street map</a></xsl:when>
+							<xsl:when test="@ref='6'"><li><a href="{concat($ref_base, '51.09563666023264, 0.9443751452224245')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='16'"><li><a href="{concat($ref_base, '51.14576352159874, 0.8740108702332904')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='27'"><li><a href="{concat($ref_base, '51.12951242200254, 0.7540032430536673')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='43'"><li><a href="{concat($ref_base, '51.19975420080327, 0.9056226109356197')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='44'"><li><a href="{concat($ref_base, '51.21257428841646, 0.6897059854433114')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='45'"><li><a href="{concat($ref_base, '51.23442640656221, 0.5323448277713716')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='46'"><li><a href="{concat($ref_base, '51.29513818915764, 0.9572080376614853')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='57'"><li><a href="{concat($ref_base, '51.13212895787294, 1.302947579018137')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='66'"><li><a href="{concat($ref_base, '51.277648633703876, 1.0828494602763346')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='73'"><li><a href="{concat($ref_base, '51.276275986548235, 1.07757578974423')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='76'"><li><a href="{concat($ref_base, '51.27810202522983, 1.0855233549998646')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='85'"><li><a href="{concat($ref_base, '51.38426722257884, 0.5228846292421128')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='93'"><li><a href="{concat($ref_base, '51.244905091064496, 0.9627086167814554')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='148'"><li><a href="{concat($ref_base, '51.3177,0.8928')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='242'"><li><a href="{concat($ref_base, '50.95117535978458, 0.9065697644456505')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='260'"><li><a href="{concat($ref_base, '51.44254433958588, 0.3833232467670284')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='265'"><li><a href="{concat($ref_base, '51.21450426826586, 1.3592873680943796')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='275'"><li><a href="{concat($ref_base, '51.09713728823203, 1.1169920368954644')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='276'"><li><a href="{concat($ref_base, '51.35412251588519, 0.6670796932072199')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='291'"><li><a href="{concat($ref_base, '51.30844209417786, 0.8698966668067528')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='303'"><li><a href="{concat($ref_base, '51.17755453243505, 0.7561188280618952')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='310'"><li><a href="{concat($ref_base, '51.3642637207888, 0.6109353741360732')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='316'"><li><a href="{concat($ref_base, '51.196316274741974, 1.3611056342813097')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='338'"><li><a href="{concat($ref_base, '51.27381571344677, 1.3423353026039284')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='339'"><li><a href="{concat($ref_base, '51.27738721984441, 1.3388088425220264')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='340'"><li><a href="{concat($ref_base, '51.27505327417798, 1.339810656014829')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='349'"><li><a href="{concat($ref_base, '51.27434058957334, 0.8809924458287133')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='361'"><li><a href="{concat($ref_base, '51.24289954742153, 0.8096375733057797')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='366'"><li><a href="{concat($ref_base, '51.30033387972874, 1.1813821021641806')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='385'"><li><a href="{concat($ref_base, '51.0703845886681, 0.6850335175063367')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='408'"><li><a href="{concat($ref_base, '51.30926777086775, 1.1410263130109777')}">Open street map</a></li></xsl:when>
+							<xsl:when test="@ref='429'"><li><a href="{concat($ref_base, '51.27329987024547, 0.7544625439546462')}">Open street map</a></li></xsl:when>
 						</xsl:choose>
+						</ul>
 					</xsl:otherwise>
 				</xsl:choose>
 				</p>
