@@ -71,9 +71,9 @@
 							<li><a href="{$index_dates}">dates</a></li>
 						</ul>
 					</li>
-					<li>
+					<!--<li>
 						<a href="{$biblio}">bibliography</a>
-					</li>
+					</li>-->
 					<li>
 						<a href="{$legals}">about</a>
 					</li>

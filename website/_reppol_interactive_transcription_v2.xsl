@@ -68,9 +68,9 @@
 							<li><a href="{$index_dates}">dates</a></li>
 						</ul>
 					</li>
-					<li>
+					<!--<li>
 						<a href="{$biblio}">bibliography</a>
-					</li>
+					</li>-->
 					<li>
 						<a href="{$legals}">about</a>
 					</li>
@@ -380,7 +380,7 @@
 		</xsl:result-document>
 <!--	FIN page LEGALS-->
 <!--	DÉBUT page BIBLIO-->
-		<xsl:result-document href="{$biblio}">
+		<!--<xsl:result-document href="{$biblio}">
 			<html>
 				<xsl:call-template name="head">
 					<xsl:with-param name="title" select="'bibliography'"/>
@@ -396,7 +396,7 @@
 					<xsl:call-template name="script"/>
 				</body>
 			</html>
-		</xsl:result-document>
+		</xsl:result-document>-->
 <!--	FIN page BIBLIO-->
 <!--	DÉBUT page ABOUT-->
 		<xsl:result-document href="{$about}">
