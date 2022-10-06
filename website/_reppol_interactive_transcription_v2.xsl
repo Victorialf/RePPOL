@@ -372,7 +372,11 @@
 							<p>To cite the website as a whole : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, sempe</p>
 							<p>To cite a particular page of the transcription : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, sempe</p>-->
 							<h3>contact</h3>
-							<p>To report a bug, a mistake or just to give us a thumbs up, get in touch : aude.de-mezerac@univ-lille.fr Olivier.Spina@univ-lyon2.fr</p>
+							<p>To report a bug, a mistake or just to give us a thumbs up, get in touch :</p>
+							<ul>
+								<li><a href="https://pro.univ-lille.fr/aude-de-mezerac/" target="blanck">Aud de Mézerac-Zanetti</a></li>
+								<li><a href="http://larhra.ish-lyon.cnrs.fr/membre/334" target="blanck">Olivier Spina</a></li>
+							</ul>
 						</article>
 					</div>
 				</body>

@@ -128,7 +128,6 @@
 			function openTab(evt, tabName) {
 			// Declare all variables
 			var i, placetabcontent, placetablinks;
-			
 			// Get all elements with class="tabcontent" and hide them
 			placetabcontent = document.getElementsByClassName("placetabcontent");
 			for (i = 0; i &lt; placetabcontent.length; i++) {
@@ -428,7 +427,7 @@
 												<button onclick="calendar_t();" class="t_nav active">Transcription Calendar</button>
 											
 											<xsl:choose>
-												<xsl:when test="//tei:div/tei:pb[@facs = $facs]">
+												<xsl:when test="//tei:div[@type = 'page_calendar']/tei:pb[@facs = $facs]">
 												<xsl:apply-templates
 												select="//tei:div[@type = 'page_calendar'][child::tei:pb[@facs = $facs]]"
 												mode="calendar"/>
@@ -1361,7 +1360,7 @@
 						<xsl:value-of select="concat('#', generate-id())"/>
 					</xsl:attribute>
 					<xsl:choose>
-						<xsl:when test="@ref=''">Unidentified places</xsl:when>
+						<xsl:when test="@ref=''">Other</xsl:when>
 						<xsl:otherwise>
 							<xsl:call-template name="CamelCase_space">
 								<xsl:with-param name="name_change" select="."/>
@@ -1381,7 +1380,7 @@
 			<div id="{generate-id()}" class="index_unit">
 				<h3>
 					<xsl:choose>
-						<xsl:when test="@ref=''">Unidentified places</xsl:when>
+						<xsl:when test="@ref=''">Other</xsl:when>
 						<xsl:otherwise>
 							<xsl:call-template name="CamelCase_space">
 								<xsl:with-param name="name_change" select="."/>
