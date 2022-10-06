@@ -4597,6 +4597,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 							<alternate maxOccurs="unbounded">
 								<elementRef key="expan"/>
 								<elementRef key="placeName"/>
+								<elementRef key="persName"/>
 								<textNode/>
 							</alternate>
 						</content>
