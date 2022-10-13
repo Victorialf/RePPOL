@@ -1402,7 +1402,7 @@
  <div type="collection" n="1">
             <div type="index" n="1">
 <!--DÉBUT 002-->
-            	<!--V1, de nombreuses div réunissent les textes par groupes horizontaux. 
+<!--            	V1, de nombreuses div réunissent les textes par groupes horizontaux. -->
             		<div type="page">
 			<pb n="002" facs="#fs_002"/>
             		<div>
@@ -1636,9 +1636,9 @@
             				<item>le ffitzwiliams 28.38.</item>
             			</list>
             		</div>
-<!-\-FIN 002-\->
-            	</div>-->
-            	<div type="page">
+<!--FIN 002-->
+            	</div>
+            	<!--<div type="page">
             		<pb n="002" facs="#fs_002"/>
             		<div>
             			<note rend="main">Manus Thomæ Cranmer</note>
@@ -1778,8 +1778,8 @@
             				<item>le ffitzwiliams 28.38.</item>
             			</list>
             		</div>
-            		<!--FIN 002-->
-            	</div>
+            		<!-\-FIN 002-\->
+            	</div>-->
 <!--1 div refermée-->
 	</div>
 </div>
@@ -2161,11 +2161,11 @@
 <div><ab><num type="pagination" subtype="red">13</num> <num type="pagination" subtype="black">4</num></ab></div>
  
 <div type="memorandum" n="1">
-	<div><p rend="main">M<expan>emorandum</expan> to examyn <expan>the</expan> <persName type="" ref="" key=""><roleName type="doctor">Doctor</roleName> of <placeName type="parish" ref="93">Chilham</placeName>, Du<expan>n</expan>dy</persName> <expan>that</expan> was an
+	<div><p rend="main"><del rend="overstrike">M<expan>emorandum</expan> to examyn <expan>the</expan> <persName type="" ref="" key=""><roleName type="doctor">Doctor</roleName> of <placeName type="parish" ref="93">Chilham</placeName>, Du<expan>n</expan>dy</persName> <expan>that</expan> was an
 		ob<expan>ser</expan>vant frear, <persName type="" ref="" key="">Mr Sentliger</persName>, <persName type="religious" ref="39009" key="parkhurste_richard">Mr Parkehurst</persName>, and other, <persName type="religious" ref="90003" key="gardiner_william">Gardin<expan>er</expan></persName>,
  <persName type="" ref="" key="">A <roleName type="">bricklayer</roleName> called Burgrave</persName>, <persName type="" ref="" key="">Browne of <placeName type="parish" ref="85">Chartam</placeName></persName>, of
  articles co<expan>n</expan>teyned in a shete of paper. wrytten <expan>with</expan> myn own hande, begy<expan>n</expan>ninge
-		The <persName type="" ref="" key=""><roleName type="doctor">Doctor</roleName> of <placeName type="parish" ref="93">Chilham</placeName></persName>.</p></div>
+		The <persName type="" ref="" key=""><roleName type="doctor">Doctor</roleName> of <placeName type="parish" ref="93">Chilham</placeName></persName>.</del></p></div>
 <div><note rend="margin_left"><metamark>n</metamark></note></div>
 </div>
             <div type="article" n="8">
@@ -2267,14 +2267,17 @@
                         <expan>the</expan> iiii of ffebruary last</date> at <placeName type="city" ref="">Boughton</placeName></head>
 
                	<div>
-               		<list rend="margin_left">
+               		<note rend="margin_left">
+               			<list rend="margin_left">
                			<item><persName type="" ref="" key="">Thomas Hawkins</persName>,</item>
                			<item><persName type="" ref="" key="">Thomas Porrich</persName>.</item>
                			<item><persName type="" ref="" key="">Raynolde Smith</persName>,</item>
                			<item><persName type="" ref="" key=""><roleName type="sir">Sir</roleName> John Legate</persName>.</item>
-               			<item>&amp; <persName type="religious" ref="" key="sponer_edward"><expan>the</expan> <roleName type="vicar">vicar</roleName> there of <placeName type="city" ref="">Boughton</placeName></persName></item>
-               		</list>
-               		<p rend="main"><metamark>}</metamark>ffastynge <expan>pro</expan>fiteth no thynge one tyme mor than other.
+               			<item>&amp; <persName type="religious" ref="" key="sponer_edward"><expan>the</expan> <roleName type="vicar">vicar</roleName> <del rend="strikethrough">there</del> of <placeName type="city" ref="">Boughton</placeName></persName></item>
+               			</list>
+               			<metamark>}</metamark>
+               		</note>
+               		<p rend="main">ffastynge <expan>pro</expan>fiteth no thynge one tyme mor than other.
  He rayled of <expan>the</expan> light bifore <expan>the</expan> sacrament, and <expan>the</expan> cloth
  <expan>that</expan> lay bifore <expan>the</expan> aultar, of <expan>the</expan> orname<expan>n</expan>tes of <expan>the</expan> church.</p></div>
  <div><p rend="whole_width">he defaced a chaple at <placeName type="parish" ref="">Ospringe</placeName>, pulled downe <expan>the</expan> images, and solde al the stuff.</p></div>
@@ -2329,7 +2332,7 @@
             <div type="article" n="19">
                <head><persName type="religious" ref="" key=""><roleName type="sir">Sir</roleName> laurence <roleName type="curate">curat</roleName> of <placeName type="parish" ref="">Chalocke</placeName></persName></head>
             	<div><note rend="margin_left">Memorandum to examyn hy<expan>m</expan> ageyn opon a bil p<expan>re</expan>sented <persName type="" ref="" key="">Andrewe Rayne</persName>. and And to examyn thies wytnesses <persName type="" ref="" key="">Henry Hawker</persName>. <persName type="" ref="" key="">William Gibbes</persName>. <persName type="" ref="" key="">Tho. Woroit<expan>er</expan></persName>. <persName type="" ref="" key="">Willi<expan>a</expan>m Horden</persName>. <persName type="" ref="" key="">Rog<expan>er</expan> Hal</persName>. <persName type="" ref="" key="">Henry Reg</persName> and <persName type="" ref="" key=""><expan>the</expan> mydwife</persName></note>
-            		<p rend="main">whan, He wil not christen childre untyl he have
+            		<p rend="main"><del rend="strikethrough">whan</del>, He wil not christen childre untyl he have
  taken <persName type="" ref="" key=""><expan>the</expan> mydwife</persName> aside, &amp; ther doth make her to swere
  opon a boke to answer to certen questions, nether he
  nor <persName type="" ref="" key="">the mydwife</persName> wil shewe the questions but to <expan>the</expan> 
@@ -2515,8 +2518,8 @@
             			sum others <expan>pro</expan>mooted by the said <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615 https://theclergydatabase.org.uk/jsp/bishops/DisplayBishop.jsp?ordTenID=3" key="cranmer_thomas">Cramner</persName> whose tales he uttred
             			to the kinge, whoe <expan>per</expan>ceivinge the malice trusted the said <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615 https://theclergydatabase.org.uk/jsp/bishops/DisplayBishop.jsp?ordTenID=3" key="cranmer_thomas">Cramn<expan>er</expan></persName>
  with thexaminac<expan>i</expan>on of thes matters w<expan>hich</expan> he did of div<expan>er</expan>s persons
- as by this doth appeare
- vide. pag. 418</p>
+ as by this doth appeare</p>
+<p rend="whole_width">vide. pag. 418</p>
             		</div>
 <!--FIN 020--></div>
 <!--1 div refermée-->
@@ -2721,7 +2724,7 @@
  	<div xml:id="set4_q13"><note rend="margin_left"><metamark>n</metamark></note><p rend="main">It<expan>e</expan>m what co<expan>mmun</expan>icacion you had w<expan>ith</expan> <persName type="" ref="" key=""><roleName type="sir">sir</roleName> Thomas Moile</persName> about the laste Sessions, and whither you gave to hym or sent to hym any wryting, and what was the effecte th<expan>er</expan><unclear>of</unclear></p></div>
  	<div xml:id="set4_q14"><p rend="main">It<expan>e</expan>m Whither you wolde haue hadd <persName type="religious" ref="47085" key="searles_robert">Serls</persName> and <persName type="religious" ref="90880" key="shetheir_edmund">Shether</persName> or either of theym to come to you secretlye with thair Articles, and you wolde haue holpen them the beeste you colde, and to whome you saied theis wourdes or like in effecte It<expan>e</expan>m what wryting<expan>es</expan> you haue receyuid frome any man as towching theis matters in <placeName type="county" ref="">kente</placeName>, and frome whome and what was theffecte therof</p></div>
  	<div xml:id="set4_q15"><p rend="main">It<expan>e</expan>m what communication ye had at <placeName type="city" ref="11855">London</placeName> of <persName type="" ref="" key=""><roleName type="doctor">Doct<expan>or</expan></roleName> Leghs</persName> being w<expan>ith</expan> me, and w<expan>ith</expan> whome you so co<expan>m</expan>muned It<expan>e</expan>m who made the bill put vp in the clergis name againste the <roleName type="commissary">co<expan>m</expan>missarie</roleName> for exercising Iurisdiction eccl<expan>es</expan>iasticall and whose hande it ys,</p></div>
- 	<div xml:id="set4_q16"><p rend="main">It<expan>e</expan>m what co<expan>mmun</expan>icac<expan>i</expan>on you haue had co<expan>n</expan>cernyng theis matters in <placeName type="county" ref="">kente</placeName> w<expan>ith</expan> <persName type="" ref="" key="">the <roleName type="">Chaunceller</roleName> of <placeName type="city" ref="11855">Londo<expan>n</expan></placeName></persName>, <persName type="" ref="" key=""><roleName type="doctor">Doct<expan>or</expan> </roleName>Cole</persName>, and w<expan>ith</expan> <persName type="" ref="" key=""><roleName type="doctor">Doct<expan>or</expan></roleName> Cleme<expan>n</expan>t</persName>the phisitian or other of theym</p></div>
+ 	<div xml:id="set4_q16"><p rend="main">It<expan>e</expan>m what co<expan>mmun</expan>icac<expan>i</expan>on you haue had co<expan>n</expan>cernyng theis matters in <placeName type="county" ref="">kente</placeName> w<expan>ith</expan> <persName type="" ref="" key="">the <roleName type="">Chaunceller</roleName> of <placeName type="city" ref="11855">Londo<expan>n</expan></placeName></persName>, <persName type="" ref="" key=""><roleName type="doctor">Doct<expan>or</expan> </roleName>Cole</persName>, and w<expan>ith</expan> <persName type="" ref="" key=""><roleName type="doctor">Doct<expan>or</expan></roleName> Cleme<expan>n</expan>t</persName> the phisitian or other of theym</p></div>
 <!--FIN 026--></div>
 <!--1 div refermée-->
 </div>
@@ -2925,7 +2928,7 @@
                	<persName type="" ref="" key="bartholomew_joy">Bartylmewe Ioy</persName> </head>
                <div>
                   <head>
-                     <date type="procedure" when="1540-11-17">17 Nouenbrer Anno 30</date>
+                     <date type="procedure" when="1540-11-17">17 Novembrer Anno 30</date>
                   </head>
 
 <div><note rend="margin_left">images</note>
@@ -3566,7 +3569,7 @@ mations, letteres and iniu<expan>n</expan>ctions.</p>
  on <date type="narrative" when="">thassention day Anno 1541</date>. he saied
  That there is none in heaven but Christ only
                			<persName type="religious" ref="" key="">Bradkirke <roleName type="priest">preist</roleName></persName>. <persName type="religious" ref="90880" key="shetheir_edmund">Mr Shether</persName>. <persName type="religious" ref="71947" key="marden_john">John marden</persName> <persName type="religious" ref="68334" key="colman_robert">Rob Colman</persName>.
-               			Thies iiii be witnes agaynst al <expan>the</expan> artices of <persName type="" ref="" key="">Rydley</persName> &amp; <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/24855 38355" key="scory_john">Scory</persName>
+               			Thies iiii be witnes agaynst al <expan>the</expan> articles of <persName type="" ref="" key="">Rydley</persName> &amp; <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/24855 38355" key="scory_john">Scory</persName>
  in the first detection made to me ii yer<expan>es</expan> past.</p>
                	</div>
                	<div><note rend="margin_left">pray<expan>our</expan> in onglish</note>
@@ -3784,7 +3787,7 @@ mations, letteres and iniu<expan>n</expan>ctions.</p>
  werr but beggerly ceremonies / whiche terme
  he saied was the moost metest terme that he
  could fynd or geve to it wytnes <persName type="religious" ref="90003" key="gardiner_william">Gardn<expan>er</expan></persName>,
-               			<persName type="religious" ref="45336" key="mylles_john">milles</persName>, <persName type="" ref="" key="">Bul.</persName> <persName type="" ref="" key="">Thomas wood</persName></p></div>
+               			<persName type="religious" ref="45336" key="mylles_john">milles</persName>, <persName type="" ref="" key="">Bul.</persName> <persName type="" ref="" key="">Thomas wod</persName></p></div>
 
 </div>
             </div>
@@ -4047,7 +4050,7 @@ of the font is no better than other water is,
                	<div>
                		<note rend="margin_left"><persName type="" ref="" key="">Robert Newyngton</persName></note>
                		<p rend="main"><persName type="" ref="" key="">Robert Newyngton</persName> of <placeName type="parish" ref="">Edgerton</placeName> resisteth to come to comme
-               			to the Sepulcher at the tyme of Eastr w<expan>ith</expan>oute their
+               			to the Sepulcher at the tyme of Easter w<expan>ith</expan>oute their
                			were brede and drinke their, he hath rebuked other
                			that have don it</p>
                	</div>
@@ -4229,7 +4232,7 @@ of the font is no better than other water is,
  
 </div>
                <div>
-               	<head rend="margin_left"><persName type="" ref="" key="">To Hasylden Tlunestede</persName></head>
+               	<head rend="margin_left"><persName type="" ref="" key="">Tho. Hasylden Tlinestede</persName></head>
                	<div>
                		<note rend="margin_left">Injunctions <metamark>n</metamark></note> 
                		<p rend="main">He spake contemptiously againste the kynges Inj<expan>u</expan>nctio<expan>n</expan>s
@@ -6181,13 +6184,13 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
  hym in <date type="narrative" when="">the feast of thassumption of o<expan>ur</expan> lady
  or the Sonday after in the xxxi yeres
  of the king<expan>es</expan> ma<expan>jestes</expan> most noble Reign</date> in <placeName type="building" ref="">the
- 	hous of <persName type="" key="" ref="">John Man</persName> of <placeName type="parish" ref="">Boxley</placeName></placeName> in the <expan>pre</expan>sence
+ 	hous of <persName type="" key="" ref="">John May</persName> of <placeName type="parish" ref="">Boxley</placeName></placeName> in the <expan>pre</expan>sence
 			and hearing of thesame <persName type="" key="" ref="">John Man</persName> <persName type="" key="" ref="">John
 				Todd</persName> and <persName type="" key="" ref="">John Stockwell</persName>. whiche
 			<persName type="" key="" ref="">Raynold Buckm<expan>er</expan></persName> was abjured by the
 			<persName type="religious" key="" ref="">lorde warham. late <roleName type="archbishop">Archebishop</roleName> of <placeName type="city" ref="232920">Cant<expan>erbury</expan></placeName></persName>
 			which abjuration <persName type="" key="" ref="">Mr. <roleName type="doctor">Docto<expan>ur</expan></roleName> Leef, Mr.
- of <placeName type="building" ref=""><placeName type="" ref="">maidestone college</placeName></placeName></persName> can declare more
+ of <placeName type="building" ref=""><placeName type="" ref="">maidestone</placeName> college</placeName></persName> can declare more
  at length</p></div>
  <div>
  	<note rend="margin_left">vi articles</note>
@@ -6666,7 +6669,7 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
  to the corte and that was thus my lord sayde have me reco<expan>m</expan>mend
  to you<expan>r</expan> master and tell hym that yf his matters be true and ryghtius
 		he shal have frynddes inow for yfe <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615 https://theclergydatabase.org.uk/jsp/bishops/DisplayBishop.jsp?ordTenID=3" key="cranmer_thomas">my <roleName type="archbishop">lord</roleName> of <placeName type="city" ref="232920">cantorbory</placeName></persName> shold
- poneche them wrongfully yt yt wyll be gretly to his rebock
+ poneche them wrongfully <del rend="strikethrough">yt</del> yt wyll be gretly to his rebock
  and henderanc then at oxfort I met wyht Mr. ford &amp; he xed me
  wher I had ben and I sayd at the corte &amp; he exed me what my
  lord sayd &amp; I tolde hym &amp; he sayd the ansur was good enoufe &amp;
@@ -7403,9 +7406,9 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
  gett no thynge butt dysplasure: I sayde thatt I dyd ons
  co<expan>m</expan>playne unto <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615 https://theclergydatabase.org.uk/jsp/bishops/DisplayBishop.jsp?ordTenID=3" key="cranmer_thomas">yo<expan>ur</expan> g<expan>ra</expan>ce</persName>: and you dyd say unto me: yow
  and yo<expan>ur</expan> co<expan>m</expan>pany doo hold me schortt I wyll hold yow
-					as schortt: ItI <persName type="religious" key="shetheir_edmund" ref="90880">Mr schether</persName> sayde unto me att hys retInyIg
- ffrom Croydon: when he had receyvyd hys InjuIctyons to
- declare: <expan>that</expan> <persName type="religious" key="gardiner_william" ref="90003">Igardn<expan>er </expan></persName>toke <persName type="religious" key="searles_robert" ref="47085">serl<expan>es</expan></persName>
+					as schortt: Ite<expan>m</expan> <persName type="religious" key="shetheir_edmund" ref="90880">Mr schether</persName> sayde unto me att hys ret<expan>ur</expan>ny<expan>n</expan>g
+ ffrom Croydon: when he had receyvyd hys Inju<expan>n</expan>ctyons to
+ declare: <expan>that</expan> <persName type="religious" key="gardiner_william" ref="90003">gardn<expan>er </expan></persName>toke <persName type="religious" key="searles_robert" ref="47085">serl<expan>es</expan></persName>
                <expan>par</expan>tt In my chamber: I
 					wyll be evyn <expan>with</expan> hym: It<expan>em</expan> thatt <persName type="religious" ref="https://doi.org/10.1093/ref:odnb/6615 https://theclergydatabase.org.uk/jsp/bishops/DisplayBishop.jsp?ordTenID=3" key="cranmer_thomas">yo<expan>ur</expan> g<expan>ra</expan>ce</persName> sayde unto <persName ref="" key="" type="">Mr.
  sentleger</persName>: thatt yow ar a bund. I wyl breke the bund &amp;
@@ -7445,13 +7448,13 @@ ma<expan>jesties</expan> pleas<expan>ur</expan> to have suche Images abused to b
  hys name was unto <expan>the</expan> artyclye off <persName type="religious" key="searles_robert" ref="47085">serles</persName> <expan>pri</expan>sonme<expan>n</expan>tt. I sayd
  ye &amp; he sayde nay: I <add place="above">dyd</add> styll affyrme hytt to be trew</p></div>
  	
- 	<div><p rend="main">I told hym <expan>that</expan> I wold cast hather<add place="above">gathr</add> al dowttes uppon the boke soo nye
+ 	<div><p rend="main">I told hym <expan>that</expan> I wold cast <add place="above">gathr</add> al dowttes uppon the boke soo nye
  as I cowld: And I ffor my <expan>par</expan>tt wold make myne <add place="above">answere</add> as
  well as I mygth: And so I dyd to be the bett<expan>er</expan> avysyd
  In myne answere makyng: I made myne answere
  and he saw them &amp; sayde yow have gon thorowly me
  thynkythe I lyke them well: wyll you send them unto
- my lord: ye thatt I wyll. &amp; soo I dyd by<add place="above">i</add> <persName type="religious" key="parkhurste_richard" ref="39009">Mr. parkehurst</persName>
+ my lord: ye thatt I wyll. &amp; soo I dyd by <persName type="religious" key="parkhurste_richard" ref="39009">Mr. parkehurst</persName>
  <expan>ser</expan>vantt I sentt them unto <persName ref="" key="" type="">Mr. <roleName type="doctor">doctor</roleName> ley</persName> and he askyd how I did
  &amp; byd me be mery: I thanke hys m<expan>a</expan>stershypp hartely sayd I</p></div>
  	<div><p rend="main">It<expan>em</expan> as co<expan>n</expan>c<expan>er</expan>nyng the <add place="above">communycatyon of the</add> cumyng off my lord warden &amp; <persName type="" key="" ref="">my <roleName type="">lord</roleName> cobbam</persName>

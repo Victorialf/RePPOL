@@ -599,10 +599,9 @@
 					</xsl:for-each>
 				</div>
 			</xsl:when>
-
 			<xsl:when
-				test="(descendant::tei:list[@rend = 'main_left']) and (descendant::tei:list[@rend = 'main_right'])">
-				<!--					cas où : LIST à GAUCHE ET LIST à DROITE-->
+				test="(descendant::tei:list[@rend = 'main_left']) and (descendant::tei:list[@rend = 'main_right']) and not(descendant::tei:note[@rend='main_right'])">
+				<!--cas où : LIST à GAUCHE ET LIST à DROITE-->
 				<div class="display_unit">
 					<div class="margin_left">
 						<xsl:for-each select="tei:note[@rend = 'margin_left']">
@@ -904,7 +903,7 @@
 				</div>
 			</xsl:when>
 			<xsl:when
-				test="(descendant::tei:list[@rend = 'main_left']) or (descendant::tei:list[@rend = 'main_right'])">
+				test="(descendant::tei:list[@rend = 'main_left']) or (descendant::tei:list[@rend = 'main_right']) and not(descendant::tei:note[@rend='main_right'])">
 				<!--					cas où : LIST MAIN_L OU LIST MAIN_R-->
 				<div class="display_unit">
 					<div class="margin_left">
@@ -1127,6 +1126,93 @@
 							<xsl:apply-templates/>
 						</p>
 					</xsl:for-each>
+				</div>
+			</xsl:when>
+			<xsl:when test="descendant::tei:note[@rend='main']">
+				<!--cas où NOTE SEULE dans le CORPS PRINCIPAL-->
+				<div class="display_unit">
+					<div class="margin_left"/>
+					<div class="main">
+						<xsl:for-each select="tei:note[@rend = 'main']">
+							<p class="note">
+								<xsl:apply-templates/>
+							</p>
+						</xsl:for-each>
+					</div>
+				</div>
+			</xsl:when>
+			<!-- cas où il n'y a qu'un PARAGRAPHE sur la DROITE, SEUL -->
+			<xsl:when test="descendant::tei:p[@rend='main_right']">
+				<div class="display_unit">
+					<div class="main">
+						<div class="main_left"/>
+						<div class="main_right">
+							<xsl:for-each select="tei:p[@rend='main_right']">
+								<p><xsl:apply-templates/></p>
+							</xsl:for-each>
+						</div>
+					</div>
+				</div>
+			</xsl:when>
+			<xsl:when test="descendant::tei:note[@rend='margin_left'] and (descendant::tei:list[@rend='main_left']) and (descendant::tei:note[@rend='main_right']) and (descendant::tei:list[@rend='main_right'])">
+				<!--cas où NOTES dans MARGIN_L et MAIN_R et LIST dans MAIN_L et _R
+				ne s'applique en fait qu'à l'index (en théorie)-->
+				<div class="display_unit">
+					<!--la différence : ajout d'une class css permettant de resserer un peu la page en réduisant la taille des <div>-->
+					<div class="margin_left smaller">
+						<xsl:for-each select="tei:note[@rend = 'margin_left']">
+							<p class="note">
+								<xsl:apply-templates/>
+							</p>
+						</xsl:for-each>
+					</div>
+					<div class="main smaller">
+						<div class="main_left smaller">
+							<xsl:for-each select="tei:list[@rend = 'main_left']">
+								<xsl:for-each select="tei:head">
+									<p class="head_list">
+										<xsl:apply-templates/>
+									</p>
+								</xsl:for-each>
+								<ul>
+									<xsl:for-each select="tei:item">
+										<li>
+											<xsl:apply-templates/>
+										</li>
+									</xsl:for-each>
+								</ul>
+							</xsl:for-each>
+							<!--<xsl:for-each select="tei:note[@rend = 'main_left']">
+								<p class="note">
+									<xsl:apply-templates/>
+								</p>
+							</xsl:for-each>-->
+						</div>
+						<div class="main_right_note">
+							<xsl:for-each select="tei:note[@rend = 'main_right']">
+								<p class="note">
+									<xsl:apply-templates/>
+								</p>
+							</xsl:for-each>
+						</div>
+						<div class="main_right smaller">
+							<xsl:for-each select="tei:list[@rend = 'main_right']">
+								<xsl:for-each select="tei:head">
+									<p class="head_list">
+										<xsl:apply-templates/>
+									</p>
+								</xsl:for-each>
+								<ul>
+									<xsl:for-each select="tei:item">
+										<li>
+											<xsl:apply-templates/>
+										</li>
+									</xsl:for-each>
+								</ul>
+							</xsl:for-each>
+							
+						</div>
+					</div>
 				</div>
 			</xsl:when>
 			<xsl:otherwise>

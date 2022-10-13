@@ -1195,8 +1195,32 @@ li {
 	transform: rotate(180deg);
 	writing-mode: tb-rl;
 }
-.vertical_top-bottom {
+/*.vertical_top-bottom {
 	writing-mode: tb-rl;
+}*/
+/*.text-align_top-bottom{
+	writing-mode: tb-rl;
+}
+p.head span.text-align_top-bottom{
+	writing-mode: tb-rl;
+	float: right;
+	margin: 30% 40% 0 0;
+}*/
+/*rétrécissement pour la page 002, (index)*/
+.margin_left .smaller{
+	width: 10%;
+}
+.main .smaller {
+	width: 40%;
+}
+.main_left .smaller {
+	width: 30%;
+}
+.main_right_note{
+	width: 10%;
+}
+.main_right .smaller {
+	width: 30%;
 }
 .persName {
 	/*color: #456456;*/
