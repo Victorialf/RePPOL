@@ -44,6 +44,7 @@
 \usepackage[top=2cm, bottom=2cm, left=4cm, right=4cm, heightrounded, marginparwidth=3.5cm, marginparsep=0.3cm]{geometry}
 \usepackage[dvipsnames]{xcolor}<!--permet l'utilisation de couleur-->
 \usepackage{fancyhdr}
+\usepackage{ulem}
 \usepackage{enumitem}
 \usepackage{parskip} 
 \usepackage{reledmac}
@@ -73,7 +74,7 @@ avant-propos détaillant choix d'édition etc.-->
 \begin{center}
 \textsc{\huge MS 128}
 
-\small 0.7.5.4, last updated on 09/08/2022
+\small 0.7.5.4, last updated on 14/10/2022
 \end{center}
 \vspace{4cm}{}{}
 \textbf{To cite this version :}
@@ -86,7 +87,7 @@ CITATION
 \vspace{2cm}{}{}
 
 \begin{center}
-This is version 0.7.5.4, last updated on 09/08/2022.
+This is version 0.7.5.4, last updated on 14/10/2022.
 \end{center}
 \begin{multicols}{2}
 Le projet Rethinking the Pebendaries Plot OnLine consacré à la transcription, l’édition critique et l’analyse du manuscrit MS 128 conservé à la bibliothèque de \href{https://parker.stanford.edu/parker/catalog/ps908cx9813}{Corpus Christi College}, Cambridge est fier de vous présenter cette version pdf des transcriptions réalisées par Mme Aude de Mézerac-Zaneti, M. Olivier Spina et M. Felipe Goes-Silva.
@@ -331,7 +332,8 @@ Enfin, si l'automatisation de la constitution de cette édition depuis un encoda
 				<xsl:apply-templates/>\footnoteB{<xsl:call-template name="note"><xsl:with-param name="desc" select="'\textit{barré par une grande croix.}'"/></xsl:call-template>}
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:apply-templates/>\footnoteB{<xsl:call-template name="note"><xsl:with-param name="desc" select="'\textit{barré par un trait horizontal.}'"/></xsl:call-template>}
+			<xsl:text>\sout{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>	<!--<xsl:apply-templates/>\footnoteB{<xsl:call-template name="note"><xsl:with-param name="desc" select="'\textit{barré par un trait horizontal.}'"/></xsl:call-template>}-->
+				
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
