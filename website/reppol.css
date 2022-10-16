@@ -524,6 +524,15 @@ ul.index {
 ul.index a{
 	transition: 0.2s;
 }
+ul.links_inline {
+	list-style: square;
+	display: inline-block;
+	margin: 0!important;
+}
+ul.links_inline li {
+	display: inline list-item;
+	margin-left: 15px;
+}
 /*
 ul.index a:hover {
 	color: #932311;
@@ -586,6 +595,7 @@ img.index_map {
 	border: 1px solid #1f0f7e;
 	margin: 3px;
 	margin-left: 0px;
+	opacity: 0.8;
 }
 /*calendar _ date index*/
 section.calendar{
@@ -638,6 +648,7 @@ div.tabs_content{/*tabs de contenu 1 par an*/
 }
 .tabs_content table {
 	border-collapse: collapse;
+	font-size: 12pt;
 }
 .tabs_content td {
 	padding: 5px;
@@ -646,7 +657,7 @@ div.tabs_content{/*tabs de contenu 1 par an*/
 }
 
 .tabs_content a.date_valid:hover {
-	color: #efe9e3!important;
+	text-decoration: underline;
 }
 div.active_tabs_content{/*le tab de date actif*/
 }
@@ -1020,6 +1031,10 @@ div#text{
 #calendar {
 	display: none;
 }
+#calendar div#text p {
+	margin-left: 60px;
+	margin-right: 60px;
+}
 /*collection section sous-section*/
 div.collection {
 	/*border: 2px solid red;*/
@@ -1180,8 +1195,32 @@ li {
 	transform: rotate(180deg);
 	writing-mode: tb-rl;
 }
-.vertical_top-bottom {
+/*.vertical_top-bottom {
 	writing-mode: tb-rl;
+}*/
+/*.text-align_top-bottom{
+	writing-mode: tb-rl;
+}
+p.head span.text-align_top-bottom{
+	writing-mode: tb-rl;
+	float: right;
+	margin: 30% 40% 0 0;
+}*/
+/*rétrécissement pour la page 002, (index)*/
+.margin_left .smaller{
+	width: 10%;
+}
+.main .smaller {
+	width: 40%;
+}
+.main_left .smaller {
+	width: 30%;
+}
+.main_right_note{
+	width: 10%;
+}
+.main_right .smaller {
+	width: 30%;
 }
 .persName {
 	/*color: #456456;*/

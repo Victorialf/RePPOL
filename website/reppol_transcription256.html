@@ -29,7 +29,6 @@
                         <li><a href="reppol_indexdates.html">dates</a></li>
                      </ul>
                   </li>
-                  <li><a href="reppol_biblio.html">bibliography</a></li>
                   <li><a href="reppol_about.html">about</a></li>
                </ul>
             </nav>
@@ -61,7 +60,8 @@
             </section>
             <section id="calendar" class="transcript">
                <div id="facspage"><img class="facspage" src="https://stacks.stanford.edu/image/iiif/ps908cx9813/128_256_TC_46/full/full/0/default.jpg"></div>
-               <div id="text"><button onclick="reppol_t();" class="t_nav">Transcription RePPOL</button><button onclick="calendar_t();" class="t_nav active">Transcription Calendar</button></div>
+               <div id="text"><button onclick="reppol_t();" class="t_nav">Transcription RePPOL</button><button onclick="calendar_t();" class="t_nav active">Transcription Calendar</button><p style="text-align:center;">No transcription is available in the calendar for this part of the manuscript.</p>
+               </div>
             </section>
             <section class="page_nav"><a href="reppol_transcription255.html"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png" class="page_nav left"></a><a href="reppol_transcription257.html"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arrow_top.png" class="page_nav right"></a></section>
          </article>
@@ -96,7 +96,6 @@
 			function openTab(evt, tabName) {
 			// Declare all variables
 			var i, placetabcontent, placetablinks;
-			
 			// Get all elements with class="tabcontent" and hide them
 			placetabcontent = document.getElementsByClassName("placetabcontent");
 			for (i = 0; i < placetabcontent.length; i++) {

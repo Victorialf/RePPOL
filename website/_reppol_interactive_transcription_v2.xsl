@@ -68,9 +68,9 @@
 							<li><a href="{$index_dates}">dates</a></li>
 						</ul>
 					</li>
-					<li>
+					<!--<li>
 						<a href="{$biblio}">bibliography</a>
-					</li>
+					</li>-->
 					<li>
 						<a href="{$legals}">about</a>
 					</li>
@@ -368,11 +368,15 @@
 							</div>
 							<!--<p>Les <a href="{$pedago}" target="blanck">transcriptions interactives</a> vous propose une démonstration sur dix pages de transcriptions interactives paléographiques et pédagogiques constituées à l'aide de la transformation <a href="https://github.com/TimotheAlbouy/Interfaxim" target="blanck">Interfaxim</a> développé par <a href="https://github.com/TimotheAlbouy" target="blanck">M. Thimothe Albouy</a>.</p>-->
 							<p>The <a href="{$pedago}" target="blanck">interactive transcriptions</a> would not have been possible without the <a href="https://github.com/TimotheAlbouy/Interfaxim" target="blanck">Interfaxim</a> XSL-stylesheet developped by <a href="https://github.com/TimotheAlbouy" target="blanck">Mr Thimothe Albouy</a> and is licensed under <a href="https://choosealicense.com/licenses/mit/" target="blanck">MIT License</a>.</p>
-							<h3>citations</h3>
+							<!--<h3>citations</h3>
 							<p>To cite the website as a whole : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, sempe</p>
-							<p>To cite a particular page of the transcription : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, sempe</p>
+							<p>To cite a particular page of the transcription : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, sempe</p>-->
 							<h3>contact</h3>
-							<p>To report a bug, a mistake or just to give us a thumbs up, get in touch : aude.de-mezerac@univ-lille.fr Olivier.Spina@univ-lyon2.fr</p>
+							<p>To report a bug, a mistake or just to give us a thumbs up, get in touch :</p>
+							<ul>
+								<li><a href="https://pro.univ-lille.fr/aude-de-mezerac/" target="blanck">Aud de Mézerac-Zanetti</a></li>
+								<li><a href="http://larhra.ish-lyon.cnrs.fr/membre/334" target="blanck">Olivier Spina</a></li>
+							</ul>
 						</article>
 					</div>
 				</body>
@@ -380,7 +384,7 @@
 		</xsl:result-document>
 <!--	FIN page LEGALS-->
 <!--	DÉBUT page BIBLIO-->
-		<xsl:result-document href="{$biblio}">
+		<!--<xsl:result-document href="{$biblio}">
 			<html>
 				<xsl:call-template name="head">
 					<xsl:with-param name="title" select="'bibliography'"/>
@@ -396,7 +400,7 @@
 					<xsl:call-template name="script"/>
 				</body>
 			</html>
-		</xsl:result-document>
+		</xsl:result-document>-->
 <!--	FIN page BIBLIO-->
 <!--	DÉBUT page ABOUT-->
 		<xsl:result-document href="{$about}">
@@ -506,12 +510,12 @@
 											</div>
 										</xsl:for-each>
 									</div>
-									<div class="comment">
+									<!--<div class="comment">
 										<details>
 											<summary>Commentaires potentiels ici</summary>
 											lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
 										</details>
-									</div>
+									</div>-->
 									<!--a priori c'est ici qu'on ajoute les commentaires pour chacune des pages dans une div
 									ATTENTION conflit avec l'implémentation des zones puisque leur taille est absolue et pas relative + trouver un moyen pour bien générer le bon commentaire en face de la bonne page, dans des balises summary/details 
 									peut être en ajoutant des correps aussi au truc dans le xml pour faire comme dans le script plus haut-->
