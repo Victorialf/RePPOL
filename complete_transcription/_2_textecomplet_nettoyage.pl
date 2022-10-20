@@ -40,8 +40,8 @@ my $txt = '';
 		$ligne=~s/<zone data-tag=\"zone\">//g;
 		$ligne=~s/<\/zone>//g;
 
-		#<br /> to \s
-		$ligne=~s/<br \/>/ /g;
+		#<br /> to \s //remplacer par \n le 20/10/2022 pour coller à la nouvelle manière dont est produit le pré-encodage sur tact
+		$ligne=~s/<br \/>/\n/g;
 				#check si ça fonctionne sinon essaye avec \s
 
 		#<abbr data-tag="abbr"> to <expan>

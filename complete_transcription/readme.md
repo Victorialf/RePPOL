@@ -9,7 +9,7 @@ On obtient
 ## Step 2
 Le script "\_2_textecomplet_nettoyage.pl" nettoie les éléments parasites, créé les \<expan> pose les balises \<add>, \<del> et \<unclear> avec leurs attributs (sans valeur).
 On obtient
-"\_textecomplet_nettoye.xml"
+"\_textecomplet_clean.xml"
 ## Step 3
 La pose automatique de balises se fait via plusieurs scripts qui doivent être utilisé les uns après les autres dans un ordre précis.
 ### Step 3.1

@@ -19,7 +19,7 @@ for ($fichier=1 ; $fichier<166 ; $fichier=$fichier+1) {
 	# ON FAIT ATTENTION AU NOMMAGE DU COMPTEUR POUR TROUVER LES 01 ETC SI BESOIN
 	if ($fichier<10) {$fichier="0$fichier";}
 	if($fichier<100) {$fichier="0$fichier";}
-	open(CORPUS, "128_".$fichier."_TC_46.xml");
+	open(CORPUS, "transcriptions/128_".$fichier."_TC_46.xml");
 	binmode(CORPUS, ":utf8");
 	while (my $ligne = <CORPUS>) {
 		chop $ligne;#découpage par ligne
@@ -31,7 +31,7 @@ for ($fichier=1 ; $fichier<166 ; $fichier=$fichier+1) {
 }
 	#gère 166
 if ($fichier eq "166"){
-	open(CORPUS, "128_".$fichier."_TC_46.xml");
+	open(CORPUS, "transcriptions/128_".$fichier."_TC_46.xml");
 	binmode(CORPUS, ":utf8");
 	while (my $ligne = <CORPUS>) {
 		chop $ligne;#découpage par ligne
@@ -42,7 +42,7 @@ if ($fichier eq "166"){
 }
 	#gère 166a
 if ($fichier eq "166"){
-	open(CORPUS, "128_".$fichier."a"."_TC_46.xml");
+	open(CORPUS, "transcriptions/128_".$fichier."a"."_TC_46.xml");
 	binmode(CORPUS, ":utf8");
 	while (my $ligne = <CORPUS>) {
 		chop $ligne;#découpage par ligne
@@ -53,7 +53,7 @@ if ($fichier eq "166"){
 }
 	#gère 166b
 if ($fichier eq "166"){
-	open(CORPUS, "128_".$fichier."b"."_TC_46.xml");
+	open(CORPUS, "transcriptions/128_".$fichier."b"."_TC_46.xml");
 	binmode(CORPUS, ":utf8");
 	while (my $ligne = <CORPUS>) {
 		chop $ligne;#découpage par ligne
@@ -64,7 +64,7 @@ if ($fichier eq "166"){
 }
 	#gère 166c
 if ($fichier eq "166"){
-	open(CORPUS, "128_".$fichier."c"."_TC_46.xml");
+	open(CORPUS, "transcriptions/128_".$fichier."c"."_TC_46.xml");
 	binmode(CORPUS, ":utf8");
 	while (my $ligne = <CORPUS>) {
 		chop $ligne;#découpage par ligne
@@ -75,7 +75,7 @@ if ($fichier eq "166"){
 }
 	#gère 166d
 if ($fichier eq "166"){
-	open(CORPUS, "128_".$fichier."d"."_TC_46.xml");
+	open(CORPUS, "transcriptions/128_".$fichier."d"."_TC_46.xml");
 	binmode(CORPUS, ":utf8");
 	while (my $ligne = <CORPUS>) {
 		chop $ligne;#découpage par ligne
@@ -93,7 +93,7 @@ for (my $fichier=167 ; $fichier<264 ; $fichier=$fichier+1) {
 	# ON FAIT ATTENTION AU NOMMAGE DU COMPTEUR POUR TROUVER LES 01 ETC SI BESOIN
 	if ($fichier<10) {$fichier="0$fichier";}
 	if($fichier<100) {$fichier="0$fichier";}
-	open(CORPUS, "128_".$fichier."_TC_46.xml");
+	open(CORPUS, "transcriptions/128_".$fichier."_TC_46.xml");
 	binmode(CORPUS, ":utf8");
 	while (my $ligne = <CORPUS>) {
 		chop $ligne;#découpage par ligne
@@ -108,7 +108,7 @@ for (my $fichier=167 ; $fichier<264 ; $fichier=$fichier+1) {
 $fichier=264; #need incrementation manuelle car une fois incrémentée manuellement la variable garde la valeur précédente hors boucle for
 	#gère 264
 if ($fichier eq "264"){
-	open(CORPUS, "128_".$fichier."_TC_46.xml");
+	open(CORPUS, "transcriptions/128_".$fichier."_TC_46.xml");
 	binmode(CORPUS, ":utf8");
 	while (my $ligne = <CORPUS>) {
 		chop $ligne;#découpage par ligne
@@ -119,7 +119,7 @@ if ($fichier eq "264"){
 }
 	#gère 264a
 if ($fichier eq "264"){
-	open(CORPUS, "128_".$fichier."a"."_TC_46.xml");
+	open(CORPUS, "transcriptions/128_".$fichier."a"."_TC_46.xml");
 	binmode(CORPUS, ":utf8");
 	while (my $ligne = <CORPUS>) {
 		chop $ligne;#découpage par ligne
@@ -132,7 +132,7 @@ if ($fichier eq "264"){
 $fichier=265;
 	#gère 265
 if ($fichier eq "265"){
-	open(CORPUS, "128_".$fichier."_TC_46.xml");
+	open(CORPUS, "transcriptions/128_".$fichier."_TC_46.xml");
 	binmode(CORPUS, ":utf8");
 	while (my $ligne = <CORPUS>) {
 		chop $ligne;#découpage par ligne
@@ -143,7 +143,7 @@ if ($fichier eq "265"){
 }
 	#gère 265a
 if ($fichier eq "265"){
-	open(CORPUS, "128_".$fichier."a"."_TC_46.xml");
+	open(CORPUS, "transcriptions/128_".$fichier."a"."_TC_46.xml");
 	binmode(CORPUS, ":utf8");
 	while (my $ligne = <CORPUS>) {
 		chop $ligne;#découpage par ligne
@@ -159,7 +159,7 @@ for (my $fichier=266 ; $fichier<324 ; $fichier=$fichier+1) {
 	# ON FAIT ATTENTION AU NOMMAGE DU COMPTEUR POUR TROUVER LES 01 ETC SI BESOIN
 	if ($fichier<10) {$fichier="0$fichier";}
 	if($fichier<100) {$fichier="0$fichier";}
-	open(CORPUS, "128_".$fichier."_TC_46.xml");
+	open(CORPUS, "transcriptions/128_".$fichier."_TC_46.xml");
 	binmode(CORPUS, ":utf8");
 	while (my $ligne = <CORPUS>) {
 		chop $ligne;#découpage par ligne
@@ -172,7 +172,7 @@ for (my $fichier=266 ; $fichier<324 ; $fichier=$fichier+1) {
 $fichier=324;
 	#gère 324
 if ($fichier eq "324"){
-	open(CORPUS, "128_".$fichier."_TC_46.xml");
+	open(CORPUS, "transcriptions/128_".$fichier."_TC_46.xml");
 	binmode(CORPUS, ":utf8");
 	while (my $ligne = <CORPUS>) {
 		chop $ligne;#découpage par ligne
@@ -183,7 +183,7 @@ if ($fichier eq "324"){
 }
 	#gère 324a
 if ($fichier eq "324"){
-	open(CORPUS, "128_".$fichier."a"."_TC_46.xml");
+	open(CORPUS, "transcriptions/128_".$fichier."a"."_TC_46.xml");
 	binmode(CORPUS, ":utf8");
 	while (my $ligne = <CORPUS>) {
 		chop $ligne;#découpage par ligne
@@ -197,7 +197,7 @@ if ($fichier eq "324"){
 $fichier=325;
 	#gère 325
 if ($fichier eq "325"){
-	open(CORPUS, "128_".$fichier."_TC_46.xml");
+	open(CORPUS, "transcriptions/128_".$fichier."_TC_46.xml");
 	binmode(CORPUS, ":utf8");
 	while (my $ligne = <CORPUS>) {
 		chop $ligne;#découpage par ligne
@@ -208,7 +208,7 @@ if ($fichier eq "325"){
 }
 	#gère 325a
 if ($fichier eq "325"){
-	open(CORPUS, "128_".$fichier."a"."_TC_46.xml");
+	open(CORPUS, "transcriptions/128_".$fichier."a"."_TC_46.xml");
 	binmode(CORPUS, ":utf8");
 	while (my $ligne = <CORPUS>) {
 		chop $ligne;#découpage par ligne
@@ -223,7 +223,7 @@ for (my $fichier=326 ; $fichier<=360 ; $fichier=$fichier+1) {
 	# ON FAIT ATTENTION AU NOMMAGE DU COMPTEUR POUR TROUVER LES 01 ETC SI BESOIN
 	if ($fichier<10) {$fichier="0$fichier";}
 	if($fichier<100) {$fichier="0$fichier";}
-	open(CORPUS, "128_".$fichier."_TC_46.xml");
+	open(CORPUS, "transcriptions/128_".$fichier."_TC_46.xml");
 	binmode(CORPUS, ":utf8");
 	while (my $ligne = <CORPUS>) {
 		chop $ligne;#découpage par ligne
