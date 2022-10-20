@@ -337,7 +337,7 @@
 								<xsl:variable name="facs" select="concat('#', @xml:id)"/>
 								<div class="fac_selector">
 
-									<img src="{descendant::tei:graphic/@url}"/>
+									<img src="{descendant::tei:graphic/replace(@url,'full/0/default','150,/0/default')}"/>
 
 									<a
 										href="{concat($transcriptions, //tei:text[@xml:id='reppol_trans']//tei:pb[@facs=$facs]/@n, '.html')}"
