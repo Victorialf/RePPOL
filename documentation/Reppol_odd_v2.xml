@@ -4337,6 +4337,7 @@ Nous pouvons cependant déterminer une fourchette au sein de laquelle le dimanch
 								<elementRef key="hi"/>
 								<elementRef key="unclear"/>
 								<elementRef key="metamark"/>
+								<elementRef key="list"/>
 							</alternate>
 						</content>
 						<attList>

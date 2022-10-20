@@ -44,6 +44,7 @@
 \usepackage[top=2cm, bottom=2cm, left=4cm, right=4cm, heightrounded, marginparwidth=3.5cm, marginparsep=0.3cm]{geometry}
 \usepackage[dvipsnames]{xcolor}<!--permet l'utilisation de couleur-->
 \usepackage{fancyhdr}
+\usepackage{ulem}
 \usepackage{enumitem}
 \usepackage{parskip} 
 \usepackage{reledmac}
@@ -63,7 +64,7 @@
 \usepackage[french, english]{babel}
 \title{MS128}
 \author{RePPOL project}
-\date{august 2022}
+\date{october 2022}
 \begin{document}
 <!--pages de titre
 avant-propos détaillant choix d'édition etc.-->
@@ -73,7 +74,11 @@ avant-propos détaillant choix d'édition etc.-->
 \begin{center}
 \textsc{\huge MS 128}
 
-\small 0.7.5.4, last updated on 09/08/2022
+<<<<<<< HEAD
+\small 0.7.5.4, last updated on 14/10/2022
+=======
+\small 0.7.5.4, last updated on 13/10/2022
+>>>>>>> 69c0ee98055999ce3d1b95acf6fcf53adad21910
 \end{center}
 \vspace{4cm}{}{}
 \textbf{To cite this version :}
@@ -82,11 +87,15 @@ CITATION
 
 \textbf{To read the ultra-diplomatic version :}
 
-\href{}{check our website}
+\href{file:///C:/Users/Adrien%20M%C3%A9vel/Documents/victoria/RePPOL/website/reppol_home.html}{check our website}
 \vspace{2cm}{}{}
 
 \begin{center}
-This is version 0.7.5.4, last updated on 09/08/2022.
+<<<<<<< HEAD
+This is version 0.7.5.4, last updated on 14/10/2022.
+=======
+This is version 0.7.5.4, last updated on 13/10/2022.
+>>>>>>> 69c0ee98055999ce3d1b95acf6fcf53adad21910
 \end{center}
 \begin{multicols}{2}
 Le projet Rethinking the Pebendaries Plot OnLine consacré à la transcription, l’édition critique et l’analyse du manuscrit MS 128 conservé à la bibliothèque de \href{https://parker.stanford.edu/parker/catalog/ps908cx9813}{Corpus Christi College}, Cambridge est fier de vous présenter cette version pdf des transcriptions réalisées par Mme Aude de Mézerac-Zaneti, M. Olivier Spina et M. Felipe Goes-Silva.
@@ -107,6 +116,10 @@ Enfin, si l'automatisation de la constitution de cette édition depuis un encoda
 				<!-- boucle sur div -->
 				<xsl:choose>
 					<xsl:when test="@type='collection'"><!--si c'est une collection, boîterouge = chapter-->
+						<!-- test si la pag est impair pour les notes de marge -->
+						\ifthenelse{\isodd{\thepage}}
+						{\reversemarginpar}
+						{\normalmarginpar}
 <xsl:text> \addcontentsline{toc}{section}{Collection </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text><xsl:text> \section*{}</xsl:text>
 					</xsl:when>
 					<xsl:when test="@type='memorandum'">
@@ -220,7 +233,7 @@ Enfin, si l'automatisation de la constitution de cette édition depuis un encoda
 				<xsl:apply-templates/>
 			</xsl:when>
 			<xsl:when test="@subtype = 'red'">{\color{Mahogany}<xsl:apply-templates/>}</xsl:when>
-			<xsl:otherwise>{\color[Gray}<xsl:apply-templates/>}</xsl:otherwise>
+			<xsl:otherwise>{\color{Gray}<xsl:apply-templates/>}</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
 
@@ -284,6 +297,8 @@ Enfin, si l'automatisation de la constitution de cette édition depuis un encoda
 	</xsl:template>
 	<xsl:template match="item"><xsl:text>\item[]</xsl:text><xsl:apply-templates/></xsl:template>
 	<!--	METAMARK-->
+	<!--<xsl:template match="head/metamark">
+	</xsl:template>-->
 	<xsl:template match="metamark">
 		<xsl:variable name="meta" select="."/>
 		<xsl:choose>
@@ -331,7 +346,8 @@ Enfin, si l'automatisation de la constitution de cette édition depuis un encoda
 				<xsl:apply-templates/>\footnoteB{<xsl:call-template name="note"><xsl:with-param name="desc" select="'\textit{barré par une grande croix.}'"/></xsl:call-template>}
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:apply-templates/>\footnoteB{<xsl:call-template name="note"><xsl:with-param name="desc" select="'\textit{barré par un trait horizontal.}'"/></xsl:call-template>}
+			<xsl:text>\sout{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>	<!--<xsl:apply-templates/>\footnoteB{<xsl:call-template name="note"><xsl:with-param name="desc" select="'\textit{barré par un trait horizontal.}'"/></xsl:call-template>}-->
+				
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
