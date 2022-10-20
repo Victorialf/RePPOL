@@ -74,11 +74,9 @@ avant-propos détaillant choix d'édition etc.-->
 \begin{center}
 \textsc{\huge MS 128}
 
-<<<<<<< HEAD
-\small 0.7.5.4, last updated on 14/10/2022
-=======
-\small 0.7.5.4, last updated on 13/10/2022
->>>>>>> 69c0ee98055999ce3d1b95acf6fcf53adad21910
+
+last updated on \today
+
 \end{center}
 \vspace{4cm}{}{}
 \textbf{To cite this version :}
@@ -87,15 +85,12 @@ CITATION
 
 \textbf{To read the ultra-diplomatic version :}
 
-\href{file:///C:/Users/Adrien%20M%C3%A9vel/Documents/victoria/RePPOL/website/reppol_home.html}{check our website}
+\href{https://reppol.meshs.fr/}{check our website}
 \vspace{2cm}{}{}
 
 \begin{center}
-<<<<<<< HEAD
-This is version 0.7.5.4, last updated on 14/10/2022.
-=======
-This is version 0.7.5.4, last updated on 13/10/2022.
->>>>>>> 69c0ee98055999ce3d1b95acf6fcf53adad21910
+This is version 0.7.5.4, last updated on \today.
+
 \end{center}
 \begin{multicols}{2}
 Le projet Rethinking the Pebendaries Plot OnLine consacré à la transcription, l’édition critique et l’analyse du manuscrit MS 128 conservé à la bibliothèque de \href{https://parker.stanford.edu/parker/catalog/ps908cx9813}{Corpus Christi College}, Cambridge est fier de vous présenter cette version pdf des transcriptions réalisées par Mme Aude de Mézerac-Zaneti, M. Olivier Spina et M. Felipe Goes-Silva.
@@ -117,9 +112,9 @@ Enfin, si l'automatisation de la constitution de cette édition depuis un encoda
 				<xsl:choose>
 					<xsl:when test="@type='collection'"><!--si c'est une collection, boîterouge = chapter-->
 						<!-- test si la pag est impair pour les notes de marge -->
-						\ifthenelse{\isodd{\thepage}}
+						<!--\ifthenelse{\isodd{\thepage}}
 						{\reversemarginpar}
-						{\normalmarginpar}
+						{\normalmarginpar}-->
 <xsl:text> \addcontentsline{toc}{section}{Collection </xsl:text><xsl:value-of select="@n"/><xsl:text>}</xsl:text><xsl:text> \section*{}</xsl:text>
 					</xsl:when>
 					<xsl:when test="@type='memorandum'">
@@ -158,7 +153,7 @@ Enfin, si l'automatisation de la constitution de cette édition depuis un encoda
 								<xsl:text>VALEUR DE VARIABLE</xsl:text><xsl:value-of select="$article_n"/>
 							</xsl:when>-->
 							<xsl:when test="not($article_n eq @n)">
-								<xsl:text> \addcontentsline{toc}{subsection}{Article </xsl:text><xsl:value-of select="@n"/><xsl:text> </xsl:text><xsl:value-of select="normalize-space(descendant::head[1])"/><xsl:text>}</xsl:text>
+								<xsl:text> \addcontentsline{toc}{subsection}{Article </xsl:text><xsl:value-of select="@n"/><xsl:text> </xsl:text><xsl:value-of select="translate(normalize-space(descendant::head[1]),'}','')"/><xsl:text>}</xsl:text>
 								<xsl:text> \subsection*{}</xsl:text>
 							</xsl:when>
 							<xsl:otherwise/>
@@ -169,10 +164,10 @@ Enfin, si l'automatisation de la constitution de cette édition depuis un encoda
 						<xsl:variable name="page_n" select="descendant::pb[1]/@n"/>
 						<xsl:variable name="doc_title" select="concat('MS128, page ', $page_n)"/>
 \lfoot{<xsl:value-of select="$doc_title"/>}
-<!-- test si la pag est impair pour les notes de marge -->
+<!--<!-\- test si la pag est impair pour les notes de marge -\->
 \ifthenelse{\isodd{\thepage}}
 {\reversemarginpar}
-{\normalmarginpar}
+{\normalmarginpar}-->
 \textit{folio <xsl:value-of select="descendant::pb[1]/@n"/>}<!--on boucle sur les pages--><xsl:apply-templates/><!--\newpage-->
 \dotfill
 					</xsl:when>
@@ -260,6 +255,7 @@ Enfin, si l'automatisation de la constitution de cette édition depuis un encoda
 
 	<!--	note-->
 	<xsl:template match="note">
+		
 		<xsl:choose>
 			<xsl:when test="descendant::list[1]"><xsl:apply-templates/>\footnoteB{<xsl:call-template name="note"><xsl:with-param name="desc" select="'\textit{dans la marge.}'"/></xsl:call-template>}
 			</xsl:when>
@@ -277,6 +273,9 @@ Enfin, si l'automatisation de la constitution de cette édition depuis un encoda
 	</xsl:template>
 	<!--	p-->
 	<xsl:template match="p">
+		\ifthenelse{\isodd{\thepage}}
+		{\reversemarginpar}
+		{\normalmarginpar}
 		<xsl:apply-templates/>
 	</xsl:template>
 	<!--	LISTE-->
