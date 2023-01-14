@@ -88,11 +88,15 @@
 				
 			</div>
 			<div class="links">
-				<a href="https://github.com/Victorialf/RePPOL" target="blanck">
+				<a href="files/_reppol_transcription_20221215.xml" download="" style="grid-column:3; grid-row:2"><img src="img/logo_xml.png" alt="xml"/></a>
+				<a href="files/reppol_ms128.pdf" download="" style="grid-column-start:1; grid-column-end:3; grid-row:2">
+					<img src="img/logo_latex" alt="latex"/>
+				</a>
+				<a href="https://github.com/Victorialf/RePPOL" target="blanck" style="grid-column:1;">
 					<img src="img/GitHub-Mark-32px.png"/>
 				</a>
-				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_cc.png"/></a>
-				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_by.png"/></a>
+				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck" style="grid-column:2;"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_cc.png"/></a>
+				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck" style="grid-column:3;"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_by.png"/></a>
 				
 			</div>
 		</header>
@@ -100,6 +104,29 @@
 	<!--template pour SCRIPT-->
 	<xsl:template name="script">
 		<script>
+			function lang_fr (){
+			let tohide = document.getElementsByClassName('lang_en');
+			let toshow = document.getElementsByClassName('lang_fr');
+			for (let hide of tohide) {
+			hide.style.display='none';
+			}
+			for (let show of toshow) {
+			show.style.display='block';
+			}
+			}
+			
+			function lang_en (){
+			let tohide = document.getElementsByClassName('lang_fr');
+			let toshow = document.getElementsByClassName('lang_en');
+			for (let hide of tohide) {
+			hide.style.display='none';
+			}
+			for (let show of toshow) {
+			show.style.display='block';
+			}
+			}
+			
+			
 			function changeSection(e, sec) {
 			var sections = document.getElementsByClassName("section-wrapper");
 			for (var i = 0; i &lt; sections.length; i++) {
@@ -272,24 +299,26 @@
 							<!--<p>Le projet RePPOL est un projet scientifique et pédagogique collaboratif consacré à la transcription, l'édition critique et l'analyse du manuscrit <a href="https://parker.stanford.edu/parker/catalog/ps908cx9813" target="blanck">MS 128 conservé à la bibliothèque de Corpus Christi College, Cambridge</a>.</p>-->
 							<h1><span class="ambroise_bold_empty">RETHINKING THE</span> <span class="ambroise_bold_filled"> PREBENDARIES PLOT</span> <span class="ambroise_bold_italic"> ONLINE</span></h1>
 							<!--<p>The Rethinking Prebendaries Plot Online (RePPOL) project is a pedagogic, scientific and collaborative project dedicated to the transcription, critical edition and analysis of the <a href="https://parker.stanford.edu/parker/catalog/ps908cx9813" target="blanck">MS 128 manuscript kept in the Parker Library</a>.</p>-->
-							<div>
+							<button class="lang_fr" onclick="lang_en()">En</button>
+							<button class="lang_en"  onclick="lang_fr()">Fr</button>
+							<div class="lang_en">
 								<p>Rethinking the Prebendaries Plot On Line (RePPOL) is a digital humanities project led by <a href="http://larhra.ish-lyon.cnrs.fr/membre/334" target="blanck">Olivier Spina</a> (Lecturer in Early Modern History at Université de Lyon) and <a href="https://pro.univ-lille.fr/aude-de-mezerac" target="blanck">Aude de Mézerac-Zanetti</a> (Lecturer in British studies at Univeristé de Lille) with the support of Victoria Le Fourner (digital humanities co-ordinator at MESHS-Lille). Felipe Goes Silva has contributed to the transcription as part of his Masters’ thesis (Master d’Etudes Anglophones at Université de Lille) and Adrien Mével (Masters student in the Digital Edition programme of Université de Lille) is the digital humanities editor and creator of the website.</p>
 								<p>RePPOL is centered on <a target="blanck" href="https://iiif.biblissima.fr/collections/manifest/e3769951f689ba0c9c1f176e56ce198d564ae43a?">MS 128 of Corpus Christi College, Cambridge</a>. The manuscript was compiled in 1543 to document religious practices in Kent and to record evidence related to the attempt by conservative clergy and laity to discredit Archbishop Thomas Cranmer. The manuscript combines testimonies of evangelical beliefs and attitudes, conservative plotting and organising and documents unorthodox practices on all sides.</p>
 								<ul>
 									<li><a href="{$transcriptions}">Browse the manuscript and read the diplomatic transcription</a>.</li>
 									<li><a href="{$pedago}">Discover the selection of interactive pages with transcription and comments.</a></li>
-									<li>Download the complete semi-diplomatic transcription.</li>
+									<li><a href="files/reppol_ms128.pdf" download="">Download the complete semi-diplomatic transcription.</a></li>
 									<li>Use the <a href="{$index_places}">index of places</a>, the <a href="{$index_characters}">index of character names</a> and the <a href="{$index_dates}">calendar</a> to explore the MS.</li>
 								</ul>
 							</div>
-							<div>
+							<div class="lang_fr">
 								<p>Rethinking the Prebendaries Plot On Line (RePPOL) est un projet dirigé par <a href="https://pro.univ-lille.fr/aude-de-mezerac" target="blanck">Aude de Mézerac-Zanetti</a> (Université de Lille) et <a href="http://larhra.ish-lyon.cnrs.fr/membre/334" target="blanck">Olivier Spina</a> codirigent le projet RePPOL (Rethinking the Prebendaries Plot On Line), financé par l’I-site Université Lille-Nord-Europe et par le LABEX COMOD (Université de Lyon) et soutenu pour le versant technique par Victoria Le Fourner ( ingénieure d’études à la Maison Européenne des Sciences de l’Homme de Lille). Felipe Goes Silva (étudiant en M2 Master d’Etudes Anglophones à l’Université de Lille) a contribué à la transcription du manuscrit en 2021-2022. Adrien Mével (étudiant en Master Edition Numérique à l’Université de Lille) a conçu le site internet et mis en place l’architecture numérique nécessaire à l’édition numérique du manuscrit 128. </p>
 								<p>RePPOL est un projet d’humanités numériques en histoire au croisement de la recherche et de l’enseignement visant à transcrire, éditer sous format numérique puis étudier un manuscrit d’environ 250 folios conservé dans les fonds de la Parker Library (<a target="blanck" href="https://iiif.biblissima.fr/collections/manifest/e3769951f689ba0c9c1f176e56ce198d564ae43a?">Ms 128, Corpus Christi College, Cambridge</a>). Ce manuscrit rassemble des témoignages sur les pratiques religieuses dans le Kent dans les années 1540 et sur le complot monté par des clercs et des laïcs conservateurs visant à discréditer Thomas Cranmer, l’archevêque de Cantorbéry. </p>
 								<p>Vous trouverez sur le site :</p>
 									<ul>
 										<li>La <a href="{$transcriptions}">transcription diplomatique</a> de chaque page du manuscrit.</li>
 										<li>Une sélection de pages avec une <a href="{$pedago}">transcription interactive</a>.</li>
-										<li>La transcription semi-diplomatique complète à télécharger.</li>
+										<li><a href="files/reppol_ms128.pdf" download="">La transcription semi-diplomatique complète à télécharger.</a></li>
 										<li>Des <a href="{$index_characters}">indices de personnes</a> et de <a href="{$index_places}">lieux cités</a> ainsi qu’un <a href="{$index_dates}">calendrier des dates mentionnées</a> dans le manuscrit.</li>
 									</ul>
 							</div>
@@ -402,7 +431,7 @@
 							<h3>contact</h3>
 							<p>To report a bug, a mistake or just to give us a thumbs up, get in touch :</p>
 							<ul>
-								<li><a href="https://pro.univ-lille.fr/aude-de-mezerac/" target="blanck">Aud de Mézerac-Zanetti</a></li>
+								<li><a href="https://pro.univ-lille.fr/aude-de-mezerac/" target="blanck">Aude de Mézerac-Zanetti</a></li>
 								<li><a href="http://larhra.ish-lyon.cnrs.fr/membre/334" target="blanck">Olivier Spina</a></li>
 							</ul>
 						</article>
@@ -480,14 +509,18 @@
 								</xsl:for-each>
 							</ul>
 						</section>-->
-						<section class="home"> <!--class="project_left" /version colonne/-->
-							<h2>about the project :</h2>
+						<section class="home">
+							<!--class="project_left" /version colonne/-->
+							<button class="lang_fr" onclick="lang_en()" style="float:right;">En</button>
+							<button class="lang_en"  onclick="lang_fr()" style="float:right;">Fr</button>
+							<h2 class="lang_en">about the project :</h2>
+							<h2 class="lang_fr">présentation générale du projet</h2>
 							<!--<xsl:for-each select="//tei:projectDesc/tei:p[@xml:lang='en']">
 								<p>
 									<xsl:apply-templates/>
 								</p>
 							</xsl:for-each>-->
-							<div>
+							<div class="lang_en">
 								<p>Rethinking the Prebendaries Plot On Line (RePPOL) is a digital humanities project led by <a href="http://larhra.ish-lyon.cnrs.fr/membre/334" target="blanck">Olivier Spina</a> (Lecturer in Early Modern History at Université de Lyon) and <a href="https://pro.univ-lille.fr/aude-de-mezerac" target="blanck">Aude de Mézerac-Zanetti</a> (Lecturer in British studies at Université de Lille) with the support of Victoria Le Fourner (digital humanities co-ordinator at MESHS-Lille). Felipe Goes Silva has contributed to the transcription as part of his Masters’ thesis and Adrien Mevel is the digital humanities editor, encoder and creator of the website.</p>
 								<h3>A project combining scholarly and pedagogical aims</h3>
 								<p>This project has been designed with two distinct aims in mind: it is both a historical investigation and a teaching tool. RePPOL consists primarily of a collaborative transcription of Corpus Christi College MS 128 which is one the principal sources for what has long been known as the “<span style="font-style:italic;">prebedendaries plot</span>”. This was at attempt by members of the chapter of Christ Church cathedral in Canterbury (the prebendaries) with the support of other clerics and members of the gentry to topple Thomas Cranmer the archbishop of Canterbury and derail his efforts at reforming his diocese. Having gathered evidence of Cranmer’s tolerance for protestant clergy, a group of conservatives wished to present their grievances to the Council and to the king. Henry VIII however charged Cranmer himself with the enquiry. Much of the evidence recorded in the course of the investigation was later gathered into MS 128. The manuscript documents heterodox religious practices by conservative and evangelical clergy and laity as well as the testimonies collected regarding the plot against Cranmer.</p>
@@ -505,8 +538,7 @@
 								<p>The final stage of the project consists in a rounded analysis of the text itself and the creation of visualisations of the rival networks and the flashpoints for conflicts and disputes. We are interested in uncovering and mapping unorthodox practices and the modes of expression of resistance and disagreement.</p>
 								<p>RePPOL abides by the standards of open science.</p>
 							</div>
-							<div>
-								<h3>Présentation générale du projet</h3>
+							<div class="lang_fr">
 								<p>Depuis 2020, <a target="blanck" href="https://pro.univ-lille.fr/aude-de-mezerac">Aude de Mézerac-Zanetti</a> (Université de Lille) et <a href="http://larhra.ish-lyon.cnrs.fr/membre/334" target="blanck">Olivier Spina</a> codirigent le projet RePPOL (Rethinking the Prebendaries Plot On Line), financé par l’<a target="blanck" href="{$isite}">I-site Université Lille-Nord-Europe</a> et par le <a target="blanck" href="{$labex}">LABEX COMOD</a> (Université de Lyon) et soutenu pour le versant technique par la <a target="blanck" href="{$meshs}">Maison Européenne des Sciences de l’Homme de Lille</a> (Victoria Le Fourner, ingénieure d’études).</p>
 								<p>RePPOL est un projet d’humanités numériques en histoire au croisement de la recherche et de l’enseignement visant à transcrire, éditer sous format numérique puis étudier un manuscrit d’environ 250 folios conservé dans les fonds de la Parker Library (<a target="blanck" href="https://iiif.biblissima.fr/collections/manifest/e3769951f689ba0c9c1f176e56ce198d564ae43a?">Ms 128, Corpus Christi College, Cambridge</a>). Pour rappel, depuis le début des années 1530, l’Angleterre rompt avec Rome et la monarchie ouvre une période de réformes religieuses marquées par l’évangélisme. En 1543, Thomas Cranmer, archevêque de Cantorbéry a été dénoncé au roi Henri VIII par certains clercs du Kent plus « conservateurs ». Ces derniers, appuyés par une partie de la gentry locale, accusaient le prélat de protéger des prédicateurs hétérodoxes, pour ne pas dire hérétiques, et espéraient sa destitution. Les historiens ont dénommé cette affaire le Prebendaries Plot (le « complot des chanoines »). Cependant, le roi réitère sa confiance à Cranmer et lui confie le soin d’enquêter dans le Kent pour identifier les croyances et les pratiques déviantes (trop conservatrices ou trop réformées).</p>
 								<p>Ainsi, le manuscrit Ms 128 est le fruit (incomplet) de cette enquête. Il contient plus d’une centaine d’interrogatoires menés en 1543 par les autorités royales et ecclésiales parmi la population du Kent (des clercs mais aussi de simples paroissiens) quant à leurs pratiques et croyances religieuses. Ce document permet, en tout cas, une plongée inédite dans les croyances et les pratiques liturgiques des gens du peuple dans un Kent en « transition confessionnelle », mais il permet surtout de mettre en évidence le rôle actif que les sujets, y compris les laïcs des couches modestes, jouaient dans les processus de mutations politico-religieuses de l’Angleterre henricienne. Ce manuscrit est bien connu, depuis plus d’un siècle, des historiens. Cependant, il n’a été que très partiellement exploité, et il est souvent mobilisé comme un simple réservoir d’exemples ponctuels de croyances hétérodoxes hautes en couleur. De plus, cette utilisation est indirecte, certains historiens n’utilisant le plus souvent que le calendar (analyse diplomatique) imprimé au début du XXe siècle dans les Letters and papers. </p>

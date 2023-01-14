@@ -306,6 +306,32 @@ section.home_buttons a.button:hover button{
 section.home_buttons a.button:hover button{
 	text-decoration: none;
 }*/
+button.lang_en, button.lang_fr{
+	border:1px solid #1f0f7e;
+	border-radius: 2px;
+	background-color: inherit;
+	color: #1f0f7e;
+	font-size: 15pt;
+}
+button.lang_en:hover, button.lang_fr:hover{
+	border:1px solid #1f0f7e;
+	border-radius: 2px;
+	background-color: #1f0f7e;
+	color: #f26339;
+	font-size: 15pt;
+}
+button.lang_fr{
+	display: none;
+}
+div.lang_fr, h2.lang_fr{
+	display: none;
+}
+div.lang_en{
+	display: block;
+}
+/*div.lang_fr, div.lang_en{*/
+/*	*/
+/*}*/
 section.home{
 	margin-left: 30%;
 }

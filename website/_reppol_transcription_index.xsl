@@ -84,11 +84,15 @@
 				
 			</div>
 			<div class="links">
-				<a href="https://github.com/Victorialf/RePPOL" target="blanck">
+				<a href="files/_reppol_transcription_20221215.xml" download="" style="grid-column:3; grid-row:2"><img src="img/logo_xml.png" alt="xml"/></a>
+				<a href="files/reppol_ms128.pdf" download="" style="grid-column-start:1; grid-column-end:3; grid-row:2">
+					<img src="img/logo_latex" alt="latex"/>
+				</a>
+				<a href="https://github.com/Victorialf/RePPOL" target="blanck" style="grid-column:1;">
 					<img src="img/GitHub-Mark-32px.png"/>
 				</a>
-				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_cc.png"/></a>
-				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_by.png"/></a>
+				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck" style="grid-column:2;"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_cc.png"/></a>
+				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck" style="grid-column:3;"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_by.png"/></a>
 				
 			</div>
 		</header>
@@ -505,6 +509,9 @@
 	</xsl:template>
 	<xsl:template match="tei:div" mode="text">
 		<xsl:choose>
+			<xsl:when test="(descendant::tei:head)and(not(descendant::tei:p))and(not(descendant::tei:note))and(not(descendant::tei:list))and(not(descendant::tei:div))">
+				<xsl:apply-templates mode="text"/>
+			</xsl:when>
 			<xsl:when
 				test="(descendant::tei:note[@rend = 'margin_left']) and (descendant::tei:p[@rend = 'main'])">
 				<!--					cas où : NOTES dans la MARGE GAUCHE et P dans MAIN-->
@@ -1144,6 +1151,7 @@
 			<!-- cas où il n'y a qu'un PARAGRAPHE sur la DROITE, SEUL -->
 			<xsl:when test="descendant::tei:p[@rend='main_right']">
 				<div class="display_unit">
+					<div class="margin_left"></div>
 					<div class="main">
 						<div class="main_left"/>
 						<div class="main_right">

@@ -33,12 +33,12 @@
                </ul>
             </nav>
             <div></div>
-            <div class="links"><a href="https://github.com/Victorialf/RePPOL" target="blanck"><img src="img/GitHub-Mark-32px.png"></a><a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_cc.png"></a><a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_by.png"></a></div>
+            <div class="links"><a href="files/_reppol_transcription_20221215.xml" download="" style="grid-column:3; grid-row:2"><img src="img/logo_xml.png" alt="xml"></a><a href="files/reppol_ms128.pdf" download="" style="grid-column-start:1; grid-column-end:3; grid-row:2"><img src="img/logo_latex" alt="latex"></a><a href="https://github.com/Victorialf/RePPOL" target="blanck" style="grid-column:1;"><img src="img/GitHub-Mark-32px.png"></a><a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck" style="grid-column:2;"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_cc.png"></a><a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck" style="grid-column:3;"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_by.png"></a></div>
          </header>
          <article id="about">
-            <section class="home">
-               <h2>about the project :</h2>
-               <div>
+            <section class="home"><button class="lang_fr" onclick="lang_en()" style="float:right;">En</button><button class="lang_en" onclick="lang_fr()" style="float:right;">Fr</button><h2 class="lang_en">about the project :</h2>
+               <h2 class="lang_fr">présentation générale du projet</h2>
+               <div class="lang_en">
                   <p>Rethinking the Prebendaries Plot On Line (RePPOL) is a digital humanities project
                      led by <a href="http://larhra.ish-lyon.cnrs.fr/membre/334" target="blanck">Olivier Spina</a> (Lecturer in Early Modern History at Université de Lyon) and <a href="https://pro.univ-lille.fr/aude-de-mezerac" target="blanck">Aude de Mézerac-Zanetti</a> (Lecturer in British studies at Université de Lille) with the support of Victoria
                      Le Fourner (digital humanities co-ordinator at MESHS-Lille). Felipe Goes Silva has
@@ -102,8 +102,7 @@
                      the modes of expression of resistance and disagreement.</p>
                   <p>RePPOL abides by the standards of open science.</p>
                </div>
-               <div>
-                  <h3>Présentation générale du projet</h3>
+               <div class="lang_fr">
                   <p>Depuis 2020, <a target="blanck" href="https://pro.univ-lille.fr/aude-de-mezerac">Aude de Mézerac-Zanetti</a> (Université de Lille) et <a href="http://larhra.ish-lyon.cnrs.fr/membre/334" target="blanck">Olivier Spina</a> codirigent le projet RePPOL (Rethinking the Prebendaries Plot On Line), financé par
                      l’<a target="blanck" href="http://www.isite-ulne.fr/index.php/fr/page-daccueil/">I-site Université Lille-Nord-Europe</a> et par le <a target="blanck" href="https://comod.universite-lyon.fr/site-francais/">LABEX COMOD</a> (Université de Lyon) et soutenu pour le versant technique par la <a target="blanck" href="https://www.meshs.fr/page/accueil">Maison Européenne des Sciences de l’Homme de Lille</a> (Victoria Le Fourner, ingénieure d’études).</p>
                   <p>RePPOL est un projet d’humanités numériques en histoire au croisement de la recherche
@@ -261,6 +260,29 @@
                <div class="footer_logo"><a href="http://larhra.ish-lyon.cnrs.fr/" target="blanck"><img src="img/logo_lahra.png"></a></div>
             </section>
          </article><img class="home_img" src="img/cranmer_bichromie3.png"></div><script>
+			function lang_fr (){
+			let tohide = document.getElementsByClassName('lang_en');
+			let toshow = document.getElementsByClassName('lang_fr');
+			for (let hide of tohide) {
+			hide.style.display='none';
+			}
+			for (let show of toshow) {
+			show.style.display='block';
+			}
+			}
+			
+			function lang_en (){
+			let tohide = document.getElementsByClassName('lang_fr');
+			let toshow = document.getElementsByClassName('lang_en');
+			for (let hide of tohide) {
+			hide.style.display='none';
+			}
+			for (let show of toshow) {
+			show.style.display='block';
+			}
+			}
+			
+			
 			function changeSection(e, sec) {
 			var sections = document.getElementsByClassName("section-wrapper");
 			for (var i = 0; i < sections.length; i++) {

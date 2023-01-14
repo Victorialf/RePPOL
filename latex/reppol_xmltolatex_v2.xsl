@@ -170,6 +170,7 @@ Enfin, si l'automatisation de la constitution de cette édition depuis un encoda
 {\normalmarginpar}-->
 \textit{folio <xsl:value-of select="descendant::pb[1]/@n"/>}<!--on boucle sur les pages--><xsl:apply-templates/><!--\newpage-->
 \dotfill
+						<xsl:if test="not(descendant::space)">\newpage</xsl:if>
 					</xsl:when>
 					<xsl:otherwise/>
 				</xsl:choose>
@@ -233,7 +234,7 @@ Enfin, si l'automatisation de la constitution de cette édition depuis un encoda
 	</xsl:template>
 
 	<xsl:template match="space">
-		<xsl:text>\vspace{4cm}</xsl:text>
+		<xsl:text>\vspace*{4cm}</xsl:text>
 	</xsl:template>
 
 	<xsl:template match="head">
@@ -345,7 +346,8 @@ Enfin, si l'automatisation de la constitution de cette édition depuis un encoda
 				<xsl:apply-templates/>\footnoteB{<xsl:call-template name="note"><xsl:with-param name="desc" select="'\textit{barré par une grande croix.}'"/></xsl:call-template>}
 			</xsl:when>
 			<xsl:otherwise>
-			<xsl:text>\sout{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>	<!--<xsl:apply-templates/>\footnoteB{<xsl:call-template name="note"><xsl:with-param name="desc" select="'\textit{barré par un trait horizontal.}'"/></xsl:call-template>}-->
+			<xsl:text>\sout{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+				<!--<xsl:apply-templates/>\footnoteB{<xsl:call-template name="note"><xsl:with-param name="desc" select="'\textit{barré par un trait horizontal.}'"/></xsl:call-template>}-->
 				
 			</xsl:otherwise>
 		</xsl:choose>

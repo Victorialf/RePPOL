@@ -33,7 +33,7 @@
                </ul>
             </nav>
             <div></div>
-            <div class="links"><a href="https://github.com/Victorialf/RePPOL" target="blanck"><img src="img/GitHub-Mark-32px.png"></a><a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_cc.png"></a><a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_by.png"></a></div>
+            <div class="links"><a href="files/_reppol_transcription_20221215.xml" download="" style="grid-column:3; grid-row:2"><img src="img/logo_xml.png" alt="xml"></a><a href="files/reppol_ms128.pdf" download="" style="grid-column-start:1; grid-column-end:3; grid-row:2"><img src="img/logo_latex" alt="latex"></a><a href="https://github.com/Victorialf/RePPOL" target="blanck" style="grid-column:1;"><img src="img/GitHub-Mark-32px.png"></a><a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck" style="grid-column:2;"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_cc.png"></a><a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck" style="grid-column:3;"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_by.png"></a></div>
          </header>
          <article id="transcription_pedago">
             <div id="tabs-sections" class="tabs"><button onclick="changeSection(event, 1)">Page
@@ -622,6 +622,29 @@
             </div>
          </article>
       </div><script>
+			function lang_fr (){
+			let tohide = document.getElementsByClassName('lang_en');
+			let toshow = document.getElementsByClassName('lang_fr');
+			for (let hide of tohide) {
+			hide.style.display='none';
+			}
+			for (let show of toshow) {
+			show.style.display='block';
+			}
+			}
+			
+			function lang_en (){
+			let tohide = document.getElementsByClassName('lang_fr');
+			let toshow = document.getElementsByClassName('lang_en');
+			for (let hide of tohide) {
+			hide.style.display='none';
+			}
+			for (let show of toshow) {
+			show.style.display='block';
+			}
+			}
+			
+			
 			function changeSection(e, sec) {
 			var sections = document.getElementsByClassName("section-wrapper");
 			for (var i = 0; i < sections.length; i++) {

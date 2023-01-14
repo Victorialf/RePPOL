@@ -33,12 +33,11 @@
                </ul>
             </nav>
             <div></div>
-            <div class="links"><a href="https://github.com/Victorialf/RePPOL" target="blanck"><img src="img/GitHub-Mark-32px.png"></a><a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_cc.png"></a><a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_by.png"></a></div>
+            <div class="links"><a href="files/_reppol_transcription_20221215.xml" download="" style="grid-column:3; grid-row:2"><img src="img/logo_xml.png" alt="xml"></a><a href="files/reppol_ms128.pdf" download="" style="grid-column-start:1; grid-column-end:3; grid-row:2"><img src="img/logo_latex" alt="latex"></a><a href="https://github.com/Victorialf/RePPOL" target="blanck" style="grid-column:1;"><img src="img/GitHub-Mark-32px.png"></a><a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck" style="grid-column:2;"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_cc.png"></a><a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="blanck" style="grid-column:3;"><img alt="Licence Creative Commons" src="https://creativecommons.org/images/chooser/chooser_by.png"></a></div>
          </header>
          <article id="home">
             <section class="home">
-               <h1><span class="ambroise_bold_empty">RETHINKING THE</span><span class="ambroise_bold_filled"> PREBENDARIES PLOT</span><span class="ambroise_bold_italic"> ONLINE</span></h1>
-               <div>
+               <h1><span class="ambroise_bold_empty">RETHINKING THE</span><span class="ambroise_bold_filled"> PREBENDARIES PLOT</span><span class="ambroise_bold_italic"> ONLINE</span></h1><button class="lang_fr" onclick="lang_en()">En</button><button class="lang_en" onclick="lang_fr()">Fr</button><div class="lang_en">
                   <p>Rethinking the Prebendaries Plot On Line (RePPOL) is a digital humanities project
                      led by <a href="http://larhra.ish-lyon.cnrs.fr/membre/334" target="blanck">Olivier Spina</a> (Lecturer in Early Modern History at Université de Lyon) and <a href="https://pro.univ-lille.fr/aude-de-mezerac" target="blanck">Aude de Mézerac-Zanetti</a> (Lecturer in British studies at Univeristé de Lille) with the support of Victoria
                      Le Fourner (digital humanities co-ordinator at MESHS-Lille). Felipe Goes Silva has
@@ -53,11 +52,11 @@
                   <ul>
                      <li><a href="reppol_transcription">Browse the manuscript and read the diplomatic transcription</a>.</li>
                      <li><a href="reppol_trancriptioninteractive.html">Discover the selection of interactive pages with transcription and comments.</a></li>
-                     <li>Download the complete semi-diplomatic transcription.</li>
+                     <li><a href="files/reppol_ms128.pdf" download="">Download the complete semi-diplomatic transcription.</a></li>
                      <li>Use the <a href="reppol_indexplaces.html">index of places</a>, the <a href="reppol_indexcharacters.html">index of character names</a> and the <a href="reppol_indexdates.html">calendar</a> to explore the MS.</li>
                   </ul>
                </div>
-               <div>
+               <div class="lang_fr">
                   <p>Rethinking the Prebendaries Plot On Line (RePPOL) est un projet dirigé par <a href="https://pro.univ-lille.fr/aude-de-mezerac" target="blanck">Aude de Mézerac-Zanetti</a> (Université de Lille) et <a href="http://larhra.ish-lyon.cnrs.fr/membre/334" target="blanck">Olivier Spina</a> codirigent le projet RePPOL (Rethinking the Prebendaries Plot On Line), financé par
                      l’I-site Université Lille-Nord-Europe et par le LABEX COMOD (Université de Lyon) et
                      soutenu pour le versant technique par Victoria Le Fourner ( ingénieure d’études à
@@ -75,7 +74,7 @@
                   <ul>
                      <li>La <a href="reppol_transcription">transcription diplomatique</a> de chaque page du manuscrit.</li>
                      <li>Une sélection de pages avec une <a href="reppol_trancriptioninteractive.html">transcription interactive</a>.</li>
-                     <li>La transcription semi-diplomatique complète à télécharger.</li>
+                     <li><a href="files/reppol_ms128.pdf" download="">La transcription semi-diplomatique complète à télécharger.</a></li>
                      <li>Des <a href="reppol_indexcharacters.html">indices de personnes</a> et de <a href="reppol_indexplaces.html">lieux cités</a> ainsi qu’un <a href="reppol_indexdates.html">calendrier des dates mentionnées</a> dans le manuscrit.</li>
                   </ul>
                </div>
@@ -124,6 +123,29 @@
                <div class="footer_logo"><a href="http://larhra.ish-lyon.cnrs.fr/" target="blanck"><img src="img/logo_lahra.png"></a></div>
             </section>
          </article><img class="home_img" src="img/cranmer_bichromie3.png"></div><script>
+			function lang_fr (){
+			let tohide = document.getElementsByClassName('lang_en');
+			let toshow = document.getElementsByClassName('lang_fr');
+			for (let hide of tohide) {
+			hide.style.display='none';
+			}
+			for (let show of toshow) {
+			show.style.display='block';
+			}
+			}
+			
+			function lang_en (){
+			let tohide = document.getElementsByClassName('lang_fr');
+			let toshow = document.getElementsByClassName('lang_en');
+			for (let hide of tohide) {
+			hide.style.display='none';
+			}
+			for (let show of toshow) {
+			show.style.display='block';
+			}
+			}
+			
+			
 			function changeSection(e, sec) {
 			var sections = document.getElementsByClassName("section-wrapper");
 			for (var i = 0; i < sections.length; i++) {
